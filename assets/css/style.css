@@ -2467,3 +2467,311 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.5);
 }
+
+/* 修正事件信息顯示 */
+.subtitle-area {
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+    display: block !important;
+}
+
+.subtitle-area.transitioning {
+    opacity: 0.5;
+}
+
+.event-date {
+    color: #9ca3af;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.event-title {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    display: block;
+}
+
+.event-description {
+    color: #d1d5db;
+    font-size: 16px;
+    line-height: 1.6;
+    display: block;
+}
+
+.event-description.variant-2 {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* 修正媒體容器尺寸 */
+.media-display {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.media-display img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 4px;
+}
+
+.media-display video {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* 修正縮圖顯示 */
+.media-thumbnails {
+    display: flex;
+    overflow-x: auto;
+    padding: 12px;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    margin-top: 16px;
+    min-height: 80px;
+}
+
+.thumbnails-container {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.thumbnails-scroll {
+    display: flex;
+    gap: 8px;
+    padding: 4px;
+    min-width: max-content;
+}
+
+.thumbnail-item {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.thumbnail-item.active {
+    border-color: #3b82f6;
+    transform: scale(1.05);
+}
+
+.thumbnail-item:hover:not(.active) {
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: scale(1.02);
+}
+
+.thumbnail-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 修正收縮功能 */
+.header.collapsed .subtitle-area {
+    display: none !important;
+}
+
+.header.collapsed + .main-content {
+    padding-top: 80px; /* 減少上方間距 */
+}
+
+.header.collapsed + .main-content .media-area {
+    height: calc(100vh - 160px); /* 增加媒體區域高度 */
+    min-height: 500px;
+}
+
+.header.collapsed + .main-content .media-display {
+    min-height: 450px; /* 增加媒體顯示區域高度 */
+}
+
+/* 正常狀態下的媒體區域 */
+.main-content {
+    padding-top: 16px;
+    transition: all 0.3s ease;
+}
+
+.media-area {
+    height: calc(100vh - 320px);
+    min-height: 400px;
+    transition: all 0.3s ease;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .media-display {
+        min-height: 300px;
+    }
+    
+    .media-area {
+        height: calc(100vh - 280px);
+        min-height: 300px;
+    }
+    
+    .header.collapsed + .main-content .media-area {
+        height: calc(100vh - 120px);
+        min-height: 350px;
+    }
+    
+    .header.collapsed + .main-content .media-display {
+        min-height: 300px;
+    }
+}
+
+/* YouTube 容器修正 */
+.youtube-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.youtube-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* 載入動畫改進 */
+.media-display .loading-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #9ca3af;
+    font-size: 16px;
+}
+
+/* 確保圖片不被裁切 */
+.media-display img[data-needs-mse-decrypt] {
+    display: block;
+    margin: 0 auto;
+}
+
+/* 修正網格模式下的尺寸 */
+.grid-mode .media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 16px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.grid-mode .media-carousel {
+    display: none;
+}
+
+.grid-item {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 媒體計數器修正 */
+.media-counter-overlay {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 10;
+}
+
+/* 導航按鈕改進 */
+.media-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-nav-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.media-nav-btn.prev {
+    left: 16px;
+}
+
+.media-nav-btn.next {
+    right: 16px;
+}
+
+.media-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.media-nav-btn:disabled:hover {
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+}
