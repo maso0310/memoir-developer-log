@@ -1,1 +1,4654 @@
-const _0x2abcaf=_0x5e38;(function(_0x23ed8f,_0x26c08a){const _0x435b60=_0x5e38,_0x32a4b5=_0x23ed8f();while(!![]){try{const _0x4b4cb7=parseInt(_0x435b60(0x37b))/0x1+parseInt(_0x435b60(0x49d))/0x2*(-parseInt(_0x435b60(0x50d))/0x3)+-parseInt(_0x435b60(0x3b0))/0x4+parseInt(_0x435b60(0x189))/0x5+-parseInt(_0x435b60(0x464))/0x6*(parseInt(_0x435b60(0x148))/0x7)+-parseInt(_0x435b60(0x303))/0x8*(-parseInt(_0x435b60(0x2b0))/0x9)+-parseInt(_0x435b60(0x2c1))/0xa*(parseInt(_0x435b60(0x10c))/0xb);if(_0x4b4cb7===_0x26c08a)break;else _0x32a4b5['push'](_0x32a4b5['shift']());}catch(_0x37f1ec){_0x32a4b5['push'](_0x32a4b5['shift']());}}}(_0x166c,0xa2372),((()=>{const _0x37a946=_0x5e38,_0xbed52a={'GPPOG':function(_0x2737d8,_0x24dd28){return _0x2737d8+_0x24dd28;},'mSxWG':_0x37a946(0x25a),'FZSBl':_0x37a946(0x3f6),'YeqAn':function(_0x4d287b,_0x266cce){return _0x4d287b+_0x266cce;},'WaKum':function(_0x1160e0,_0x29e8ee){return _0x1160e0||_0x29e8ee;},'PuRGx':_0x37a946(0x558),'XNteK':_0x37a946(0x44c),'zLOZR':function(_0x54121d,_0x174d81,_0x5455ba){return _0x54121d(_0x174d81,_0x5455ba);},'FNOHB':function(_0x1352c3,_0x3a3913){return _0x1352c3===_0x3a3913;},'rjwpD':_0x37a946(0x3af),'QMpJn':function(_0x3bed42,_0x281cb8){return _0x3bed42===_0x281cb8;},'aypdO':function(_0x1d4447,_0xf4470b,_0x4cebf2){return _0x1d4447(_0xf4470b,_0x4cebf2);},'ryPry':_0x37a946(0x499),'vcWjV':'/api/admin/track/deny','LjTAL':_0x37a946(0x21a),'SiQCV':_0x37a946(0x198),'IvbgE':function(_0x27b694,_0x4f376b,_0x488e61){return _0x27b694(_0x4f376b,_0x488e61);},'LpyQi':_0x37a946(0x11d),'RNFcE':_0x37a946(0x491),'ryNUg':'passwordModal','onKaB':_0x37a946(0x46e),'ccjVp':_0x37a946(0x4e4),'ekFeA':_0x37a946(0x3c2),'xChsb':_0x37a946(0x138),'aOSfs':function(_0x43e4e2,_0x133bc8){return _0x43e4e2===_0x133bc8;},'OeDTT':_0x37a946(0x34c),'wuInJ':_0x37a946(0x25c),'KIXaM':function(_0x2edd0e,_0xa10d48){return _0x2edd0e||_0xa10d48;},'ApAqi':'內容正在等待審核，請稍後再試','MbRRC':'suspended','JHman':function(_0x222db2,_0x27fb46){return _0x222db2===_0x27fb46;},'oHodL':_0x37a946(0x3c5),'ENGJV':'該內容的分享期限已到期','OUZEr':'div[style*=\x22font-size:64px\x22]','RqIBU':function(_0x112633,_0x3cbfdc){return _0x112633===_0x3cbfdc;},'AtrQn':function(_0x53b797,_0x2888c5){return _0x53b797===_0x2888c5;},'SHtjp':function(_0xa2d64f){return _0xa2d64f();},'ChItW':_0x37a946(0x40e),'fMVeX':_0x37a946(0x5e9),'RIZcv':_0x37a946(0x4d3),'DqjOL':'🔐\x20解鎖按鈕被點擊，密碼長度:','hfVUF':function(_0x1e7bc8,_0x3da41a){return _0x1e7bc8<_0x3da41a;},'REAPv':_0x37a946(0x143),'Bvpdp':'解鎖中...','FzsTv':function(_0x36b2b4,_0x41e26f){return _0x36b2b4===_0x41e26f;},'FVydE':_0x37a946(0x340),'jgSZh':'解密函數未載入','FvsyB':_0x37a946(0x305),'deZve':_0x37a946(0x56e),'nhZCX':function(_0x110a14,_0x4a9eba){return _0x110a14===_0x4a9eba;},'oNSxO':function(_0x110c2a){return _0x110c2a();},'myfCQ':_0x37a946(0x3c7),'YSBQA':_0x37a946(0x548),'BQGng':_0x37a946(0x5bf),'cdwNq':_0x37a946(0x465),'ETypD':function(_0x4d73ec,_0x2e29da){return _0x4d73ec(_0x2e29da);},'JGQfU':function(_0x2e3685,_0x1608e9){return _0x2e3685-_0x1608e9;},'iUuyN':_0x37a946(0x3b4),'aopLR':function(_0x49bd64,_0x5008c6){return _0x49bd64(_0x5008c6);},'blHbA':_0x37a946(0x3b3),'FOtuL':function(_0x2e103a,_0x23b096){return _0x2e103a(_0x23b096);},'TyhTy':'meta[name=\x22content-hash\x22]','iBUHV':function(_0x1c88b8,_0x4733d7){return _0x1c88b8(_0x4733d7);},'hbkZN':_0x37a946(0x15b),'Qezvk':_0x37a946(0x13b),'iqgVt':_0x37a946(0x234),'lkIks':_0x37a946(0x2a4),'DXgOU':function(_0x2ba693,_0x34f504){return _0x2ba693>_0x34f504;},'IMSfR':function(_0x55a079,_0x46c5d6){return _0x55a079&&_0x46c5d6;},'wDQlr':_0x37a946(0x3c8),'YmhLz':_0x37a946(0x58b),'nmeJv':_0x37a946(0x3bd),'paFhe':_0x37a946(0x135),'DIODM':'keydown','kAzLK':function(_0x101b08,_0x50833a){return _0x101b08===_0x50833a;},'euxIx':_0x37a946(0x24d),'UidST':'DOMContentLoaded','LcxuO':function(_0x2de7bd,_0x31697d){return _0x2de7bd(_0x31697d);},'ZvguB':'page_view','yYVth':_0x37a946(0x50f),'sALvz':_0x37a946(0x38b),'JrDxW':_0x37a946(0x25d)},_0x17f8bd=_0x283631=>document[_0x37a946(0x34f)](_0x283631),_0x434b31=_0xbed52a[_0x37a946(0x272)](_0x17f8bd,_0xbed52a[_0x37a946(0x3f4)])?.[_0x37a946(0x33a)]||_0x37a946(0x207),_0x2c8e96=_0xbed52a[_0x37a946(0x267)](_0x17f8bd,_0x37a946(0x2a6))?.[_0x37a946(0x33a)]||'',_0x3ac42d=_0xbed52a[_0x37a946(0x272)](_0x17f8bd,_0xbed52a[_0x37a946(0x316)])?.['content']||'',_0x4fea77=_0xbed52a[_0x37a946(0x3d0)](_0x17f8bd,_0xbed52a[_0x37a946(0x23c)])?.['content']===_0xbed52a[_0x37a946(0x599)],_0xf419a7=_0xbed52a[_0x37a946(0x3d0)](_0x17f8bd,_0xbed52a[_0x37a946(0x5e7)])?.[_0x37a946(0x33a)]===_0xbed52a[_0x37a946(0x599)],_0x17d3d9={};_0x17d3d9['ok']=!![],_0x17d3d9['token']=null,_0x17d3d9[_0x37a946(0x3e1)]=_0xbed52a[_0x37a946(0x5a0)],_0x17d3d9[_0x37a946(0x566)]=![],window[_0x37a946(0xe1)]=_0x17d3d9;async function _0x54b7b9(_0x4ee9a9=_0x37a946(0x590)){const _0x393d93=_0x37a946;if(!_0x434b31||!_0x2c8e96)return;const _0x2b2414={'memoir_id':_0x2c8e96,'content_hash':_0x3ac42d,'event_type':_0x4ee9a9,'timestamp':new Date()[_0x393d93(0x44d)](),'page_path':window[_0x393d93(0x5a3)][_0x393d93(0xee)],'repo_url':_0xbed52a[_0x393d93(0x428)](window[_0x393d93(0x5a3)][_0x393d93(0x153)],window['location']['pathname'][_0x393d93(0x59d)]('/')[_0x393d93(0x2d8)](0x0,0x3)['join']('/')),'referrer':document[_0x393d93(0x1e1)]||null,'user_agent':navigator[_0x393d93(0x2c8)],'viewport':{'width':window[_0x393d93(0x2e3)],'height':window[_0x393d93(0x23e)]},'approval_token':window['__APPROVAL__']?.[_0x393d93(0x105)]||null};try{await fetch(_0x434b31+_0x393d93(0x2bb),{'method':_0xbed52a[_0x393d93(0x4ef)],'headers':{'Content-Type':_0xbed52a['FZSBl'],'Accept':_0xbed52a[_0x393d93(0x4f1)]},'body':JSON['stringify'](_0x2b2414)});}catch(_0x5c00bb){console['warn'](_0x393d93(0x417),_0x5c00bb);}}async function _0x2529a8(_0x3c042f,_0x11a923){const _0x5442be=_0x37a946;if(!_0x434b31)return;try{await fetch(''+_0x434b31+_0x3c042f,{'method':_0xbed52a[_0x5442be(0x4ef)],'headers':{'Content-Type':_0xbed52a[_0x5442be(0x4f1)]},'body':JSON[_0x5442be(0x51e)]({'memoir_id':_0x2c8e96,'content_hash':_0x3ac42d,'page_path':location[_0x5442be(0xee)],'repo_url':_0xbed52a[_0x5442be(0x496)](location[_0x5442be(0x153)],location[_0x5442be(0xee)][_0x5442be(0x59d)]('/')[_0x5442be(0x2d8)](0x0,0x3)['join']('/')),'user_agent':navigator['userAgent'],..._0x11a923})});}catch(_0x2e188e){}}async function _0x309d5c(){const _0xae367c=_0x37a946;if(window[_0xae367c(0xe1)][_0xae367c(0x566)]){const _0x1c8b7e={};return _0x1c8b7e['ok']=window['__APPROVAL__']['ok'],_0x1c8b7e[_0xae367c(0x3e1)]=window[_0xae367c(0xe1)]['status'],_0x1c8b7e;}if(_0xbed52a['WaKum'](!_0x4fea77,!_0x434b31)){const _0x532f22={};_0x532f22['ok']=!![],_0x532f22[_0xae367c(0x105)]=null,_0x532f22[_0xae367c(0x3e1)]=_0xbed52a[_0xae367c(0x5e3)],_0x532f22['checked']=!![],window[_0xae367c(0xe1)]=_0x532f22;const _0x239f9b={};return _0x239f9b['ok']=!![],_0x239f9b[_0xae367c(0x3e1)]=_0xbed52a['PuRGx'],_0x239f9b;}const _0x4e6a09={};_0x4e6a09[_0xae367c(0x185)]='view_attempt',await _0x2529a8(_0xbed52a[_0xae367c(0x14c)],_0x4e6a09);try{const _0x574b57={};_0x574b57[_0xae367c(0x30f)]=_0xae367c(0x3f6);const _0x452b30=await _0xbed52a[_0xae367c(0x22f)](fetch,_0x434b31+_0xae367c(0x445),{'method':_0xbed52a[_0xae367c(0x4ef)],'headers':_0x574b57,'body':JSON[_0xae367c(0x51e)]({'memoir_id':_0x2c8e96,'content_hash':_0x3ac42d,'page_path':location[_0xae367c(0xee)],'repo_url':location[_0xae367c(0x153)]+location[_0xae367c(0xee)][_0xae367c(0x59d)]('/')[_0xae367c(0x2d8)](0x0,0x3)[_0xae367c(0x538)]('/')})});if(_0x452b30['ok']){const _0x47675c=await _0x452b30['json']();window[_0xae367c(0xe1)][_0xae367c(0x3e1)]=_0x47675c[_0xae367c(0x3e1)],window[_0xae367c(0xe1)][_0xae367c(0x105)]=_0x47675c[_0xae367c(0x105)]||null,window[_0xae367c(0xe1)]['checked']=!![];if(_0xbed52a[_0xae367c(0x295)](_0x47675c[_0xae367c(0x3e1)],_0xbed52a[_0xae367c(0x315)])||_0xbed52a[_0xae367c(0x525)](_0x47675c[_0xae367c(0x3e1)],_0xae367c(0x25c))){window[_0xae367c(0xe1)]['ok']=!![];const _0xb64713={};return _0xb64713['ok']=!![],_0xb64713[_0xae367c(0x3e1)]=_0x47675c[_0xae367c(0x3e1)],_0xb64713;}else{window[_0xae367c(0xe1)]['ok']=![],_0xbed52a[_0xae367c(0x4c7)](_0x4d974f,_0x47675c[_0xae367c(0x1a7)]||_0xbed52a[_0xae367c(0x3a9)],_0x47675c['status']),await _0xbed52a[_0xae367c(0x4c7)](_0x2529a8,_0xbed52a[_0xae367c(0x543)],{'event':_0xbed52a[_0xae367c(0x43e)],'status':_0x47675c[_0xae367c(0x3e1)],'reason':_0x47675c[_0xae367c(0x1a7)]});const _0x5c21b3={};return _0x5c21b3['ok']=![],_0x5c21b3[_0xae367c(0x3e1)]=_0x47675c[_0xae367c(0x3e1)],_0x5c21b3;}}else{let _0x187527;try{_0x187527=await _0x452b30['json']();}catch{const _0x5af33a={};_0x5af33a[_0xae367c(0x3e1)]=_0xbed52a['SiQCV'],_0x187527=_0x5af33a;}window[_0xae367c(0xe1)]['ok']=![],window[_0xae367c(0xe1)][_0xae367c(0x3e1)]=_0x187527[_0xae367c(0x3e1)]||_0xbed52a[_0xae367c(0x24f)],window[_0xae367c(0xe1)][_0xae367c(0x566)]=!![];const _0x13c68b=_0x187527?.['reason']||_0x187527?.[_0xae367c(0x18a)]||'審核被拒絕\x20(HTTP\x20'+_0x452b30[_0xae367c(0x3e1)]+')';_0x4d974f(_0x13c68b,_0x187527[_0xae367c(0x3e1)]||_0xbed52a[_0xae367c(0x24f)]),await _0xbed52a[_0xae367c(0x192)](_0x2529a8,_0xbed52a[_0xae367c(0x543)],{'event':_0xbed52a[_0xae367c(0x43e)],'status':window[_0xae367c(0xe1)][_0xae367c(0x3e1)],'reason':_0x13c68b,'http_status':_0x452b30['status']});const _0x4fbd1b={};return _0x4fbd1b['ok']=![],_0x4fbd1b[_0xae367c(0x3e1)]=window[_0xae367c(0xe1)][_0xae367c(0x3e1)],_0x4fbd1b;}}catch(_0x3c0f8b){const _0x4b719f={};_0x4b719f['ok']=!![],_0x4b719f[_0xae367c(0x105)]=null,_0x4b719f[_0xae367c(0x3e1)]=_0xbed52a[_0xae367c(0x149)],_0x4b719f[_0xae367c(0x566)]=!![],window['__APPROVAL__']=_0x4b719f;const _0x1a010f={};return _0x1a010f['ok']=!![],_0x1a010f['status']=_0xbed52a[_0xae367c(0x149)],_0x1a010f;}}function _0x4d974f(_0x388875,_0x1596d6){const _0x3e5baa=_0x37a946,_0x502ab4=document['getElementById'](_0xbed52a['RNFcE']),_0x3f933e=document[_0x3e5baa(0x175)](_0xbed52a[_0x3e5baa(0xed)]),_0x56d1ce=document[_0x3e5baa(0x175)](_0x3e5baa(0x24b)),_0x28d007=document[_0x3e5baa(0x175)](_0xbed52a[_0x3e5baa(0x1e4)]),_0x13bf0b=document[_0x3e5baa(0x175)](_0xbed52a[_0x3e5baa(0x223)]);_0x502ab4?.[_0x3e5baa(0x2ac)][_0x3e5baa(0x18b)](_0xbed52a[_0x3e5baa(0x1a9)]),_0x3f933e?.['classList'][_0x3e5baa(0x18b)](_0x3e5baa(0x3c2)),_0x56d1ce?.[_0x3e5baa(0x2ac)][_0x3e5baa(0x18b)](_0xbed52a[_0x3e5baa(0x1a9)]);if(_0x13bf0b){let _0x2f6649=_0xbed52a[_0x3e5baa(0x165)](_0x388875,_0xbed52a[_0x3e5baa(0x461)]);if(_0xbed52a[_0x3e5baa(0x1c4)](_0x1596d6,'rejected'))_0x2f6649=''+(_0x388875||_0xbed52a[_0x3e5baa(0x5ef)]);else{if(_0xbed52a[_0x3e5baa(0x1c4)](_0x1596d6,_0xbed52a[_0x3e5baa(0x460)]))_0x2f6649='審核進行中：'+_0xbed52a[_0x3e5baa(0x134)](_0x388875,_0xbed52a[_0x3e5baa(0x160)]);else{if(_0x1596d6===_0xbed52a[_0x3e5baa(0x18c)])_0x2f6649=_0x3e5baa(0x16f)+(_0x388875||'該內容已被暫時停止公開');else _0xbed52a[_0x3e5baa(0x48e)](_0x1596d6,_0xbed52a['oHodL'])&&(_0x2f6649=_0x3e5baa(0x4a3)+_0xbed52a[_0x3e5baa(0x165)](_0x388875,_0xbed52a[_0x3e5baa(0x5aa)]));}}_0x13bf0b[_0x3e5baa(0x2dd)]=_0x2f6649;}if(_0x28d007){const _0x481112=_0x28d007['querySelector'](_0xbed52a[_0x3e5baa(0x5c2)]);if(_0x481112){let _0x453bb8='🚫';if(_0xbed52a['RqIBU'](_0x1596d6,_0xbed52a[_0x3e5baa(0x460)]))_0x453bb8='⏳';else{if(_0xbed52a['AtrQn'](_0x1596d6,_0xbed52a[_0x3e5baa(0x18c)]))_0x453bb8='⏸️';else{if(_0x1596d6===_0xbed52a[_0x3e5baa(0x35a)])_0x453bb8='⏰';else _0x1596d6===_0xbed52a[_0x3e5baa(0x24f)]&&(_0x453bb8='🚫');}}_0x481112[_0x3e5baa(0x2dd)]=_0x453bb8;}_0x28d007[_0x3e5baa(0x2ac)][_0x3e5baa(0x35f)](_0xbed52a[_0x3e5baa(0x1a9)]);}window[_0x3e5baa(0x271)]&&(window['MemoirFlowDecryptionSystem']=![]);}window[_0x37a946(0x5f3)]=async()=>{const _0x2e4196=_0x37a946;try{const _0x4747b7=await _0xbed52a[_0x2e4196(0x490)](_0x309d5c);return!!(_0x4747b7?.['ok']||_0xbed52a[_0x2e4196(0x1c4)](_0x4747b7?.[_0x2e4196(0x3e1)],_0xbed52a[_0x2e4196(0x460)]));}catch{return!![];}};async function _0x285018(){const _0x51a381=_0x37a946,_0x363774=await window[_0x51a381(0x5f3)]();if(!_0x363774)return;_0xbed52a[_0x51a381(0x1d0)](typeof window[_0x51a381(0x4eb)],_0xbed52a['ChItW'])&&window[_0x51a381(0x4eb)]();}const _0x3bd66b=_0xbed52a[_0x37a946(0x296)](sessionStorage[_0x37a946(0x2a5)](_0xbed52a['deZve']),'1'),_0x3dedda=!!(window[_0x37a946(0x3f3)]&&window[_0x37a946(0x3f3)][_0x37a946(0x595)]&&_0xbed52a['DXgOU'](window[_0x37a946(0x3f3)][_0x37a946(0x595)][_0x37a946(0x4fe)],0x0));_0xbed52a['IMSfR'](_0x3bd66b,!_0x3dedda)&&(console[_0x37a946(0xe2)](_0xbed52a[_0x37a946(0x4e5)]),sessionStorage[_0x37a946(0x472)](_0xbed52a[_0x37a946(0x530)]));if(_0xf419a7&&!sessionStorage['getItem'](_0xbed52a['deZve'])){const _0x508235=document[_0x37a946(0x175)](_0xbed52a[_0x37a946(0xed)]);_0x508235&&_0x508235[_0x37a946(0x2ac)]['remove'](_0xbed52a[_0x37a946(0x1a9)]);const _0x348570=document[_0x37a946(0x175)](_0xbed52a[_0x37a946(0x500)]),_0x1d36f1=document['getElementById'](_0xbed52a[_0x37a946(0x44b)]);_0x508235&&(_0x508235['classList']['remove'](_0xbed52a[_0x37a946(0x1a9)]),console[_0x37a946(0xe2)](_0xbed52a[_0x37a946(0x2a3)]));const _0x4c980c=async()=>{const _0x5578e5=_0x37a946,_0x3a6e82=document['getElementById'](_0x5578e5(0x58b)),_0x627f5=document[_0x5578e5(0x175)](_0xbed52a[_0x5578e5(0x44b)]),_0x5f2803=document['getElementById'](_0xbed52a[_0x5578e5(0x3cc)]),_0x11ce51=_0x3a6e82?.[_0x5578e5(0x37d)]?.[_0x5578e5(0x3dc)]()||'';_0x5f2803&&_0x5f2803['classList']['add'](_0x5578e5(0x3c2));console[_0x5578e5(0xe2)](_0xbed52a[_0x5578e5(0x2d2)],_0x11ce51[_0x5578e5(0x4fe)]),console[_0x5578e5(0xe2)](_0x5578e5(0x49b),typeof _0x11ce51,'值:',_0x11ce51);if(_0xbed52a['hfVUF'](_0x11ce51[_0x5578e5(0x4fe)],0x6)){_0x5f2803&&(_0x5f2803['textContent']=_0xbed52a[_0x5578e5(0x31a)],_0x5f2803['classList'][_0x5578e5(0x35f)](_0xbed52a['ekFeA']));return;}_0x627f5&&(_0x627f5[_0x5578e5(0x239)]=!![],_0x627f5[_0x5578e5(0x2dd)]=_0xbed52a[_0x5578e5(0x596)]);try{let _0x2aff3d=![];if(_0xbed52a[_0x5578e5(0x29c)](typeof window[_0x5578e5(0xf4)],_0xbed52a[_0x5578e5(0x47e)]))console[_0x5578e5(0xe2)]('📞\x20調用\x20autoDecrypt，密碼:',_0x11ce51),_0x2aff3d=await window[_0x5578e5(0xf4)](_0x11ce51);else{if(_0xbed52a[_0x5578e5(0x390)](typeof window[_0x5578e5(0x3de)],_0xbed52a['ChItW']))console[_0x5578e5(0xe2)](_0xbed52a[_0x5578e5(0x539)],_0x11ce51),_0x2aff3d=await window[_0x5578e5(0x3de)](_0x11ce51);else throw new Error(_0xbed52a[_0x5578e5(0x14e)]);}console[_0x5578e5(0xe2)](_0xbed52a[_0x5578e5(0xe9)],_0x2aff3d);if(_0x2aff3d){sessionStorage['setItem'](_0xbed52a[_0x5578e5(0x530)],'1');const _0x3bd05b=document[_0x5578e5(0x175)](_0x5578e5(0x540));_0x3bd05b&&_0x3bd05b[_0x5578e5(0x2ac)][_0x5578e5(0x18b)](_0x5578e5(0x3c2)),_0xbed52a['nhZCX'](typeof _0x285018,_0xbed52a[_0x5578e5(0x47e)])&&await _0xbed52a[_0x5578e5(0x5a6)](_0x285018);}else throw new Error(_0xbed52a[_0x5578e5(0x422)]);}catch(_0x25394){console[_0x5578e5(0x13d)](_0xbed52a[_0x5578e5(0x25e)],_0x25394),_0x5f2803&&(_0x5f2803[_0x5578e5(0x2dd)]=_0xbed52a[_0x5578e5(0x252)],_0x5f2803[_0x5578e5(0x2ac)]['remove'](_0x5578e5(0x3c2)));}finally{_0x627f5&&(_0x627f5['disabled']=![],_0x627f5[_0x5578e5(0x2dd)]='解鎖');}};_0x1d36f1?.['addEventListener'](_0xbed52a['paFhe'],_0x4c980c),_0x348570?.[_0x37a946(0x554)](_0xbed52a[_0x37a946(0x559)],_0x174506=>{const _0x49f6f5=_0x37a946;if(_0x174506['key']===_0xbed52a['cdwNq'])_0xbed52a[_0x49f6f5(0x490)](_0x4c980c);});return;}_0xbed52a[_0x37a946(0x490)](_0x285018);_0xbed52a[_0x37a946(0x3bc)](document[_0x37a946(0x39b)],_0xbed52a['euxIx'])?document[_0x37a946(0x554)](_0xbed52a[_0x37a946(0x275)],()=>_0x54b7b9(_0x37a946(0x590))):_0xbed52a['LcxuO'](_0x54b7b9,_0xbed52a[_0x37a946(0x2de)]);window['addEventListener'](_0xbed52a['yYVth'],()=>{const _0x4908d6=_0x37a946;_0xbed52a[_0x4908d6(0x272)](_0x54b7b9,_0x4908d6(0x1df));});let _0x19777a=Date[_0x37a946(0xf0)]();window[_0x37a946(0x554)](_0xbed52a[_0x37a946(0x583)],()=>{const _0x1da990=_0x37a946,_0x27b13a=_0xbed52a['JGQfU'](Date['now'](),_0x19777a);navigator[_0x1da990(0x4a1)](_0x434b31+_0x1da990(0x2bb),JSON['stringify']({'memoir_id':_0x2c8e96,'event_type':_0xbed52a['iUuyN'],'session_duration':_0x27b13a,'timestamp':new Date()[_0x1da990(0x44d)]()}));}),window[_0x37a946(0x554)](_0xbed52a[_0x37a946(0x3d2)],_0xa2ea3=>{const _0x306d1b=_0x37a946;_0xbed52a[_0x306d1b(0x136)](_0x54b7b9,_0x306d1b(0x332));});})()));let _autoDecryptImpl,__HAS_AUTO_DECRYPT_IMPL__=![];function _0x166c(){const _0x22ff1a=['DgLTzwXPBMuTAxrLBsa','B0L5A0W','C2v0qxr0CMLIDxrL','s1zotNa','BMv4De1LzgLHqNrU','zgvZy3jPChrPB24','CuLuz1a','z1jAs3m','DgfYz2v0','yM9KEq','sKHTyw4','DNv1vhK','u0H0ANa','Bg9HzgLUz1nJCMvLBG','Bwf4q2fJAgvtAxPL','EhLHEwe','Dg90ywXfDMvUDhm','wMHst3G','wwvXqw4','qK9yu20','8j+uKIdLT7lPOA/NPlRLR4BNORZOVlJLHAxKU4VPNAi','5A+P5Qc45PYQ6ycA6ygo','zuj2ruC','8j+uKcdLR4BNORZPOz7LNOVMQQlMN6u6','DhjHy2TqywDLvMLLDW','mZyYntG2qw5StMXT','zMXHDe1HCa','BM9Kzvr5Cgu','C0HHywe','C2vUzejLywnVBG','B2rfENG','5ywN5A655BEY6ygo5PYF77YA','zg9JDw1LBNrfBgvTzw50','CMvWzwf0kgf1Dg8TzMLSBcWGBwLUBwf4kdiWmhb4lcaXzNiPkq','zvfuzfC','C3vIDgL0BguTAgLKzgvU','8j+sPsdPOA/NPlRPJk/OQQtOQiRMGA86','zhLHwu4','wNjurMS','mNWXFdn8mhW0','iowaI+AwSoEAHoAOMEIOMowQKUMRLowfG+E0Oo+8JoMwI+wNI+INO+wVHI4UlG','B1bKENu','q01zvMy','5AQs6AUuia','y29UDgv4Dg1LBNu','B1zrwLy','4PYfioA3T+wqIoINO+wVHUAOOEw8J+I8IEwfPEwUJoAiKa','ic0G','BKXlCNi','BwvKAwfdB3vUDgvYt3zLCMXHEq','te95t28','zNjVBq','wwXtrKq','DgH1BwjUywLSC1nJCM9SBa','s3rMsee','B0fUvKq','DwzjANG','A1PiAhq','lM1HCNf1zwvFx2nVBNrLBNq','sNvKCvm','vMzWuem','zgf0ys10B29SDgLW','zgf0yuv4Axn0CW','ExffsuG','tLz4DLK','Ahr0Chm6lY9PBwCUEw91DhvIzs5JB20VDMKV','rw1Kv0S','yxLWze8','zvDNv3y','Bffsvhu','s3vxAvK','uundCw0','zefjz0m','CMDQvfG','DgLTzwXPBMvty3jVBgW','DLvwy28','w2LKkJ0Iu2v0DgLUz3mIxq','DhjHBNnMB3jT','B25ezwnYExb0Aw9Uu3vJy2vZCW','CgfZC3DVCMrfCNjVCG','Aw5Uzxjive1m','zMfSC2u','Cgv4uwC','DM5jqNy','ufPgvem','CM5WBKq','Dg9mB2nHBgveyxrLu3rYAw5N','z3jPzc1TB2rL','Dgzkze8','CMfHz04','DMLKzw8','Cgf0Aa','vufpDfq','ls1Nyxa','ELLRCgW','DgLTzwXPBMuTzxzLBNqTDgL0Bgu','yMXVy2TLzfjLyxnVBG','D0rrBhi','4PQG77IpioAQOUA4RowiSoMhJEAwSoAvToEqHUw+JoElGoAfI+s4JEs4GoIhTo+8Jos/RUATO+s4Rs4UlG','tLvbCgG','BgfWzNO','zgL2','Aw5UzxjuzxH0','x19IB290qxbWx18','rhLzB24','t0DRCNC','A2v5zg93BG','Bvn4v0C','cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGig1HEc13Awr0AdOGmtaWjtSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGBwf4lwHLAwDODdOGmtaWjtSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGD2LKDgG6igf1Dg87cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGigHLAwDODdOGyxv0BZSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGB2jQzwn0lwzPDdOGy29UDgfPBJSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGB2jQzwn0lxbVC2L0Aw9UoIbJzw50zxi7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGign1CNnVCJOGCg9PBNrLCJSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGica','rLPtqMW','sK1Tzxm','zMTKAuC','ChjVz3jLC3neB3rZ','AM1huey','z3jPzfrVz2DSzq','B2nmquu','D0XWtMO','BuPJDhy','C29YDa','C2v0DgLUz3ncDg4','8j+uKcdLMjFOQABOP6pPJPBVViZLR4BNORZPLBFLUQy6','AgvSCfbHBMvS','BgvUz3rO','zxzLBNrjBMrLEa','ww1OthO','BLzAz20','y0T2sMu','57o757wX6yYV6kQK77YA57Y65Bcr6kEJ5A+g57we5lU2','z2LUzhK','i3f1AwnRu2v0DgLUz3ncDg4','y2ffDK0','z2v0vgLTzq','4P2mioAjVUs4JEwiSowVHUEIVoI8UowfPEwfG+E0Oa','CxvPy2Ttzxr0Aw5NC0j0BG','sw9Msva','B3zLCMzSB3C','vfD6D2C','m0LssM9UyW','B25JBgLJAW','BwvTB2LYoMrLy3j5ChrLza','vwvlAei','vw1KBxO','yMvAzxK','yMfJA2DYB3vUza','C2nHBguOms41kq','ENvXzvG','AgvHzgvYvg9Nz2XLqNrU','zgf0ytPPBwfNzs9ZDMCREg1So2jHC2u2ncXqse4YwNLcm2fxuJbHrdbPtMPbAuLhAgXHv2rVzeqWAu5QqwLjsfPWwLHKq2iZzZLjAKfNtunbmK1dqtjnq0LNwM1SC2jemgLIBtL1wLnjz2vhmxnIBK05sw1OmgriqtzmEtKZzdnJDwr6txvIm0PUthPjD01eqxzJm1PUswO0s1bisMXzm1fNzdjSA2rhzZLjALL3swLcB1PxBg5Hsfe5swPzD0LPqM1Hv3HZufnjALPTwxDnref3swK4k0nQEdbAwgGWsuHNouLQtxDjAui1ufnjEK1dswDKr1y0zemXAgjTtM9Im0K5sw0XCfPhuNnAu0LNwKHRouLPnhPAvZbPsuDADMjUuxrABuz0yvD4nvbtsNPzvZv6tfHoBgnTBg1jAujTyJi1meXytNbLBvu5swPfmKLPqM1Hv3HZufnkm2fhBdbAu0KRvMTSrvjvodHmm1jSzuHrk0nQD3zJm1PUugDVpq','zM9UDfnTywXS','ANfhvvu','sgLLDhe','wKHhEwm','6kEJ5A+g5QIH57we6lYj5ywL6yc+5PMc77Ym6kUl6yEn5Pw05OIw56In5B6m5yAn6kMM','tM1vz1K','C3rYAw5NAwz5','thDovuO','5zYw54Mhia','DwDwAw4','tejyvfK','u1zxDeW','ALfIu0W','uu1WsM4','zMn3z3a','yMXVyG','AvDQAMG','sNHnD0S','ugTkv1a','Bwv0yuTLEq','rg5KzhO','tgDsrKi','A0r2ANC','zgLNzxn0','zgvADMu','6kEJ6y6w5AsX5Pwx','BwvKAweV','i2y1zJvMnq','ChPQwKS','cIaGicaGicaGicaGicaGicaGicaGicaGicaGicb0CMfUC2zVCM06ihrYyw5ZBgf0zvKOmcK7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicb0CMfUC2L0Aw9UoIb0CMfUC2zVCM0Gmc4ZCYbLyxnLoWOGicaGicaGicaGicaGicaGicaGicaGica','BwvKAxvT','BwLPDe0','AM9PBG','rLz5zeu','zgf0ytPPBwfNzs9ZDMCREg1So2jHC2u2ncXqse4YwNLcm2fxuJbHrdbPtwPbD0LPqM9Av2XUyuHrouLQsxDnq0LNzg1SBgqWsNzLrdbPtunbD0LesxDnq0f5turbAuLhwNbIr3C5sw01DMjTvwLjsgH0yKC1ELbtsM9Ksfj3t2K4DMqZzdnmBMn6tg05EvP5ohLnref3tdnomLP5ssTqr1jSwM5nk1bhEhbIBvzOy2TKEvLxuNbAvZuWsuDSA1btsM5jAJq4yZnsDMndqNzABvP6wLHrouLQqwXjAuj6zeC5D0XxtNzIrZL5ufnkEvOYsMHlreKXtLn3Eu5uvxnnALuXterbDu1tA2LmEJq4yZnsDMndqNzABvP6wLHrouLQrxDnq1vPsuHomgiZqxrzmJLZyJnjouLUsM5zBuvVtwPvmuXestfou3D5tLrvC01dnhDou2TPthO0oeWYEhbIBvzOy2TKEvLxuNbAvZuWugP3DLPhvM1JEJq4y21wAMrdqJnHv1iWyuqWAu1QqxDjAujVwLDSBMfiutLjAKL3tunjz1PTBhnIrdbPzfHkC0TdtM5lu0L2ugP4AMfysMPIr1vNwtnNouLQrxDnq0LNwtnRouLQrxDnq0LNy2OWAu1uvwLjr1PWyKD3ouLTnxzIBvvPsuHomgnToxjAvdbPsxPoAu9esM1oAuLNyZnsEwiYDgXmwgrWwKHsB1btsxPjAJq4wvC1CgjxrJbAvLj5wvC1ELPToxLIu0jOzeHsEwfxsJfKr1zpwvCXBfbtsJbJBuz1yZjADMnTmgLjsfi1y0DvouLUsNzKr0yWwLnjz2rTrNnKv1z6ufnjD0LerxDnq0f4turbn016wxDjrev3tunbEe1eqwLjr1iXy2OWAu1ytwLjsePSy0DwAgrftNzKvZuWufnkCgjTuMXABwX1yvHsBeLPocTqqZLQyvHkAMjhvsTqqZL6zg1JkW','DLP1u2O','rxr5wfG','zNfmwwe','quzsq24','AgvHzgvYq29UDgvUDa','CgfZC3DVCMrnB2rHBa','CgfKzgLUzY10B3aGmc4ZCYbLyxnL','57IU5zYwia','DMnxALy','q25KvLm','BwvTB2LYoMfWCdPZDgfYDa','uun0Aee','swH4t2O','8j+AQcdOP6pPJPBPGy7NQiVLH7RPJk86','wM9WEuW','sfLSCxy','y2XPzw50v2LKDgG','C3r5Bgu','qKP6BuK','sg56y0O','8j+wVo+4JYdOMzxNKiBLGRpNTBhLNjBNIyCG','CwruCwi','tMfjuhi','wvnWu3C','uvzIv0G','ywrKrxzLBNrmAxn0zw5LCG','uuLTtLK','y2HPBgrYzw4','Ew91DhvIzs5JB20','C2TPChbLza','reLpre0','sxr5y0G','A2v5ChjLC3m','mxW0Fdj8m3W1Fda','wujuBhC','zM9YrwfJAa','AgXzCxq','tKv2DMy','zvfdtwS','C3vIDgL0BgvuB2DNBgu','zNHlu2q','D1Hmyue','u2rfv1C','y2HLy2TLza','BfLizxe','yvngtfu','BwvKAwfwAwv3zxi','tgnAy1m','8j+oIsdOP6pPJPBMIjdLIP/KUjtMLBJMK5RLT7lOViNLHAu','D0HlzKy','te5Az3i','BwzFChDFDw5SB2nRzwq','BMnluLe','y29UDgfPBNm','rxLPz1q','sejwA0q','CMv0CNLcDg4','DgL0Bgu','y3vYCMvUDa','zxLkAMfhBhvAwe5Swdi1AgjxvwLpAuXWBg92BM1IEM9NsvHTBdzyB3fVD2Lmq0PQy21wAgrhvMTrwffPt2LjEu1estfmvee1tfrbnvzeqtfpAKf4t2PfEuXQstfnrgn4tNPnD01dC3Dnrg93tunjC0LTvNvAmNHWyZjOzMjTrNrAu0K2sw1sBgrTvNnIm0jSy2KXC2iYy2Lmq0PSzg1wDwritwLpBhq3sw1sAgrhvwLpAuL5turjmuXuqtvmvee1swL3AvPhvNPzm0PWy0HsCgiYngLpAuXSChfyBgPAvgT1B1PJyMX4Dtu1EuW1tdzhvKDgmwnTBMXZteHTBuSVA3vjrhbSB3zSCdr2B3bVsgXYChjUDNfUBxvjwg1WwNjVCg9iBMXlAM9TngzSBM92CgDVvg1TsY9WCduZBhm3rgXUB3zUBw9uBg5VDMXPs1HSA0KZBNfmshz2sxPSAuTYCg1HvgX2nNzSAJvIA3vzDNbVwJDUBw9uCgC3m21ZCeXTBKLUBwXzAM1UChDPtenkCfPdstzjAKuZtLrJEK9uuxHnvfv3tNPjAuXdsNrAv1jWwvnjnLCZC2LABwXZwLC1AgjxvwLpAuP3y21wmMfxvJnmBMrSww5bAuXdsNbAq0K2swPnEu9uutboBvzQtfDfEe9uA3rorePQwMKWnfPQttrmvfPOtxPOBe0Yttbpr1zStMLjC0LTBhPwwePZswPWBvLxEhPAu3DPyJnkCfOYBhvzv3HpwvCXBeLQB2LJsePSzg1SBgr5ntnAv0P3swL3AwnhrJbHq0K2sw0XBfPhBgHmm0j5wLHACfPyy3vKmLzPy0njC0LUuJvJr1vPt2LkCgjxrM5Au0LZsw5wEwjdstzIBLzZyKGWC2v5sM1Hv3HSyM1gDfPtstzjBe5MwhPvm01QAZbpvev6tg1WD1P5sxnjBwXRswPVAvKYtMHzEKf5tM1nDfLuA3DzEtaWtwPnD0XuA3LnBuv0wMPNmfPTwxDAve0WtvDAAuLPD2LHwe5wy213Au9TwMHIse5StenkDMnTBg5HvZvOyKu1AgjxvwLpAuPuwde4mu56stvorgT4txK1Cwnhy2Lmq0P3wvHsB0LQB2LIv1zRyvDfDLuXowzovgn5t1rrnu1utxvHBKjUswL3AwriBhDAu0K2sw1SDfLxzgXjAxDPzfHkC0LQChvKv3HZzLyWC0LToxLAr1z5swPVD0XdsJbHwfjZwLnjnKL1uY9YDwfvDwvtnMH1BvHUt2fxDK9xuNzLv1fQzwvHAe9xvMORBwHQq0O5teHZAvPhrJbAu0K2swPjD01QvxrnrgT0turRAuXdsMTAwe5Qy21SD2rhBhzIAuK2sxvtl3j1yvv1zvm2AhvtnhuRAw1NzwfXBe9HAgLgEhvABKP2yM5sBgjTuMzAvZvQy25SD2rhBhzIAtv5yZf4DwjxvMTHv0zMyZnsBfLxEdbHrJLSyM1oEwvyqJbHvZL1tg5kELHhnxrAvZf2yvHkzLKYoxrIv0z1wKHnDwnUtwLmq0PWwKnjnKLQrtnovgmWtwPrEe16ttvoEKLPtenkDfPxuNbzu0K2vZnZAvPTBhnAvZvOyLDvAu9PsLrymtGXtNPjm09evtroEtvXy0DJAuXdsNbAq0K2swPKA1PuvMTnrev6tfDgBe56wxrorev4wwKXAe16uMTmveu0wwPnEe1httfomLPQwLnjC0LTBhPwwePZswPWBvLxEhPAu3DPyJnkCfOYBhvzv3HpwvCXBeLQB2LvmtLMtLrJEu56zZfprgn1yw5cBKLPD2LJr0yWyunjnKLTmwXAr2XOtdfozLH6vtnnAMm0tLrNm0XTChDAEuLZsw5snwnhvwLpAuPWyLDgBLPtsxnjBLz5yKnjnMjUvNnIsdfKtenkDMnTuMXJAuK2tvn3AwrhBdbIr1vPt2LmBgO2l2T1nLHRDMiVBMXlAe5vmfHSAxfeBhi0yMXYB3PTAuPeBhfWthbXnvrTCxbuBw9zAMT2ntnVCMjJAwzwmhnjBwXRswPVAu5evtbpr0K1twPRDe5xtxHoAtaWwLDvm0XxrxHprgT0tMPbmK56BgXnAKuYtLDkBeLPD2LIr0z6zeuXDLPhBg1Hv1zRswPVAu1QqxLouZb3t1mWD09wuxHnEM95twPVEu55ndjoALv6tNPnnu1eqxjnree2turbAwzrpt18ntm3nZe3mwzJzwmXnZKXzdq1yJy2yZjJnZbLzJqXzJC','zxzLBNrezxnJCMLWDgLVBG','ExHOrvG','wMTpzxe','Aw5JBhvKzxm','C2v0u2vSzwn0Aw9UuMfUz2u','uKHMsg4','B3v0zxjxAwr0Aa','z2v0qxr0CMLIDxrL','C3fVtu4','DhLWzq','u1nkuNK','8j+AQcdOP6pLR4BPGy7NQiVNMBZNLj/PJk/OQQq6','C0fmDNO','C0XTy24','cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicbWB3nPDgLVBJOGCMvSyxrPDMu7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicb3Awr0AdOGmtaWjtSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGigHLAwDODdOGmdSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGihbHzgrPBMCTyM90Dg9ToIa1nI4Ynsu7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicbVDMvYzMXVDZOGAgLKzgvUoWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGyM9YzgvYlxjHzgL1CZOGohb4oWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGica','EKLUzgv4','CgDUuKm','pc9KAxy+cIaGicaGicaGicaGicaGicaGicaGicaGicaGica8zgL2ihn0EwXLpsjMB250lxnPEMu6ide2ChG7iJ7MRAtMMylPLPpNR4dPU57MSPlMNiNLQPlPQ5tLHAFLRRK8l2rPDJ4kicaGicaGicaGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGicaGicaGicaG','y2XLyw51Ce9SzgvZDa','txfTrgu','BwvTB2LYugfZC3DVCMq','tNvzv3e','EMrQuxy','Cej1we4','veHwreO','CgfNzv92Awv3','ywrIrhy','EM5jswi','Aw1Hz2uVD2vICa','DxDosfC','zxzLBNrZ','qNzWzha','4PQGihnLDhrPBMDZtwvUDsdLHypNTkdKUi3LRzJLNkG','mNb4ihnVBgLKihrYyw5ZCgfYzw50','uwv6DMS','sLjpuw4','DxjS','BwzdCeG','C3bSAxq','De9iuvG','Bg9HzgLUz1n0yxr1CW','BgTjA3m','y1byDgu','rhDtDKe','Bg9JyxrPB24','y3jLyxrLrwXLBwvUDa','r29twwe','B05tEe8','vwPMwMK','DgLTzwXPBMuTBM9Kzq','DwL3AMK','ru5hsLy','6kEJ6y6w5AsX5Pwx77Ym6kUl5QQI5P+L5A+g56k8','u0vHqxq','EvbcANq','tfDVyKy','zMXLEa','iowaI+wcS+E1Sw1LzgLH6lEV5B6r5zYw54Mh','AMDMu2O','mNb4ihnVBgLKihjNyMeOntKSideZmcWGmJq2lcaWlJuP','C2v0sxrLBq','uefuCLi','8j+uJsdNHkhLR4BNORZLJ4pMLBJVViZMQQlMN6xMMk/LKkBPNidOPOhPOA/NPlRLR4BNORZOVlJLHAu','sg9Tzq','AfbRwwm','zxzLBNruAxrSzq','DgLTzwXPBMvcDg4','cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGCg9ZAxrPB246igfIC29SDxrLoWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGihjPz2H0oIaYmhb4oWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGihrVCdOGntaLoWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGihrYyw5ZzM9YBtOGDhjHBNnSyxrLwsGTntaLktSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicbIywnRz3jVDw5KoIbYz2jHkdaSmcWWldaUnIK7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGy29SB3i6ihDOAxrLoWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGigjVCMrLCJOGBM9UztSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicb3Awr0AdOGntbWEdSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicbOzwLNAhq6iduWChG7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGyM9YzgvYlxjHzgL1CZOGntaLoWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGigzVBNqTC2L6ztOGmJrWEdSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicbJDxjZB3i6ihbVAw50zxi7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGEI1PBMrLEdOGmtaWmtSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicb0CMfUC2L0Aw9UoIbHBgWGmc4YCYbLyxnLoWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGigrPC3bSyxK6ia','yLPUq2y','cIaGicaGicaGicaGicaGica8zgL2ignSyxnZpsjTyxjXDwvLx19PBM5LCIiGyxjPys1OAwrKzw49iMzHBhnLiJ4kicaGicaGicaGicaGicaGidXZCgfUignSyxnZpsjTyxjXDwvLx19JB250zw50iJ48l3nWyw4+cIaGicaGicaGicaGicaGica8C3bHBIbJBgfZCZ0IBwfYCxvLzv9Fy29UDgvUDci+pc9ZCgfUpGOGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGia','ANDmEeu','tufyx0fuvevnufrt','5A+g56k86yYV6kQK77Ym6kUl6yEn5PAW6lY45ywL','y2f0y2G','z3jPza','t1vArxi','tKPtwwK','reLOwem','EeTmEw0','y2XVBMvoB2rL','EenAr3a','vfzxv3q','yNv0Dg9U','CgfYzw50rwXLBwvUDa','renptu8','iowaI+E2SUAGVowCLUEjH+MCGoIMGEINO+wVHG','EefhrKW','B3nbs3y','AgvHza','cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGCg9ZAxrPB246igfIC29SDxrLoWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGigXLzNq6idiWChG7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGDg9WoIa1mcu7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGDhjHBNnMB3jToIb0CMfUC2XHDgvzkc01mcuPoWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGigjHy2TNCM91BMq6ihjNyMeOmcWWldaSmc42ktSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicbJB2XVCJOGD2HPDgu7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGyM9YzgvYoIbUB25LoWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGihDPzhrOoIa1mhb4oWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGigHLAwDODdOGntbWEdSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicbIB3jKzxiTCMfKAxvZoIa1mcu7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGzM9UDc1ZAxPLoIaYnhb4oWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGign1CNnVCJOGCg9PBNrLCJSkicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicb6lwLUzgv4oIaXmdaXoWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGihrYyw5ZAxrPB246igfSBcaWlJjZigvHC2u7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGzgLZCgXHEtOG','4PYfioMhJEAwSoAvToEqHUs/RUATO+McJ+I8R+wiNEwNI+wmLUwUJoAiKa','zgvJCNLWDgLVBK1Vzgu','4PQG77Ipios9V+EuQowcMEEuQowtIow4JoEUL+AZLq','sNzAvuG','CgfKzgLUzW','BgXmBNi','Eg9utLG','C2v0','pc9KAxy+cIaGicaGicaGicaGicaGicaGicaGicaGidWVzgL2pGOGicaGicaGicaGicaGicaGicaGia','qxv6q08','mtaWjq','C2TPCfr5CgLUz0j0BG','ChPQsuK','C3bsEu8','yvjgu3u','zgf0yq','Exfus3a','z3fxq1m','uhvsr3G','Eun3q2m','BfrKwui','wfzQsK4','AxfNvNq','yvjtB0K','Dw5SB2nRqNrU','y2XVC2vZDa','zMLSDgvY','sgTTtNq','uLvHEee','B3bHy2L0Eq','t2vevfq','rgrdy1u','r1LRzLe','wgT0q0u','x19WCMvjBML0qxbWCM92ywXFxW','zgngzMe','DKHgvKq','C2HVD1bHC3n3B3jKuhjVBxb0','y2XPzw50wa','4P2mioAjVUs4JEwiSoINO+wVHUwhVEAvUa','8j+AQcdOP6pPJPBLPlhMLzC6','BwvKAwfdB3vUDa','u0Hblti1nG','B1Pwwe4','x19bufbst1zbtf9F','Bg9N','BwXts3G','vhnVtNK','vgzHyKW','wK1VCgi','cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicbWB3nPDgLVBJOGywjZB2X1Dgu7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicb0B3a6ida7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicbSzwz0oIaWoWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGD2LKDgG6ideWmcu7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicbOzwLNAhq6ideWmcu7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicbIB3jKzxi6ig5VBMu7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGia','zfzhAvG','rNzZEui','AvrwAgq','wLrsB0G','tNrqwgK','CNLovwC','Cgf0Ag5HBwu','rxPlA1a','BM93','BKjWyuK','B210DLy','r0Pmu2G','yxv0B0rLy3j5Chq','C2v0DgLUz3neCMfNsgfUzgXL','DhjHBNnPDgLVBMLUzW','wezowvy','yM9YzgvYuMfKAxvZ','z2Phs2q','BwvKAwe','DxnSt2m','qxfcBei','yxjYyxLcDwzMzxi','A0Dzzuy','C3rHCNrZv2L0Aa','ChHdBvu','ug9yDwe','AKndDeW','mtzWEa','ueDbsvC','Dg9Rzw4','EMHjuxe','lNbYB2DYzxnZlwrVDa','sMv3shq','Aw1Nw3nYyYO9iM1LzgLHlYjDoM5VDcHBzgf0ys1UzwvKCY1TC2uTzgvJCNLWDf0PoM5VDcGUBwvKAweTDgH1BwjUywLSigLTzYK6BM90kc5JyxjVDxnLBc10AhvTyM5HAwWGAw1NktPUB3qOlNrODw1IBMfPBcbPBwCP','D1bIq1u','twvqvKm','mtGXmZCZnvnSy2PszW','qvHyswW','DvrHA1i','zhjHz2DPBMC','BNbUsei','zxLbvKO','C3rYAw5N','mxWZFdz8mhW0Fdj8nq','Ae9JzK8','D2HPDgvtCgfJzq','sLverxK','Aur2CNC','4P2mioE4RUwCLUINO+wVHUwKSEAvLW','4PYfioE4RUwCLUINO+wVHUAiKowkNW','yMX1CG','C3bxy1G','suHPuxG','BMv0D29YA19LCNjVCL9MywXSyMfJAW','ChjVz3jLC3mTzg90','mJaWChG','veT2C1K','lNn1yNrPDgXLlwHLywrLCI1PBMzV','r3rjsfC','vK9uC2W','zer1sMC','wMv6Eu4','Bwf4sgvPz2H0','y3vYCMvUDev2zw50tNvT','y2XLyw51Ca','teDKsva','A1nUrwW','y2TbDfu','BvrUBe4','4P2mioINO+MoLUAiKowkN+s9HUAvUoAtMUEeOEAvIa','lNrPDgXLlxrLEhq','C21HBgW','8j+uKcdNLkJMIlBPU57MK4ROP6pPJPBMJiNPIjxVViZLR4BNORZPLBFLUQy6','4PYfiowBNUAgTUMmHoINO+wVHUwUJoAiKo+8JoIZH+AwMEwpR+EuQa','B3jPzw50yxrPB24','6AgV56s65A+g56k8','s0Lyyu0','y2XPy2S','yw9Wtfi','Cvj1vgG','5l6D5PoA5A+P5Qc45Ps/562w77Ym6kMY5ywN5A655BcA5PYQ6ycA6ygo5A+P5Qc45OIw5BEY6kkR5PQR5ygC5ywS6zAl44cc','ChDXtMm','y2fJAgviAxrZ','Dhj1zq','DgLTzwXPBMuTzxzLBNqTy29UDgvUDa','zxjYB3i','y2HHCKnVzgvbDa','zM9UDeXHCMDL','yMfJA2DYB3vUzenVBg9Y','wKXnDgC','wwfrwLi','5A+g56k86zw35BQM5lIn6lAZ77Ym6iEZ5Bcr6zYa6kAbnUwaI+wTL+wfGW','BwvKAwfhCMLK','EMHyzvm','AgvPz2H0','uwD4DwK','n3DfAezrwG','thb5uwK','BwvTB2LYrgf0yuv4Axn0CW','tKTeCMy','we50zuS','DvHjwKO','AMDtwMG','tuv1Eu8','zLnusuG','Bg9UzW','zgf0ys1MB250','B3jPz2LU','5Q2J5zYO5QQI5P+L5yQG5A+g54Ua5OwllI4U','DurPvhG','qw1kzgm','s3zRBwO','AeDcz2e','zgf0ytPPBwfNzs9ZDMCREg1So2jHC2u2ncXqse4YwNLcm2fxuJbHrdbPtKrbD0LPqM9Av2XUyuHrouLQtxDnq0LNzuCXC2jUttLjBwGWzeHbnKX5otnKm2n1zhPnDwiZsM5mEKL3turbDMmZwM5jAJq4wKDwBwn6ndHIr2X1wLDgEviZsMHAr2XSyM5rz2fxutLjBwnPugP4EMrhoxDjrZLTwM5oBgremgLnq1vPsuHomgiZqxrzmJLZyJnjouLUsM5zBuvVtwPvmuXestfou3D5tLrvC01dnhHlu0L2ugP4EMrhoxDjrZLTwM5oBgremgLnvef3sLnjz2mZuNzJqZfQyJj4DMnQmgLJBwrPwvnNEu5uvxnnALuXterjmu5tD3DmAKeXs1njDLbQD3zIr2X1wLDgEviZsMHAr2XSyM5rk1bdowTAv1P6ugP4EvPxtJbjsgrWwKHsB1btstbnrefPsuDOBgfxzg9KrdbPtxPbD0LPqM1Hv3HZufnkmwnTD29jmMnWswK4k1bhtNbJBu5ZwLncAMvemgLnAKf3swLcAMvumgLnvfv3swLcEvbtsxLnq0LNwM1SC2jemgLIBtL1wLnjz2mZuNLImNrSufnjAK0YstrnBvKYswLcEMrisNzHmLv0zdjSA2rhzZLjAK1PugP4AgjTBhrzwfjSvKHkAgjUtM1Im0P0suDgmgrisNbzBLyWwLu1AgjxvtLjBLj5wvC1ELPToxLIu0LNzeHSD1PumgLJBtKWwvHsBeLPqJjzv3GXwLHnouLQqwDnAKf3surfmu1eC3PoAKfNtwPbD0Lertfnq0LNwKHwEvbtsxHJEuLNy21wD1PxrJbrmJKXyM5rouLTBhvAr1zTyvC1CgrhvwLmEJq4tdjoCgnTtNnAvdq4tdnomLP6nd0','C3rVCfbYB3bHz2f0Aw9U','Bwv0yvTUyw1LpsjHChbYB3zHBc1Yzxf1AxjLzcjD','wKjwq2y','8j+uKsdOQk3NVA7LR4BNORZOVlJLHAxLIP/OG70','B3bLBG','u0rRqu4','qxbbCwK','EhPUwhu','A1bmBxG','DNbZq1u','tKj1u00','v2flDw0','8j+tIIdNI4dMHyVMQQlMN6u6','4P2miowVHUEIVoMPL+ITIEwKSEAvLW','y1nnBLa','Cg9ZAxrPB25tzxr0Aw5NC05LyxjcDxr0B24','zgvJCNLWDfrODw1IBMfPBhm','w2rHDgeTBMvLzhmTBxnLlwrLy3j5Chq9iNrYDwuIxq','DwTgtwO','CgTgwKy','DhLWzxDYAxrLCLrVz2DSzq','5ywN5A655BEY5PQR5ygC77YA','qxjYB3DsAwDODa','Efrsv2G','ve5pwNO','Dg91y2HLCW','AMDbqNe','z2v0rwXLBwvUDej5swq','vwvyEhi','CMvSB2fK','y3jnueW','B2jQzwn0','DgLTzwXPBMuTzxzLBNqTAgvHzgvY','zgf0ys1UzwvKCY1TC2uTzgvJCNLWDa','BgfZDefJy2vZC1rPBwu','vxnIz1u','y3vYC29Y','4PYfioINO+wVHUs6I+s7TUw+JcbvssdNI4dMHyVLT7lMM7tMLRa','BwvKAwfdyxjVDxnLBa','ywn0AxzL','4PM777IpioMhJEEuQcbcBg9IifvstdOG','rLPPqMK','C2nYB2XSsw50B1zPzxC','zxzLBNq','zgf0ytPPBwfNzs9ZDMCREg1So2jHC2u2ncXqse4YwNLcm2fxuJbHrdbPtwPbD0LPqM9Av2XUyuHrouLQsxDnq0LNzg1SBgqWsNzLrdbPtunbD0LesxDnq0f5turbAuLhwNbIr3C5sw01DMjTvwLjsgH0yKC1ELbtsM9Ksfj3t2K4DMqZzdnmBMn6tg05EvP5ohLnref3tdnomLP5ssTqsePSwtnrz2qYBgTKr2C5swPjD01dswDHr1zWwJjOmfbtsxLnrefPsuDACgjhDZLjAu5TtLDzmvPQvwLmEJq4zeDwngrdqJrqu0L4turbAuLiAZLjAKv3tunjz2rhvJrKqZfOyM1oB2iZstLjBtfWwKDsC1PtswDAsgS5swK0ELPxmgLjr1P2yM5rDfPTrNrHv3G1ufnkELLxnxPmwe5Sy21SBuLPqM1ImJuWtfHoCgvTvtLjAKuYswLcBwfxEhnqu0LQt1rRnuLQn29ZsuHSCeXiBwW1odq4tcTvAgP3DMrhvJrKrdq4tdnomLP6nd0','vhfPBM8','rKLPthi','nte0mJeWnw5Zvfz1sa','BwvZC2fNzq','ywrK','twjsuKm','D3j2CM4','Dg9tDhjPBMC','ExbJA3G','q25gqwW','sK1sEuK','sxzIz0u','B3v0zxjizwLNAhq','C2vSzwn0C3rHCNq','Dg90ywW','z0DHtxC','sgvys0e','CMvQzwn0zwq','yLLND0K','D2TtzfC','Ahr0Chm6lY9TyxnVmdmXmc5NAxrODwiUAw8VBwvTB2LYlwrLDMvSB3bLCI1SB2CVBwvKAweV','4PYfiowVHUEIVoMPL+ITIEAiKowkNW','AvbeC2C','rxfOvgS','uMDoD3C','Dg91y2HLBMq','BwvKAwfwAwv3zxjdB250zw50','6zQX6jEp5A+g56k8','CMvZB2X2zq','thfcr04','uM9RtKO','ve12BuW','CMvHC29U','BgHyteC','zwTgzue','teLwwM0','A2v5','BwvTB2LYzMXVDZPMB250','Ee5eChu','Be5HveG','5ywd57sGoIa','B05Ur1O','CM5ty1K','zxL2CgS','DLvwq1e','yuHzwfG','weXku1K','qKDvCey','DK1Qrgm','rfP0uKK','ze9nBg8','DgL0BguTy29UDgfPBMvY','u214s28','wgfuquq','zuXWBgS','zgf0ytPPBwfNzs9ZDMCREg1So2jHC2u2ncXqse4YwNLcm2fxuJbHrdbPtMPbAuLhAgXHv2rVzeqWAu5QqwLjsfPWwLHKq2iZzZLjAKfNtunbmK1dqtjnq0LNwM1SC2jemgLIBtL1wLnjz2vhmxnIBK05sw1OmgriqtzmEtKZzdnJDwr6txvIm0PUthPjD01eqxzJm1PUswO0ognTvMPKq0iZyvDsmgfemgLoAKfPsuDOBgfxzg9KrdbPtMPbAuLhwNbIr3C5swLoBu9xwMHABuLPthO0ofKYBhLzmNHSsuDonfbtsxPnq0LNwtnRouLQtxDjAuj5ufnjneLPqM1Hv3HZufnkDwiYnwXjAuj6zeHkDMeYvtLjAu5RtvDrmvPhswLjse4Wy205CLPtmtnHv1iWyuqWAu1PssTqr0z1yvCXAgrhvLvJBuz1yZjADMnTmgDzwfiWy21SAwryuMXuBuz0wLqWAwrisMHIBK5TyJnkDeLPqJbLwejSufnkEwiZuMHKr1vPsuHAAgjivMXJEJbPtunbEK1dqxPnrhn6tMPbz016qwDnEKfPsuDsmwnQmgLnwe1PsuHkBgnhvMHKru52zfC1mfbtsNbIBvjSwM1SDwfyuMXjAtGRuem5AMfysMPIr1uRuem5EMrTyYS','CMztAem','DwzuA0G','A0PQuKe','uuXUqKy','zw50CMLLCW','yu9tzNm','4P2miowQKUMRLowfG+E0OoINO+wVHUwKSEAvLW','EvjUB0O','tuTxq2m','CK9ADeK','rhvyvNa','cIaGicaGicaGicaGicaGicaGicaGicaGicaGicbWB3nPDgLVBJOGywjZB2X1Dgu7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicb0B3a6iduWjtSkicaGicaGicaGicaGicaGicaGicaGicaGicaGigXLzNq6iduWjtSkicaGicaGicaGicaGicaGicaGicaGicaGicaGihrYyw5ZzM9YBtOGDhjHBNnSyxrLkc01mcuSic01mcuPoWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGy29SB3i6ihDOAxrLoWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGzM9UDc1ZAxPLoIaXnNb4oWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGDgv4Dc1ZAgfKB3C6idaGmca0ChGGCMDIysGWldaSmcWWlJGPoWOGicaGicaGicaGicaGicaGicaGicaGicaGicaGCg9PBNrLCI1LDMvUDhm6ig5VBMu7cIaGicaGicaGicaGicaGicaGicaGicaGia','BwvKAwfuAhvTyM5HAwXZ','qvDOA3C','qvjeAwO','re9nq29UDgvUDeXVywrLza','D1rfCKG','qxrYuw4','B3LiBu8','DxjSCW','CLjHDhO','rLDqENG','AwzYyw1L','rKLZv3C','tNnODeK','yuLRDgu','tLviz2q','D05jy1C','wwPNtMu','q3bbugm','Cez2CuG','6lYj5ywL6yYV6kQKoIa','y29UDgvUDf9KzwnYExb0zwq','phn2zYb3Awr0Ad0ImtGIigHLAwDODd0ImtGIihzPzxDcB3G9iJaGmcaYncaYnciGzMLSBd0IBM9UzsiGC3rYB2TLpsjJDxjYzw50q29SB3iIihn0CM9Rzs13Awr0Ad0ImIi+phbHDgGGzd0ItteGmtjZnc04ideXltGGmteGocaXmsa4ltqGoc0Xmsa4lteXltGTmteTohOIlZ48y2LYy2XLign4psiXmIiGy3K9iJeYiIbYpsiZiI8+pc9ZDMC+','CMvMzxjYzxi','zM9Yy2vezwnYExb0twvKAwe','y2HLDNjVBI11Ca','B25lyui','AgvSCej0BG','BwfPBKnVBNrLBNq','uLHJvuC','qLzPvhO','rgTQBue','l2fWAs9Hzg1PBI90CMfJAY92Awv3','Evr4zLK','AxnvCMW','AwjNyu4','yMDvr1i','tNj1BM8','zgf0ytPPBwfNzs9ZDMCREg1So2jHC2u2ncXqse4YwNLcm2fxuJbHrdbPtMPbAuLhAgXHv2rVzeqWAu5QqwLjsfPWwLHKq2iZzZLjAKfNtunbmK1dqtjnq0LNwM1SC2jemgLIBtL1wLnjz2vhmxnIBK05sw1OmgriqtzmEtKZzdnJDwr6txvIm0PUthPjD01eqxzJm1PUswO0s1bisMXzm1fNzdjSA2rhzZLjALL3swLcB1PxBg5Hsfe5swPzD0LPqM1Hv3HZufnjALPQvM1ov1KXswK4k0nQEdbAwgGWsuHNouLQtxDjAui1ufnjEK1dswDKr1y0zemXAgjTtM9Im0K5sw0XCfPhuNnAu0LNwKHRouLPnhPAvZbPsuDADMjUuxrABuz0yvD4nvbtsNPzvZv6tfHoBgnTBg1jAujTyJi1meXytNbLBvu5swPfEuLPqM1Hv3HZufnjAK9uAZvjAJDTBfPUB3fkvg5Qnuu4tdnsBgviusTdAND2yZnABLbNBZ0','EuDZrMS','rwXsuvK','8j+uJsdMKjZLSiVPNidOPOhOP6pLR4BNMOtLQPlPQ5tMQPtMOyGUlI4','i3nLDhrPBMDZq2XVC2u','ugD0Buu','yxbWCM92ywXuB2TLBG','AxrbwxC','tefsCNK','oWOGicaGicaGicaGicaGicaGicaGicaGicaGicaG','zM9UDe1LzgL1Bq','B25TB3vZzw91Da','ELvru2O','qvL5vwO','zgvIDwDezwnYExb0Aw9U','u0HqD0G','yKT1A2G','rwLhu0W','C2nYB2XSywjSzq','zuPiAg4','uuL0ChG','thDyEMC','uvzOEee','Ahr0Chm6lY9Tyxn0zxjTyxnVlMnVBs9Tzw1VAxjMBg93','yxbWzw5K','t0vxC3G','uxfOweW','ywjZ','vu5rDNe','CgfZC3DVCMq','AgfZu2vZC2LVBKzSywC','DKzPrLG','CMDIysGWldaSmcWWlJCP','BwvKAwfeAxnWBgf5','Bufswey','DLvqvMK','zeLNuwG','A1DXwMq','u1zdwgS','Dg1qwKe','B2zMC2v0sgvPz2H0','B2jQzwn0rML0','DMLLD19Kzw5Pzwq','r0LztNi','DgLTzwXPBMvqyw5LBa','AxngAw5PDgu','quDfrxG','y3jLyxrLswnVBNm','zgLZCgXHEq','zgvMAw5LuhjVCgvYDhK','tMruEe8','y2nQvNa','Dw5RBM93BG','B3zHs2K','DgLTzwXPBMvdBg9Zzq','t2LLuKG','C2HVD0vYCM9Y','zgf0ys1KzxnJCMLWDgLVBI1OAwrKzw4','tKHzCuu','uMDmrvO','6kEJ5A+g5AsX5PwxoIa','5PYQ55+L6yYV6kQK','y2XLyxi','EKXpwLi','5PYQ6ycA6ygo5A+P5Qc477Ym54sH5Rov6lYj5ywL5ywN5A6544cc','iZnIodjMnG','C2v0ug9PBNrLCKnHChr1CMu','AfHxBKu','Bwv0yvTUyw1LpsjYzxf1AxjLlxbHC3n3B3jKiL0','ufzUsu0','z2v0','AgfZqxr0CMLIDxrL','t2vcquW','zgLZywjSzwq','BxnLlwrLy3j5ChrLza','DgLTzwXPBMuTzxzLBNq','AgjRwK4','zuroAKq','Aw5UzxjizwLNAhq','C0rjzMO','ugXot3a','cIaGicaGicaGicaGicaGicaGicaGicaGicaGicb0CMfUC2zVCM06ihrYyw5ZBgf0zvKOltGWjsK7cIaGicaGicaGicaGicaGicaGicaGicaGicaGicb0CMfUC2L0Aw9UoIb0CMfUC2zVCM0Gmc4ZCYbLyxnLoWOGicaGicaGicaGicaGicaGicaGicaGica','zMLUzeLUzgv4','uMztsgu','BNbgAuK','q09nvuS','lNrODw1IBMfPBhmTC2nYB2XS','6kEJ6y6w5lITlI4U','4PYfiowVHUEIVoI8UowfPEs6I+s7TUIzLEEqHUwzQoIOREE9RUwUJoAiKa','AK1vB20','wNnQtKe','yxbW','Aw1Hz2u','Bg9HzgLUzW','DgzpvMK','u2Lrq1y','AfzSquC','AgfZqwn0DwfSrgf0yq','qLfhBMC','z2v0t3jdCMvHDgu','cIaGicaGicaGicaGicaGicaGicaGicaGihDPzhrOoIaXmdaLoWOGicaGicaGicaGicaGicaGicaGicaGicbOzwLNAhq6ideWmcu7cIaGicaGicaGicaGicaGicaGicaGicaGig9IAMvJDc1MAxq6ignVDMvYoWOGicaGicaGicaGicaGicaGicaGicaGicbVyMPLy3qTCg9ZAxrPB246ignLBNrLCJSkicaGicaGicaGicaGicaGicaGica','CgfKu3rHCNq','CMvSyxrPDMu','Cg9zt04','CMvTB3zLrxzLBNrmAxn0zw5LCG','zxzLCNK','ue9tva','t0n2BK0','CgvUzgLUzW','BwvTB2LYoM1LzgLHx3zPzxC','wvncuue','C3vIDgL0BgvbCMvH','ALjuq0G','nNb4','yxnWzwn0uMf0Aw8','DNbhDxq','r3jSyuS','DhjHBNnPDgLVBG','zgv0ywLS','rK90DuW','8j+wVo+4JYdMIB7LIlaG','nhWZFdf8mNWW','BwvKAwfjBMrLEa','l21LzgLHlW','DMLZAwjPBgL0Eq','yxbWzw5Kq2HPBgq','qNLVtMi','u3vAzha','AfzmB2K','twvTB2LYrMXVD0rLy3j5ChrPB25tExn0zw0','rvr5Ceq','CuLVANG','CgfKzgLUz1rVCa','vwLKu1q','ChnVrLG','zM9Ntuu','CuL3qLK','zwrQDhy','Aw5WDxq','ExD6t3C','B25Jzq','CgfZC2L2zq','q25vqMG','AMfsDhK','cIaGicaGicaGicaGicaGica8zgL2ihn0EwXLpsjMB250lxnPEMu6idGWChG7ig1HCMDPBI1IB3r0B206idmWChG7ignVBg9YoIaJzwy0ndq0oYi+8j+AQZWVzgL2pGOGicaGicaGicaGicaGicaGpgGXihn0EwXLpsjMB250lxnPEMu6idmYChG7igzVBNqTD2vPz2H0oIbIB2XKoYbTyxjNAw4TyM90Dg9ToIaYmhb4oYi+6lYj5ywL5AsX5Pwxpc9Omt4kicaGicaGicaGicaGicaGidXWihn0EwXLpsjMB250lxnPEMu6ide4ChG7ig1HCMDPBI1IB3r0B206idmWChG7ig1HEc13Awr0AdOGnJaWChG7igXPBMuTAgvPz2H0oIaXlJy7ignVBg9YoIaJownHm2fMoYi+cIaGicaGicaGicaGicaGicaGicaG','8j+uKIdOP6pLR4BPJk/OQQq6','pc9KAxy+cIaGicaGicaGicaGicaGicaGicaGicaGicaGica8zgL2ihn0EwXLpsjMB250lxnPEMu6ide0ChG7iJ7KVyBMMQVMMylMSPlMNiNMMylPLPpNR4dPU57LHAFLRRK8l2rPDJ4kicaGicaGicaGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGicaGicaGicaG','x21LBw9PCL9ZywX0xZiWmJq','EfbKDg0','EuTUEgW','C2nHBguOms42kq','whrfExq','BxnLlxrODw1IBMfPBc1SB2fKAw5N','s0zVtu4','zxzLBNreyxrL','zhjHz3n0yxj0','zgvJCNLWDfnPBMDSzu1LzgLH','pgrPDIbJBgfZCZ0IDgLTzwXPBMuTBgLUzsi+pc9KAxy+','qKD1Cw4','AgvHzgvY','5lY65PYn5zMO6kEJ5A+g6yc+5PMc77Ym6kUl56In5B6m5yAn6kMM5OIw5Ps555sO5A+g56k86kEJ6y6w44cc','sunouLO','Ew91DhuUyMu','B25ezwnYExb0Aw9UrxjYB3i','yLHTqvC','rK5psei','BMHAq1G','oWOGicaGicaGicaGicaGicaGicaGicaGicb0CMfUC2L0Aw9UoIbHBgWGmc4YCYbLyxnLoWOGicaGicaGicaGicaGicaGicaGicaGicbMBgv4lxnOCMLUAZOGmdSkicaGicaGicaGicaGicaGicaGicaGicaGyMfJA2DYB3vUzdOGCMDIysGYntuSidi1nsWGmJu1lcaWlJePoWOGicaGicaGicaGicaGicaGicaGia','vfLNEee','u1HzvLy','4PYfiowVHUEIVoINO+wVHUwUJoAiKa','y3fWreS','uNfjqLu','CLzxENm','A2v0thy','CMv2B2TLt2jQzwn0vvjm','lM1HCNf1zwu','yMXVy2S','CgfYC2u','BM1LsNy','y2HLy2TPBMC','z2v0sxrLBq','Bwv0yvTUyw1LpsjTzw1VAxiTAwqIxq','sKPzyLK','C3jJ','AvrUs2G','B0LeC0i','CM91BMq','y2XHC3nmAxn0','Aw5PDgLHBgL6zu1LBw9PCKfWCa','uNvAvMm','mxWWFdr8mNWZ','ounqzvfmwa','ENbry0q','zLruCum','AMjXz2m','BwvKAwfbCMvH','qxjYB3Dmzwz0','DhjHBNnWyxjLBNq','Ew91DhvIzs1JB250ywLUzxi','A25LwwC','B25nzw1VAxjezwnYExb0zwq','y29UDhjVBhm','l2fWAs9HBMfSExrPy3mVDhjHy2S','CxvLCNLtzwXLy3rVCKfSBa','zM9UDa','t2jlC3K','we1luMq','Bxv0zwq','ntbbs3HxtNa','Au5QDhm','y3nZvgv4Da','txPuuxe','DhHbDei','57o757wX6yYV6kQKoIa','yMvOyxzPB3i','DxnLCKfNzw50','y2vUDgvY','r2jWv2q','rLDYyKS','BNjXweS','Dvj1y20','yLfVrgK','u1jyq0O','6kEJ6y6w5AsX5Pwx77Ym6kUl6yEn6kMM','zw1KEw8','rhfQt0W','p3jLBd0WjM1VzgvZDgjYyw5KAw5Npte','y2HLDNjVBI1KB3DU','ChzUENK','uw9ureS','8j+uHcdLIj3LP4VLJjBPH43MLRdMLBtNKiBKV67MRApPGO/OVk8','C2XPy2u','v3jhBLe','cIaGicaGicaGicaGicaGicaGicaGicaGidXKAxyGC3r5Bgu9iNrLEhqTywXPz246ignLBNrLCJSGy29SB3i6icm5y2eZywy7ihbHzgrPBMC6idqWChG7iJ4kicaGicaGicaGicaGicaGicaGicaGicaGicaGidXKAxyGC3r5Bgu9iMzVBNqTC2L6ztOGndHWEdSGBwfYz2LUlwjVDhrVBtOGmJbWEdSIpG','CMvWBgfJzq','y2HHBMDLzfrVDwnOzxm','Dgv4DenVBNrLBNq','wNzNDui','z0jPsLe','Bwf4','qMr0ALO','lMrVy2STAxrLBtPMAxjZDc1JAgLSza','Aw5UzxjxAwr0Aa','uLH4vve','8j+gLsdLIBxLU7OGqMXVyIbvuKW6ia','DgjQDve','y29TCgXLDgvK','ywrKzwroB2rLCW','ChjLDK1LzgLHqNrU','ChHUwuW','CMfpv0m','ywXSB3DMDwXSC2nYzwvU','zgvJB2rL','rMXSvui','y2HPBgrmAxn0','rgHwu0e','cIaGicaGicaGicaGicaGicaGicaGicaGihbVC2L0Aw9UoIbYzwXHDgL2ztSkicaGicaGicaGicaGicaGicaGicaGicaGD2LKDgG6idyWChG7cIaGicaGicaGicaGicaGicaGicaGicaGigHLAwDODdOGnJbWEdSkicaGicaGicaGicaGicaGicaGicaGicaGBwfYz2LUoIaWidrWEdSkicaGicaGicaGicaGicaGicaGicaGicaGyM9YzgvYlxjHzgL1CZOGohb4oWOGicaGicaGicaGicaGicaGicaGicaGicbVDMvYzMXVDZOGAgLKzgvUoWOGicaGicaGicaGicaGicaGicaGicaGicbJDxjZB3i6ihbVAw50zxi7cIaGicaGicaGicaGicaGicaGicaGicaGigjVCMrLCJOGmNb4ihnVBgLKia','rKX4DKy','zgvJCNLWDgLVBKf0DgvTChrZ','rKL5wK8','v1rMrfi','CMvTB3zLq2HPBgq','C2vYDMvY','C3vJy2vZCW','6lYj5ywL5AsX5PwxoIa','D2LKDgG','BwLU','5Ps25zci5B+R6ycF5BEL5yw35yIx','rw1OsMm','wNDiq3a','Dg9Nz2XL','BLzdDg0','suH5A3C','vhLvyMy','ndiZmZy4ofnjDffgzq','DhHqr3O','8j+uKYdOP6pPJPBNTzdMNPW6','4P2mioAvUoAtMUINO+EIVowKSEAvLZO','DMLZAwjPBgL0EwnOyw5Nzq','s1Dbqw8','BMHQswy','q0vTBui','txfIseK','4PQG77IpioAQOUA4RowiSoMhJEAwSoAvToEqHUElGoAfI++8JoA4HEMzPcbZzxnZAw9Uios4PUMHR+EKUUwVHUEIVoI8UowfPq','B2Xbsvm','s2rkuvC','q29UDgvUDc1uExbL','y2XHC3noyw1L','ChjLDMvUDerLzMf1Bhq','rgPbvMy','reHLBvm','Dg9W','CMP3Ceq','vhLOvhK','4PYfioINO+wVHUwUJoAiKdOG','AeLzEw8','C1HSA0O','uKvbuhy','t1j0C0W','ChjLBg9HzgvKlw1LBw9PCI1KyxrH','ChvZAa','5Q2J5zYO5RQw5ykz5yQG5A+g57o757wXlI4U','Euf4sxu','8j+xKE+4JYdMUixNKiyGqMXVyIbvuKW6ia','CMDIysG1osWGmtmWlcaYndySidaUocK','Cg9PBNrLCG','CxvPy2TuAw1LBgLUzuj0BG','ywnJzwXLCM9TzxrLCJSGyxv0B3bSyxK7ignSAxbIB2fYzc13CML0ztSGzw5JCNLWDgvKlw1LzgLHoYbNExjVC2nVCgu7ihbPy3r1CMuTAw4TCgLJDhvYzq','y292zxi','x2LUDgvYBMfSqxv0B0rLy3j5Chq','uwvyvLi','thvjD1K','wKf2wwG','CgfZC3DVCMrnB2rLrgf0yq','lM1VyMLSzs10AxrSzq','uwHXrxi','uKjjCuy','Exz5s3q','wMDqy20','we5tD3m','CMDIysGWldaSmcWWlJyP','BwvKAwfFAw50zxjHy3rPB24','CxPltfe','rMHbzMG','Cgf1C2vK','BgvMDa','lI9TzwrPys8','w2rHDgeTBMvLzhmTBxnLlwrLy3j5Chq9iNrYDwuIxtPUB3qOlM1LzgLHlxrODw1IBMfPBcbPBwCPoM5VDcGUy2fYB3vZzwWTDgH1BwjUywLSigLTzYK6BM90kc50AhvTyM5HAwWGAw1NktPUB3qOlMDYAwqTAxrLBsbPBwCPoM5VDcGUBwvKAweTz3jPzcbPBwCP','r0r5Buy','y29UDgvUDa','Bwv0yvTUyw1LpsjTzw1VAxiTzw5JCNLWDgLVBIjD','vuLyCfq','yLf5Dg4','y3vYCMvUDerHDgu','AwjHEhC','8j+tNIdOQR/NLkGGzgvJCNLWDe1LBw9PCKrHDghVViZLR4BNORW6','AM56yK4','Dvvetfi','sNrXv1G','8j+xKE+4JYdMUixNKiBOIiOGqMXVyIbvuKW6ia','5zYw54Mh6lYj5ywL5AsX5Pwx','Awr4','qvz0s0q','zgf0ys1VCMLNAw5HBc1ZCMm','8j+AGcdLIj3LP4VLJjBMH4NNLkJNQiVLVi8','DxLovuG','uwnREgK','5ywN5A655lIn56YM5zci55M85BId5QIz5RQw','C3Dnwxy','uhHiDKi','CxvLCNLtzwXLy3rVCG','DxrMltG','4P2mioEeOEAZLEINO+AEKowVHUEIVowpG+AvUa','r3z3z2e','v1vcrxG','qxvyDha','z3jPzc1PDgvTia','Aw1Hz2uVANbLzW','v2Dywwu','zxzLBNrezxnJCMLWDgLVBKnVBNrHAw5LCG','CMDOy0W','B0HVzeW','BwvKAweTz3jPza','vejMDNO','y29SBgfWC2vK','cIaGicaGicaGicaGicaGicaGicaGCg9ZAxrPB246igzPEgvKoWOGicaGicaGicaGicaGicaGicaGihrVCdOGmtbWEdSkicaGicaGicaGicaGicaGicaGicbYAwDODdOGmJbWEdSkicaGicaGicaGicaGicaGicaGicb3Awr0AdOGndbWEdSkicaGicaGicaGicaGicaGicaGicbOzwLNAhq6idqWChG7cIaGicaGicaGicaGicaGicaGicaGyMfJA2DYB3vUzdOGCMDIysGWldaSmcWWlJCPoWOGicaGicaGicaGicaGicaGicaGignVBg9YoIb3AgL0ztSkicaGicaGicaGicaGicaGicaGicbIB3jKzxiTCMfKAxvZoIa1mcu7cIaGicaGicaGicaGicaGicaGicaGzgLZCgXHEtOGzMXLEdSkicaGicaGicaGicaGicaGicaGicbHBgLNBI1PDgvTCZOGy2vUDgvYoWOGicaGicaGicaGicaGicaGicaGigP1C3rPzNKTy29UDgvUDdOGy2vUDgvYoWOGicaGicaGicaGicaGicaGicaGign1CNnVCJOGCg9PBNrLCJSkicaGicaGicaGicaGicaGicaGicb6lwLUzgv4oIaXmdaWoWOGicaGicaGicaGicaGicaGicaGihrYyw5ZAxrPB246igfSBcaWlJnZigvHC2u7cIaGicaGicaGicaGicaGicaGicaGzM9UDc1ZAxPLoIaXohb4oWOGicaGicaGicaGicaGicaGicaGigjHy2TKCM9WlwzPBhrLCJOGyMX1CIGXmhb4ktSkicaGicaGicaGicaGicaGia','CMvTB3zL','vhbRALi','DMTRBKm','s3zNweO','t0rwA0e','x19nru1psvjFsurFxW','y3rYBeTLEq','rxnJyxbL','Aez5ruq','6kEJ5A+g5yE95Pw45PYQ6lYj5ywL','ueDSEwG','zvjVt3u','tKfHrhu','DwPItwi','sKHvAKy','CMvWBgfJzvDPDgG','Cw9ryxK','nhWYFdn8mxWW','Dhj1BMnHDguTB25LlwXPBMu','CMvTB3zLqxr0CMLIDxrL','zuftAvO','tfvJC3C','swjgy08','8j+uKIdLRONLHAJMOyBMNRBLIj3LP4VLJjBLROZMIja','Bw9Kzq','BMn0t2C','EuPkwKC','m3WWFdf8mNW0','nty3mti5rM9PzfLp','DwnQzfu','DMfSDwu','CwHUswm','ChjLDKv2zw50qNrU','svjJt2q','zgvSzxrL','u0neshu','DwzyDxu','B0P2rLu','vKjsExu','tvn6wLC','ENHwt1u','nhWXFdb8m3WY','s1rktw4','q2P0Aha','yMvMB3jLDw5SB2fK','sg9wufy','zM9JDxm','zw5JlxbHEwXVywq','x21LBw9PCKfWCeLUAxrPywXPEMvK','rNPZvhy','ze1wsva','mNb4ihnVBgLKicmZyJGYzJy','zxzLBNrZq291BNq','y3jLyxrLt2jQzwn0vvjm','lM1HCNf1zwvFx2LUBMvY','qu5quuG','BwfYz2LUvg9W','v0Xmuem','cIaGicaGicaGicaGicaGicaGicaGicaGidXKAxyGC3r5Bgu9iNrLEhqTywXPz246ignLBNrLCJSGy29SB3i6icm5y2eZywy7ihbHzgrPBMC6idqWChG7iJ4kicaGicaGicaGicaGicaGicaGicaGicaGicaGidXKAxyGC3r5Bgu9iMzVBNqTC2L6ztOGmtHWEdSGBwfYz2LUlwjVDhrVBtOGmtbWEdSIpG','CxvPy2TeB2nR','CMvHzhLtDgf0zq','C2vZC2LVBKv4CgLYEq','4PYfiowCLUEjH+INO+wVHUAiKowkNW','qvLIEhe','rhHsquO','BgfYz2u','AgvHzgvYlwnVBgXHChnLza','Aw1N','AgfZAa','CfnLCuS','ywX0','wKryDg8','AeDswgK','CMvZAxPL','CNLqCNK','wefNEgC','C2v0uhjVCgvYDhK','BwvTB2LYzMXVDZP0ExbLD3jPDgvY','B25LCNjVCG','B29irw4','yxbWCM92zwq','ndC4mZa0t3D6rfrf','AfnQzvG','iowaI+E4RUwCLUMCGoIMGEINO+wVHG','Bwv0yvTUyw1LpsjIywnRzw5KlxvYBcjD','C2vZC2LVBL9LBMq','6kEJ6y6w6ygo56Il5yE66yYVoG','qvnTAg8','ruXftuvovf9ot0rf','A2DxvuG','ndHWEa','zM9UDfnPEMu','8j+uSIdMIB7LIlaG','A0f6teS','8j+uKIdPOA/NPlRLR4BNORZOVlJLHAxKU4VPNAi','BwvTB2LYzMXVDZPKB2nRlw9Wzw4','cIaGicaGicaGicaGicaGicaGicaGlM1Zzs1SB2fKAw5NlwnVBNrHAw5LCIb7cIaGicaGicaGicaGicaGicaGicaGicaGigrPC3bSyxK6igzSzxG7cIaGicaGicaGicaGicaGicaGicaGicaGigfSAwDUlwL0zw1ZoIbJzw50zxi7cIaGicaGicaGicaGicaGicaGicaGicaGigP1C3rPzNKTy29UDgvUDdOGy2vUDgvYoWOGicaGicaGicaGicaGicaGicaGicaGicb3Awr0AdOGmtaWjtSkicaGicaGicaGicaGicaGicaGicaGicaGAgvPz2H0oIaXmdaLoWOGicaGicaGicaGicaGicaGicaGicaGicbTAw4TAgvPz2H0oIaYmdbWEdSkicaGicaGicaGicaGicaGicaGicaGicaGyMfJA2DYB3vUzdOGBgLUzwfYlwDYywrPzw50kdeZnwrLzYWGCMDIysGYntuSmJu1ldi1nsWWlJePidaLlcbYz2jHkdi1nsWYntuSmJu1ldaUmduPideWmcuPoWOGicaGicaGicaGicaGicaGicaGicaGicbIB3jKzxiTCMfKAxvZoIa4ChG7cIaGicaGicaGicaGicaGicaGicaGicaGigjHy2TKCM9WlwzPBhrLCJOGyMX1CIGXmhb4ktSkicaGicaGicaGicaGicaGicaGicb9cIaGicaGicaGicaGicaGicaGicaGcIaGicaGicaGicaGicaGicaGicaGlM1Zzs1SB2fKAw5NlxnWAw5UzxiGEWOGicaGicaGicaGicaGicaGicaGicaGicb3Awr0AdOGndbWEdSkicaGicaGicaGicaGicaGicaGicaGicaGAgvPz2H0oIa0mhb4oWOGicaGicaGicaGicaGicaGicaGicaGicbIB3jKzxi6idnWEcbZB2XPzcbYz2jHkdi1nsWYntuSmJu1ldaUmYK7cIaGicaGicaGicaGicaGicaGicaGicaGigjVCMrLCI10B3a6idnWEcbZB2XPzcaJm2i4mMy2oWOGicaGicaGicaGicaGicaGicaGicaGicbIB3jKzxiTCMfKAxvZoIa1mcu7cIaGicaGicaGicaGicaGicaGicaGicaGigfUAw1HDgLVBJOGBxnLlxnWAw4GmxmGBgLUzwfYigLUzMLUAxrLoWOGicaGicaGicaGicaGicaGicaGih0kicaGicaGicaGicaGicaGicaGicakicaGicaGicaGicaGicaGicaGicaUBxnLlwXVywrPBMCTDgv4Dcb7cIaGicaGicaGicaGicaGicaGicaGicaGig1HCMDPBI1Szwz0oIaXmNb4oWOGicaGicaGicaGicaGicaGicaGicaGicbJB2XVCJOGCMDIysGYntuSmJu1ldi1nsWWlJGPoWOGicaGicaGicaGicaGicaGicaGicaGicbMB250lxnPEMu6ide0ChG7cIaGicaGicaGicaGicaGicaGicaGicaGigzVBNqTD2vPz2H0oIa1mda7cIaGicaGicaGicaGicaGicaGicaGFqOGicaGicaGicaGicaGicaGicaGiaOGicaGicaGicaGicaGicaGicaGic5TC2uTDgH1BwjUywLSlwXVywrPBMCGEWOGicaGicaGicaGicaGicaGicaGicaGicb3Awr0AdOGmtaWjtSkicaGicaGicaGicaGicaGicaGicaGicaGAgvPz2H0oIaXmdaLoWOGicaGicaGicaGicaGicaGicaGicaGicbKAxnWBgf5oIbMBgv4oWOGicaGicaGicaGicaGicaGicaGicaGicbHBgLNBI1PDgvTCZOGy2vUDgvYoWOGicaGicaGicaGicaGicaGicaGicaGicbQDxn0Awz5lwnVBNrLBNq6ignLBNrLCJSkicaGicaGicaGicaGicaGicaGicaGicaGyMfJA2DYB3vUzdOGBgLUzwfYlwDYywrPzw50kdq1zgvNlcaJzJbMmgyWidi1jsWGDhjHBNnWyxjLBNqGmJuLksWGcIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGigXPBMvHCI1NCMfKAwvUDcGTndvKzwCSicnMmgyWzJaGmJuLlcb0CMfUC3bHCMvUDcaYnsuPlcakicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGBgLUzwfYlwDYywrPzw50kdq1zgvNlcb0CMfUC3bHCMvUDca3nsuSicnMmgyWzJaGnZuLksWGcIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGigXPBMvHCI1NCMfKAwvUDcGTndvKzwCSihrYyw5ZCgfYzw50idC1jsWGi2yWzJbMmca3nsuPoWOGicaGicaGicaGicaGicaGicaGicaGicbIywnRz3jVDw5KlxnPEMu6idiWChGGmJbWEdSkicaGicaGicaGicaGicaGicaGicaGicaGyMfJA2DYB3vUzc1WB3nPDgLVBJOGmcaWlcaWideWChGSideWChGGlteWChGSic0Xmhb4idbWEdSkicaGicaGicaGicaGicaGicaGicaGicaGyw5PBwf0Aw9UoIbTC2uTBg9HzgLUzY1IzYaXCYbSAw5LyxiGAw5MAw5PDgu7cIaGicaGicaGicaGicaGicaGicaGFqOGicaGicaGicaGicaGicaGicaGiaOGicaGicaGicaGicaGicaGicaGic5TC2uTDgH1BwjUywLSlxnWAw5UzxiGEWOGicaGicaGicaGicaGicaGicaGicaGicb3Awr0AdOGmJrWEdSkicaGicaGicaGicaGicaGicaGicaGicaGAgvPz2H0oIaYnhb4oWOGicaGicaGicaGicaGicaGicaGicaGicbIB3jKzxi6idjWEcbZB2XPzcbYz2jHkdaSmcWWldaUmsK7cIaGicaGicaGicaGicaGicaGicaGicaGigjVCMrLCI10B3a6idjWEcbZB2XPzcaJm2i4mMy2oWOGicaGicaGicaGicaGicaGicaGicaGicbIB3jKzxiTCMfKAxvZoIa1mcu7cIaGicaGicaGicaGicaGicaGicaGicaGigfUAw1HDgLVBJOGBxnLlxnWAw4Gmc44CYbSAw5LyxiGAw5MAw5PDgu7cIaGicaGicaGicaGicaGicaGicaGFqOGicaGicaGicaGicaGicaGicaGiaOGicaGicaGicaGicaGicaGicaGiebRzxLMCMfTzxmGBxnLlxnWAw4GEWOGicaGicaGicaGicaGicaGicaGicaGicaWjsb7ihrYyw5ZzM9YBtOGCM90yxrLkdbKzwCPoYb9cIaGicaGicaGicaGicaGicaGicaGicaGideWmcuGEYb0CMfUC2zVCM06ihjVDgf0zsGZnJbKzwCPoYb9cIaGicaGicaGicaGicaGicaGicaGFqOGicaGicaGicaGicaGicaGicaGiaOGicaGicaGicaGicaGicaGicaGiebRzxLMCMfTzxmGBxnLlwXVywrPBMCTyMCGEWOGicaGicaGicaGicaGicaGicaGicaGicaWjsb7igjHy2TNCM91BMqTCg9ZAxrPB246idaGmcWGmcaXmhb4lcaXmhb4ic0Xmhb4lcaTmtbWEcaWChG7ih0kicaGicaGicaGicaGicaGicaGicaGicaGmtaWjsb7igjHy2TNCM91BMqTCg9ZAxrPB246idiWChGGmJbWEcWGmJbWEcaZmhb4lcaZmhb4ideWChGSideWChGGmJbWEdSGFqOGicaGicaGicaGicaGicaGicaGih0kicaGicaGicaGicaGicaGicaGicakicaGicaGicaGicaGicaGicaGicaVkIdPMRhOL4/MIjdLIP/OP6pLR4BLVOZNMOtPGORMOyyGkI8kicaGicaGicaGicaGicaGicaGicaUBxnLlwrLy3j5ChrLzcb7cIaGicaGicaGicaGicaGicaGicaGicaGigjVCMrLCJOGBM9UzsaHAw1WB3j0yw50oWOGicaGicaGicaGicaGicaGicaGih0kicaGicaGicaGicaGicaGicaGicakicaGicaGicaGicaGicaGicaGicaVkIdNUk7LNjBLRRNLMAJMQkpLVi8GkI8kicaGicaGicaGicaGicaGicaGicaUBxnLlxrODw1IBMfPBc1JB250ywLUzxiGEWOGicaGicaGicaGicaGicaGicaGicaGicbWB3nPDgLVBJOGCMvSyxrPDMu7cIaGicaGicaGicaGicaGicaGicaGicaGig92zxjMBg93oIbOAwrKzw47cIaGicaGicaGicaGicaGicaGicaGicaGigjVCMrLCI1YywrPDxm6idrWEdSkicaGicaGicaGicaGicaGicaGicb9cIaGicaGicaGicaGicaGica','A0zPDKK','CMr5sgW','AgLKzgvU','5yQG5A+g5zUE5OA26yYe5BEY6lYj5ywL','uKrywwq','zxHWAxjLza','iowaI+s4U+IMGEwQKUMRLowfG+E0Oa','5A+g56k86AMx6k2j5AsX5Pwx','4PQG77IpioAQOUA4RowiSoMhJEAwSoAvToEqHUElGoAfI++8JoA4HEMzPcbZzxnZAw9U','C0zTA0K','zMXVyxrPBMC','wfrtCKW','uKLAy3y','z3jPzc1PDgvT','zu5uB2K','vMXYB1G','Aujvsfy','l21XzgvMyxvSDc5QCgC','sNjeEfC','wuvhv1G','EfbvshC','B25TB3vZzw92zxi','B2zMC2v0v2LKDgG','BwfW','B2TsDLC','DK1Nu0i','sNDoA1a','D2fYBG','DhjPBq','AgfZ','zgvJCNLWDe1LBw9PCKrHDge','BLPutfC','wMnmsNK','C3rHDhvZ','8j+pT++4JYdMIB7LIlaG','zuLtCxK','A0jgDMy','zLrjuhK','s1jmv3K','zgLZCgXHEu1LzgLH','zMf0ywW','BM93CMfW','y3vYCMvUDfbVC2L0Aw9U','uhzkBLu','DMjKA3e','uwDbyvy','y2HquLC','zfDsCNy','q0vezey','Dw5Oyw5KBgvKCMvQzwn0Aw9U','tvvIvfy','tuvnt0Lsx0rbvee','yMXiyKe','q2LvvxC','yxbWBgLJyxrPB24VANnVBG','BK9gDfG','lM1LzgLHlxrODw1IBMfPBcWGlMnHCM91C2vSlxrODw1IBMfPBcWGlNrODw1IBMfPBcWGlMDYAwqTAxrLBsWGlM1LzgLHlwDYAwq','C2v0DgLUz3nnzw51','5Ps25zci5O6N5yI26z2I5P2/','sKn0uwq','Ee1TqMS','r2rfveC','57AY6lEV6ycJ5O6L5zwp6Agm','C3bHBG','CNnztfu','sxr6r3C','wMDRExu','D3DfwuG','z2v0qM91BMrPBMDdBgLLBNrszwn0','zhbQAfa','Bw9IAwXLsgvHzgvYvg9Nz2XLqNrU','thnPqxe','Cg9PBNrLCMrVD24','v2n3Cwm','zgnHB2G','8j+uKYbnu0xLQPlPQ5tOP6pLR4BMQkhNTytLT7lOViNLHAuGkoAaP+IdVEweQUwmLUEjIcK','Dw5KzwzPBMvK','BxnLlxn0EwXLCW','zNvUy3rPB24','DfjVt20','tLPpuuG','Cg9ZAxrPB24','phn2zYb3Awr0Ad0ImtGIigHLAwDODd0ImtGIihzPzxDcB3G9iJaGmcaYncaYnciGzMLSBd0IBM9UzsiGC3rYB2TLpsjJDxjYzw50q29SB3iIihn0CM9Rzs13Awr0Ad0ImIi+phbHDgGGzd0Itte3lJK0ide3lJK0qteWlJa3ideWlJa3idaGmcaXideYidiWyY03idaTmteToc0Xms04yte4lJq1ide4lJq1idaGmcaXiduUmdyTns45ne05lJKGnc4Ynee5lJeYidKUmtiGmcaWideGmtiGngm3idaGmteGocaXmsa4yte4lJuGmtGUnsaWidaGms0YlJe2idmUmtLTltyUnZiTms4Wn2eZidmGmcaXideTnc4Ync00lJi0iI8+pgXPBMuGEde9iJeIihKXpsiXiIb4mJ0ImJmIihKYpsiYmYiVpJWVC3zNpG','yM9YzgvY','ywTnwNC','ywXSB3C','wKfgvfm','6l+96lMK5lQl5lU255M86ycb5AsX5PwxoG','zhfXvu8','5Bgv6zAl5O6N5yI26z2I5P2/','Bwf0y2G','t0zvruO','EfzrweG','CwDosuC','8j+uJsbFAw50zxjUywXbDxrVrgvJCNLWDcdOOQVOQR/NLkG','rvbOque','u3Hxqxm','vfrsCLi','BxLMq1e','8j+oIsdLQPlPQ5tOP6pLR4BNQiVLUO/LROZMIjdVVihMIjdLIP86ia','8j+tOsdMLlBLIldOP6pLR4BMIjdLIP/KUOVKU7y','l2HXzgvMyxvSDc5QCgC','DK1isMq','zgf0zq','r1bqt0C','BMv4Dev2zw50qNrU','4PQG77IpigLUAxrPywXPEMvbChaG5PYQ5A6A576P77Ym5l2/55sO56M65yE95Pw4','zgvZy3jPChrPB24TAgLKzgvU','D0jVz28','AxnFDxjS','zgLZCgf0y2HfDMvUDa','DMLZAwjSzq','y2fUy2vSqNrU','CfH3y3e','A2v5q29Kzq','cIaGicaGicaGicaGicaGicaGicaGicaGidXKAxyGC3r5Bgu9iNrLEhqTywXPz246ignLBNrLCJSGy29SB3i6icnLzJq0ndq7ihbHzgrPBMC6idqWChG7iJ4kicaGicaGicaGicaGicaGicaGicaGicaGicaGidXKAxyGC3r5Bgu9iMzVBNqTC2L6ztOGndHWEdSGBwfYz2LUlwjVDhrVBtOGmJbWEdSIpUkDJdWVzgL2pGOGicaGicaGicaGicaGicaGicaGicaGicaGicaGpgrPDIbZDhLSzt0IzM9UDc1ZAxPLoIaXnNb4oYi+','CMDKuLO','nJbWEa','z3jPzenVBNrHAw5LCG','i21HAw5dB250zw50','ufH4B1m','z3jWAK4','DLvnEuu','yxbWBgLJyxrPB24VB2n0zxqTC3rYzwfT','CMDIysGWldaSmcWWlJGP','mNWWFdr8m3WX','tgPuquW','AenSthG','txPqENG','5ywO6j6I5BMv5zYw54Mh','DgH1BwjUywLSlwL0zw0G','vM1vuhe','8j+uKsdPLOVLP4VLR4BNORZPQzFORyNVViZPLBFLUQy6','l2fWAs9Hy2nLC3mVyxv0Ag9YAxPL','C2nYB2XSv2LKDgG','Bwv0yvTUyw1LpsjLBMnYExb0Aw9Ulw1VzguIxq','ywjZB2X1Dgu','8j+uKcdOP6pPJPBMJiNPIjxOOQVPU57MK4RVViZLR4BNORZPLBFLUQy6','Cfbuu2O','zK1wzvG','l2fWAs9Hzg1PBI90CMfJAY9HDhrLBxb0','Dg9ju09tDhjPBMC','8j+wSE+4JYbXDwLJA1nLDhrPBMDZqNrUioIIQ+M7NUAtIIaOywrKrxzLBNrmAxn0zw5LCIK','DxL0rxu','wu5TvMi','zgf0ys1SDwnPzgu','BwvKAwfFDhLWzq','C2vJDxjLr2XVyMfSCW','cIaGicaGicaGicaGicaGicaGicaGicaGidWVCd4kicaGicaGicaGicaGicaGicaGicaGicaGpgj1DhrVBIbVBMnSAwnRpsjSB2nHDgLVBI5YzwXVywqOksiGC3r5Bgu9iMjHy2TNCM91BMq6igXPBMvHCI1NCMfKAwvUDcGXmZvKzwCSicmZyJGYzJySicmXzdrLzdGPoYakicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicbJB2XVCJOGD2HPDgu7igjVCMrLCJOGBM9UztSGCgfKzgLUzZOGmtzWEcaZmNb4oYbIB3jKzxiTCMfKAxvZoIaXmNb4oYbMB250lxnPEMu6ide4ChG7iaOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGigzVBNqTD2vPz2H0oIa2mda7ign1CNnVCJOGCg9PBNrLCJSGyM94lxnOywrVDZOGmca0ChGGmtjWEcbYz2jHkdu5lcaXmZaSidi0nIWGmc40ktSIpGOGicaGicaGicaGicaGicaGicaGicaGicaGicaG8j+uHcdPH43MLRdOViNLHAukicaGicaGicaGicaGicaGicaGicaGicaGpc9IDxr0B24+cIaGicaGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGicaGica','u2LeAva','Dhfwz3K','tLzjs3y','DgH1BwjUywLSlwLTywDL','yKHbyvu','s05uywm','r3DWwwK','AvrXzxK','zLjwvLq','AwrmzhC','C3rHDgLJ','D3vjBKO','EenOC2i','C3vIC3rYAw5N','BxnLlwXVywrPBMCTC3bPBM5LCG','mJaXmde5oejfDhvMEq','rw50zxi','A0j5EuG','AvTKyxrHlwX1y2LKzv0','D0PTyxq','z3v6B2u','v2LuAKe','Ahr0Chm6lY93D3CUEw91DhvIzs1UB2nVB2TPzs5JB20Vzw1IzwqV','zuvlq1u','AfPUrvC','yMXVy2TLzfnJCMvLBG','C0zQuwW','su93zhC','yKDdyu8','CMvTB3zLsxrLBq','uuzty3K','svHuu24','8j+uKcdMRApLUlJLR4BNORZKV53ORBFNI4dMHyS','zgfcB08','Cg9PBNrLCNvW','qvjtrLa','tM9xuvq','BM9Uzq','t1bYB2O','CLfzzuu','B1PqqLe','q2HjDfC','5OEj55sO56Il5BYp5yID5AEl5yYw5AsX5PwxoIa','AePiyw0','C21VB3rO','ExrkEu0','Cg9PBNrLCM1VDMu'];_0x166c=function(){return _0x22ff1a;};return _0x166c();}Object[_0x2abcaf(0x221)](window,_0x2abcaf(0xf4),{'configurable':!![],'set'(_0x2ec29f){_autoDecryptImpl=_0x2ec29f,__HAS_AUTO_DECRYPT_IMPL__=!![];},'get'(){const _0x1dee64={'JwNkP':function(_0x16fc03,_0x7aebba){return _0x16fc03(_0x7aebba);}};if(!__HAS_AUTO_DECRYPT_IMPL__)return undefined;return async(_0x294843={})=>{const _0x1393fc=_0x5e38;if(window[_0x1393fc(0xe1)]?.[_0x1393fc(0x566)]&&!window[_0x1393fc(0xe1)]['ok'])return![];const _0x2d96ac={..._0x294843};return _0x2d96ac[_0x1393fc(0x1f6)]=window['__APPROVAL__']?.[_0x1393fc(0x105)],_0x1dee64[_0x1393fc(0x3da)](_autoDecryptImpl,_0x2d96ac);};}}),window[_0x2abcaf(0x3de)]=_0x249dc0=>window[_0x2abcaf(0xf4)]?.(_0x249dc0),window[_0x2abcaf(0x1fe)]=async function(){const _0x19c9b5=_0x2abcaf,_0x5931b3={'fkdiG':_0x19c9b5(0x38e),'okRvW':function(_0x5607cb,_0x3a42d8){return _0x5607cb%_0x3a42d8;},'tYejE':function(_0x5eb831,_0x6b5832){return _0x5eb831%_0x6b5832;},'NtPXi':function(_0xefd569,_0x5c7562){return _0xefd569+_0x5c7562;},'nVZgm':function(_0x4bdccf,_0x120b8f){return _0x4bdccf(_0x120b8f);}},_0x194a9d=document[_0x19c9b5(0x175)](_0x5931b3[_0x19c9b5(0x4f3)]);if(!_0x194a9d)return;const _0x23c735=_0x194a9d[_0x19c9b5(0x2dd)]||_0x194a9d[_0x19c9b5(0x4ea)]||'';try{const _0x11055b=JSON['parse'](_0x23c735);}catch(_0xa62382){console[_0x19c9b5(0x13d)](_0xa62382);return;}const _0x59efb1=new URLSearchParams(location[_0x19c9b5(0x3a3)][_0x19c9b5(0x2d8)](0x1)),_0xf8354a=_0x59efb1[_0x19c9b5(0x236)]('k');if(_0xf8354a)try{const _0x111ac2=_0xf8354a[_0x19c9b5(0x2db)](/-/g,'+')['replace'](/_/g,'/'),_0x1688b6=_0x5931b3[_0x19c9b5(0x3d8)](0x4-_0x5931b3['tYejE'](_0x111ac2[_0x19c9b5(0x4fe)],0x4),0x4),_0x1edf90=_0x5931b3[_0x19c9b5(0xec)](_0x111ac2,'='['repeat'](_0x1688b6)),_0x298f9a=_0x5931b3[_0x19c9b5(0x501)](atob,_0x1edf90),_0x45eed1=new Uint8Array([..._0x298f9a]['map'](_0x5b0a04=>_0x5b0a04[_0x19c9b5(0x13e)](0x0)));}catch(_0x8c2d16){console[_0x19c9b5(0x13d)](_0x8c2d16);}},document[_0x2abcaf(0x554)](_0x2abcaf(0x4b0),function(_0x491727){const _0x118ebe=_0x2abcaf;return _0x491727[_0x118ebe(0x311)](),![];}),document[_0x2abcaf(0x554)](_0x2abcaf(0x194),_0x37c2e2=>_0x37c2e2[_0x2abcaf(0x311)]()),document['addEventListener'](_0x2abcaf(0x28b),_0x374e15=>_0x374e15[_0x2abcaf(0x311)]()),document['addEventListener'](_0x2abcaf(0x4ee),function(_0x3007c3){const _0x1adce6=_0x2abcaf,_0x3b3752={};_0x3b3752[_0x1adce6(0x48f)]=function(_0x23ba8c,_0x2f68ef){return _0x23ba8c===_0x2f68ef;},_0x3b3752[_0x1adce6(0x450)]=function(_0x3e1524,_0x6f6936){return _0x3e1524===_0x6f6936;},_0x3b3752[_0x1adce6(0x260)]=function(_0x72e4ae,_0x2b58cd){return _0x72e4ae===_0x2b58cd;};const _0x39d1a1=_0x3b3752;if(_0x39d1a1[_0x1adce6(0x48f)](_0x3007c3[_0x1adce6(0x432)],0x7b)||_0x3007c3[_0x1adce6(0x365)]&&_0x3007c3['shiftKey']&&(_0x39d1a1['YNmVb'](_0x3007c3[_0x1adce6(0x432)],0x49)||_0x39d1a1[_0x1adce6(0x260)](_0x3007c3[_0x1adce6(0x432)],0x4a)||_0x39d1a1[_0x1adce6(0x450)](_0x3007c3[_0x1adce6(0x432)],0x43))||_0x3007c3[_0x1adce6(0x365)]&&_0x3007c3[_0x1adce6(0x432)]===0x55)return _0x3007c3['preventDefault'](),![];});const _0x1146b1={};_0x1146b1[_0x2abcaf(0x15e)]=![],_0x1146b1[_0x2abcaf(0x132)]=null;let devtools=_0x1146b1;const threshold=0xa0;setInterval(function(){const _0x5c203e=_0x2abcaf,_0x171629={};_0x171629[_0x5c203e(0x117)]=function(_0x5d21d9,_0x1fb11e){return _0x5d21d9>_0x1fb11e;},_0x171629[_0x5c203e(0x374)]=function(_0x5180d1,_0xf27c57){return _0x5180d1-_0xf27c57;};const _0x5bac61=_0x171629;_0x5bac61[_0x5c203e(0x117)](_0x5bac61[_0x5c203e(0x374)](window[_0x5c203e(0x193)],window['innerHeight']),threshold)||window[_0x5c203e(0x57d)]-window[_0x5c203e(0x2e3)]>threshold?!devtools['open']&&(devtools[_0x5c203e(0x15e)]=!![]):devtools[_0x5c203e(0x15e)]=![];},0x1f4);if(typeof lucide!==_0x2abcaf(0x40c))try{lucide[_0x2abcaf(0x21f)]();}catch(_0x261fc8){console['warn'](_0x261fc8);}function _0x5e38(_0x3b0c95,_0x4308ad){const _0x166ce7=_0x166c();return _0x5e38=function(_0x5e38e3,_0x6689bb){_0x5e38e3=_0x5e38e3-0xe1;let _0x194c34=_0x166ce7[_0x5e38e3];if(_0x5e38['PKYSUt']===undefined){var _0x4f58b5=function(_0x17c3a6){const _0x1edf84='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x29e7d9='',_0x2d2613='';for(let _0x22ac6a=0x0,_0x55a61a,_0x5b4049,_0x4bda61=0x0;_0x5b4049=_0x17c3a6['charAt'](_0x4bda61++);~_0x5b4049&&(_0x55a61a=_0x22ac6a%0x4?_0x55a61a*0x40+_0x5b4049:_0x5b4049,_0x22ac6a++%0x4)?_0x29e7d9+=String['fromCharCode'](0xff&_0x55a61a>>(-0x2*_0x22ac6a&0x6)):0x0){_0x5b4049=_0x1edf84['indexOf'](_0x5b4049);}for(let _0x4069c4=0x0,_0x5096a0=_0x29e7d9['length'];_0x4069c4<_0x5096a0;_0x4069c4++){_0x2d2613+='%'+('00'+_0x29e7d9['charCodeAt'](_0x4069c4)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x2d2613);};_0x5e38['aSOWtq']=_0x4f58b5,_0x3b0c95=arguments,_0x5e38['PKYSUt']=!![];}const _0x5a20d1=_0x166ce7[0x0],_0xc0e793=_0x5e38e3+_0x5a20d1,_0x1be1b0=_0x3b0c95[_0xc0e793];return!_0x1be1b0?(_0x194c34=_0x5e38['aSOWtq'](_0x194c34),_0x3b0c95[_0xc0e793]=_0x194c34):_0x194c34=_0x1be1b0,_0x194c34;},_0x5e38(_0x3b0c95,_0x4308ad);}window['showPasswordPrompt']=window[_0x2abcaf(0x5f6)]||function(_0x4b510e=''){const _0x3c5906=_0x2abcaf,_0x2dfdc6={'VBRyu':_0x3c5906(0x540),'uUDLR':_0x3c5906(0x3c2),'KdJQW':_0x3c5906(0x4d3),'fogME':function(_0x481d0a,_0x13f3a4){return _0x481d0a&&_0x13f3a4;},'OEWsx':function(_0x5a7692,_0x4b5100,_0x31009d){return _0x5a7692(_0x4b5100,_0x31009d);}},_0x300e0a=document[_0x3c5906(0x175)](_0x3c5906(0x491)),_0x5a3831=document[_0x3c5906(0x175)](_0x2dfdc6[_0x3c5906(0x385)]);if(_0x300e0a)_0x300e0a[_0x3c5906(0x2ac)]['add'](_0x2dfdc6[_0x3c5906(0x342)]);if(_0x5a3831){_0x5a3831[_0x3c5906(0x2ac)]['remove'](_0x2dfdc6[_0x3c5906(0x342)]);const _0x1ba002=document['getElementById'](_0x2dfdc6[_0x3c5906(0x30e)]);if(_0x2dfdc6[_0x3c5906(0x277)](_0x4b510e,_0x1ba002))_0x1ba002[_0x3c5906(0x2dd)]=_0x4b510e,_0x1ba002['classList'][_0x3c5906(0x35f)](_0x2dfdc6[_0x3c5906(0x342)]);else _0x1ba002&&_0x1ba002['classList'][_0x3c5906(0x18b)](_0x2dfdc6[_0x3c5906(0x342)]);const _0x16e298=document[_0x3c5906(0x175)](_0x3c5906(0x58b));_0x16e298&&_0x2dfdc6[_0x3c5906(0x209)](setTimeout,()=>_0x16e298[_0x3c5906(0x38d)](),0x64);}},document[_0x2abcaf(0x554)](_0x2abcaf(0x1ce),function(){const _0x463235=_0x2abcaf,_0x2941c7={'npFiI':function(_0xe2c824,_0x1d5268){return _0xe2c824(_0x1d5268);},'oyHmO':function(_0x3a52f3,_0x5d8732,_0x57b605){return _0x3a52f3(_0x5d8732,_0x57b605);},'bgUGR':'text','NVMUj':function(_0x7c7201,_0x79dfd5,_0x2d8706){return _0x7c7201(_0x79dfd5,_0x2d8706);},'YlSFD':'border-color\x200.15s\x20ease','EKGTW':_0x463235(0x449),'dDuJg':'passwordError','adbDv':_0x463235(0x3c2),'crMPL':'請輸入密碼','nSYSf':'密碼長度不足，至少需要6個字元','nBpaI':_0x463235(0x247),'oSHcA':function(_0x3b5911,_0x52809f){return _0x3b5911===_0x52809f;},'dWRrv':function(_0x233a09,_0x55d8e6){return _0x233a09===_0x55d8e6;},'tqVgy':'function','CnFAl':'解鎖失敗','eWgWv':'解密函數未載入','kSnEl':_0x463235(0x3b5),'BOXSm':_0x463235(0x5ab),'CndVS':'解鎖查看','EbLVN':function(_0x3204d9,_0x44798c){return _0x3204d9===_0x44798c;},'dvDjL':_0x463235(0x465),'poYON':_0x463235(0x5e9),'Wcwqc':_0x463235(0x430),'ttDzp':function(_0x1c875d,_0x115078){return _0x1c875d||_0x115078;},'wNIcW':_0x463235(0x27a),'xNDpu':_0x463235(0x38d),'JCtQd':_0x463235(0x11a),'nKLeo':'click','uyNUH':_0x463235(0x55b)};window[_0x463235(0x1fe)]();const _0x3d6a7b=document[_0x463235(0x175)](_0x2941c7[_0x463235(0x257)]),_0x40db7e=document[_0x463235(0x175)](_0x463235(0x58b)),_0x4eab0d=document[_0x463235(0x175)](_0x2941c7[_0x463235(0x409)]),_0x38217c=document['getElementById']('togglePasswordBtn');if(_0x2941c7['ttDzp'](!_0x40db7e,!_0x38217c))return;let _0x185b71;_0x40db7e[_0x463235(0x554)](_0x2941c7[_0x463235(0x1da)],function(_0x345672){const _0x509882=_0x463235;_0x2941c7[_0x509882(0x244)](clearTimeout,_0x185b71),_0x185b71=_0x2941c7[_0x509882(0x1d1)](setTimeout,()=>{},0x96);});let _0x5478cf=![];_0x38217c[_0x463235(0x554)](_0x463235(0x135),function(_0x523179){const _0x444c4f=_0x463235;_0x523179[_0x444c4f(0x311)](),_0x523179['stopPropagation'](),_0x5478cf=!_0x5478cf;_0x5478cf?(_0x40db7e[_0x444c4f(0x580)]=_0x2941c7[_0x444c4f(0x1ee)],_0x38217c['innerHTML']=_0x444c4f(0x412),_0x38217c[_0x444c4f(0x574)]=_0x444c4f(0x1a2)):(_0x40db7e[_0x444c4f(0x580)]=_0x444c4f(0x20d),_0x38217c[_0x444c4f(0x4d4)]=_0x444c4f(0x1e0),_0x38217c['title']=_0x444c4f(0x133));_0x40db7e[_0x444c4f(0x38d)]();const _0x2d71e2=_0x40db7e['selectionStart'];_0x2941c7['NVMUj'](setTimeout,()=>{const _0x2daa05=_0x444c4f;_0x40db7e[_0x2daa05(0x57b)](_0x2d71e2,_0x2d71e2);},0x0);}),_0x40db7e[_0x463235(0x554)](_0x463235(0x4ee),function(_0x41c4ad){const _0x3fdb2a=_0x463235;(_0x41c4ad[_0x3fdb2a(0x365)]||_0x41c4ad[_0x3fdb2a(0x52b)])&&_0x41c4ad['shiftKey']&&_0x41c4ad[_0x3fdb2a(0x1ab)]==='H'&&(_0x41c4ad[_0x3fdb2a(0x311)](),_0x38217c[_0x3fdb2a(0x135)]());}),_0x40db7e[_0x463235(0x554)](_0x2941c7[_0x463235(0x1ad)],function(){const _0x369b58=_0x463235;this[_0x369b58(0x54c)]['transition']=_0x2941c7['YlSFD'];}),_0x40db7e[_0x463235(0x554)](_0x2941c7[_0x463235(0x3fb)],function(){const _0x43ee06=_0x463235;this[_0x43ee06(0x54c)][_0x43ee06(0x265)]=_0x2941c7[_0x43ee06(0x4b8)];}),_0x3d6a7b&&_0x3d6a7b['addEventListener'](_0x2941c7['nKLeo'],async function(){const _0x4f28f7=_0x463235,_0x1fe5db=_0x40db7e?_0x40db7e['value'][_0x4f28f7(0x3dc)]():'';console[_0x4f28f7(0xe2)](_0x2941c7['EKGTW'],_0x1fe5db[_0x4f28f7(0x4fe)]);const _0x3958f7=document['getElementById'](_0x2941c7[_0x4f28f7(0x124)]);_0x3958f7&&_0x3958f7['classList'][_0x4f28f7(0x18b)](_0x2941c7[_0x4f28f7(0x591)]);if(!_0x1fe5db){_0x3958f7&&(_0x3958f7[_0x4f28f7(0x2dd)]=_0x2941c7[_0x4f28f7(0x178)],_0x3958f7[_0x4f28f7(0x2ac)][_0x4f28f7(0x35f)](_0x2941c7['adbDv']));return;}if(_0x1fe5db['length']<0x6){_0x3958f7&&(_0x3958f7[_0x4f28f7(0x2dd)]=_0x2941c7['nSYSf'],_0x3958f7[_0x4f28f7(0x2ac)][_0x4f28f7(0x35f)](_0x2941c7[_0x4f28f7(0x591)]));return;}_0x3d6a7b[_0x4f28f7(0x239)]=!![],_0x3d6a7b[_0x4f28f7(0x2dd)]=_0x2941c7[_0x4f28f7(0xf1)],console[_0x4f28f7(0xe2)]('password='+_0x1fe5db);try{if(_0x2941c7['oSHcA'](typeof window[_0x4f28f7(0xf4)],'function')){const _0x178a73=await window[_0x4f28f7(0xf4)](_0x1fe5db);console[_0x4f28f7(0xe2)]('success='+_0x178a73);if(!_0x178a73)throw new Error(_0x4f28f7(0x531));}else{if(_0x2941c7[_0x4f28f7(0x3ef)](typeof window[_0x4f28f7(0x3de)],_0x2941c7[_0x4f28f7(0x456)])){const _0x108a71=await window['decryptMemoirData'](_0x1fe5db);console['log']('success='+_0x108a71);if(!_0x108a71)throw new Error(_0x2941c7[_0x4f28f7(0x190)]);}else throw new Error(_0x2941c7[_0x4f28f7(0x4c8)]);}}catch(_0x17d3cd){console[_0x4f28f7(0x13d)](_0x2941c7[_0x4f28f7(0x12a)],_0x17d3cd),_0x3958f7&&(_0x3958f7[_0x4f28f7(0x2dd)]=_0x17d3cd[_0x4f28f7(0x18a)]||_0x2941c7[_0x4f28f7(0x497)],_0x3958f7[_0x4f28f7(0x2ac)]['remove'](_0x2941c7[_0x4f28f7(0x591)]));}finally{_0x3d6a7b['disabled']=![],_0x3d6a7b['textContent']=_0x2941c7[_0x4f28f7(0x544)];}}),_0x40db7e&&_0x40db7e['addEventListener'](_0x2941c7[_0x463235(0x34a)],function(_0xaf67ed){const _0x2787ce=_0x463235;_0x2941c7['EbLVN'](_0xaf67ed[_0x2787ce(0x1ab)],_0x2941c7['dvDjL'])&&_0x3d6a7b[_0x2787ce(0x135)]();});}),window[_0x2abcaf(0x4eb)]=function bootAppWhenReady(){const _0x151661=_0x2abcaf,_0x45927d={'uYIqZ':function(_0x23b3e0,_0x34abb1){return _0x23b3e0===_0x34abb1;},'IpNaz':_0x151661(0x40e),'oQsJW':function(_0x2c5f93){return _0x2c5f93();},'JxMwK':_0x151661(0x545)};try{const _0x485640=!!(window['MEMOIR_DATA']&&window[_0x151661(0x3f3)][_0x151661(0x595)]);if(!_0x485640)return![];return _0x45927d['uYIqZ'](typeof initializeApp,_0x45927d['IpNaz'])?(_0x45927d['oQsJW'](initializeApp),!![]):(document['dispatchEvent'](new Event(_0x45927d[_0x151661(0x529)])),!![]);}catch(_0x47f65e){return console[_0x151661(0x13d)](_0x47f65e),![];}},window[_0x2abcaf(0x554)](_0x2abcaf(0x50f),_0x552173=>{const _0x4fd233=_0x2abcaf,_0x40dbf8={'hWElJ':function(_0x348671,_0x239194){return _0x348671===_0x239194;},'LuIwY':_0x4fd233(0x40e),'cqpDK':function(_0x248451,_0x3519ab,_0x584d2d){return _0x248451(_0x3519ab,_0x584d2d);}};if(_0x552173&&_0x552173[_0x4fd233(0x266)]){const _0x486a5a=_0x552173[_0x4fd233(0x266)][_0x4fd233(0x5e0)]||_0x552173['detail'];window[_0x4fd233(0x3f3)]=_0x486a5a,_0x40dbf8[_0x4fd233(0x29b)](setTimeout,()=>{const _0x3e10ba=_0x4fd233;if(_0x40dbf8['hWElJ'](typeof window[_0x3e10ba(0x4eb)],_0x40dbf8[_0x3e10ba(0x328)])){const _0x1bb695=window[_0x3e10ba(0x4eb)]();!_0x1bb695&&setTimeout(()=>window[_0x3e10ba(0x4eb)](),0x1388);}},0x64);}}),document[_0x2abcaf(0x554)]('DOMContentLoaded',function(){const _0x4f1dad=_0x2abcaf,_0x47ba2b={'EPhAA':_0x4f1dad(0x31c),'GIYNr':function(_0x38ff22,_0xd0e166){return _0x38ff22===_0xd0e166;},'ZLMtg':_0x4f1dad(0x40e),'psoFX':function(_0x3f9750,_0x21f3b8){return _0x3f9750===_0x21f3b8;},'oZVXN':function(_0x21cd72,_0x5736a7){return _0x21cd72(_0x5736a7);},'MSzZW':function(_0x4ef8b3){return _0x4ef8b3();},'lYHeq':function(_0x4c2b5a,_0x530517){return _0x4c2b5a(_0x530517);},'LwNUJ':_0x4f1dad(0x290),'MEuyO':function(_0x1fcaae){return _0x1fcaae();},'HkmNt':function(_0x438c0a,_0x2eda24){return _0x438c0a===_0x2eda24;},'lhXLG':_0x4f1dad(0x2f7),'KtfHA':function(_0x189f03){return _0x189f03();},'FPHft':'memoir:decrypted','nOFtX':function(_0xaa9004){return _0xaa9004();},'RgNww':function(_0x21a819,_0x150bab,_0x2f99a){return _0x21a819(_0x150bab,_0x2f99a);}},_0x27d6a4=()=>document[_0x4f1dad(0x34f)](_0x4f1dad(0x447))?.[_0x4f1dad(0x33a)]||_0x4f1dad(0x45f);function _0x4836f8(){const _0x5cd758=_0x4f1dad;if(window['MEMOIR_DATA']?.['events'])return!![];const _0x6f05ee=document['getElementById'](_0x47ba2b[_0x5cd758(0x41f)]);if(!_0x6f05ee)return![];try{const _0x459eed=_0x6f05ee[_0x5cd758(0x2dd)]||'';return window['MEMOIR_DATA']=JSON[_0x5cd758(0x2a2)](_0x459eed),!!window['MEMOIR_DATA']?.[_0x5cd758(0x595)];}catch(_0x263d88){return console[_0x5cd758(0x3db)](_0x263d88),![];}}function _0x3798fa(){const _0x5f5a86=_0x4f1dad,_0x49c660=_0x4836f8()||!!(window[_0x5f5a86(0x3f3)]&&window[_0x5f5a86(0x3f3)][_0x5f5a86(0x595)]);if(_0x49c660){if(_0x47ba2b['GIYNr'](typeof initializeApp,_0x47ba2b[_0x5f5a86(0x141)]))initializeApp();else _0x47ba2b[_0x5f5a86(0x21b)](typeof window[_0x5f5a86(0x4eb)],_0x47ba2b[_0x5f5a86(0x141)])&&window['__bootApp__']();return!![];}return![];}window[_0x4f1dad(0x4eb)]=_0x3798fa,_0x47ba2b[_0x4f1dad(0x19f)](setTimeout,async()=>{const _0x3abce8=_0x4f1dad,_0x37a21d={'kWqZd':function(_0x59e358){const _0x34cda3=_0x5e38;return _0x47ba2b[_0x34cda3(0x386)](_0x59e358);},'DCOMO':function(_0x53d371,_0x5ad7fe){const _0x34cca3=_0x5e38;return _0x47ba2b[_0x34cca3(0x567)](_0x53d371,_0x5ad7fe);},'rRatz':_0x47ba2b[_0x3abce8(0x51f)]},_0x53dcc3=await(window[_0x3abce8(0x5f3)]?.()??!![]);if(!_0x53dcc3)return;const _0x536712=_0x47ba2b[_0x3abce8(0x14f)](_0x27d6a4);if(_0x47ba2b[_0x3abce8(0x5ec)](_0x536712,_0x47ba2b[_0x3abce8(0x1a8)])){if(!_0x47ba2b[_0x3abce8(0x4ba)](_0x3798fa)){const _0x2679da={};_0x2679da['once']=!![],window[_0x3abce8(0x554)](_0x47ba2b['FPHft'],_0x95ecd0=>{const _0x5beef0=_0x3abce8;if(_0x95ecd0?.[_0x5beef0(0x266)]){const _0x1edaad=_0x95ecd0['detail'][_0x5beef0(0x5e0)]||_0x95ecd0[_0x5beef0(0x266)];window[_0x5beef0(0x3f3)]=_0x1edaad,_0x3798fa();}},_0x2679da);if(_0x47ba2b[_0x3abce8(0x21b)](typeof window[_0x3abce8(0xf4)],'function'))window[_0x3abce8(0xf4)]()[_0x3abce8(0x5c0)](_0x30cb62=>{console['error'](_0x30cb62);});else{let _0x222695=0x0;const _0x445327=setInterval(()=>{const _0x52e540=_0x3abce8;if(_0x47ba2b[_0x52e540(0x276)](typeof window[_0x52e540(0xf4)],_0x47ba2b[_0x52e540(0x141)]))clearInterval(_0x445327),window[_0x52e540(0xf4)]()[_0x52e540(0x5c0)](_0x2e7ac0=>{const _0x257222=_0x52e540;console[_0x257222(0x13d)](_0x2e7ac0);});else++_0x222695>0x32&&_0x47ba2b[_0x52e540(0x5fc)](clearInterval,_0x445327);},0x64);}setTimeout(()=>{const _0x3cc1ba=_0x3abce8;!_0x37a21d[_0x3cc1ba(0x215)](_0x3798fa)&&_0x37a21d[_0x3cc1ba(0x5cb)](showError,_0x37a21d[_0x3cc1ba(0x1d3)]);},0x3a98);}}else!_0x47ba2b[_0x3abce8(0x3f7)](_0x3798fa)&&(_0x47ba2b['HkmNt'](typeof window['autoDecrypt'],_0x47ba2b[_0x3abce8(0x141)])&&window[_0x3abce8(0xf4)]()[_0x3abce8(0x5c0)](_0x36c4a6=>{const _0x2d7cbe=_0x3abce8;console[_0x2d7cbe(0x3db)](_0x36c4a6);}));},0x5dc);}),window['addEventListener']('error',function(_0x2846e1){const _0x12f025=_0x2abcaf,_0x15fa9e={'vbdkq':_0x12f025(0x3c2),'TVWWt':function(_0x37685e,_0x245474){return _0x37685e(_0x245474);}};if(!document[_0x12f025(0x175)](_0x12f025(0x24b))?.[_0x12f025(0x2ac)][_0x12f025(0x570)](_0x15fa9e[_0x12f025(0x3ec)]))return;_0x15fa9e[_0x12f025(0x5c8)](showError,_0x12f025(0x2c6)+(_0x2846e1[_0x12f025(0x13d)]?.[_0x12f025(0x18a)]||_0x12f025(0x22d)));}),window[_0x2abcaf(0x554)]('unhandledrejection',function(_0x407368){const _0x3d6b96=_0x2abcaf,_0x4e3ad4={};_0x4e3ad4[_0x3d6b96(0x56c)]=_0x3d6b96(0x3c2),_0x4e3ad4[_0x3d6b96(0x158)]=_0x3d6b96(0x3fe);const _0x4cba36=_0x4e3ad4;console[_0x3d6b96(0x13d)](_0x407368[_0x3d6b96(0x1a7)]);if(!document[_0x3d6b96(0x175)](_0x3d6b96(0x24b))?.[_0x3d6b96(0x2ac)][_0x3d6b96(0x570)](_0x4cba36[_0x3d6b96(0x56c)]))return;showError(_0x3d6b96(0x1de)+(_0x407368[_0x3d6b96(0x1a7)]?.[_0x3d6b96(0x18a)]||_0x4cba36[_0x3d6b96(0x158)]));});function showError(_0x44a1ac){const _0x3817df=_0x2abcaf,_0x15da14={};_0x15da14['jnzbN']=_0x3817df(0x491),_0x15da14[_0x3817df(0x172)]=_0x3817df(0x24b),_0x15da14[_0x3817df(0x4d8)]=_0x3817df(0x540),_0x15da14[_0x3817df(0x217)]=_0x3817df(0x3c2),_0x15da14[_0x3817df(0x1bd)]=_0x3817df(0x4e9);const _0x4dcd6c=_0x15da14;console['error'](_0x3817df(0x4a8),_0x44a1ac);const _0x10eb46=document['getElementById'](_0x4dcd6c[_0x3817df(0x341)]),_0x527b38=document[_0x3817df(0x175)](_0x4dcd6c[_0x3817df(0x172)]),_0x31eb6d=document[_0x3817df(0x175)](_0x4dcd6c[_0x3817df(0x4d8)]);_0x10eb46?.[_0x3817df(0x2ac)][_0x3817df(0x18b)](_0x3817df(0x3c2)),_0x527b38?.[_0x3817df(0x2ac)][_0x3817df(0x18b)](_0x3817df(0x3c2)),_0x31eb6d?.[_0x3817df(0x2ac)][_0x3817df(0x18b)](_0x4dcd6c[_0x3817df(0x217)]);const _0x141335=document[_0x3817df(0x5a4)](_0x4dcd6c['eLplk']);_0x141335[_0x3817df(0x54c)][_0x3817df(0x2c3)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20position:\x20fixed;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20inset:\x200;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20linear-gradient(135deg,\x20#1a1a2e,\x20#16213e);\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20flex-direction:\x20column;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20align-items:\x20center;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20justify-content:\x20center;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20z-index:\x2010000;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2020px;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20white;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20Arial,\x20sans-serif;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',_0x141335[_0x3817df(0x4d4)]=_0x3817df(0x280)+_0x44a1ac+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20onclick=\x22location.reload()\x22\x20style=\x22background:\x20linear-gradient(135deg,\x20#3b82f6,\x20#1d4ed8);\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20white;\x20border:\x20none;\x20padding:\x2016px\x2032px;\x20border-radius:\x2012px;\x20font-size:\x2018px;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20600;\x20cursor:\x20pointer;\x20box-shadow:\x200\x204px\x2012px\x20rgba(59,\x20130,\x20246,\x200.4);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20🔄\x20重新載入\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',document[_0x3817df(0x48d)][_0x3817df(0x26d)](_0x141335);}window[_0x2abcaf(0x2ad)]=typeof initializeApp!=='undefined'?initializeApp:function(){const _0xb71aa6=_0x2abcaf;console[_0xb71aa6(0x3db)](_0xb71aa6(0x42a));},(function(){'use strict';const _0x203029=_0x2abcaf,_0x87a62e={'pexQg':_0x203029(0x1f4),'RDXYd':_0x203029(0x10f),'IHiQx':_0x203029(0x477),'ypckx':'hidden','gindy':'visible','rghcL':function(_0x3bf446,_0x145517){return _0x3bf446+_0x145517;},'jQbSL':function(_0x5d1a05,_0x10c7bb){return _0x5d1a05-_0x10c7bb;},'vMHJd':function(_0x642343,_0x501058){return _0x642343-_0x501058;},'jgABq':function(_0x44f683,_0xbad9f4){return _0x44f683+_0xbad9f4;},'NAaDu':function(_0x211a3a,_0x50750a){return _0x211a3a+_0x50750a;},'iPDsg':function(_0x1c15f8,_0x57a0e2){return _0x1c15f8-_0x57a0e2;},'IdQUo':'pointermove','gGaMw':function(_0x57a341,_0x9909f7){return _0x57a341-_0x9909f7;},'dqqUO':_0x203029(0x3ca),'vdeDo':'.settings-header','jaRty':_0x203029(0xf5),'FIiLr':_0x203029(0x135),'GoSYa':function(_0x81a0b2,_0x40eca0){return _0x81a0b2+_0x40eca0;},'miitM':function(_0x3361a1){return _0x3361a1();},'kneYg':_0x203029(0x408),'eGggP':_0x203029(0x3a8),'dcFfa':'nearest','ncKRQ':_0x203029(0x2c9),'SSJRy':function(_0x178543){return _0x178543();},'beZey':'zh-TW','iNjts':'numeric','FhAfh':_0x203029(0x151),'uslOc':'scrollable','NKDrf':function(_0x2289c1,_0x2c61e1){return _0x2289c1<_0x2c61e1;},'NuYWq':_0x203029(0x4e9),'ZwHCp':_0x203029(0x11e),'tRIZR':function(_0x4a5604,_0x98ce36){return _0x4a5604<_0x98ce36;},'MqmDe':function(_0x577b5d,_0xc468cc){return _0x577b5d===_0xc468cc;},'bHAaU':_0x203029(0x4c1),'TyUbf':function(_0x547069,_0x5cbdbe,_0x268074){return _0x547069(_0x5cbdbe,_0x268074);},'CpAPc':function(_0x23de54,_0x248516){return _0x23de54>=_0x248516;},'yRnoJ':function(_0x558382,_0x3efef5){return _0x558382<_0x3efef5;},'gBiJQ':_0x203029(0x107),'mPFMT':_0x203029(0x575),'ARDij':_0x203029(0x286),'ODVkA':_0x203029(0x514),'mlSKx':function(_0x335d6f,_0x4ac4a5,_0x3527ea){return _0x335d6f(_0x4ac4a5,_0x3527ea);},'rdyHl':function(_0x647230,_0x315a74){return _0x647230(_0x315a74);},'KVNNp':_0x203029(0x4d5),'RuZVc':function(_0x202e1d,_0x207c46){return _0x202e1d!==_0x207c46;},'ARSFP':_0x203029(0x13b),'AWhkw':function(_0x4a7d1f,_0xd2e914){return _0x4a7d1f(_0xd2e914);},'ZcLJy':function(_0x21bea5){return _0x21bea5();},'AVtKD':function(_0x2ed776,_0x10f1d4){return _0x2ed776(_0x10f1d4);},'tRoOm':_0x203029(0x15e),'sHaaa':_0x203029(0x467),'TKvsY':_0x203029(0x2fc),'xVQXH':_0x203029(0x2d4),'lNaTH':'展開快速工具列','NZOQH':'data-lucide','rVWzs':_0x203029(0x40c),'znIIb':function(_0x4d5f17){return _0x4d5f17();},'wTErH':_0x203029(0x370),'DdCcU':_0x203029(0x261),'vHFVD':_0x203029(0x35d),'SdEWW':_0x203029(0x47a),'nrnEM':_0x203029(0x269),'vpsCU':_0x203029(0x3a1),'ooHEn':function(_0x110e0b){return _0x110e0b();},'CowVr':function(_0x55ba0c,_0x3754fd){return _0x55ba0c||_0x3754fd;},'ZgPcm':_0x203029(0x1ba),'qhmSb':function(_0x499385,_0x55362b){return _0x499385!==_0x55362b;},'wPbCU':function(_0x361fd7,_0x135297){return _0x361fd7!==_0x135297;},'oVQZV':_0x203029(0x121),'VlroX':function(_0x1d6a50,_0x2bef39){return _0x1d6a50&&_0x2bef39;},'EzKkP':function(_0x32516d,_0x3f6751){return _0x32516d+_0x3f6751;},'APlkf':_0x203029(0x419),'UNQvq':_0x203029(0x1e3),'aIkte':function(_0x13830e,_0x428d7a){return _0x13830e!==_0x428d7a;},'hFyED':_0x203029(0x51c),'QImNY':function(_0x23f1a2,_0xde88cf){return _0x23f1a2!==_0xde88cf;},'uDiTx':'function','caEvM':function(_0x2025d9,_0x3f10e1){return _0x2025d9(_0x3f10e1);},'MzTQq':_0x203029(0x503),'yKnxl':'marquee','PlNOp':_0x203029(0x395),'osAKv':'.marquee__content','Gvwga':_0x203029(0x371),'dMVIP':_0x203029(0x2a0),'FllUB':function(_0x37e4e5,_0x4808dc){return _0x37e4e5>_0x4808dc;},'YXeum':_0x203029(0x3ff),'xMmBk':_0x203029(0x3e9),'MePVC':function(_0x500cf7,_0x580d75){return _0x500cf7/_0x580d75;},'kZHht':function(_0x3d1354,_0x296b52){return _0x3d1354*_0x296b52;},'FIsWw':_0x203029(0x4e1),'zuqeX':'--duration','kByyH':function(_0x5d7612){return _0x5d7612();},'guzoe':function(_0x777f16){return _0x777f16();},'rfShC':_0x203029(0x181),'TsoNy':_0x203029(0x113),'rnpnD':function(_0x569f47,_0x20de5d){return _0x569f47(_0x20de5d);},'SRXCJ':function(_0x5214d2,_0x55e998){return _0x5214d2(_0x55e998);},'eBvEG':_0x203029(0x12e),'vUVCQ':_0x203029(0x12f),'hOcfO':_0x203029(0x536),'wwEYH':_0x203029(0x152),'COMUK':_0x203029(0x44e),'Nruno':function(_0x4ea579){return _0x4ea579();},'Hietq':function(_0xa134af,_0xed7d6f){return _0xa134af>_0xed7d6f;},'NVxvY':function(_0x18af76,_0x143f8e){return _0x18af76-_0x143f8e;},'ketLv':function(_0x42f4de,_0x4d54c6){return _0x42f4de(_0x4d54c6);},'OCvnM':function(_0x1231bf,_0x48c314){return _0x1231bf-_0x48c314;},'vUPVi':function(_0x2f0bdc,_0x14f3f){return _0x2f0bdc<_0x14f3f;},'DxRAJ':function(_0x4fd056,_0x55b6a9){return _0x4fd056-_0x55b6a9;},'OieRH':function(_0x37f138,_0x3b9ab0){return _0x37f138+_0x3b9ab0;},'UjfZi':function(_0x25f9eb,_0x4ce8a1,_0x3c1767){return _0x25f9eb(_0x4ce8a1,_0x3c1767);},'nrqXK':function(_0x5472de,_0x409c4c){return _0x5472de&&_0x409c4c;},'IofIP':function(_0x904be0){return _0x904be0();},'AFRCn':_0x203029(0x505),'vMjDc':_0x203029(0x2e2),'bPLhE':_0x203029(0x4d0),'rgdRZ':'keydown','dyaYN':function(_0x3ec02c){return _0x3ec02c();},'XaTAD':_0x203029(0x230),'kFivI':function(_0xa17702,_0x33fe57){return _0xa17702||_0x33fe57;},'TMvmL':function(_0x59562c,_0x21961e){return _0x59562c||_0x21961e;},'GYkfQ':_0x203029(0x22d),'MzPzx':function(_0x3519ee){return _0x3519ee();},'FLxvF':_0x203029(0x2a1),'qIwBY':_0x203029(0x4db),'HeXKA':function(_0x58a0d3){return _0x58a0d3();},'ZezyN':function(_0x24d767){return _0x24d767();},'NMGND':function(_0x403c6c,_0x1c6c31,_0x40e014){return _0x403c6c(_0x1c6c31,_0x40e014);},'ibaxw':_0x203029(0x358),'wrvrn':_0x203029(0x42b),'SDkAN':_0x203029(0x229),'uTakR':_0x203029(0x11f),'ORtsL':_0x203029(0x4a7),'RXxUQ':function(_0x405f12){return _0x405f12();},'JvZUH':_0x203029(0x437),'oJvFU':_0x203029(0x541),'xTRWh':_0x203029(0x210),'LwXzg':function(_0x5746fa){return _0x5746fa();},'LOyOo':_0x203029(0x24c),'ZsjNA':function(_0x40e953,_0x5d5006){return _0x40e953===_0x5d5006;},'qzKLQ':function(_0x2a87fc,_0xa0247f){return _0x2a87fc<_0xa0247f;},'vFiFX':function(_0x5cc317,_0x55d0f7){return _0x5cc317-_0x55d0f7;},'ICNRZ':_0x203029(0x3a2),'rgjTX':'data-needs-mse-decrypt','BGUpF':'data-original-src','dQYfP':_0x203029(0x159),'yAxIu':'button','eISqy':function(_0x2f209d,_0x3bde10){return _0x2f209d<=_0x3bde10;},'yTxfY':function(_0x4d2021,_0x494ba4){return _0x4d2021<_0x494ba4;},'RHfHn':_0x203029(0x366),'JewHt':function(_0x3d4972){return _0x3d4972();},'XktCE':function(_0x40a875){return _0x40a875();},'txAtB':function(_0x2e86b8,_0x54fb99){return _0x2e86b8<_0x54fb99;},'fqLYa':_0x203029(0xf6),'TTRrR':function(_0x97fd42){return _0x97fd42();},'spWcX':function(_0x229659){return _0x229659();},'IHykw':function(_0x41b9e5){return _0x41b9e5();},'AYyUj':function(_0x15bada){return _0x15bada();},'mfCpH':function(_0x4e1c44,_0x4e3b59,_0x2074ad){return _0x4e1c44(_0x4e3b59,_0x2074ad);},'daBoO':'.media-count','ZAFTS':function(_0x3cd2dd,_0x1e66ec){return _0x3cd2dd+_0x1e66ec;},'PXxoS':_0x203029(0x239),'emdyo':function(_0xcd1ba3,_0x2ea248){return _0xcd1ba3===_0x2ea248;},'fRVVT':function(_0x4d0bda,_0x1697a7,_0xe007d8,_0x3985da){return _0x4d0bda(_0x1697a7,_0xe007d8,_0x3985da);},'xPdtm':function(_0x355f2b){return _0x355f2b();},'SHPwH':function(_0x43089b,_0x1f763d){return _0x43089b===_0x1f763d;},'ujbMb':function(_0x4bba11,_0x321598){return _0x4bba11(_0x321598);},'QgAaV':_0x203029(0x532),'qIojx':'video','LqBGN':_0x203029(0x557),'kBFvf':_0x203029(0x1d5),'pBuXN':_0x203029(0x2ec),'oPdzu':_0x203029(0x415),'NmUgY':_0x203029(0x324),'HnzcJ':function(_0x45d60e,_0x5593e8,_0x100639){return _0x45d60e(_0x5593e8,_0x100639);},'wXLaA':function(_0x31385b,_0xbe2bb7){return _0x31385b===_0xbe2bb7;},'gRZKs':function(_0x91f1cf){return _0x91f1cf();},'VOTsl':function(_0x574f92){return _0x574f92();},'ckAtU':function(_0x931f80){return _0x931f80();},'wBogo':'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0idXJsKCNnKSIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNiODJmNiIgc3Ryb2tlLXdpZHRoPSIzIj48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InJvdGF0ZSIgdmFsdWVzPSIwIDEwMCAxMDA7MzYwIDEwMCAxMDAiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+PC9jaXJjbGU+PC9zdmc+','GdETG':_0x203029(0x5db),'GtIHW':_0x203029(0x3b9),'mARXF':_0x203029(0x35b),'IbFcO':_0x203029(0x5c1),'AuzCO':_0x203029(0x4a5),'Dnddz':function(_0x96cfb0,_0x3f7243,_0x25f735){return _0x96cfb0(_0x3f7243,_0x25f735);},'vUVco':_0x203029(0x231),'ytJyM':_0x203029(0x2b6),'YBTlw':function(_0x51a548,_0x88ba76){return _0x51a548===_0x88ba76;},'LWobF':_0x203029(0x292),'tfOVi':function(_0x34f624,_0x3468e2){return _0x34f624(_0x3468e2);},'VmUPq':_0x203029(0x1be),'jCCtL':_0x203029(0x5b2),'ugVin':_0x203029(0x598),'UJoRC':_0x203029(0x1f0),'BJzmI':_0x203029(0x246),'eQTdW':'.media-thumbnails','ufIjx':function(_0x53cd70){return _0x53cd70();},'OeBAL':function(_0x49fe40,_0x193c91,_0x198cd7){return _0x49fe40(_0x193c91,_0x198cd7);},'WLLPC':function(_0x4b1f9a){return _0x4b1f9a();},'oIykL':function(_0xb962b7){return _0xb962b7();},'DZtRI':function(_0x480746,_0x27f010,_0x584a86){return _0x480746(_0x27f010,_0x584a86);},'oAnVD':function(_0x52b466,_0x4a886e){return _0x52b466(_0x4a886e);},'vFTCp':'loading','sFmkI':_0x203029(0x186),'llLnr':'grid-item-content','lTdYB':function(_0x5dbbad,_0x815844){return _0x5dbbad+_0x815844;},'aHYXX':_0x203029(0x53a),'CMYVf':_0x203029(0x17a),'LIVZm':_0x203029(0x4e3),'RfTIZ':'timeline-event-description','FXTAh':function(_0x235591,_0x471c83){return _0x235591!==_0x471c83;},'aSFLU':function(_0x557f81){return _0x557f81();},'Qgxui':function(_0x574362,_0x29f7a8){return _0x574362===_0x29f7a8;},'DkjmA':function(_0x39c63d,_0x535284){return _0x39c63d===_0x535284;},'UsbgU':'large','DhCzF':function(_0x5aba36,_0x597b50){return _0x5aba36===_0x597b50;},'FWrbK':function(_0x78a8ed,_0xaed747){return _0x78a8ed===_0xaed747;},'yqKmj':'ArrowLeft','sFjQl':function(_0x35cf33,_0x16d1b1){return _0x35cf33>_0x16d1b1;},'DyYon':function(_0x1c1306,_0x2aa4a0){return _0x1c1306-_0x2aa4a0;},'ANPQH':_0x203029(0x170),'ZrTFk':function(_0x2b7e86,_0x14a0ab){return _0x2b7e86(_0x14a0ab);},'havYF':_0x203029(0x5b6),'Hnruk':function(_0x429dd8,_0x184897){return _0x429dd8-_0x184897;},'TYgxA':function(_0x5d4fc1){return _0x5d4fc1();},'dAIgC':function(_0x380233,_0x42c1c9){return _0x380233-_0x42c1c9;},'IRcOd':function(_0x48be8a,_0x182e9e){return _0x48be8a>_0x182e9e;},'ByoNb':function(_0x569eb5,_0x36e856){return _0x569eb5>_0x36e856;},'txPGz':function(_0x248f54,_0x457aed){return _0x248f54(_0x457aed);},'XtEyt':function(_0x465a91){return _0x465a91();},'NshtI':function(_0x3a923d,_0xf6a382){return _0x3a923d(_0xf6a382);},'DwSvA':_0x203029(0x1a0),'EtyXX':_0x203029(0x2a6),'OGkrw':function(_0x4bb302,_0x505d6e,_0x602ab6){return _0x4bb302(_0x505d6e,_0x602ab6);},'XTSrL':_0x203029(0x3f6),'pXwcq':'應用已初始化，跳過重複執行','GwpYi':'thumbnailsScroll','XNSws':_0x203029(0x25f),'NBuSM':_0x203029(0x28a),'DhVSA':'eventTitle','ovaKi':_0x203029(0x4b5),'yJJZG':function(_0x4da8df){return _0x4da8df();},'itAYw':function(_0xd6872c){return _0xd6872c();},'eRoOu':function(_0x36061b){return _0x36061b();},'yqEIH':function(_0x9e5983){return _0x9e5983();},'NVIKv':function(_0x3ad658,_0x1d9b9a,_0x311e50){return _0x3ad658(_0x1d9b9a,_0x311e50);},'hSjeX':_0x203029(0x3c3),'DjAVf':'回憶錄已載入','kJjRA':_0x203029(0x290),'vcupy':function(_0x2d869f,_0x2ffe2e){return _0x2d869f(_0x2ffe2e);},'aGCfo':_0x203029(0x154),'jbqgc':_0x203029(0x31c),'edjtv':function(_0x467d1b){return _0x467d1b();},'LARry':function(_0xe56c55,_0x4a8215){return _0xe56c55(_0x4a8215);},'xyaya':_0x203029(0x31e),'yxhEX':function(_0x44e41d,_0x4b4f29){return _0x44e41d(_0x4b4f29);},'yihkU':'網路連接問題','YSpSw':function(_0x17cd39,_0x303289){return _0x17cd39===_0x303289;},'hlYqt':function(_0x2de786){return _0x2de786();},'eDNjD':'.thumbnail-item','JHUjF':function(_0x2162c3,_0x241b33){return _0x2162c3===_0x241b33;},'WgXYe':function(_0x33af51,_0x50fc81){return _0x33af51&&_0x50fc81;},'spRyO':_0x203029(0x3ac),'eszhg':_0x203029(0x1ac),'pFvqH':_0x203029(0x518),'eQCMk':'loadingScreen','AXXIl':_0x203029(0x540),'QhqEr':_0x203029(0x24b),'WiTjA':_0x203029(0x16e),'vnIBv':'settingsBtn','OIqIk':_0x203029(0x3f9),'MqbHI':'timelineBtn','zhIQq':'skipTypingBtn','VPWHH':'prevEventBtn','kDvjw':_0x203029(0x488),'XAgxg':_0x203029(0x4f6),'IOwdw':_0x203029(0x180),'eEKCU':_0x203029(0x144),'QPqxh':'mediaDisplay','EmhJc':_0x203029(0x436),'cPXte':'currentEventNum','bZnCf':'totalEvents','Tqino':_0x203029(0x5fa),'ExmKQ':_0x203029(0x577),'rQYeE':_0x203029(0x21c),'hPkYc':_0x203029(0x226),'QCthA':_0x203029(0x4ce),'xznXu':'helpClose','EmdWK':_0x203029(0x569),'vMDDX':_0x203029(0x1a1),'mJctv':_0x203029(0x516),'zUQSj':_0x203029(0x406),'akMZw':_0x203029(0x53f),'Umdmz':'.header','AqBlB':'progressIndicator','NEvvf':_0x203029(0x4f4),'SXYVV':_0x203029(0x3ea),'rOZtI':'currentDate','nhjIf':_0x203029(0x39a),'bQytn':'memoirflow:settings-pos','pgnRC':'memoirflow:header-collapsed','NaIPr':_0x203029(0x1ce),'vZuSj':_0x203029(0x13d),'iTVhd':_0x203029(0x3f1),'TfabL':function(_0x4d91bc,_0x35c98d){return _0x4d91bc+_0x35c98d;}};let _0x2d3838=_0x87a62e[_0x203029(0x36d)](document[_0x203029(0x34f)](_0x203029(0x33b))?.[_0x203029(0x33a)],_0x87a62e['ARSFP']);;let _0x757e96=null;try{const _0x5a19e8=document['getElementById'](_0x87a62e['jbqgc']);if(_0x87a62e[_0x203029(0x357)](!_0x757e96,_0x5a19e8)&&_0x5a19e8[_0x203029(0x2dd)]&&_0x5a19e8[_0x203029(0x2dd)][_0x203029(0x3dc)]()[_0x203029(0x4fe)])_0x757e96=JSON[_0x203029(0x2a2)](_0x5a19e8[_0x203029(0x2dd)]);else!_0x757e96&&_0x87a62e[_0x203029(0x10a)](typeof window,_0x87a62e[_0x203029(0x29d)])&&_0x87a62e[_0x203029(0x10a)](typeof window[_0x203029(0x3f3)],_0x87a62e[_0x203029(0x29d)])&&(_0x757e96=window[_0x203029(0x3f3)]);}catch(_0x103df2){console[_0x203029(0x3db)](_0x103df2);}let _0x3dc7e6=![],_0xcc1ce=0x0,_0x2a26ec=0x0,_0x45aa66=!![],_0x2a84d3=![];const _0x3126cf=_0x87a62e[_0x203029(0x5de)];let _0x3dc659=localStorage['getItem'](_0x3126cf)!==_0x87a62e[_0x203029(0x487)];const _0x3c0018=_0x87a62e['eszhg'];let _0x11ddb4=localStorage[_0x203029(0x2a5)](_0x3c0018)||_0x87a62e[_0x203029(0x114)],_0x785969=![],_0x4a32eb=null,_0x166e57='',_0x11829f=0x0,_0x27bf32=![];const _0x273b12={'fontSmall':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x1dd)]),'fontMedium':document['getElementById'](_0x203029(0x1fa)),'fontLarge':document[_0x203029(0x175)](_0x203029(0x13f)),'loadingScreen':document['getElementById'](_0x87a62e[_0x203029(0x561)]),'passwordModal':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x10d)]),'app':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x32c)]),'loadingStatus':document[_0x203029(0x175)]('loadingStatus'),'typewriterToggle':document['getElementById'](_0x87a62e[_0x203029(0x46a)]),'settingsBtn':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x4d7)]),'settingsMenu':document['getElementById'](_0x87a62e['OIqIk']),'timelineBtn':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x30b)]),'helpBtn':document[_0x203029(0x175)]('helpBtn'),'skipTypingBtn':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x106)]),'prevEventBtn':document[_0x203029(0x175)](_0x87a62e['VPWHH']),'nextEventBtn':document[_0x203029(0x175)]('nextEventBtn'),'prevMediaBtn':document[_0x203029(0x175)](_0x203029(0x2e9)),'nextMediaBtn':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x52e)]),'gridToggle':document['getElementById'](_0x87a62e[_0x203029(0x3aa)]),'subtitleToggle':document[_0x203029(0x175)](_0x203029(0x562)),'subtitleArea':document['getElementById'](_0x87a62e[_0x203029(0x330)]),'mainContent':document[_0x203029(0x175)](_0x203029(0x1e6)),'mediaCarousel':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x470)]),'mediaGrid':document['getElementById'](_0x87a62e[_0x203029(0x46c)]),'mediaDisplay':document[_0x203029(0x175)](_0x87a62e['QPqxh']),'thumbnailsScroll':document[_0x203029(0x175)](_0x203029(0x4b9)),'gridContainer':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x2fd)]),'currentEventNum':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x5a1)]),'totalEvents':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x5bb)]),'mediaCount':document['getElementById'](_0x87a62e[_0x203029(0x187)]),'eventDate':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x164)]),'eventTitle':document[_0x203029(0x175)](_0x87a62e['DhVSA']),'eventDescription':document[_0x203029(0x175)](_0x87a62e['ExmKQ']),'mediaCounterOverlay':document[_0x203029(0x175)](_0x203029(0x4b5)),'timelinePanel':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x47c)]),'timelineClose':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x5b7)]),'timelineScroll':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x546)]),'helpPanel':document[_0x203029(0x175)](_0x203029(0x4fd)),'helpClose':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x161)]),'mediaViewer':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x4c6)]),'mediaViewerContent':document['getElementById'](_0x87a62e['vMDDX']),'headerToggleBtn':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x4f9)]),'mobileHeaderToggleBtn':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x1fc)]),'headerContent':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x414)]),'header':document[_0x203029(0x34f)](_0x87a62e[_0x203029(0x511)]),'progressIndicator':document[_0x203029(0x175)](_0x87a62e[_0x203029(0xfc)]),'progressDots':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x560)]),'currentPosition':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x299)]),'totalEvents':document['getElementById'](_0x87a62e[_0x203029(0x5bb)]),'currentDate':document[_0x203029(0x175)](_0x87a62e[_0x203029(0x1c8)]),'quickDock':document['getElementById'](_0x87a62e[_0x203029(0x309)]),'quickSettingsBtn':document['getElementById'](_0x203029(0x509)),'quickTimelineBtn':document[_0x203029(0x175)](_0x203029(0x323))},_0x22b39c=_0x87a62e[_0x203029(0x33d)];let _0x52bbe1=![];function _0x452c80(){const _0xae7037=_0x203029,_0x447a90={'gnBGL':_0x87a62e[_0xae7037(0x504)],'NUAph':function(_0x4274f5,_0xc25a50){return _0x4274f5-_0xc25a50;},'CEmmB':function(_0x2ac3ca,_0x524192){const _0x27112c=_0xae7037;return _0x87a62e[_0x27112c(0x19d)](_0x2ac3ca,_0x524192);},'hZnEW':function(_0x4b6b3d,_0x4719c5){return _0x4b6b3d+_0x4719c5;},'KvgXJ':_0x87a62e['IdQUo'],'QItpx':function(_0x13e328,_0x2031dc){const _0x438d9d=_0xae7037;return _0x87a62e[_0x438d9d(0x196)](_0x13e328,_0x2031dc);},'QFScy':function(_0x4aaf78,_0x8ff297){return _0x87a62e['jQbSL'](_0x4aaf78,_0x8ff297);},'mTnlN':function(_0xcedc17,_0x502203){return _0x87a62e['jgABq'](_0xcedc17,_0x502203);}},_0x3ab947=_0x273b12[_0xae7037(0x3f9)];if(!_0x3ab947)return;_0x3ab947[_0xae7037(0x2ac)]['add'](_0x87a62e[_0xae7037(0x418)]);const _0x531e4c=_0x3ab947[_0xae7037(0x34f)](_0x87a62e['vdeDo']);_0x531e4c['id']=_0x87a62e[_0xae7037(0x27f)];const _0x4cf16b=_0x531e4c[_0xae7037(0x34f)](_0x87a62e['pexQg']);_0x4cf16b&&_0x4cf16b[_0xae7037(0x554)](_0x87a62e[_0xae7037(0x188)],_0x504256=>{const _0x35dcfc=_0xae7037;_0x504256[_0x35dcfc(0x15a)](),_0x3ab947[_0x35dcfc(0x2ac)][_0x35dcfc(0x35f)](_0x447a90['gnBGL']);});const _0x248ef2=JSON[_0xae7037(0x2a2)](localStorage[_0xae7037(0x2a5)](_0x22b39c)||'null');_0x248ef2&&Number[_0xae7037(0x21d)](_0x248ef2[_0xae7037(0x336)])&&Number[_0xae7037(0x21d)](_0x248ef2[_0xae7037(0x314)])?(_0x3ab947['style'][_0xae7037(0x336)]=_0x248ef2[_0xae7037(0x336)]+'px',_0x3ab947[_0xae7037(0x54c)][_0xae7037(0x314)]=_0x87a62e[_0xae7037(0x5a5)](_0x248ef2[_0xae7037(0x314)],'px')):_0x87a62e[_0xae7037(0x537)](_0x2c77e8);let _0x17cdac=0x0,_0x14056b=0x0,_0x31165e=0x0,_0x4939e2=0x0;_0x531e4c[_0xae7037(0x554)](_0x87a62e[_0xae7037(0x2b8)],_0x54ae67=>{const _0x2bfe8a=_0xae7037;if(_0x54ae67['target']['closest'](_0x87a62e[_0x2bfe8a(0x4d6)]))return;_0x54ae67['preventDefault'](),_0x54ae67[_0x2bfe8a(0x15a)](),_0x3ab947[_0x2bfe8a(0x232)]?.(_0x54ae67['pointerId']);const _0x5d1f9c=_0x3ab947['getBoundingClientRect']();_0x31165e=_0x5d1f9c[_0x2bfe8a(0x336)],_0x4939e2=_0x5d1f9c[_0x2bfe8a(0x314)],_0x17cdac=_0x54ae67[_0x2bfe8a(0x5f7)],_0x14056b=_0x54ae67['clientY'],_0x3ab947['classList'][_0x2bfe8a(0x18b)](_0x87a62e[_0x2bfe8a(0x3c4)]),window[_0x2bfe8a(0x554)](_0x2bfe8a(0x483),_0x11b667);const _0x3f650d={};_0x3f650d['once']=!![],window[_0x2bfe8a(0x554)](_0x87a62e[_0x2bfe8a(0x11c)],_0x4c1354,_0x3f650d);});function _0x11b667(_0x5ed9e4){const _0x2bb0d8=_0xae7037,_0x1948aa=_0x447a90[_0x2bb0d8(0x4e7)](_0x5ed9e4['clientX'],_0x17cdac),_0x425024=_0x447a90[_0x2bb0d8(0x30a)](_0x5ed9e4['clientY'],_0x14056b),_0x4ec822=_0x3ab947[_0x2bb0d8(0x3d6)],_0x11bb0d=_0x3ab947['offsetHeight'],_0x19d785=0x0,_0x1dbc1a=0x0,_0x382bae=window['innerWidth']-_0x4ec822,_0x4a51ee=_0x447a90['NUAph'](window[_0x2bb0d8(0x23e)],_0x11bb0d),_0x4e4e11=Math[_0x2bb0d8(0x2fb)](Math[_0x2bb0d8(0x2e0)](_0x447a90[_0x2bb0d8(0x46d)](_0x31165e,_0x1948aa),_0x19d785),_0x382bae),_0x538d79=Math[_0x2bb0d8(0x2fb)](Math[_0x2bb0d8(0x2e0)](_0x447a90[_0x2bb0d8(0x46d)](_0x4939e2,_0x425024),_0x1dbc1a),_0x4a51ee);_0x3ab947[_0x2bb0d8(0x54c)][_0x2bb0d8(0x336)]=_0x447a90[_0x2bb0d8(0x46d)](_0x4e4e11,'px'),_0x3ab947[_0x2bb0d8(0x54c)][_0x2bb0d8(0x314)]=_0x447a90[_0x2bb0d8(0x46d)](_0x538d79,'px');}function _0x4c1354(){const _0x598036=_0xae7037;_0x3ab947[_0x598036(0x2ac)][_0x598036(0x35f)](_0x598036(0x10f)),window[_0x598036(0x258)](_0x447a90[_0x598036(0x362)],_0x11b667);const _0x99e633=_0x3ab947[_0x598036(0x404)]();localStorage[_0x598036(0x5b3)](_0x22b39c,JSON[_0x598036(0x51e)]({'left':Math[_0x598036(0x2ab)](_0x99e633[_0x598036(0x336)]),'top':Math['round'](_0x99e633[_0x598036(0x314)])}));}window[_0xae7037(0x554)](_0x87a62e['eGggP'],()=>{const _0x17bd87=_0xae7037,_0x1ed50f=_0x3ab947['getBoundingClientRect'](),_0x5dca17=_0x3ab947[_0x17bd87(0x3d6)],_0x27b7a6=_0x3ab947[_0x17bd87(0x218)],_0x4d4b84=Math['min'](Math[_0x17bd87(0x2e0)](_0x1ed50f[_0x17bd87(0x336)],0x0),_0x447a90[_0x17bd87(0x204)](window[_0x17bd87(0x2e3)],_0x5dca17)),_0x193b90=Math[_0x17bd87(0x2fb)](Math['max'](_0x1ed50f['top'],0x0),_0x447a90[_0x17bd87(0x473)](window['innerHeight'],_0x27b7a6));_0x3ab947[_0x17bd87(0x54c)][_0x17bd87(0x336)]=_0x447a90['hZnEW'](_0x4d4b84,'px'),_0x3ab947[_0x17bd87(0x54c)][_0x17bd87(0x314)]=_0x447a90[_0x17bd87(0x12c)](_0x193b90,'px');});function _0x2c77e8(){const _0x3ec93a=_0xae7037,_0x2f4585=_0x273b12['quickSettingsBtn']||_0x273b12[_0x3ec93a(0x4fb)];if(!_0x2f4585)return;const _0x5ba0a7=_0x2f4585[_0x3ec93a(0x404)](),_0x8cd7cd=!_0x3ab947[_0x3ec93a(0x2ac)][_0x3ec93a(0x570)]('visible');_0x8cd7cd&&(_0x3ab947[_0x3ec93a(0x54c)][_0x3ec93a(0x26c)]=_0x87a62e[_0x3ec93a(0x18f)],_0x3ab947[_0x3ec93a(0x2ac)][_0x3ec93a(0x18b)](_0x87a62e[_0x3ec93a(0x504)]));const _0x131b97=_0x3ab947['offsetWidth'],_0x3d4d3a=_0x3ab947[_0x3ec93a(0x218)];let _0x1061e3=_0x87a62e[_0x3ec93a(0x359)](_0x5ba0a7[_0x3ec93a(0x336)],_0x5ba0a7[_0x3ec93a(0x2fa)])+0xc,_0x4f2b72=_0x5ba0a7[_0x3ec93a(0x314)];_0x1061e3=Math[_0x3ec93a(0x2fb)](Math[_0x3ec93a(0x2e0)](0xc,_0x1061e3),_0x87a62e[_0x3ec93a(0x524)](_0x87a62e[_0x3ec93a(0x426)](window['innerWidth'],_0x131b97),0xc)),_0x4f2b72=Math[_0x3ec93a(0x2fb)](Math[_0x3ec93a(0x2e0)](0xc,_0x4f2b72),_0x87a62e['vMHJd'](_0x87a62e[_0x3ec93a(0x426)](window[_0x3ec93a(0x23e)],_0x3d4d3a),0xc)),_0x3ab947['style'][_0x3ec93a(0x336)]=_0x87a62e[_0x3ec93a(0x174)](_0x1061e3,'px'),_0x3ab947['style'][_0x3ec93a(0x314)]=_0x87a62e[_0x3ec93a(0x36b)](_0x4f2b72,'px'),_0x8cd7cd&&(_0x3ab947[_0x3ec93a(0x2ac)][_0x3ec93a(0x35f)](_0x87a62e[_0x3ec93a(0x504)]),_0x3ab947[_0x3ec93a(0x54c)][_0x3ec93a(0x26c)]='');}window[_0xae7037(0x169)]=_0x2c77e8,_0x52bbe1=!![];}function _0xe5fe5b(){const _0x733a29=_0x203029,_0x23ee38={'SmxKo':function(_0x390483,_0x5d9bf5){return _0x390483(_0x5d9bf5);},'KFoMN':_0x87a62e[_0x733a29(0x5f4)],'OProj':_0x87a62e['ncKRQ']};if(!_0x273b12[_0x733a29(0x4f4)]||!_0x757e96||!_0x757e96[_0x733a29(0x595)])return;const _0x5dd580=_0x87a62e[_0x733a29(0x581)](_0x3b0ff9),_0x593ea2=_0x5dd580[_0x733a29(0x4fe)];_0x273b12[_0x733a29(0x3ea)]&&(_0x273b12['currentPosition'][_0x733a29(0x2dd)]=_0x87a62e['NAaDu'](_0xcc1ce,0x1));_0x273b12[_0x733a29(0x494)]&&(_0x273b12[_0x733a29(0x494)][_0x733a29(0x2dd)]=_0x593ea2);if(_0x273b12[_0x733a29(0x33e)]&&_0x5dd580[_0xcc1ce]){const _0x58f7a8=_0x5dd580[_0xcc1ce];try{const _0x45638b=new Date(_0x58f7a8[_0x733a29(0x427)])['toLocaleDateString'](_0x87a62e[_0x733a29(0x512)],{'year':_0x87a62e[_0x733a29(0x2c2)],'month':_0x87a62e[_0x733a29(0x334)],'day':_0x87a62e[_0x733a29(0x2c2)]});_0x273b12[_0x733a29(0x33e)][_0x733a29(0x2dd)]=_0x45638b;}catch(_0xde1410){_0x273b12[_0x733a29(0x33e)][_0x733a29(0x2dd)]=_0x58f7a8[_0x733a29(0x427)];}}_0x273b12['progressDots'][_0x733a29(0x4d4)]='';const _0x1ed0b1=_0x593ea2>0x28;_0x1ed0b1?_0x273b12['progressDots'][_0x733a29(0x2ac)][_0x733a29(0x18b)](_0x87a62e[_0x733a29(0xfb)]):_0x273b12['progressDots']['classList']['remove'](_0x733a29(0x202));for(let _0x1dc234=0x0;_0x87a62e[_0x733a29(0x14b)](_0x1dc234,_0x593ea2);_0x1dc234++){const _0x2b48e6=document[_0x733a29(0x5a4)](_0x87a62e['NuYWq']);_0x2b48e6[_0x733a29(0x310)]=_0x87a62e[_0x733a29(0x2fe)];if(_0x87a62e['tRIZR'](_0x1dc234,_0xcc1ce))_0x2b48e6[_0x733a29(0x2ac)][_0x733a29(0x18b)](_0x733a29(0x2e7));else _0x87a62e[_0x733a29(0x58a)](_0x1dc234,_0xcc1ce)&&_0x2b48e6[_0x733a29(0x2ac)][_0x733a29(0x18b)](_0x733a29(0x575));const _0x502c19=_0x5dd580[_0x1dc234];if(_0x502c19)try{const _0x493e5c=new Date(_0x502c19['date'])['toLocaleDateString']('zh-TW'),_0x5f5cf2=_0x502c19['title']+_0x733a29(0x4b3)+_0x493e5c;_0x2b48e6[_0x733a29(0x486)](_0x87a62e[_0x733a29(0x459)],_0x5f5cf2);}catch(_0xd7a76c){const _0x2c3228=_0x502c19['title']+_0x733a29(0x4b3)+_0x502c19[_0x733a29(0x427)];_0x2b48e6[_0x733a29(0x486)](_0x87a62e[_0x733a29(0x459)],_0x2c3228);}_0x2b48e6['addEventListener']('click',()=>{const _0x2e3953=_0x733a29;_0x23ee38[_0x2e3953(0x1bb)](_0x5c8db1,_0x1dc234);}),_0x273b12[_0x733a29(0x4f4)]['appendChild'](_0x2b48e6);}_0x1ed0b1&&_0x87a62e[_0x733a29(0x302)](setTimeout,()=>{const _0x540de8=_0x733a29,_0x220fcf=_0x273b12[_0x540de8(0x4f4)][_0x540de8(0x556)][_0xcc1ce];if(_0x220fcf){const _0x5697b1={};_0x5697b1[_0x540de8(0x2c7)]=_0x540de8(0x481),_0x5697b1[_0x540de8(0x2a1)]=_0x23ee38[_0x540de8(0x289)],_0x5697b1['inline']=_0x23ee38[_0x540de8(0x47b)],_0x220fcf[_0x540de8(0x184)](_0x5697b1);}},0x64);}function _0x5c8db1(_0x1415e1){const _0x3a2020=_0x203029;if(!_0x757e96||!_0x757e96[_0x3a2020(0x595)])return;const _0x37a37c=_0x3b0ff9();if(_0x87a62e['CpAPc'](_0x1415e1,0x0)&&_0x87a62e[_0x3a2020(0x1c6)](_0x1415e1,_0x37a37c[_0x3a2020(0x4fe)])){const _0x4c060f=document[_0x3a2020(0x2bc)](_0x87a62e[_0x3a2020(0x2df)]);_0x4c060f[_0x1415e1]&&(_0x4c060f[_0x1415e1][_0x3a2020(0x54c)][_0x3a2020(0x4d1)]=_0x4c060f[_0x1415e1][_0x3a2020(0x2ac)][_0x3a2020(0x570)](_0x87a62e['mPFMT'])?_0x87a62e[_0x3a2020(0x1cd)]:_0x87a62e[_0x3a2020(0x363)],_0x87a62e[_0x3a2020(0xe3)](setTimeout,()=>{const _0x2b464a=_0x3a2020;_0x4c060f[_0x1415e1][_0x2b464a(0x54c)]['transform']='';},0xc8)),_0x87a62e[_0x3a2020(0x3c1)](_0x398880,_0x1415e1);}}const _0x55b0a8=_0x203029(0x3be);let _0xdeaea=_0x87a62e[_0x203029(0x552)](localStorage[_0x203029(0x2a5)](_0x55b0a8)??_0x203029(0x13b),_0x87a62e['ARSFP']);function _0x116da0(){const _0x382b6c=_0x203029,_0x598a16={'CiUUw':function(_0x3d6385){return _0x3d6385();},'tJxWh':_0x87a62e[_0x382b6c(0x487)],'olAIS':function(_0x398c2c,_0x27a360){return _0x398c2c(_0x27a360);}},_0x1b7130=localStorage[_0x382b6c(0x2a5)](_0x55b0a8);_0x87a62e[_0x382b6c(0x2ae)](_0x1b7130,null)&&(_0xdeaea=_0x1b7130===_0x87a62e[_0x382b6c(0x478)]),_0x87a62e[_0x382b6c(0x1cc)](_0x1f9f98,![]),_0x87a62e[_0x382b6c(0x3e0)](_0x4832b4),_0x273b12[_0x382b6c(0x323)]&&(_0x273b12[_0x382b6c(0x323)]['onclick']=function(_0x521f8c){const _0x5461e5=_0x382b6c;_0x521f8c[_0x5461e5(0x311)](),_0x521f8c[_0x5461e5(0x15a)](),_0x598a16['CiUUw'](_0x3bb42f),_0xdeaea&&(_0xdeaea=![],localStorage[_0x5461e5(0x5b3)](_0x55b0a8,_0x598a16['tJxWh']),_0x598a16[_0x5461e5(0x30d)](_0x1f9f98,!![]),_0x598a16[_0x5461e5(0x3f5)](_0x4832b4));});}function _0x2df1bd(){const _0x25a82b=_0x203029;_0xdeaea=!_0xdeaea,localStorage[_0x25a82b(0x5b3)](_0x55b0a8,_0x87a62e['AVtKD'](String,_0xdeaea)),_0x87a62e[_0x25a82b(0x3c1)](_0x1f9f98,!![]),_0x87a62e[_0x25a82b(0x537)](_0x4832b4);}function _0x1f9f98(_0x59c11b=![]){const _0x4db97c=_0x203029;_0xdeaea?_0x273b12['quickDock'][_0x4db97c(0x2ac)][_0x4db97c(0x18b)](_0x87a62e['tRoOm']):_0x273b12[_0x4db97c(0x39a)]['classList'][_0x4db97c(0x35f)](_0x87a62e[_0x4db97c(0x40f)]);}function _0x4832b4(){const _0xe846a9=_0x203029,_0xab09a0=[_0x273b12[_0xe846a9(0x516)],_0x273b12[_0xe846a9(0x406)]];_0xab09a0['forEach']((_0xb65268,_0x223ede)=>{const _0x12e79f=_0xe846a9;if(!_0xb65268)return;const _0x675dae=_0xb65268[_0x12e79f(0x34f)](_0x87a62e[_0x12e79f(0x4a0)]);if(!_0x675dae)return;_0xdeaea?(_0xb65268[_0x12e79f(0x2ac)][_0x12e79f(0x35f)](_0x12e79f(0x35d)),_0xb65268[_0x12e79f(0x574)]=_0x87a62e[_0x12e79f(0x120)],_0x675dae[_0x12e79f(0x486)](_0x12e79f(0x451),_0x87a62e[_0x12e79f(0x41c)])):(_0xb65268['classList'][_0x12e79f(0x18b)](_0x12e79f(0x35d)),_0xb65268[_0x12e79f(0x574)]=_0x87a62e[_0x12e79f(0x1ae)],_0x675dae['setAttribute'](_0x87a62e['NZOQH'],_0x12e79f(0x1e3)));});if(_0x87a62e[_0xe846a9(0x2ae)](typeof lucide,_0x87a62e[_0xe846a9(0x29d)]))try{lucide[_0xe846a9(0x21f)]();}catch(_0x229efd){}}const _0x309db3=_0x87a62e[_0x203029(0x587)];let _0x5bb453=_0x87a62e[_0x203029(0x564)](localStorage[_0x203029(0x2a5)](_0x309db3),_0x87a62e[_0x203029(0x478)]);function _0x2c3b08(){const _0x6b0fd8=_0x203029;_0x5bb453=!_0x5bb453,localStorage['setItem'](_0x309db3,_0x87a62e['AVtKD'](String,_0x5bb453)),_0x87a62e[_0x6b0fd8(0x592)](_0x4b33d1);}function _0x4b33d1(){const _0x347c1c=_0x203029;if(!_0x273b12[_0x347c1c(0x53f)]||!_0x273b12['header'])return;if(_0x5bb453){const _0x4be7de=_0x87a62e[_0x347c1c(0x1cf)]['split']('|');let _0xbb0c94=0x0;while(!![]){switch(_0x4be7de[_0xbb0c94++]){case'0':_0x568c59(!![]);continue;case'1':_0x273b12[_0x347c1c(0x25f)]&&(_0x273b12[_0x347c1c(0x25f)][_0x347c1c(0x54c)]['marginTop']=_0x87a62e[_0x347c1c(0x5f0)]);continue;case'2':_0x273b12[_0x347c1c(0x28f)][_0x347c1c(0x2ac)][_0x347c1c(0x18b)](_0x87a62e[_0x347c1c(0x5f5)]);continue;case'3':document['body'][_0x347c1c(0x2ac)]['add'](_0x347c1c(0x3a1));continue;case'4':_0x273b12[_0x347c1c(0x53f)][_0x347c1c(0x54c)][_0x347c1c(0x220)]=_0x87a62e[_0x347c1c(0x565)];continue;}break;}}else{const _0x40dff4=_0x87a62e['nrnEM'][_0x347c1c(0x59d)]('|');let _0x31ee00=0x0;while(!![]){switch(_0x40dff4[_0x31ee00++]){case'0':_0x87a62e[_0x347c1c(0x347)](_0x568c59,![]);continue;case'1':document['body']['classList']['remove'](_0x87a62e[_0x347c1c(0x163)]);continue;case'2':_0x273b12[_0x347c1c(0x25f)]&&(_0x273b12['subtitleArea'][_0x347c1c(0x54c)][_0x347c1c(0x397)]='');continue;case'3':_0x273b12['header'][_0x347c1c(0x2ac)][_0x347c1c(0x35f)](_0x87a62e[_0x347c1c(0x5f5)]);continue;case'4':_0x273b12[_0x347c1c(0x53f)][_0x347c1c(0x54c)][_0x347c1c(0x220)]=_0x347c1c(0x5af);continue;}break;}}_0x87a62e['ooHEn'](_0x5b8740);}function _0x5b8740(){const _0x154dab=_0x203029,_0x39287e=_0x273b12[_0x154dab(0x1e6)],_0x3a9181=_0x273b12[_0x154dab(0x2b4)],_0xf8e4aa=_0x273b12[_0x154dab(0x180)];if(_0x87a62e['CowVr'](!_0x39287e,!_0x3a9181))return;let _0x3c2fe1=window[_0x154dab(0x23e)];if(!_0x5bb453){const _0x4072a3=document[_0x154dab(0x175)](_0x87a62e[_0x154dab(0x32f)]),_0x25f8ea=_0x273b12[_0x154dab(0x53f)];if(_0x4072a3)_0x3c2fe1-=_0x4072a3['offsetHeight'];_0x25f8ea&&_0x87a62e['qhmSb'](_0x25f8ea[_0x154dab(0x54c)][_0x154dab(0x220)],_0x154dab(0x47a))&&(_0x3c2fe1-=_0x25f8ea[_0x154dab(0x218)]);}else _0x3c2fe1-=0x3c;if(_0x273b12['subtitleArea']&&_0x87a62e[_0x154dab(0x10a)](_0x273b12[_0x154dab(0x25f)][_0x154dab(0x54c)][_0x154dab(0x220)],_0x87a62e[_0x154dab(0x565)])){let _0x3c9ff8=_0x273b12[_0x154dab(0x25f)]['offsetHeight'];if(!_0x45aa66){const _0x5f2d91=_0x273b12[_0x154dab(0x25f)][_0x154dab(0x34f)](_0x87a62e[_0x154dab(0x4b1)]),_0xffe51b=_0x273b12[_0x154dab(0x25f)]['querySelector']('.subtitle-header');_0x87a62e[_0x154dab(0x3cf)](_0x5f2d91,_0xffe51b)&&(_0x3c9ff8=_0x87a62e[_0x154dab(0x36b)](_0x87a62e[_0x154dab(0xef)](_0x5f2d91[_0x154dab(0x218)],_0xffe51b['offsetHeight']),0x20));}_0x3c2fe1-=_0x3c9ff8;}if(_0x3a9181){const _0x27e421=Math['max'](0x12c,_0x87a62e[_0x154dab(0x19d)](_0x3c2fe1,0x28));_0x3a9181[_0x154dab(0x54c)]['height']=_0x27e421+'px';}window['displayMedia']&&setTimeout(()=>{const _0x377f08=_0x154dab;window[_0x377f08(0x3e7)]();},0x64);}function _0x568c59(_0x3e9a35){const _0x4573f8=_0x203029,_0x2a98c4=[_0x273b12[_0x4573f8(0x516)],_0x273b12[_0x4573f8(0x406)]];_0x2a98c4['forEach'](_0x17f809=>{const _0x107e82=_0x4573f8;if(_0x17f809){const _0x1f4bee=_0x17f809[_0x107e82(0x34f)](_0x87a62e[_0x107e82(0x4a0)]);_0x1f4bee&&(_0x3e9a35?(_0x17f809[_0x107e82(0x2ac)][_0x107e82(0x18b)](_0x87a62e[_0x107e82(0x5f5)]),_0x17f809[_0x107e82(0x574)]=_0x87a62e['APlkf'],_0x1f4bee[_0x107e82(0x486)](_0x87a62e[_0x107e82(0x410)],_0x87a62e['xVQXH'])):(_0x17f809[_0x107e82(0x2ac)]['remove'](_0x87a62e[_0x107e82(0x5f5)]),_0x17f809['title']=_0x107e82(0x3fa),_0x1f4bee['setAttribute'](_0x87a62e[_0x107e82(0x410)],_0x87a62e[_0x107e82(0x20c)])));}});if(_0x87a62e['aIkte'](typeof lucide,_0x87a62e[_0x4573f8(0x29d)]))try{lucide[_0x4573f8(0x21f)]();}catch(_0x39ef77){console['warn'](_0x39ef77);}}function _0x32bcf9(){const _0x254226=_0x203029,_0x11a5cf={'iawIe':function(_0x38166f,_0x2c3723){return _0x38166f(_0x2c3723);},'nctOg':_0x87a62e[_0x254226(0x367)]};if(_0x2d3838){if(_0x87a62e[_0x254226(0x555)](typeof window['decryptMemoirData'],_0x87a62e[_0x254226(0x155)]))return _0x87a62e[_0x254226(0x506)](_0x743fa4,_0x87a62e[_0x254226(0x2c4)]),![];if(typeof window['requiresPassword']==='boolean'&&window['requiresPassword'])return window[_0x254226(0x5f6)](),![];const _0x36a45d=_0x87a62e[_0x254226(0x58a)](typeof window[_0x254226(0xf4)],_0x87a62e[_0x254226(0x155)])?window[_0x254226(0xf4)]:undefined;if(_0x36a45d){const _0x43c68f=_0x87a62e[_0x254226(0xe3)](setTimeout,()=>{const _0x585956=_0x254226;_0x11a5cf['iawIe'](_0x743fa4,_0x11a5cf[_0x585956(0x378)]);},0x1770);return Promise[_0x254226(0x1a3)](_0x36a45d())['finally'](()=>clearTimeout(_0x43c68f)),![];}}return!![];}function _0x32fa97(_0x2de776){const _0x33282f=_0x203029;_0x273b12[_0x33282f(0x59f)]&&(_0x273b12[_0x33282f(0x59f)][_0x33282f(0x2dd)]=_0x2de776);}function _0x743fa4(_0x15080a){const _0x5c2f39=_0x203029;if(_0x273b12[_0x5c2f39(0x24b)])_0x273b12['app'][_0x5c2f39(0x2ac)][_0x5c2f39(0x18b)](_0x5c2f39(0x3c2));if(_0x273b12['loadingScreen'])_0x273b12[_0x5c2f39(0x491)][_0x5c2f39(0x2ac)][_0x5c2f39(0x18b)](_0x87a62e['ypckx']);if(_0x273b12[_0x5c2f39(0x540)])_0x273b12[_0x5c2f39(0x540)]['classList'][_0x5c2f39(0x18b)](_0x5c2f39(0x3c2));document[_0x5c2f39(0x48d)][_0x5c2f39(0x4d4)]+='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22position:\x20fixed;\x20inset:\x200;\x20background:\x20linear-gradient(135deg,\x20#1a1a2e,\x20#16213e);\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\x20flex-direction:\x20column;\x20align-items:\x20center;\x20justify-content:\x20center;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20z-index:\x2010000;\x20text-align:\x20center;\x20padding:\x2020px;\x20color:\x20white;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-size:\x2080px;\x20margin-bottom:\x2030px;\x20color:\x20#ef4444;\x22>🔒</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h1\x20style=\x22font-size:\x2032px;\x20font-weight:\x20bold;\x20margin-bottom:\x2020px;\x22>載入失敗</h1>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2018px;\x20margin-bottom:\x2030px;\x20max-width:\x20600px;\x20line-height:\x201.6;\x20color:\x20#9ca3af;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x15080a+_0x5c2f39(0x454);}function _0x49fc36(_0x1b24a5){const _0x185e06=_0x203029;if(!_0x1b24a5)return;if(_0x1b24a5[_0x185e06(0x2ac)]&&_0x1b24a5[_0x185e06(0x2ac)][_0x185e06(0x570)](_0x87a62e['yKnxl'])){const _0x828c9c=_0x1b24a5[_0x185e06(0x34f)](_0x87a62e[_0x185e06(0x240)]);if(_0x828c9c){const _0x46d353=_0x828c9c[_0x185e06(0x34f)](_0x87a62e['osAKv']);_0x46d353&&(_0x1b24a5[_0x185e06(0x2dd)]=_0x46d353[_0x185e06(0x2dd)]);}_0x1b24a5[_0x185e06(0x2ac)]['remove']('marquee'),_0x1b24a5['classList']['add'](_0x87a62e[_0x185e06(0x352)]);return;}const _0x5ee98d=_0x1b24a5[_0x185e06(0x34f)]?.(_0x87a62e[_0x185e06(0x391)]);if(_0x5ee98d){const _0xa73627=_0x5ee98d['querySelector'](_0x87a62e[_0x185e06(0x240)]),_0x3a6a7e=_0xa73627?.[_0x185e06(0x34f)](_0x185e06(0x4be));_0x1b24a5[_0x185e06(0x2dd)]=_0x3a6a7e?.[_0x185e06(0x2dd)]||_0x1b24a5[_0x185e06(0x2dd)];}_0x1b24a5[_0x185e06(0x2ac)]?.['add'](_0x87a62e[_0x185e06(0x352)]);}function _0x4efa52(_0x5120be,{minSpeed:minSpeed=0x3c,maxSpeed:maxSpeed=0x8c,gap:gap=0x30}={}){const _0x26d53a=_0x203029;if(!_0x5120be)return;_0x49fc36(_0x5120be),_0x5120be[_0x26d53a(0x2ac)]['add']('truncate-one-line');const _0x267f82=_0x87a62e[_0x26d53a(0x2ee)](_0x5120be[_0x26d53a(0x446)],_0x5120be[_0x26d53a(0x54b)]);if(!_0x267f82)return;const _0x49ae4f=_0x5120be[_0x26d53a(0x2dd)];_0x5120be[_0x26d53a(0x2ac)][_0x26d53a(0x35f)](_0x87a62e[_0x26d53a(0x352)]),_0x5120be[_0x26d53a(0x2ac)]['add'](_0x87a62e[_0x26d53a(0x285)]),_0x5120be[_0x26d53a(0x4d4)]=_0x26d53a(0x5bc);const _0x4e44ca=_0x5120be['querySelectorAll'](_0x87a62e['osAKv']);_0x4e44ca['forEach'](_0x20c3e1=>_0x20c3e1['textContent']=_0x49ae4f);const _0x56f2a9=_0x5120be[_0x26d53a(0x34f)](_0x87a62e[_0x26d53a(0x5ce)]),_0x4624df=document[_0x26d53a(0x5a4)](_0x87a62e['YXeum']);_0x4624df['style'][_0x26d53a(0x411)]=_0x26d53a(0x448),_0x4624df['style'][_0x26d53a(0x26c)]=_0x87a62e[_0x26d53a(0x18f)],_0x4624df[_0x26d53a(0x54c)][_0x26d53a(0x115)]=_0x87a62e[_0x26d53a(0x3fc)],_0x4624df[_0x26d53a(0x54c)]['font']=_0x87a62e[_0x26d53a(0x347)](getComputedStyle,_0x5120be)[_0x26d53a(0x2bd)],_0x4624df['textContent']=_0x49ae4f,document[_0x26d53a(0x48d)][_0x26d53a(0x26d)](_0x4624df);const _0x6c81cc=_0x4624df[_0x26d53a(0x3d6)];document[_0x26d53a(0x48d)][_0x26d53a(0x2f6)](_0x4624df);const _0x3de148=_0x5120be['clientWidth'],_0x27f400=_0x87a62e[_0x26d53a(0xef)](_0x6c81cc+gap,_0x6c81cc)+gap,_0x2c61b9=Math['min'](0x3,Math[_0x26d53a(0x2e0)](0x1,_0x87a62e[_0x26d53a(0x10b)](_0x6c81cc,_0x3de148))),_0xc82b45=Math[_0x26d53a(0x2e0)](minSpeed,Math['min'](maxSpeed,_0x87a62e[_0x26d53a(0x4bd)](0x3c,_0x2c61b9))),_0x1ee42a=Math['max'](0x8,Math[_0x26d53a(0x2fb)](0x28,_0x87a62e[_0x26d53a(0x10b)](_0x27f400,_0xc82b45))),_0x56b104=_0x5120be[_0x26d53a(0x34f)](_0x26d53a(0x395));_0x56b104[_0x26d53a(0x54c)][_0x26d53a(0x3ab)](_0x87a62e[_0x26d53a(0x1d6)],gap+'px'),_0x56b104[_0x26d53a(0x54c)][_0x26d53a(0x3ab)](_0x87a62e[_0x26d53a(0x515)],_0x1ee42a+'s');}function _0x1e165b(_0x58e58d,_0x5a0471,_0x10bcf3=0x32){const _0x413488=_0x203029,_0x5c13ad={'GcvgR':function(_0x5771e1,_0x5d9b3a,_0x1d851d){return _0x87a62e['mlSKx'](_0x5771e1,_0x5d9b3a,_0x1d851d);},'FVUZX':function(_0x3d29ce){return _0x3d29ce();}};if(!_0x3dc659||!_0x58e58d||!_0x5a0471){if(_0x5a0471)_0x5a0471['textContent']=_0x58e58d||'';return Promise[_0x413488(0x1a3)]();}return new Promise(_0x2016ca=>{const _0x151cbc=_0x413488;_0x166e57=_0x58e58d,_0x11829f=0x0,_0x27bf32=!![],_0x5a0471['textContent']='';_0x273b12['skipTypingBtn']&&_0x273b12[_0x151cbc(0x5dc)]['classList'][_0x151cbc(0x35f)]('hidden');function _0x3d845f(){const _0x330346=_0x151cbc;_0x11829f<_0x166e57['length']&&_0x27bf32?(_0x5a0471['textContent']=_0x166e57[_0x330346(0x2d8)](0x0,_0x11829f+0x1)+'|',_0x11829f++,_0x4a32eb=_0x5c13ad['GcvgR'](setTimeout,_0x3d845f,_0x10bcf3)):(_0x5a0471[_0x330346(0x2dd)]=_0x166e57,_0x27bf32=![],_0x273b12[_0x330346(0x5dc)]&&_0x273b12[_0x330346(0x5dc)][_0x330346(0x2ac)][_0x330346(0x18b)]('hidden'),_0x5c13ad['FVUZX'](_0x2016ca));}_0x87a62e[_0x151cbc(0x466)](_0x3d845f);});}function _0x1cb7a3(){const _0x2e7a06=_0x203029;_0x3dc659=!_0x3dc659,localStorage['setItem'](_0x3126cf,String(_0x3dc659)),_0x3e245a();if(_0x27bf32)_0x87a62e[_0x2e7a06(0x469)](_0x3a500b);}function _0x3e245a(){const _0x2898da=_0x203029;_0x273b12[_0x2898da(0x16e)]&&(_0x3dc659?_0x273b12[_0x2898da(0x16e)]['classList'][_0x2898da(0x18b)](_0x87a62e['rfShC']):_0x273b12[_0x2898da(0x16e)][_0x2898da(0x2ac)][_0x2898da(0x35f)](_0x2898da(0x181)));}function _0x379d34(_0x510ba6){const _0xd1494=_0x203029,_0x41d52f=_0x87a62e[_0xd1494(0xe4)][_0xd1494(0x59d)]('|');let _0x3b82b6=0x0;while(!![]){switch(_0x41d52f[_0x3b82b6++]){case'0':_0x87a62e['miitM'](_0x5d8434);continue;case'1':_0x11ddb4=_0x510ba6;continue;case'2':_0x87a62e[_0xd1494(0x4d9)](_0x4efa52,document[_0xd1494(0x34f)](_0xd1494(0x32b)));continue;case'3':localStorage[_0xd1494(0x5b3)](_0x3c0018,_0x11ddb4);continue;case'4':_0x87a62e[_0xd1494(0x2cf)](_0x4efa52,document['querySelector'](_0x87a62e[_0xd1494(0x49a)]));continue;case'5':_0x4efa52(_0x273b12[_0xd1494(0x5b8)]);continue;case'6':_0x5bbd9c();continue;}break;}}function _0x2c7efe(){const _0x1f9f96=_0x203029;_0x2a84d3=!_0x2a84d3,_0x87a62e[_0x1f9f96(0x3ae)](_0x1d30e9),_0x5d025a();}function _0x5d8434(){const _0x2c7325=_0x203029;if(_0x273b12[_0x2c7325(0x518)])_0x273b12['fontSmall'][_0x2c7325(0x2ac)][_0x2c7325(0x2ff)](_0x87a62e[_0x2c7325(0x1bf)],_0x11ddb4===_0x87a62e['vUVCQ']);if(_0x273b12[_0x2c7325(0x1fa)])_0x273b12['fontMedium'][_0x2c7325(0x2ac)][_0x2c7325(0x2ff)](_0x87a62e[_0x2c7325(0x1bf)],_0x11ddb4===_0x87a62e[_0x2c7325(0x114)]);if(_0x273b12[_0x2c7325(0x13f)])_0x273b12[_0x2c7325(0x13f)][_0x2c7325(0x2ac)]['toggle'](_0x87a62e['rfShC'],_0x87a62e[_0x2c7325(0x58a)](_0x11ddb4,_0x2c7325(0x3a0)));switch(_0x11ddb4){case _0x87a62e[_0x2c7325(0x1b3)]:if(_0x273b12[_0x2c7325(0x518)])_0x273b12[_0x2c7325(0x518)][_0x2c7325(0x2ac)][_0x2c7325(0x18b)](_0x87a62e[_0x2c7325(0x1bf)]);break;case _0x87a62e['hOcfO']:if(_0x273b12[_0x2c7325(0x1fa)])_0x273b12[_0x2c7325(0x1fa)]['classList'][_0x2c7325(0x18b)]('active');break;case _0x2c7325(0x3a0):if(_0x273b12[_0x2c7325(0x13f)])_0x273b12['fontLarge'][_0x2c7325(0x2ac)][_0x2c7325(0x18b)](_0x87a62e['rfShC']);break;}}function _0x5bbd9c(){const _0x331952=_0x203029;document[_0x331952(0x4a4)][_0x331952(0x486)](_0x87a62e[_0x331952(0x403)],_0x11ddb4);}function _0x3a500b(){const _0x495c43=_0x203029;_0x4a32eb&&(_0x87a62e['SRXCJ'](clearTimeout,_0x4a32eb),_0x4a32eb=null),_0x27bf32=![],_0x273b12['skipTypingBtn']&&_0x273b12['skipTypingBtn'][_0x495c43(0x2ac)]['add'](_0x87a62e[_0x495c43(0x18f)]),_0x273b12['eventDescription']&&_0x166e57&&(_0x273b12['eventDescription'][_0x495c43(0x2dd)]=_0x166e57);}function _0x9c2cb6(){const _0x45c57b=_0x203029,_0x34fbfc={'aRFSu':function(_0x347db4,_0x77e736){return _0x347db4(_0x77e736);},'DuXVp':_0x87a62e[_0x45c57b(0x49a)],'dFgCf':_0x45c57b(0x32b),'BuBYJ':function(_0x333e0a,_0x547dac,_0x531135){const _0x13f2c2=_0x45c57b;return _0x87a62e[_0x13f2c2(0x5a7)](_0x333e0a,_0x547dac,_0x531135);},'wLpNj':function(_0x56530f){const _0x13a857=_0x45c57b;return _0x87a62e[_0x13a857(0x3ae)](_0x56530f);},'eaHXW':function(_0x1a2392,_0x50ad49){return _0x1a2392&&_0x50ad49;},'PgtmE':_0x87a62e[_0x45c57b(0x504)],'hsPxx':function(_0x9e5388,_0x497bc7){const _0x12a89a=_0x45c57b;return _0x87a62e[_0x12a89a(0x2cc)](_0x9e5388,_0x497bc7);},'NdTxO':function(_0x197ad7){const _0x483cd8=_0x45c57b;return _0x87a62e[_0x483cd8(0x50a)](_0x197ad7);},'ZAvYh':function(_0x1e8b27,_0x4e61a8){const _0x520b4d=_0x45c57b;return _0x87a62e[_0x520b4d(0x58a)](_0x1e8b27,_0x4e61a8);},'xPUHw':function(_0x70b900){const _0x307bf1=_0x45c57b;return _0x87a62e[_0x307bf1(0x469)](_0x70b900);},'ZHGyc':function(_0x112948,_0xd2d545,_0x496d47){const _0x3eb265=_0x45c57b;return _0x87a62e[_0x3eb265(0xe3)](_0x112948,_0xd2d545,_0x496d47);}};_0x87a62e['SSJRy'](_0x116da0),_0x452c80(),_0x273b12[_0x45c57b(0x3f9)]?.[_0x45c57b(0x2ac)][_0x45c57b(0x35f)](_0x87a62e[_0x45c57b(0x504)]),_0x273b12[_0x45c57b(0x509)]=document['getElementById'](_0x45c57b(0x509)),window[_0x45c57b(0x554)](_0x87a62e['eGggP'],()=>{const _0x322456=_0x45c57b;_0x34fbfc[_0x322456(0x5df)](_0x4efa52,document[_0x322456(0x34f)](_0x34fbfc[_0x322456(0x1c9)])),_0x34fbfc[_0x322456(0x5df)](_0x4efa52,document[_0x322456(0x34f)](_0x34fbfc['dFgCf'])),_0x34fbfc[_0x322456(0x5df)](_0x4efa52,_0x273b12[_0x322456(0x5b8)]),_0x34fbfc['BuBYJ'](setTimeout,_0x5b8740,0x64);});_0x273b12[_0x45c57b(0x518)]&&_0x273b12[_0x45c57b(0x518)]['addEventListener'](_0x87a62e['FIiLr'],()=>_0x379d34(_0x45c57b(0x12f)));_0x273b12[_0x45c57b(0x1fa)]&&_0x273b12[_0x45c57b(0x1fa)][_0x45c57b(0x554)](_0x87a62e['FIiLr'],()=>_0x379d34(_0x45c57b(0x536)));_0x273b12[_0x45c57b(0x13f)]&&_0x273b12[_0x45c57b(0x13f)][_0x45c57b(0x554)](_0x87a62e[_0x45c57b(0x188)],()=>_0x379d34(_0x45c57b(0x3a0)));_0x273b12[_0x45c57b(0x4fb)]&&_0x273b12['settingsBtn'][_0x45c57b(0x554)](_0x45c57b(0x135),_0x17c519=>{const _0x12c7eb=_0x45c57b;_0x17c519['stopPropagation'](),_0x34fbfc[_0x12c7eb(0x4f8)](_0x19854e);});if(_0x273b12[_0x45c57b(0x509)])_0x273b12[_0x45c57b(0x509)][_0x45c57b(0x554)](_0x87a62e[_0x45c57b(0x188)],_0x2985d5=>{const _0x4e9a11=_0x45c57b;console[_0x4e9a11(0xe2)](_0x87a62e[_0x4e9a11(0x245)]),_0x2985d5['stopPropagation'](),_0x2985d5['preventDefault'](),_0x87a62e['Nruno'](_0x19854e);});else{const _0x553810=document[_0x45c57b(0x34f)](_0x87a62e[_0x45c57b(0x53e)]),_0x19d991=document['querySelector'](_0x87a62e[_0x45c57b(0x1b7)]),_0x6a800d=document[_0x45c57b(0x34f)](_0x87a62e['bPLhE']);_0x553810&&(_0x273b12[_0x45c57b(0x509)]=_0x553810,_0x273b12[_0x45c57b(0x509)][_0x45c57b(0x554)](_0x87a62e[_0x45c57b(0x188)],_0x556c12=>{_0x556c12['stopPropagation'](),_0x556c12['preventDefault'](),_0x19854e();}));}document[_0x45c57b(0x554)](_0x45c57b(0x135),_0x25883d=>{const _0x4e9773=_0x45c57b,_0x3da923=_0x273b12[_0x4e9773(0x39a)]?.[_0x4e9773(0x570)](_0x25883d[_0x4e9773(0x48c)]),_0x1595d7=_0x273b12[_0x4e9773(0x516)]?.[_0x4e9773(0x570)](_0x25883d[_0x4e9773(0x48c)])||_0x273b12[_0x4e9773(0x406)]?.[_0x4e9773(0x570)](_0x25883d[_0x4e9773(0x48c)]),_0x1761f4=_0x273b12[_0x4e9773(0x3f9)]?.[_0x4e9773(0x570)](_0x25883d[_0x4e9773(0x48c)]),_0x282178=_0x273b12[_0x4e9773(0x4fb)]?.[_0x4e9773(0x570)](_0x25883d[_0x4e9773(0x48c)])||_0x273b12[_0x4e9773(0x509)]?.['contains'](_0x25883d['target']);_0x34fbfc['eaHXW'](!_0x1761f4,!_0x282178)&&_0x273b12[_0x4e9773(0x3f9)]&&_0x273b12[_0x4e9773(0x3f9)]['classList'][_0x4e9773(0x35f)](_0x34fbfc[_0x4e9773(0x1f5)]),_0x34fbfc['hsPxx'](!_0x3da923,!_0x1595d7)&&_0xdeaea&&(_0xdeaea=![],localStorage['setItem'](_0x55b0a8,_0x4e9773(0x4d5)),_0x34fbfc[_0x4e9773(0x5df)](_0x1f9f98,!![]),_0x34fbfc[_0x4e9773(0x222)](_0x4832b4));}),_0x273b12['gridToggle']&&_0x273b12[_0x45c57b(0x4f6)][_0x45c57b(0x554)](_0x87a62e[_0x45c57b(0x188)],_0x2c7efe),_0x273b12[_0x45c57b(0x562)]&&_0x273b12[_0x45c57b(0x562)][_0x45c57b(0x554)](_0x45c57b(0x135),()=>{_0x45aa66=!_0x45aa66,_0xf51c4b(),_0x775cb4();}),_0x273b12[_0x45c57b(0x5b9)]&&_0x273b12[_0x45c57b(0x5b9)]['addEventListener']('click',_0x3bb42f),_0x273b12[_0x45c57b(0x1e5)]&&_0x273b12['helpBtn'][_0x45c57b(0x554)](_0x87a62e[_0x45c57b(0x188)],_0x2be4be),_0x273b12['skipTypingBtn']&&_0x273b12[_0x45c57b(0x5dc)][_0x45c57b(0x554)](_0x45c57b(0x135),_0x270412),_0x273b12['prevEventBtn']&&_0x273b12[_0x45c57b(0x37f)][_0x45c57b(0x554)](_0x87a62e[_0x45c57b(0x188)],()=>{_0x87a62e['Hietq'](_0xcc1ce,0x0)&&_0x398880(_0x87a62e['jQbSL'](_0xcc1ce,0x1));}),_0x273b12[_0x45c57b(0x429)]&&_0x273b12[_0x45c57b(0x429)]['addEventListener'](_0x87a62e[_0x45c57b(0x188)],()=>{const _0x460698=_0x45c57b;_0x757e96&&_0xcc1ce<_0x87a62e[_0x460698(0x4c4)](_0x757e96['events'][_0x460698(0x4fe)],0x1)&&_0x87a62e[_0x460698(0x1cc)](_0x398880,_0x87a62e['jgABq'](_0xcc1ce,0x1));}),_0x273b12[_0x45c57b(0x2e9)]&&_0x273b12[_0x45c57b(0x2e9)][_0x45c57b(0x554)](_0x87a62e[_0x45c57b(0x188)],()=>{const _0x2ad7b5=_0x45c57b;_0x87a62e[_0x2ad7b5(0x2ee)](_0x2a26ec,0x0)&&_0x87a62e[_0x2ad7b5(0x29e)](_0x13d53e,_0x87a62e['OCvnM'](_0x2a26ec,0x1));}),_0x273b12[_0x45c57b(0x488)]&&_0x273b12['nextMediaBtn']['addEventListener']('click',()=>{const _0x7cac33=_0x45c57b,_0x10192a=_0x4a1e11();_0x10192a&&_0x87a62e[_0x7cac33(0x213)](_0x2a26ec,_0x87a62e[_0x7cac33(0x39f)](_0x10192a['media'][_0x7cac33(0x4fe)],0x1))&&_0x13d53e(_0x87a62e[_0x7cac33(0x227)](_0x2a26ec,0x1));}),_0x273b12[_0x45c57b(0x226)]&&_0x273b12[_0x45c57b(0x226)][_0x45c57b(0x554)](_0x87a62e['FIiLr'],_0x129c6c),_0x273b12['helpClose']&&_0x273b12['helpClose']['addEventListener'](_0x45c57b(0x135),_0x167988),_0x273b12['mediaViewer']&&_0x273b12[_0x45c57b(0x569)][_0x45c57b(0x554)](_0x87a62e[_0x45c57b(0x188)],_0x3c5ae5=>{const _0x5be679=_0x45c57b;_0x34fbfc[_0x5be679(0x329)](_0x3c5ae5[_0x5be679(0x48c)],_0x273b12['mediaViewer'])&&_0x34fbfc[_0x5be679(0x4f8)](_0x28824d);}),_0x273b12[_0x45c57b(0x16e)]&&_0x273b12[_0x45c57b(0x16e)][_0x45c57b(0x554)](_0x87a62e[_0x45c57b(0x188)],()=>{const _0x55006a=_0x45c57b;_0x34fbfc[_0x55006a(0x3d4)](_0x1cb7a3);const _0x46b617=_0x34fbfc[_0x55006a(0x4f8)](_0x4a1e11);_0x46b617&&_0x273b12[_0x55006a(0x577)]&&_0x45aa66&&(_0x3a500b(),_0x3dc659?_0x34fbfc[_0x55006a(0x51b)](_0x1e165b,_0x46b617[_0x55006a(0x489)],_0x273b12[_0x55006a(0x577)]):_0x273b12['eventDescription'][_0x55006a(0x2dd)]=_0x46b617[_0x55006a(0x489)]||'');}),document['addEventListener'](_0x87a62e['rgdRZ'],_0x2d3834),_0x87a62e[_0x45c57b(0x3e0)](_0x2a3e4c);}window[_0x203029(0x4d2)]=function(_0x2bd336){const _0x4895bd=_0x203029;_0x757e96=_0x2bd336,_0x3dc7e6=!![];if(!window[_0x4895bd(0xe1)]?.['ok']){_0x87a62e[_0x4895bd(0x3c1)](showBlocked,_0x87a62e[_0x4895bd(0x1bc)]);return;}_0x273b12[_0x4895bd(0x540)]&&_0x273b12['passwordModal'][_0x4895bd(0x2ac)][_0x4895bd(0x18b)](_0x87a62e['ypckx']),_0x87a62e[_0x4895bd(0x302)](setTimeout,()=>{const _0x166946=_0x4895bd;typeof window['__bootApp__']===_0x87a62e[_0x166946(0x155)]?window[_0x166946(0x4eb)]():_0x87a62e[_0x166946(0x4a9)](_0x57e5ac);},0x1f4);},window[_0x203029(0x293)]=function(_0x5c31a2){const _0x2683cb=_0x203029;_0x273b12[_0x2683cb(0x540)]&&!_0x273b12[_0x2683cb(0x540)]['classList'][_0x2683cb(0x570)](_0x87a62e[_0x2683cb(0x18f)])?window[_0x2683cb(0x5f6)](_0x87a62e[_0x2683cb(0x3c0)](_0x5c31a2,_0x2683cb(0x5bf))):_0x87a62e[_0x2683cb(0x1cc)](_0x743fa4,_0x2683cb(0x22c)+_0x87a62e[_0x2683cb(0x1a6)](_0x5c31a2,_0x87a62e[_0x2683cb(0x5f1)]));};function _0x19854e(){const _0x5197b1=_0x203029;if(!_0x273b12[_0x5197b1(0x3f9)]){console[_0x5197b1(0x13d)](_0x5197b1(0x597));return;}const _0x11d78e=_0x273b12[_0x5197b1(0x3f9)];!_0x52bbe1&&_0x87a62e[_0x5197b1(0x440)](_0x452c80);_0x11d78e[_0x5197b1(0x2ac)][_0x5197b1(0x18b)](_0x87a62e[_0x5197b1(0x418)]);const _0x27147a=!_0x11d78e['classList'][_0x5197b1(0x570)](_0x87a62e[_0x5197b1(0x504)]);_0x27147a&&_0x273b12[_0x5197b1(0x39a)]&&(_0x273b12['quickDock'][_0x5197b1(0x2ac)][_0x5197b1(0x35f)](_0x87a62e[_0x5197b1(0x40f)]),_0xdeaea=![],localStorage[_0x5197b1(0x5b3)](_0x55b0a8,_0x87a62e[_0x5197b1(0x487)]),_0x4832b4()),_0x11d78e[_0x5197b1(0x2ac)]['toggle'](_0x87a62e[_0x5197b1(0x504)]),_0x27147a&&!localStorage['getItem'](_0x22b39c)&&(window[_0x5197b1(0x169)]&&window['positionSettingsNearButton']());}function _0x1d30e9(){const _0x2a6ab8=_0x203029;_0x273b12[_0x2a6ab8(0x4f6)]&&(_0x2a84d3?_0x273b12[_0x2a6ab8(0x4f6)][_0x2a6ab8(0x2ac)][_0x2a6ab8(0x18b)](_0x87a62e[_0x2a6ab8(0x1bf)]):_0x273b12[_0x2a6ab8(0x4f6)][_0x2a6ab8(0x2ac)][_0x2a6ab8(0x35f)](_0x2a6ab8(0x181)));}function _0x5d025a(){const _0x438731=_0x203029;if(_0x2a84d3){if(_0x273b12['mediaCarousel'])_0x273b12[_0x438731(0x180)][_0x438731(0x54c)][_0x438731(0x220)]=_0x87a62e['SdEWW'];_0x273b12[_0x438731(0x144)]&&(_0x273b12[_0x438731(0x144)][_0x438731(0x54c)][_0x438731(0x220)]=_0x87a62e[_0x438731(0x2f2)],_0x273b12[_0x438731(0x144)][_0x438731(0x2ac)][_0x438731(0x35f)](_0x87a62e[_0x438731(0x18f)]));if(_0x273b12[_0x438731(0x1e6)])_0x273b12[_0x438731(0x1e6)][_0x438731(0x2ac)][_0x438731(0x18b)](_0x87a62e[_0x438731(0x278)]);_0x87a62e['HeXKA'](_0x4859f3);}else{if(_0x273b12[_0x438731(0x180)])_0x273b12[_0x438731(0x180)]['style'][_0x438731(0x220)]='flex';_0x273b12[_0x438731(0x144)]&&(_0x273b12[_0x438731(0x144)][_0x438731(0x54c)][_0x438731(0x220)]=_0x438731(0x47a),_0x273b12[_0x438731(0x144)]['classList'][_0x438731(0x18b)](_0x87a62e['ypckx']));if(_0x273b12[_0x438731(0x1e6)])_0x273b12[_0x438731(0x1e6)][_0x438731(0x2ac)]['remove'](_0x87a62e[_0x438731(0x278)]);}}function _0x1e540e(){const _0x30250d=_0x203029;_0x45aa66=!_0x45aa66,_0x87a62e['guzoe'](_0xf51c4b),_0x775cb4();if(_0x45aa66){const _0x92272b=_0x87a62e['ZezyN'](_0x4a1e11);_0x92272b&&_0x273b12['eventDescription']&&(_0x3dc659?_0x87a62e['NMGND'](_0x1e165b,_0x92272b[_0x30250d(0x489)]||'',_0x273b12[_0x30250d(0x577)]):_0x273b12['eventDescription'][_0x30250d(0x2dd)]=_0x92272b['description']||'');}}function _0xf51c4b(){const _0x4ca337=_0x203029;_0x273b12[_0x4ca337(0x562)]&&(_0x45aa66?_0x273b12['subtitleToggle'][_0x4ca337(0x2ac)][_0x4ca337(0x18b)](_0x4ca337(0x181)):_0x273b12['subtitleToggle']['classList'][_0x4ca337(0x35f)](_0x4ca337(0x181)));}function _0x775cb4(){const _0x246cf3=_0x203029;if(!_0x273b12[_0x246cf3(0x25f)])return;const _0x1d8df6=document[_0x246cf3(0x175)](_0x87a62e[_0x246cf3(0x33f)]);_0x45aa66?(_0x273b12[_0x246cf3(0x25f)][_0x246cf3(0x2ac)]['remove'](_0x87a62e[_0x246cf3(0x18d)]),_0x273b12[_0x246cf3(0x25f)][_0x246cf3(0x372)](_0x87a62e[_0x246cf3(0x15f)]),_0x1d8df6&&(_0x1d8df6['style'][_0x246cf3(0x220)]=_0x87a62e[_0x246cf3(0x2f2)],_0x1d8df6[_0x246cf3(0x54c)][_0x246cf3(0x5ee)]='1',_0x1d8df6[_0x246cf3(0x54c)][_0x246cf3(0x126)]=_0x87a62e[_0x246cf3(0x10e)]),_0x273b12[_0x246cf3(0x25f)][_0x246cf3(0x54c)][_0x246cf3(0x220)]=_0x87a62e[_0x246cf3(0x2f2)]):(_0x273b12[_0x246cf3(0x25f)][_0x246cf3(0x2ac)][_0x246cf3(0x18b)](_0x246cf3(0x42b)),_0x273b12[_0x246cf3(0x25f)][_0x246cf3(0x486)](_0x87a62e[_0x246cf3(0x15f)],_0x87a62e['ARSFP']),_0x1d8df6&&(_0x1d8df6['style']['opacity']='0',_0x1d8df6[_0x246cf3(0x54c)][_0x246cf3(0x126)]='0'),_0x273b12[_0x246cf3(0x25f)]['style'][_0x246cf3(0x220)]=_0x246cf3(0x2a1)),_0x45aa66?document[_0x246cf3(0x48d)][_0x246cf3(0x2ac)][_0x246cf3(0x35f)](_0x87a62e[_0x246cf3(0x31b)]):document[_0x246cf3(0x48d)][_0x246cf3(0x2ac)][_0x246cf3(0x18b)](_0x246cf3(0x4a7)),_0x5b8740();}function _0x270412(){const _0x1efb71=_0x203029;_0x87a62e[_0x1efb71(0x469)](_0x3a500b);}function _0x3bb42f(){const _0x579b33=_0x203029;_0x87a62e[_0x579b33(0x2e4)](_0x4c1b29),_0x273b12[_0x579b33(0x21c)]&&_0x273b12[_0x579b33(0x21c)]['classList']['add'](_0x87a62e[_0x579b33(0x504)]);}function _0x129c6c(){const _0x18776d=_0x203029;_0x273b12[_0x18776d(0x21c)]&&_0x273b12[_0x18776d(0x21c)][_0x18776d(0x2ac)][_0x18776d(0x35f)](_0x87a62e[_0x18776d(0x504)]);}function _0x2be4be(){const _0x6a28ff=_0x203029;_0x273b12['helpPanel']&&_0x273b12['helpPanel'][_0x6a28ff(0x2ac)][_0x6a28ff(0x18b)](_0x87a62e[_0x6a28ff(0x504)]);}function _0x167988(){const _0x4f233f=_0x203029;_0x273b12['helpPanel']&&_0x273b12[_0x4f233f(0x4fd)]['classList'][_0x4f233f(0x35f)](_0x87a62e[_0x4f233f(0x504)]);}function _0x47ce1b(){const _0x42c127=_0x203029,_0x53bc27={'GrlaK':function(_0x574741,_0x4800f5){return _0x87a62e['MqmDe'](_0x574741,_0x4800f5);},'sDIfj':function(_0x49b249){const _0x4d9e49=_0x5e38;return _0x87a62e[_0x4d9e49(0x205)](_0x49b249);}},_0x4ed7cc=document['querySelector']('#title-container');if(!_0x4ed7cc)return;let _0x248674=![];const _0x259b6f=document[_0x42c127(0x5a4)](_0x87a62e[_0x42c127(0x58c)]);_0x259b6f[_0x42c127(0x4d4)]='📖',_0x259b6f[_0x42c127(0x54c)][_0x42c127(0x2c3)]=_0x42c127(0x35e);function _0x369457(){const _0x26e476=_0x42c127;_0x248674=!_0x248674;if(_0x248674){_0x4ed7cc[_0x26e476(0x54c)][_0x26e476(0x2c3)]=_0x26e476(0x241),_0x259b6f[_0x26e476(0x4d4)]='📋',_0x259b6f[_0x26e476(0x54c)][_0x26e476(0x513)]=_0x26e476(0x321);const _0x42dc26=document[_0x26e476(0x34f)](_0x87a62e[_0x26e476(0x5d4)]);_0x42dc26&&(_0x42dc26['style'][_0x26e476(0x274)]=_0x26e476(0x435),_0x42dc26[_0x26e476(0x54c)][_0x26e476(0x265)]=_0x87a62e[_0x26e476(0x384)]);}else{_0x4ed7cc[_0x26e476(0x54c)]['cssText']=_0x26e476(0x535),_0x259b6f[_0x26e476(0x4d4)]='📖',_0x259b6f[_0x26e476(0x54c)][_0x26e476(0x513)]=_0x87a62e[_0x26e476(0x171)];const _0x23591d=document['querySelector'](_0x87a62e[_0x26e476(0x5d4)]);_0x23591d&&(_0x23591d[_0x26e476(0x54c)][_0x26e476(0x274)]='',_0x23591d[_0x26e476(0x54c)][_0x26e476(0x265)]=_0x87a62e[_0x26e476(0x384)]);}}_0x273b12[_0x42c127(0x516)]&&_0x273b12[_0x42c127(0x516)][_0x42c127(0x554)](_0x87a62e[_0x42c127(0x188)],_0x369457),_0x273b12[_0x42c127(0x406)]&&_0x273b12['mobileHeaderToggleBtn']['addEventListener'](_0x87a62e[_0x42c127(0x188)],_0x369457),_0x259b6f[_0x42c127(0x50e)]=_0x369457,document[_0x42c127(0x48d)]['appendChild'](_0x259b6f),document[_0x42c127(0x554)](_0x87a62e[_0x42c127(0x434)],_0x55d1cc=>{const _0x9688d1=_0x42c127;_0x55d1cc['ctrlKey']&&_0x53bc27[_0x9688d1(0x264)](_0x55d1cc[_0x9688d1(0x1ab)],'h')&&(_0x55d1cc['preventDefault'](),_0x53bc27[_0x9688d1(0x23f)](_0x369457));});}function _0x3db722(_0x2e9f73,_0x366a3f,_0x2b385b=0x0){const _0x3646e7=_0x203029,_0x571c49={'PATrR':function(_0x47a641,_0x3b647a){return _0x87a62e['Hietq'](_0x47a641,_0x3b647a);},'pxCmU':function(_0x7231bc){return _0x7231bc();},'fcwgp':function(_0x2032e5,_0x1e481e){return _0x87a62e['rdyHl'](_0x2032e5,_0x1e481e);},'xRsvD':function(_0x39bd0b,_0x4479e6){const _0x30ec74=_0x5e38;return _0x87a62e[_0x30ec74(0x333)](_0x39bd0b,_0x4479e6);},'xAGFL':function(_0x4d0504,_0x169264){const _0x5e6e93=_0x5e38;return _0x87a62e[_0x5e6e93(0x20f)](_0x4d0504,_0x169264);},'iTnKh':function(_0x51e694){const _0x520f33=_0x5e38;return _0x87a62e[_0x520f33(0x3ae)](_0x51e694);},'sXlkJ':function(_0x1d1565,_0x42dfda){const _0x503b65=_0x5e38;return _0x87a62e[_0x503b65(0x29e)](_0x1d1565,_0x42dfda);},'ZDXto':function(_0x4256ae,_0x5931b7){return _0x4256ae===_0x5931b7;},'kGYeF':_0x87a62e[_0x3646e7(0x4b6)],'qRuTh':function(_0x3275a9,_0x1e590c){const _0x4cd02c=_0x3646e7;return _0x87a62e[_0x4cd02c(0x51a)](_0x3275a9,_0x1e590c);},'Qckxi':_0x87a62e['ICNRZ'],'JudqS':_0x87a62e[_0x3646e7(0x4cd)],'BGuqn':_0x87a62e[_0x3646e7(0x478)],'xQEuz':_0x87a62e['BGUpF'],'HBVkD':_0x87a62e['dQYfP'],'EWKGH':_0x3646e7(0x441),'qdTqb':_0x87a62e[_0x3646e7(0x31f)],'RgLEZ':_0x3646e7(0x2a1),'ojUyz':_0x87a62e['SdEWW'],'SCDHu':function(_0x4b292a,_0x2cb067){const _0x296b1a=_0x3646e7;return _0x87a62e[_0x296b1a(0x3e3)](_0x4b292a,_0x2cb067);},'OFUEJ':function(_0x4ad3d5,_0x5be2a1){return _0x4ad3d5===_0x5be2a1;},'SiDiP':_0x3646e7(0x170),'IKvfC':function(_0x15c635,_0x55bd63){return _0x87a62e['yTxfY'](_0x15c635,_0x55bd63);},'KuWiY':function(_0x315db3){return _0x87a62e['Nruno'](_0x315db3);},'pzjII':function(_0x24b00d,_0x5dacbd){const _0x4863c2=_0x3646e7;return _0x87a62e[_0x4863c2(0x51a)](_0x24b00d,_0x5dacbd);},'PRjEk':function(_0x163b7b,_0x39fccc){const _0x10416d=_0x3646e7;return _0x87a62e[_0x10416d(0x58a)](_0x163b7b,_0x39fccc);},'pvnzy':_0x87a62e[_0x3646e7(0x57c)]};if(!_0x273b12[_0x3646e7(0x569)]||!_0x273b12[_0x3646e7(0x1a1)])return;const _0x2c6b9a=_0x87a62e[_0x3646e7(0x108)](_0x4a1e11),_0x2b162b=_0x2c6b9a?.['media']||[],_0xcf2137=[];_0x2b162b[_0x3646e7(0x55e)]((_0x6e9127,_0xc25dab)=>{const _0x3cdb7c=_0x3646e7,_0x13b929=_0x87a62e['MqmDe'](_0x6e9127['type'],_0x87a62e[_0x3cdb7c(0x4b6)])||_0x87a62e[_0x3cdb7c(0x24a)](_0x6e9127[_0x3cdb7c(0x452)],_0x87a62e[_0x3cdb7c(0x4b6)]),_0x13fff3={};_0x13fff3['media']=_0x6e9127,_0x13fff3['idx']=_0xc25dab;if(_0x13b929)_0xcf2137[_0x3cdb7c(0x31d)](_0x13fff3);});if(_0xcf2137['length']===0x0)return;let _0x1e8d4c=Math['max'](0x0,_0xcf2137[_0x3646e7(0x242)](_0x2a562c=>_0x2a562c[_0x3646e7(0x346)]===_0x2b385b));if(_0x1e8d4c===-0x1)_0x1e8d4c=0x0;function _0x6c1c4f(){const _0x412fee=_0x3646e7;_0x273b12['mediaViewerContent'][_0x412fee(0x4d4)]='';if(_0x571c49[_0x412fee(0x3a6)](_0x366a3f,_0x571c49[_0x412fee(0xfe)])&&_0x571c49['qRuTh'](_0xcf2137['length'],0x0)){const {media:_0x1c76b1}=_0xcf2137[_0x1e8d4c],_0x284e92=document[_0x412fee(0x5a4)](_0x412fee(0x4e9));_0x284e92[_0x412fee(0x54c)][_0x412fee(0x2c3)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20position:\x20relative;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x20100%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20height:\x20100%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20align-items:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20justify-content:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20';const _0x3e09cd=document['createElement'](_0x571c49[_0x412fee(0x34b)]),_0x1e71ee=_0x571c49['fcwgp'](_0x39ee64,_0x1c76b1);_0x1e71ee&&_0x1e71ee[_0x412fee(0x57a)](_0x412fee(0x532))?(_0x3e09cd['setAttribute'](_0x571c49[_0x412fee(0x4bf)],_0x571c49[_0x412fee(0x28e)]),_0x3e09cd['setAttribute'](_0x571c49['xQEuz'],_0x1e71ee),_0x3e09cd['src']=_0x571c49[_0x412fee(0x572)],window[_0x412fee(0x28c)]&&setTimeout(()=>{const _0x1fbdb8=_0x412fee;window[_0x1fbdb8(0x28c)](_0x3e09cd,![]);},0x64)):_0x3e09cd[_0x412fee(0x2a8)]=_0x1e71ee;_0x3e09cd[_0x412fee(0x3a5)]=_0x571c49['EWKGH'],_0x3e09cd[_0x412fee(0x54c)]['cssText']='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20max-width:\x2090vw;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20max-height:\x2090vh;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20object-fit:\x20contain;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x2010px\x2030px\x20rgba(0,0,0,0.3);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',_0x284e92[_0x412fee(0x26d)](_0x3e09cd);if(_0xcf2137[_0x412fee(0x4fe)]>0x1){const _0x167da6=document[_0x412fee(0x5a4)](_0x571c49['qdTqb']);_0x167da6[_0x412fee(0x4d4)]='‹',_0x167da6[_0x412fee(0x54c)][_0x412fee(0x2c3)]=_0x412fee(0x5d0)+(_0x571c49[_0x412fee(0x137)](_0x1e8d4c,0x0)?_0x571c49['RgLEZ']:_0x412fee(0x47a))+_0x412fee(0x1f9),_0x167da6[_0x412fee(0x3d5)]=()=>_0x167da6[_0x412fee(0x54c)]['background']=_0x412fee(0x43c),_0x167da6[_0x412fee(0x1fb)]=()=>_0x167da6['style'][_0x412fee(0x513)]='rgba(0,0,0,0.6)',_0x167da6['onclick']=_0x26d8cb=>{const _0x19fc4e=_0x412fee;_0x26d8cb[_0x19fc4e(0x15a)](),_0x571c49[_0x19fc4e(0x5b4)](_0x1e8d4c,0x0)&&(_0x1e8d4c--,_0x571c49[_0x19fc4e(0x100)](_0x6c1c4f),_0x571c49[_0x19fc4e(0x526)](_0x13d53e,_0xcf2137[_0x1e8d4c]['idx']));};const _0xde2836=document[_0x412fee(0x5a4)](_0x412fee(0x5c9));_0xde2836[_0x412fee(0x4d4)]='›',_0xde2836[_0x412fee(0x54c)][_0x412fee(0x2c3)]=_0x412fee(0x5ba)+(_0x1e8d4c<_0xcf2137['length']-0x1?_0x571c49[_0x412fee(0x22b)]:_0x571c49['ojUyz'])+_0x412fee(0x1f9),_0xde2836[_0x412fee(0x3d5)]=()=>_0xde2836[_0x412fee(0x54c)][_0x412fee(0x513)]=_0x412fee(0x43c),_0xde2836['onmouseout']=()=>_0xde2836['style'][_0x412fee(0x513)]=_0x412fee(0x331),_0xde2836[_0x412fee(0x50e)]=_0x24043f=>{const _0x55bce5=_0x412fee;_0x24043f['stopPropagation'](),_0x571c49['xRsvD'](_0x1e8d4c,_0x571c49['xAGFL'](_0xcf2137['length'],0x1))&&(_0x1e8d4c++,_0x571c49[_0x55bce5(0x2a9)](_0x6c1c4f),_0x571c49[_0x55bce5(0x319)](_0x13d53e,_0xcf2137[_0x1e8d4c][_0x55bce5(0x346)]));},_0x284e92[_0x412fee(0x26d)](_0x167da6),_0x284e92[_0x412fee(0x26d)](_0xde2836);}const _0x2784e7=document['createElement'](_0x571c49[_0x412fee(0x550)]);_0x2784e7[_0x412fee(0x4d4)]='×',_0x2784e7[_0x412fee(0x54c)][_0x412fee(0x2c3)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20position:\x20absolute;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20top:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20right:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20rgba(0,0,0,0.6);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20white;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x2040px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20height:\x2040px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x2050%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2024px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20z-index:\x201001;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20all\x200.2s\x20ease;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',_0x2784e7[_0x412fee(0x3d5)]=()=>_0x2784e7['style'][_0x412fee(0x513)]=_0x412fee(0x43c),_0x2784e7['onmouseout']=()=>_0x2784e7['style'][_0x412fee(0x513)]=_0x412fee(0x331),_0x2784e7['onclick']=_0x543339=>{const _0x18d902=_0x412fee;_0x543339[_0x18d902(0x15a)](),_0x28824d();},_0x284e92[_0x412fee(0x26d)](_0x2784e7),_0x273b12[_0x412fee(0x1a1)][_0x412fee(0x26d)](_0x284e92);}}_0x273b12['mediaViewer'][_0x3646e7(0x50e)]=()=>_0x28824d(),_0x273b12[_0x3646e7(0x1a1)][_0x3646e7(0x50e)]=_0x49c393=>_0x49c393[_0x3646e7(0x15a)]();function _0x129b3b(_0x4289d3){const _0x25897d=_0x3646e7;if(_0x366a3f!==_0x571c49[_0x25897d(0xfe)]||_0x571c49[_0x25897d(0x382)](_0xcf2137[_0x25897d(0x4fe)],0x1))return;if(_0x571c49[_0x25897d(0x41b)](_0x4289d3[_0x25897d(0x1ab)],_0x571c49[_0x25897d(0x455)])&&_0x571c49['IKvfC'](_0x1e8d4c,_0x571c49[_0x25897d(0x5cd)](_0xcf2137[_0x25897d(0x4fe)],0x1)))_0x1e8d4c++,_0x571c49[_0x25897d(0x4ca)](_0x6c1c4f),_0x571c49[_0x25897d(0x526)](_0x13d53e,_0xcf2137[_0x1e8d4c][_0x25897d(0x346)]);else{if(_0x571c49[_0x25897d(0x3a6)](_0x4289d3['key'],_0x25897d(0x2b5))&&_0x571c49[_0x25897d(0x5dd)](_0x1e8d4c,0x0))_0x1e8d4c--,_0x571c49[_0x25897d(0x100)](_0x6c1c4f),_0x571c49[_0x25897d(0x526)](_0x13d53e,_0xcf2137[_0x1e8d4c][_0x25897d(0x346)]);else _0x571c49['PRjEk'](_0x4289d3[_0x25897d(0x1ab)],_0x571c49[_0x25897d(0x2d5)])&&_0x28824d();}}document[_0x3646e7(0x554)](_0x87a62e[_0x3646e7(0x434)],_0x129b3b),_0x273b12[_0x3646e7(0x569)]['classList']['add'](_0x87a62e['gindy']),_0x87a62e['ZezyN'](_0x6c1c4f);const _0x26e6fb=_0x28824d;_0x28824d=function(){const _0x1b28c8=_0x3646e7;document[_0x1b28c8(0x258)](_0x87a62e['rgdRZ'],_0x129b3b),_0x273b12['mediaViewer'][_0x1b28c8(0x2ac)][_0x1b28c8(0x35f)](_0x87a62e[_0x1b28c8(0x504)]),_0x28824d=_0x26e6fb;};}function _0x28824d(){const _0x231eb5=_0x203029;_0x273b12[_0x231eb5(0x569)]&&_0x273b12[_0x231eb5(0x569)][_0x231eb5(0x2ac)][_0x231eb5(0x35f)](_0x231eb5(0x42f));}function _0x4a1e11(){const _0x19c568=_0x203029;if(!_0x757e96||!_0x757e96[_0x19c568(0x595)])return null;const _0x3eb7cd=_0x87a62e[_0x19c568(0x5f2)](_0x3b0ff9);return _0x3eb7cd[_0xcc1ce]||null;}function _0x3b0ff9(){const _0x95635f=_0x203029;if(!_0x757e96||!_0x757e96[_0x95635f(0x595)])return[];return[..._0x757e96[_0x95635f(0x595)]][_0x95635f(0x4fa)]((_0x270724,_0x68473)=>new Date(_0x270724[_0x95635f(0x427)])['getTime']()-new Date(_0x68473['date'])[_0x95635f(0x507)]());}function _0x398880(_0x186f55){const _0x33f107=_0x203029,_0x282adc={'JtqWX':function(_0x168268){return _0x87a62e['MzPzx'](_0x168268);}};if(!_0x757e96||!_0x757e96[_0x33f107(0x595)])return;const _0x132228=_0x87a62e[_0x33f107(0x50a)](_0x3b0ff9);if(_0x87a62e[_0x33f107(0x2c5)](_0x186f55,0x0)||_0x87a62e[_0x33f107(0x1dc)](_0x186f55,_0x132228[_0x33f107(0x4fe)])||_0x87a62e['ZsjNA'](_0x186f55,_0xcc1ce))return;if(_0x273b12[_0x33f107(0x25f)])_0x273b12[_0x33f107(0x25f)]['classList'][_0x33f107(0x18b)]('transitioning');if(_0x273b12['mainContent'])_0x273b12[_0x33f107(0x1e6)][_0x33f107(0x2ac)][_0x33f107(0x18b)](_0x87a62e[_0x33f107(0x53d)]);_0x785969=!![],_0x87a62e[_0x33f107(0x421)](_0x3a500b),setTimeout(()=>{const _0x5896e9=_0x33f107,_0xc2d19d={};_0xc2d19d[_0x5896e9(0x439)]=_0x5896e9(0xf6);const _0x522771=_0xc2d19d;_0xcc1ce=_0x186f55,_0x2a26ec=0x0,_0x282adc[_0x5896e9(0x343)](_0x3bbec1),_0x282adc['JtqWX'](_0xe5fe5b),setTimeout(()=>{const _0x377c21=_0x5896e9;if(_0x273b12[_0x377c21(0x25f)])_0x273b12[_0x377c21(0x25f)][_0x377c21(0x2ac)]['remove'](_0x522771[_0x377c21(0x439)]);if(_0x273b12['mainContent'])_0x273b12[_0x377c21(0x1e6)][_0x377c21(0x2ac)][_0x377c21(0x35f)](_0x377c21(0xf6));_0x785969=![];},0x12c);},0x96);}function _0x13d53e(_0x20d253){const _0x1b5cd5=_0x203029,_0x4d4d79=_0x87a62e['spWcX'](_0x4a1e11);if(!_0x4d4d79||!_0x4d4d79[_0x1b5cd5(0xfa)])return;if(_0x87a62e[_0x1b5cd5(0x333)](_0x20d253,0x0)||_0x87a62e[_0x1b5cd5(0x1dc)](_0x20d253,_0x4d4d79[_0x1b5cd5(0xfa)]['length'])||_0x20d253===_0x2a26ec)return;_0x2a26ec=_0x20d253,_0x87a62e[_0x1b5cd5(0x440)](_0x2cb16f),_0x87a62e[_0x1b5cd5(0x592)](_0x1f3c05),_0x87a62e[_0x1b5cd5(0x466)](_0x7cf948),_0x2a84d3&&_0x87a62e['IofIP'](_0x4859f3);}function _0x3bbec1(){const _0x34fac5=_0x203029,_0x317a63=_0x87a62e[_0x34fac5(0x3ae)](_0x4a1e11);if(!_0x317a63)return;_0x58f483(_0x317a63),_0x87a62e[_0x34fac5(0x301)](_0x305f7c),_0x87a62e[_0x34fac5(0x205)](_0xe5fe5b),_0x2cb16f(),_0x87a62e[_0x34fac5(0x581)](_0x1f3c05),_0x87a62e[_0x34fac5(0x1fd)](_0x7cf948),_0x2a84d3&&_0x87a62e[_0x34fac5(0x11b)](_0x4859f3);}function _0x58f483(_0x2699e1){const _0xfbb894=_0x203029,_0x11a804={'lQRTu':function(_0x34bb60,_0x316a4e){const _0x7d77f8=_0x5e38;return _0x87a62e[_0x7d77f8(0x1cc)](_0x34bb60,_0x316a4e);}};if(!_0x2699e1)return;_0x273b12[_0xfbb894(0x127)]&&(_0x273b12[_0xfbb894(0x127)][_0xfbb894(0x2dd)]=_0xcc1ce+0x1);_0x273b12[_0xfbb894(0x494)]&&(_0x273b12[_0xfbb894(0x494)][_0xfbb894(0x2dd)]=_0x87a62e[_0xfbb894(0x1ef)](_0x3b0ff9)[_0xfbb894(0x4fe)]);if(_0x273b12['mediaCount']){const _0x273e68=_0x2699e1['media']?_0x2699e1['media'][_0xfbb894(0x4fe)]:0x0;_0x273b12['mediaCount']['textContent']=_0x273e68;}if(_0x273b12[_0xfbb894(0x28a)])try{const _0x436991=new Date(_0x2699e1['date'])[_0xfbb894(0x4da)](_0x87a62e[_0xfbb894(0x512)],{'year':_0x87a62e[_0xfbb894(0x2c2)],'month':_0x87a62e['FhAfh'],'day':_0x87a62e['iNjts']});_0x273b12[_0xfbb894(0x28a)]['textContent']=_0x436991,_0x273b12[_0xfbb894(0x28a)][_0xfbb894(0x54c)][_0xfbb894(0x220)]=_0xfbb894(0x2a1);}catch(_0x1d5b9e){_0x273b12[_0xfbb894(0x28a)][_0xfbb894(0x2dd)]=_0x2699e1[_0xfbb894(0x427)],_0x273b12['eventDate'][_0xfbb894(0x54c)][_0xfbb894(0x220)]='block';}_0x273b12[_0xfbb894(0x5b8)]&&(_0x273b12[_0xfbb894(0x5b8)][_0xfbb894(0x2dd)]=_0x2699e1[_0xfbb894(0x574)]||'',_0x273b12[_0xfbb894(0x5b8)][_0xfbb894(0x54c)][_0xfbb894(0x220)]=_0x87a62e[_0xfbb894(0x2f2)],_0x87a62e[_0xfbb894(0xe3)](setTimeout,()=>{const _0x28ccb7=_0xfbb894;_0x11a804[_0x28ccb7(0x4c9)](_0x4efa52,_0x273b12[_0x28ccb7(0x5b8)]);},0x64)),_0x273b12[_0xfbb894(0x577)]&&_0x45aa66&&(_0x273b12[_0xfbb894(0x577)][_0xfbb894(0x54c)][_0xfbb894(0x220)]=_0xfbb894(0x2a1),_0x3dc659?_0x87a62e[_0xfbb894(0x59c)](_0x1e165b,_0x2699e1['description']||'',_0x273b12[_0xfbb894(0x577)]):_0x273b12[_0xfbb894(0x577)][_0xfbb894(0x2dd)]=_0x2699e1[_0xfbb894(0x489)]||''),_0x273b12[_0xfbb894(0x25f)]&&(_0x273b12[_0xfbb894(0x25f)][_0xfbb894(0x54c)][_0xfbb894(0x220)]=_0x87a62e[_0xfbb894(0x2f2)],_0x273b12[_0xfbb894(0x25f)][_0xfbb894(0x54c)][_0xfbb894(0x5ee)]='1',_0x273b12[_0xfbb894(0x25f)][_0xfbb894(0x54c)][_0xfbb894(0x26c)]=_0x87a62e['gindy']);}function _0x1d3bb0(){const _0x29d88d=_0x203029,_0x415698=_0x87a62e[_0x29d88d(0x11b)](_0x4a1e11);if(!_0x415698||!_0x415698['media'])return;const _0x54c6c6=document[_0x29d88d(0x34f)](_0x87a62e[_0x29d88d(0x476)]);_0x54c6c6&&(_0x54c6c6['textContent']=_0x87a62e['ZAFTS'](_0x2a26ec,0x1)+'/'+_0x415698[_0x29d88d(0xfa)][_0x29d88d(0x4fe)]);}function _0x305f7c(){const _0x2eddac=_0x203029,_0x44cce8=_0x3b0ff9()[_0x2eddac(0x4fe)];_0x273b12['prevEventBtn']&&(_0xcc1ce===0x0?_0x273b12[_0x2eddac(0x37f)][_0x2eddac(0x2ac)][_0x2eddac(0x18b)]('disabled'):_0x273b12[_0x2eddac(0x37f)][_0x2eddac(0x2ac)][_0x2eddac(0x35f)](_0x87a62e[_0x2eddac(0x438)])),_0x273b12[_0x2eddac(0x429)]&&(_0x87a62e['emdyo'](_0xcc1ce,_0x44cce8-0x1)?_0x273b12[_0x2eddac(0x429)][_0x2eddac(0x2ac)][_0x2eddac(0x18b)](_0x87a62e[_0x2eddac(0x438)]):_0x273b12[_0x2eddac(0x429)][_0x2eddac(0x2ac)][_0x2eddac(0x35f)](_0x2eddac(0x239)));}function _0x2cb16f(){const _0x2a8726=_0x203029,_0x8e27a1={'zhXeS':function(_0x1eef5f,_0x31ef10,_0x19c9f9){const _0x5d64ed=_0x5e38;return _0x87a62e[_0x5d64ed(0x5a7)](_0x1eef5f,_0x31ef10,_0x19c9f9);}},_0x179554=_0x87a62e[_0x2a8726(0x284)](_0x4a1e11);if(!_0x179554||!_0x179554[_0x2a8726(0xfa)]||_0x87a62e[_0x2a8726(0x2d1)](_0x179554[_0x2a8726(0xfa)][_0x2a8726(0x4fe)],0x0)){_0x87a62e[_0x2a8726(0x4a9)](_0x342d49);return;}const _0x50b982=_0x179554['media'][_0x2a26ec];if(!_0x50b982){_0x342d49();return;}if(_0x273b12[_0x2a8726(0x211)]){_0x273b12[_0x2a8726(0x211)][_0x2a8726(0x4d4)]='';try{let _0x17c267;if(_0x87a62e[_0x2a8726(0x58a)](_0x50b982[_0x2a8726(0x580)],_0x87a62e[_0x2a8726(0x4b6)])||_0x87a62e[_0x2a8726(0x1ff)](_0x50b982['media_type'],_0x87a62e['LOyOo'])){_0x17c267=document['createElement'](_0x87a62e['ICNRZ']),_0x17c267[_0x2a8726(0x54c)][_0x2a8726(0x2c3)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20max-width:\x20100%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20max-height:\x20100%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x20auto;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20height:\x20auto;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20object-fit:\x20contain;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20object-position:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x204px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20block;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200\x20auto;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',_0x17c267[_0x2a8726(0x3a5)]='回憶錄圖片',_0x17c267[_0x2a8726(0x50e)]=()=>{const _0x9de510=_0x2a8726;_0x87a62e[_0x9de510(0x45d)](_0x3db722,null,_0x87a62e[_0x9de510(0x4b6)],_0x2a26ec);};const _0x5acf1f=_0x87a62e[_0x2a8726(0x36c)](_0x39ee64,_0x50b982);_0x5acf1f&&_0x5acf1f[_0x2a8726(0x57a)](_0x87a62e[_0x2a8726(0x3ed)])?(_0x17c267['setAttribute'](_0x2a8726(0x17b),_0x87a62e[_0x2a8726(0x478)]),_0x17c267[_0x2a8726(0x486)](_0x87a62e[_0x2a8726(0x1b6)],_0x5acf1f),_0x17c267[_0x2a8726(0x2a8)]=_0x2a8726(0x159),window[_0x2a8726(0x1e2)]&&setTimeout(()=>{const _0x2e3e20=_0x2a8726;window[_0x2e3e20(0x1e2)]();},0x64)):(_0x17c267[_0x2a8726(0x2a8)]=_0x5acf1f,_0x17c267[_0x2a8726(0x3ad)]=()=>{const _0x42515a=_0x2a8726;_0x87a62e[_0x42515a(0x506)](_0x4676a1,_0x42515a(0x345));});}else{if(_0x87a62e[_0x2a8726(0x1ff)](_0x50b982[_0x2a8726(0x580)],_0x87a62e[_0x2a8726(0x273)])||_0x87a62e[_0x2a8726(0x24a)](_0x50b982[_0x2a8726(0x452)],_0x87a62e['qIojx'])){if(_0x50b982[_0x2a8726(0x1ec)]&&(_0x50b982[_0x2a8726(0x59b)]?.[_0x2a8726(0x57a)](_0x87a62e['LqBGN'])||_0x50b982[_0x2a8726(0x59b)]?.['includes']('youtu.be'))){const _0x38aa79=_0x42a0e4(_0x50b982['url']);if(_0x38aa79){const _0x23f3ff=document[_0x2a8726(0x5a4)](_0x87a62e[_0x2a8726(0x58c)]);_0x23f3ff[_0x2a8726(0x310)]=_0x2a8726(0x2b7),_0x23f3ff[_0x2a8726(0x54c)][_0x2a8726(0x2c3)]=_0x2a8726(0x585);const _0x2f215d=document[_0x2a8726(0x5a4)](_0x87a62e[_0x2a8726(0x3e4)]);_0x2f215d[_0x2a8726(0x2a8)]=_0x2a8726(0x46b)+_0x38aa79+_0x2a8726(0x2d3),_0x2f215d[_0x2a8726(0x486)](_0x87a62e[_0x2a8726(0x58e)],''),_0x2f215d[_0x2a8726(0x486)](_0x87a62e[_0x2a8726(0x4ad)],_0x87a62e[_0x2a8726(0x51d)]),_0x2f215d[_0x2a8726(0x54c)][_0x2a8726(0x2c3)]=_0x2a8726(0xe7),_0x23f3ff['appendChild'](_0x2f215d),_0x273b12[_0x2a8726(0x211)][_0x2a8726(0x26d)](_0x23f3ff);return;}}else{_0x17c267=document[_0x2a8726(0x5a4)](_0x87a62e[_0x2a8726(0x273)]),_0x17c267[_0x2a8726(0x54c)][_0x2a8726(0x2c3)]=_0x2a8726(0x4f0),_0x17c267[_0x2a8726(0x2ba)]=!![],_0x17c267[_0x2a8726(0x2c0)]=!![],_0x17c267['playsInline']=!![],_0x17c267[_0x2a8726(0x50e)]=()=>{const _0x337242=_0x2a8726;_0x8e27a1[_0x337242(0x145)](_0x3db722,_0x39ee64(_0x50b982),'video');};const _0x53ec55=_0x87a62e[_0x2a8726(0x4d9)](_0x39ee64,_0x50b982);_0x53ec55&&_0x53ec55['includes'](_0x87a62e[_0x2a8726(0x3ed)])?(_0x17c267[_0x2a8726(0x486)](_0x87a62e[_0x2a8726(0x4cd)],_0x87a62e['ARSFP']),_0x17c267[_0x2a8726(0x486)](_0x87a62e[_0x2a8726(0x1b6)],_0x53ec55),window[_0x2a8726(0x1e2)]&&_0x87a62e[_0x2a8726(0x54e)](setTimeout,()=>{const _0x116d82=_0x2a8726;window[_0x116d82(0x1e2)]();},0x64)):_0x17c267[_0x2a8726(0x2a8)]=_0x53ec55;}}}_0x17c267&&_0x273b12[_0x2a8726(0x211)][_0x2a8726(0x26d)](_0x17c267),_0x87a62e[_0x2a8726(0x2e4)](_0x41b7b6);}catch(_0x131627){_0x4676a1('媒體顯示錯誤:\x20'+_0x131627[_0x2a8726(0x18a)]);}}}function _0x41b7b6(){const _0x11463e=_0x203029,_0x43d988=_0x4a1e11();if(!_0x43d988||!_0x43d988[_0x11463e(0xfa)])return;if(_0x273b12[_0x11463e(0x4b5)]){const _0xd708b7=_0x87a62e[_0x11463e(0xef)](_0x2a26ec,0x1),_0x443772=_0x43d988[_0x11463e(0xfa)]['length'];_0x273b12[_0x11463e(0x4b5)][_0x11463e(0x2dd)]=_0xd708b7+'\x20/\x20'+_0x443772,_0x273b12[_0x11463e(0x4b5)][_0x11463e(0x54c)]['display']=_0x443772>0x1?_0x11463e(0x2a1):_0x87a62e[_0x11463e(0x565)];}}function _0x39ee64(_0x372c17){const _0x614433=_0x203029;if(_0x372c17['isUrl']||_0x372c17[_0x614433(0x42d)])return _0x372c17['url']||_0x372c17[_0x614433(0x4df)];else{let _0x4566d0=_0x372c17[_0x614433(0x4df)];return!_0x4566d0[_0x614433(0xff)]('./')&&!_0x4566d0[_0x614433(0xff)]('http')&&(_0x4566d0[_0x614433(0xff)](_0x87a62e[_0x614433(0x3ed)])?_0x4566d0=_0x87a62e[_0x614433(0xef)]('./',_0x4566d0):_0x4566d0=_0x614433(0x337)+_0x372c17['filename']),_0x4566d0;}}function _0x42a0e4(_0x1deac2){const _0x32c6a6=_0x203029,_0x1f9cf8=/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/,_0x212d23=_0x1deac2[_0x32c6a6(0x41a)](_0x1f9cf8);return _0x212d23&&_0x87a62e[_0x32c6a6(0x564)](_0x212d23[0x2]['length'],0xb)?_0x212d23[0x2]:null;}function _0x4676a1(_0x18dea5){const _0x3ddb5b=_0x203029;_0x273b12[_0x3ddb5b(0x211)]&&(_0x273b12[_0x3ddb5b(0x211)][_0x3ddb5b(0x4d4)]=_0x3ddb5b(0x433)+_0x18dea5+_0x3ddb5b(0x5d9));}function _0x342d49(){const _0x1513e1=_0x203029;if(_0x273b12[_0x1513e1(0x211)]){const _0x33c380=_0x2d3838?'🔒':'📷';_0x273b12['mediaDisplay'][_0x1513e1(0x4d4)]=_0x1513e1(0x2da)+_0x33c380+_0x1513e1(0x588);}}function _0x1f3c05(){const _0x2620ca=_0x203029,_0x1eb130=_0x87a62e[_0x2620ca(0x48b)](_0x4a1e11);if(!_0x1eb130||!_0x1eb130[_0x2620ca(0xfa)])return;const _0x18ede0=_0x1eb130[_0x2620ca(0xfa)][_0x2620ca(0x4fe)];_0x273b12[_0x2620ca(0x2e9)]&&(_0x2a26ec===0x0?(_0x273b12[_0x2620ca(0x2e9)][_0x2620ca(0x2ac)][_0x2620ca(0x18b)](_0x87a62e[_0x2620ca(0x438)]),_0x273b12[_0x2620ca(0x2e9)][_0x2620ca(0x239)]=!![]):(_0x273b12[_0x2620ca(0x2e9)][_0x2620ca(0x2ac)][_0x2620ca(0x35f)](_0x87a62e[_0x2620ca(0x438)]),_0x273b12[_0x2620ca(0x2e9)]['disabled']=![])),_0x273b12[_0x2620ca(0x488)]&&(_0x87a62e[_0x2620ca(0x564)](_0x2a26ec,_0x87a62e[_0x2620ca(0x20f)](_0x18ede0,0x1))?(_0x273b12[_0x2620ca(0x488)][_0x2620ca(0x2ac)][_0x2620ca(0x18b)](_0x2620ca(0x239)),_0x273b12[_0x2620ca(0x488)][_0x2620ca(0x239)]=!![]):(_0x273b12[_0x2620ca(0x488)][_0x2620ca(0x2ac)][_0x2620ca(0x35f)](_0x87a62e[_0x2620ca(0x438)]),_0x273b12['nextMediaBtn']['disabled']=![])),_0x87a62e[_0x2620ca(0x123)](_0x41b7b6);}function _0x36ab82(){const _0x625cf2=_0x203029,_0x12ba6e={'MKWCc':function(_0x2367e5){const _0x52a4f2=_0x5e38;return _0x87a62e[_0x52a4f2(0x12b)](_0x2367e5);},'vkknC':_0x87a62e[_0x625cf2(0x58c)],'xKLym':_0x625cf2(0x3cd),'JMmes':_0x625cf2(0x3c2),'AGEEx':function(_0x5b8ed4,_0x35b5f9){const _0x3b3d4f=_0x625cf2;return _0x87a62e[_0x3b3d4f(0x24a)](_0x5b8ed4,_0x35b5f9);},'tOHQX':_0x87a62e[_0x625cf2(0x4b6)],'qgNIG':function(_0x50ad75,_0xd8c235){const _0x2a15f6=_0x625cf2;return _0x87a62e[_0x2a15f6(0x174)](_0x50ad75,_0xd8c235);},'ZMopb':_0x625cf2(0x532),'tMDYq':_0x87a62e['BGUpF'],'VfpPC':_0x87a62e[_0x625cf2(0x42c)],'fcemi':_0x87a62e[_0x625cf2(0x3fd)],'RySRn':_0x87a62e[_0x625cf2(0x56f)],'TpkjR':_0x87a62e[_0x625cf2(0x122)]},_0x3044f3=_0x4a1e11();if(!_0x3044f3||!_0x3044f3[_0x625cf2(0xfa)])return;const _0x27cd81=document['getElementById'](_0x87a62e[_0x625cf2(0x212)])||_0x273b12[_0x625cf2(0x211)];if(!_0x27cd81)return;_0x27cd81['innerHTML']='',_0x27cd81[_0x625cf2(0x310)]=_0x87a62e['mARXF'],_0x27cd81[_0x625cf2(0x54c)]['display']=_0x87a62e[_0x625cf2(0x375)],_0x27cd81[_0x625cf2(0x54c)]['gridTemplateColumns']=_0x87a62e[_0x625cf2(0x5da)],_0x27cd81[_0x625cf2(0x54c)]['gap']=_0x625cf2(0x103),_0x27cd81[_0x625cf2(0x54c)][_0x625cf2(0x5d5)]=_0x625cf2(0x103),_0x3044f3[_0x625cf2(0xfa)][_0x625cf2(0x55e)]((_0x24e9fd,_0x5be9bd)=>{const _0x3514a6=_0x625cf2,_0x3619b4=document['createElement'](_0x12ba6e['vkknC']);_0x3619b4[_0x3514a6(0x310)]=_0x12ba6e[_0x3514a6(0x5c5)],_0x3619b4[_0x3514a6(0x54c)][_0x3514a6(0x17e)]=_0x3514a6(0x322),_0x3619b4[_0x3514a6(0x54c)][_0x3514a6(0xf8)]='8px',_0x3619b4[_0x3514a6(0x54c)][_0x3514a6(0x50b)]=_0x12ba6e[_0x3514a6(0x4f2)],_0x3619b4['style'][_0x3514a6(0x262)]='1',_0x3619b4[_0x3514a6(0x54c)][_0x3514a6(0x140)]=_0x3514a6(0x533);if(_0x12ba6e[_0x3514a6(0x21e)](_0x24e9fd[_0x3514a6(0x580)],_0x12ba6e[_0x3514a6(0x59e)])||_0x24e9fd[_0x3514a6(0x452)]===_0x12ba6e[_0x3514a6(0x59e)]){const _0x3b0111=document['createElement'](_0x3514a6(0x3a2));_0x3b0111['style']['width']=_0x3514a6(0x5db),_0x3b0111[_0x3514a6(0x54c)]['height']='100%',_0x3b0111['style'][_0x3514a6(0x219)]=_0x3514a6(0x325),_0x3b0111[_0x3514a6(0x3a5)]=_0x3514a6(0x520)+_0x12ba6e[_0x3514a6(0x41d)](_0x5be9bd,0x1);const _0x4f3464=_0x39ee64(_0x24e9fd);_0x4f3464&&_0x4f3464['includes'](_0x12ba6e[_0x3514a6(0xe6)])?(_0x3b0111[_0x3514a6(0x486)]('data-needs-mse-decrypt',_0x3514a6(0x13b)),_0x3b0111[_0x3514a6(0x486)](_0x12ba6e['tMDYq'],_0x4f3464),_0x3b0111[_0x3514a6(0x2a8)]=_0x12ba6e[_0x3514a6(0x4c0)]):_0x3b0111[_0x3514a6(0x2a8)]=_0x4f3464,_0x3619b4[_0x3514a6(0x26d)](_0x3b0111);}else{const _0xdeed3=document[_0x3514a6(0x5a4)](_0x12ba6e[_0x3514a6(0x361)]);_0xdeed3[_0x3514a6(0x4d4)]='🎥',_0xdeed3[_0x3514a6(0x54c)][_0x3514a6(0x2fa)]=_0x12ba6e['fcemi'],_0xdeed3[_0x3514a6(0x54c)][_0x3514a6(0x146)]=_0x3514a6(0x5db),_0xdeed3[_0x3514a6(0x54c)][_0x3514a6(0x220)]=_0x3514a6(0x5af),_0xdeed3[_0x3514a6(0x54c)]['alignItems']='center',_0xdeed3[_0x3514a6(0x54c)]['justifyContent']=_0x12ba6e['RySRn'],_0xdeed3[_0x3514a6(0x54c)][_0x3514a6(0x3ba)]=_0x12ba6e[_0x3514a6(0x360)],_0x3619b4[_0x3514a6(0x26d)](_0xdeed3);}_0x3619b4[_0x3514a6(0x50e)]=()=>{const _0xe5eba=_0x3514a6;_0x2a26ec=_0x5be9bd,_0x12ba6e[_0xe5eba(0x1c7)](_0x2cb16f);},_0x27cd81[_0x3514a6(0x26d)](_0x3619b4);}),window[_0x625cf2(0x16a)]&&_0x87a62e[_0x625cf2(0x52c)](setTimeout,()=>{window['decryptThumbnails']();},0xc8);}function _0x7cf948(){const _0x541228=_0x203029,_0x4c51c7={};_0x4c51c7[_0x541228(0x2e1)]=function(_0x5a2fe9,_0x21cd02){return _0x5a2fe9!==_0x21cd02;},_0x4c51c7[_0x541228(0x45e)]=_0x87a62e[_0x541228(0x102)],_0x4c51c7['chPRW']=_0x87a62e[_0x541228(0x521)],_0x4c51c7['QoTDK']=_0x87a62e['UJoRC'];const _0x11a6cb=_0x4c51c7;if(!_0x273b12[_0x541228(0x4b9)]){const _0x5bab2a=_0x273b12[_0x541228(0x1cb)]||document[_0x541228(0x34f)](_0x87a62e[_0x541228(0x54d)])||document[_0x541228(0x34f)](_0x87a62e[_0x541228(0x4a6)]);if(!_0x5bab2a)return;!_0x273b12[_0x541228(0x4b9)]&&(_0x273b12['thumbnailsScroll']=_0x5bab2a);}const _0x31864d=_0x87a62e[_0x541228(0x4bc)](_0x4a1e11);if(!_0x31864d||!_0x31864d[_0x541228(0xfa)]){_0x273b12[_0x541228(0x4b9)][_0x541228(0x4d4)]='';return;}_0x273b12[_0x541228(0x4b9)][_0x541228(0x4d4)]='',_0x31864d[_0x541228(0xfa)][_0x541228(0x55e)]((_0x47b3b1,_0x568dac)=>{const _0x3284d9=_0x541228,_0x1553b4=document[_0x3284d9(0x5a4)](_0x3284d9(0x4e9));_0x1553b4['className']=_0x3284d9(0x442)+(_0x87a62e[_0x3284d9(0x2d1)](_0x568dac,_0x2a26ec)?_0x87a62e[_0x3284d9(0x1bf)]:''),_0x1553b4[_0x3284d9(0x54c)][_0x3284d9(0x2c3)]=_0x3284d9(0x2f1)+(_0x568dac===_0x2a26ec?_0x87a62e[_0x3284d9(0x4cf)]:_0x87a62e[_0x3284d9(0x482)])+_0x3284d9(0x297),_0x1553b4[_0x3284d9(0x3d5)]=()=>{const _0xe07722=_0x3284d9;_0x11a6cb[_0xe07722(0x2e1)](_0x568dac,_0x2a26ec)&&(_0x1553b4[_0xe07722(0x54c)]['border']=_0x11a6cb[_0xe07722(0x45e)]);},_0x1553b4[_0x3284d9(0x1fb)]=()=>{const _0x1d1da0=_0x3284d9;_0x11a6cb[_0x1d1da0(0x2e1)](_0x568dac,_0x2a26ec)&&(_0x1553b4['style']['border']=_0x11a6cb[_0x1d1da0(0x3ee)]);},_0x1553b4[_0x3284d9(0x50e)]=()=>_0x13d53e(_0x568dac);const _0x139cd8=document[_0x3284d9(0x5a4)](_0x87a62e[_0x3284d9(0x291)]);_0x139cd8['className']=_0x3284d9(0x458),_0x139cd8[_0x3284d9(0x54c)][_0x3284d9(0x2c3)]=_0x3284d9(0x254),_0x139cd8[_0x3284d9(0x3a5)]=_0x3284d9(0x542)+_0x87a62e[_0x3284d9(0x36b)](_0x568dac,0x1);if((_0x87a62e[_0x3284d9(0x564)](_0x47b3b1[_0x3284d9(0x580)],_0x87a62e[_0x3284d9(0x273)])||_0x87a62e[_0x3284d9(0x55d)](_0x47b3b1[_0x3284d9(0x452)],_0x87a62e[_0x3284d9(0x273)]))&&_0x47b3b1[_0x3284d9(0x1ec)]&&(_0x47b3b1['url']?.['includes'](_0x87a62e[_0x3284d9(0x1a4)])||_0x47b3b1[_0x3284d9(0x59b)]?.[_0x3284d9(0x57a)](_0x87a62e['LWobF']))){const _0x5edba6=_0x87a62e[_0x3284d9(0x24e)](_0x42a0e4,_0x47b3b1[_0x3284d9(0x59b)]);_0x5edba6&&(_0x139cd8[_0x3284d9(0x2a8)]=_0x3284d9(0x4c5)+_0x5edba6+'/hqdefault.jpg',_0x139cd8['onerror']=()=>{const _0x4d9b8c=_0x3284d9;_0x139cd8[_0x4d9b8c(0x2a8)]=_0x4d9b8c(0x517);});}else{const _0x4fcce3=_0x39ee64(_0x47b3b1);_0x4fcce3&&_0x4fcce3[_0x3284d9(0x57a)](_0x87a62e[_0x3284d9(0x3ed)])?(_0x139cd8[_0x3284d9(0x486)](_0x87a62e['rgjTX'],_0x3284d9(0x13b)),_0x139cd8[_0x3284d9(0x486)](_0x3284d9(0x348),_0x4fcce3),_0x139cd8[_0x3284d9(0x2a8)]=_0x87a62e[_0x3284d9(0x443)]):(_0x139cd8[_0x3284d9(0x2a8)]=_0x4fcce3,_0x139cd8[_0x3284d9(0x3ad)]=()=>{const _0xb170f0=_0x3284d9;_0x139cd8[_0xb170f0(0x2a8)]=_0x11a6cb[_0xb170f0(0x2d6)];});}_0x1553b4['appendChild'](_0x139cd8);if(_0x47b3b1['type']===_0x87a62e[_0x3284d9(0x273)]||_0x47b3b1[_0x3284d9(0x452)]===_0x87a62e[_0x3284d9(0x273)]){const _0x4f99e0=document[_0x3284d9(0x5a4)](_0x87a62e['NuYWq']);_0x4f99e0[_0x3284d9(0x4d4)]='▶',_0x4f99e0['style'][_0x3284d9(0x2c3)]=_0x3284d9(0x1ca),_0x1553b4[_0x3284d9(0x26d)](_0x4f99e0);}_0x273b12['thumbnailsScroll']['appendChild'](_0x1553b4);}),window['decryptThumbnails']&&_0x87a62e[_0x541228(0x238)](setTimeout,()=>{const _0x24ce05=_0x541228;window[_0x24ce05(0x16a)]();},0xc8);}function _0xffa5e3(){const _0x5d3ae2=_0x203029,_0x551238={'RfSHe':function(_0x42e628){return _0x42e628();},'badOW':function(_0x273531,_0x1733e0){return _0x87a62e['oAnVD'](_0x273531,_0x1733e0);},'vMgSB':function(_0x5149b7){return _0x5149b7();}};_0x87a62e['YBTlw'](document['readyState'],_0x87a62e['vFTCp'])?document[_0x5d3ae2(0x554)]('DOMContentLoaded',()=>{const _0x28b2e7=_0x5d3ae2,_0x3592fc={'FWPzx':function(_0x3f6fb9){const _0x33f935=_0x5e38;return _0x87a62e[_0x33f935(0x398)](_0x3f6fb9);},'KWAAo':function(_0x14d04b){return _0x14d04b();},'zdjQv':function(_0x2159d1,_0x394aa1){return _0x2159d1(_0x394aa1);},'iTqey':function(_0x31fa14){const _0x5e8e21=_0x5e38;return _0x87a62e[_0x5e8e21(0x485)](_0x31fa14);}};_0x87a62e[_0x28b2e7(0x1b8)](setTimeout,()=>{const _0x44b9de=_0x28b2e7;_0x3592fc[_0x44b9de(0x1d4)](_0x47ce1b),_0x3592fc[_0x44b9de(0x308)](_0x4a1e11)&&_0x3592fc[_0x44b9de(0x58d)](_0x58f483,_0x3592fc[_0x44b9de(0x45c)](_0x4a1e11));},0x3e8);}):setTimeout(()=>{const _0x42e641=_0x5d3ae2;_0x47ce1b(),_0x551238[_0x42e641(0x243)](_0x4a1e11)&&_0x551238['badOW'](_0x58f483,_0x551238[_0x42e641(0x3d9)](_0x4a1e11));},0x3e8);}function _0x4859f3(){const _0x54557c=_0x203029;if(!_0x273b12['mediaGrid'])return;const _0xbdf06d=_0x87a62e[_0x54557c(0x485)](_0x4a1e11);if(!_0xbdf06d||!_0xbdf06d[_0x54557c(0xfa)]){_0x273b12[_0x54557c(0x144)][_0x54557c(0x4d4)]='';return;}_0x273b12[_0x54557c(0x144)][_0x54557c(0x4d4)]='',_0xbdf06d['media']['forEach']((_0x5d177c,_0x2c05f6)=>{const _0xcc8919=_0x54557c,_0x2748cd={};_0x2748cd[_0xcc8919(0x3f2)]=_0x87a62e[_0xcc8919(0x3c9)];const _0x22cc81=_0x2748cd,_0x456cf0=document[_0xcc8919(0x5a4)](_0x87a62e[_0xcc8919(0x58c)]);_0x456cf0[_0xcc8919(0x310)]=_0xcc8919(0x355)+(_0x2c05f6===_0x2a26ec?_0xcc8919(0x181):''),_0x456cf0['onclick']=()=>_0x13d53e(_0x2c05f6);const _0x3d25a0=document[_0xcc8919(0x5a4)]('div');_0x3d25a0[_0xcc8919(0x310)]=_0x87a62e[_0xcc8919(0x5d6)];if((_0x87a62e[_0xcc8919(0x58a)](_0x5d177c[_0xcc8919(0x580)],_0xcc8919(0x4de))||_0x87a62e[_0xcc8919(0x2d1)](_0x5d177c['media_type'],_0x87a62e[_0xcc8919(0x273)]))&&_0x5d177c[_0xcc8919(0x1ec)]&&(_0x5d177c[_0xcc8919(0x59b)]?.[_0xcc8919(0x57a)](_0x87a62e[_0xcc8919(0x1a4)])||_0x5d177c[_0xcc8919(0x59b)]?.['includes'](_0x87a62e[_0xcc8919(0x5ae)]))){const _0x540976=_0x42a0e4(_0x5d177c['url']);if(_0x540976){const _0x528329=document[_0xcc8919(0x5a4)](_0x87a62e['ICNRZ']);_0x528329[_0xcc8919(0x2a8)]=_0xcc8919(0x4c5)+_0x540976+_0xcc8919(0x425),_0x528329[_0xcc8919(0x3a5)]='YouTube影片\x20'+_0x87a62e[_0xcc8919(0x5e5)](_0x2c05f6,0x1),_0x528329['onerror']=()=>{const _0xdb0001=_0xcc8919;_0x528329[_0xdb0001(0x2a8)]=_0xdb0001(0x4c5)+_0x540976+_0xdb0001(0x3d1);},_0x3d25a0[_0xcc8919(0x26d)](_0x528329);}}else{const _0x258404=document[_0xcc8919(0x5a4)](_0xcc8919(0x3a2));_0x258404['alt']=_0xcc8919(0x4af)+_0x87a62e[_0xcc8919(0x227)](_0x2c05f6,0x1);const _0x4ecd35=_0x87a62e['rnpnD'](_0x39ee64,_0x5d177c);_0x4ecd35&&_0x4ecd35['includes'](_0xcc8919(0x532))?(_0x258404[_0xcc8919(0x486)](_0xcc8919(0x17b),_0x87a62e[_0xcc8919(0x478)]),_0x258404['setAttribute'](_0x87a62e[_0xcc8919(0x1b6)],_0x4ecd35),_0x258404[_0xcc8919(0x2a8)]=_0x87a62e[_0xcc8919(0x1b4)]):(_0x258404[_0xcc8919(0x2a8)]=_0x4ecd35,_0x258404[_0xcc8919(0x3ad)]=()=>{const _0x11caa1=_0xcc8919;_0x258404[_0x11caa1(0x2a8)]=_0x22cc81[_0x11caa1(0x3f2)];}),_0x3d25a0[_0xcc8919(0x26d)](_0x258404);}_0x456cf0[_0xcc8919(0x26d)](_0x3d25a0),_0x273b12['mediaGrid'][_0xcc8919(0x26d)](_0x456cf0);}),window[_0x54557c(0x16a)]&&setTimeout(()=>{const _0x4954e4=_0x54557c;window[_0x4954e4(0x16a)]();},0xc8);}function _0x4c1b29(){const _0x333cd9=_0x203029,_0x3ffb55={'HYlqv':function(_0x407f17,_0x4967ea){return _0x407f17(_0x4967ea);},'vZrNi':function(_0x69c0d2){return _0x69c0d2();}};if(!_0x757e96||!_0x273b12['timelineScroll'])return;const _0x375aa3=_0x87a62e[_0x333cd9(0x197)](_0x3b0ff9);_0x273b12[_0x333cd9(0x4ce)]['innerHTML']=_0x333cd9(0x28d),_0x375aa3[_0x333cd9(0x55e)]((_0x383e45,_0x3d98f0)=>{const _0x239f98=_0x333cd9,_0xdbca44=document[_0x239f98(0x5a4)](_0x87a62e[_0x239f98(0x58c)]);_0xdbca44['className']=_0x239f98(0x484)+(_0x87a62e['SHPwH'](_0x3d98f0,_0xcc1ce)?_0x87a62e[_0x239f98(0x1bf)]:'');const _0x527b40=document['createElement'](_0x87a62e[_0x239f98(0x58c)]);_0x527b40[_0x239f98(0x310)]=_0x239f98(0x5a8);const _0xaa0adc=document[_0x239f98(0x5a4)](_0x87a62e[_0x239f98(0x58c)]);_0xaa0adc[_0x239f98(0x310)]=_0x239f98(0x23b);const _0x3d6128=document['createElement']('div');_0x3d6128[_0x239f98(0x310)]=_0x239f98(0x13c);const _0x2d51ae=document['createElement'](_0x87a62e[_0x239f98(0x58c)]);_0x2d51ae[_0x239f98(0x310)]=_0x87a62e[_0x239f98(0x4ae)];const _0x11a784=document[_0x239f98(0x5a4)](_0x239f98(0x4e9));_0x11a784['className']='timeline-event-date',_0x11a784['textContent']=new Date(_0x383e45[_0x239f98(0x427)])[_0x239f98(0x4da)](_0x87a62e[_0x239f98(0x512)]);const _0x4f53d1=document['createElement'](_0x87a62e[_0x239f98(0x58c)]);_0x4f53d1['className']=_0x87a62e[_0x239f98(0x1aa)],_0x4f53d1[_0x239f98(0x2dd)]=_0x383e45[_0x239f98(0x574)];const _0x5cd3e5=document[_0x239f98(0x5a4)](_0x87a62e['NuYWq']);_0x5cd3e5['className']=_0x87a62e['RfTIZ'],_0x5cd3e5[_0x239f98(0x2dd)]=_0x383e45['description'],_0x2d51ae[_0x239f98(0x208)](_0x11a784,_0x4f53d1),_0x3d6128[_0x239f98(0x208)](_0x2d51ae,_0x5cd3e5),_0xaa0adc[_0x239f98(0x26d)](_0x3d6128),_0xdbca44[_0x239f98(0x208)](_0x527b40,_0xaa0adc),_0xdbca44[_0x239f98(0x50e)]=()=>{const _0x18bd37=_0x239f98;_0x3ffb55[_0x18bd37(0x54a)](_0x398880,_0x3d98f0),_0x3ffb55['vZrNi'](_0x129c6c);},_0x273b12[_0x239f98(0x4ce)]['appendChild'](_0xdbca44);});if(_0x87a62e['FXTAh'](typeof lucide,_0x87a62e['rVWzs']))lucide[_0x333cd9(0x21f)]();}function _0x2d3834(_0x48de41){const _0x543ee2=_0x203029;if(_0x273b12[_0x543ee2(0x21c)]?.[_0x543ee2(0x2ac)]['contains'](_0x87a62e[_0x543ee2(0x504)])||_0x273b12[_0x543ee2(0x4fd)]?.['classList'][_0x543ee2(0x570)](_0x87a62e[_0x543ee2(0x504)])||_0x273b12[_0x543ee2(0x569)]?.[_0x543ee2(0x2ac)][_0x543ee2(0x570)](_0x543ee2(0x42f))){_0x87a62e['wXLaA'](_0x48de41['key'],_0x87a62e[_0x543ee2(0x57c)])&&(_0x48de41['preventDefault'](),_0x87a62e[_0x543ee2(0x568)](_0x129c6c),_0x87a62e[_0x543ee2(0x1fd)](_0x167988),_0x87a62e['oIykL'](_0x28824d));return;}if(!(_0x273b12['timelinePanel']?.['classList']['contains'](_0x543ee2(0x42f))||_0x273b12[_0x543ee2(0x4fd)]?.[_0x543ee2(0x2ac)][_0x543ee2(0x570)](_0x87a62e['gindy'])||_0x273b12[_0x543ee2(0x569)]?.[_0x543ee2(0x2ac)][_0x543ee2(0x570)](_0x87a62e[_0x543ee2(0x504)]))){const _0x5e9879=_0x48de41['ctrlKey']||_0x48de41[_0x543ee2(0x52b)];if(_0x5e9879&&(_0x87a62e[_0x543ee2(0x147)](_0x48de41[_0x543ee2(0x1ab)],'+')||_0x87a62e['DkjmA'](_0x48de41[_0x543ee2(0x1ab)],'='))){_0x48de41[_0x543ee2(0x311)](),_0x87a62e[_0x543ee2(0x29e)](_0x379d34,_0x87a62e[_0x543ee2(0x55d)](_0x11ddb4,_0x87a62e[_0x543ee2(0x1b3)])?_0x87a62e[_0x543ee2(0x114)]:_0x87a62e[_0x543ee2(0x17d)]);return;}if(_0x5e9879&&_0x48de41[_0x543ee2(0x1ab)]==='-'){_0x48de41[_0x543ee2(0x311)](),_0x87a62e[_0x543ee2(0x4d9)](_0x379d34,_0x87a62e['DhCzF'](_0x11ddb4,_0x87a62e['UsbgU'])?_0x87a62e['hOcfO']:_0x543ee2(0x12f));return;}if(_0x5e9879&&_0x87a62e[_0x543ee2(0x2cb)](_0x48de41['key'],'0')){_0x48de41[_0x543ee2(0x311)](),_0x379d34(_0x87a62e[_0x543ee2(0x114)]);return;}}switch(_0x48de41[_0x543ee2(0x1ab)]){case _0x87a62e['yqKmj']:_0x48de41['preventDefault']();_0x87a62e[_0x543ee2(0x46f)](_0xcc1ce,0x0)&&_0x87a62e['caEvM'](_0x398880,_0x87a62e[_0x543ee2(0x4ec)](_0xcc1ce,0x1));break;case _0x87a62e[_0x543ee2(0x396)]:_0x48de41[_0x543ee2(0x311)]();_0x757e96&&_0x87a62e[_0x543ee2(0x1eb)](_0xcc1ce,_0x3b0ff9()[_0x543ee2(0x4fe)]-0x1)&&_0x87a62e[_0x543ee2(0x4aa)](_0x398880,_0x87a62e[_0x543ee2(0x416)](_0xcc1ce,0x1));break;case _0x87a62e['havYF']:_0x48de41['preventDefault']();_0x757e96&&_0x757e96[_0x543ee2(0x595)]&&_0x87a62e[_0x543ee2(0x4bb)](_0x398880,0x0);break;case'End':_0x48de41[_0x543ee2(0x311)]();_0x757e96&&_0x757e96[_0x543ee2(0x595)]&&_0x87a62e[_0x543ee2(0x24e)](_0x398880,_0x87a62e['Hnruk'](_0x87a62e[_0x543ee2(0x298)](_0x3b0ff9)[_0x543ee2(0x4fe)],0x1));break;case'g':case'G':_0x48de41[_0x543ee2(0x311)](),_0x87a62e['ooHEn'](_0x2c7efe);break;case't':case'T':_0x48de41[_0x543ee2(0x311)](),_0x3bb42f();break;case'h':case'H':case'?':_0x48de41[_0x543ee2(0x311)](),_0x87a62e[_0x543ee2(0x11b)](_0x2be4be);break;case _0x543ee2(0x366):_0x48de41[_0x543ee2(0x311)]();_0x2a84d3&&_0x87a62e[_0x543ee2(0x421)](_0x2c7efe);break;case'\x20':_0x48de41[_0x543ee2(0x311)]();const _0x3e070e=_0x273b12[_0x543ee2(0x211)]?.[_0x543ee2(0x34f)](_0x87a62e[_0x543ee2(0x273)]);_0x3e070e&&(_0x3e070e[_0x543ee2(0x335)]?_0x3e070e['play']():_0x3e070e['pause']());break;}}function _0x2a3e4c(){const _0x16de62=_0x203029;let _0x461919=0x0,_0x9ad30b=0x0;const _0x3f9b66=0x32,_0x3694de=_0x273b12['subtitleArea']||document['body'],_0x425357={};_0x425357[_0x16de62(0x27d)]=!![],_0x3694de['addEventListener']('touchstart',_0x5cdcc2=>{const _0x143a73=_0x16de62;_0x461919=_0x5cdcc2[_0x143a73(0x173)][0x0][_0x143a73(0x5f7)];},_0x425357);const _0x1394bc={};_0x1394bc[_0x16de62(0x27d)]=!![],_0x3694de['addEventListener'](_0x87a62e[_0x16de62(0x5a2)],_0x4705d5=>{const _0xd64fcf=_0x16de62;_0x9ad30b=_0x4705d5[_0xd64fcf(0x2dc)][0x0]['clientX'];const _0x9b2e4d=_0x87a62e[_0xd64fcf(0x4cc)](_0x9ad30b,_0x461919);if(_0x87a62e[_0xd64fcf(0x380)](Math[_0xd64fcf(0x20b)](_0x9b2e4d),_0x3f9b66)){if(_0x87a62e[_0xd64fcf(0x26e)](_0x9b2e4d,0x0)&&_0xcc1ce>0x0)_0x87a62e[_0xd64fcf(0x304)](_0x398880,_0x87a62e[_0xd64fcf(0x25b)](_0xcc1ce,0x1));else _0x87a62e['yRnoJ'](_0x9b2e4d,0x0)&&_0x757e96&&_0x87a62e[_0xd64fcf(0x2c5)](_0xcc1ce,_0x87a62e[_0xd64fcf(0x39f)](_0x87a62e[_0xd64fcf(0x287)](_0x3b0ff9)[_0xd64fcf(0x4fe)],0x1))&&_0x87a62e[_0xd64fcf(0x1d7)](_0x398880,_0x87a62e[_0xd64fcf(0x359)](_0xcc1ce,0x1));}},_0x1394bc);}function _0x57e5ac(){const _0x13c6b0=_0x203029,_0xa0b75c={'sQAom':_0x13c6b0(0x25d),'oZPBQ':function(_0x52f364,_0x56b829){return _0x52f364(_0x56b829);},'kxWge':_0x87a62e[_0x13c6b0(0x18f)],'swMYv':_0x87a62e[_0x13c6b0(0x53c)],'AmJdc':'meta[name=\x22backend-url\x22]','JUDEy':function(_0x5c9405,_0x2dfd3e){const _0x8cc77c=_0x13c6b0;return _0x87a62e[_0x8cc77c(0x5e5)](_0x5c9405,_0x2dfd3e);},'PGlyh':function(_0x14cecc,_0x49d8c5,_0x32df7a){const _0x4b4bb6=_0x13c6b0;return _0x87a62e[_0x4b4bb6(0x4ed)](_0x14cecc,_0x49d8c5,_0x32df7a);},'xoTNX':'POST','dVGiX':_0x87a62e[_0x13c6b0(0x3cb)]};try{if(window[_0x13c6b0(0x38f)]){console[_0x13c6b0(0xe2)](_0x87a62e[_0x13c6b0(0x431)]);return;}window[_0x13c6b0(0x38f)]=!![];if(!_0x757e96){if(window[_0x13c6b0(0x3f3)])_0x757e96=window[_0x13c6b0(0x3f3)];else{_0x87a62e[_0x13c6b0(0x1e9)](typeof window[_0x13c6b0(0x4eb)],_0x87a62e[_0x13c6b0(0x155)])&&setTimeout(()=>window[_0x13c6b0(0x4eb)](),0x1f4);return;}}!_0x273b12[_0x13c6b0(0x4b9)]&&(_0x273b12[_0x13c6b0(0x4b9)]=document[_0x13c6b0(0x175)](_0x87a62e[_0x13c6b0(0x45b)])||document[_0x13c6b0(0x34f)](_0x87a62e[_0x13c6b0(0x54d)])||_0x273b12[_0x13c6b0(0x1cb)]);!_0x273b12['subtitleArea']&&(_0x273b12[_0x13c6b0(0x25f)]=document[_0x13c6b0(0x175)](_0x87a62e[_0x13c6b0(0x330)]));!_0x273b12[_0x13c6b0(0x28a)]&&(_0x273b12['eventDate']=document[_0x13c6b0(0x175)](_0x87a62e[_0x13c6b0(0x164)]));!_0x273b12[_0x13c6b0(0x5b8)]&&(_0x273b12[_0x13c6b0(0x5b8)]=document[_0x13c6b0(0x175)](_0x87a62e[_0x13c6b0(0x2f0)]));!_0x273b12[_0x13c6b0(0x577)]&&(_0x273b12[_0x13c6b0(0x577)]=document['getElementById']('eventDescription'));!_0x273b12[_0x13c6b0(0x4b5)]&&(_0x273b12[_0x13c6b0(0x4b5)]=document[_0x13c6b0(0x175)](_0x87a62e[_0x13c6b0(0x225)]));if(_0x273b12['app'])_0x273b12['app'][_0x13c6b0(0x2ac)]['remove'](_0x87a62e['ypckx']);_0x87a62e[_0x13c6b0(0x398)](_0x9c2cb6),_0x87a62e[_0x13c6b0(0x379)](_0x1d30e9),_0x87a62e[_0x13c6b0(0x440)](_0xf51c4b),_0x87a62e[_0x13c6b0(0x1f7)](_0x775cb4),_0x3e245a(),_0x87a62e[_0x13c6b0(0x1ef)](_0x5d8434),_0x87a62e[_0x13c6b0(0x36a)](_0x5bbd9c);_0x273b12[_0x13c6b0(0x211)]&&_0x273b12['mediaDisplay'][_0x13c6b0(0x554)](_0x13c6b0(0x135),()=>{const _0x5a0aec=_0x13c6b0,_0x34879c={};_0x34879c[_0x5a0aec(0x4ff)]=_0xcc1ce,_0x34879c[_0x5a0aec(0x26a)]=_0x2a26ec;const _0x4a08b6={};_0x4a08b6[_0x5a0aec(0x266)]=_0x34879c,window[_0x5a0aec(0x42e)](new CustomEvent(_0xa0b75c['sQAom'],_0x4a08b6));});const _0x142ba7=_0x398880;_0x398880=function(_0x32f6c6){const _0x1185c6=_0x13c6b0;_0xa0b75c[_0x1185c6(0x47d)](_0x142ba7,_0x32f6c6),window[_0x1185c6(0x49c)]&&window[_0x1185c6(0x49c)]('event_navigation');};const _0x935112=document[_0x13c6b0(0x34f)](_0x87a62e[_0x13c6b0(0x49a)]),_0x375e34=document[_0x13c6b0(0x34f)](_0x13c6b0(0x32b));_0x4efa52(_0x935112),_0x87a62e['txPGz'](_0x4efa52,_0x375e34),_0x757e96['events']&&_0x87a62e[_0x13c6b0(0x380)](_0x757e96['events'][_0x13c6b0(0x4fe)],0x0)?(_0x3bbec1(),_0x87a62e[_0x13c6b0(0x440)](_0xe5fe5b)):_0x87a62e[_0x13c6b0(0x4c3)](_0x136c61),_0x87a62e['NVIKv'](setTimeout,()=>{const _0x2ee9bd=_0x13c6b0;_0x273b12[_0x2ee9bd(0x491)]&&_0x273b12[_0x2ee9bd(0x491)][_0x2ee9bd(0x2ac)][_0x2ee9bd(0x18b)](_0xa0b75c['kxWge']);},0x3e8),function _0x2e6691(){const _0x3fad98=_0x13c6b0,_0x31a6af=document[_0x3fad98(0x34f)](_0xa0b75c[_0x3fad98(0x34d)])?.['content']||'',_0x463f30=document[_0x3fad98(0x34f)](_0xa0b75c[_0x3fad98(0x156)])?.[_0x3fad98(0x33a)]||'',_0x368c13={'memoir_id':_0x31a6af,'page_path':location['pathname'],'repo_url':_0xa0b75c[_0x3fad98(0x116)](location[_0x3fad98(0x153)],location[_0x3fad98(0xee)][_0x3fad98(0x59d)]('/')[_0x3fad98(0x2d8)](0x0,0x3)[_0x3fad98(0x538)]('/')),'approval_token':window['__APPROVAL__']?.[_0x3fad98(0x105)]||null};_0x463f30&&_0xa0b75c[_0x3fad98(0x369)](fetch,_0x463f30+_0x3fad98(0x1ea),{'method':_0xa0b75c[_0x3fad98(0x5d7)],'headers':{'Content-Type':_0xa0b75c[_0x3fad98(0xe8)]},'body':JSON[_0x3fad98(0x51e)](_0x368c13)})[_0x3fad98(0x5c0)](()=>{});}(),setTimeout(()=>{const _0x188c92=_0x13c6b0;_0x87a62e[_0x188c92(0x125)](_0x5b8740);},0xc8),_0x5bb453&&document[_0x13c6b0(0x48d)][_0x13c6b0(0x2ac)][_0x13c6b0(0x18b)](_0x87a62e[_0x13c6b0(0x163)]),!_0x45aa66&&document[_0x13c6b0(0x48d)]['classList']['add'](_0x87a62e['ORtsL']);}catch(_0x17e933){_0x87a62e[_0x13c6b0(0x1d7)](_0x743fa4,_0x13c6b0(0x47f)+_0x17e933['message']);}}function _0x136c61(){const _0x4efbd7=_0x203029;if(_0x273b12['mediaDisplay']){const _0x1c2cf3=_0x2d3838?_0x87a62e[_0x4efbd7(0x3b1)]:_0x87a62e[_0x4efbd7(0x312)];_0x273b12['mediaDisplay'][_0x4efbd7(0x4d4)]=_0x4efbd7(0x399)+_0x1c2cf3+_0x4efbd7(0x282);}}document['addEventListener'](_0x87a62e[_0x203029(0x551)],function(){const _0x53c890=_0x203029,_0x125db6={'YaQZR':_0x87a62e[_0x53c890(0x2b3)],'ywzOw':function(_0x1f0964){const _0x2cb607=_0x53c890;return _0x87a62e[_0x2cb607(0x4bc)](_0x1f0964);},'cchev':function(_0x388bef,_0xbcdb4){return _0x388bef===_0xbcdb4;},'uRucm':_0x87a62e[_0x53c890(0x155)],'Fevcf':function(_0x358f60){return _0x358f60();},'jqGUU':_0x53c890(0x2f7),'vUMyE':function(_0xf77470){const _0x4b0698=_0x53c890;return _0x87a62e[_0x4b0698(0x279)](_0xf77470);},'eFFAt':function(_0x2d1b72,_0x435180,_0x345afc){return _0x2d1b72(_0x435180,_0x345afc);}};_0x87a62e[_0x53c890(0x1f8)](_0x32fa97,_0x87a62e[_0x53c890(0x493)]);if(_0x87a62e[_0x53c890(0x1d8)](typeof lucide,_0x87a62e[_0x53c890(0x29d)]))try{lucide['createIcons']();}catch(_0x4d4071){console[_0x53c890(0x3db)](_0x4d4071);}const _0x268694=()=>document['querySelector'](_0x53c890(0x447))?.[_0x53c890(0x33a)]||_0x53c890(0x45f);function _0x225974(){const _0x3aeeef=_0x53c890;if(window[_0x3aeeef(0x3f3)]?.[_0x3aeeef(0x595)])return!![];const _0x592684=document[_0x3aeeef(0x175)](_0x125db6[_0x3aeeef(0x142)]);if(!_0x592684)return![];try{const _0x54cd07=_0x592684[_0x3aeeef(0x2dd)]||'';return window['MEMOIR_DATA']=JSON[_0x3aeeef(0x2a2)](_0x54cd07),!!window[_0x3aeeef(0x3f3)]?.[_0x3aeeef(0x595)];}catch(_0x2803d9){return console[_0x3aeeef(0x3db)](_0x2803d9),![];}}function _0x210cca(){const _0x5d69ca=_0x53c890,_0x4947ca=_0x125db6[_0x5d69ca(0x27b)](_0x225974)||!!(window['MEMOIR_DATA']&&window[_0x5d69ca(0x3f3)][_0x5d69ca(0x595)]);if(_0x4947ca){if(_0x125db6['cchev'](typeof _0x57e5ac,_0x125db6[_0x5d69ca(0x2cd)]))_0x125db6['Fevcf'](_0x57e5ac);return!![];}return![];}window[_0x53c890(0x4eb)]=_0x210cca,_0x87a62e[_0x53c890(0x457)](setTimeout,async()=>{const _0x36dfb8=_0x53c890,_0x53efb5={'jMUom':function(_0x32c0fa){return _0x87a62e['znIIb'](_0x32c0fa);},'XaGdy':function(_0x264cec,_0x27af93){const _0x365851=_0x5e38;return _0x87a62e[_0x365851(0x24e)](_0x264cec,_0x27af93);},'eJHhn':_0x87a62e[_0x36dfb8(0x1c1)]};_0x87a62e['vcupy'](_0x32fa97,_0x87a62e['aGCfo']),_0x87a62e[_0x36dfb8(0x457)](setTimeout,async()=>{const _0x3cd4ab=_0x36dfb8,_0x1e3d85=await(window[_0x3cd4ab(0x5f3)]?.()??!![]);if(!_0x1e3d85)return;const _0x491a3f=_0x32bcf9();if(!_0x491a3f)return;const _0x228470=_0x125db6[_0x3cd4ab(0x27b)](_0x268694);if(_0x228470===_0x125db6[_0x3cd4ab(0x519)]){if(!_0x125db6[_0x3cd4ab(0x43a)](_0x210cca)){const _0x40483d={};_0x40483d[_0x3cd4ab(0x27c)]=!![],window[_0x3cd4ab(0x554)](_0x3cd4ab(0x50f),_0x36d116=>{const _0x24d5ab=_0x3cd4ab;if(_0x36d116?.[_0x24d5ab(0x266)])window[_0x24d5ab(0x3f3)]=_0x36d116[_0x24d5ab(0x266)];_0x53efb5[_0x24d5ab(0x249)](_0x210cca);},_0x40483d),_0x125db6['eFFAt'](setTimeout,()=>{const _0x4d9976=_0x3cd4ab;!_0x210cca()&&_0x53efb5['XaGdy'](_0x743fa4,_0x53efb5[_0x4d9976(0x203)]);},0x3a98);}}else!_0x210cca()&&_0x743fa4('初始化失敗：找不到\x20MEMOIR_DATA。請確認已注入預載\x20JSON，或密碼解鎖流程會呼叫\x20window.__bootApp__。');},0x320);},0x5dc);}),window[_0x203029(0x554)](_0x87a62e[_0x203029(0x53b)],function(_0x62a2a1){const _0xaa28ff=_0x203029;(!_0x273b12[_0xaa28ff(0x24b)]||_0x273b12[_0xaa28ff(0x24b)][_0xaa28ff(0x2ac)][_0xaa28ff(0x570)](_0x87a62e[_0xaa28ff(0x18f)]))&&_0x87a62e[_0xaa28ff(0x578)](_0x743fa4,_0xaa28ff(0x2c6)+(_0x62a2a1[_0xaa28ff(0x13d)]?.['message']||'未知錯誤'));}),window['addEventListener'](_0x87a62e[_0x203029(0xea)],function(_0x2d8a45){const _0x461097=_0x203029;(!_0x273b12[_0x461097(0x24b)]||_0x273b12[_0x461097(0x24b)]['classList'][_0x461097(0x570)](_0x461097(0x3c2)))&&_0x87a62e[_0x461097(0x347)](_0x743fa4,_0x461097(0x1de)+(_0x2d8a45[_0x461097(0x1a7)]?.[_0x461097(0x18a)]||_0x87a62e['yihkU']));});const _0x56a311={'memoir_id':window[_0x203029(0x364)],'repo_url':_0x87a62e[_0x203029(0xe5)](window[_0x203029(0x5a3)][_0x203029(0x153)],window[_0x203029(0x5a3)][_0x203029(0xee)]['split']('/')[_0x203029(0x2d8)](0x0,0x3)[_0x203029(0x538)]('/')),'page_path':window['location']['pathname']};window[_0x203029(0x2ad)]=_0x57e5ac;const _0x5d9ca1=_0x13d53e;_0x13d53e=function(_0x516f76){const _0x118233=_0x203029;_0x5d9ca1(_0x516f76),_0x87a62e[_0x118233(0x55f)](_0x1d3bb0);const _0x5c5642=document[_0x118233(0x2bc)](_0x87a62e[_0x118233(0x23d)]);_0x5c5642[_0x118233(0x55e)]((_0x3a9cc2,_0x3a0550)=>{const _0x4f4497=_0x118233;_0x87a62e[_0x4f4497(0x552)](_0x3a0550,_0x516f76)?(_0x3a9cc2[_0x4f4497(0x2ac)][_0x4f4497(0x18b)](_0x87a62e[_0x4f4497(0x1bf)]),_0x3a9cc2[_0x4f4497(0x54c)][_0x4f4497(0x413)]=_0x4f4497(0x392)):(_0x3a9cc2[_0x4f4497(0x2ac)][_0x4f4497(0x35f)](_0x87a62e[_0x4f4497(0x1bf)]),_0x3a9cc2[_0x4f4497(0x54c)][_0x4f4497(0x413)]=_0x4f4497(0x598));});},_0xffa5e3();}()),document[_0x2abcaf(0x554)](_0x2abcaf(0x1ce),function(){const _0x774af2=_0x2abcaf,_0xe0eec9={};_0xe0eec9['SgoKR']=_0x774af2(0x573);const _0x4bd95c=_0xe0eec9,_0x4b8720=document[_0x774af2(0x175)](_0x4bd95c['SgoKR']);_0x4b8720&&_0x4b8720[_0x774af2(0x554)](_0x774af2(0x135),()=>{const _0x479c99=_0x774af2;location[_0x479c99(0x177)]();});}),document[_0x2abcaf(0x175)]('retryBtn')?.['addEventListener'](_0x2abcaf(0x135),()=>{const _0x359a5a=_0x2abcaf;location[_0x359a5a(0x177)]();});window['autoDecrypt']&&!window['decryptMemoirData']&&(window[_0x2abcaf(0x3de)]=window['autoDecrypt']);window[_0x2abcaf(0x554)](_0x2abcaf(0x1ce),()=>{const _0x26f45c=_0x2abcaf,_0x1c0774={};_0x1c0774['YEGWX']='function',_0x1c0774[_0x26f45c(0x5c7)]=_0x26f45c(0x503);const _0x4883c2=_0x1c0774;window[_0x26f45c(0xf4)]?window[_0x26f45c(0xf4)]():typeof window[_0x26f45c(0x228)]===_0x4883c2[_0x26f45c(0x3d3)]&&window['showError'](_0x4883c2[_0x26f45c(0x5c7)]);}),window['addEventListener']('memoir:authorized',()=>{const _0x1d09e1=_0x2abcaf;window[_0x1d09e1(0xf4)]&&window[_0x1d09e1(0xf4)]();});const _0x4f877c={};_0x4f877c[_0x2abcaf(0x3f3)]=null,_0x4f877c[_0x2abcaf(0x5d2)]=null,_0x4f877c[_0x2abcaf(0x2f3)]=0x0,_0x4f877c[_0x2abcaf(0x5be)]=0x5,_0x4f877c[_0x2abcaf(0x17c)]=null,_0x4f877c[_0x2abcaf(0x39c)]=null,window[_0x2abcaf(0x453)]=_0x4f877c,window['secureUtils']={'showDecryptionError':function(_0x1217cc){const _0x4820cb=_0x2abcaf,_0x134cbc={'ukFMj':_0x4820cb(0x281),'ZkOeq':function(_0x40a3da,_0x4cf6ec){return _0x40a3da===_0x4cf6ec;},'ufTkH':_0x4820cb(0x40e),'BViTz':function(_0x45b0da,_0x51cac3){return _0x45b0da(_0x51cac3);},'uqKTN':'錯誤:\x20'};console[_0x4820cb(0x13d)](_0x134cbc[_0x4820cb(0x16c)],_0x1217cc),_0x134cbc[_0x4820cb(0x579)](typeof window[_0x4820cb(0x228)],_0x134cbc[_0x4820cb(0x1c0)])?window['showError'](_0x1217cc):_0x134cbc[_0x4820cb(0x1e8)](alert,_0x134cbc['uqKTN']+_0x1217cc);},'initializeApp':function(){const _0x451c14=_0x2abcaf,_0x1b3a08={};_0x1b3a08[_0x451c14(0x5bd)]=function(_0x276569,_0x2c2f66){return _0x276569===_0x2c2f66;},_0x1b3a08[_0x451c14(0x2eb)]=_0x451c14(0x40e);const _0x48d2a3=_0x1b3a08;console[_0x451c14(0xe2)](_0x451c14(0x349)),_0x48d2a3['jwLxE'](typeof window[_0x451c14(0x2b9)],_0x48d2a3['raOWC'])?window[_0x451c14(0x2b9)](secureGlobals[_0x451c14(0x3f3)]):console[_0x451c14(0xe2)](_0x451c14(0x131));}},console[_0x2abcaf(0xe2)](_0x2abcaf(0x376)),console[_0x2abcaf(0xe2)]('🔐\x20載入混合解密模式'),window[_0x2abcaf(0x32a)]=_0x2abcaf(0x576);const [encodedData,expectedPasswordHash]=window[_0x2abcaf(0x32a)][_0x2abcaf(0x59d)]('|');function checkRefreshState(){const _0xfd3b91=_0x2abcaf,_0x32b968={'pwqNc':_0xfd3b91(0x491),'yGsFk':_0xfd3b91(0x540),'zZoCc':_0xfd3b91(0x24b),'hGRXi':_0xfd3b91(0x3c2),'UhsXF':_0xfd3b91(0x498),'BRtpx':_0xfd3b91(0x58b),'yPBjt':function(_0x187657,_0x41bba2){return _0x187657===_0x41bba2;},'acEkA':'mf_pw_unlocked','aRSoI':'🔄\x20檢查重新整理狀態:','QeXVR':function(_0x4c738d,_0x318692){return _0x4c738d&&_0x318692;},'ElRQY':_0xfd3b91(0x30c),'IhxOj':function(_0x24f90b,_0x6ce97f,_0x48ef1b){return _0x24f90b(_0x6ce97f,_0x48ef1b);}},_0x1c58b2=_0x32b968[_0xfd3b91(0x5ad)](sessionStorage[_0xfd3b91(0x2a5)](_0x32b968['acEkA']),'1'),_0x9bc729=!!(window[_0xfd3b91(0x3f3)]&&window[_0xfd3b91(0x3f3)][_0xfd3b91(0x595)]&&window['MEMOIR_DATA']['events'][_0xfd3b91(0x4fe)]>0x0),_0x375d6a={};_0x375d6a[_0xfd3b91(0x20e)]=_0x1c58b2,_0x375d6a[_0xfd3b91(0x251)]=_0x9bc729,_0x375d6a[_0xfd3b91(0x14a)]=!!window[_0xfd3b91(0x3f3)],_0x375d6a[_0xfd3b91(0x393)]=window[_0xfd3b91(0x3f3)]?.[_0xfd3b91(0x595)]?.[_0xfd3b91(0x4fe)]||0x0,console[_0xfd3b91(0xe2)](_0x32b968[_0xfd3b91(0x5e8)],_0x375d6a);if(_0x32b968[_0xfd3b91(0x327)](_0x1c58b2,!_0x9bc729))return console[_0xfd3b91(0xe2)](_0x32b968[_0xfd3b91(0x1f2)]),sessionStorage[_0xfd3b91(0x472)](_0xfd3b91(0x56e)),_0x32b968[_0xfd3b91(0x547)](setTimeout,()=>{const _0xec2f20=_0xfd3b91,_0x3723d9=document[_0xec2f20(0x175)](_0x32b968[_0xec2f20(0x139)]),_0x555417=document[_0xec2f20(0x175)](_0x32b968[_0xec2f20(0x1f1)]),_0x5b2f1d=document[_0xec2f20(0x175)](_0x32b968['zZoCc']);if(_0x3723d9)_0x3723d9[_0xec2f20(0x2ac)][_0xec2f20(0x18b)](_0x32b968['hGRXi']);if(_0x5b2f1d)_0x5b2f1d[_0xec2f20(0x2ac)][_0xec2f20(0x18b)]('hidden');if(_0x555417){_0x555417[_0xec2f20(0x2ac)][_0xec2f20(0x35f)](_0x32b968[_0xec2f20(0x3a7)]),console['log'](_0x32b968['UhsXF']);const _0x2a5d82=document['getElementById'](_0x32b968['BRtpx']);_0x2a5d82&&(_0x2a5d82['focus'](),_0x2a5d82[_0xec2f20(0x37d)]='');}},0x64),!![];return![];}window[_0x2abcaf(0x326)]=async function(_0x1da92f){const _0x30b3ca=_0x2abcaf,_0x3392ad={'pSeqK':function(_0xc2cd28,_0xa78b18){return _0xc2cd28===_0xa78b18;},'KTJMn':_0x30b3ca(0x40e),'WrGnQ':_0x30b3ca(0x41e),'LgRFB':'string','JMRyI':_0x30b3ca(0x179),'kPLmx':function(_0x5dbb44,_0x7e00ea){return _0x5dbb44!==_0x7e00ea;},'PVnIM':function(_0x463bb2,_0x2525a2){return _0x463bb2===_0x2525a2;},'LNZgr':_0x30b3ca(0x351),'EiGSL':function(_0xeb072c,_0x4aa2a6){return _0xeb072c&&_0x4aa2a6;},'DIhXC':function(_0x565b41,_0x55dddb){return _0x565b41(_0x55dddb);},'SuZdp':_0x30b3ca(0x19c),'zYkpl':function(_0x5daaed,_0x2092b7){return _0x5daaed(_0x2092b7);},'DHemS':_0x30b3ca(0x350),'vpGut':'解密後的數據無效','LcZcS':_0x30b3ca(0x56e),'AFNhA':_0x30b3ca(0x540),'hJHam':'app','GJLSh':_0x30b3ca(0x3c2),'hClLx':_0x30b3ca(0x50f),'ocLAE':function(_0x268d6b,_0x6de04e,_0x528fdc){return _0x268d6b(_0x6de04e,_0x528fdc);},'pxnYL':_0x30b3ca(0x306),'WEtEC':_0x30b3ca(0x167),'Cjthp':_0x30b3ca(0x582)};console[_0x30b3ca(0xe2)](_0x3392ad[_0x30b3ca(0x2d9)]);try{let _0x598f13=null;if(typeof _0x1da92f===_0x3392ad[_0x30b3ca(0x52d)])_0x598f13=_0x1da92f[_0x30b3ca(0x3dc)]();else{if(_0x1da92f&&_0x3392ad[_0x30b3ca(0x3a4)](typeof _0x1da92f,_0x3392ad[_0x30b3ca(0x191)])){if(_0x1da92f[_0x30b3ca(0x20d)])_0x598f13=_0x1da92f[_0x30b3ca(0x20d)][_0x30b3ca(0x3dc)]();else{if(_0x3392ad[_0x30b3ca(0x162)](_0x1da92f['0'],undefined)){const _0xa0afef=[];let _0x3e1a32=0x0;while(_0x3392ad[_0x30b3ca(0x162)](_0x1da92f[_0x3e1a32],undefined)){_0xa0afef[_0x30b3ca(0x31d)](_0x1da92f[_0x3e1a32]),_0x3e1a32++;}_0x598f13=_0xa0afef[_0x30b3ca(0x538)]('')[_0x30b3ca(0x3dc)]();}}}}if(!_0x598f13||_0x3392ad[_0x30b3ca(0x235)](_0x598f13['length'],0x0))return console['error'](_0x3392ad[_0x30b3ca(0x56d)]),![];console[_0x30b3ca(0xe2)](_0x30b3ca(0x444),_0x598f13[_0x30b3ca(0x4fe)]);if(_0x3392ad[_0x30b3ca(0x201)](encodedData,expectedPasswordHash)){const _0x4f1671=await _0x3392ad[_0x30b3ca(0x5c4)](hashPassword,_0x598f13);if(_0x4f1671===expectedPasswordHash){console[_0x30b3ca(0xe2)](_0x3392ad[_0x30b3ca(0x26f)]);try{const _0x172b99=Uint8Array[_0x30b3ca(0x4b7)](_0x3392ad[_0x30b3ca(0x4e2)](atob,encodedData),_0x6c0905=>_0x6c0905[_0x30b3ca(0x13e)](0x0)),_0x4b5c27={};_0x4b5c27[_0x30b3ca(0x3e8)]=!![];const _0x1a3a50=new TextDecoder(_0x3392ad[_0x30b3ca(0x313)],_0x4b5c27),_0x4bc903=_0x1a3a50[_0x30b3ca(0x2ed)](_0x172b99),_0x15ddbb=JSON[_0x30b3ca(0x2a2)](_0x4bc903);if(!_0x15ddbb||_0x3392ad[_0x30b3ca(0x162)](typeof _0x15ddbb,_0x3392ad['JMRyI']))throw new Error(_0x3392ad[_0x30b3ca(0x263)]);window['MEMOIR_DATA']=_0x15ddbb,sessionStorage[_0x30b3ca(0x5b3)](_0x3392ad[_0x30b3ca(0x56a)],'1');const _0x531152=document[_0x30b3ca(0x175)](_0x3392ad['AFNhA']),_0x5dbca8=document[_0x30b3ca(0x175)](_0x3392ad[_0x30b3ca(0x480)]),_0xfdd5c1=document[_0x30b3ca(0x175)](_0x30b3ca(0x491));if(_0x531152)_0x531152[_0x30b3ca(0x2ac)]['add'](_0x3392ad['GJLSh']);if(_0xfdd5c1)_0xfdd5c1['classList'][_0x30b3ca(0x18b)](_0x3392ad[_0x30b3ca(0xf3)]);if(_0x5dbca8)_0x5dbca8[_0x30b3ca(0x2ac)][_0x30b3ca(0x35f)](_0x30b3ca(0x3c2));const _0x47a7aa={};_0x47a7aa['data']=_0x15ddbb,_0x47a7aa[_0x30b3ca(0x377)]=_0x30b3ca(0x20d);const _0x291c5a={};_0x291c5a[_0x30b3ca(0x266)]=_0x47a7aa;const _0x397f3e=new CustomEvent(_0x3392ad[_0x30b3ca(0x43f)],_0x291c5a);return window['dispatchEvent'](_0x397f3e),_0x3392ad[_0x30b3ca(0x4f7)](setTimeout,()=>{const _0x3feaf6=_0x30b3ca;if(_0x3392ad[_0x3feaf6(0x3a4)](typeof window[_0x3feaf6(0x4eb)],_0x3392ad[_0x3feaf6(0x389)]))window[_0x3feaf6(0x4eb)]();else _0x3392ad[_0x3feaf6(0x3a4)](typeof initializeApp,_0x3392ad[_0x3feaf6(0x389)])&&initializeApp();},0x64),console[_0x30b3ca(0xe2)](_0x30b3ca(0x29a)),!![];}catch(_0xb8e249){return console[_0x30b3ca(0x13d)](_0x3392ad[_0x30b3ca(0x2ea)],_0xb8e249),![];}}else return console[_0x30b3ca(0xe2)](_0x3392ad['WEtEC']),![];}return![];}catch(_0x44edb3){return console[_0x30b3ca(0x13d)](_0x3392ad[_0x30b3ca(0x38a)],_0x44edb3),![];}},window[_0x2abcaf(0xf4)]=async function(_0x405ad3={}){const _0x1a525a=_0x2abcaf,_0x45165a={'WUBEx':_0x1a525a(0x491),'bKukh':'passwordModal','raagN':_0x1a525a(0x24b),'iWjjh':_0x1a525a(0x3c2),'pzjZK':'🔒\x20顯示密碼輸入介面','QqhXL':function(_0x49f297){return _0x49f297();},'QVhxA':'🔄\x20檢測到重新整理狀態，等待用戶輸入密碼','bYgwI':function(_0x14b066,_0x34edfd){return _0x14b066===_0x34edfd;},'uKOPJ':function(_0x2746f6,_0x4a7dcc){return _0x2746f6!==_0x4a7dcc;},'PGAIW':_0x1a525a(0x5b5),'TmVqA':function(_0x764c37,_0xfa90ae,_0xf0e06a){return _0x764c37(_0xfa90ae,_0xf0e06a);}};console['log']('🔍\x20autoDecrypt\x20被調用');if(_0x45165a[_0x1a525a(0x20a)](checkRefreshState))return console[_0x1a525a(0xe2)](_0x45165a[_0x1a525a(0x206)]),![];let _0x4bace3=null;if(typeof _0x405ad3===_0x1a525a(0x112))_0x4bace3=_0x405ad3;else{if(_0x405ad3&&_0x45165a[_0x1a525a(0x199)](typeof _0x405ad3,_0x1a525a(0x179))){if(_0x405ad3[_0x1a525a(0x20d)])_0x4bace3=_0x405ad3[_0x1a525a(0x20d)];else{if(_0x405ad3['0']!==undefined){const _0x371834=[];let _0x3a7a22=0x0;while(_0x45165a['uKOPJ'](_0x405ad3[_0x3a7a22],undefined)){_0x371834['push'](_0x405ad3[_0x3a7a22]),_0x3a7a22++;}_0x4bace3=_0x371834[_0x1a525a(0x538)]('');}}}}if(!_0x4bace3)return console[_0x1a525a(0xe2)](_0x45165a[_0x1a525a(0x104)]),_0x45165a['TmVqA'](setTimeout,()=>{const _0x1cca4c=_0x1a525a,_0x41b607=document['getElementById'](_0x45165a[_0x1cca4c(0x353)]),_0x318105=document[_0x1cca4c(0x175)](_0x45165a[_0x1cca4c(0x200)]),_0x3e3342=document[_0x1cca4c(0x175)](_0x45165a[_0x1cca4c(0x4dd)]);if(_0x41b607)_0x41b607[_0x1cca4c(0x2ac)][_0x1cca4c(0x18b)]('hidden');if(_0x3e3342)_0x3e3342[_0x1cca4c(0x2ac)][_0x1cca4c(0x18b)](_0x45165a['iWjjh']);_0x318105&&(_0x318105[_0x1cca4c(0x2ac)][_0x1cca4c(0x35f)](_0x45165a[_0x1cca4c(0x528)]),console[_0x1cca4c(0xe2)](_0x45165a[_0x1cca4c(0x534)]));},0x64),![];return await window[_0x1a525a(0x326)](_0x4bace3);};async function hashPassword(_0x1fe96f){const _0x4ee5f1=_0x2abcaf,_0x581cda={};_0x581cda['qoQay']=function(_0x2c6a73,_0x4485d8){return _0x2c6a73+_0x4485d8;},_0x581cda[_0x4ee5f1(0x15c)]=_0x4ee5f1(0x283),_0x581cda['tbjuQ']=_0x4ee5f1(0x5fb),_0x581cda['uXIZJ']=_0x4ee5f1(0x5d3),_0x581cda[_0x4ee5f1(0x52a)]=function(_0x5f116e,_0x5e0765){return _0x5f116e<_0x5e0765;},_0x581cda[_0x4ee5f1(0x1b0)]=function(_0x3d4dad,_0x7b19b3){return _0x3d4dad-_0x7b19b3;},_0x581cda['MKGBJ']=function(_0x225242,_0x39e7ec){return _0x225242<<_0x39e7ec;},_0x581cda[_0x4ee5f1(0x214)]=function(_0x5e4912,_0x5462d0){return _0x5e4912&_0x5462d0;};const _0x2ac495=_0x581cda;try{const _0x4e9b0d=_0x2ac495['qoQay'](_0x1fe96f,_0x2ac495[_0x4ee5f1(0x15c)]),_0x41dd18=new TextEncoder(),_0x119455=_0x41dd18['encode'](_0x4e9b0d),_0x5ca6c7=await crypto['subtle'][_0x4ee5f1(0x52f)](_0x2ac495[_0x4ee5f1(0x2e6)],_0x119455),_0x349afa=Array[_0x4ee5f1(0x4b7)](new Uint8Array(_0x5ca6c7)),_0x2069bc=_0x349afa[_0x4ee5f1(0x3d7)](_0x298276=>_0x298276[_0x4ee5f1(0x18e)](0x10)['padStart'](0x2,'0'))[_0x4ee5f1(0x538)]('');return _0x2069bc['substring'](0x0,0x20);}catch(_0x6d93a5){console[_0x4ee5f1(0x3db)](_0x2ac495[_0x4ee5f1(0x14d)]);let _0x2c30cc=0x0;const _0xaf1a1f=_0x2ac495['qoQay'](_0x1fe96f,_0x4ee5f1(0x283));for(let _0x5aff57=0x0;_0x2ac495[_0x4ee5f1(0x52a)](_0x5aff57,_0xaf1a1f[_0x4ee5f1(0x4fe)]);_0x5aff57++){const _0x3d927e=_0xaf1a1f[_0x4ee5f1(0x13e)](_0x5aff57);_0x2c30cc=_0x2ac495[_0x4ee5f1(0x36f)](_0x2ac495['oNnGZ'](_0x2ac495['MKGBJ'](_0x2c30cc,0x5),_0x2c30cc),_0x3d927e),_0x2c30cc=_0x2ac495[_0x4ee5f1(0x214)](_0x2c30cc,_0x2c30cc);}return Math['abs'](_0x2c30cc)['toString'](0x10)[_0x4ee5f1(0x255)](0x8,'0')['repeat'](0x4)[_0x4ee5f1(0x462)](0x0,0x20);}}document['readyState']===_0x2abcaf(0x24d)?document['addEventListener'](_0x2abcaf(0x1ce),function(){const _0x1814fb=_0x2abcaf,_0x2c9858={'dOMlo':function(_0x1f4bd3,_0x373031,_0x44a9de){return _0x1f4bd3(_0x373031,_0x44a9de);}};_0x2c9858[_0x1814fb(0x1b9)](setTimeout,()=>{const _0x4dc3be=_0x1814fb;console[_0x4dc3be(0xe2)]('🔄\x20頁面載入完成，檢查重新整理狀態'),checkRefreshState();},0x1f4);}):setTimeout(()=>{const _0x535cc6=_0x2abcaf,_0x2bea07={'QVbWH':'🔄\x20立即檢查重新整理狀態','cuvTQ':function(_0x39f7d2){return _0x39f7d2();}};console[_0x535cc6(0xe2)](_0x2bea07[_0x535cc6(0x553)]),_0x2bea07['cuvTQ'](checkRefreshState);},0x1f4);console[_0x2abcaf(0xe2)](_0x2abcaf(0x4b2)),(function(){'use strict';const _0x45448f=_0x2abcaf,_0x3030d1={'LGdIP':function(_0x5cc35f,_0x4979d5){return _0x5cc35f+_0x4979d5;},'rsYLU':function(_0x568284,_0x4dbc62){return _0x568284>=_0x4dbc62;},'RBIqF':function(_0x41a4e2,_0x1f4019){return _0x41a4e2<_0x1f4019;},'QLnBF':function(_0x367dd1,_0x4c3d41){return _0x367dd1%_0x4c3d41;},'EyigT':function(_0x293fbd,_0x281985){return _0x293fbd-_0x281985;},'wkSdW':_0x45448f(0x4e9),'hJVZJ':'mse-loading-container','ZhROx':_0x45448f(0x463),'sqWSn':'正在解密圖片...','nVCtm':'mse-thumbnail-spinner','pkFZF':function(_0x3d0ea2,_0x5329ad){return _0x3d0ea2(_0x5329ad);},'njRkD':_0x45448f(0x43b),'JJYbY':function(_0x40e53b,_0x4a9398){return _0x40e53b===_0x4a9398;},'cSMnP':function(_0x1ad66d,_0x5c0356){return _0x1ad66d===_0x5c0356;},'PxHvB':_0x45448f(0x356),'JROQn':function(_0x327259,_0x2f915b){return _0x327259===_0x2f915b;},'iArKR':function(_0x85730a,_0x438611){return _0x85730a===_0x438611;},'XMKRd':'image/png','EqRJC':_0x45448f(0x593),'RokNJ':_0x45448f(0x348),'fxKSd':_0x45448f(0x532),'Zgkyu':'absolute','AYbxq':'100%','fTTqC':_0x45448f(0x256),'dcaoh':_0x45448f(0x23a),'eNToi':function(_0x3dc216,_0x3ebf80){return _0x3dc216(_0x3ebf80);},'sqoMN':_0x45448f(0x4ab),'bQFSX':'.media-thumbnail\x20img[data-needs-mse-decrypt],\x20.carousel-thumbnail\x20img[data-needs-mse-decrypt],\x20.thumbnail\x20img[data-needs-mse-decrypt]','RXcUG':function(_0x4c88b1,_0x31999f,_0x132abe){return _0x4c88b1(_0x31999f,_0x132abe);},'eASiZ':'.grid-item\x20img[data-needs-mse-decrypt],\x20.media-grid\x20img[data-needs-mse-decrypt]','CnUBh':function(_0x1bafba,_0xaaccaf,_0x2bd48a){return _0x1bafba(_0xaaccaf,_0x2bd48a);},'zxVOU':_0x45448f(0x1f3),'SEaAt':_0x45448f(0x109),'CEDdF':function(_0x4eeba1,_0x4d4fe7){return _0x4eeba1<_0x4d4fe7;},'Kvkmj':function(_0x5dfe46,_0x3c65c0){return _0x5dfe46+_0x3c65c0;},'UAOtT':_0x45448f(0x26b),'KNTac':function(_0x48dfdf,_0x59aa5c){return _0x48dfdf+_0x59aa5c;},'LBXTY':function(_0x1472ad,_0x42dfab,_0x33fea0){return _0x1472ad(_0x42dfab,_0x33fea0);},'FrYsP':_0x45448f(0x3f8),'Sjsre':_0x45448f(0x40b),'uiwji':_0x45448f(0x38b),'UeKhB':_0x45448f(0x40d),'TWzwg':_0x45448f(0x54c),'pPTSj':_0x45448f(0x24d),'omtvV':'DOMContentLoaded','ASmho':function(_0x4796eb,_0x4e46dd){return _0x4796eb!==_0x4e46dd;}};console[_0x45448f(0xe2)](_0x3030d1['Sjsre']);const _0x4e838b=0x25,_0x2c97d9=_0x45448f(0x19b);class _0x57426c{constructor(){const _0x2e16f8=_0x45448f;this[_0x2e16f8(0x1d2)]=new Map(),this[_0x2e16f8(0x492)]=0x14,this[_0x2e16f8(0x13a)]=new Map();}[_0x45448f(0x253)](_0x3c806c,_0x3449f0){const _0x31900a=_0x45448f;if(this[_0x31900a(0x1d2)][_0x31900a(0x3dd)](_0x3c806c))return this[_0x31900a(0x13a)][_0x31900a(0x5d8)](_0x3c806c,_0x3030d1[_0x31900a(0x129)](this[_0x31900a(0x13a)]['get'](_0x3c806c)||0x0,0x1)),console[_0x31900a(0xe2)](_0x31900a(0x182)+_0x3c806c),this[_0x31900a(0x1d2)][_0x31900a(0x236)](_0x3c806c);_0x3030d1[_0x31900a(0x400)](this[_0x31900a(0x1d2)]['size'],this['maxCacheSize'])&&this['cleanupOldest']();const _0x40d634=URL[_0x31900a(0x394)](_0x3449f0);return this[_0x31900a(0x1d2)]['set'](_0x3c806c,_0x40d634),this['cacheHits'][_0x31900a(0x5d8)](_0x3c806c,0x1),console[_0x31900a(0xe2)](_0x31900a(0x2e5)+_0x3c806c),_0x40d634;}[_0x45448f(0x589)](){const _0x121f6b=_0x45448f,_0x48c0e7=Array[_0x121f6b(0x4b7)](this[_0x121f6b(0x13a)][_0x121f6b(0x1c3)]())[_0x121f6b(0x4fa)]((_0x538545,_0x4f2d4a)=>_0x538545[0x1]-_0x4f2d4a[0x1]),_0x2e7715=_0x48c0e7[_0x121f6b(0x2d8)](0x0,0x5);for(const [_0xfebb79]of _0x2e7715){const _0x321981=this[_0x121f6b(0x1d2)]['get'](_0xfebb79);_0x321981&&(URL['revokeObjectURL'](_0x321981),this[_0x121f6b(0x1d2)][_0x121f6b(0x381)](_0xfebb79),this[_0x121f6b(0x13a)][_0x121f6b(0x381)](_0xfebb79),console[_0x121f6b(0xe2)](_0x121f6b(0x344)+_0xfebb79));}}['cleanup'](){const _0x374ea1=_0x45448f;for(const [_0x236cb3,_0x10d48c]of this[_0x374ea1(0x1d2)]){URL[_0x374ea1(0x29f)](_0x10d48c),console[_0x374ea1(0xe2)](_0x374ea1(0x320)+_0x236cb3);}this[_0x374ea1(0x1d2)][_0x374ea1(0x22e)](),this[_0x374ea1(0x13a)][_0x374ea1(0x22e)]();}}const _0x452510=new _0x57426c();window[_0x45448f(0x554)](_0x3030d1[_0x45448f(0x5a9)],()=>{const _0x28b560=_0x45448f;_0x452510[_0x28b560(0x128)]();});const _0x390270=new Map(),_0x2e15bc=_0x45448f(0x3bf);if(!document[_0x45448f(0x175)](_0x3030d1[_0x45448f(0x510)])){const _0x440299=document[_0x45448f(0x5a4)](_0x3030d1[_0x45448f(0x50c)]);_0x440299['id']=_0x3030d1[_0x45448f(0x510)],_0x440299[_0x45448f(0x2dd)]=_0x2e15bc,document[_0x45448f(0x5cf)][_0x45448f(0x26d)](_0x440299);}function _0x17ec02(_0x44d7c7){const _0x36e568=_0x45448f,_0x30bba4=new Uint8Array(_0x44d7c7['length']);for(let _0x2ee89b=0x0;_0x3030d1['RBIqF'](_0x2ee89b,_0x44d7c7[_0x36e568(0x4fe)]);_0x2ee89b++){_0x30bba4[_0x2ee89b]=_0x3030d1[_0x36e568(0x1c2)](_0x3030d1[_0x36e568(0x571)](_0x3030d1[_0x36e568(0x129)](_0x44d7c7[_0x2ee89b],0x100),_0x4e838b),0x100);}return _0x30bba4;}function _0x2d5b6e(_0xea7df7=!![]){const _0x232ce9=_0x45448f,_0x4fbea6=document[_0x232ce9(0x5a4)](_0x3030d1[_0x232ce9(0x19a)]);if(_0xea7df7){_0x4fbea6[_0x232ce9(0x310)]=_0x3030d1['hJVZJ'];const _0x3351b6=document[_0x232ce9(0x5a4)](_0x3030d1[_0x232ce9(0x19a)]);_0x3351b6[_0x232ce9(0x310)]=_0x3030d1[_0x232ce9(0x495)];const _0x4ea4e1=document[_0x232ce9(0x5a4)](_0x3030d1['wkSdW']);_0x4ea4e1[_0x232ce9(0x310)]='mse-loading-text',_0x4ea4e1[_0x232ce9(0x2dd)]=_0x3030d1['sqWSn'],_0x4fbea6[_0x232ce9(0x26d)](_0x3351b6),_0x4fbea6['appendChild'](_0x4ea4e1);}else{_0x4fbea6[_0x232ce9(0x310)]=_0x232ce9(0x288);const _0x14e3d1=document[_0x232ce9(0x5a4)](_0x3030d1[_0x232ce9(0x19a)]);_0x14e3d1[_0x232ce9(0x310)]=_0x3030d1[_0x232ce9(0x300)],_0x4fbea6[_0x232ce9(0x26d)](_0x14e3d1);}return _0x4fbea6;}async function _0x5f4146(_0x260d2b){const _0x1c7da9=_0x45448f;try{if(_0x390270[_0x1c7da9(0x3dd)](_0x260d2b)){console[_0x1c7da9(0xe2)]('♻️\x20使用快取解密結果:\x20'+_0x260d2b);const _0x4d0d5d=_0x390270['get'](_0x260d2b);return _0x452510[_0x1c7da9(0x253)](_0x260d2b,_0x4d0d5d['blob']);}console['log']('📥\x20載入加密檔案:\x20'+_0x260d2b);const _0x48b622=await fetch(_0x260d2b);if(!_0x48b622['ok'])throw new Error(_0x1c7da9(0x2f9)+_0x48b622[_0x1c7da9(0x3e1)]);const _0x4510ca=await _0x48b622[_0x1c7da9(0xfd)](),_0x6e12f7=new Uint8Array(_0x4510ca),_0x288550=_0x3030d1[_0x1c7da9(0x16d)](_0x17ec02,_0x6e12f7);let _0x37f439=_0x3030d1['njRkD'];if(_0x3030d1[_0x1c7da9(0x2a7)](_0x288550[0x0],0xff)&&_0x3030d1[_0x1c7da9(0x168)](_0x288550[0x1],0xd8))_0x37f439=_0x3030d1[_0x1c7da9(0x34e)];else{if(_0x3030d1[_0x1c7da9(0x59a)](_0x288550[0x0],0x89)&&_0x3030d1['iArKR'](_0x288550[0x1],0x50))_0x37f439=_0x3030d1[_0x1c7da9(0x2bf)];else _0x288550[_0x1c7da9(0x2d8)](0x8,0xc)[_0x1c7da9(0x259)]((_0x218bc5,_0x967e55)=>_0x218bc5===[0x57,0x45,0x42,0x50][_0x967e55])&&(_0x37f439=_0x3030d1['EqRJC']);}const _0x48d787={};_0x48d787[_0x1c7da9(0x580)]=_0x37f439;const _0x58c362=new Blob([_0x288550],_0x48d787),_0x50541d={};_0x50541d[_0x1c7da9(0x527)]=_0x58c362,_0x50541d['mimeType']=_0x37f439,_0x390270[_0x1c7da9(0x5d8)](_0x260d2b,_0x50541d);const _0x2cb908=_0x452510[_0x1c7da9(0x253)](_0x260d2b,_0x58c362);return console[_0x1c7da9(0xe2)](_0x1c7da9(0x317)+_0x260d2b),_0x2cb908;}catch(_0x45707f){return console['error']('❌\x20解密失敗\x20'+_0x260d2b+':',_0x45707f),null;}}async function _0x119d30(_0x5b1ea5,_0xe81eac=![]){const _0x252b9c=_0x45448f,_0x15ad6b=_0x5b1ea5[_0x252b9c(0x57e)](_0x3030d1[_0x252b9c(0x1a5)]);if(!_0x15ad6b)return![];let _0x1773e0;if(_0x15ad6b['startsWith'](_0x3030d1['fxKSd'])){const _0x18be02=_0x15ad6b[_0x252b9c(0x2db)](_0x3030d1[_0x252b9c(0x563)],'');_0x1773e0=_0x3030d1[_0x252b9c(0x129)](_0x2c97d9,_0x18be02);}else{if(_0x15ad6b[_0x252b9c(0x57a)]('/media/'))_0x1773e0=_0x15ad6b;else return![];}console[_0x252b9c(0xe2)]('🔄\x20處理'+(_0xe81eac?'縮圖':'媒體')+_0x252b9c(0x1af)+_0x1773e0);if(_0xe81eac){const _0x43d090=_0x5b1ea5[_0x252b9c(0x5ca)];if(_0x43d090){const _0x5226fd=_0x3030d1[_0x252b9c(0x16d)](_0x2d5b6e,![]);_0x5226fd[_0x252b9c(0x54c)]['position']=_0x3030d1[_0x252b9c(0x402)],_0x5226fd[_0x252b9c(0x54c)][_0x252b9c(0x314)]='0',_0x5226fd[_0x252b9c(0x54c)]['left']='0',_0x5226fd[_0x252b9c(0x54c)][_0x252b9c(0x2fa)]=_0x3030d1[_0x252b9c(0x39e)],_0x5226fd['style'][_0x252b9c(0x146)]=_0x3030d1[_0x252b9c(0x39e)],_0x5226fd['style'][_0x252b9c(0x586)]='1',_0x43d090['style']['position']=_0x3030d1[_0x252b9c(0x2b2)],_0x43d090[_0x252b9c(0x26d)](_0x5226fd);const _0x26c6f5=await _0x3030d1[_0x252b9c(0x16d)](_0x5f4146,_0x1773e0);return _0x26c6f5?(_0x5b1ea5[_0x252b9c(0x2a8)]=_0x26c6f5,_0x5b1ea5[_0x252b9c(0x2ac)][_0x252b9c(0x18b)](_0x3030d1[_0x252b9c(0x40a)]),_0x5b1ea5[_0x252b9c(0x372)]('data-needs-mse-decrypt'),_0x43d090['removeChild'](_0x5226fd),console[_0x252b9c(0xe2)](_0x252b9c(0x119)),!![]):(_0x43d090['removeChild'](_0x5226fd),console[_0x252b9c(0xe2)](_0x252b9c(0x118)),![]);}}else{const _0x5bd34f=await _0x3030d1[_0x252b9c(0x3ce)](_0x5f4146,_0x1773e0);if(_0x5bd34f){const _0x306849=_0x3030d1[_0x252b9c(0x57f)][_0x252b9c(0x59d)]('|');let _0x520dea=0x0;while(!![]){switch(_0x306849[_0x520dea++]){case'0':console[_0x252b9c(0xe2)]('✅\x20媒體元素解密成功');continue;case'1':_0x5b1ea5[_0x252b9c(0x2ac)][_0x252b9c(0x18b)](_0x3030d1['dcaoh']);continue;case'2':_0x5b1ea5[_0x252b9c(0x2a8)]=_0x5bd34f;continue;case'3':_0x5b1ea5[_0x252b9c(0x372)]('data-needs-mse-decrypt');continue;case'4':return!![];}break;}}else return console['log'](_0x252b9c(0x1c5)),![];}}async function _0x28cb7f(){const _0x3e1678=_0x45448f,_0x187933=document[_0x3e1678(0x2bc)](_0x3030d1['bQFSX']);console[_0x3e1678(0xe2)](_0x3e1678(0x268)+_0x187933[_0x3e1678(0x4fe)]+_0x3e1678(0x3b2));for(const _0x498b0e of _0x187933){await _0x3030d1[_0x3e1678(0x1e7)](_0x119d30,_0x498b0e,!![]),await new Promise(_0x50c001=>setTimeout(_0x50c001,0x32));}const _0x47ed8c=document[_0x3e1678(0x2bc)](_0x3030d1[_0x3e1678(0x373)]);console[_0x3e1678(0xe2)](_0x3e1678(0x3bb)+_0x47ed8c[_0x3e1678(0x4fe)]+_0x3e1678(0x5cc));for(const _0x3e031 of _0x47ed8c){await _0x3030d1[_0x3e1678(0x27e)](_0x119d30,_0x3e031,!![]),await new Promise(_0x23fd76=>setTimeout(_0x23fd76,0x32));}}async function _0x187e15(){const _0x10fae0=_0x45448f;console[_0x10fae0(0xe2)](_0x3030d1[_0x10fae0(0x387)]);const _0x525de5=document[_0x10fae0(0x2bc)](_0x10fae0(0x338));console[_0x10fae0(0xe2)](_0x10fae0(0x3e2)+_0x525de5[_0x10fae0(0x4fe)]+_0x10fae0(0x3c6));const _0x2f5060=document['querySelectorAll'](_0x3030d1[_0x10fae0(0x5ac)]);console[_0x10fae0(0xe2)]('📷\x20找到\x20'+_0x2f5060[_0x10fae0(0x4fe)]+_0x10fae0(0x5b0));let _0x489e30=0x0,_0x5360b4=0x0;for(let _0x190657=0x0;_0x3030d1[_0x10fae0(0x32d)](_0x190657,_0x525de5[_0x10fae0(0x4fe)]);_0x190657++){const _0x44744c=_0x525de5[_0x190657];_0x5360b4++,console[_0x10fae0(0xe2)]('🎯\x20處理主要元素\x20'+_0x3030d1[_0x10fae0(0x129)](_0x190657,0x1)+'/'+_0x525de5['length']);const _0x40c7e8=await _0x3030d1[_0x10fae0(0x27e)](_0x119d30,_0x44744c,![]);if(_0x40c7e8)_0x489e30++;await new Promise(_0x28c0e8=>setTimeout(_0x28c0e8,0x64));}for(let _0xfe6bbe=0x0;_0x3030d1[_0x10fae0(0x3f0)](_0xfe6bbe,_0x2f5060['length']);_0xfe6bbe++){const _0x2c22b3=_0x2f5060[_0xfe6bbe],_0x5d8b61=_0x2c22b3['getAttribute'](_0x10fae0(0x2a8));_0x5360b4++;let _0xe513b0;if(_0x5d8b61[_0x10fae0(0xff)](_0x3030d1['fxKSd'])){const _0x3fa9a8=_0x5d8b61[_0x10fae0(0x2db)](_0x3030d1[_0x10fae0(0x563)],'');_0xe513b0=_0x3030d1[_0x10fae0(0x157)](_0x2c97d9,_0x3fa9a8);}else{if(_0x5d8b61[_0x10fae0(0x57a)](_0x3030d1[_0x10fae0(0x4e0)]))_0xe513b0=_0x5d8b61;else continue;}console['log'](_0x10fae0(0x54f)+_0x3030d1[_0x10fae0(0x45a)](_0xfe6bbe,0x1)+'/'+_0x2f5060[_0x10fae0(0x4fe)]+':\x20'+_0xe513b0);const _0x40b79c=await _0x5f4146(_0xe513b0);_0x40b79c?(_0x2c22b3[_0x10fae0(0x2a8)]=_0x40b79c,_0x2c22b3[_0x10fae0(0x2ac)][_0x10fae0(0x18b)](_0x3030d1[_0x10fae0(0x40a)]),_0x489e30++,console[_0x10fae0(0xe2)](_0x10fae0(0x39d))):console[_0x10fae0(0xe2)]('❌\x20圖片解密失敗'),await new Promise(_0x9e689a=>setTimeout(_0x9e689a,0x64));}await _0x28cb7f(),console['log'](_0x10fae0(0x423)+_0x489e30+'/'+_0x5360b4);const _0x38fea={};return _0x38fea[_0x10fae0(0x2f8)]=_0x489e30,_0x38fea[_0x10fae0(0x195)]=_0x5360b4,_0x38fea;}_0x3030d1['cSMnP'](document[_0x45448f(0x39b)],_0x3030d1[_0x45448f(0x44a)])?document[_0x45448f(0x554)](_0x3030d1[_0x45448f(0xf2)],()=>{const _0x4a08cb=_0x45448f;_0x3030d1[_0x4a08cb(0x522)](setTimeout,_0x187e15,0x1f4);}):_0x3030d1[_0x45448f(0x1e7)](setTimeout,_0x187e15,0x1f4);if(_0x3030d1[_0x45448f(0x3b6)](typeof MutationObserver,_0x45448f(0x40c))){const _0x1684c6=new MutationObserver(_0x3b75b6=>{const _0x51533a=_0x45448f,_0x279c83={'bGCaO':function(_0x43a29e,_0x51771d){return _0x43a29e!==_0x51771d;},'sLmcn':_0x3030d1['FrYsP'],'qhnIc':function(_0x48186e,_0x173854,_0x4f38bb){return _0x48186e(_0x173854,_0x4f38bb);},'TBfvz':function(_0x1fbeff,_0x3a94d9){return _0x1fbeff>_0x3a94d9;},'eyAVJ':function(_0x380b19,_0x56927a,_0x2d56d3){const _0x23dc72=_0x5e38;return _0x3030d1[_0x23dc72(0x27e)](_0x380b19,_0x56927a,_0x2d56d3);}};_0x3b75b6[_0x51533a(0x55e)](_0x5bc8d3=>{const _0x2bbf68=_0x51533a,_0x39fc7d={'NoWQT':function(_0x352b1e,_0x1c5cce){const _0x2b53db=_0x5e38;return _0x279c83[_0x2b53db(0x471)](_0x352b1e,_0x1c5cce);},'NJSYi':_0x279c83[_0x2bbf68(0x584)],'QCCqm':function(_0x289b87,_0x3c2753,_0x18a618){const _0x368434=_0x2bbf68;return _0x279c83[_0x368434(0x37e)](_0x289b87,_0x3c2753,_0x18a618);}};if(_0x5bc8d3[_0x2bbf68(0x580)]===_0x2bbf68(0x2ef)){const _0x3d485b=Array[_0x2bbf68(0x4b7)](_0x5bc8d3[_0x2bbf68(0x2e8)])[_0x2bbf68(0x5eb)](_0x7e5e2c=>_0x7e5e2c[_0x2bbf68(0x49f)]===Node[_0x2bbf68(0x3b7)])[_0x2bbf68(0x49e)](_0x1bd1c2=>[..._0x1bd1c2[_0x2bbf68(0x237)]&&_0x1bd1c2[_0x2bbf68(0x237)](_0x2bbf68(0x17b))?[_0x1bd1c2]:[],..._0x1bd1c2[_0x2bbf68(0x2bc)]?_0x1bd1c2[_0x2bbf68(0x2bc)](_0x2bbf68(0x16b)):[]]);_0x279c83[_0x2bbf68(0x35c)](_0x3d485b[_0x2bbf68(0x4fe)],0x0)&&(console[_0x2bbf68(0xe2)]('🔄\x20檢測到\x20'+_0x3d485b[_0x2bbf68(0x4fe)]+_0x2bbf68(0x4ac)),_0x279c83[_0x2bbf68(0x111)](setTimeout,()=>{const _0x51c46b=_0x2bbf68,_0x28db52={'SVCXk':function(_0x2037d0,_0xf71e6c){const _0x424294=_0x5e38;return _0x39fc7d[_0x424294(0x479)](_0x2037d0,_0xf71e6c);},'RhhHo':_0x39fc7d[_0x51c46b(0x5c3)],'lsGFK':function(_0x2cce77,_0xae4e6,_0x53f006){const _0x14e7d4=_0x51c46b;return _0x39fc7d[_0x14e7d4(0x4cb)](_0x2cce77,_0xae4e6,_0x53f006);}};_0x3d485b[_0x51c46b(0x55e)](async _0x34e29f=>{const _0x7ed0a9=_0x51c46b,_0x335ca9=_0x28db52[_0x7ed0a9(0x216)](_0x34e29f[_0x7ed0a9(0x5ea)](_0x28db52['RhhHo']),null);await _0x28db52['lsGFK'](_0x119d30,_0x34e29f,_0x335ca9);});},0x64));}});}),_0x520024={};_0x520024[_0x45448f(0x2ef)]=!![],_0x520024['subtree']=!![],_0x1684c6['observe'](document[_0x45448f(0x48d)],_0x520024);}window['forceDecryptMedia']=_0x187e15,window[_0x45448f(0x28c)]=_0x119d30,window[_0x45448f(0x16a)]=_0x28cb7f;}()),document['addEventListener'](_0x2abcaf(0x1ce),function(){const _0x56c2e8=_0x2abcaf,_0x4cbee2={'THVDJ':_0x56c2e8(0x130),'qITgP':_0x56c2e8(0x3c2),'ibgaN':function(_0x2858ff,_0x5726b2){return _0x2858ff<_0x5726b2;},'AuXtp':function(_0x5e6ba6,_0x1d3c93){return _0x5e6ba6===_0x1d3c93;},'ScJmX':_0x56c2e8(0x5f8),'Xykbg':_0x56c2e8(0x5f9),'NHYqE':_0x56c2e8(0x2d0),'ZTRoH':'解鎖查看','zpQcD':_0x56c2e8(0x465),'hNTQz':function(_0x13fdc6){return _0x13fdc6();},'SxWAs':'🔑\x20設置密碼輸入事件處理器','ObKsy':_0x56c2e8(0x58b),'PvJnU':'unlockBtn','ufXuu':_0x56c2e8(0x4d3),'hXWnE':function(_0x2527c0,_0x56e875){return _0x2527c0||_0x56e875;},'IXTSn':_0x56c2e8(0x508),'lapfz':_0x56c2e8(0x4ee),'ItzGw':_0x56c2e8(0x248)};console[_0x56c2e8(0xe2)](_0x4cbee2[_0x56c2e8(0x420)]);const _0x16f4c5=document['getElementById'](_0x4cbee2[_0x56c2e8(0x2be)]),_0x5956e4=document[_0x56c2e8(0x175)](_0x4cbee2[_0x56c2e8(0x3eb)]),_0x41a68b=document[_0x56c2e8(0x175)](_0x4cbee2[_0x56c2e8(0x383)]);if(_0x4cbee2[_0x56c2e8(0x233)](!_0x16f4c5,!_0x5956e4)){console[_0x56c2e8(0x13d)](_0x4cbee2[_0x56c2e8(0x474)]);return;}const _0x3350f7=async()=>{const _0x5f2261=_0x56c2e8,_0x460093=_0x16f4c5['value']?.['trim']()||'';console[_0x5f2261(0xe2)](_0x4cbee2[_0x5f2261(0x58f)],_0x460093[_0x5f2261(0x4fe)]);if(_0x41a68b)_0x41a68b[_0x5f2261(0x2ac)][_0x5f2261(0x18b)](_0x4cbee2[_0x5f2261(0x48a)]);if(_0x4cbee2[_0x5f2261(0x1ed)](_0x460093[_0x5f2261(0x4fe)],0x6)){_0x41a68b&&(_0x41a68b[_0x5f2261(0x2dd)]=_0x5f2261(0x143),_0x41a68b[_0x5f2261(0x2ac)]['remove'](_0x4cbee2[_0x5f2261(0x48a)]));return;}_0x5956e4[_0x5f2261(0x239)]=!![],_0x5956e4[_0x5f2261(0x2dd)]=_0x5f2261(0x247);try{let _0x128c04=![];_0x4cbee2[_0x5f2261(0x354)](typeof window[_0x5f2261(0x326)],'function')?_0x128c04=await window[_0x5f2261(0x326)](_0x460093):console[_0x5f2261(0x13d)](_0x4cbee2['ScJmX']),!_0x128c04&&(_0x41a68b&&(_0x41a68b[_0x5f2261(0x2dd)]=_0x5f2261(0x5bf),_0x41a68b['classList'][_0x5f2261(0x35f)](_0x4cbee2[_0x5f2261(0x48a)])),_0x16f4c5[_0x5f2261(0x37d)]='',_0x16f4c5['focus']());}catch(_0x178416){console['error'](_0x4cbee2['Xykbg'],_0x178416),_0x41a68b&&(_0x41a68b[_0x5f2261(0x2dd)]=_0x4cbee2[_0x5f2261(0x22a)],_0x41a68b[_0x5f2261(0x2ac)]['remove'](_0x4cbee2['qITgP']));}finally{_0x5956e4[_0x5f2261(0x239)]=![],_0x5956e4[_0x5f2261(0x2dd)]=_0x4cbee2[_0x5f2261(0xeb)];}};_0x5956e4[_0x56c2e8(0x36e)](_0x5956e4[_0x56c2e8(0x5c6)](!![]));const _0x39c95d=document[_0x56c2e8(0x175)](_0x56c2e8(0x5e9));_0x39c95d[_0x56c2e8(0x554)](_0x56c2e8(0x135),_0x3350f7),_0x16f4c5[_0x56c2e8(0x554)](_0x4cbee2[_0x56c2e8(0x4e8)],_0xaeee4d=>{const _0x6752d8=_0x56c2e8;_0x4cbee2['AuXtp'](_0xaeee4d[_0x6752d8(0x1ab)],_0x4cbee2[_0x6752d8(0x2b1)])&&_0x4cbee2['hNTQz'](_0x3350f7);}),console['log'](_0x4cbee2[_0x56c2e8(0x401)]);}),document[_0x2abcaf(0x554)]('DOMContentLoaded',function(){const _0x1fe43e=_0x2abcaf,_0x444f78={'EqhTk':function(_0x312c1a,_0x578621){return _0x312c1a===_0x578621;},'XVjJN':_0x1fe43e(0x465),'yCwCc':function(_0x532cbc){return _0x532cbc();},'gqWCS':function(_0x52ad51,_0x32866a,_0x52a6ed){return _0x52ad51(_0x32866a,_0x52a6ed);},'eyvpk':_0x1fe43e(0x166),'npnHB':'3|1|2|4|5|0','GDymF':'need_password','KRLWy':'hidden','bXmAW':_0x1fe43e(0x2af),'wJmat':'✅\x20已解鎖狀態，正常載入','RXwgS':_0x1fe43e(0x40e),'XLJSY':_0x1fe43e(0x56b),'UIXpT':_0x1fe43e(0x56e),'kgWUH':_0x1fe43e(0x12d),'cKvJe':'解鎖成功但無法載入數據','ostpz':function(_0x3c8159,_0x4f35cf){return _0x3c8159<_0x4f35cf;},'hVlAG':_0x1fe43e(0x5f8),'jmGPF':_0x1fe43e(0x368),'cirnN':'🔓\x20解鎖結果:','YjgNe':_0x1fe43e(0x548),'yqTKp':_0x1fe43e(0x5bf),'nZTLW':'解鎖查看','tfJdO':_0x1fe43e(0x43d),'XFNYV':'⚠️\x20標籤頁切換回來檢測到狀態不一致','MdvoO':_0x1fe43e(0x491),'LsiAq':_0x1fe43e(0x24b),'ucjdU':_0x1fe43e(0x58b),'hIYyo':'passwordError','MSmVy':function(_0x31220e){return _0x31220e();},'ZopyL':_0x1fe43e(0x15d),'UtXNI':_0x1fe43e(0x135),'ZylAu':_0x1fe43e(0x4ee),'jgfSj':_0x1fe43e(0x307),'FIyZO':function(_0x3da1e1,_0x178ed5,_0x1231d6){return _0x3da1e1(_0x178ed5,_0x1231d6);},'ItycH':_0x1fe43e(0x5d1)};console[_0x1fe43e(0xe2)](_0x1fe43e(0x2d7)),_0x444f78[_0x1fe43e(0x2f4)](setTimeout,()=>{const _0x510beb=_0x1fe43e,_0x37b807={'fTIPy':function(_0x330931,_0x2e9e30){return _0x330931===_0x2e9e30;},'rnScY':_0x444f78[_0x510beb(0x1b2)],'gjGKd':function(_0xa9f6d2,_0x3ca5a5){return _0xa9f6d2&&_0x3ca5a5;},'rqVeu':_0x444f78[_0x510beb(0x110)],'WTfDR':_0x444f78[_0x510beb(0x339)],'dpjhP':_0x444f78[_0x510beb(0x3e6)],'FZiBi':_0x510beb(0x4e6),'UeXxr':'🔒\x20顯示密碼輸入介面','hVLoi':_0x444f78[_0x510beb(0x294)],'eMdTM':_0x510beb(0x37a),'uytEu':_0x444f78[_0x510beb(0x468)],'yvyKt':'unlocked','SVWtL':_0x510beb(0x55c),'PoXua':_0x444f78['RXwgS'],'NUHgd':function(_0x59a471,_0x58cfb2){const _0x3ce272=_0x510beb;return _0x444f78[_0x3ce272(0x19e)](_0x59a471,_0x58cfb2);},'uwNHW':_0x444f78[_0x510beb(0x1b5)],'GbpWd':_0x444f78[_0x510beb(0x33c)],'RUaxA':_0x444f78[_0x510beb(0x3b8)],'VpCWG':_0x444f78[_0x510beb(0x502)],'bQoDi':_0x510beb(0x4fc),'HoVPV':function(_0x214533,_0x3429a7){return _0x444f78['ostpz'](_0x214533,_0x3429a7);},'DkEpL':_0x510beb(0x143),'fSTIH':_0x444f78[_0x510beb(0x250)],'mxPXs':_0x444f78[_0x510beb(0x4f5)],'wTMvH':_0x444f78['cirnN'],'OesIt':function(_0x16b8df,_0x304a25,_0xe54504){return _0x16b8df(_0x304a25,_0xe54504);},'odEzx':_0x444f78[_0x510beb(0x1db)],'qUNdv':_0x444f78[_0x510beb(0x5e1)],'nLKrr':_0x444f78[_0x510beb(0x3df)],'wBzTS':_0x510beb(0x388),'oIDsB':_0x444f78[_0x510beb(0x4dc)],'TSkoB':_0x444f78[_0x510beb(0xf7)]},_0x3c21f8=document[_0x510beb(0x175)](_0x510beb(0x540)),_0x328d2f=document[_0x510beb(0x175)](_0x444f78['MdvoO']),_0x3a0919=document[_0x510beb(0x175)](_0x444f78[_0x510beb(0x407)]),_0x3ca74c=document[_0x510beb(0x175)](_0x444f78[_0x510beb(0x37c)]),_0x45437c=document['getElementById']('unlockBtn'),_0x42f6ba=document[_0x510beb(0x175)](_0x444f78[_0x510beb(0x318)]);function _0x580d91(){const _0x3dd82f=_0x510beb,_0x34bc3e=_0x37b807[_0x3dd82f(0x3e5)](sessionStorage['getItem'](_0x3dd82f(0x56e)),'1'),_0x5e4269=!!(window[_0x3dd82f(0x3f3)]&&window[_0x3dd82f(0x3f3)]['events']),_0x79b7ed={};_0x79b7ed[_0x3dd82f(0x20e)]=_0x34bc3e,_0x79b7ed[_0x3dd82f(0x251)]=_0x5e4269,_0x79b7ed[_0x3dd82f(0x4c2)]=!!window['MEMOIR_DATA'],_0x79b7ed[_0x3dd82f(0x393)]=window['MEMOIR_DATA']?.[_0x3dd82f(0x595)]?.[_0x3dd82f(0x4fe)]||0x0,console[_0x3dd82f(0xe2)](_0x37b807[_0x3dd82f(0x1b1)],_0x79b7ed);if(_0x37b807['gjGKd'](_0x34bc3e,!_0x5e4269)){const _0x81cf13=_0x37b807['rqVeu'][_0x3dd82f(0x59d)]('|');let _0x5be609=0x0;while(!![]){switch(_0x81cf13[_0x5be609++]){case'0':return _0x37b807[_0x3dd82f(0x2f5)];case'1':sessionStorage['removeItem'](_0x3dd82f(0x56e));continue;case'2':if(_0x328d2f)_0x328d2f[_0x3dd82f(0x2ac)][_0x3dd82f(0x18b)](_0x37b807[_0x3dd82f(0x405)]);continue;case'3':console[_0x3dd82f(0xe2)](_0x37b807[_0x3dd82f(0x183)]);continue;case'4':if(_0x3a0919)_0x3a0919[_0x3dd82f(0x2ac)][_0x3dd82f(0x18b)](_0x37b807[_0x3dd82f(0x405)]);continue;case'5':_0x3c21f8&&(_0x3c21f8[_0x3dd82f(0x2ac)]['remove'](_0x3dd82f(0x3c2)),console[_0x3dd82f(0xe2)](_0x37b807[_0x3dd82f(0x176)]));continue;}break;}}if(!_0x34bc3e){const _0x3bca38=_0x37b807[_0x3dd82f(0x270)][_0x3dd82f(0x59d)]('|');let _0x2b6c99=0x0;while(!![]){switch(_0x3bca38[_0x2b6c99++]){case'0':if(_0x328d2f)_0x328d2f[_0x3dd82f(0x2ac)][_0x3dd82f(0x18b)](_0x37b807[_0x3dd82f(0x405)]);continue;case'1':console[_0x3dd82f(0xe2)](_0x3dd82f(0x475));continue;case'2':_0x3c21f8&&(_0x3c21f8['classList']['remove'](_0x37b807['dpjhP']),console['log']('🔒\x20顯示密碼輸入介面'));continue;case'3':return'need_password';case'4':if(_0x3a0919)_0x3a0919[_0x3dd82f(0x2ac)]['add'](_0x37b807[_0x3dd82f(0x405)]);continue;}break;}}if(_0x37b807['gjGKd'](_0x34bc3e,_0x5e4269)){const _0x97f228=_0x37b807['eMdTM'][_0x3dd82f(0x59d)]('|');let _0x630058=0x0;while(!![]){switch(_0x97f228[_0x630058++]){case'0':if(_0x3c21f8)_0x3c21f8['classList'][_0x3dd82f(0x18b)](_0x37b807[_0x3dd82f(0x405)]);continue;case'1':if(_0x328d2f)_0x328d2f[_0x3dd82f(0x2ac)][_0x3dd82f(0x18b)](_0x37b807[_0x3dd82f(0x405)]);continue;case'2':if(_0x3a0919)_0x3a0919['classList']['remove'](_0x37b807[_0x3dd82f(0x405)]);continue;case'3':console[_0x3dd82f(0xe2)](_0x37b807[_0x3dd82f(0x44f)]);continue;case'4':return _0x37b807[_0x3dd82f(0x32e)];}break;}}return _0x3dd82f(0x224);}const _0x379128=_0x444f78['MSmVy'](_0x580d91);if(_0x379128===_0x444f78[_0x510beb(0x339)]){console['log'](_0x444f78[_0x510beb(0x549)]);_0x42f6ba&&(_0x42f6ba[_0x510beb(0x2ac)]['add'](_0x444f78['KRLWy']),_0x42f6ba[_0x510beb(0x2dd)]='');_0x3ca74c&&(_0x3ca74c[_0x510beb(0x38d)](),_0x3ca74c[_0x510beb(0x37d)]='');const _0x49f1cd=async()=>{const _0x254528=_0x510beb,_0x44c975=_0x3ca74c?.[_0x254528(0x37d)]?.[_0x254528(0x3dc)]()||'';console['log'](_0x37b807[_0x254528(0x2ce)],_0x44c975[_0x254528(0x4fe)]);if(_0x42f6ba)_0x42f6ba[_0x254528(0x2ac)][_0x254528(0x18b)](_0x254528(0x3c2));if(_0x37b807[_0x254528(0x38c)](_0x44c975['length'],0x6)){_0x42f6ba&&(_0x42f6ba[_0x254528(0x2dd)]=_0x37b807['DkEpL'],_0x42f6ba['classList'][_0x254528(0x35f)](_0x37b807[_0x254528(0x405)]));return;}_0x45437c&&(_0x45437c[_0x254528(0x239)]=!![],_0x45437c['textContent']=_0x254528(0x247));try{let _0x23a9cd=![];if(_0x37b807[_0x254528(0x1d9)](typeof window['_internalAutoDecrypt'],_0x37b807[_0x254528(0x101)]))_0x23a9cd=await window[_0x254528(0x326)](_0x44c975);else{console['error'](_0x37b807[_0x254528(0x150)]);throw new Error(_0x37b807['mxPXs']);}console[_0x254528(0xe2)](_0x37b807['wTMvH'],_0x23a9cd);if(_0x23a9cd)_0x37b807['OesIt'](setTimeout,()=>{const _0x14c685=_0x254528,_0x5e70e5=!!(window[_0x14c685(0x3f3)]&&window[_0x14c685(0x3f3)]['events']);if(_0x5e70e5){const _0xed7546=_0x37b807[_0x14c685(0x523)][_0x14c685(0x59d)]('|');let _0x2c1687=0x0;while(!![]){switch(_0xed7546[_0x2c1687++]){case'0':if(_0x37b807[_0x14c685(0x3e5)](typeof window['__bootApp__'],_0x37b807[_0x14c685(0x101)]))window['__bootApp__']();else _0x37b807[_0x14c685(0x1d9)](typeof initializeApp,_0x14c685(0x40e))&&initializeApp();continue;case'1':console[_0x14c685(0xe2)](_0x37b807[_0x14c685(0x594)]);continue;case'2':if(_0x3c21f8)_0x3c21f8[_0x14c685(0x2ac)][_0x14c685(0x18b)](_0x37b807[_0x14c685(0x405)]);continue;case'3':if(_0x3a0919)_0x3a0919[_0x14c685(0x2ac)][_0x14c685(0x35f)](_0x37b807[_0x14c685(0x405)]);continue;case'4':sessionStorage['setItem'](_0x37b807[_0x14c685(0x2ca)],'1');continue;case'5':if(_0x328d2f)_0x328d2f[_0x14c685(0x2ac)][_0x14c685(0x18b)](_0x37b807['dpjhP']);continue;}break;}}else{console[_0x14c685(0x13d)](_0x37b807[_0x14c685(0x5ed)]);throw new Error(_0x37b807['VpCWG']);}},0x64);else throw new Error(_0x254528(0x3c7));}catch(_0x5004e0){console[_0x254528(0x13d)](_0x37b807[_0x254528(0x4a2)],_0x5004e0),sessionStorage['removeItem'](_0x37b807['GbpWd']),_0x42f6ba&&(_0x42f6ba[_0x254528(0x2dd)]=_0x5004e0[_0x254528(0x18a)]||_0x37b807['qUNdv'],_0x42f6ba[_0x254528(0x2ac)][_0x254528(0x35f)](_0x37b807[_0x254528(0x405)]));}finally{_0x45437c&&(_0x45437c[_0x254528(0x239)]=![],_0x45437c[_0x254528(0x2dd)]=_0x37b807[_0x254528(0x4b4)]);}};_0x45437c&&_0x45437c[_0x510beb(0x554)](_0x444f78['UtXNI'],_0x49f1cd),_0x3ca74c&&_0x3ca74c[_0x510beb(0x554)](_0x444f78['ZylAu'],_0x4334fa=>{const _0x55250c=_0x510beb;_0x444f78[_0x55250c(0x19e)](_0x4334fa[_0x55250c(0x1ab)],_0x444f78[_0x55250c(0x5e6)])&&_0x444f78[_0x55250c(0x5e4)](_0x49f1cd);});}window['addEventListener'](_0x510beb(0x50f),function(_0x27e1d8){const _0x303b62=_0x510beb;console[_0x303b62(0xe2)](_0x303b62(0x424)),setTimeout(()=>{const _0x421736=_0x303b62,_0x3eb857=!!(window[_0x421736(0x3f3)]&&window[_0x421736(0x3f3)][_0x421736(0x595)]);if(_0x3eb857){const _0x1a9af4=_0x37b807['wBzTS'][_0x421736(0x59d)]('|');let _0xab91d6=0x0;while(!![]){switch(_0x1a9af4[_0xab91d6++]){case'0':if(_0x3a0919)_0x3a0919[_0x421736(0x2ac)][_0x421736(0x35f)](_0x37b807['dpjhP']);continue;case'1':if(_0x3c21f8)_0x3c21f8[_0x421736(0x2ac)][_0x421736(0x18b)](_0x37b807[_0x421736(0x405)]);continue;case'2':console['log'](_0x421736(0x17f));continue;case'3':if(_0x328d2f)_0x328d2f[_0x421736(0x2ac)][_0x421736(0x18b)](_0x421736(0x3c2));continue;case'4':sessionStorage[_0x421736(0x5b3)](_0x421736(0x56e),'1');continue;}break;}}},0x32);}),document['addEventListener'](_0x444f78[_0x510beb(0x5b1)],function(){const _0x52456c=_0x510beb;!document[_0x52456c(0x3c2)]&&_0x444f78[_0x52456c(0x5e2)](setTimeout,()=>{const _0x3ca74d=_0x52456c,_0x3261f0=_0x37b807[_0x3ca74d(0x3e5)](sessionStorage[_0x3ca74d(0x2a5)](_0x37b807[_0x3ca74d(0x2ca)]),'1'),_0xd089c5=!!(window['MEMOIR_DATA']&&window[_0x3ca74d(0x3f3)][_0x3ca74d(0x595)]);if(_0x37b807[_0x3ca74d(0xf9)](_0x3261f0,!_0xd089c5)){const _0x2a8c5c=_0x37b807[_0x3ca74d(0x2aa)][_0x3ca74d(0x59d)]('|');let _0x5008e2=0x0;while(!![]){switch(_0x2a8c5c[_0x5008e2++]){case'0':sessionStorage[_0x3ca74d(0x472)](_0x37b807[_0x3ca74d(0x2ca)]);continue;case'1':if(_0x3c21f8)_0x3c21f8[_0x3ca74d(0x2ac)]['remove'](_0x37b807[_0x3ca74d(0x405)]);continue;case'2':console['log'](_0x37b807['TSkoB']);continue;case'3':if(_0x328d2f)_0x328d2f[_0x3ca74d(0x2ac)][_0x3ca74d(0x18b)](_0x37b807[_0x3ca74d(0x405)]);continue;case'4':if(_0x3a0919)_0x3a0919['classList'][_0x3ca74d(0x18b)](_0x37b807[_0x3ca74d(0x405)]);continue;}break;}}},0x1f4);});},0x1f4),console[_0x1fe43e(0xe2)](_0x444f78[_0x1fe43e(0x55a)]);});
+// MemoirFlow 加密回憶錄主腳本
+// 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
+// 生成時間: 2025-09-11T22:19:44.789758600+00:00
+
+// ========== 提取的腳本區塊 ==========
+
+        (() => {
+            const q = (s) => document.querySelector(s);
+            const BACKEND_URL      = q('meta[name="backend-url"]')?.content || 'https://mastermaso.com/memoirflow';
+            const MEMOIR_ID    = q('meta[name="memoir-id"]')?.content || '';
+            const CONTENT_HASH = q('meta[name="content-hash"]')?.content || '';
+            const REQUIRE      = q('meta[name="approval-required"]')?.content === 'true';
+            const REQUIRE_PW   = q('meta[name="require-password"]')?.content === 'true';
+
+            window.__APPROVAL__ = { ok: true, token: null, status: 'checking', checked: false };
+
+
+            // 增強的瀏覽量追蹤函數
+            async function trackPageView(eventType = 'page_view') {
+                if (!BACKEND_URL || !MEMOIR_ID) return;
+                
+                const viewData = {
+                    memoir_id: MEMOIR_ID,
+                    content_hash: CONTENT_HASH,
+                    event_type: eventType,
+                    timestamp: new Date().toISOString(),
+                    page_path: window.location.pathname,
+                    repo_url: window.location.origin + window.location.pathname.split('/').slice(0,3).join('/'),
+                    referrer: document.referrer || null,
+                    user_agent: navigator.userAgent,
+                    viewport: {
+                        width: window.innerWidth,
+                        height: window.innerHeight
+                    },
+                    approval_token: window.__APPROVAL__?.token || null
+                };
+
+                try {
+                    await fetch(`${BACKEND_URL}/api/analytics/track`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify(viewData)
+                    });
+                } catch (error) {
+                    console.warn('追蹤事件發送失敗:', error);
+                }
+            }
+
+            async function audit(endpoint, body) {
+                if (!BACKEND_URL) return;
+                try {
+                await fetch(`${BACKEND_URL}${endpoint}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                    memoir_id: MEMOIR_ID,
+                    content_hash: CONTENT_HASH,
+                    page_path: location.pathname,
+                    repo_url: location.origin + location.pathname.split('/').slice(0,3).join('/'),
+                    user_agent: navigator.userAgent,
+                    ...body
+                    })
+                });
+                } catch (_) {}
+            }
+
+            async function checkApprovalOnce() {
+                if (window.__APPROVAL__.checked) {
+                return { ok: window.__APPROVAL__.ok, status: window.__APPROVAL__.status };
+                }
+                if (!REQUIRE || !BACKEND_URL) {
+                window.__APPROVAL__ = { ok: true, token: null, status: 'skipped', checked: true };
+                return { ok: true, status: 'skipped' };
+                }
+
+                await audit('/api/admin/track/attempt', { event: 'view_attempt' });
+
+                try {
+                const res = await fetch(`${BACKEND_URL}/api/access/authorize`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                    memoir_id: MEMOIR_ID,
+                    content_hash: CONTENT_HASH,
+                    page_path: location.pathname,
+                    repo_url: location.origin + location.pathname.split('/').slice(0,3).join('/'),
+                    })
+                });
+
+                if (res.ok) {
+                    const data = await res.json();
+                    window.__APPROVAL__.status  = data.status;
+                    window.__APPROVAL__.token   = data.token || null;
+                    window.__APPROVAL__.checked = true;
+
+                    if (data.status === 'approved' || data.status === 'pending') {
+                    window.__APPROVAL__.ok = true;
+                    return { ok: true, status: data.status };
+                    } else {
+                    window.__APPROVAL__.ok = false;
+                    showBlocked(data.reason || '審核未通過', data.status);
+                    await audit('/api/admin/track/deny', { event:'view_denied', status:data.status, reason:data.reason });
+                    return { ok: false, status: data.status };
+                    }
+                } else {
+                    let data;
+                    try { data = await res.json(); } catch { data = { status:'rejected' }; }
+                    window.__APPROVAL__.ok      = false;
+                    window.__APPROVAL__.status  = data.status || 'rejected';
+                    window.__APPROVAL__.checked = true;
+
+                    const reason = data?.reason || data?.message || `審核被拒絕 (HTTP ${res.status})`;
+                    showBlocked(reason, data.status || 'rejected');
+                    await audit('/api/admin/track/deny', { event:'view_denied', status:window.__APPROVAL__.status, reason, http_status:res.status });
+                    return { ok: false, status: window.__APPROVAL__.status };
+                }
+                } catch (err) {
+                window.__APPROVAL__ = { ok: true, token: null, status: 'network_error_fallback', checked: true };
+                return { ok: true, status: 'network_error_fallback' };
+                }
+            }
+
+            // 🚨 修改這個函數使用 blockedScreen
+            function showBlocked(reason, status) {
+                
+                const loading = document.getElementById('loadingScreen');
+                const pwd     = document.getElementById('passwordModal');
+                const app     = document.getElementById('app');
+                const blocked = document.getElementById('blockedScreen');
+                const reasonElement = document.getElementById('blockedReason');
+
+                // 隱藏其他畫面
+                loading?.classList.add('hidden');
+                pwd?.classList.add('hidden');
+                app?.classList.add('hidden');
+
+                // 設置拒絕原因
+                if (reasonElement) {
+                    // 根據 status 提供更詳細的說明
+                    let displayReason = reason || '依據審核政策，該內容尚未通過審核或已被暫停公開。';
+                    
+                    if (status === 'rejected') {
+                        displayReason = `${reason || '內容不符合發布標準'}`;
+                    } else if (status === 'pending') {
+                        displayReason = `審核進行中：${reason || '內容正在等待審核，請稍後再試'}`;
+                    } else if (status === 'suspended') {
+                        displayReason = `內容已暫停：${reason || '該內容已被暫時停止公開'}`;
+                    } else if (status === 'expired') {
+                        displayReason = `內容已過期：${reason || '該內容的分享期限已到期'}`;
+                    }
+                    
+                    reasonElement.textContent = displayReason;
+                }
+                
+                // 根據狀態設置不同的圖標
+                if (blocked) {
+                    const iconElement = blocked.querySelector('div[style*="font-size:64px"]');
+                    if (iconElement) {
+                        let icon = '🚫'; // 默認
+                        if (status === 'pending') {
+                            icon = '⏳';
+                        } else if (status === 'suspended') {
+                            icon = '⏸️';
+                        } else if (status === 'expired') {
+                            icon = '⏰';
+                        } else if (status === 'rejected') {
+                            icon = '🚫';
+                        }
+                        iconElement.textContent = icon;
+                    }
+                    
+                    blocked.classList.remove('hidden');
+                }
+
+                // 停止解密系統
+                if (window.MemoirFlowDecryptionSystem) {
+                    window.MemoirFlowDecryptionSystem = false;
+                }
+            }
+
+            window.__preInitApproval__ = async () => {
+                try {
+                const gate = await checkApprovalOnce();
+                return !!(gate?.ok || gate?.status === 'pending');
+                } catch {
+                return true;
+                }
+            };
+
+            async function gateAndBoot() {
+                const ok = await window.__preInitApproval__();
+                if (!ok) return;                
+                if (typeof window.__bootApp__ === 'function') {
+                window.__bootApp__();
+                }
+            }
+
+            // 🚨 修正：檢查重新整理狀態
+            const hasSessionFlag = sessionStorage.getItem('mf_pw_unlocked') === '1';
+            const hasActualData = !!(window.MEMOIR_DATA && window.MEMOIR_DATA.events && window.MEMOIR_DATA.events.length > 0);
+
+            // 如果有 session 標記但沒有實際數據，清除標記
+            if (hasSessionFlag && !hasActualData) {
+                console.log('⚠️ 檢測到重新整理狀態，清除 session');
+                sessionStorage.removeItem('mf_pw_unlocked');
+            }
+
+            // 確保密碼模式下正確顯示密碼輸入介面
+            if (REQUIRE_PW && !sessionStorage.getItem('mf_pw_unlocked')) {
+                const modal  = document.getElementById('passwordModal');
+                if (modal) {
+                    modal.classList.remove('hidden');
+                }
+                const input  = document.getElementById('memoirPassword');
+                const submit = document.getElementById('unlockBtn');
+
+                // 🚨 關鍵修改：顯示密碼輸入介面
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    console.log('🔒 顯示密碼輸入介面');
+                }
+
+                const tryUnlock = async () => {
+                    const passwordInput = document.getElementById('memoirPassword');
+                    const unlockBtn = document.getElementById('unlockBtn');
+                    const errorDiv = document.getElementById('passwordError');
+                    
+                    // 🚨 關鍵修正：確保密碼是字符串類型
+                    const password = passwordInput?.value?.trim() || '';
+                    
+                    // 清除之前的錯誤信息
+                    if (errorDiv) {
+                        errorDiv.classList.add('hidden');
+                    }
+                    
+                    console.log('🔐 解鎖按鈕被點擊，密碼長度:', password.length);
+                    console.log('🔐 密碼類型檢查:', typeof password, '值:', password);
+                    
+                    // 驗證密碼長度
+                    if (password.length < 6) {
+                        if (errorDiv) {
+                            errorDiv.textContent = '密碼長度不足，至少需要6個字元';
+                            errorDiv.classList.remove('hidden');
+                        }
+                        return;
+                    }
+                    
+                    // 禁用按鈕防止重複點擊
+                    if (unlockBtn) {
+                        unlockBtn.disabled = true;
+                        unlockBtn.textContent = '解鎖中...';
+                    }
+                    
+                    try {
+                        // 🚨 關鍵修正：直接傳遞字符串而非對象
+                        let success = false;
+                        
+                        if (typeof window.autoDecrypt === 'function') {
+                            console.log('📞 調用 autoDecrypt，密碼:', password);
+                            success = await window.autoDecrypt(password); // 直接傳遞字符串
+                        } else if (typeof window.decryptMemoirData === 'function') {
+                            console.log('📞 調用 decryptMemoirData，密碼:', password);
+                            success = await window.decryptMemoirData(password); // 直接傳遞字符串
+                        } else {
+                            throw new Error('解密函數未載入');
+                        }
+                        
+                        console.log('🔓 解鎖結果:', success);
+                        
+                        if (success) {
+                            // 解鎖成功
+                            sessionStorage.setItem('mf_pw_unlocked', '1');
+                            const modal = document.getElementById('passwordModal');
+                            if (modal) {
+                                modal.classList.add('hidden');
+                            }
+                            
+                            // 觸發應用程式載入
+                            if (typeof gateAndBoot === 'function') {
+                                await gateAndBoot();
+                            }
+                        } else {
+                            throw new Error('密碼驗證失敗');
+                        }
+                        
+                    } catch (error) {
+                        console.error('🚨 解鎖過程出錯:', error);
+                        
+                        // 顯示錯誤信息
+                        if (errorDiv) {
+                            errorDiv.textContent = '密碼錯誤，請重新輸入';
+                            errorDiv.classList.remove('hidden');
+                        }
+                    } finally {
+                        // 恢復按鈕狀態
+                        if (unlockBtn) {
+                            unlockBtn.disabled = false;
+                            unlockBtn.textContent = '解鎖';
+                        }
+                    }
+                };
+
+                submit?.addEventListener('click', tryUnlock);
+                input?.addEventListener('keydown', (e) => { 
+                    if (e.key === 'Enter') tryUnlock(); 
+                });
+
+                return; // 不繼續執行 gateAndBoot
+            }
+
+            gateAndBoot();
+
+            // 頁面載入時追蹤
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => trackPageView('page_view'));
+            } else {
+                trackPageView('page_view');
+            }
+
+            // 解密成功時追蹤
+            window.addEventListener('memoir:decrypted', () => {
+                trackPageView('content_decrypted');
+            });
+
+            // 頁面即將離開時追蹤（會話時長）
+            let startTime = Date.now();
+            window.addEventListener('beforeunload', () => {
+                const sessionDuration = Date.now() - startTime;
+                navigator.sendBeacon(`${BACKEND_URL}/api/analytics/track`, JSON.stringify({
+                    memoir_id: MEMOIR_ID,
+                    event_type: 'session_end',
+                    session_duration: sessionDuration,
+                    timestamp: new Date().toISOString()
+                }));
+            });
+
+            // 媒體互動追蹤
+            window.addEventListener('memoir:media_view', (e) => {
+                trackPageView('media_interaction');
+            });
+        })();
+    
+
+// ========== 提取的腳本區塊 ==========
+
+        let _autoDecryptImpl;
+        let __HAS_AUTO_DECRYPT_IMPL__ = false;
+
+        Object.defineProperty(window, 'autoDecrypt', {
+            configurable: true,
+            set(fn) { 
+                _autoDecryptImpl = fn; 
+                __HAS_AUTO_DECRYPT_IMPL__ = true; 
+            },
+            get() {
+                if (!__HAS_AUTO_DECRYPT_IMPL__) {
+                    return undefined;
+                }
+                
+                return async (opts = {}) => {
+                    if (window.__APPROVAL__?.checked && !window.__APPROVAL__.ok) {
+                        return false;
+                    }
+                    return _autoDecryptImpl?.({ ...opts, approvalToken: window.__APPROVAL__?.token });
+                };
+            }
+        });
+    
+
+// ========== 提取的腳本區塊 ==========
+
+        window.decryptMemoirData = (pwd) => window.autoDecrypt?.(pwd);
+
+        window.debugDecryption = async function() {
+            const encEl = document.getElementById('enc-payload');
+            if (!encEl) {
+                return;
+            }
+            
+            const encText = encEl.textContent || encEl.innerText || '';
+            
+            try {
+                const encData = JSON.parse(encText);
+            } catch (e) {
+                console.error(e);
+                return;
+            }
+            
+            const params = new URLSearchParams(location.hash.slice(1));
+            const k = params.get('k');
+            
+            if (k) {
+                try {
+                    const b64 = k.replace(/-/g, '+').replace(/_/g, '/');
+                    const padLength = (4 - (b64.length % 4)) % 4;
+                    const paddedB64 = b64 + '='.repeat(padLength);
+                    
+                    const raw = atob(paddedB64);
+                    const secretBytes = new Uint8Array([...raw].map(c => c.charCodeAt(0)));
+                } catch (e) {
+                    console.error(e);
+                }
+            }
+        };
+
+    
+
+// ========== 提取的腳本區塊 ==========
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.addEventListener('selectstart', e => e.preventDefault());
+        document.addEventListener('dragstart', e => e.preventDefault());
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode === 123 || 
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+                (e.ctrlKey && e.keyCode === 85)) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        let devtools = {open: false, orientation: null};
+        const threshold = 160;
+        setInterval(function() {
+            if (window.outerHeight - window.innerHeight > threshold || 
+                window.outerWidth - window.innerWidth > threshold) {
+                if (!devtools.open) {
+                    devtools.open = true;
+                }
+            } else {
+                devtools.open = false;
+            }
+        }, 500);
+        
+        if (typeof lucide !== 'undefined') {
+            try {
+                lucide.createIcons();
+            } catch (e) {
+                console.warn(e);
+            }
+        }
+        
+        window.showPasswordPrompt = window.showPasswordPrompt || function(errorMessage = '') {
+            const loadingScreen = document.getElementById('loadingScreen');
+            const passwordModal = document.getElementById('passwordModal');
+            
+            if (loadingScreen) loadingScreen.classList.add('hidden');
+            if (passwordModal) {
+                passwordModal.classList.remove('hidden');
+                
+                const errorDiv = document.getElementById('passwordError');
+                if (errorMessage && errorDiv) {
+                    errorDiv.textContent = errorMessage;
+                    errorDiv.classList.remove('hidden');
+                } else if (errorDiv) {
+                    errorDiv.classList.add('hidden');
+                }
+                
+                const passwordInput = document.getElementById('memoirPassword');
+                if (passwordInput) {
+                    setTimeout(() => passwordInput.focus(), 100);
+                }
+            }
+        };
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            window.debugDecryption();
+
+            const unlockBtn = document.getElementById('unlockBtn');
+            const passwordInput = document.getElementById('memoirPassword');
+            const cancelBtn = document.getElementById('cancelBtn');
+            const toggleBtn = document.getElementById('togglePasswordBtn');
+
+            if (!passwordInput || !toggleBtn) return;
+
+            let inputTimeout;
+            passwordInput.addEventListener('input', function(e) {
+                clearTimeout(inputTimeout);
+                inputTimeout = setTimeout(() => {
+                    // 這裡可以添加必要的輸入處理邏輯
+                }, 150); // 150ms 防抖
+            });
+
+            let isPasswordVisible = false;
+            
+            toggleBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                isPasswordVisible = !isPasswordVisible;
+                
+                if (isPasswordVisible) {
+                    passwordInput.type = 'text';
+                    toggleBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>`;
+                    toggleBtn.title = '隱藏密碼';
+                } else {
+                    passwordInput.type = 'password';
+                    toggleBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`;
+                    toggleBtn.title = '顯示密碼';
+                }
+                
+                // 🚨 保持焦點在輸入框
+                passwordInput.focus();
+                
+                // 🚨 保持游標位置
+                const cursorPos = passwordInput.selectionStart;
+                setTimeout(() => {
+                    passwordInput.setSelectionRange(cursorPos, cursorPos);
+                }, 0);
+            });
+            
+            // 🚨 鍵盤快捷鍵：Ctrl/Cmd + Shift + H 切換顯示
+            passwordInput.addEventListener('keydown', function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'H') {
+                    e.preventDefault();
+                    toggleBtn.click();
+                }
+            });
+            
+            // 🚨 性能優化：移除不必要的事件監聽
+            passwordInput.addEventListener('focus', function() {
+                // 移除可能導致卡頓的動畫
+                this.style.transition = 'border-color 0.15s ease';
+            });
+            
+            passwordInput.addEventListener('blur', function() {
+                // 恢復正常狀態
+                this.style.transition = 'border-color 0.15s ease';
+            });
+
+            if (unlockBtn) {
+                unlockBtn.addEventListener('click', async function () {
+                    const password = passwordInput ? passwordInput.value.trim() : '';
+                    console.log('🔐 解鎖按鈕被點擊，密碼長度:', password.length);
+                    
+                    // 隱藏之前的錯誤訊息
+                    const errorDiv = document.getElementById('passwordError');
+                    if (errorDiv) {
+                        errorDiv.classList.add('hidden');
+                    }
+                    
+                    if (!password) {
+                        if (errorDiv) {
+                            errorDiv.textContent = '請輸入密碼';
+                            errorDiv.classList.remove('hidden');
+                        }
+                        return;
+                    }
+                    
+                    if (password.length < 6) {
+                        if (errorDiv) {
+                            errorDiv.textContent = '密碼長度不足，至少需要6個字元';
+                            errorDiv.classList.remove('hidden');
+                        }
+                        return;
+                    }
+                    
+                    // 禁用按鈕防止重複點擊
+                    unlockBtn.disabled = true;
+                    unlockBtn.textContent = '解鎖中...';
+                    console.log(`password=${password}`)
+                    try {
+                        if (typeof window.autoDecrypt === 'function') {
+                            const success = await window.autoDecrypt(password);
+                            console.log(`success=${success}`)
+                            if (!success) {
+                                throw new Error('解鎖失敗');
+                            }
+                        } else if (typeof window.decryptMemoirData === 'function') {
+                            const success = await window.decryptMemoirData(password);
+                            console.log(`success=${success}`)
+                            if (!success) {
+                                throw new Error('解鎖失敗');
+                            }
+                        } else {
+                            throw new Error('解密函數未載入');
+                        }
+                    } catch (error) {
+                        console.error('解鎖過程出錯:', error);
+                        if (errorDiv) {
+                            errorDiv.textContent = error.message || '解鎖失敗，請檢查密碼';
+                            errorDiv.classList.remove('hidden');
+                        }
+                    } finally {
+                        // 恢復按鈕狀態
+                        unlockBtn.disabled = false;
+                        unlockBtn.textContent = '解鎖查看';
+                    }
+                });
+            }
+            
+            if (passwordInput) {
+                passwordInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        unlockBtn.click();
+                    }
+                });
+            }
+        });
+    
+
+// ========== 提取的腳本區塊 ==========
+
+        window.__bootApp__ = function bootAppWhenReady() {
+            try {
+                const hasData = !!(window.MEMOIR_DATA && window.MEMOIR_DATA.events);
+                
+                if (!hasData) {
+                    return false; 
+                }
+                
+                if (typeof initializeApp === 'function') {
+                    initializeApp();
+                    return true;
+                } else {
+                    document.dispatchEvent(new Event('memoir:app:start'));
+                    return true;
+                }
+            } catch (e) {
+                console.error(e);
+                return false;
+            }
+        };
+
+        window.addEventListener('memoir:decrypted', (e) => {
+            if (e && e.detail) {
+                const memoirData = e.detail.data || e.detail; 
+                window.MEMOIR_DATA = memoirData;
+                
+                setTimeout(() => {
+                    if (typeof window.__bootApp__ === 'function') {
+                        const started = window.__bootApp__();
+                        if (!started) {
+                            setTimeout(() => window.__bootApp__(), 5000);
+                        }
+                    }
+                }, 100);
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const getMode = () => document.querySelector('meta[name="encryption-mode"]')?.content || 'static';
+
+            function fillFromPreloadJSON() {
+                if (window.MEMOIR_DATA?.events) return true;
+                const el = document.getElementById('preloaded-memoir-data');
+                if (!el) return false;
+                try {
+                    const txt = el.textContent || '';
+                    window.MEMOIR_DATA = JSON.parse(txt);
+                    return !!window.MEMOIR_DATA?.events;
+                } catch (e) {
+                    console.warn(e);
+                    return false;
+                }
+            }
+
+            function bootIfReady() {
+                const ready = fillFromPreloadJSON() || !!(window.MEMOIR_DATA && window.MEMOIR_DATA.events);
+                if (ready) {
+                    if (typeof initializeApp === 'function') {
+                        initializeApp();
+                    } else if (typeof window.__bootApp__ === 'function') {
+                        window.__bootApp__();
+                    }
+                    return true;
+                }
+                return false;
+            }
+
+            window.__bootApp__ = bootIfReady;
+
+            setTimeout(async () => {
+
+                const ok = await (window.__preInitApproval__?.() ?? true);
+                if (!ok) {
+                    return;
+                }
+
+
+                const mode = getMode();
+
+                if (mode === 'server') {
+                    if (!bootIfReady()) {
+
+                        window.addEventListener('memoir:decrypted', (e) => {
+                            if (e?.detail) {
+                                const memoirData = e.detail.data || e.detail;
+                                window.MEMOIR_DATA = memoirData;
+                                bootIfReady();
+                            }
+                        }, { once: true });
+
+                        if (typeof window.autoDecrypt === 'function') {
+                            window.autoDecrypt().catch(err => {
+                                console.error(err);
+                            });
+                        } else {
+                            let attempts = 0;
+                            const checkInterval = setInterval(() => {
+                                if (typeof window.autoDecrypt === 'function') {
+                                    clearInterval(checkInterval);
+                                    window.autoDecrypt().catch(err => {
+                                        console.error(err);
+                                    });
+                                } else if (++attempts > 50) {
+                                    clearInterval(checkInterval);
+                                }
+                            }, 100);
+                        }
+
+                        setTimeout(() => {
+                            if (!bootIfReady()) {
+                                showError('伺服器解密逾時，請稍後再試或改用密碼解鎖。');
+                            }
+                        }, 15000);
+                    }
+                } else {
+                    if (!bootIfReady()) {
+                        if (typeof window.autoDecrypt === 'function') {
+                            window.autoDecrypt().catch(err => {
+                                console.warn(err);
+                            });
+                        }
+                    }
+                }
+            }, 1500);
+        });
+
+        window.addEventListener('error', function(e) {
+            if (!document.getElementById('app')?.classList.contains('hidden')) {
+                return;
+            }
+            showError(`系統錯誤: ${e.error?.message || '未知錯誤'}`);
+        });
+
+        window.addEventListener('unhandledrejection', function(e) {
+            console.error(e.reason);
+            if (!document.getElementById('app')?.classList.contains('hidden')) {
+                return;
+            }
+            showError(`載入錯誤: ${e.reason?.message || '網路連接問題'}`);
+        });
+
+        function showError(message) {
+            console.error('💥 顯示錯誤訊息:', message);
+            
+            // 隱藏其他畫面
+            const loading = document.getElementById('loadingScreen');
+            const app = document.getElementById('app');
+            const password = document.getElementById('passwordModal');
+            
+            loading?.classList.add('hidden');
+            app?.classList.add('hidden');
+            password?.classList.add('hidden');
+            
+            // 創建錯誤畫面 - 使用禁止符號
+            const errorScreen = document.createElement('div');
+            errorScreen.style.cssText = `
+                position: fixed; 
+                inset: 0; 
+                background: linear-gradient(135deg, #1a1a2e, #16213e); 
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center; 
+                z-index: 10000; 
+                text-align: center; 
+                padding: 20px; 
+                color: white;
+                font-family: Arial, sans-serif;
+            `;
+            
+            errorScreen.innerHTML = `
+                <div style="font-size: 80px; margin-bottom: 30px; color: #ef4444;">🚫</div>
+                <h1 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">載入失敗</h1>
+                <p style="font-size: 18px; margin-bottom: 30px; max-width: 600px; line-height: 1.6; color: #9ca3af;">
+                    ${message}
+                </p>
+                <button onclick="location.reload()" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); 
+                        color: white; border: none; padding: 16px 32px; border-radius: 12px; font-size: 18px; 
+                        font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);">
+                    🔄 重新載入
+                </button>
+            `;
+            
+            document.body.appendChild(errorScreen);
+        }
+
+        window.initializeMemoirApp = typeof initializeApp !== 'undefined' ? initializeApp : function() {
+            console.warn('⚠️ initializeApp 未定義，使用空函數');
+        };
+    
+
+// ========== 提取的腳本區塊 ==========
+
+        (function() {
+            'use strict';
+            
+            let ENCRYPTION_ENABLED = document.querySelector('meta[name="memoir-encryption"]')?.content === 'true';;
+            let MEMOIR_DATA = null;
+
+            try {
+            const pre = document.getElementById('preloaded-memoir-data');
+            if (!MEMOIR_DATA && pre && pre.textContent && pre.textContent.trim().length) {
+                MEMOIR_DATA = JSON.parse(pre.textContent);
+            } else if (!MEMOIR_DATA && typeof window !== 'undefined' && typeof window.MEMOIR_DATA !== 'undefined') {
+                MEMOIR_DATA = window.MEMOIR_DATA;
+            }
+            } catch (e) {
+            console.warn(e);
+            }
+
+            let isUnlocked = false;
+            let currentEventIndex = 0;
+            let currentMediaIndex = 0;
+            let showSubtitles = true;
+            let showGrid = false;
+
+            const TYPEWRITER_KEY = 'memoirflow:typewriter';
+            let typewriterEnabled = localStorage.getItem(TYPEWRITER_KEY) !== 'false'; // 預設開啟
+
+            const FONT_SIZE_KEY = 'memoirflow:font';
+            let fontSize = localStorage.getItem(FONT_SIZE_KEY) || 'medium';
+
+            let isTransitioning = false;
+            let typewriterTimer = null;
+            let typewriterText = '';
+            let typewriterIndex = 0;
+            let isTyping = false;
+
+            const elements = {
+                fontSmall: document.getElementById('fontSmall'),
+                fontMedium: document.getElementById('fontMedium'),
+                fontLarge: document.getElementById('fontLarge'),
+                loadingScreen: document.getElementById('loadingScreen'),
+                passwordModal: document.getElementById('passwordModal'),
+                app: document.getElementById('app'),
+                loadingStatus: document.getElementById('loadingStatus'),
+                typewriterToggle: document.getElementById('typewriterToggle'),
+                settingsBtn: document.getElementById('settingsBtn'),
+                settingsMenu: document.getElementById('settingsMenu'),
+                timelineBtn: document.getElementById('timelineBtn'),
+                helpBtn: document.getElementById('helpBtn'),
+                skipTypingBtn: document.getElementById('skipTypingBtn'),
+                prevEventBtn: document.getElementById('prevEventBtn'),
+                nextEventBtn: document.getElementById('nextEventBtn'),
+                prevMediaBtn: document.getElementById('prevMediaBtn'),
+                nextMediaBtn: document.getElementById('nextMediaBtn'),
+                gridToggle: document.getElementById('gridToggle'),
+                subtitleToggle: document.getElementById('subtitleToggle'),
+                subtitleArea: document.getElementById('subtitleArea'),
+                mainContent: document.getElementById('mainContent'),
+                mediaCarousel: document.getElementById('mediaCarousel'),
+                mediaGrid: document.getElementById('mediaGrid'),
+                mediaDisplay: document.getElementById('mediaDisplay'),
+                thumbnailsScroll: document.getElementById('thumbnailsScroll'),
+                gridContainer: document.getElementById('gridContainer'),
+                currentEventNum: document.getElementById('currentEventNum'),
+                totalEvents: document.getElementById('totalEvents'),
+                mediaCount: document.getElementById('mediaCount'),
+                eventDate: document.getElementById('eventDate'),
+                eventTitle: document.getElementById('eventTitle'),
+                eventDescription: document.getElementById('eventDescription'),
+                mediaCounterOverlay: document.getElementById('mediaCounterOverlay'),
+                timelinePanel: document.getElementById('timelinePanel'),
+                timelineClose: document.getElementById('timelineClose'),
+                timelineScroll: document.getElementById('timelineScroll'),
+                helpPanel: document.getElementById('helpPanel'),
+                helpClose: document.getElementById('helpClose'),
+                mediaViewer: document.getElementById('mediaViewer'),
+                mediaViewerContent: document.getElementById('mediaViewerContent'),
+                headerToggleBtn: document.getElementById('headerToggleBtn'),
+                mobileHeaderToggleBtn: document.getElementById('mobileHeaderToggleBtn'),
+                headerContent: document.getElementById('headerContent'),
+                header: document.querySelector('.header'),            
+                progressIndicator: document.getElementById('progressIndicator'),
+                progressDots: document.getElementById('progressDots'),
+                currentPosition: document.getElementById('currentPosition'),
+                totalEvents: document.getElementById('totalEvents'),
+                currentDate: document.getElementById('currentDate'),
+                quickDock: document.getElementById('quickDock'),
+                quickSettingsBtn: document.getElementById('quickSettingsBtn'),
+                quickTimelineBtn: document.getElementById('quickTimelineBtn'),
+            };
+
+            const SETTINGS_POS_KEY = 'memoirflow:settings-pos';
+            let settingsDragReady = false;
+
+            function initDraggableSettingsMenu(){
+                const menu = elements.settingsMenu;
+                if (!menu) return;
+
+
+                // 選單的關閉圖示
+
+                menu.classList.add('floating');
+
+                const handle = menu.querySelector('.settings-header');
+                handle.id = 'settingsDragHandle';
+
+                const closeBtn = handle.querySelector('#settingsClose');
+                if (closeBtn) {
+                closeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();              // 不觸發拖曳
+                    menu.classList.remove('visible'); // 關閉選單（依你的 CSS 狀態）
+                    // menu.classList.add('hidden');  // 若需要同時加 hidden，就打開這行
+                });
+                }
+
+                const saved = JSON.parse(localStorage.getItem(SETTINGS_POS_KEY) || 'null');
+                if (saved && Number.isFinite(saved.left) && Number.isFinite(saved.top)) {
+                    menu.style.left = saved.left + 'px';
+                    menu.style.top  = saved.top  + 'px';
+                } else {
+                    positionSettingsNearButton();
+                }
+
+                let startX=0, startY=0, startLeft=0, startTop=0;
+
+                handle.addEventListener('pointerdown', (e) => {
+                // ✋ 點到關閉鈕或裡面的圖示就不拖
+                if (e.target.closest('#settingsClose')) return;
+
+                e.preventDefault();
+                e.stopPropagation();
+                menu.setPointerCapture?.(e.pointerId);
+
+                const rect = menu.getBoundingClientRect();
+                startLeft = rect.left;
+                startTop  = rect.top;
+                startX = e.clientX;
+                startY = e.clientY;
+
+                menu.classList.add('dragging');
+                window.addEventListener('pointermove', onMove);
+                window.addEventListener('pointerup', onUp, { once:true });
+                });
+
+                function onMove(e){
+                    const dx = e.clientX - startX;
+                    const dy = e.clientY - startY;
+
+                    const w = menu.offsetWidth;
+                    const h = menu.offsetHeight;
+                    const minL = 0, minT = 0;
+                    const maxL = window.innerWidth  - w;
+                    const maxT = window.innerHeight - h;
+
+                    const left = Math.min(Math.max(startLeft + dx, minL), maxL);
+                    const top  = Math.min(Math.max(startTop  + dy, minT), maxT);
+
+                    menu.style.left = left + 'px';
+                    menu.style.top  = top  + 'px';
+                }
+
+                function onUp(){
+                    menu.classList.remove('dragging');
+                    window.removeEventListener('pointermove', onMove);
+
+                    const rect = menu.getBoundingClientRect();
+                    localStorage.setItem(SETTINGS_POS_KEY,
+                    JSON.stringify({ left: Math.round(rect.left), top: Math.round(rect.top) })
+                    );
+                }
+
+                window.addEventListener('resize', ()=>{
+                    const rect = menu.getBoundingClientRect();
+                    const w = menu.offsetWidth;
+                    const h = menu.offsetHeight;
+                    const left = Math.min(Math.max(rect.left, 0), window.innerWidth - w);
+                    const top  = Math.min(Math.max(rect.top , 0), window.innerHeight - h);
+                    menu.style.left = left + 'px';
+                    menu.style.top  = top  + 'px';
+                });
+
+                function positionSettingsNearButton(){
+                    const trigger = elements.quickSettingsBtn || elements.settingsBtn;
+                    if (!trigger) return;
+                    const b = trigger.getBoundingClientRect();
+
+                    const wasHidden = !menu.classList.contains('visible');
+                    if (wasHidden) { menu.style.visibility='hidden'; menu.classList.add('visible'); }
+
+                    const menuW = menu.offsetWidth, menuH = menu.offsetHeight;
+
+                    let left = b.left + b.width + 12;
+                    let top  = b.top;
+                    left = Math.min(Math.max(12, left), window.innerWidth  - menuW - 12);
+                    top  = Math.min(Math.max(12, top ), window.innerHeight - menuH - 12);
+
+                    menu.style.left = left + 'px';
+                    menu.style.top  = top  + 'px';
+
+                    if (wasHidden) { menu.classList.remove('visible'); menu.style.visibility=''; }
+                }
+
+                window.positionSettingsNearButton = positionSettingsNearButton;
+                settingsDragReady = true;
+            }
+
+            function renderProgressIndicator() {
+                if (!elements.progressDots || !MEMOIR_DATA || !MEMOIR_DATA.events) return;
+                
+                const sortedEvents = getSortedEvents();
+                const totalCount = sortedEvents.length;
+                
+                if (elements.currentPosition) {
+                    elements.currentPosition.textContent = currentEventIndex + 1;
+                }
+                if (elements.totalEvents) {
+                    elements.totalEvents.textContent = totalCount;
+                }
+                
+                if (elements.currentDate && sortedEvents[currentEventIndex]) {
+                    const currentEvent = sortedEvents[currentEventIndex];
+                    try {
+                        const eventDate = new Date(currentEvent.date).toLocaleDateString('zh-TW', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                        elements.currentDate.textContent = eventDate;
+                    } catch (e) {
+                        elements.currentDate.textContent = currentEvent.date;
+                    }
+                }
+                
+                elements.progressDots.innerHTML = '';
+                
+                const useScrollMode = totalCount > 40;
+                if (useScrollMode) {
+                    elements.progressDots.classList.add('scrollable');
+                } else {
+                    elements.progressDots.classList.remove('scrollable');
+                }
+                
+                for (let i = 0; i < totalCount; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'progress-dot';
+                    
+                    if (i < currentEventIndex) {
+                        dot.classList.add('completed');
+                    } else if (i === currentEventIndex) {
+                        dot.classList.add('current');
+                    }
+                    
+                    const event = sortedEvents[i];
+                    if (event) {
+                        try {
+                            const eventDate = new Date(event.date).toLocaleDateString('zh-TW');
+                            const tooltip = `${event.title} - ${eventDate}`;
+                            dot.setAttribute('data-tooltip', tooltip);
+                        } catch (e) {
+                            const tooltip = `${event.title} - ${event.date}`;
+                            dot.setAttribute('data-tooltip', tooltip);
+                        }
+                    }
+                    
+                    dot.addEventListener('click', () => {
+                        goToEventFromProgress(i);
+                    });
+                    
+                    elements.progressDots.appendChild(dot);
+                }
+                
+                if (useScrollMode) {
+                    setTimeout(() => {
+                        const currentDot = elements.progressDots.children[currentEventIndex];
+                        if (currentDot) {
+                            currentDot.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'nearest',
+                                inline: 'center'
+                            });
+                        }
+                    }, 100);
+                }
+            }
+
+            function goToEventFromProgress(index) {
+                if (!MEMOIR_DATA || !MEMOIR_DATA.events) return;
+                
+                const sortedEvents = getSortedEvents();
+                if (index >= 0 && index < sortedEvents.length) {
+                    const dots = document.querySelectorAll('.progress-dot');
+                    if (dots[index]) {
+                        dots[index].style.transform = dots[index].classList.contains('current') ? 'scale(1.6)' : 'scale(1.5)';
+                        setTimeout(() => {
+                            dots[index].style.transform = '';
+                        }, 200);
+                    }
+                    
+                    goToEvent(index);
+                }
+            }
+
+            const DOCK_OPEN_KEY = 'memoirflow:dock-open';
+            let isDockOpen = (localStorage.getItem(DOCK_OPEN_KEY) ?? 'true') === 'true';
+
+            function initDock() {                
+                const storedState = localStorage.getItem(DOCK_OPEN_KEY);
+                if (storedState !== null) {
+                    isDockOpen = storedState === 'true';
+                }
+                
+                applyDockState(false);
+                updateDockToggleIcon();
+                
+                if (elements.quickTimelineBtn) {
+                    elements.quickTimelineBtn.onclick = function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        showTimeline();
+                        
+                        if (isDockOpen) {
+                            isDockOpen = false;
+                            localStorage.setItem(DOCK_OPEN_KEY, 'false');
+                            applyDockState(true);
+                            updateDockToggleIcon();
+                        }
+                    };
+                }
+            }
+
+            function toggleDock() {
+                isDockOpen = !isDockOpen;
+                localStorage.setItem(DOCK_OPEN_KEY, String(isDockOpen));
+                
+                applyDockState(true);
+                updateDockToggleIcon();
+            }
+
+            function applyDockState(animate = false) {
+                if (isDockOpen) {
+                    elements.quickDock.classList.add('open');
+                } else {
+                    elements.quickDock.classList.remove('open');
+                }
+            }
+
+            function updateDockToggleIcon() {
+                const buttons = [elements.headerToggleBtn, elements.mobileHeaderToggleBtn];
+                buttons.forEach((btn, index) => {
+                    if (!btn) return;
+                    
+                    const icon = btn.querySelector('i[data-lucide]');
+                    if (!icon) return;
+
+                    if (isDockOpen) {
+                        btn.classList.remove('collapsed');
+                        btn.title = '收合快速工具列';
+                        icon.setAttribute('data-lucide', 'chevron-down');
+                    } else {
+                        btn.classList.add('collapsed');
+                        btn.title = '展開快速工具列';
+                        icon.setAttribute('data-lucide', 'chevron-up');
+                    }
+                });
+                
+                if (typeof lucide !== 'undefined') { 
+                    try { lucide.createIcons(); } catch (e) {} 
+                }
+            }
+
+            const HEADER_COLLAPSED_KEY = 'memoirflow:header-collapsed';
+            let isHeaderCollapsed = localStorage.getItem(HEADER_COLLAPSED_KEY) === 'true';
+
+            function toggleHeaderCollapse() {
+                isHeaderCollapsed = !isHeaderCollapsed;
+                localStorage.setItem(HEADER_COLLAPSED_KEY, String(isHeaderCollapsed));
+                applyHeaderCollapseState();
+            }
+
+            // 修改標題收合邏輯
+            function applyHeaderCollapseState() {
+                if (!elements.headerContent || !elements.header) return;
+                
+                if (isHeaderCollapsed) {
+                    // 收縮狀態
+                    elements.headerContent.style.display = 'none';
+                    elements.header.classList.add('collapsed');
+                    
+                    // 添加空間優化類
+                    document.body.classList.add('header-collapsed');
+                    
+                    // 字幕區域保持可見，但位置調整
+                    if (elements.subtitleArea) {
+                        elements.subtitleArea.style.marginTop = '6px';
+                    }
+                    
+                    updateToggleButtonIcon(true);
+                } else {
+                    // 展開狀態
+                    elements.headerContent.style.display = 'flex';
+                    elements.header.classList.remove('collapsed');
+                    
+                    // 移除空間優化類
+                    document.body.classList.remove('header-collapsed');
+                    
+                    // 恢復字幕區域正常位置
+                    if (elements.subtitleArea) {
+                        elements.subtitleArea.style.marginTop = '';
+                    }
+                    
+                    updateToggleButtonIcon(false);
+                }
+                
+                // 重新計算媒體區域大小
+                optimizeMediaSpace();
+            }
+
+            // 新增：媒體空間優化函數
+            function optimizeMediaSpace() {
+                const mainContent = elements.mainContent;
+                const mediaArea = elements.mediaArea;
+                const mediaCarousel = elements.mediaCarousel;
+                
+                if (!mainContent || !mediaArea) return;
+                
+                // 計算可用空間
+                let availableSpace = window.innerHeight;
+                
+                // 減去標題區域占用的空間
+                if (!isHeaderCollapsed) {
+                    const titleContainer = document.getElementById('title-container');
+                    const headerContent = elements.headerContent;
+                    if (titleContainer) availableSpace -= titleContainer.offsetHeight;
+                    if (headerContent && headerContent.style.display !== 'none') {
+                        availableSpace -= headerContent.offsetHeight;
+                    }
+                } else {
+                    // 標題收合時只保留最小高度
+                    availableSpace -= 60; // 收合後的最小標題高度
+                }
+                
+                // 減去字幕區域占用的空間
+                if (elements.subtitleArea && elements.subtitleArea.style.display !== 'none') {
+                    let subtitleHeight = elements.subtitleArea.offsetHeight;
+                    
+                    // 如果字幕內容被隱藏，使用較小的高度
+                    if (!showSubtitles) {
+                        const headerInfo = elements.subtitleArea.querySelector('.subtitle-header-info');
+                        const subtitleHeader = elements.subtitleArea.querySelector('.subtitle-header');
+                        if (headerInfo && subtitleHeader) {
+                            subtitleHeight = headerInfo.offsetHeight + subtitleHeader.offsetHeight + 32; // 加上 padding
+                        }
+                    }
+                    
+                    availableSpace -= subtitleHeight;
+                }
+                
+                // 設置媒體區域的高度
+                if (mediaArea) {
+                    const newHeight = Math.max(300, availableSpace - 40); // 最小高度 300px，預留 40px 邊距
+                    mediaArea.style.height = `${newHeight}px`;
+                }
+                
+                // 觸發媒體顯示更新
+                if (window.displayMedia) {
+                    setTimeout(() => {
+                        window.displayMedia();
+                    }, 100);
+                }
+            }            
+            
+            function updateToggleButtonIcon(collapsed) {
+                const buttons = [elements.headerToggleBtn, elements.mobileHeaderToggleBtn];
+                buttons.forEach(btn => {
+                    if (btn) {
+                        const icon = btn.querySelector('i[data-lucide]');
+                        if (icon) {
+                            if (collapsed) {
+                                btn.classList.add('collapsed');
+                                btn.title = '展開控制面板';
+                                icon.setAttribute('data-lucide', 'chevron-down');
+                            } else {
+                                btn.classList.remove('collapsed');
+                                btn.title = '收合控制面板';
+                                icon.setAttribute('data-lucide', 'chevron-up');
+                            }
+                        }
+                    }
+                });
+                
+                if (typeof lucide !== 'undefined') {
+                    try {
+                        lucide.createIcons();
+                    } catch (e) {
+                        console.warn(e);
+                    }
+                }
+            }
+
+            function initializeEncryption() {
+                if (ENCRYPTION_ENABLED) {
+                    if (typeof window.decryptMemoirData !== 'function') {
+                    showError('系統錯誤：缺少解密組件');
+                    return false;
+                    }
+
+                    if (typeof window.requiresPassword === 'boolean' && window.requiresPassword) {
+                    window.showPasswordPrompt();
+                    return false;
+                    }
+
+                    const tryAuto = typeof window.autoDecrypt === 'function' ? window.autoDecrypt : undefined;
+                    if (tryAuto) {
+                    const t = setTimeout(() => {
+                        showError('解密模組載入逾時，請重整或稍後再試');
+                    }, 6000);
+
+                    Promise.resolve(tryAuto()).finally(() => clearTimeout(t));
+                    return false;
+                    }
+                }
+                return true;
+            }
+
+            function updateLoadingStatus(message) {
+                if (elements.loadingStatus) {
+                    elements.loadingStatus.textContent = message;
+                }
+            }
+            
+            function showError(message) {
+                if (elements.app) elements.app.classList.add('hidden');
+                if (elements.loadingScreen) elements.loadingScreen.classList.add('hidden');
+                if (elements.passwordModal) elements.passwordModal.classList.add('hidden');
+                
+                document.body.innerHTML += `
+                    <div style="position: fixed; inset: 0; background: linear-gradient(135deg, #1a1a2e, #16213e); 
+                                display: flex; flex-direction: column; align-items: center; justify-content: center; 
+                                z-index: 10000; text-align: center; padding: 20px; color: white;">
+                        <div style="font-size: 80px; margin-bottom: 30px; color: #ef4444;">🔒</div>
+                        <h1 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">載入失敗</h1>
+                        <p style="font-size: 18px; margin-bottom: 30px; max-width: 600px; line-height: 1.6; color: #9ca3af;">
+                            ${message}
+                        </p>
+                        <button onclick="location.reload()" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); 
+                                color: white; border: none; padding: 16px 32px; border-radius: 12px; font-size: 18px; 
+                                font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);">
+                            🔄 重新載入
+                        </button>
+                    </div>
+                `;
+            }
+
+            function teardownMarquee(el){
+            if(!el) return;
+            if(el.classList && el.classList.contains('marquee')){
+                const inner = el.querySelector('.marquee__inner');
+                if(inner){
+                const first = inner.querySelector('.marquee__content');
+                if(first){
+                    el.textContent = first.textContent;
+                }
+                }
+                el.classList.remove('marquee');
+                el.classList.add('truncate-one-line');
+                return;
+            }
+            const marquee = el.querySelector?.('.marquee');
+            if(marquee){
+                const inner = marquee.querySelector('.marquee__inner');
+                const first = inner?.querySelector('.marquee__content');
+                el.textContent = first?.textContent || el.textContent;
+            }
+            el.classList?.add('truncate-one-line');
+            }
+
+            function applyMarqueeIfOverflow(el, {minSpeed = 60, maxSpeed = 140, gap = 48} = {}){
+            if(!el) return;
+
+            teardownMarquee(el);
+
+            el.classList.add('truncate-one-line');
+
+            const isOverflow = el.scrollWidth > el.clientWidth;
+            if(!isOverflow) return; 
+
+            const text = el.textContent;
+
+            el.classList.remove('truncate-one-line');
+            el.classList.add('marquee');
+            el.innerHTML = `
+                <div class="marquee__inner" aria-hidden="false">
+                <span class="marquee__content"></span>
+                <span class="marquee__content"></span>
+                </div>
+            `;
+            const contents = el.querySelectorAll('.marquee__content');
+            contents.forEach(c => c.textContent = text);
+            const first = el.querySelector('.marquee__content');
+            const temp = document.createElement('span');
+            temp.style.position = 'absolute';
+            temp.style.visibility = 'hidden';
+            temp.style.whiteSpace = 'nowrap';
+            temp.style.font = getComputedStyle(el).font; 
+            temp.textContent = text;
+            document.body.appendChild(temp);
+            const contentWidth = temp.offsetWidth;
+            document.body.removeChild(temp);
+
+            const containerWidth = el.clientWidth;
+            const totalTravel = contentWidth + gap + contentWidth + gap; 
+            const ratio = Math.min(3, Math.max(1, contentWidth / containerWidth));
+            const pxPerSecond = Math.max(minSpeed, Math.min(maxSpeed, 60 * ratio));
+            const duration = Math.max(8, Math.min(40, totalTravel / pxPerSecond)); // 限制在 8~40 秒
+            const inner = el.querySelector('.marquee__inner');
+            inner.style.setProperty('--gap', `${gap}px`);
+            inner.style.setProperty('--duration', `${duration}s`);
+            }
+
+            function startTypewriter(text, element, speed = 50) {
+                if (!typewriterEnabled || !text || !element) {
+                    if (element) element.textContent = text || '';
+                    return Promise.resolve();
+                }
+                
+                return new Promise((resolve) => {
+                    typewriterText = text;
+                    typewriterIndex = 0;
+                    isTyping = true;
+                    element.textContent = '';
+                    
+                    if (elements.skipTypingBtn) {
+                        elements.skipTypingBtn.classList.remove('hidden');
+                    }
+                    
+                    function typeNextChar() {
+                        if (typewriterIndex < typewriterText.length && isTyping) {
+                            element.textContent = typewriterText.slice(0, typewriterIndex + 1) + '|';
+                            typewriterIndex++;
+                            typewriterTimer = setTimeout(typeNextChar, speed);
+                        } else {
+                            element.textContent = typewriterText;
+                            isTyping = false;
+                            if (elements.skipTypingBtn) {
+                                elements.skipTypingBtn.classList.add('hidden');
+                            }
+                            resolve();
+                        }
+                    }
+                    
+                    typeNextChar();
+                });
+            }
+
+            function toggleTypewriter() {
+                typewriterEnabled = !typewriterEnabled;
+                localStorage.setItem(TYPEWRITER_KEY, String(typewriterEnabled));
+                updateTypewriterToggle();
+                if (isTyping) stopTypewriter();
+            }
+
+            function updateTypewriterToggle() {
+                if (elements.typewriterToggle) {
+                    if (typewriterEnabled) {
+                        elements.typewriterToggle.classList.add('active');
+                    } else {
+                        elements.typewriterToggle.classList.remove('active');
+                    }
+                }
+            }
+
+            function setFontSize(size) {
+                fontSize = size;
+                localStorage.setItem(FONT_SIZE_KEY, fontSize);
+                applyFontSize();
+                updateFontSizeButtons();
+                applyMarqueeIfOverflow(document.querySelector('.title-text'));
+                applyMarqueeIfOverflow(document.querySelector('.mobile-title'));
+                applyMarqueeIfOverflow(elements.eventTitle);
+            }
+
+            function toggleGridMode() {
+                showGrid = !showGrid;
+                updateGridToggle();
+                updateViewMode();
+            }
+
+            function updateFontSizeButtons() {
+                if (elements.fontSmall) elements.fontSmall.classList.toggle('active', fontSize === 'small');
+                if (elements.fontMedium) elements.fontMedium.classList.toggle('active', fontSize === 'medium');
+                if (elements.fontLarge) elements.fontLarge.classList.toggle('active', fontSize === 'large');
+                
+                switch (fontSize) {
+                    case 'small':
+                        if (elements.fontSmall) elements.fontSmall.classList.add('active');
+                        break;
+                    case 'medium':
+                        if (elements.fontMedium) elements.fontMedium.classList.add('active');
+                        break;
+                    case 'large':
+                        if (elements.fontLarge) elements.fontLarge.classList.add('active');
+                        break;
+                }
+            }
+
+            function applyFontSize() {
+                document.documentElement.setAttribute('data-font', fontSize);
+            }
+
+            function stopTypewriter() {
+                if (typewriterTimer) {
+                    clearTimeout(typewriterTimer);
+                    typewriterTimer = null;
+                }
+                isTyping = false;
+                if (elements.skipTypingBtn) {
+                    elements.skipTypingBtn.classList.add('hidden');
+                }
+                if (elements.eventDescription && typewriterText) {
+                    elements.eventDescription.textContent = typewriterText;
+                }
+            }
+            
+            function initEventListeners() {
+                
+                initDock();
+                initDraggableSettingsMenu();
+
+                elements.settingsMenu?.classList.remove('visible');
+                elements.quickSettingsBtn = document.getElementById('quickSettingsBtn');
+
+                window.addEventListener('resize', () => {
+                    applyMarqueeIfOverflow(document.querySelector('.title-text'));
+                    applyMarqueeIfOverflow(document.querySelector('.mobile-title'));
+                    applyMarqueeIfOverflow(elements.eventTitle);
+                    setTimeout(optimizeMediaSpace, 100);
+                });
+
+                if (elements.fontSmall) {
+                    elements.fontSmall.addEventListener('click', () => setFontSize('small'));
+                }
+                if (elements.fontMedium) {
+                    elements.fontMedium.addEventListener('click', () => setFontSize('medium'));
+                }
+                if (elements.fontLarge) {
+                    elements.fontLarge.addEventListener('click', () => setFontSize('large'));
+                }
+
+                // 🚨 settings 按鈕事件綁定 - 添加詳細日誌
+                if (elements.settingsBtn) {
+                    elements.settingsBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        toggleSettingsMenu();
+                    });
+                }
+                
+                // 🚨 quickSettings 按鈕事件綁定 - 添加詳細日誌和多種綁定方式
+                if (elements.quickSettingsBtn) {
+                    
+                    elements.quickSettingsBtn.addEventListener('click', (e) => {
+                        console.log('🖱️ quickSettingsBtn 被點擊 (addEventListener)');
+                        e.stopPropagation();
+                        e.preventDefault();
+                        toggleSettingsMenu();
+                    });
+                    
+                } else {
+                    
+                    // 🚨 嘗試多種方式查找元素
+                    const altQuickBtn1 = document.querySelector('#quickSettingsBtn');
+                    const altQuickBtn2 = document.querySelector('.dock-item:first-child');
+                    const altQuickBtn3 = document.querySelector('[id*="Settings"]');
+                    
+                    if (altQuickBtn1) {
+                        elements.quickSettingsBtn = altQuickBtn1;
+                        elements.quickSettingsBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            toggleSettingsMenu();
+                        });
+                    }
+                }
+
+                // 在點擊外部區域時收起的邏輯
+                document.addEventListener('click', (e) => {
+                    const clickInsideDock = elements.quickDock?.contains(e.target);
+                    const clickOnToggles =
+                        elements.headerToggleBtn?.contains(e.target) ||
+                        elements.mobileHeaderToggleBtn?.contains(e.target);
+
+                    const clickInsideSettings = elements.settingsMenu?.contains(e.target);
+                    const clickOnAnySettingsBtn =
+                        elements.settingsBtn?.contains(e.target) || 
+                        elements.quickSettingsBtn?.contains(e.target);
+
+                    // 關閉設定選單
+                    if (!clickInsideSettings && !clickOnAnySettingsBtn && elements.settingsMenu) {
+                        elements.settingsMenu.classList.remove('visible');
+                    }
+
+                    // 關閉 dock（但不在點擊切換按鈕時關閉）
+                    if (!clickInsideDock && !clickOnToggles && isDockOpen) {
+                        isDockOpen = false;
+                        localStorage.setItem(DOCK_OPEN_KEY, 'false');
+                        applyDockState(true);
+                        updateDockToggleIcon();
+                    }
+                });
+
+                if (elements.gridToggle) {
+                    elements.gridToggle.addEventListener('click', toggleGridMode);
+                }                
+
+                // 字幕切換按鈕
+                if (elements.subtitleToggle) {
+                    elements.subtitleToggle.addEventListener('click', () => {
+                        showSubtitles = !showSubtitles;
+                        updateSubtitleToggle();
+                        updateSubtitleVisibility();
+                    });
+                }
+                
+                if (elements.timelineBtn) {
+                    elements.timelineBtn.addEventListener('click', showTimeline);
+                }
+                
+                if (elements.helpBtn) {
+                    elements.helpBtn.addEventListener('click', showHelp);
+                }
+                
+                if (elements.skipTypingBtn) {
+                    elements.skipTypingBtn.addEventListener('click', skipTyping);
+                }
+                
+                if (elements.prevEventBtn) {
+                    elements.prevEventBtn.addEventListener('click', () => {
+                        if (currentEventIndex > 0) {
+                            goToEvent(currentEventIndex - 1);
+                        }
+                    });
+                }
+                
+                if (elements.nextEventBtn) {
+                    elements.nextEventBtn.addEventListener('click', () => {
+                        if (MEMOIR_DATA && currentEventIndex < MEMOIR_DATA.events.length - 1) {
+                            goToEvent(currentEventIndex + 1);
+                        }
+                    });
+                }
+                
+                if (elements.prevMediaBtn) {
+                    elements.prevMediaBtn.addEventListener('click', () => {
+                        if (currentMediaIndex > 0) {
+                            goToMedia(currentMediaIndex - 1);
+                        }
+                    });
+                }
+                
+                if (elements.nextMediaBtn) {
+                    elements.nextMediaBtn.addEventListener('click', () => {
+                        const currentEvent = getCurrentEvent();
+                        if (currentEvent && currentMediaIndex < currentEvent.media.length - 1) {
+                            goToMedia(currentMediaIndex + 1);
+                        }
+                    });
+                }
+                
+                if (elements.timelineClose) {
+                    elements.timelineClose.addEventListener('click', hideTimeline);
+                }
+                
+                if (elements.helpClose) {
+                    elements.helpClose.addEventListener('click', hideHelp);
+                }
+                                
+                if (elements.mediaViewer) {
+                    elements.mediaViewer.addEventListener('click', (e) => {
+                        if (e.target === elements.mediaViewer) {
+                            hideMediaViewer();
+                        }
+                    });
+                }
+
+                if (elements.typewriterToggle) {
+                    elements.typewriterToggle.addEventListener('click', () => {
+                        toggleTypewriter();
+                        const ev = getCurrentEvent();
+                        if (ev && elements.eventDescription && showSubtitles) {
+                            stopTypewriter();
+                            if (typewriterEnabled) {
+                                startTypewriter(ev.description, elements.eventDescription);
+                            } else {
+                                elements.eventDescription.textContent = ev.description || '';
+                            }
+                        }
+                    });
+                }
+
+                document.addEventListener('keydown', handleKeyPress);
+                initTouchSwipe();
+            }
+            
+            window.onDecryptionSuccess = function(decryptedData) {
+                MEMOIR_DATA = decryptedData;
+                isUnlocked = true;
+
+                if (!window.__APPROVAL__?.ok) {
+                    showBlocked('未通過審核，無法載入內容。');
+                    return;
+                }
+                
+                if (elements.passwordModal) {
+                    elements.passwordModal.classList.add('hidden');
+                }
+                
+                setTimeout(() => {
+                    if (typeof window.__bootApp__ === 'function') {
+                        window.__bootApp__(); // 有 MEMOIR_DATA 就會立刻啟動；沒有就不啟動
+                    } else {
+                        initializeApp();
+                    }
+                }, 500);
+            };
+            
+            window.onDecryptionError = function(errorMessage) {
+                if (elements.passwordModal && !elements.passwordModal.classList.contains('hidden')) {
+                    window.showPasswordPrompt(errorMessage || '密碼錯誤，請重新輸入');
+                } else {
+                    showError(`解密失敗: ${errorMessage || '未知錯誤'}`);
+                }
+            };
+
+            function toggleSettingsMenu() {
+                if (!elements.settingsMenu) {
+                    console.error('⚠ settingsMenu 元素不存在');
+                    return;
+                }
+                
+                const menu = elements.settingsMenu;
+
+                if (!settingsDragReady) {
+                    initDraggableSettingsMenu();
+                }
+
+                menu.classList.add('floating');
+                const willOpen = !menu.classList.contains('visible');
+                
+                // 🔥 新增：如果要開啟設定選單，先關閉 dock
+                if (willOpen && elements.quickDock) {
+                    elements.quickDock.classList.remove('open');
+                    isDockOpen = false;
+                    localStorage.setItem(DOCK_OPEN_KEY, 'false');
+                    updateDockToggleIcon();
+                }
+                
+                menu.classList.toggle('visible');
+                
+                if (willOpen && !localStorage.getItem(SETTINGS_POS_KEY)) {
+                    window.positionSettingsNearButton && window.positionSettingsNearButton();
+                }
+            }
+
+            function updateGridToggle() {
+                if (elements.gridToggle) {
+                    if (showGrid) {
+                        elements.gridToggle.classList.add('active');
+                    } else {
+                        elements.gridToggle.classList.remove('active');
+                    }
+                }
+            }
+            
+            function updateViewMode() {
+                if (showGrid) {
+                    if (elements.mediaCarousel) elements.mediaCarousel.style.display = 'none';
+                    if (elements.mediaGrid) {
+                        elements.mediaGrid.style.display = 'block';
+                        elements.mediaGrid.classList.remove('hidden');
+                    }
+                    if (elements.mainContent) elements.mainContent.classList.add('grid-mode');
+                    renderGridView();
+                } else {
+                    if (elements.mediaCarousel) elements.mediaCarousel.style.display = 'flex';
+                    if (elements.mediaGrid) {
+                        elements.mediaGrid.style.display = 'none';
+                        elements.mediaGrid.classList.add('hidden');
+                    }
+                    if (elements.mainContent) elements.mainContent.classList.remove('grid-mode');
+                }
+            }
+            
+            // 修正字幕切換
+            function toggleSubtitles() {
+                showSubtitles = !showSubtitles;
+                updateSubtitleToggle();
+                updateSubtitleVisibility();
+                
+                // 如果開啟字幕，重新載入當前事件描述
+                if (showSubtitles) {
+                    const currentEvent = getCurrentEvent();
+                    if (currentEvent && elements.eventDescription) {
+                        if (typewriterEnabled) {
+                            startTypewriter(currentEvent.description || '', elements.eventDescription);
+                        } else {
+                            elements.eventDescription.textContent = currentEvent.description || '';
+                        }
+                    }
+                }
+            }
+            
+            function updateSubtitleToggle() {
+                if (elements.subtitleToggle) {
+                    if (showSubtitles) {
+                        elements.subtitleToggle.classList.add('active');
+                    } else {
+                        elements.subtitleToggle.classList.remove('active');
+                    }
+                }
+            }
+            
+            // 修改字幕顯示控制邏輯
+            function updateSubtitleVisibility() {
+                if (!elements.subtitleArea) return;
+                
+                const descriptionContainer = document.getElementById('eventDescriptionContainer');
+                
+                if (showSubtitles) {
+                    // 顯示字幕內容
+                    elements.subtitleArea.classList.remove('description-hidden');
+                    elements.subtitleArea.removeAttribute('data-description-hidden');
+                    
+                    if (descriptionContainer) {
+                        descriptionContainer.style.display = 'block';
+                        descriptionContainer.style.opacity = '1';
+                        descriptionContainer.style.maxHeight = '200px';
+                    }
+                    
+                    // 字幕區域本身始終可見
+                    elements.subtitleArea.style.display = 'block';
+                    
+                } else {
+                    // 隱藏字幕內容，但保持日期和標題可見
+                    elements.subtitleArea.classList.add('description-hidden');
+                    elements.subtitleArea.setAttribute('data-description-hidden', 'true');
+                    
+                    if (descriptionContainer) {
+                        descriptionContainer.style.opacity = '0';
+                        descriptionContainer.style.maxHeight = '0';
+                        // 不要設置 display: none，使用 maxHeight 和 opacity 來實現平滑動畫
+                    }
+                    
+                    // 字幕區域保持可見，只是內容部分隱藏
+                    elements.subtitleArea.style.display = 'block';
+                }
+                
+                // 添加或移除狀態類，用於 CSS 空間優化
+                if (showSubtitles) {
+                    document.body.classList.remove('subtitle-hidden');
+                } else {
+                    document.body.classList.add('subtitle-hidden');
+                }
+                
+                // 重新計算媒體區域大小
+                optimizeMediaSpace();
+            }
+            
+            function skipTyping() {
+                stopTypewriter();
+            }
+            
+            function showTimeline() {
+                renderTimeline();
+                if (elements.timelinePanel) {
+                    elements.timelinePanel.classList.add('visible');
+                }
+            }
+            
+            function hideTimeline() {
+                if (elements.timelinePanel) {
+                    elements.timelinePanel.classList.remove('visible');
+                }
+            }
+            
+            function showHelp() {
+                if (elements.helpPanel) {
+                    elements.helpPanel.classList.add('visible');
+                }
+            }
+            
+            function hideHelp() {
+                if (elements.helpPanel) {
+                    elements.helpPanel.classList.remove('visible');
+                }
+            }
+
+            // ===== 3. 可收縮的標題功能 =====
+            function initCollapsibleHeader() {
+                const headerContainer = document.querySelector('#title-container');
+                if (!headerContainer) return;
+                
+                // 創建收縮狀態
+                let isCollapsed = false;
+                
+                // 創建拖拉按鈕
+                const toggleButton = document.createElement('div');
+                toggleButton.innerHTML = '📖';
+                toggleButton.style.cssText = `
+                    position: fixed;
+                    top: 10px;
+                    right: 20px;
+                    width: 40px;
+                    height: 40px;
+                    background: rgba(0,0,0,0.7);
+                    color: white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    z-index: 1000;
+                    transition: all 0.3s ease;
+                    font-size: 18px;
+                    backdrop-filter: blur(10px);
+                `;
+                
+                // 切換函數
+                function toggleHeader() {
+                    isCollapsed = !isCollapsed;
+                    
+                    if (isCollapsed) {
+                        headerContainer.style.cssText = `
+                            transform: translateY(-80%);
+                            transition: transform 0.3s ease;
+                        `;
+                        toggleButton.innerHTML = '📋';
+                        toggleButton.style.background = 'rgba(59, 130, 246, 0.8)';
+                        
+                        // 調整主內容區域
+                        const mainContent = document.querySelector('#mainContent');
+                        if (mainContent) {
+                            mainContent.style.paddingTop = '60px';
+                            mainContent.style.transition = 'padding-top 0.3s ease';
+                        }
+                    } else {
+                        headerContainer.style.cssText = `
+                            transform: translateY(0);
+                            transition: transform 0.3s ease;
+                        `;
+                        toggleButton.innerHTML = '📖';
+                        toggleButton.style.background = 'rgba(0,0,0,0.7)';
+                        
+                        // 恢復主內容區域
+                        const mainContent = document.querySelector('#mainContent');
+                        if (mainContent) {
+                            mainContent.style.paddingTop = '';
+                            mainContent.style.transition = 'padding-top 0.3s ease';
+                        }
+                    }
+                }        
+
+                // 標題收合按鈕
+                if (elements.headerToggleBtn) {
+                    elements.headerToggleBtn.addEventListener('click', toggleHeader);
+                }
+                
+                if (elements.mobileHeaderToggleBtn) {
+                    elements.mobileHeaderToggleBtn.addEventListener('click', toggleHeader);
+                }        
+
+                toggleButton.onclick = toggleHeader;
+                document.body.appendChild(toggleButton);
+                
+                // 鍵盤快捷鍵 (Ctrl+H)
+                document.addEventListener('keydown', (e) => {
+                    if (e.ctrlKey && e.key === 'h') {
+                        e.preventDefault();
+                        toggleHeader();
+                    }
+                });
+            }
+
+            function showMediaViewer(_unusedSrc, mediaType, startIndex = 0) {
+                if (!elements.mediaViewer || !elements.mediaViewerContent) return;
+
+                const currentEvent = getCurrentEvent();
+                const allMedia = currentEvent?.media || [];
+
+                // 建立圖片列表
+                const imageList = [];
+                allMedia.forEach((m, i) => {
+                    const isImg = (m.type === 'image' || m.media_type === 'image');
+                    if (isImg) imageList.push({ media: m, idx: i });
+                });
+
+                if (imageList.length === 0) return;
+
+                let viewerPos = Math.max(0, imageList.findIndex((x) => x.idx === startIndex));
+                if (viewerPos === -1) viewerPos = 0;
+
+                // 渲染當前圖片
+                function renderViewer() {
+                    elements.mediaViewerContent.innerHTML = '';
+                    
+                    if (mediaType === 'image' && imageList.length > 0) {
+                        const { media } = imageList[viewerPos];
+                        
+                        // 創建圖片容器
+                        const imgContainer = document.createElement('div');
+                        imgContainer.style.cssText = `
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        `;
+                        
+                        const img = document.createElement('img');
+                        const imgSrc = getMediaSrc(media);
+                        
+                        // *** 關鍵修正：處理MSE解密的圖片 ***
+                        if (imgSrc && imgSrc.includes('media/')) {
+                            img.setAttribute('data-needs-mse-decrypt', 'true');
+                            img.setAttribute('data-original-src', imgSrc);
+                            // 設定載入動畫
+                            img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJ1cmwoI2cpIi8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTUwIiByPSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM2I4MmY2IiBzdHJva2Utd2lkdGg9IjMiPjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiB2YWx1ZXM9IjAgMjAwIDE1MDszNjAgMjAwIDE1MCIgZHVyPSIxcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L2NpcmNsZT48L3N2Zz4=';
+                            
+                            // 觸發解密
+                            if (window.decryptSingleMedia) {
+                                setTimeout(() => {
+                                    window.decryptSingleMedia(img, false);
+                                }, 100);
+                            }
+                        } else {
+                            img.src = imgSrc;
+                        }
+                        
+                        img.alt = '全螢幕圖片';
+                        img.style.cssText = `
+                            max-width: 90vw;
+                            max-height: 90vh;
+                            object-fit: contain;
+                            cursor: pointer;
+                            border-radius: 8px;
+                            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                        `;
+                        
+                        imgContainer.appendChild(img);
+                        
+                        // *** 新增：左右導航按鈕 ***
+                        if (imageList.length > 1) {
+                            // 左按鈕
+                            const leftBtn = document.createElement('button');
+                            leftBtn.innerHTML = '‹';
+                            leftBtn.style.cssText = `
+                                position: absolute;
+                                left: 20px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                background: rgba(0,0,0,0.6);
+                                color: white;
+                                border: none;
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 50%;
+                                font-size: 24px;
+                                cursor: pointer;
+                                z-index: 1001;
+                                transition: all 0.2s ease;
+                                display: ${viewerPos > 0 ? 'block' : 'none'};
+                            `;
+                            leftBtn.onmouseover = () => leftBtn.style.background = 'rgba(0,0,0,0.8)';
+                            leftBtn.onmouseout = () => leftBtn.style.background = 'rgba(0,0,0,0.6)';
+                            leftBtn.onclick = (e) => {
+                                e.stopPropagation();
+                                if (viewerPos > 0) {
+                                    viewerPos--;
+                                    renderViewer();
+                                    goToMedia(imageList[viewerPos].idx);
+                                }
+                            };
+                            
+                            // 右按鈕
+                            const rightBtn = document.createElement('button');
+                            rightBtn.innerHTML = '›';
+                            rightBtn.style.cssText = `
+                                position: absolute;
+                                right: 20px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                background: rgba(0,0,0,0.6);
+                                color: white;
+                                border: none;
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 50%;
+                                font-size: 24px;
+                                cursor: pointer;
+                                z-index: 1001;
+                                transition: all 0.2s ease;
+                                display: ${viewerPos < imageList.length - 1 ? 'block' : 'none'};
+                            `;
+                            rightBtn.onmouseover = () => rightBtn.style.background = 'rgba(0,0,0,0.8)';
+                            rightBtn.onmouseout = () => rightBtn.style.background = 'rgba(0,0,0,0.6)';
+                            rightBtn.onclick = (e) => {
+                                e.stopPropagation();
+                                if (viewerPos < imageList.length - 1) {
+                                    viewerPos++;
+                                    renderViewer();
+                                    goToMedia(imageList[viewerPos].idx);
+                                }
+                            };
+                            
+                            imgContainer.appendChild(leftBtn);
+                            imgContainer.appendChild(rightBtn);
+                        }
+                        
+                        // *** 新增：關閉按鈕 ***
+                        const closeBtn = document.createElement('button');
+                        closeBtn.innerHTML = '×';
+                        closeBtn.style.cssText = `
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            background: rgba(0,0,0,0.6);
+                            color: white;
+                            border: none;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            font-size: 24px;
+                            cursor: pointer;
+                            z-index: 1001;
+                            transition: all 0.2s ease;
+                        `;
+                        closeBtn.onmouseover = () => closeBtn.style.background = 'rgba(0,0,0,0.8)';
+                        closeBtn.onmouseout = () => closeBtn.style.background = 'rgba(0,0,0,0.6)';
+                        closeBtn.onclick = (e) => {
+                            e.stopPropagation();
+                            hideMediaViewer();
+                        };
+                        
+                        imgContainer.appendChild(closeBtn);
+                        elements.mediaViewerContent.appendChild(imgContainer);
+                    }
+                }
+
+                // *** 修正：點擊背景關閉燈箱 ***
+                elements.mediaViewer.onclick = () => hideMediaViewer();
+                elements.mediaViewerContent.onclick = (e) => e.stopPropagation();
+
+                // 鍵盤事件處理
+                function onKeyDown(e) {
+                    if (mediaType !== 'image' || imageList.length <= 1) return;
+                    if (e.key === 'ArrowRight' && viewerPos < imageList.length - 1) {
+                        viewerPos++;
+                        renderViewer();
+                        goToMedia(imageList[viewerPos].idx);
+                    } else if (e.key === 'ArrowLeft' && viewerPos > 0) {
+                        viewerPos--;
+                        renderViewer();
+                        goToMedia(imageList[viewerPos].idx);
+                    } else if (e.key === 'Escape') {
+                        hideMediaViewer();
+                    }
+                }
+                document.addEventListener('keydown', onKeyDown);
+
+                // 顯示燈箱
+                elements.mediaViewer.classList.add('visible');
+                renderViewer();
+
+                // 清理函數
+                const originalHide = hideMediaViewer;
+                hideMediaViewer = function() {
+                    document.removeEventListener('keydown', onKeyDown);
+                    elements.mediaViewer.classList.remove('visible');
+                    hideMediaViewer = originalHide;
+                };
+            }
+
+            function hideMediaViewer() {
+                if (elements.mediaViewer) {
+                    elements.mediaViewer.classList.remove('visible');
+                }
+            }
+            
+            function getCurrentEvent() {
+                if (!MEMOIR_DATA || !MEMOIR_DATA.events) return null;
+                const sortedEvents = getSortedEvents();
+                return sortedEvents[currentEventIndex] || null;
+            }
+            
+            function getSortedEvents() {
+                if (!MEMOIR_DATA || !MEMOIR_DATA.events) return [];
+                return [...MEMOIR_DATA.events].sort((a, b) => 
+                    new Date(a.date).getTime() - new Date(b.date).getTime()
+                );
+            }
+            
+            function goToEvent(eventIndex) {
+                if (!MEMOIR_DATA || !MEMOIR_DATA.events) return;
+                
+                const sortedEvents = getSortedEvents();
+                if (eventIndex < 0 || eventIndex >= sortedEvents.length || eventIndex === currentEventIndex) return;
+                
+                if (elements.subtitleArea) elements.subtitleArea.classList.add('transitioning');
+                if (elements.mainContent) elements.mainContent.classList.add('transitioning');
+                
+                isTransitioning = true;
+                stopTypewriter();
+                
+                setTimeout(() => {
+                    currentEventIndex = eventIndex;
+                    currentMediaIndex = 0;
+                    loadEvent();
+                    
+                    renderProgressIndicator();
+                    
+                    setTimeout(() => {
+                        if (elements.subtitleArea) elements.subtitleArea.classList.remove('transitioning');
+                        if (elements.mainContent) elements.mainContent.classList.remove('transitioning');
+                        isTransitioning = false;
+                    }, 300);
+                }, 150);
+            }
+            
+            function goToMedia(mediaIndex) {
+                const currentEvent = getCurrentEvent();
+                if (!currentEvent || !currentEvent.media) return;
+                
+                if (mediaIndex < 0 || mediaIndex >= currentEvent.media.length || mediaIndex === currentMediaIndex) return;
+                
+                currentMediaIndex = mediaIndex;
+                displayMedia();
+                updateMediaNavigation();
+                renderThumbnails();
+                
+                if (showGrid) {
+                    renderGridView();
+                }
+            }
+            
+            function loadEvent() {
+                const currentEvent = getCurrentEvent();
+                if (!currentEvent) {
+                    return;
+                }
+                
+                // 更新事件信息
+                updateEventInfo(currentEvent);
+                
+                // 更新導航按鈕
+                updateEventNavigation();
+                
+                // 更新進度指示器
+                renderProgressIndicator();
+                
+                // 顯示媒體
+                displayMedia();
+                
+                // 更新媒體導航
+                updateMediaNavigation();
+                
+                // 渲染縮圖
+                renderThumbnails();
+                
+                // 如果是網格模式，渲染網格視圖
+                if (showGrid) {
+                    renderGridView();
+                }
+            }
+            
+            function updateEventInfo(event) {
+                if (!event) return;
+                
+                // 確保元素存在並更新
+                if (elements.currentEventNum) {
+                    elements.currentEventNum.textContent = currentEventIndex + 1;
+                }
+                if (elements.totalEvents) {
+                    elements.totalEvents.textContent = getSortedEvents().length;
+                }
+                
+                // 更新媒體計數
+                if (elements.mediaCount) {
+                    const totalMedia = event.media ? event.media.length : 0;
+                    elements.mediaCount.textContent = totalMedia;
+                }
+                
+                // 更新事件日期
+                if (elements.eventDate) {
+                    try {
+                        const eventDate = new Date(event.date).toLocaleDateString('zh-TW', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                        elements.eventDate.textContent = eventDate;
+                        elements.eventDate.style.display = 'block';
+                    } catch (e) {
+                        elements.eventDate.textContent = event.date;
+                        elements.eventDate.style.display = 'block';
+                    }
+                }
+                
+                // 更新事件標題
+                if (elements.eventTitle) {
+                    elements.eventTitle.textContent = event.title || '';
+                    elements.eventTitle.style.display = 'block';
+                    
+                    // 應用跑馬燈效果
+                    setTimeout(() => {
+                        applyMarqueeIfOverflow(elements.eventTitle);
+                    }, 100);
+                }
+                
+                // 更新事件描述
+                if (elements.eventDescription && showSubtitles) {
+                    elements.eventDescription.style.display = 'block';
+                    if (typewriterEnabled) {
+                        startTypewriter(event.description || '', elements.eventDescription);
+                    } else {
+                        elements.eventDescription.textContent = event.description || '';
+                    }
+                }
+                
+                // 確保字幕區域可見
+                if (elements.subtitleArea) {
+                    elements.subtitleArea.style.display = 'block';
+                    elements.subtitleArea.style.opacity = '1';
+                    elements.subtitleArea.style.visibility = 'visible';
+                }
+            }
+
+            // 新增媒體位置指示器更新函數
+            function updateMediaPositionIndicator() {
+                const currentEvent = getCurrentEvent();
+                if (!currentEvent || !currentEvent.media) return;
+                
+                // 更新媒體計數顯示 (修正 1/1 問題)
+                const mediaCountElement = document.querySelector('.media-count');
+                if (mediaCountElement) {
+                    mediaCountElement.textContent = `${currentMediaIndex + 1}/${currentEvent.media.length}`;
+                }
+            }            
+
+            function updateEventNavigation() {
+                const totalEvents = getSortedEvents().length;
+                
+                if (elements.prevEventBtn) {
+                    if (currentEventIndex === 0) {
+                        elements.prevEventBtn.classList.add('disabled');
+                    } else {
+                        elements.prevEventBtn.classList.remove('disabled');
+                    }
+                }
+                
+                if (elements.nextEventBtn) {
+                    if (currentEventIndex === totalEvents - 1) {
+                        elements.nextEventBtn.classList.add('disabled');
+                    } else {
+                        elements.nextEventBtn.classList.remove('disabled');
+                    }
+                }
+            }
+            
+            function displayMedia() {
+                const currentEvent = getCurrentEvent();
+                if (!currentEvent || !currentEvent.media || currentEvent.media.length === 0) {
+                    showNoMediaMessage();
+                    return;
+                }
+
+                const media = currentEvent.media[currentMediaIndex];
+                if (!media) {
+                    showNoMediaMessage();
+                    return;
+                }
+
+                if (elements.mediaDisplay) {
+                    elements.mediaDisplay.innerHTML = '';
+
+                    try {
+                        let mediaElement;
+
+                        if (media.type === 'image' || media.media_type === 'image') {
+                            mediaElement = document.createElement('img');
+                            
+                            // 確保圖片正確縮放
+                            mediaElement.style.cssText = `
+                                max-width: 100%;
+                                max-height: 100%;
+                                width: auto;
+                                height: auto;
+                                object-fit: contain;
+                                object-position: center;
+                                cursor: pointer;
+                                border-radius: 4px;
+                                display: block;
+                                margin: 0 auto;
+                            `;
+                            
+                            mediaElement.alt = '回憶錄圖片';
+
+                            mediaElement.onclick = () => {
+                                showMediaViewer(null, 'image', currentMediaIndex);
+                            };
+
+                            // MSE解密支持
+                            const imageSrc = getMediaSrc(media);
+                            
+                            if (imageSrc && imageSrc.includes('media/')) {
+                                mediaElement.setAttribute('data-needs-mse-decrypt', 'true');
+                                mediaElement.setAttribute('data-original-src', imageSrc);
+                                
+                                // 設定載入中的佔位圖
+                                mediaElement.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJ1cmwoI2cpIi8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTUwIiByPSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM2I4MmY2IiBzdHJva2Utd2lkdGg9IjMiPjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiB2YWx1ZXM9IjAgMjAwIDE1MDszNjAgMjAwIDE1MCIgZHVyPSIxcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L2NpcmNsZT48L3N2Zz4=';
+                                
+                                if (window.forceDecryptMedia) {
+                                    setTimeout(() => {
+                                        window.forceDecryptMedia();
+                                    }, 100);
+                                }
+                            } else {
+                                mediaElement.src = imageSrc;
+                                mediaElement.onerror = () => {
+                                    showMediaError('圖片載入失敗');
+                                };
+                            }
+
+                        } else if (media.type === 'video' || media.media_type === 'video') {
+                            if (media.isUrl && (media.url?.includes('youtube.com') || media.url?.includes('youtu.be'))) {
+                                const videoId = extractYouTubeId(media.url);
+                                if (videoId) {
+                                    const youtubeContainer = document.createElement('div');
+                                    youtubeContainer.className = 'youtube-container';
+                                    youtubeContainer.style.cssText = `
+                                        position: relative;
+                                        width: 100%;
+                                        height: 0;
+                                        padding-bottom: 56.25%;
+                                        overflow: hidden;
+                                        border-radius: 8px;
+                                    `;
+                                    
+                                    const iframe = document.createElement('iframe');
+                                    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1`;
+                                    iframe.setAttribute('allowfullscreen', '');
+                                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                                    iframe.style.cssText = `
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        border: none;
+                                    `;
+                                    
+                                    youtubeContainer.appendChild(iframe);
+                                    elements.mediaDisplay.appendChild(youtubeContainer);
+                                    return;
+                                }
+                            } else {
+                                mediaElement = document.createElement('video');
+                                mediaElement.style.cssText = `
+                                    max-width: 100%;
+                                    max-height: 100%;
+                                    width: auto;
+                                    height: auto;
+                                    object-fit: contain;
+                                    object-position: center;
+                                    cursor: pointer;
+                                `;
+                                mediaElement.controls = true;
+                                mediaElement.muted = true;
+                                mediaElement.playsInline = true;
+
+                                mediaElement.onclick = () => {
+                                    showMediaViewer(getMediaSrc(media), 'video');
+                                };
+                                
+                                const videoSrc = getMediaSrc(media);
+                                if (videoSrc && videoSrc.includes('media/')) {
+                                    mediaElement.setAttribute('data-needs-mse-decrypt', 'true');
+                                    mediaElement.setAttribute('data-original-src', videoSrc);
+                                    
+                                    if (window.forceDecryptMedia) {
+                                        setTimeout(() => {
+                                            window.forceDecryptMedia();
+                                        }, 100);
+                                    }
+                                } else {
+                                    mediaElement.src = videoSrc;
+                                }
+                            }
+                        }
+
+                        if (mediaElement) {
+                            elements.mediaDisplay.appendChild(mediaElement);
+                        }
+
+                        // 更新媒體計數器
+                        updateMediaCounterOverlay();
+
+                    } catch (error) {
+                        showMediaError(`媒體顯示錯誤: ${error.message}`);
+                    }
+                }
+            }
+
+            // 修正媒體計數器更新
+            function updateMediaCounterOverlay() {
+                const currentEvent = getCurrentEvent();
+                if (!currentEvent || !currentEvent.media) return;
+                
+                if (elements.mediaCounterOverlay) {
+                    const currentPos = currentMediaIndex + 1;
+                    const totalCount = currentEvent.media.length;
+                    elements.mediaCounterOverlay.textContent = `${currentPos} / ${totalCount}`;
+                    elements.mediaCounterOverlay.style.display = totalCount > 1 ? 'block' : 'none';
+                }
+            }            
+
+            function getMediaSrc(media) {
+                if (media.isUrl || media.is_url) {
+                    return media.url || media.path;
+                } else {
+                    let mediaSrc = media.path;
+                    
+                    if (!mediaSrc.startsWith('./') && !mediaSrc.startsWith('http')) {
+                        if (mediaSrc.startsWith('media/')) {
+                            mediaSrc = './' + mediaSrc;
+                        } else {
+                            // mediaSrc = './media/' + (mediaSrc.split('/').pop() || mediaSrc);
+                            mediaSrc = `./media/${media.filename}`;
+                        }
+                    }
+                    
+                    return mediaSrc;
+                }
+            }
+            
+            function extractYouTubeId(url) {
+                const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+                const match = url.match(regExp);
+                return (match && match[2].length === 11) ? match[2] : null;
+            }
+            
+            function showMediaError(message) {
+                if (elements.mediaDisplay) {
+                    elements.mediaDisplay.innerHTML = `
+                        <div style="text-align: center; color: #ef4444; padding: 40px;">
+                            <div style="font-size: 48px; margin-bottom: 20px;">❌</div>
+                            <div style="font-size: 16px;">${message}</div>
+                        </div>
+                    `;
+                }
+            }
+            
+            function showNoMediaMessage() {
+                if (elements.mediaDisplay) {
+                    const icon = ENCRYPTION_ENABLED ? '🔒' : '📷';
+                    elements.mediaDisplay.innerHTML = `
+                        <div style="text-align: center; color: #9ca3af; padding: 40px;">
+                            <div style="font-size: 48px; margin-bottom: 20px;">${icon}</div>
+                            <div style="font-size: 16px;">此時間節點沒有媒體內容</div>
+                        </div>
+                    `;
+                }
+            }
+            
+            function updateMediaNavigation() {
+                const currentEvent = getCurrentEvent();
+                if (!currentEvent || !currentEvent.media) return;
+
+                const totalMedia = currentEvent.media.length;
+                
+                // 更新導航按鈕狀態
+                if (elements.prevMediaBtn) {
+                    if (currentMediaIndex === 0) {
+                        elements.prevMediaBtn.classList.add('disabled');
+                        elements.prevMediaBtn.disabled = true;
+                    } else {
+                        elements.prevMediaBtn.classList.remove('disabled');
+                        elements.prevMediaBtn.disabled = false;
+                    }
+                }
+                
+                if (elements.nextMediaBtn) {
+                    if (currentMediaIndex === totalMedia - 1) {
+                        elements.nextMediaBtn.classList.add('disabled');
+                        elements.nextMediaBtn.disabled = true;
+                    } else {
+                        elements.nextMediaBtn.classList.remove('disabled');
+                        elements.nextMediaBtn.disabled = false;
+                    }
+                }
+                
+                // 更新媒體計數器
+                updateMediaCounterOverlay();
+            }
+
+            function showGridView() {
+                const currentEvent = getCurrentEvent();
+                if (!currentEvent || !currentEvent.media) return;
+
+                const gridContainer = document.getElementById('media-grid') || elements.mediaDisplay;
+                if (!gridContainer) return;
+
+                gridContainer.innerHTML = '';
+                gridContainer.className = 'media-grid';
+                gridContainer.style.display = 'grid';
+                gridContainer.style.gridTemplateColumns = 'repeat(auto-fill, minmax(200px, 1fr))';
+                gridContainer.style.gap = '16px';
+                gridContainer.style.padding = '16px';
+
+                currentEvent.media.forEach((media, index) => {
+                    const gridItem = document.createElement('div');
+                    gridItem.className = 'grid-item';
+                    gridItem.style.cursor = 'pointer';
+                    gridItem.style.borderRadius = '8px';
+                    gridItem.style.overflow = 'hidden';
+                    gridItem.style.aspectRatio = '1';
+                    gridItem.style.backgroundColor = '#f5f5f5';
+
+                    if (media.type === 'image' || media.media_type === 'image') {
+                        const img = document.createElement('img');
+                        img.style.width = '100%';
+                        img.style.height = '100%';
+                        img.style.objectFit = 'cover';
+                        img.alt = `圖片 ${index + 1}`;
+
+                        const imageSrc = getMediaSrc(media);
+                        
+                        if (imageSrc && imageSrc.includes('media/')) {
+                            img.setAttribute('data-needs-mse-decrypt', 'true');
+                            img.setAttribute('data-original-src', imageSrc);                            
+                            img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0idXJsKCNnKSIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNiODJmNiIgc3Ryb2tlLXdpZHRoPSIzIj48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InJvdGF0ZSIgdmFsdWVzPSIwIDEwMCAxMDA7MzYwIDEwMCAxMDAiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+PC9jaXJjbGU+PC9zdmc+';
+                        } else {
+                            img.src = imageSrc;
+                        }
+
+                        gridItem.appendChild(img);
+                    } else {
+                        // 影片圖示
+                        const videoIcon = document.createElement('div');
+                        videoIcon.innerHTML = '🎥';
+                        videoIcon.style.width = '100%';
+                        videoIcon.style.height = '100%';
+                        videoIcon.style.display = 'flex';
+                        videoIcon.style.alignItems = 'center';
+                        videoIcon.style.justifyContent = 'center';
+                        videoIcon.style.fontSize = '48px';
+                        gridItem.appendChild(videoIcon);
+                    }
+
+                    gridItem.onclick = () => {
+                        currentMediaIndex = index;
+                        displayMedia();
+                        // 可能需要切換回單一顯示模式
+                    };
+
+                    gridContainer.appendChild(gridItem);
+                });
+
+                // 觸發網格圖片解密
+                if (window.decryptThumbnails) {
+                    setTimeout(() => {
+                        window.decryptThumbnails();
+                    }, 200);
+                }
+            }            
+
+            // ===== 4. 修復媒體選擇器carousel =====
+            function renderThumbnails() {
+                if (!elements.thumbnailsScroll) {
+                    // 如果沒有 thumbnailsScroll，嘗試查找其他縮圖容器
+                    const thumbnailContainer = elements.mediaThumbnails || 
+                                            document.querySelector('.thumbnails-scroll') ||
+                                            document.querySelector('.media-thumbnails');
+                    if (!thumbnailContainer) return;
+                    
+                    // 創建縮圖容器結構
+                    if (!elements.thumbnailsScroll) {
+                        elements.thumbnailsScroll = thumbnailContainer;
+                    }
+                }
+                
+                const currentEvent = getCurrentEvent();
+                if (!currentEvent || !currentEvent.media) {
+                    elements.thumbnailsScroll.innerHTML = '';
+                    return;
+                }
+
+                elements.thumbnailsScroll.innerHTML = '';
+
+                currentEvent.media.forEach((media, index) => {
+                    const thumbnailItem = document.createElement('div');
+                    thumbnailItem.className = `thumbnail-item ${index === currentMediaIndex ? 'active' : ''}`;
+                    
+                    thumbnailItem.style.cssText = `
+                        position: relative;
+                        width: 60px;
+                        height: 60px;
+                        margin: 0 4px;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        cursor: pointer;
+                        border: 2px solid ${index === currentMediaIndex ? '#3b82f6' : 'transparent'};
+                        transition: all 0.2s ease;
+                        flex-shrink: 0;
+                        background: rgba(255, 255, 255, 0.1);
+                    `;
+                    
+                    thumbnailItem.onmouseover = () => {
+                        if (index !== currentMediaIndex) {
+                            thumbnailItem.style.border = '2px solid rgba(59, 130, 246, 0.5)';
+                        }
+                    };
+                    
+                    thumbnailItem.onmouseout = () => {
+                        if (index !== currentMediaIndex) {
+                            thumbnailItem.style.border = '2px solid transparent';
+                        }
+                    };
+                    
+                    thumbnailItem.onclick = () => goToMedia(index);
+
+                    const thumbnailImage = document.createElement('img');
+                    thumbnailImage.className = 'thumbnail-image';
+                    thumbnailImage.style.cssText = `
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    `;
+                    thumbnailImage.alt = `縮圖 ${index + 1}`;
+                    
+                    if ((media.type === 'video' || media.media_type === 'video') && 
+                        media.isUrl && (media.url?.includes('youtube.com') || media.url?.includes('youtu.be'))) {
+                        
+                        const videoId = extractYouTubeId(media.url);
+                        if (videoId) {
+                            thumbnailImage.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+                            
+                            thumbnailImage.onerror = () => {
+                                thumbnailImage.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjZmYwMDAwIi8+Cjx0ZXh0IHg9IjMwIiB5PSIzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmaWxsPSJ3aGl0ZSI+VklERU88L3RleHQ+Cjwvc3ZnPgo=';
+                            };
+                        }
+                    } else {
+                        const imageSrc = getMediaSrc(media);
+                        
+                        if (imageSrc && imageSrc.includes('media/')) {
+                            thumbnailImage.setAttribute('data-needs-mse-decrypt', 'true');
+                            thumbnailImage.setAttribute('data-original-src', imageSrc);
+                            
+                            thumbnailImage.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIGZpbGw9IiNmOWZhZmIiLz48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSI4IiBmaWxsPSJub25lIiBzdHJva2U9IiNkMWQ1ZGIiIHN0cm9rZS13aWR0aD0iMiI+PGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHZhbHVlcz0iMCAzMCAzMDszNjAgMzAgMzAiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+PC9jaXJjbGU+PC9zdmc+';
+                        } else {
+                            thumbnailImage.src = imageSrc;
+                            thumbnailImage.onerror = () => {
+                                thumbnailImage.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjZjVmNWY1Ii8+Cjx0ZXh0IHg9IjMwIiB5PSIzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjOTk5Ij7mlZnoqJTnj5E8L3RleHQ+Cjwvc3ZnPgo=';
+                            };
+                        }
+                    }
+
+                    thumbnailItem.appendChild(thumbnailImage);
+
+                    // 影片播放圖示
+                    if (media.type === 'video' || media.media_type === 'video') {
+                        const playIcon = document.createElement('div');
+                        playIcon.innerHTML = '▶';
+                        playIcon.style.cssText = `
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            color: white;
+                            font-size: 16px;
+                            text-shadow: 0 0 4px rgba(0,0,0,0.8);
+                            pointer-events: none;
+                        `;
+                        thumbnailItem.appendChild(playIcon);
+                    }
+
+                    elements.thumbnailsScroll.appendChild(thumbnailItem);
+                });
+                
+                // 觸發縮圖解密
+                if (window.decryptThumbnails) {
+                    setTimeout(() => {
+                        window.decryptThumbnails();
+                    }, 200);
+                }
+            }
+
+            // ===== 初始化所有改進功能 =====
+            function initializeUIImprovements() {
+                // 等待DOM載入完成
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', () => {
+                        setTimeout(() => {
+                            initCollapsibleHeader();
+                            // 確保媒體計數顯示正確
+                            if (getCurrentEvent()) {
+                                updateEventInfo(getCurrentEvent());
+                            }
+                        }, 1000);
+                    });
+                } else {
+                    setTimeout(() => {
+                        initCollapsibleHeader();
+                        if (getCurrentEvent()) {
+                            updateEventInfo(getCurrentEvent());
+                        }
+                    }, 1000);
+                }
+            }
+
+            function renderGridView() {
+                if (!elements.mediaGrid) return;
+                
+                const currentEvent = getCurrentEvent();
+                if (!currentEvent || !currentEvent.media) {
+                    elements.mediaGrid.innerHTML = '';
+                    return;
+                }
+
+                elements.mediaGrid.innerHTML = '';
+
+                currentEvent.media.forEach((media, index) => {
+                    const gridItem = document.createElement('div');
+                    gridItem.className = `grid-item ${index === currentMediaIndex ? 'active' : ''}`;
+                    gridItem.onclick = () => goToMedia(index);
+
+                    const gridContent = document.createElement('div');
+                    gridContent.className = 'grid-item-content';
+
+                    if ((media.type === 'video' || media.media_type === 'video') && 
+                        media.isUrl && (media.url?.includes('youtube.com') || media.url?.includes('youtu.be'))) {
+                        
+                        const videoId = extractYouTubeId(media.url);
+                        if (videoId) {
+                            const mediaElement = document.createElement('img');
+                            mediaElement.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+                            mediaElement.alt = `YouTube影片 ${index + 1}`;
+                            
+                            mediaElement.onerror = () => {
+                                mediaElement.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+                            };
+                            
+                            gridContent.appendChild(mediaElement);
+                        }
+                    } else {
+                        const mediaElement = document.createElement('img');
+                        
+                        // *** 修正：使用通用描述 ***
+                        mediaElement.alt = `媒體 ${index + 1}`;
+                        
+                        const imageSrc = getMediaSrc(media);
+                        
+                        // *** 關鍵修正：為網格圖片加入MSE解密支援 ***
+                        if (imageSrc && imageSrc.includes('media/')) {
+                            mediaElement.setAttribute('data-needs-mse-decrypt', 'true');
+                            mediaElement.setAttribute('data-original-src', imageSrc);
+                            
+                            // 網格載入動畫
+                            mediaElement.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0idXJsKCNnKSIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMTUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNiODJmNiIgc3Ryb2tlLXdpZHRoPSIzIj48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InJvdGF0ZSIgdmFsdWVzPSIwIDEwMCAxMDA7MzYwIDEwMCAxMDAiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+PC9jaXJjbGU+PC9zdmc+';
+                        } else {
+                            mediaElement.src = imageSrc;
+                            mediaElement.onerror = () => {
+                                mediaElement.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmNWY1ZjUiLz48dGV4dCB4PSIxMDAiIHk9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmaWxsPSIjOTk5Ij7osIHlpLHml5848L+UhjwvdGV4dD48L3N2Zz4=';
+                            };
+                        }
+
+                        gridContent.appendChild(mediaElement);
+                    }
+
+                    gridItem.appendChild(gridContent);
+                    elements.mediaGrid.appendChild(gridItem);
+                });
+                
+                // *** 觸發網格解密 ***
+                if (window.decryptThumbnails) {
+                    setTimeout(() => {
+                        window.decryptThumbnails();
+                    }, 200);
+                }
+            }
+            
+            function renderTimeline() {
+            if (!MEMOIR_DATA || !elements.timelineScroll) return;
+
+            const sortedEvents = getSortedEvents();
+            elements.timelineScroll.innerHTML = '<div class="timeline-line"></div>';
+
+            sortedEvents.forEach((event, index) => {
+                const item = document.createElement('div');
+                item.className = `timeline-item ${index === currentEventIndex ? 'active' : ''}`;
+
+                const node = document.createElement('div');
+                node.className = 'timeline-node';
+
+                const wrapper = document.createElement('div');
+                wrapper.className = 'timeline-event';
+
+                const content = document.createElement('div');
+                content.className = 'timeline-event-content';
+
+                const header = document.createElement('div');
+                header.className = 'timeline-event-header';
+
+                const dateEl = document.createElement('div');
+                dateEl.className = 'timeline-event-date';
+                dateEl.textContent = new Date(event.date).toLocaleDateString('zh-TW');
+
+                const titleEl = document.createElement('div');
+                titleEl.className = 'timeline-event-title';
+                titleEl.textContent = event.title;
+
+                const descEl = document.createElement('div');
+                descEl.className = 'timeline-event-description';
+                descEl.textContent = event.description;
+
+                header.append(dateEl, titleEl);
+                content.append(header, descEl);
+                wrapper.appendChild(content);
+
+                item.append(node, wrapper);
+                item.onclick = () => { goToEvent(index); hideTimeline(); };
+
+                elements.timelineScroll.appendChild(item);
+            });
+
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+            }
+
+            function handleKeyPress(e) {
+                if (elements.timelinePanel?.classList.contains('visible') || 
+                    elements.helpPanel?.classList.contains('visible') || 
+                    elements.mediaViewer?.classList.contains('visible')) {
+                    if (e.key === 'Escape') {
+                        e.preventDefault();
+                        hideTimeline();
+                        hideHelp();
+                        hideMediaViewer();
+                    }
+                    return;
+                }
+
+                if (!(elements.timelinePanel?.classList.contains('visible') ||
+                    elements.helpPanel?.classList.contains('visible') ||
+                    elements.mediaViewer?.classList.contains('visible'))) {
+                    const withCtrl = (e.ctrlKey || e.metaKey);
+                    if (withCtrl && (e.key === '+' || e.key === '=')) {
+                        e.preventDefault();
+                        setFontSize(fontSize === 'small' ? 'medium' : 'large');
+                        return;
+                    }
+                    if (withCtrl && e.key === '-') {
+                        e.preventDefault();
+                        setFontSize(fontSize === 'large' ? 'medium' : 'small');
+                        return;
+                    }
+                    if (withCtrl && e.key === '0') {
+                        e.preventDefault();
+                        setFontSize('medium');
+                        return;
+                    }
+                }
+
+                switch (e.key) {
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        if (currentEventIndex > 0) {
+                            goToEvent(currentEventIndex - 1);
+                        }
+                        break;
+                    case 'ArrowRight':
+                        e.preventDefault();
+                        if (MEMOIR_DATA && currentEventIndex < getSortedEvents().length - 1) {
+                            goToEvent(currentEventIndex + 1);
+                        }
+                        break;
+                    case 'Home':
+                        e.preventDefault();
+                        if (MEMOIR_DATA && MEMOIR_DATA.events) {
+                            goToEvent(0);
+                        }
+                        break;
+                    case 'End':
+                        e.preventDefault();
+                        if (MEMOIR_DATA && MEMOIR_DATA.events) {
+                            goToEvent(getSortedEvents().length - 1);
+                        }
+                        break;
+                    case 'g':
+                    case 'G':
+                        e.preventDefault();
+                        toggleGridMode();
+                        break;
+                    case 't':
+                    case 'T':
+                        e.preventDefault();
+                        showTimeline();
+                        break;
+                    case 'h':
+                    case 'H':
+                    case '?':
+                        e.preventDefault();
+                        showHelp();
+                        break;
+                    case 'Escape':
+                        e.preventDefault();
+                        if (showGrid) {
+                            toggleGridMode();
+                        }
+                        break;
+                    case ' ':
+                        e.preventDefault();
+                        const video = elements.mediaDisplay?.querySelector('video');
+                        if (video) {
+                            if (video.paused) {
+                                video.play();
+                            } else {
+                                video.pause();
+                            }
+                        }
+                        break;
+                }
+            }
+
+            function initTouchSwipe() {
+                let touchStartX = 0;
+                let touchEndX = 0;
+                const minSwipeDistance = 50;
+                
+                const swipeArea = elements.subtitleArea || document.body;
+                
+                swipeArea.addEventListener('touchstart', (e) => {
+                    touchStartX = e.touches[0].clientX;
+                }, { passive: true });
+                
+                swipeArea.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].clientX;
+                    const deltaX = touchEndX - touchStartX;
+                    
+                    if (Math.abs(deltaX) > minSwipeDistance) {
+                        if (deltaX > 0 && currentEventIndex > 0) {
+                            goToEvent(currentEventIndex - 1);
+                        } else if (deltaX < 0 && MEMOIR_DATA && currentEventIndex < getSortedEvents().length - 1) {
+                            goToEvent(currentEventIndex + 1);
+                        }
+                    }
+                }, { passive: true });
+            }
+            
+            function initializeApp() {
+                try {
+                    if (window._memoirAppInitialized) {
+                        console.log('應用已初始化，跳過重複執行');
+                        return;
+                    }
+                    window._memoirAppInitialized = true;
+
+                    if (!MEMOIR_DATA) {
+                        if (window.MEMOIR_DATA) {
+                            MEMOIR_DATA = window.MEMOIR_DATA;
+                        } else {
+                            if (typeof window.__bootApp__ === 'function') {
+                                setTimeout(() => window.__bootApp__(), 500);
+                            }
+                            return; 
+                        }
+                    }
+
+                    // 重新獲取可能缺失的元素
+                    if (!elements.thumbnailsScroll) {
+                        elements.thumbnailsScroll = document.getElementById('thumbnailsScroll') || 
+                                                document.querySelector('.thumbnails-scroll') ||
+                                                elements.mediaThumbnails;
+                    }
+                    
+                    if (!elements.subtitleArea) {
+                        elements.subtitleArea = document.getElementById('subtitleArea');
+                    }
+                    
+                    if (!elements.eventDate) {
+                        elements.eventDate = document.getElementById('eventDate');
+                    }
+                    
+                    if (!elements.eventTitle) {
+                        elements.eventTitle = document.getElementById('eventTitle');
+                    }
+                    
+                    if (!elements.eventDescription) {
+                        elements.eventDescription = document.getElementById('eventDescription');
+                    }
+                    
+                    if (!elements.mediaCounterOverlay) {
+                        elements.mediaCounterOverlay = document.getElementById('mediaCounterOverlay');
+                    }
+
+                    // 顯示主應用程式
+                    if (elements.app) elements.app.classList.remove('hidden');
+                    
+                    // 初始化 UI
+                    initEventListeners();
+                    updateGridToggle();
+                    updateSubtitleToggle();
+                    updateSubtitleVisibility();
+                    updateTypewriterToggle();
+                    updateFontSizeButtons();
+                    applyFontSize();
+
+                    // 添加媒體互動追蹤
+                    if (elements.mediaDisplay) {
+                        elements.mediaDisplay.addEventListener('click', () => {
+                            window.dispatchEvent(new CustomEvent('memoir:media_view', {
+                                detail: { 
+                                    eventIndex: currentEventIndex,
+                                    mediaIndex: currentMediaIndex 
+                                }
+                            }));
+                        });
+                    }
+                    
+                    // 事件切換追蹤
+                    const originalGoToEvent = goToEvent;
+                    goToEvent = function(index) {
+                        originalGoToEvent(index);
+                        // 發送事件切換追蹤
+                        if (window.trackPageView) {
+                            window.trackPageView('event_navigation');
+                        }
+                    };
+
+                    // 跑馬燈：回憶錄名稱（桌機 + 手機）
+                    const memoirTitleDesktop = document.querySelector('.title-text');
+                    const memoirTitleMobile  = document.querySelector('.mobile-title');
+                    applyMarqueeIfOverflow(memoirTitleDesktop);
+                    applyMarqueeIfOverflow(memoirTitleMobile);
+
+                    // 載入第一個事件
+                    if (MEMOIR_DATA.events && MEMOIR_DATA.events.length > 0) {
+                        loadEvent();
+                        // 初始化進度指示器
+                        renderProgressIndicator();
+                    } else {
+                        showEmptyState();
+                    }
+                    
+                    // 隱藏載入畫面
+                    setTimeout(() => {
+                        if (elements.loadingScreen) {
+                            elements.loadingScreen.classList.add('hidden');
+                        }
+                    }, 1000);
+
+                    (function sendView(){
+                        const memoirId = document.querySelector('meta[name="memoir-id"]')?.content || '';
+                        const backend  = document.querySelector('meta[name="backend-url"]')?.content || '';
+                        const payload  = {
+                            memoir_id: memoirId,
+                            page_path: location.pathname,
+                            repo_url: location.origin + location.pathname.split('/').slice(0,3).join('/'),
+                            approval_token: window.__APPROVAL__?.token || null, // ← 一起帶上，方便關聯
+                        };
+                        if (backend) {
+                            fetch(`${backend}/api/admin/track/view`, {
+                            method: 'POST',
+                            headers: {'Content-Type':'application/json'},
+                            body: JSON.stringify(payload)
+                            }).catch(()=>{});
+                        }
+                    })();
+
+                    // 初始化空間優化
+                    setTimeout(() => {
+                        optimizeMediaSpace();
+                    }, 200);
+                    
+                    // 設置初始狀態類
+                    if (isHeaderCollapsed) {
+                        document.body.classList.add('header-collapsed');
+                    }
+                    
+                    if (!showSubtitles) {
+                        document.body.classList.add('subtitle-hidden');
+                    }
+                } catch (error) {
+                    showError(`應用程式初始化失敗: ${error.message}`);
+                }
+            }
+            
+            function showEmptyState() {
+                if (elements.mediaDisplay) {
+                    const status = ENCRYPTION_ENABLED ? '加密回憶錄已載入' : '回憶錄已載入';
+                    elements.mediaDisplay.innerHTML = `
+                        <div style="text-align: center; color: #9ca3af; padding: 40px;">
+                            <div style="font-size: 18px; margin-bottom: 10px;">${status}</div>
+                            <div style="font-size: 14px;">但暫時沒有時間節點內容</div>
+                        </div>
+                    `;
+                }
+            }
+            
+            document.addEventListener('DOMContentLoaded', function () {
+                updateLoadingStatus('正在準備加密系統...');
+
+                if (typeof lucide !== 'undefined') {
+                    try { lucide.createIcons(); } catch (e) { console.warn(e); }
+                }
+
+                const getMode = () =>
+                document.querySelector('meta[name="encryption-mode"]')?.content || 'static';
+
+                function fillFromPreloadJSON() {
+                    if (window.MEMOIR_DATA?.events) return true;
+                    const el = document.getElementById('preloaded-memoir-data');
+                    if (!el) return false;
+                    try {
+                        const txt = el.textContent || '';
+                        window.MEMOIR_DATA = JSON.parse(txt);
+                        return !!window.MEMOIR_DATA?.events;
+                    } catch (e) {
+                        console.warn(e);
+                        return false;
+                    }
+                }
+
+                function bootIfReady() {
+                    const ready = fillFromPreloadJSON() || !!(window.MEMOIR_DATA && window.MEMOIR_DATA.events);
+                    if (ready) {
+                        if (typeof initializeApp === 'function') initializeApp();
+                        return true;
+                    }
+                    return false;
+                }
+
+                window.__bootApp__ = bootIfReady;
+
+                setTimeout(async () => {
+                updateLoadingStatus('正在檢查加密狀態...');
+                setTimeout(async () => {
+
+                    const ok = await (window.__preInitApproval__?.() ?? true);
+                    if (!ok) return;
+
+                    const initOK = initializeEncryption();
+                    if (!initOK) return;
+
+                    const mode = getMode();
+
+                    if (mode === 'server') {
+                    if (!bootIfReady()) {
+
+                        window.addEventListener(
+                        'memoir:decrypted',
+                        (e) => {
+                            if (e?.detail) window.MEMOIR_DATA = e.detail;
+                            bootIfReady();
+                        },
+                        { once: true }
+                        );
+
+                        setTimeout(() => {
+                        if (!bootIfReady()) {
+                            showError('伺服器解密逾時，請稍後再試或改用密碼解鎖。');
+                        }
+                        }, 15000);
+                    }
+                    } else {
+                    if (!bootIfReady()) {
+                        showError('初始化失敗：找不到 MEMOIR_DATA。請確認已注入預載 JSON，或密碼解鎖流程會呼叫 window.__bootApp__。');
+                    }
+                    }
+                }, 800);
+                }, 1500);
+            });
+
+            window.addEventListener('error', function(e) {
+                if (!elements.app || elements.app.classList.contains('hidden')) {
+                showError(`系統錯誤: ${e.error?.message || '未知錯誤'}`);
+                }
+            });
+
+            window.addEventListener('unhandledrejection', function(e) {
+                if (!elements.app || elements.app.classList.contains('hidden')) {
+                showError(`載入錯誤: ${e.reason?.message || '網路連接問題'}`);
+                }
+            });
+
+            const payload = {
+                memoir_id: window.__MEMOIR_ID__,
+                repo_url: window.location.origin + window.location.pathname.split('/').slice(0,3).join('/'),
+                page_path: window.location.pathname
+            };
+
+            window.initializeMemoirApp = initializeApp;
+
+            // 覆蓋原有的媒體切換函數，確保計數更新
+            const originalGoToMedia = goToMedia;
+            goToMedia = function(mediaIndex) {
+                originalGoToMedia(mediaIndex);
+                updateMediaPositionIndicator();
+                
+                // 更新縮圖active狀態
+                const thumbnails = document.querySelectorAll('.thumbnail-item');
+                thumbnails.forEach((thumb, index) => {
+                    if (index === mediaIndex) {
+                        thumb.classList.add('active');
+                        thumb.style.border = '2px solid #3b82f6';
+                    } else {
+                        thumb.classList.remove('active');
+                        thumb.style.border = '2px solid transparent';
+                    }
+                });
+            };
+
+            // 啟動所有改進
+            initializeUIImprovements();
+        })();
+    
+
+// ========== 提取的腳本區塊 ==========
+
+        // 確保 blockedScreen 的重新嘗試按鈕正常工作
+        document.addEventListener('DOMContentLoaded', function() {
+            const retryBtn = document.getElementById('retryBtn');
+            if (retryBtn) {
+                retryBtn.addEventListener('click', () => {
+                    location.reload();
+                });
+            }
+        });
+
+        // 也可以直接設置（防止 DOMContentLoaded 已經觸發的情況）
+        document.getElementById('retryBtn')?.addEventListener('click', () => {
+            location.reload();
+        });
+    
+
+// ========== 提取的腳本區塊 ==========
+
+        if (window.autoDecrypt && !window.decryptMemoirData) {
+        window.decryptMemoirData = window.autoDecrypt;
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.autoDecrypt) {
+                window.autoDecrypt();
+            } else {
+                if (typeof window.showError === 'function') {
+                window.showError('系統錯誤：缺少解密組件');
+                }
+            }
+        });
+
+        window.addEventListener('memoir:authorized', () => {
+        window.autoDecrypt && window.autoDecrypt();
+        });
+    
+
+// ========== 提取的腳本區塊 ==========
+
+        // 🔒 安全全域變數初始化
+        window.secureGlobals = {
+            MEMOIR_DATA: null,
+            decryptionMode: null,
+            decryptionAttempts: 0,
+            MAX_ATTEMPTS: 5,
+            lastAccessTime: null,
+            sessionExpiry: null
+        };
+        
+        window.secureUtils = {
+            showDecryptionError: function(message) {
+                console.error('🔒 解密錯誤:', message);
+                if (typeof window.showError === 'function') {
+                    window.showError(message);
+                } else {
+                    alert('錯誤: ' + message);
+                }
+            },
+            
+            initializeApp: function() {
+                console.log('🚀 初始化應用程式');
+                if (typeof window.onMemoirDecrypted === 'function') {
+                    window.onMemoirDecrypted(secureGlobals.MEMOIR_DATA);
+                } else {
+                    console.log('✅ 回憶錄解密完成，資料可用');
+                }
+            }
+        };
+        
+        console.log('🔒 安全框架初始化完成');
+    
+
+// ========== 提取的腳本區塊 ==========
+
+            // 混合解密模式：密碼驗證 + 後端金鑰
+            console.log('🔐 載入混合解密模式');
+            
+            window.passwordModeData = 'eyJjaGluZXNlX25hbWUiOiLplovnmbzogIXml6XoqowiLCJjcmVhdGVkQXQiOiIyMDI1LTA5LTA5VDA1OjAxOjEyLjI1MDcxNzMwMCswMDowMCIsImVuZ2xpc2hfbmFtZSI6ImRldmVsb3Blci1sb2ciLCJldmVudHMiOlt7ImRhdGUiOiIyMDI1LTA5LTA5IiwiZGVzY3JpcHRpb24iOiLlpqXljZTkuoZcblxu55yL5L6GVGF1cmnlsLHmmK/kuIDplovlp4vopoHlrprnvqnmuIXmpZropoHnlKjom4flnovpgoTmmK/pp53ls7DlnovnmoTlnovliKXlkI3nqLHvvIzliKrpmaTlv6vlj5bkuYvpoZ7nmoTpg73mspLmnInmlYjmnpwiLCJpZCI6IjE3NTczOTQxMTUwNzIiLCJtZWRpYSI6W3siZmlsZW5hbWUiOiJwcmV2aWV3LndlYnAiLCJpZCI6IjMyOTQ0NmVjLWExOTktNDJjZi04ZjM4LTZhMzhlM2M0OGVlNiIsImlzVXJsIjpmYWxzZSwib3JpZ2luYWxOYW1lIjoicHJldmlldy53ZWJwIiwicGF0aCI6Im1lZGlhL3ByZXZpZXcud2VicCIsInR5cGUiOiJpbWFnZSIsInVybCI6bnVsbH0seyJmaWxlbmFtZSI6IlNfXzU3Mjk0OTEzLmpwZyIsImlkIjoiY2NhYzAyNmMtYTkwYy00MjMwLTkyMmEtZjg0ZmYwZTM0MWZiIiwiaXNVcmwiOmZhbHNlLCJvcmlnaW5hbE5hbWUiOiJTX181NzI5NDkxMy5qcGciLCJwYXRoIjoibWVkaWEvU19fNTcyOTQ5MTMuanBnIiwidHlwZSI6ImltYWdlIiwidXJsIjpudWxsfV0sIm9yZGVyIjowLCJ0aXRsZSI6IuS/ruaUueS6humXnOaWvOWRveWQjeeahOWVj+mhjCJ9LHsiZGF0ZSI6IjIwMjUtMDktMDkiLCJkZXNjcmlwdGlvbiI6IuS/ruaUueS6huS4u+imgeaqlOahiFxuZnJvbnRlbmRfZW5jcnlwdGlvbi5yc1xubWVkaWFfc3RlYWx0aF9lbmNyeXB0aW9uLnJzXG5tZW1vaXJfY29tbWFuZHMucnMiLCJpZCI6IjE3NTc0MjQxMzM5NzIiLCJtZWRpYSI6W3siZmlsZW5hbWUiOiJTX181NzI3ODU4Ny5qcGciLCJpZCI6IjdkZTVkMDEzLWFlNzYtNDExYi1hMzRkLTE4YjMxMGM1N2ZjZSIsImlzVXJsIjpmYWxzZSwib3JpZ2luYWxOYW1lIjoiU19fNTcyNzg1ODcuanBnIiwicGF0aCI6Im1lZGlhL1NfXzU3Mjc4NTg3LmpwZyIsInR5cGUiOiJpbWFnZSIsInVybCI6bnVsbH1dLCJvcmRlciI6MSwidGl0bGUiOiLlj6/ku6Xkvb/nlKhNU0XliqDlr4blrozmiJDlqpLpq5TmqpTmoYjkv53orbcifV0sImlkIjoiNDU0OGI5MjktNWMxNi00ZWU3LWExODktNjA2NzllMjE2NWJlIiwibGFzdE1vZGlmaWVkIjoiMjAyNS0wOS0wOVQxMzoyMjoyNy42NjUzNzM5MDArMDA6MDAifQ==|5377171fcec1791d45b66c2c70ef41f7';
+            const [encodedData, expectedPasswordHash] = window.passwordModeData.split('|');
+            
+            // 🚨 新增：重新整理狀態檢查函數
+            function checkRefreshState() {
+                const hasSessionFlag = sessionStorage.getItem('mf_pw_unlocked') === '1';
+                const hasActualData = !!(window.MEMOIR_DATA && window.MEMOIR_DATA.events && window.MEMOIR_DATA.events.length > 0);
+                
+                console.log('🔄 檢查重新整理狀態:', {
+                    hasSessionFlag,
+                    hasActualData,
+                    memoirDataExists: !!window.MEMOIR_DATA,
+                    eventsCount: window.MEMOIR_DATA?.events?.length || 0
+                });
+                
+                // 如果有 session 標記但沒有實際數據，說明是重新整理後的狀態
+                if (hasSessionFlag && !hasActualData) {
+                    console.log('⚠️ 檢測到重新整理狀態，清除 session 並顯示密碼輸入');
+                    
+                    // 清除無效的 session
+                    sessionStorage.removeItem('mf_pw_unlocked');
+                    
+                    // 立即顯示密碼輸入介面
+                    setTimeout(() => {
+                        const loadingScreen = document.getElementById('loadingScreen');
+                        const passwordModal = document.getElementById('passwordModal');
+                        const app = document.getElementById('app');
+                        
+                        if (loadingScreen) loadingScreen.classList.add('hidden');
+                        if (app) app.classList.add('hidden');
+                        if (passwordModal) {
+                            passwordModal.classList.remove('hidden');
+                            console.log('🔒 已顯示密碼輸入介面');
+                            
+                            // 聚焦到密碼輸入框
+                            const passwordInput = document.getElementById('memoirPassword');
+                            if (passwordInput) {
+                                passwordInput.focus();
+                                passwordInput.value = '';
+                            }
+                        }
+                    }, 100);
+                    
+                    return true; // 表示需要重新輸入密碼
+                }
+                
+                return false; // 表示狀態正常
+            }
+            
+            // 內部解密函數（保持原有邏輯）
+            window._internalAutoDecrypt = async function(passwordInput) {
+                console.log('🔍 _internalAutoDecrypt 被調用');
+                
+                try {
+                    let password = null;
+                    
+                    if (typeof passwordInput === 'string') {
+                        password = passwordInput.trim();
+                    } else if (passwordInput && typeof passwordInput === 'object') {
+                        if (passwordInput.password) {
+                            password = passwordInput.password.trim();
+                        } else if (passwordInput['0'] !== undefined) {
+                            const chars = [];
+                            let i = 0;
+                            while (passwordInput[i] !== undefined) {
+                                chars.push(passwordInput[i]);
+                                i++;
+                            }
+                            password = chars.join('').trim();
+                        }
+                    }
+                    
+                    if (!password || password.length === 0) {
+                        console.error('❌ 無法解析密碼參數');
+                        return false;
+                    }
+                    
+                    console.log('🔑 開始密碼驗證，長度:', password.length);
+                    
+                    if (encodedData && expectedPasswordHash) {
+                        const calculatedHash = await hashPassword(password);
+                        
+                        if (calculatedHash === expectedPasswordHash) {
+                            console.log('✅ 密碼驗證成功');
+                            
+                            try {
+                                const decodedBytes = Uint8Array.from(atob(encodedData), c => c.charCodeAt(0));
+                                const textDecoder = new TextDecoder('utf-8', { fatal: true });
+                                const decodedText = textDecoder.decode(decodedBytes);
+                                const memoirData = JSON.parse(decodedText);
+                                
+                                if (!memoirData || typeof memoirData !== 'object') {
+                                    throw new Error('解密後的數據無效');
+                                }
+                                
+                                // 🚨 關鍵：正確設置全域數據
+                                window.MEMOIR_DATA = memoirData;
+                                
+                                // 🚨 重要：立即更新 UI 狀態
+                                sessionStorage.setItem('mf_pw_unlocked', '1');
+                                
+                                // 隱藏密碼輸入，顯示應用
+                                const passwordModal = document.getElementById('passwordModal');
+                                const app = document.getElementById('app');
+                                const loadingScreen = document.getElementById('loadingScreen');
+                                
+                                if (passwordModal) passwordModal.classList.add('hidden');
+                                if (loadingScreen) loadingScreen.classList.add('hidden');
+                                if (app) app.classList.remove('hidden');
+                                
+                                // 觸發解密完成事件
+                                const decryptEvent = new CustomEvent('memoir:decrypted', { 
+                                    detail: { data: memoirData, mode: 'password' }
+                                });
+                                window.dispatchEvent(decryptEvent);
+                                
+                                // 觸發應用啟動
+                                setTimeout(() => {
+                                    if (typeof window.__bootApp__ === 'function') {
+                                        window.__bootApp__();
+                                    } else if (typeof initializeApp === 'function') {
+                                        initializeApp();
+                                    }
+                                }, 100);
+                                
+                                console.log('✅ 密碼解密完成');
+                                return true;
+                                
+                            } catch (decodeError) {
+                                console.error('❌ 數據解碼失敗:', decodeError);
+                                return false;
+                            }
+                        } else {
+                            console.log('❌ 密碼驗證失敗');
+                            return false;
+                        }
+                    }
+                    
+                    return false;
+                    
+                } catch (error) {
+                    console.error('🚨 解密過程發生錯誤:', error);
+                    return false;
+                }
+            };
+            
+            // 代理函數
+            window.autoDecrypt = async function(opts = {}) {
+                console.log('🔍 autoDecrypt 被調用');
+                
+                // 🚨 首先檢查是否是重新整理狀態
+                if (checkRefreshState()) {
+                    console.log('🔄 檢測到重新整理狀態，等待用戶輸入密碼');
+                    return false;
+                }
+                
+                let password = null;
+                
+                if (typeof opts === 'string') {
+                    password = opts;
+                } else if (opts && typeof opts === 'object') {
+                    if (opts.password) {
+                        password = opts.password;
+                    } else if (opts['0'] !== undefined) {
+                        const chars = [];
+                        let i = 0;
+                        while (opts[i] !== undefined) {
+                            chars.push(opts[i]);
+                            i++;
+                        }
+                        password = chars.join('');
+                    }
+                }
+                
+                if (!password) {
+                    console.log('🔍 無密碼參數，檢查是否需要顯示密碼輸入');
+                    
+                    // 如果沒有密碼參數，顯示密碼輸入介面
+                    setTimeout(() => {
+                        const loadingScreen = document.getElementById('loadingScreen');
+                        const passwordModal = document.getElementById('passwordModal');
+                        const app = document.getElementById('app');
+                        
+                        if (loadingScreen) loadingScreen.classList.add('hidden');
+                        if (app) app.classList.add('hidden');
+                        if (passwordModal) {
+                            passwordModal.classList.remove('hidden');
+                            console.log('🔒 顯示密碼輸入介面');
+                        }
+                    }, 100);
+                    
+                    return false;
+                }
+                
+                return await window._internalAutoDecrypt(password);
+            };
+
+            // 密碼哈希函數
+            async function hashPassword(password) {
+                try {
+                    const saltedPassword = password + '_memoir_salt_2024';
+                    const encoder = new TextEncoder();
+                    const data = encoder.encode(saltedPassword);
+                    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+                    const hashArray = Array.from(new Uint8Array(hashBuffer));
+                    const fullHash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+                    return fullHash.substring(0, 32);
+                } catch (e) {
+                    console.warn('⚠️ 使用備用哈希算法');
+                    let hash = 0;
+                    const saltedPassword = password + '_memoir_salt_2024';
+                    for (let i = 0; i < saltedPassword.length; i++) {
+                        const char = saltedPassword.charCodeAt(i);
+                        hash = ((hash << 5) - hash) + char;
+                        hash = hash & hash;
+                    }
+                    return Math.abs(hash).toString(16).padStart(8, '0').repeat(4).substring(0, 32);
+                }
+            }
+            
+            // 🚨 頁面載入完成後立即檢查狀態
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    setTimeout(() => {
+                        console.log('🔄 頁面載入完成，檢查重新整理狀態');
+                        checkRefreshState();
+                    }, 500);
+                });
+            } else {
+                setTimeout(() => {
+                    console.log('🔄 立即檢查重新整理狀態');
+                    checkRefreshState();
+                }, 500);
+            }
+            
+            console.log('✅ 混合解密模式載入完成');
+        
+
+// ========== 提取的腳本區塊 ==========
+
+            // MSE 媒體檔案自動解密程式碼 - 性能優化版
+            (function() {
+                'use strict';
+                
+                console.log('🔓 MSE媒體解密模組已載入 (性能優化版)');
+                
+                const MSE_OFFSET = 37;
+                const GITHUB_BASE_URL = 'https://maso0310.github.io/memoir-developer-log/media/';
+                
+                // *** 新增：Blob URL 管理器 ***
+                class BlobURLManager {
+                    constructor() {
+                        this.urls = new Map();
+                        this.maxCacheSize = 20; // 最多快取20個解密的媒體
+                        this.cacheHits = new Map(); // 追蹤使用頻率
+                    }
+                    
+                    // 獲取快取的 URL 或創建新的
+                    getOrCreate(key, blob) {
+                        if (this.urls.has(key)) {
+                            this.cacheHits.set(key, (this.cacheHits.get(key) || 0) + 1);
+                            console.log(`♻️ 重用 Blob URL: ${key}`);
+                            return this.urls.get(key);
+                        }
+                        
+                        // 檢查快取大小，清理舊的 URL
+                        if (this.urls.size >= this.maxCacheSize) {
+                            this.cleanupOldest();
+                        }
+                        
+                        const url = URL.createObjectURL(blob);
+                        this.urls.set(key, url);
+                        this.cacheHits.set(key, 1);
+                        console.log(`🆕 創建 Blob URL: ${key}`);
+                        return url;
+                    }
+                    
+                    // 清理最少使用的 URL
+                    cleanupOldest() {
+                        const entries = Array.from(this.cacheHits.entries())
+                            .sort((a, b) => a[1] - b[1]); // 按使用次數排序
+                        
+                        const toRemove = entries.slice(0, 5); // 移除5個最少使用的
+                        for (const [key] of toRemove) {
+                            const url = this.urls.get(key);
+                            if (url) {
+                                URL.revokeObjectURL(url);
+                                this.urls.delete(key);
+                                this.cacheHits.delete(key);
+                                console.log(`🗑️ 清理舊 Blob URL: ${key}`);
+                            }
+                        }
+                    }
+                    
+                    // 清理所有 URL
+                    cleanup() {
+                        for (const [key, url] of this.urls) {
+                            URL.revokeObjectURL(url);
+                            console.log(`🗑️ 清理 Blob URL: ${key}`);
+                        }
+                        this.urls.clear();
+                        this.cacheHits.clear();
+                    }
+                }
+                
+                // 全域 Blob URL 管理器實例
+                const blobManager = new BlobURLManager();
+                
+                // 頁面卸載時清理所有 URL
+                window.addEventListener('beforeunload', () => {
+                    blobManager.cleanup();
+                });
+                
+                // *** 新增：解密結果快取 ***
+                const decryptCache = new Map();
+                
+                // 創建載入動畫的CSS樣式
+                const loadingStyles = `
+                    .mse-loading-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
+                        min-height: 200px;
+                        background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+                        border-radius: 8px;
+                        backdrop-filter: blur(10px);
+                    }
+                    
+                    .mse-loading-spinner {
+                        width: 40px;
+                        height: 40px;
+                        border: 3px solid rgba(255,255,255,0.3);
+                        border-top: 3px solid #3b82f6;
+                        border-radius: 50%;
+                        animation: mse-spin 1s linear infinite;
+                    }
+                    
+                    .mse-loading-text {
+                        margin-left: 12px;
+                        color: rgba(255,255,255,0.8);
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                    
+                    .mse-thumbnail-loading {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                                    linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                                    linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                                    linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+                        background-size: 20px 20px;
+                        background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+                        animation: mse-loading-bg 1s linear infinite;
+                    }
+                    
+                    .mse-thumbnail-spinner {
+                        width: 24px;
+                        height: 24px;
+                        border: 2px solid rgba(0,0,0,0.1);
+                        border-top: 2px solid #3b82f6;
+                        border-radius: 50%;
+                        animation: mse-spin 0.8s linear infinite;
+                    }
+                    
+                    @keyframes mse-spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                    
+                    @keyframes mse-loading-bg {
+                        0% { background-position: 0 0, 0 10px, 10px -10px, -10px 0px; }
+                        100% { background-position: 20px 20px, 20px 30px, 30px 10px, 10px 20px; }
+                    }
+                    
+                    /* 隱藏成功解密後的邊框 */
+                    .mse-decrypted {
+                        border: none !important;
+                    }
+                    
+                    /* 縮圖容器樣式 */
+                    .mse-thumbnail-container {
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 4px;
+                    }
+                `;
+                
+                // 注入樣式
+                if (!document.getElementById('mse-styles')) {
+                    const styleSheet = document.createElement('style');
+                    styleSheet.id = 'mse-styles';
+                    styleSheet.textContent = loadingStyles;
+                    document.head.appendChild(styleSheet);
+                }
+                
+                // MSE位元組偏移解密函數
+                function mseByteDecode(encryptedData) {
+                    const decrypted = new Uint8Array(encryptedData.length);
+                    for (let i = 0; i < encryptedData.length; i++) {
+                        decrypted[i] = (encryptedData[i] + 256 - MSE_OFFSET) % 256;
+                    }
+                    return decrypted;
+                }
+                
+                // 創建載入中的佔位元素
+                function createLoadingPlaceholder(isLarge = true) {
+                    const container = document.createElement('div');
+                    if (isLarge) {
+                        container.className = 'mse-loading-container';
+                        const spinner = document.createElement('div');
+                        spinner.className = 'mse-loading-spinner';
+                        const text = document.createElement('div');
+                        text.className = 'mse-loading-text';
+                        text.textContent = '正在解密圖片...';
+                        container.appendChild(spinner);
+                        container.appendChild(text);
+                    } else {
+                        container.className = 'mse-thumbnail-loading';
+                        const spinner = document.createElement('div');
+                        spinner.className = 'mse-thumbnail-spinner';
+                        container.appendChild(spinner);
+                    }
+                    return container;
+                }
+                
+                // 載入並解密媒體檔案 - 優化版本，使用緩存和 Blob URL 管理
+                async function loadAndDecryptMedia(mediaUrl) {
+                    try {
+                        // 檢查解密結果緩存
+                        if (decryptCache.has(mediaUrl)) {
+                            console.log(`♻️ 使用快取解密結果: ${mediaUrl}`);
+                            const cachedData = decryptCache.get(mediaUrl);
+                            return blobManager.getOrCreate(mediaUrl, cachedData.blob);
+                        }
+                        
+                        console.log(`📥 載入加密檔案: ${mediaUrl}`);
+                        
+                        const response = await fetch(mediaUrl);
+                        if (!response.ok) {
+                            throw new Error(`載入失敗: ${response.status}`);
+                        }
+                        
+                        const encryptedBuffer = await response.arrayBuffer();
+                        const encryptedData = new Uint8Array(encryptedBuffer);
+                        
+                        // 執行MSE解密
+                        const decryptedData = mseByteDecode(encryptedData);
+                        
+                        // 判斷檔案類型並設定MIME
+                        let mimeType = 'application/octet-stream';
+                        if (decryptedData[0] === 0xFF && decryptedData[1] === 0xD8) {
+                            mimeType = 'image/jpeg';
+                        } else if (decryptedData[0] === 0x89 && decryptedData[1] === 0x50) {
+                            mimeType = 'image/png';
+                        } else if (decryptedData.slice(8, 12).every((b, i) => b === [0x57, 0x45, 0x42, 0x50][i])) {
+                            mimeType = 'image/webp';
+                        }
+                        
+                        const blob = new Blob([decryptedData], { type: mimeType });
+                        
+                        // 快取解密結果（只快取 blob 對象，不快取 URL）
+                        decryptCache.set(mediaUrl, { blob, mimeType });
+                        
+                        // 使用 Blob URL 管理器創建和管理 URL
+                        const decryptedUrl = blobManager.getOrCreate(mediaUrl, blob);
+                        
+                        console.log(`✅ 解密完成: ${mediaUrl}`);
+                        return decryptedUrl;
+                        
+                    } catch (error) {
+                        console.error(`❌ 解密失敗 ${mediaUrl}:`, error);
+                        return null;
+                    }
+                }
+                
+                // 處理單個媒體元素的解密
+                async function decryptSingleMediaElement(element, isThumbnail = false) {
+                    const originalSrc = element.getAttribute('data-original-src');
+                    if (!originalSrc) return false;
+                    
+                    // 構建完整URL
+                    let fullUrl;
+                    if (originalSrc.startsWith('media/')) {
+                        const filename = originalSrc.replace('media/', '');
+                        fullUrl = GITHUB_BASE_URL + filename;
+                    } else if (originalSrc.includes('/media/')) {
+                        fullUrl = originalSrc;
+                    } else {
+                        return false;
+                    }
+                    
+                    console.log(`🔄 處理${isThumbnail ? '縮圖' : '媒體'}元素: ${fullUrl}`);
+                    
+                    // 顯示載入動畫
+                    if (isThumbnail) {
+                        // 為縮圖創建載入狀態
+                        const parent = element.parentElement;
+                        if (parent) {
+                            const loadingElement = createLoadingPlaceholder(false);
+                            loadingElement.style.position = 'absolute';
+                            loadingElement.style.top = '0';
+                            loadingElement.style.left = '0';
+                            loadingElement.style.width = '100%';
+                            loadingElement.style.height = '100%';
+                            loadingElement.style.zIndex = '1';
+                            parent.style.position = 'relative';
+                            parent.appendChild(loadingElement);
+                            
+                            const decryptedUrl = await loadAndDecryptMedia(fullUrl);
+                            if (decryptedUrl) {
+                                element.src = decryptedUrl;
+                                element.classList.add('mse-decrypted');
+                                element.removeAttribute('data-needs-mse-decrypt');
+                                parent.removeChild(loadingElement);
+                                console.log(`✅ 縮圖解密成功`);
+                                return true;
+                            } else {
+                                parent.removeChild(loadingElement);
+                                console.log(`❌ 縮圖解密失敗`);
+                                return false;
+                            }
+                        }
+                    } else {
+                        const decryptedUrl = await loadAndDecryptMedia(fullUrl);
+                        if (decryptedUrl) {
+                            element.src = decryptedUrl;
+                            element.classList.add('mse-decrypted'); // 移除邊框的class
+                            element.removeAttribute('data-needs-mse-decrypt');
+                            console.log(`✅ 媒體元素解密成功`);
+                            return true;
+                        } else {
+                            console.log(`❌ 媒體元素解密失敗`);
+                            return false;
+                        }
+                    }
+                }
+                
+                // *** 新增：非阻塞解密隊列管理器 ***
+                class NonBlockingDecryptQueue {
+                    constructor() {
+                        this.queue = [];
+                        this.isProcessing = false;
+                        this.maxConcurrent = 2; // 最多同時處理2個解密任務
+                        this.processingCount = 0;
+                        this.batchSize = 3; // 每批次處理3個項目
+                    }
+                    
+                    // 添加解密任務到隊列
+                    addTask(element, priority = 0) {
+                        const task = {
+                            element,
+                            priority,
+                            timestamp: Date.now(),
+                            isThumbnail: this.isThumbnailElement(element)
+                        };
+                        
+                        // 按優先級排序插入
+                        const insertIndex = this.queue.findIndex(t => t.priority < priority);
+                        if (insertIndex === -1) {
+                            this.queue.push(task);
+                        } else {
+                            this.queue.splice(insertIndex, 0, task);
+                        }
+                        
+                        this.scheduleProcessing();
+                    }
+                    
+                    // 判斷是否為縮圖元素
+                    isThumbnailElement(element) {
+                        return element.closest('.media-thumbnail, .carousel-thumbnail, .thumbnail, .grid-item, .media-grid') !== null;
+                    }
+                    
+                    // 使用 requestAnimationFrame 調度處理
+                    scheduleProcessing() {
+                        if (!this.isProcessing) {
+                            this.isProcessing = true;
+                            requestAnimationFrame(() => this.processQueue());
+                        }
+                    }
+                    
+                    // 非阻塞處理隊列
+                    async processQueue() {
+                        const startTime = performance.now();
+                        const maxProcessingTime = 16; // 限制每幀處理時間為16ms
+                        
+                        while (this.queue.length > 0 && 
+                               this.processingCount < this.maxConcurrent && 
+                               (performance.now() - startTime) < maxProcessingTime) {
+                            
+                            const task = this.queue.shift();
+                            if (!task) break;
+                            
+                            // 檢查元素是否還在DOM中
+                            if (!document.contains(task.element)) {
+                                continue;
+                            }
+                            
+                            // 非同步處理，不等待完成
+                            this.processingCount++;
+                            this.processTaskAsync(task)
+                                .finally(() => {
+                                    this.processingCount--;
+                                    // 如果還有任務，繼續處理
+                                    if (this.queue.length > 0) {
+                                        this.scheduleProcessing();
+                                    }
+                                });
+                        }
+                        
+                        // 如果還有任務等待處理，在下一幀繼續
+                        if (this.queue.length > 0) {
+                            setTimeout(() => this.scheduleProcessing(), 1);
+                        } else {
+                            this.isProcessing = false;
+                        }
+                    }
+                    
+                    // 異步處理單個任務
+                    async processTaskAsync(task) {
+                        try {
+                            console.log(`🎯 處理 ${task.isThumbnail ? '縮圖' : '媒體'} (優先級: ${task.priority})`);
+                            await decryptSingleMediaElement(task.element, task.isThumbnail);
+                        } catch (error) {
+                            console.error('解密任務失敗:', error);
+                        }
+                    }
+                    
+                    // 清空隊列
+                    clear() {
+                        this.queue = [];
+                        this.isProcessing = false;
+                    }
+                }
+                
+                // 全域解密隊列管理器
+                const decryptQueue = new NonBlockingDecryptQueue();
+                
+                // *** 智能優先級解密系統 ***
+                function scheduleMediaDecryption(elements, priority = 0) {
+                    elements.forEach(element => {
+                        // 檢查是否可見以調整優先級
+                        const rect = element.getBoundingClientRect();
+                        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                        
+                        const adjustedPriority = isVisible ? priority + 10 : priority;
+                        decryptQueue.addTask(element, adjustedPriority);
+                    });
+                }
+                
+                // 處理縮圖和網格模式的圖片 - 非阻塞版本
+                function scheduleDecryptThumbnailsAndGrid() {
+                    // 處理carousel縮圖 (低優先級)
+                    const thumbnails = document.querySelectorAll('.media-thumbnail img[data-needs-mse-decrypt], .carousel-thumbnail img[data-needs-mse-decrypt], .thumbnail img[data-needs-mse-decrypt]');
+                    console.log(`🖼️ 排程 ${thumbnails.length} 個縮圖解密`);
+                    scheduleMediaDecryption(Array.from(thumbnails), 1);
+                    
+                    // 處理網格模式的圖片 (中優先級)
+                    const gridImages = document.querySelectorAll('.grid-item img[data-needs-mse-decrypt], .media-grid img[data-needs-mse-decrypt]');
+                    console.log(`🔲 排程 ${gridImages.length} 個網格圖片解密`);
+                    scheduleMediaDecryption(Array.from(gridImages), 2);
+                }
+                
+                // *** 新增：預載入和優先級管理 ***
+                function preloadVisibleMedia() {
+                    // 預載入當前可見區域的媒體
+                    const visibleElements = document.querySelectorAll('[data-needs-mse-decrypt="true"], img[src*="media/"]');
+                    const highPriorityElements = [];
+                    
+                    visibleElements.forEach(element => {
+                        const rect = element.getBoundingClientRect();
+                        const isVisible = rect.top < window.innerHeight + 200 && rect.bottom > -200; // 稍微擴大可見範圍
+                        
+                        if (isVisible) {
+                            highPriorityElements.push(element);
+                        }
+                    });
+                    
+                    if (highPriorityElements.length > 0) {
+                        console.log(`🎯 預載入 ${highPriorityElements.length} 個可見媒體`);
+                        scheduleMediaDecryption(highPriorityElements, 20); // 最高優先級
+                    }
+                }
+                
+                // *** 智能媒體解密調度器 - 完全非阻塞版本 ***
+                function scheduleAllMediaDecryption() {
+                    console.log('🚀 啟動非阻塞媒體解密調度...');
+                    
+                    // 1. 最高優先級：當前可見的主要媒體元素
+                    const visibleMainMedia = document.querySelectorAll('[data-needs-mse-decrypt="true"]:not(.media-thumbnail img):not(.carousel-thumbnail img):not(.thumbnail img):not(.grid-item img):not(.media-grid img)');
+                    const visibleMain = Array.from(visibleMainMedia).filter(element => {
+                        const rect = element.getBoundingClientRect();
+                        return rect.top < window.innerHeight + 100 && rect.bottom > -100;
+                    });
+                    console.log(`🎯 最高優先級主要媒體: ${visibleMain.length}`);
+                    scheduleMediaDecryption(visibleMain, 30);
+                    
+                    // 2. 高優先級：即將可見的主要媒體元素  
+                    const nearVisibleMain = Array.from(visibleMainMedia).filter(element => {
+                        const rect = element.getBoundingClientRect();
+                        const isVisible = rect.top < window.innerHeight + 100 && rect.bottom > -100;
+                        const isNearVisible = rect.top < window.innerHeight + 500 && rect.bottom > -500;
+                        return !isVisible && isNearVisible;
+                    });
+                    console.log(`📺 高優先級主要媒體: ${nearVisibleMain.length}`);
+                    scheduleMediaDecryption(nearVisibleMain, 20);
+                    
+                    // 3. 中優先級：不可見的主要媒體元素
+                    const hiddenMainMedia = Array.from(visibleMainMedia).filter(element => {
+                        const rect = element.getBoundingClientRect();
+                        return !(rect.top < window.innerHeight + 500 && rect.bottom > -500);
+                    });
+                    console.log(`🔽 中優先級主要媒體: ${hiddenMainMedia.length}`);
+                    scheduleMediaDecryption(hiddenMainMedia, 15);
+                    
+                    // 4. 中低優先級：傳統路徑圖片
+                    const traditionalImages = Array.from(document.querySelectorAll('img[src*="media/"]:not([data-needs-mse-decrypt]):not(.media-thumbnail img):not(.carousel-thumbnail img):not(.thumbnail img)')).map(img => {
+                        // 確保有正確的屬性用於解密
+                        if (!img.getAttribute('data-original-src')) {
+                            const srcPath = img.src;
+                            if (srcPath.includes('media/')) {
+                                const fileName = srcPath.split('/').pop();
+                                img.setAttribute('data-original-src', 'media/' + fileName);
+                            }
+                        }
+                        return img;
+                    });
+                    console.log(`📷 傳統媒體: ${traditionalImages.length}`);
+                    scheduleMediaDecryption(traditionalImages, 10);
+                    
+                    // 5. 低優先級：縮圖和網格圖片 (延遲處理)
+                    setTimeout(() => {
+                        scheduleDecryptThumbnailsAndGrid();
+                    }, 200); // 延遲讓主要媒體先處理
+                    
+                    // 返回統計信息（立即返回，不等待）
+                    const totalScheduled = visibleMain.length + nearVisibleMain.length + hiddenMainMedia.length + traditionalImages.length;
+                    console.log(`📋 總共排程 ${totalScheduled} 個主要媒體項目進行解密`);
+                    
+                    return { scheduled: totalScheduled, status: 'scheduled' };
+                }
+                
+                // *** 非阻塞版本的主函數 - 立即返回，不阻塞 UI ***
+                async function autoDecryptAllMedia() {
+                    console.log('🚀 啟動非阻塞智能媒體解密系統...');
+                    
+                    try {
+                        // 立即預載入可見媒體（最高優先級）
+                        preloadVisibleMedia();
+                        
+                        // 調度所有媒體解密（非阻塞，立即返回）
+                        const result = scheduleAllMediaDecryption();
+                        
+                        console.log('✅ 媒體解密調度完成，處理將在背景進行');
+                        return result;
+                        
+                    } catch (error) {
+                        console.error('❌ 媒體解密調度失敗:', error);
+                        return { scheduled: 0, status: 'error', error: error.message };
+                    }
+                }
+                
+                // *** 新增：智能滾動監聽 - 動態調整解密優先級 ***
+                let scrollTimeout;
+                function handleScroll() {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        // 滾動停止後，重新評估可見媒體的優先級
+                        preloadVisibleMedia();
+                    }, 250);
+                }
+                
+                // *** 新增：頁面切換監聽 - 優化事件切換體驗 ***
+                function handleEventChange() {
+                    console.log('📝 檢測到事件切換，優先解密新可見的媒體');
+                    // 清理低優先級任務
+                    decryptQueue.queue = decryptQueue.queue.filter(task => task.priority > 15);
+                    // 立即處理新可見的媒體
+                    setTimeout(() => preloadVisibleMedia(), 50);
+                }
+                
+                // DOM載入完成後自動執行解密 - 非阻塞版本
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', () => {
+                        setTimeout(() => {
+                            autoDecryptAllMedia(); // 立即返回，不阻塞
+                            // 添加滾動監聽
+                            window.addEventListener('scroll', handleScroll, { passive: true });
+                            // 監聽可能的事件切換按鈕
+                            document.addEventListener('click', (e) => {
+                                if (e.target.closest('.nav-btn, .progress-dots, .timeline-item')) {
+                                    handleEventChange();
+                                }
+                            });
+                        }, 300); // 稍微延遲，讓其他初始化先完成
+                    });
+                } else {
+                    setTimeout(() => {
+                        autoDecryptAllMedia();
+                        window.addEventListener('scroll', handleScroll, { passive: true });
+                        document.addEventListener('click', (e) => {
+                            if (e.target.closest('.nav-btn, .progress-dots, .timeline-item')) {
+                                handleEventChange();
+                            }
+                        });
+                    }, 300);
+                }
+                
+                // *** 優化版動態內容變化監聽 ***
+                if (typeof MutationObserver !== 'undefined') {
+                    const observer = new MutationObserver((mutations) => {
+                        let hasNewMedia = false;
+                        const newElements = [];
+                        
+                        mutations.forEach((mutation) => {
+                            if (mutation.type === 'childList') {
+                                // 檢查新增的標記元素
+                                const addedMarkedElements = Array.from(mutation.addedNodes)
+                                    .filter(node => node.nodeType === Node.ELEMENT_NODE)
+                                    .flatMap(node => [
+                                        ...(node.hasAttribute && node.hasAttribute('data-needs-mse-decrypt') ? [node] : []),
+                                        ...node.querySelectorAll ? node.querySelectorAll('[data-needs-mse-decrypt="true"], img[src*="media/"]') : []
+                                    ]);
+                                
+                                if (addedMarkedElements.length > 0) {
+                                    hasNewMedia = true;
+                                    newElements.push(...addedMarkedElements);
+                                }
+                            }
+                        });
+                        
+                        if (hasNewMedia) {
+                            console.log(`🔄 檢測到 ${newElements.length} 個新的媒體元素，加入解密隊列...`);
+                            // 使用非阻塞隊列處理新元素
+                            setTimeout(() => {
+                                scheduleMediaDecryption(newElements, 25); // 高優先級處理新添加的元素
+                            }, 50);
+                        }
+                        });
+                    });
+                    
+                    observer.observe(document.body, {
+                        childList: true,
+                        subtree: true
+                    });
+                }
+                
+                // *** 新增：性能監控和統計 ***
+                const performanceStats = {
+                    decryptionCount: 0,
+                    cacheHits: 0,
+                    averageDecryptTime: 0,
+                    totalDecryptTime: 0,
+                    errorCount: 0,
+                    startTime: performance.now()
+                };
+                
+                // 性能監控包裝器
+                const originalLoadAndDecrypt = loadAndDecryptMedia;
+                loadAndDecryptMedia = async function(mediaUrl) {
+                    const startTime = performance.now();
+                    try {
+                        const result = await originalLoadAndDecrypt(mediaUrl);
+                        const decryptTime = performance.now() - startTime;
+                        
+                        performanceStats.decryptionCount++;
+                        performanceStats.totalDecryptTime += decryptTime;
+                        performanceStats.averageDecryptTime = performanceStats.totalDecryptTime / performanceStats.decryptionCount;
+                        
+                        if (decryptTime < 10) { // 快速解密可能來自緩存
+                            performanceStats.cacheHits++;
+                        }
+                        
+                        // 每10次解密顯示一次統計
+                        if (performanceStats.decryptionCount % 10 === 0) {
+                            console.log(`📊 解密統計 - 完成: ${performanceStats.decryptionCount}, 平均時間: ${performanceStats.averageDecryptTime.toFixed(2)}ms, 緩存命中: ${performanceStats.cacheHits}, 錯誤: ${performanceStats.errorCount}`);
+                        }
+                        
+                        return result;
+                    } catch (error) {
+                        performanceStats.errorCount++;
+                        throw error;
+                    }
+                };
+                
+                // *** 新增：媒體優化建議系統 ***
+                function analyzeMediaPerformance() {
+                    const allImages = document.querySelectorAll('img[src*="media/"], img[data-needs-mse-decrypt]');
+                    const recommendations = [];
+                    
+                    allImages.forEach((img, index) => {
+                        // 檢查圖片大小
+                        if (img.naturalWidth > 1920 || img.naturalHeight > 1080) {
+                            recommendations.push(`🖼️ 圖片 #${index + 1} 解析度過高 (${img.naturalWidth}x${img.naturalHeight})，建議壓縮至 1920x1080`);
+                        }
+                        
+                        // 檢查是否有 WebP 優化機會
+                        const src = img.src || img.getAttribute('data-original-src') || '';
+                        if (src.includes('.jpg') || src.includes('.jpeg') || src.includes('.png')) {
+                            recommendations.push(`🗜️ 圖片 #${index + 1} 可考慮轉換為 WebP 格式以提升載入速度`);
+                        }
+                    });
+                    
+                    if (recommendations.length > 0) {
+                        console.group('💡 媒體優化建議:');
+                        recommendations.slice(0, 5).forEach(rec => console.log(rec)); // 只顯示前5個建議
+                        if (recommendations.length > 5) {
+                            console.log(`...還有 ${recommendations.length - 5} 個建議`);
+                        }
+                        console.groupEnd();
+                    }
+                    
+                    return recommendations;
+                }
+                
+                // *** 延遲執行媒體分析，避免影響初始載入 ***
+                setTimeout(() => {
+                    analyzeMediaPerformance();
+                }, 5000);
+                
+                // 提供增強的全域函數供手動呼叫
+                window.forceDecryptMedia = autoDecryptAllMedia;
+                window.decryptSingleMedia = decryptSingleMediaElement;
+                window.scheduleDecryptThumbnails = scheduleDecryptThumbnailsAndGrid;
+                window.getPerformanceStats = () => performanceStats;
+                window.analyzeMediaPerformance = analyzeMediaPerformance;
+                window.getBlobManagerStats = () => ({
+                    cachedUrls: blobManager.urls.size,
+                    cacheHits: Array.from(blobManager.cacheHits.values()).reduce((a, b) => a + b, 0)
+                });
+                window.clearDecryptCache = () => {
+                    decryptCache.clear();
+                    blobManager.cleanup();
+                    console.log('🗑️ 解密緩存已清空');
+                };
+                
+            })();
+        
+
+// ========== 提取的腳本區塊 ==========
+
+            // 🚨 密碼輸入修正邏輯
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('🔑 設置密碼輸入事件處理器');
+                
+                const passwordInput = document.getElementById('memoirPassword');
+                const unlockBtn = document.getElementById('unlockBtn');
+                const errorDiv = document.getElementById('passwordError');
+                
+                if (!passwordInput || !unlockBtn) {
+                    console.error('❌ 找不到密碼輸入元素');
+                    return;
+                }
+                
+                const handleUnlock = async () => {
+                    const password = passwordInput.value?.trim() || '';
+                    
+                    console.log('🔐 用戶點擊解鎖按鈕，密碼長度:', password.length);
+                    
+                    if (errorDiv) errorDiv.classList.add('hidden');
+                    
+                    if (password.length < 6) {
+                        if (errorDiv) {
+                            errorDiv.textContent = '密碼長度不足，至少需要6個字元';
+                            errorDiv.classList.remove('hidden');
+                        }
+                        return;
+                    }
+                    
+                    unlockBtn.disabled = true;
+                    unlockBtn.textContent = '解鎖中...';
+                    
+                    try {
+                        let success = false;
+                        
+                        if (typeof window._internalAutoDecrypt === 'function') {
+                            success = await window._internalAutoDecrypt(password);
+                        } else {
+                            console.error('❌ 找不到解密函數');
+                        }
+                        
+                        if (!success) {
+                            if (errorDiv) {
+                                errorDiv.textContent = '密碼錯誤，請重新輸入';
+                                errorDiv.classList.remove('hidden');
+                            }
+                            passwordInput.value = '';
+                            passwordInput.focus();
+                        }
+                        
+                    } catch (error) {
+                        console.error('🚨 解鎖失敗:', error);
+                        if (errorDiv) {
+                            errorDiv.textContent = '解鎖失敗，請重試';
+                            errorDiv.classList.remove('hidden');
+                        }
+                    } finally {
+                        unlockBtn.disabled = false;
+                        unlockBtn.textContent = '解鎖查看';
+                    }
+                };
+                
+                // 綁定事件（移除舊的事件監聽器）
+                unlockBtn.replaceWith(unlockBtn.cloneNode(true));
+                const newUnlockBtn = document.getElementById('unlockBtn');
+                newUnlockBtn.addEventListener('click', handleUnlock);
+                
+                passwordInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        handleUnlock();
+                    }
+                });
+                
+                console.log('✅ 密碼輸入事件處理器設置完成');
+            });
+        
+
+// ========== 提取的腳本區塊 ==========
+
+            // 🚨 重新整理修正：頁面狀態管理
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('🔄 初始化重新整理修正邏輯');
+                
+                // 等待所有元素載入
+                setTimeout(() => {
+                    const passwordModal = document.getElementById('passwordModal');
+                    const loadingScreen = document.getElementById('loadingScreen');
+                    const app = document.getElementById('app');
+                    const passwordInput = document.getElementById('memoirPassword');
+                    const unlockBtn = document.getElementById('unlockBtn');
+                    const errorDiv = document.getElementById('passwordError');
+                    
+                    // 🚨 關鍵：檢查重新整理後的狀態
+                    function checkAndFixState() {
+                        const hasSessionFlag = sessionStorage.getItem('mf_pw_unlocked') === '1';
+                        const hasActualData = !!(window.MEMOIR_DATA && window.MEMOIR_DATA.events);
+                        
+                        console.log('📊 狀態檢查:', {
+                            hasSessionFlag,
+                            hasActualData,
+                            dataExists: !!window.MEMOIR_DATA,
+                            eventsCount: window.MEMOIR_DATA?.events?.length || 0
+                        });
+                        
+                        // 狀態不一致的修正
+                        if (hasSessionFlag && !hasActualData) {
+                            console.log('⚠️ 檢測到重新整理後狀態不一致，修正中...');
+                            
+                            // 清除無效的 session
+                            sessionStorage.removeItem('mf_pw_unlocked');
+                            
+                            // 正確設置 UI 狀態
+                            if (loadingScreen) loadingScreen.classList.add('hidden');
+                            if (app) app.classList.add('hidden');
+                            if (passwordModal) {
+                                passwordModal.classList.remove('hidden');
+                                console.log('🔒 顯示密碼輸入介面');
+                            }
+                            
+                            return 'need_password';
+                        }
+                        
+                        // 正常需要密碼的情況
+                        if (!hasSessionFlag) {
+                            console.log('🔐 正常密碼保護狀態');
+                            
+                            if (loadingScreen) loadingScreen.classList.add('hidden');
+                            if (app) app.classList.add('hidden');
+                            if (passwordModal) {
+                                passwordModal.classList.remove('hidden');
+                                console.log('🔒 顯示密碼輸入介面');
+                            }
+                            
+                            return 'need_password';
+                        }
+                        
+                        // 已解鎖且有數據
+                        if (hasSessionFlag && hasActualData) {
+                            console.log('✅ 已解鎖狀態，正常載入');
+                            
+                            if (passwordModal) passwordModal.classList.add('hidden');
+                            if (loadingScreen) loadingScreen.classList.add('hidden');
+                            if (app) app.classList.remove('hidden');
+                            
+                            return 'unlocked';
+                        }
+                        
+                        return 'unknown';
+                    }
+                    
+                    const pageState = checkAndFixState();
+                    
+                    if (pageState === 'need_password') {
+                        console.log('🔑 設置密碼輸入功能');
+                        
+                        // 清理介面
+                        if (errorDiv) {
+                            errorDiv.classList.add('hidden');
+                            errorDiv.textContent = '';
+                        }
+                        
+                        if (passwordInput) {
+                            passwordInput.focus();
+                            passwordInput.value = '';
+                        }
+                        
+                        const tryUnlock = async () => {
+                            const password = passwordInput?.value?.trim() || '';
+                            
+                            console.log('🔐 嘗試解鎖，密碼長度:', password.length);
+                            
+                            if (errorDiv) errorDiv.classList.add('hidden');
+                            
+                            if (password.length < 6) {
+                                if (errorDiv) {
+                                    errorDiv.textContent = '密碼長度不足，至少需要6個字元';
+                                    errorDiv.classList.remove('hidden');
+                                }
+                                return;
+                            }
+                            
+                            if (unlockBtn) {
+                                unlockBtn.disabled = true;
+                                unlockBtn.textContent = '解鎖中...';
+                            }
+                            
+                            try {
+                                let success = false;
+                                
+                                if (typeof window._internalAutoDecrypt === 'function') {
+                                    success = await window._internalAutoDecrypt(password);
+                                } else {
+                                    console.error('❌ 找不到解密函數');
+                                    throw new Error('解密函數未載入');
+                                }
+                                
+                                console.log('🔓 解鎖結果:', success);
+                                
+                                if (success) {
+                                    // 等待數據確認
+                                    setTimeout(() => {
+                                        const hasData = !!(window.MEMOIR_DATA && window.MEMOIR_DATA.events);
+                                        
+                                        if (hasData) {
+                                            console.log('🎉 解鎖成功且數據已載入');
+                                            
+                                            sessionStorage.setItem('mf_pw_unlocked', '1');
+                                            
+                                            if (passwordModal) passwordModal.classList.add('hidden');
+                                            if (app) app.classList.remove('hidden');
+                                            if (loadingScreen) loadingScreen.classList.add('hidden');
+                                            
+                                            // 觸發應用初始化
+                                            if (typeof window.__bootApp__ === 'function') {
+                                                window.__bootApp__();
+                                            } else if (typeof initializeApp === 'function') {
+                                                initializeApp();
+                                            }
+                                        } else {
+                                            console.error('❌ 解鎖成功但數據無效');
+                                            throw new Error('解鎖成功但無法載入數據');
+                                        }
+                                    }, 100);
+                                } else {
+                                    throw new Error('密碼驗證失敗');
+                                }
+                                
+                            } catch (error) {
+                                console.error('🚨 解鎖過程出錯:', error);
+                                
+                                sessionStorage.removeItem('mf_pw_unlocked');
+                                
+                                if (errorDiv) {
+                                    errorDiv.textContent = error.message || '密碼錯誤，請重新輸入';
+                                    errorDiv.classList.remove('hidden');
+                                }
+                            } finally {
+                                if (unlockBtn) {
+                                    unlockBtn.disabled = false;
+                                    unlockBtn.textContent = '解鎖查看';
+                                }
+                            }
+                        };
+                        
+                        // 綁定事件
+                        if (unlockBtn) {
+                            unlockBtn.addEventListener('click', tryUnlock);
+                        }
+                        
+                        if (passwordInput) {
+                            passwordInput.addEventListener('keydown', (e) => {
+                                if (e.key === 'Enter') {
+                                    tryUnlock();
+                                }
+                            });
+                        }
+                    }
+                    
+                    // 🚨 監聽解密成功事件
+                    window.addEventListener('memoir:decrypted', function(event) {
+                        console.log('📡 收到解密成功事件');
+                        
+                        setTimeout(() => {
+                            const hasData = !!(window.MEMOIR_DATA && window.MEMOIR_DATA.events);
+                            
+                            if (hasData) {
+                                sessionStorage.setItem('mf_pw_unlocked', '1');
+                                
+                                if (passwordModal) passwordModal.classList.add('hidden');
+                                if (app) app.classList.remove('hidden');
+                                if (loadingScreen) loadingScreen.classList.add('hidden');
+                                
+                                console.log('✅ 解密事件後 UI 狀態已更新');
+                            }
+                        }, 50);
+                    });
+                    
+                    // 🚨 頁面可見性變化監聽（處理標籤頁切換）
+                    document.addEventListener('visibilitychange', function() {
+                        if (!document.hidden) {
+                            setTimeout(() => {
+                                const hasSessionFlag = sessionStorage.getItem('mf_pw_unlocked') === '1';
+                                const hasActualData = !!(window.MEMOIR_DATA && window.MEMOIR_DATA.events);
+                                
+                                if (hasSessionFlag && !hasActualData) {
+                                    console.log('⚠️ 標籤頁切換回來檢測到狀態不一致');
+                                    sessionStorage.removeItem('mf_pw_unlocked');
+                                    
+                                    if (app) app.classList.add('hidden');
+                                    if (loadingScreen) loadingScreen.classList.add('hidden');
+                                    if (passwordModal) passwordModal.classList.remove('hidden');
+                                }
+                            }, 500);
+                        }
+                    });
+                    
+                }, 500); // 延遲確保所有元素都已載入
+                
+                console.log('✅ 重新整理修正邏輯初始化完成');
+            });
+        
+
