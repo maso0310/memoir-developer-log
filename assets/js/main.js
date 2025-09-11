@@ -1,35 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-11T11:37:45.127250900+00:00
-
-// ========== 提取的腳本區塊 ==========
-
-        {
-            "@context":"https://schema.org",
-            "@type":"WebSite",
-            "url":"https://github.io/developer-log",
-            "name":"開發者日誌",
-            "inLanguage":"zh-TW",
-            "potentialAction":{
-                "@type":"SearchAction",
-                "target":"https://github.io/developer-log/?q={search_term_string}",
-                "query-input":"required name=search_term_string"
-            }
-        }
-    
-
-// ========== 提取的腳本區塊 ==========
-
-        {
-            "@context":"https://schema.org",
-            "@type":"WebPage",
-            "url":"https://github.io/developer-log",
-            "name":"開發者日誌 - 回憶錄",
-            "description":"開發者日誌 - 回憶錄",
-            "isPartOf":{"@type":"WebSite","url":"https://github.io/developer-log","name":"開發者日誌"},
-            "inLanguage":"zh-TW"
-        }
-    
+// 生成時間: 2025-09-11T11:47:46.483186400+00:00
 
 // ========== 提取的腳本區塊 ==========
 
