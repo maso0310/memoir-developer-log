@@ -14,10 +14,10 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-f41ee786-d71c-4ee8-8ecd-06641a5fa53c'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-553e18b8-5574-4ad7-86af-f338b1ffae7c'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="f41ee786-d71c-4ee8-8ecd-06641a5fa53c">
+    <style nonce="553e18b8-5574-4ad7-86af-f338b1ffae7c">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -214,14 +214,256 @@
             will-change: transform;
         }
         
+        /* 沉浸式體驗動畫 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(-20px); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        
+        .fade-out {
+            animation: fadeOut 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        
+        /* 打字機效果 */
+        .typewriter {
+            overflow: hidden;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .typewriter-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: #3b82f6;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        /* 改進的媒體顯示區域 */
+        .media-display {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .media-display::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .media-display:hover::before {
+            opacity: 1;
+        }
+        
+        /* 改進的描述區域 */
+        .description-container {
+            position: relative;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .description-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 改進的導航按鈕 */
+        .nav-btn {
+            position: relative;
+            overflow: hidden;
+            transform: translateZ(0);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+        }
+        
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+        
+        .nav-btn:hover::before {
+            left: 100%;
+        }
+        
+        .nav-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* 改進的縮圖 */
+        .thumbnail {
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .thumbnail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(59, 130, 246, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .thumbnail:hover::before {
+            opacity: 1;
+        }
+        
+        .thumbnail.active {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+        
+        /* 側邊欄改進 */
+        .sidebar {
+            backdrop-filter: blur(10px);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        /* 時間軸樣式改進 */
+        .timeline-item {
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .timeline-item:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-left-color: #3b82f6;
+            transform: translateX(5px);
+        }
+        
+        .timeline-item.active {
+            background: rgba(59, 130, 246, 0.2);
+            border-left-color: #3b82f6;
+            transform: translateX(8px);
+        }
+        
+        /* 觸控回饋 */
+        .touch-feedback {
+            position: relative;
+        }
+        
+        .touch-feedback::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            opacity: 0;
+        }
+        
+        .touch-feedback.touching::after {
+            animation: touchRipple 0.6s ease-out;
+        }
+        
+        @keyframes touchRipple {
+            to {
+                width: 100px;
+                height: 100px;
+                opacity: 1;
+            }
+        }
+        
         /* 移動端優化 */
         @media (max-width: 768px) {
-            .main-content { flex-direction: column; }
-            .sidebar { width: 100%; max-height: 200px; }
-            .thumbnails { justify-content: center; }
+            .main-content { 
+                flex-direction: column;
+                touch-action: pan-y;
+            }
+            .sidebar { 
+                width: 100%; 
+                max-height: 200px;
+                order: 1;
+            }
+            .media-container {
+                order: 0;
+                touch-action: pan-x;
+            }
+            .thumbnails { 
+                justify-content: center;
+                padding: 0.5rem;
+            }
+            .thumbnail {
+                width: 50px;
+                height: 50px;
+            }
+            .nav-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"xevJ7dTTYW25er+yH2xEH8uVB8EMLVuzr4MWnCBmnwmR1LbCia/wGo6Z9emi4j6oj1oPRl1VvuGxddDilz1DJ6ieWaCW1ZSN8doU+winkccHoYgsFETjscN60RZ0HSM564M7EkUmHa9u8Tc5lJxerNRJLgd1Y7J7vCzFxuaRAreyt2a6fskxJcCcdV5C4eA8WntgV7RL/1MsT0dYzL0raMFmMU8lsH+g3TicgFkKHmXgAR/654kqh97alF6TZ1l43MbuqTpIsuNAn4buaafTxvIdB0ZcANPHIix8LpcRtN36EPzrJIhAoWLd7DQCRtBT3yXdYjnxxQTfS16gdhtq2U3meGVc8EzvgEirZclAiNEb0Rof36wdkCpb5EupW1evoHTLnho9PItfVXrZ1pv5prlqvrBjEnsLlOJWylZs9aSRsfZkyQjisJ3+MjQr9c7+SafgK0A7V/Z2rQwEmrKJGJlg6247F+mKM6579w6+4fatn9OJMR4euWvSF7VsdiU3U1FmXQcEWu83+Htb94UJH871Ux4/LSlqQI1Nm/B/GlA4yu+ZldoddO/ZnZPsMRj9TiYsfd1DivFawS3/XGFdduw3NoOBAsbFsZ1s7h70X4CwdszsYyoq/mbzueI3MxoDz2ass7yu9z3U9iPNBMcVb7C5Bf1BNCsxYOI+xbUZJmRlbFAMDvHx0t96sONVVmF28f1QUQS93cUEcPMN9egOJ28mfOdUXaS+wpqVyB1DxAHy5tk++tgPA0JvBeKPDUKYnBzUfbQnn6bcaGXUyDzylYtrpZb6nnWHLr+KxLQ+IhlPIXP5mXH4juN8TMpr22OvZoWqZXvzXnv5jZuvjeeFADcPbZ/pLnQBEjKFk1kQHL8jZ9ezh1D0tjo2mjey1U5ggoru7/baSdMKauuPcm1VdC+GCJFOxOdEsUywlZYWY41AAa0yGTFAXrI+cJCjwi12qDgcetjpvtQ9jYjZJowqSX0DMaPGhmymZvKK+pOXlsD5Ngi1kxmKcv14+F9HBJUz1qWi/2eJrTrOawq26IrqXdLMuCulzUHiVrfXAp9hvHxZ05qY1vN8fwfAciTE9QkWsfxIQDOWg1OjUuSRueQjR7kgdf61PE9PMym+wBViqgRuR7on2IWIuY/yLy11+Prd/Uvj/Uit7SEAw7TLfJZZzT4Z+JQRqSuk5w0IcIGUzx+jPWn38N5ObIm/HVvWF9XsM+1DFqn7U/y2YEgfk5+58nsdhK0LVue+mE/zlw3ydqWnXVVd15fYNXjjD31xRWxlwm8CBtMMVvgWK1lIQIz1LN7eLlx/mMilOYUQvtmVD4JqLD2+C3cDb/wYojBnr6KZB7FWheHNaFmVyZ2V+Iy96EYrhqfGKC/0xaNX6rt8X9vx77tKk8li5KAz9eVjS0/wWsuqcvJ33UvpAr7dsty+NNRoq+o7w/rINS78T9rcUOGLHh0F9PbJgU0IFUufOuonAV4wXQoSVSe6XNDcwZEEUGGHhllp18KI+S8V1qS3dQDgyXFm/zkbg3fK6+RxgXSrcjPcfEYJHWQTCaSOC4V1y4VKqIqrQ6H0pl95xyn73v0MSdapdcd4axU0dSt0MtF50Pe8Ehc5P8mwUa4gOiaajgsTyh2ciIDOkJDoJgyd28UmgE3eGCPuQdzGkYoIk1sHZoR5hXk=","iv_b64":"MGbt73pOonFRxLQ3","salt_b64":"rGzNPIDlCTfGY4Hrj9fjBQ=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"UTouMJdj9bPl67sdCyGAP7BXiuBU7QFwO/GcSi3kQeDBA5GpgGvfGq7HW4MFYHt2RL2om+wiyx+nfxpVI+XpXtX1/U8pBgM854hAFq+FNG9ruULPaMCQ9BsNteY6kyexAUs37rLXvKKGaSuPT7JHAI/ckx5A+Oab+3ZBPBQKWhbJsaXj4lGQa2pNc9gvXtTqVBjJapoAD2IkWuBPlqZUCV0DXriwyKaZVTxM8tfMFVOMh5D9uZtAItwM527PG7EOHypQBZzWLDEbmTZSheQAAS6HrHZvIx98ML3XRvomgsqDa3kdhqQl5t3ZqBVKuWSYh+yKY1NqUDJgyrJsj3+YQahJ9ssxNKzDTdjtzEGr+FaRsaOa00+XJuAQoi9N57DkR47ik8UgYYX+mB5njUm9Tj6fxnvfSFZoJuJMyimVVlBHG+XWwu0fYZnK9HpM6YXg7USamkEJRVXItfYoYlkkz2PlJSTeCxR1c5izregTHrjU1XXMPtx8kXoNDxasi9EQpSxSjVCqGve+1bShxbmXQSJgIp7GMe2Lhom6NkUi3FiNRBwSSQhpcg75/AdTF7ueyfZFRg8bH8++AyaigGF1Pqn5bB+EnPm/5D+QB/6yIv2WXkl5r380B2TKaq8zwnP6RIiPfrfqVbNaR8mrAPGpgJk1l/blas6gsnOQ1T8uld5uHRyLQVjh8ddPcws2Bb/TcNSrp+xQRGecQ6g5egs80NOc/fEPmCe5+PbxUb9yGb1V7iADGBTQatsGVfSKW2Ikxke0GopIt8g9codNenzTpj7afX4EJ/OwgJpFWqEqM0P/5STEqTgsy89qqODO/P/fNgbyCQU+viQMvVNvNcuUC1jbb3jO4HNI3b7FKkUlOC7s3PW2z3BVNqJE8Y/EBgfYityviiOqmDIJVKGT/QOdVALJO8t2aMrNObIDn0ySbboVjb9/n+JMhPg+kEhNN3xXWpzf3uBJKruiNws4pajyhBEo7LWCZsAMSW/8XeTCS1i6oGwu+o04oPWp4HlNFVK36ilzQJB28gXYlK/V5/c+VDM87HkaXtAUethBX7hYIppFcbdNNEpW9YKDS7V1CwfEhxFDRsqYeHqbSA/f5PJQnajX94cD5ubix9Z1ihxfJo3AihgZKQqz+FfJruiOtT04QIt5A1tJ9B2VzbrlLF0tuk059r6vGDudXrJjIA3HdKcjD39siHe+y+3RBoRCCYq78qUQAptwteD/d6/rO6hpRA8rcY/N47epfBF5AmheQdNO/B7MOO7/5rv49U5KA9GXqLBUvnZNuM5VcZZk04lPBNfPLf9KANSHyVsU3a2tzAy6wDoMtCf6CcK5XFuLrAV0R7nruvRJCi63qO9oLHXhelucA6kHgCa8/nZ85Mppg77zecQWlOhx0a01B6+1MTHyjH2SvHhufL4ruLSIk4L1w89xYwZy9Jll2f9SaR6B+gj2Zkw3IXcm+YDIkOnXi10R3reyOzkYaXVcHkKjXh7RGQGBK+U6a/rCizBalffgNLN0L3eKViO1NXKCQ0/HkxJ4/sORvaxUeXmMkExqxsOjQLLEgY+DJ2IohK3783t5RXHbtzGW67J+hNMCnvYQTKRfXhTlADxl9/9ASEqV8XB2usnQ2YJ/AWVWPnNUd3RrfPcUxutPcT+uqxYIBP0rzAzgDEnHEJo=","iv_b64":"JCIRCU4h5dK1rdFc","salt_b64":"A1kOQiDIAh4zccJsrv4IFw=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -301,11 +543,19 @@
 
             <!-- 側邊欄 -->
             <div class="sidebar">
-                <h3>時間軸</h3>
-                <div id="timeline"></div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #e5e7eb;">時間軸</h3>
+                    <button id="timelineToggle" class="nav-btn" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">
+                        收合
+                    </button>
+                </div>
+                <div id="timeline" class="timeline-container"></div>
                 
-                <!-- 縮圖區 -->
-                <div id="thumbnails" class="thumbnails"></div>
+                <div style="margin-top: 1.5rem;">
+                    <h4 style="font-size: 0.9rem; color: #9ca3af; margin-bottom: 0.5rem;">當前事件媒體</h4>
+                    <!-- 縮圖區 -->
+                    <div id="thumbnails" class="thumbnails"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -333,6 +583,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="9TcaDtRa77ul30uSBTqEag"></script>
+<script src="assets/js/main.js" nonce="d3RtsZGUbXG+4GNvvbxnwg"></script>
 </body>
 </html>
