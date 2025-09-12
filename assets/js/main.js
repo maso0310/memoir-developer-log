@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-12T17:25:28.366854400+00:00
+// 生成時間: 2025-09-12T17:35:35.972510800+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -293,6 +293,20 @@
             }
         });
 
+        // 監聽 memoir:decrypted 事件（主要的解密成功事件）
+        window.addEventListener('memoir:decrypted', function(event) {
+            console.log('🎯 收到 memoir:decrypted 事件，數據:', event.detail);
+            if (event.detail && event.detail.data) {
+                MEMOIR_DATA = event.detail.data;
+                console.log('✅ 從 memoir:decrypted 設置 MEMOIR_DATA:', MEMOIR_DATA);
+                const passwordModal = document.getElementById('passwordModal');
+                if (passwordModal) {
+                    passwordModal.classList.add('hidden');
+                }
+                initializeApp();
+            }
+        });
+
         // 密碼驗證函數
         function setupPasswordModal() {
             const unlockBtn = document.getElementById('unlockBtn');
@@ -350,8 +364,14 @@
                             console.log('✅ 從 window.MEMOIR_DATA 取得數據:', MEMOIR_DATA);
                         }
                         
-                        // 初始化應用
-                        initializeApp();
+                        // 調用解密成功回調
+                        if (typeof window.onDecryptionSuccess === 'function' && MEMOIR_DATA) {
+                            console.log('🎯 調用 onDecryptionSuccess 回調');
+                            window.onDecryptionSuccess(MEMOIR_DATA);
+                        } else {
+                            // 直接初始化應用
+                            initializeApp();
+                        }
                     } else {
                         // 密碼錯誤
                         if (passwordError) {
