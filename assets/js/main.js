@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-11T22:19:44.789758600+00:00
+// 生成時間: 2025-09-12T05:32:36.834161900+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -1420,6 +1420,7 @@
             inner.style.setProperty('--duration', `${duration}s`);
             }
 
+            // 優化的打字機效果 - 使用 requestAnimationFrame 避免阻塞
             function startTypewriter(text, element, speed = 50) {
                 if (!typewriterEnabled || !text || !element) {
                     if (element) element.textContent = text || '';
@@ -1431,27 +1432,54 @@
                     typewriterIndex = 0;
                     isTyping = true;
                     element.textContent = '';
+                    let lastCharTime = performance.now();
                     
                     if (elements.skipTypingBtn) {
                         elements.skipTypingBtn.classList.remove('hidden');
                     }
                     
-                    function typeNextChar() {
-                        if (typewriterIndex < typewriterText.length && isTyping) {
-                            element.textContent = typewriterText.slice(0, typewriterIndex + 1) + '|';
-                            typewriterIndex++;
-                            typewriterTimer = setTimeout(typeNextChar, speed);
-                        } else {
+                    function typeNextChar(currentTime) {
+                        if (!isTyping || typewriterIndex >= typewriterText.length) {
+                            // 完成打字
                             element.textContent = typewriterText;
                             isTyping = false;
                             if (elements.skipTypingBtn) {
                                 elements.skipTypingBtn.classList.add('hidden');
                             }
                             resolve();
+                            return;
+                        }
+                        
+                        // 控制打字速度
+                        if (currentTime - lastCharTime >= speed) {
+                            element.textContent = typewriterText.slice(0, typewriterIndex + 1) + '|';
+                            typewriterIndex++;
+                            lastCharTime = currentTime;
+                        }
+                        
+                        // 繼續下一個字符
+                        if (isTyping && typewriterIndex < typewriterText.length) {
+                            requestAnimationFrame(typeNextChar);
+                        } else if (isTyping) {
+                            // 最後一個字符，移除光標
+                            setTimeout(() => {
+                                element.textContent = typewriterText;
+                                isTyping = false;
+                                if (elements.skipTypingBtn) {
+                                    elements.skipTypingBtn.classList.add('hidden');
+                                }
+                                resolve();
+                            }, speed);
                         }
                     }
                     
-                    typeNextChar();
+                    // 使用 requestAnimationFrame 開始打字
+                    requestAnimationFrame(typeNextChar);
+                    
+                    // 儲存停止函數的參考
+                    window._stopTypewriter = function() {
+                        isTyping = false;
+                    };
                 });
             }
 
