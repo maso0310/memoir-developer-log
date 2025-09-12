@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-12T16:55:42.447334600+00:00
+// 生成時間: 2025-09-12T17:19:49.750369600+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -254,10 +254,121 @@
             initializeApp();
         };
 
+        // 密碼驗證函數
+        function setupPasswordModal() {
+            const unlockBtn = document.getElementById('unlockBtn');
+            const passwordInput = document.getElementById('memoirPassword');
+            const passwordModal = document.getElementById('passwordModal');
+            const passwordError = document.getElementById('passwordError');
+
+            if (!unlockBtn || !passwordInput) return;
+
+            const tryUnlock = async () => {
+                const password = passwordInput.value.trim();
+                
+                if (!password) {
+                    if (passwordError) {
+                        passwordError.textContent = '請輸入密碼';
+                        passwordError.classList.remove('hidden');
+                    }
+                    return;
+                }
+
+                // 禁用按鈕防止重複點擊
+                unlockBtn.disabled = true;
+                unlockBtn.textContent = '解鎖中...';
+
+                try {
+                    // 調用解密函數
+                    let success = false;
+                    
+                    if (typeof window.attemptDecryption === 'function') {
+                        success = await window.attemptDecryption(password);
+                    } else if (typeof window.decryptWithPassword === 'function') {
+                        success = await window.decryptWithPassword(password);
+                    }
+
+                    console.log('🔓 解鎖結果:', success);
+
+                    if (success) {
+                        // 解鎖成功
+                        sessionStorage.setItem('mf_pw_unlocked', '1');
+                        if (passwordModal) {
+                            passwordModal.classList.add('hidden');
+                        }
+                        
+                        // 初始化應用
+                        initializeApp();
+                    } else {
+                        // 密碼錯誤
+                        if (passwordError) {
+                            passwordError.textContent = '密碼錯誤，請重新輸入';
+                            passwordError.classList.remove('hidden');
+                        }
+                        passwordInput.value = '';
+                        passwordInput.focus();
+                    }
+                } finally {
+                    // 恢復按鈕狀態
+                    unlockBtn.disabled = false;
+                    unlockBtn.textContent = '解鎖查看';
+                }
+            };
+
+            // 綁定事件
+            unlockBtn.addEventListener('click', tryUnlock);
+            passwordInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    tryUnlock();
+                }
+            });
+
+            // 隱藏錯誤信息當用戶開始輸入
+            passwordInput.addEventListener('input', () => {
+                if (passwordError) {
+                    passwordError.classList.add('hidden');
+                }
+            });
+        }
+
+        // 顯示密碼提示函數
+        window.showPasswordPrompt = function(errorMessage = '') {
+            const loadingScreen = document.getElementById('loadingScreen');
+            const passwordModal = document.getElementById('passwordModal');
+            const app = document.getElementById('app');
+            
+            if (loadingScreen) loadingScreen.classList.add('hidden');
+            if (app) app.classList.add('hidden');
+            
+            if (passwordModal) {
+                passwordModal.classList.remove('hidden');
+                
+                const errorDiv = document.getElementById('passwordError');
+                if (errorMessage && errorDiv) {
+                    errorDiv.textContent = errorMessage;
+                    errorDiv.classList.remove('hidden');
+                } else if (errorDiv) {
+                    errorDiv.classList.add('hidden');
+                }
+                
+                const passwordInput = document.getElementById('memoirPassword');
+                if (passwordInput) {
+                    setTimeout(() => passwordInput.focus(), 100);
+                }
+            }
+        };
+
         // 自動啟動
         document.addEventListener('DOMContentLoaded', () => {
-            // 如果數據已經載入，直接初始化
-            if (window.MEMOIR_DATA) {
+            // 設置密碼模態框
+            setupPasswordModal();
+            
+            // 檢查是否需要密碼驗證
+            if (typeof window.REQUIRE_PW !== 'undefined' && window.REQUIRE_PW && !sessionStorage.getItem('mf_pw_unlocked')) {
+                console.log('🔒 需要密碼驗證');
+                window.showPasswordPrompt();
+            } else if (window.MEMOIR_DATA) {
+                // 如果數據已經載入，直接初始化
                 MEMOIR_DATA = window.MEMOIR_DATA;
                 initializeApp();
             }
