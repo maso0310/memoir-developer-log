@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-12T17:44:21.437410200+00:00
+// 生成時間: 2025-09-12T18:25:28.553126500+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -25,7 +25,9 @@
             prevEventBtn: document.getElementById('prevEventBtn'),
             nextEventBtn: document.getElementById('nextEventBtn'),
             prevMediaBtn: document.getElementById('prevMediaBtn'),
-            nextMediaBtn: document.getElementById('nextMediaBtn')
+            nextMediaBtn: document.getElementById('nextMediaBtn'),
+            timelineToggle: document.getElementById('timelineToggle'),
+            descriptionContainer: document.getElementById('descriptionContainer')
         };
 
         // 性能優化：事件防抖
@@ -39,6 +41,211 @@
                 clearTimeout(timeout);
                 timeout = setTimeout(later, wait);
             };
+        }
+
+        // 沉浸式體驗功能
+        let typewriterTimeout;
+        let isTimelineCollapsed = false;
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        // 打字機動畫效果
+        function typewriterEffect(element, text, speed = 50) {
+            if (!element || !text) return Promise.resolve();
+            
+            return new Promise(resolve => {
+                element.textContent = '';
+                element.classList.add('typewriter', 'typewriter-cursor');
+                
+                let index = 0;
+                const timer = setInterval(() => {
+                    if (index < text.length) {
+                        element.textContent += text.charAt(index);
+                        index++;
+                    } else {
+                        clearInterval(timer);
+                        element.classList.remove('typewriter-cursor');
+                        resolve();
+                    }
+                }, speed);
+                
+                // 點擊跳過打字機效果
+                const skipTyping = () => {
+                    clearInterval(timer);
+                    element.textContent = text;
+                    element.classList.remove('typewriter-cursor');
+                    element.removeEventListener('click', skipTyping);
+                    resolve();
+                };
+                
+                element.addEventListener('click', skipTyping, { once: true });
+                typewriterTimeout = timer;
+            });
+        }
+
+        // 淡入淡出轉場效果
+        function fadeTransition(element, newContent, callback) {
+            if (!element) return Promise.resolve();
+            
+            return new Promise(resolve => {
+                element.classList.add('fade-out');
+                
+                setTimeout(() => {
+                    if (typeof newContent === 'function') {
+                        newContent();
+                    } else if (typeof newContent === 'string') {
+                        element.innerHTML = newContent;
+                    }
+                    
+                    element.classList.remove('fade-out');
+                    element.classList.add('fade-in');
+                    
+                    setTimeout(() => {
+                        element.classList.remove('fade-in');
+                        if (callback) callback();
+                        resolve();
+                    }, 800);
+                }, 500);
+            });
+        }
+
+        // 滑動轉場效果
+        function slideTransition(element, direction = 'right', callback) {
+            if (!element) return Promise.resolve();
+            
+            return new Promise(resolve => {
+                const slideClass = direction === 'right' ? 'slide-in-right' : 'slide-in-left';
+                
+                if (callback) callback();
+                
+                element.classList.add(slideClass);
+                
+                setTimeout(() => {
+                    element.classList.remove(slideClass);
+                    resolve();
+                }, 600);
+            });
+        }
+
+        // 觸控回饋效果
+        function addTouchFeedback(element) {
+            if (!element) return;
+            
+            element.classList.add('touch-feedback');
+            
+            element.addEventListener('touchstart', (e) => {
+                element.classList.add('touching');
+                setTimeout(() => {
+                    element.classList.remove('touching');
+                }, 600);
+            });
+        }
+
+        // 時間軸渲染
+        function renderTimeline() {
+            if (!MEMOIR_DATA?.timeline_events || !elements.timeline) return;
+            
+            const fragment = document.createDocumentFragment();
+            
+            MEMOIR_DATA.timeline_events.forEach((event, index) => {
+                const item = document.createElement('div');
+                item.className = `timeline-item ${index === currentEventIndex ? 'active' : ''}`;
+                item.innerHTML = `
+                    <div style="font-size: 0.8rem; font-weight: 500; color: #e5e7eb; margin-bottom: 0.25rem;">
+                        ${event.date || `事件 ${index + 1}`}
+                    </div>
+                    <div style="font-size: 0.7rem; color: #9ca3af; line-height: 1.2;">
+                        ${event.description ? event.description.substring(0, 50) + '...' : ''}
+                    </div>
+                `;
+                
+                item.addEventListener('click', () => {
+                    if (index !== currentEventIndex) {
+                        jumpToEvent(index);
+                    }
+                });
+                
+                addTouchFeedback(item);
+                fragment.appendChild(item);
+            });
+            
+            elements.timeline.innerHTML = '';
+            elements.timeline.appendChild(fragment);
+        }
+
+        // 跳轉到特定事件
+        async function jumpToEvent(eventIndex) {
+            if (eventIndex === currentEventIndex) return;
+            
+            const direction = eventIndex > currentEventIndex ? 'right' : 'left';
+            currentEventIndex = eventIndex;
+            currentMediaIndex = 0;
+            
+            // 更新時間軸選中狀態
+            const timelineItems = elements.timeline.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                item.classList.toggle('active', index === currentEventIndex);
+            });
+            
+            // 使用滑動轉場效果
+            await slideTransition(elements.descriptionContainer, direction, () => {
+                loadEvent();
+            });
+        }
+
+        // 時間軸摺疊功能
+        function toggleTimeline() {
+            isTimelineCollapsed = !isTimelineCollapsed;
+            elements.timeline.style.display = isTimelineCollapsed ? 'none' : 'block';
+            elements.timelineToggle.textContent = isTimelineCollapsed ? '展開' : '收合';
+        }
+
+        // 觸控手勢處理
+        function setupTouchGestures() {
+            const mediaContainer = document.querySelector('.media-container');
+            if (!mediaContainer) return;
+            
+            let touchStartTime = 0;
+            
+            mediaContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+                touchStartTime = Date.now();
+            }, { passive: true });
+            
+            mediaContainer.addEventListener('touchend', (e) => {
+                const touchEndX = e.changedTouches[0].clientX;
+                const touchEndY = e.changedTouches[0].clientY;
+                const touchEndTime = Date.now();
+                
+                const deltaX = touchEndX - touchStartX;
+                const deltaY = touchEndY - touchStartY;
+                const deltaTime = touchEndTime - touchStartTime;
+                
+                // 確保是滑動手勢而不是點擊
+                if (deltaTime > 500 || Math.abs(deltaX) < 50) return;
+                
+                // 水平滑動切換媒體
+                if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                    if (deltaX > 0) {
+                        // 向右滑動 - 上一個媒體
+                        elements.prevMediaBtn.click();
+                    } else {
+                        // 向左滑動 - 下一個媒體
+                        elements.nextMediaBtn.click();
+                    }
+                }
+                // 垂直滑動切換事件
+                else if (Math.abs(deltaY) > 100) {
+                    if (deltaY > 0) {
+                        // 向下滑動 - 上一個事件
+                        elements.prevEventBtn.click();
+                    } else {
+                        // 向上滑動 - 下一個事件
+                        elements.nextEventBtn.click();
+                    }
+                }
+            }, { passive: true });
         }
 
         // 快速媒體解密（移除複雜調度）
@@ -160,8 +367,8 @@
             elements.thumbnails.appendChild(fragment);
         }
 
-        // 快速載入事件
-        function loadEvent() {
+        // 快速載入事件（帶沉浸式動畫）
+        async function loadEvent() {
             const currentEvent = getCurrentEvent();
             if (!currentEvent) return;
 
@@ -171,55 +378,93 @@
             elements.mediaCount.textContent = currentEvent.media ? currentEvent.media.length : 0;
             elements.currentMediaNum.textContent = currentMediaIndex + 1;
 
-            // 更新描述（簡化的打字機效果）
-            elements.eventDescription.textContent = currentEvent.description || '';
+            // 清除之前的打字機效果
+            if (typewriterTimeout) {
+                clearInterval(typewriterTimeout);
+            }
+
+            // 使用打字機效果更新描述
+            const description = currentEvent.description || '';
+            if (description) {
+                await typewriterEffect(elements.eventDescription, description, 30);
+            } else {
+                elements.eventDescription.textContent = '';
+            }
 
             // 更新導航按鈕
-            elements.prevEventBtn.disabled = currentEventIndex === 0;
-            elements.nextEventBtn.disabled = currentEventIndex === MEMOIR_DATA.timeline_events.length - 1;
-            elements.prevMediaBtn.disabled = currentMediaIndex === 0;
-            elements.nextMediaBtn.disabled = !currentEvent.media || currentMediaIndex === currentEvent.media.length - 1;
+            updateNavigationButtons();
 
-            // 快速載入媒體
-            displayMedia();
+            // 載入媒體與縮圖（帶淡入效果）
+            await fadeTransition(elements.mediaDisplay, () => {
+                displayMedia();
+            });
+            
             renderThumbnails();
+            renderTimeline(); // 更新時間軸狀態
             
             // 快速解密
             setTimeout(quickDecryptMedia, 50);
         }
 
-        // 事件處理器
-        elements.prevEventBtn.addEventListener('click', () => {
+        // 更新導航按鈕狀態
+        function updateNavigationButtons() {
+            const currentEvent = getCurrentEvent();
+            
+            elements.prevEventBtn.disabled = currentEventIndex === 0;
+            elements.nextEventBtn.disabled = currentEventIndex === MEMOIR_DATA.timeline_events.length - 1;
+            elements.prevMediaBtn.disabled = currentMediaIndex === 0;
+            elements.nextMediaBtn.disabled = !currentEvent?.media || currentMediaIndex === currentEvent.media.length - 1;
+            
+            // 為按鈕添加觸控回饋
+            [elements.prevEventBtn, elements.nextEventBtn, elements.prevMediaBtn, elements.nextMediaBtn].forEach(btn => {
+                if (btn && !btn.classList.contains('touch-feedback')) {
+                    addTouchFeedback(btn);
+                }
+            });
+        }
+
+        // 事件處理器（帶沉浸式動畫）
+        elements.prevEventBtn.addEventListener('click', async () => {
             if (currentEventIndex > 0) {
-                currentEventIndex--;
-                currentMediaIndex = 0;
-                loadEvent();
+                await jumpToEvent(currentEventIndex - 1);
             }
         });
 
-        elements.nextEventBtn.addEventListener('click', () => {
+        elements.nextEventBtn.addEventListener('click', async () => {
             if (currentEventIndex < MEMOIR_DATA.timeline_events.length - 1) {
-                currentEventIndex++;
-                currentMediaIndex = 0;
-                loadEvent();
+                await jumpToEvent(currentEventIndex + 1);
             }
         });
 
-        elements.prevMediaBtn.addEventListener('click', () => {
+        elements.prevMediaBtn.addEventListener('click', async () => {
             const currentEvent = getCurrentEvent();
             if (currentEvent?.media && currentMediaIndex > 0) {
                 currentMediaIndex--;
-                loadEvent();
+                await slideTransition(elements.mediaDisplay, 'left', () => {
+                    displayMedia();
+                    renderThumbnails();
+                    updateNavigationButtons();
+                });
             }
         });
 
-        elements.nextMediaBtn.addEventListener('click', () => {
+        elements.nextMediaBtn.addEventListener('click', async () => {
             const currentEvent = getCurrentEvent();
             if (currentEvent?.media && currentMediaIndex < currentEvent.media.length - 1) {
                 currentMediaIndex++;
-                loadEvent();
+                await slideTransition(elements.mediaDisplay, 'right', () => {
+                    displayMedia();
+                    renderThumbnails();
+                    updateNavigationButtons();
+                });
             }
         });
+
+        // 時間軸摺疊按鈕
+        if (elements.timelineToggle) {
+            elements.timelineToggle.addEventListener('click', toggleTimeline);
+            addTouchFeedback(elements.timelineToggle);
+        }
 
         // 鍵盤導航
         document.addEventListener('keydown', (e) => {
@@ -297,6 +542,7 @@
 
             // 載入第一個事件
             if (MEMOIR_DATA.timeline_events.length > 0) {
+                renderTimeline(); // 首先渲染時間軸
                 loadEvent();
             } else {
                 console.warn('⚠️ 沒有回憶錄事件可顯示');
@@ -494,6 +740,9 @@
             // 設置密碼模態框
             setupPasswordModal();
             
+            // 設置觸控手勢
+            setupTouchGestures();
+            
             console.log('🔍 DOM 載入完成，檢查數據狀態');
             console.log('📊 window.MEMOIR_DATA:', !!window.MEMOIR_DATA);
             console.log('🔐 REQUIRE_PW:', typeof window.REQUIRE_PW !== 'undefined' ? window.REQUIRE_PW : 'undefined');
@@ -511,6 +760,11 @@
             } else {
                 console.log('⏳ 等待數據載入...');
             }
+            
+            // 添加頁面載入動畫
+            setTimeout(() => {
+                document.body.classList.add('fade-in');
+            }, 100);
         });
 
         // 性能優化：預載入下一個媒體
