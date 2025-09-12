@@ -14,10 +14,10 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-17e3c5c4-71df-43d1-a367-09812300df0a'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-ee458ccb-f2f6-4fb7-86d5-0e209c8281e8'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="17e3c5c4-71df-43d1-a367-09812300df0a">
+    <style nonce="ee458ccb-f2f6-4fb7-86d5-0e209c8281e8">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -402,6 +402,7 @@
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
+            min-height: 80px;
         }
         
         .timeline-item::before {
@@ -661,15 +662,17 @@
             border-color: rgba(59, 130, 246, 0.9);
         }
         
-        /* 底部控制：縮圖列 */
+        /* 底部控制：縮圖列 - 使用 absolute 定位 */
         .nav-bottom {
-            bottom: -100px;
+            position: absolute;
+            bottom: -120px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             gap: 10px;
             align-items: center;
             transition: bottom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 10;
         }
         
         .nav-bottom.visible {
@@ -729,7 +732,7 @@
         .timeline-panel {
             position: fixed;
             top: 0;
-            right: -350px;
+            right: -400px;
             width: 350px;
             height: 100vh;
             background: rgba(26, 26, 46, 0.95);
@@ -743,6 +746,18 @@
         
         .timeline-panel.open {
             right: 80px; /* 不遮擋選單按鈕，留出空間 */
+        }
+        
+        /* 手機端時間軸面板調整 */
+        @media (max-width: 768px) {
+            .timeline-panel {
+                right: -100vw;
+                width: calc(100vw - 80px);
+            }
+            
+            .timeline-panel.open {
+                right: 80px;
+            }
         }
         
         .timeline-panel .close-btn {
@@ -785,17 +800,24 @@
         }
         
         .media-display {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        
+        .media-display img, .media-display video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            object-position: center;
         }
         
         .description-container {
@@ -808,10 +830,11 @@
             text-align: left;
             font-size: 1.1rem;
             line-height: 1.8;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
             backdrop-filter: blur(20px);
-            padding: 3rem 80px 2rem 80px; /* 左右留空間給選單按鈕 */
-            min-height: 120px;
+            padding: 4rem 80px 3rem 80px; /* 左右留空間給選單按鈕，上下留空間 */
+            min-height: 140px;
+            margin-bottom: 20px; /* 避免貼近下緣 */
         }
         
         /* 隱藏原有的導航元素 */
@@ -842,12 +865,11 @@
             }
             
             .nav-bottom {
-                bottom: 15px;
+                bottom: -120px;
             }
             
-            .timeline-panel {
-                width: 100%;
-                left: -100%;
+            .nav-bottom.visible {
+                bottom: 15px;
             }
             
             .media-container {
@@ -857,10 +879,12 @@
             .description-container {
                 font-size: 1rem;
                 line-height: 1.6;
+                padding: 3rem 60px 2rem 60px; /* 手機端減少左右間距 */
+                margin-bottom: 15px;
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"bWCrS9UF6y7hSNzuPiduobxq9vmiKuPlXzS0/JgSyosQiFdHWD36/YQRhA85BrSv5gUO94xn80bgSzqqEhMPAGGeChISnIYC5zldAaF0mk1kM7wVeEwTuqWEfnfi/DafA/ON1P9lXaPMSN9eZV6xhuHatwNRSSAmvJ3ot1nt00s1FYUNTE3cXagHl+s6I+9MLM5ouPIYiikKzyNvdXgR4X/WumqGGd5WAmwR1M2XX9mPUykICqYF1PgpJoXc4WPuNZuUsH/pwcBXOp67hrUpF2qoz/m1ArsMVp5cIK8ZCSXpQgZvkt5c9xLM3oTL6hrObC3zPFWTx+IlRCCYmgRy6SUQkILb8BkW7uzJyo5ZoKj9+4z4vvEyTqMdw5MdJFYAZqqiAAN8GNKhQmoEw6QdpfUwQLjXmIKTJklgMUe/jFPNia/734H5GiIuIlJRy/ux9LWknyHIJZ/k8QL2dG8UA8jpRdmQbfJBWYaUOws0YrKT5wj5svyl1TjpfHlOIjJvfklOJ5mj7sbJMHMnc0kMOPJTW3fMN0wRR9BTCwy39kaDIc7P1mw3i0RNKAzwkjfMJUil1YuFqtg9uEKA9+9ThXqyfdHaEZ9AXzO1hcIZLEYdp/TuP/4ce1fKuDp0/N9pmNNMmjr/iVh7+cucCjUYKVmswosEPIHBBmn32oyjeEmJo75EEMHzou5aoHWC0BsaRq1XCkS0fe0/giMaQbu4wTjUlFoBbjzz0FR0w5asUVd31W4imaoTjjXnn1UDf1T+OG5RU4/B32ruY9vIvDKu4Aan1vh8GEfaBEaSx07YRROdoQMa6Nxcig5FD/GsgiCgWK71TcBv17qtMCkMO/6AA4F37JQRXHBV/OAKMQcjmOzVZnI7wI639UTtSxv54isuYdMt1swIuo50je7Nif6Mf4HxLr/BTvRYO/UZsjU+a6vaR7hltUn/JFR1NpaMrJTenTyVvaS9vBT4MvlYONlMkJq1zIe9RLK9BHywYc1eVxCF+CXii+gywrXHNZzhDBX3G0uWuqOS58qXmZv/jimyIztq/UMhyNn//RGbqCOJF0YhcAaAAM6Z/f6f8uPq+rwRf4l/9Y9cM0A7lJRjTYHaT1uarpxaKmIqu461smluSrnaQ9f7171Dx8kKbDzBgjRHEXBPE4vK6R8OzS5mVEDkNQIW9lWh+2bh2SUuCrNN++MOsT9940TOyiohNBMx6DB8vd5aAVkAbyWSgPDG6QySiSLd6rF7e1dNtBFlNaFKkL+Wms+7dB8J7gf4lvcMXgO5dCbw1LnTkbKLB3bBKQBA2okppnUsTR1zzAV21ks3dBNsTE4sQNUci8MSV5jjvL3Otwjcdxa5ZoDNzc1o5mBQyTYIwWUWdW2xt55A3CK2OdvQiks9w2e2lJVm+uOMPKATWMpkGiwDBXYtLneoGSMRmEpjybHSSCgiuKCki15exZPZmLEp08HDb9XyFTm+IVQYQXIHPKfg1aBLRvMwnwim29moPSXW7WfUTWEqmsAZC7Qs1/Smsc51xaEsLX5qyBJijMwJD/xPoU1pBdghmBzXRjOG/dkxwd7Iof1pRsY2qJkUbQNT/qaeDY35sQG62S+yO5EFkxzc45IlmJsJLcMe8+eh8AdDcF9TuFWghmJnfhNcnnnE3ukCxDy4JB3H6VL1eHxd3/A=","iv_b64":"Gl17bsYZ8kMqWcMa","salt_b64":"2s/uZx8/pTranWPnvp9MwA=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"NnH2U7AR624rxDf//MSm5HERXFw89jn0s7MglD1xsifyzUsuV9U982VPSHoR9uVuYTDUAU3K/gX7hnKT0NK2ZyS0rR1gOYpV1JtsiJuY0rbdks2lDssqniSgQKxUMtsOrt8gKzaE0ugNG3g0jYEUawdkHkqoaUBPYiDwwtusYZJwYKttQi02O5r5/gQhq6Hvumy8IVsRvYSK4+tQ+W9nJbWvAjLbj6wwh3pCoFeXjLZDYH1ynMaB+VaG2fmwfTXLSgbOs2wwAmP1gxKxBhW6jZsIoUP25yF6LCnJLFdSLCix5eq/YOH90WGGhZA5NRqdC4/2nzwMM0MbewIsROBtmvLqrvYdOaevVjdyv/krtND+R2wT35TaXu3+xa5ea3OEjWgK37rqx37HOeAbWxHNWZcRUQDH6zipGyW2yoHgOwzS3r20IdTePvbxcrYNqC4oz02S0yl3dlwQHmKuy1gOqPEy7S88tRZZA9nNLqWaZX8tw4GMumAmT6ckJujI/E3d3H0TUtXbayd9er6eGNYvhg3pMNT+a/Mb9BAZET2zEUzA5HL89wTQTUfOA+kPDb9jl6loov0jaTPBpEvaFTzJh7XsIZ3Ogi8bLRWhHTPvbFAWIBLONgJwTW07CzM+cD+8oFJzE9Y/a931hJ/JZPXBjlx8sTpXD4frf7qPT8NF85ajeA1vvV1z/gWrb2eNC0Vcrpw344qOiAEOWxVagZJz/7FyNrOvnqcHBJnBr6AkXoZaRpQUjAdZXUjZ9TGw/FxsDWBjdb0C7StfM6Fc5M5g4ftHugaxLYBP16b4NJo5W2lwH2bv+8ieYWc1jj6RkvP+RZN38vlXDLZ1nIkIztYaIVQfpS6oCvMSyTZMiWraOy8edV7YnOCm4C7x+5hzTSX0wUMPIuAY1xrFQh6nhekR1ldU6Q8BqlN6cunqmgtbnK/55SC/heGoGcC9lwfMGTb0hgycu01IGX+3zVF7W+3bfFhO8v7p1RgZhTBguALAvyPGRzZcWUguv5flcskNMAKkgPZA6r+DHB83d8JA3RK6Iby+hBVimjm45QdWumUE87/S8dvVuQJ4QYRG8RXvEg7g8g2PokqsmtVEgodSi7+BOJTCXQ/MFgMnobcXojtCeCfIR1icumFpOzkQRWcYrc5zcyaKSjhZZjb2ZCEY95oo7jzOlv4QFD0Oyjpl3FP31qwOLq7NRcHL1ulAB/a49epP0JcGGLkop30rGtX1W9j5niwV5PVXOPHZGjm/jS6PFD2RdXPpLcqTYJqeuHcZNK4pvpf6JYz7j6rlJZvHByqfH2M7QjlF+b08ordDwWYVeMI3rk3xQINjv8etNnrygRkBAYcLgSYPwmyl0ncg79eFK6FGTHCV5GHL4nelfQiCn+CZ0wfz5ECNRHc8HKWu5pOfa178tXmUvmEgqzNKtf0um8Mx6MIhFg9P/ptR33Hi0EvQysxL/NlO/4MaoO+DPlP5iCTRrTgO59xtZhyTYOruLpBrG2wSZ9aB96tdoviyGzS+Cg9VY+uUEplRjjPXUTzvACTIHdI71uUmv7Ub+pG9Dd9pkmiwQ2Ujk1dhLWNOdrAwDp2Z824FQo/epltaxxr3sPHqg2ISGHwv4IHAL6rzn8/BWz3y5B5ZZKvvlj7TLLjs2Goe6wBCh8BOmglLPRQFkLyKpI4=","iv_b64":"ZsxAdVJu8uyfRRWj","salt_b64":"ki8wvP9QJOIemaHcSjvYgg=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -960,7 +984,7 @@
         </div>
 
         <!-- 底部控制：縮圖（預設隱藏）-->
-        <div class="floating-controls nav-bottom" id="thumbnailsContainer">
+        <div class="nav-bottom" id="thumbnailsContainer">
             <div id="thumbnails" class="thumbnails"></div>
         </div>
 
@@ -997,6 +1021,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="YjEn47TpwyluiI4CEfOXbQ"></script>
+<script src="assets/js/main.js" nonce="gZqLV29Mrh94P3oSVJVrsw"></script>
 </body>
 </html>
