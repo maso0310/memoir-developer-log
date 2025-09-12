@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-12T21:48:22.527174500+00:00
+// 生成時間: 2025-09-12T22:13:10.795652900+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -13,6 +13,7 @@
         let fontSize = 1.1;
         let isMenuOpen = false;
         let isThumbnailsVisible = false;
+        let isFontSizeMenuOpen = false;
 
         // DOM 元素緩存
         const elements = {
@@ -31,10 +32,12 @@
             closeTimelineBtn: document.getElementById('closeTimelineBtn'),
             descriptionContainer: document.getElementById('descriptionContainer'),
             menuBtn: document.getElementById('menuBtn'),
+            menuBtnIcon: document.getElementById('menuBtnIcon'),
             menuDropdown: document.getElementById('menuDropdown'),
             typewriterBtn: document.getElementById('typewriterBtn'),
             thumbnailBtn: document.getElementById('thumbnailBtn'),
             fontSizeBtn: document.getElementById('fontSizeBtn'),
+            fontSizeDropdown: document.getElementById('fontSizeDropdown'),
             thumbnailsContainer: document.getElementById('thumbnailsContainer')
         };
 
@@ -153,6 +156,18 @@
         function renderTimeline() {
             if (!MEMOIR_DATA?.timeline_events || !elements.timeline) return;
             
+            // 清空時間軸容器但保留路線圖線條
+            const timelineLine = elements.timeline.querySelector('.timeline-line');
+            elements.timeline.innerHTML = '';
+            if (timelineLine) {
+                elements.timeline.appendChild(timelineLine);
+            } else {
+                // 如果沒有線條則創建一個
+                const line = document.createElement('div');
+                line.className = 'timeline-line';
+                elements.timeline.appendChild(line);
+            }
+            
             const fragment = document.createDocumentFragment();
             
             MEMOIR_DATA.timeline_events.forEach((event, index) => {
@@ -177,7 +192,6 @@
                 fragment.appendChild(item);
             });
             
-            elements.timeline.innerHTML = '';
             elements.timeline.appendChild(fragment);
         }
 
@@ -508,6 +522,13 @@
             if (elements.menuDropdown) {
                 elements.menuDropdown.classList.toggle('open', isMenuOpen);
             }
+            if (elements.menuBtnIcon) {
+                elements.menuBtnIcon.classList.toggle('open', isMenuOpen);
+            }
+            // 如果關閉主選單，同時關閉子選單
+            if (!isMenuOpen && isFontSizeMenuOpen) {
+                closeFontSizeMenu();
+            }
         }
         
         function closeMenu() {
@@ -515,6 +536,10 @@
             if (elements.menuDropdown) {
                 elements.menuDropdown.classList.remove('open');
             }
+            if (elements.menuBtnIcon) {
+                elements.menuBtnIcon.classList.remove('open');
+            }
+            closeFontSizeMenu();
         }
         
         function toggleThumbnails() {
@@ -522,7 +547,7 @@
             if (elements.thumbnailsContainer) {
                 elements.thumbnailsContainer.classList.toggle('visible', isThumbnailsVisible);
             }
-            closeMenu();
+            // 不關閉選單，讓用戶可以繼續調整
         }
         
         function toggleTypewriter() {
@@ -533,18 +558,39 @@
                     ? 'rgba(59, 130, 246, 0.8)' 
                     : 'rgba(107, 114, 128, 0.8)';
             }
-            closeMenu();
+            // 不關閉選單，讓用戶可以繼續調整
         }
         
-        function cycleFontSize() {
-            const sizes = [0.9, 1.0, 1.1, 1.2, 1.3];
-            const currentIndex = sizes.indexOf(fontSize);
-            fontSize = sizes[(currentIndex + 1) % sizes.length];
-            
+        function toggleFontSizeMenu() {
+            isFontSizeMenuOpen = !isFontSizeMenuOpen;
+            if (elements.fontSizeDropdown) {
+                elements.fontSizeDropdown.classList.toggle('open', isFontSizeMenuOpen);
+            }
+        }
+        
+        function closeFontSizeMenu() {
+            isFontSizeMenuOpen = false;
+            if (elements.fontSizeDropdown) {
+                elements.fontSizeDropdown.classList.remove('open');
+            }
+        }
+        
+        function setFontSize(size) {
+            fontSize = parseFloat(size);
             if (elements.descriptionContainer) {
                 elements.descriptionContainer.style.fontSize = fontSize + 'rem';
             }
-            closeMenu();
+            
+            // 更新活動按鈕
+            const fontSizeBtns = document.querySelectorAll('.font-size-btn');
+            fontSizeBtns.forEach(btn => {
+                btn.classList.remove('active');
+                if (parseFloat(btn.dataset.size) === fontSize) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            closeFontSizeMenu();
         }
 
         // 選單系統按鈕事件
@@ -556,6 +602,7 @@
         if (elements.timelineBtn) {
             elements.timelineBtn.addEventListener('click', () => {
                 toggleTimelinePanel();
+                // 時間軸點擊後關閉選單
                 closeMenu();
             });
             addTouchFeedback(elements.timelineBtn);
@@ -572,9 +619,20 @@
         }
         
         if (elements.fontSizeBtn) {
-            elements.fontSizeBtn.addEventListener('click', cycleFontSize);
+            elements.fontSizeBtn.addEventListener('click', toggleFontSizeMenu);
             addTouchFeedback(elements.fontSizeBtn);
         }
+        
+        // 字體大小按鈕事件
+        document.addEventListener('DOMContentLoaded', () => {
+            const fontSizeBtns = document.querySelectorAll('.font-size-btn');
+            fontSizeBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    setFontSize(btn.dataset.size);
+                });
+            });
+        });
 
         if (elements.closeTimelineBtn) {
             elements.closeTimelineBtn.addEventListener('click', closeTimelinePanel);
@@ -590,11 +648,20 @@
                 closeTimelinePanel();
             }
             
-            // 關閉選單
+            // 關閉字體大小子選單
+            if (isFontSizeMenuOpen && 
+                elements.fontSizeDropdown &&
+                !elements.fontSizeDropdown.contains(e.target) &&
+                e.target !== elements.fontSizeBtn) {
+                closeFontSizeMenu();
+            }
+            
+            // 關閉主選單（但保留時間軸按鈕例外）
             if (isMenuOpen && 
                 elements.menuDropdown &&
                 !elements.menuDropdown.contains(e.target) &&
-                e.target !== elements.menuBtn) {
+                !elements.menuBtn.contains(e.target) &&
+                e.target !== elements.timelineBtn) {
                 closeMenu();
             }
         });
