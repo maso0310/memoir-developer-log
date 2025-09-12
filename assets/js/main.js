@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-12T22:13:10.795652900+00:00
+// 生成時間: 2025-09-12T22:33:22.276730400+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -173,10 +173,16 @@
             MEMOIR_DATA.timeline_events.forEach((event, index) => {
                 const item = document.createElement('div');
                 item.className = `timeline-item ${index === currentEventIndex ? 'active' : ''}`;
+                
+                // 添加標題和日期
+                const title = event.title || event.name || `事件 ${index + 1}`;
+                const date = event.date || '';
+                
                 item.innerHTML = `
-                    <div style="font-size: 0.8rem; font-weight: 500; color: #e5e7eb; margin-bottom: 0.25rem;">
-                        ${event.date || `事件 ${index + 1}`}
+                    <div style="font-size: 0.9rem; font-weight: 600; color: #e5e7eb; margin-bottom: 0.25rem;">
+                        ${title}
                     </div>
+                    ${date ? `<div style="font-size: 0.75rem; color: #60a5fa; margin-bottom: 0.25rem;">${date}</div>` : ''}
                     <div style="font-size: 0.7rem; color: #9ca3af; line-height: 1.2;">
                         ${event.description ? event.description.substring(0, 50) + '...' : ''}
                     </div>
@@ -201,7 +207,7 @@
             
             const direction = eventIndex > currentEventIndex ? 'right' : 'left';
             currentEventIndex = eventIndex;
-            currentMediaIndex = 0;
+            currentMediaIndex = 0; // 重設媒體索引
             
             // 更新時間軸選中狀態
             const timelineItems = elements.timeline.querySelectorAll('.timeline-item');
@@ -212,6 +218,10 @@
             // 使用滑動轉場效果（非阻塞）
             slideTransition(elements.descriptionContainer, direction, () => {
                 loadEvent();
+                // 確保縮圖列也更新
+                setTimeout(() => {
+                    renderThumbnails();
+                }, 100);
             });
         }
 
@@ -363,6 +373,9 @@
                 if (elements.thumbnailsContainer) {
                     elements.thumbnailsContainer.classList.remove('visible');
                 }
+                if (elements.thumbnails) {
+                    elements.thumbnails.innerHTML = '';
+                }
                 return;
             }
 
@@ -387,12 +400,20 @@
                     }
                     
                     thumbnail.appendChild(img);
+                } else if (media.type === 'video' || media.media_type === 'video') {
+                    // 對於影片，也可以顯示縮圖
+                    const videoIcon = document.createElement('div');
+                    videoIcon.innerHTML = '🎥';
+                    videoIcon.style.cssText = 'display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; font-size: 20px;';
+                    thumbnail.appendChild(videoIcon);
                 }
                 
                 // 點擊事件
                 thumbnail.addEventListener('click', () => {
                     currentMediaIndex = index;
-                    loadEvent();
+                    displayMedia(); // 直接更新媒體顯示
+                    renderThumbnails(); // 重新渲染縮圖以更新活動狀態
+                    updateNavigationButtons();
                 });
                 
                 fragment.appendChild(thumbnail);
@@ -400,6 +421,11 @@
             
             elements.thumbnails.innerHTML = '';
             elements.thumbnails.appendChild(fragment);
+            
+            // 如果縮圖列被啟用，觸發重新解密
+            if (isThumbnailsVisible) {
+                setTimeout(quickDecryptMedia, 100);
+            }
         }
 
         // 快速載入事件（優化性能，異步執行）
@@ -415,6 +441,7 @@
                 displayMedia();
             });
             
+            // 確保縮圖列總是根據當前事件更新
             renderThumbnails();
             renderTimeline();
             
@@ -437,6 +464,13 @@
             } else if (elements.eventDescription) {
                 elements.eventDescription.textContent = '';
             }
+            
+            // 強制重新觸發縮圖列渲染
+            setTimeout(() => {
+                if (isThumbnailsVisible) {
+                    renderThumbnails();
+                }
+            }, 100);
         }
 
         // 更新導航按鈕狀態
