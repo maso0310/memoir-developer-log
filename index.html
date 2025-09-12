@@ -14,10 +14,10 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-ee458ccb-f2f6-4fb7-86d5-0e209c8281e8'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-38ede4fd-f06a-4c57-9c17-e168531d4d1c'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="ee458ccb-f2f6-4fb7-86d5-0e209c8281e8">
+    <style nonce="38ede4fd-f06a-4c57-9c17-e168531d4d1c">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -662,21 +662,21 @@
             border-color: rgba(59, 130, 246, 0.9);
         }
         
-        /* 底部控制：縮圖列 - 使用 absolute 定位 */
-        .nav-bottom {
-            position: absolute;
-            bottom: -120px;
+        /* 頂部控制：縮圖列 - 從上往下進入 */
+        .nav-thumbnails {
+            position: fixed;
+            top: -120px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             gap: 10px;
             align-items: center;
-            transition: bottom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            z-index: 10;
+            transition: top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 100;
         }
         
-        .nav-bottom.visible {
-            bottom: 20px;
+        .nav-thumbnails.visible {
+            top: 80px;
         }
         
         .thumbnails {
@@ -745,18 +745,22 @@
         }
         
         .timeline-panel.open {
-            right: 80px; /* 不遮擋選單按鈕，留出空間 */
+            right: 0px; /* 允許遮蓋上下按鈕，功能重疊 */
         }
         
         /* 手機端時間軸面板調整 */
         @media (max-width: 768px) {
             .timeline-panel {
                 right: -100vw;
-                width: calc(100vw - 80px);
+                width: 100vw;
             }
             
             .timeline-panel.open {
-                right: 80px;
+                right: 0px;
+            }
+            
+            .nav-thumbnails.visible {
+                top: 70px;
             }
         }
         
@@ -814,10 +818,16 @@
         }
         
         .media-display img, .media-display video {
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
+            max-width: 100vw;
+            max-height: 100vh;
+            object-fit: contain;
             object-position: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .media-display img:hover {
+            transform: scale(1.02);
         }
         
         .description-container {
@@ -844,6 +854,150 @@
             display: none;
         }
         
+        /* 燈箱效果樣式 */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lightbox img, .lightbox video {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+        
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+        
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .lightbox-prev {
+            left: 20px;
+        }
+        
+        .lightbox-next {
+            right: 20px;
+        }
+        
+        /* 打字機速度滑軌樣式 */
+        .typing-speed-container {
+            padding: 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            margin: 0.5rem 0;
+        }
+        
+        .typing-speed-label {
+            font-size: 0.8rem;
+            color: #e5e7eb;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .typing-speed-slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            appearance: none;
+        }
+        
+        .typing-speed-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .typing-speed-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* 鎖定視窗滾動 */
+        body {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+        
         /* 移動端優化 */
         @media (max-width: 768px) {
             .floating-btn {
@@ -864,14 +1018,6 @@
                 top: 15px;
             }
             
-            .nav-bottom {
-                bottom: -120px;
-            }
-            
-            .nav-bottom.visible {
-                bottom: 15px;
-            }
-            
             .media-container {
                 padding: 1rem;
             }
@@ -882,9 +1028,16 @@
                 padding: 3rem 60px 2rem 60px; /* 手機端減少左右間距 */
                 margin-bottom: 15px;
             }
+            
+            .lightbox-close,
+            .lightbox-nav {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"NnH2U7AR624rxDf//MSm5HERXFw89jn0s7MglD1xsifyzUsuV9U982VPSHoR9uVuYTDUAU3K/gX7hnKT0NK2ZyS0rR1gOYpV1JtsiJuY0rbdks2lDssqniSgQKxUMtsOrt8gKzaE0ugNG3g0jYEUawdkHkqoaUBPYiDwwtusYZJwYKttQi02O5r5/gQhq6Hvumy8IVsRvYSK4+tQ+W9nJbWvAjLbj6wwh3pCoFeXjLZDYH1ynMaB+VaG2fmwfTXLSgbOs2wwAmP1gxKxBhW6jZsIoUP25yF6LCnJLFdSLCix5eq/YOH90WGGhZA5NRqdC4/2nzwMM0MbewIsROBtmvLqrvYdOaevVjdyv/krtND+R2wT35TaXu3+xa5ea3OEjWgK37rqx37HOeAbWxHNWZcRUQDH6zipGyW2yoHgOwzS3r20IdTePvbxcrYNqC4oz02S0yl3dlwQHmKuy1gOqPEy7S88tRZZA9nNLqWaZX8tw4GMumAmT6ckJujI/E3d3H0TUtXbayd9er6eGNYvhg3pMNT+a/Mb9BAZET2zEUzA5HL89wTQTUfOA+kPDb9jl6loov0jaTPBpEvaFTzJh7XsIZ3Ogi8bLRWhHTPvbFAWIBLONgJwTW07CzM+cD+8oFJzE9Y/a931hJ/JZPXBjlx8sTpXD4frf7qPT8NF85ajeA1vvV1z/gWrb2eNC0Vcrpw344qOiAEOWxVagZJz/7FyNrOvnqcHBJnBr6AkXoZaRpQUjAdZXUjZ9TGw/FxsDWBjdb0C7StfM6Fc5M5g4ftHugaxLYBP16b4NJo5W2lwH2bv+8ieYWc1jj6RkvP+RZN38vlXDLZ1nIkIztYaIVQfpS6oCvMSyTZMiWraOy8edV7YnOCm4C7x+5hzTSX0wUMPIuAY1xrFQh6nhekR1ldU6Q8BqlN6cunqmgtbnK/55SC/heGoGcC9lwfMGTb0hgycu01IGX+3zVF7W+3bfFhO8v7p1RgZhTBguALAvyPGRzZcWUguv5flcskNMAKkgPZA6r+DHB83d8JA3RK6Iby+hBVimjm45QdWumUE87/S8dvVuQJ4QYRG8RXvEg7g8g2PokqsmtVEgodSi7+BOJTCXQ/MFgMnobcXojtCeCfIR1icumFpOzkQRWcYrc5zcyaKSjhZZjb2ZCEY95oo7jzOlv4QFD0Oyjpl3FP31qwOLq7NRcHL1ulAB/a49epP0JcGGLkop30rGtX1W9j5niwV5PVXOPHZGjm/jS6PFD2RdXPpLcqTYJqeuHcZNK4pvpf6JYz7j6rlJZvHByqfH2M7QjlF+b08ordDwWYVeMI3rk3xQINjv8etNnrygRkBAYcLgSYPwmyl0ncg79eFK6FGTHCV5GHL4nelfQiCn+CZ0wfz5ECNRHc8HKWu5pOfa178tXmUvmEgqzNKtf0um8Mx6MIhFg9P/ptR33Hi0EvQysxL/NlO/4MaoO+DPlP5iCTRrTgO59xtZhyTYOruLpBrG2wSZ9aB96tdoviyGzS+Cg9VY+uUEplRjjPXUTzvACTIHdI71uUmv7Ub+pG9Dd9pkmiwQ2Ujk1dhLWNOdrAwDp2Z824FQo/epltaxxr3sPHqg2ISGHwv4IHAL6rzn8/BWz3y5B5ZZKvvlj7TLLjs2Goe6wBCh8BOmglLPRQFkLyKpI4=","iv_b64":"ZsxAdVJu8uyfRRWj","salt_b64":"ki8wvP9QJOIemaHcSjvYgg=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"mGtS+QUPBxDBsNRpOtPz7ksZux3uwVgVfoJcSYCVMEXWmUTOJhTwmIkZ1L1pfPbVuxSerpTPnLZLnE7XeRIgPdk7tWES0Ej/NwQ3KCJnWyB8YxQsC3OPYBo2GMHcF8Dd6dz9qIvOUlvT8vQVR9kkLoOPKYJfZiUaq3j8bCXkqlBuIpj6xdOTUS3+33ecdHlzJLAts4bJ4IUYWGJwqGoODJj4aV6MsnCLp5rJSDLxPijPZUwdCALTvDYlvqV+dcuFZqyDft1KF9mBFKdIgqiGsV9UWi6MB7wT4Gnoopu04vO5nohvRI3peqUeM4pFh1NHoxealnQfkW6IfZfRjJn5MIOdAKAsb1LQrKY+jgUxRyIvQayROSOuMEE3CVAHIyLrU9MTfn/HDOtGhwKd+ZwKJtzVdVkcS6bcwYEt7n2sxb3hbUzL3fym9NdBZyXSxx+ZwXZL7JJ2ezrQ3oKucTxECuGIvi9yqF/JZX+VitmLL5zgei9a7H1783TmFQ1VwalF78Bj6GaTPUS3d6TIjgG7M7VB9uENXRCKVU0VVxwOt4IJwuMkXMkZIMIYnTPZ+C/hzBQPlluKxzaNG/gNUUyKkTsUoZLfmzzHK+kpjz5Z4CoSkb/U+BN5gS2F0iKOeGP/AdVFMpjyAfOO3ALSdAqd59ehWVpTQ+Ff4V1AqB6BfoCmhTQcDBDMd3o9fvk7ROqqeCHSZSTKMfLDr0j3tsTLL5rBKI+40xwg/qrZ+zX8eEoW6W4kmhSqUoeSNnlBWeo3AcY+ua9GhXS3OAhD2m6yFyIzSTU1+G1EidtMYYCSd163rfm6hmilsmyk2cxrkGN5Z0ErwiK5sN5bc+NjzXD8U2Chmqa8ycwxI4gpaHiq/2ces8/EF+S6bIYrMFJq41TgZsvCEfNovprC3aszHg9lt1fQbgobMD07xINIfF73UjprYuyW+NToWhBYlDCtfJhwQ90vIR8wshS2cyOQdOp9NXDuFf72dMeVrb6pv+yj+53E+n8skKCsgrofdLjXG+Ukj5JsfDxKEgoAjqw6Tt87/GTKICQqc3eIEx93lI9srVjkmEFbRNAfhiwW65/zYoywwn8WpLiYvjH01J4FnCpoXPcMjJPVJJO95G7k6217HWtTZB283G5iy39YCrMI5cu7VQ1L8+ZZoci4/ZCz27IrcswGl9T4JbGwPKF59W08Qz2kYIZxWk9RnikiUYS/jPyWys8TkDl+iOLk9DnepzT/UilMKC9MR0kY7+NatNZBLAXOfXu0XUkJK5DEmtOoxagvk42DNMXB1Hr3aIfw5Bto8z4zGAL+IsjsOWPhU6ajsC8FxgFfdSfbSHx8/jwaYh4r6ExrSfUgHN6TMrt7tyTHe77ZmzRVQipRp6cfCQ8B+mT4ths0UkcYAyk/hF7EaVGrv4BXhDpQv504c7SybfqhWo89STs5gCU9p8MGw1NcgEf/b+PY90p5uMB+I48+QLBUuGK3sCZ001XejTuBvzXSpxcgPkIT1OeJcCwxRFs9s2J4Y4J3SBnzogsFwNhtPG3rKWYKPI21K2byBlBEChDzg9kxIqgbt4mHibloC1PoVXZyH11XIXcmw2fGP6N99i625TPYjF3bKpMxyBqSPeBU6Jq3L1OENFKIG3ludNYYsMJi04HVWlqwezAUhZrBudS5X2cxVSg=","iv_b64":"hL4N7kI9XfRsKC5E","salt_b64":"hlN5/0MU6sVIremon+CgVQ=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -969,7 +1122,16 @@
                 </button>
                 <div id="menuDropdown" class="menu-dropdown">
                     <button id="timelineBtn" class="floating-btn menu-item" title="時間軸導覽">📋</button>
-                    <button id="typewriterBtn" class="floating-btn menu-item" title="打字機效果">⌨</button>
+                    
+                    <!-- 打字機效果與速度控制 -->
+                    <div class="typing-speed-container">
+                        <div class="typing-speed-label">打字機效果</div>
+                        <button id="typewriterBtn" class="floating-btn" style="width: 30px; height: 30px; font-size: 0.8rem; margin-bottom: 0.5rem;" title="打字機效果開關">⌨</button>
+                        <input type="range" id="typingSpeedSlider" class="typing-speed-slider" 
+                               min="10" max="100" value="25" title="打字速度">
+                        <div style="font-size: 0.7rem; color: #9ca3af; text-align: center; margin-top: 0.25rem;">打字速度</div>
+                    </div>
+                    
                     <button id="thumbnailBtn" class="floating-btn menu-item" title="縮圖列">🖼</button>
                     <div class="menu-item" style="position: relative;">
                         <button id="fontSizeBtn" class="floating-btn" title="字體大小">🔤</button>
@@ -983,9 +1145,19 @@
             </div>
         </div>
 
-        <!-- 底部控制：縮圖（預設隱藏）-->
-        <div class="nav-bottom" id="thumbnailsContainer">
+        <!-- 頂部控制：縮圖（預設隱藏）-->
+        <div class="nav-thumbnails" id="thumbnailsContainer">
             <div id="thumbnails" class="thumbnails"></div>
+        </div>
+        
+        <!-- 燈箱 -->
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content">
+                <button class="lightbox-close" id="lightboxClose">×</button>
+                <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+                <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+                <div id="lightboxMedia"></div>
+            </div>
         </div>
 
         <!-- 時間軸面板 -->
@@ -1021,6 +1193,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="gZqLV29Mrh94P3oSVJVrsw"></script>
+<script src="assets/js/main.js" nonce="p+pzjdgxBdXD+Y919WYg3A"></script>
 </body>
 </html>
