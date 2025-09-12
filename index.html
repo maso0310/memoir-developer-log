@@ -14,10 +14,10 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-e3eb5e5d-14dd-4cc7-b4fe-006def3b3d7f'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-9ddc627b-e9ea-4dd6-a660-e474b17485e4'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="e3eb5e5d-14dd-4cc7-b4fe-006def3b3d7f">
+    <style nonce="9ddc627b-e9ea-4dd6-a660-e474b17485e4">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -120,6 +120,95 @@
         .error { color: #ef4444; }
         .info { color: #10b981; }
         
+        /* 密碼模態框樣式 */
+        .password-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        .password-container {
+            background: #2a2a4a;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .password-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .password-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        .password-subtitle {
+            color: #9ca3af;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .password-input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .password-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: #1a1a2e;
+            border: 2px solid #374151;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            transition: border-color 0.15s ease;
+        }
+        .password-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        .password-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .password-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .unlock-btn {
+            background: #3b82f6;
+            color: white;
+        }
+        .unlock-btn:hover {
+            background: #2563eb;
+        }
+        .unlock-btn:disabled {
+            background: #6b7280;
+            cursor: not-allowed;
+        }
+        .password-error {
+            color: #ef4444;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 4px;
+        }
+        
         /* 性能優化：減少重繪 */
         .media-display img, .media-display video {
             will-change: transform;
@@ -132,13 +221,47 @@
             .thumbnails { justify-content: center; }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"QNjuYtzHBfnhWG1vVcXLZ1HCt3NemLPJjTIk+wqdcrYeQewWDrYiikIrEXAgn1g1sE/+Co67WBLu/JT/DJ5LXuss8e06PfsdLHEckE3h9EBHVsu6Eedgf95OghXH4HsfCy/a53ouI71aPZbsgGLUGHdkstJdn46QwQ0itTTM/R8+5TgYU3gfTR3jQ/MO9li6JTZn+/DZOa5sqMh7tsfR0q1kWcTyg65fyAHoymkbvUaJoq77teCuvb35zLGwhH3RbOcIxQwvcv94BD621BqkQ445Y8iRfnD0/XZtHjLafRKDHh0ERADsJ6ixWKizjZKp/DZRYsTuZHPunIlwABWP4xd7TftjFfQd9JupcV7GWR2jwk2L3fD5sJ2+BUerSK8fi+m5BmbQ+/hLeS2JUml6dM0qtuy7pdGX7dak/ooVrC7VB5aGzmgvk9JUx8s2LrQAazdQjMQar35oew3cQZJGLeGUQlel/bfSVNTYnSBfeN3L7m82MqCD27atwnhmt4rt8fNij0SRCPYAUpp0jzlqGgWmRoBiImntHzri2NxvwT+kpjWYydCvFJ1ybEZYv1PueuQHNzh3LxWVjYF6a3z2RTYSLk79VdrJPSpmMXFnHGZvYEa8iMO6gdH1XiLjdIwVkCJOQK6I1Fo/XMrVdOpGAdEI8DCXMD/ffgD6JrSs6ZFRsFnnzyS4hkxS1GTZS7AZ7CFo643KOWaeHYxFPOM7zsiT3YBLsnC+9TaPGUcN3Rf4GJyuYerTlcFq29bUpXVZM9p/f+uU86oVMPJV4n3pP5ydWOteho8CMrWFJ6NucJ+KYU/fr6ap17lvAoeBeQaH/Sudv7nuEtO70F1xpk+MxDwBe3qH0q3MMds84QCF7I1863ZvwbkXgOhdP4ggAcvPEU13m2Ck2ReUfHfpF+c989JpiarLIpK7+3trErayTeC1Q61iLBDzAbac+ZApBoel4RbMEKlbFko9/WOK/Uv49Sgbzz686sJROZE/k84zobQ9U8WqEjyxXy2VSw7mxeUQQ5VIG71m4HQ6MW1GET8uyfIez01gCRR1pz7is9t1rsQzM13r66NvnjYsp5nwb1KWqP/Xxq0+kfhuyYQXzOjtAUrOtGaiOy5a/DnDGgBVsznYBABtkyNqJdlXaic3UEU4KCcpSq4RA1YrIxb6tZT3WThR4UeqzkCvBVYMqYuJKSr6KOry/EDUxNk6jiIoX7XhTYIWunE50hm1dVQajGvC+FfJq7NaDKX9KawVGOq99xUotRSLzOSx8lMqtp7Z/8ptStLV1yfCYU/c2H5YAXshMeqBWadZEYJDa4XTWnzMyKiVb5Z45XkX0WlZsbNpmGGMhCCBk7d9zmIuXWcyVv9TSdbDLLep68SrFFgNlnWbUphpQVNmQz9MhiTW+7zWANgQvsOn1uCFytt5WCEtL1kFhWBpSXZYZO6eye8f3YzmZBzJOxMwqgBnpJI8o9Ws0Wuia2T/Vl5anwbU8yhOTNemAIwjkiDGtZ+ANjMTClJMt8kkJ3hp/zpL+wIDKlzQe58hlX924Vyo11E9WjDcjaFeqElkbEM1ph+soqlsod70ToYp4oi7h+ssG/wDLozlC/ITZnwgttmixQEKmNOFe7X6z4QGVsdhaFjRKCDiBdBHFqwp+A6CkypN9C+RSTOzofage4IoqMw=","iv_b64":"ex7KqKSDdrfnca4o","salt_b64":"ftTio4ayvp5mfwmPcBGCdA=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"1iqIFICJ+ZEtt0FAzQ0cAQPXT+tLXqWdGj0C1sSEXy2B+EHNq1jZyaBlbqsD+qlDudIUWpO4ydwl3tGx2Ua3Dq1MnMQ3LbD6ganRbs0NQXKGxehzFHP7LQQo0rwUfWTSJzEtC07gwuZ9BuNmyaYO8CuhbU5gwr1vrYcbNEAhAMgtvv1Ql2yuMzONVmhqKtRhnPs3JYZBPSzpTcqH1heREnEFg/PQVwoImCqiUeznHMUiB9NioLL/bQnmbMZORCutHDoEfQPOAVTXjZ4v+35XdRmFnfvscSFOYqZoVjdoHQ47CHWBGAqTJiqytUV6IGDsav+2WiyW+MSpRyQqi4X4r1hrlTFNAefASOwZE+ucyRJpVXD5BA1xnsU3TgsxE1HUK9lTHuCyvM4dPOmMzAl5CnAWI2QC81EXjao3ZmWsgypMGFB2jCRBzlHN4dOMpkqAj1XUlxNje/4i+lNOvzSy4z02ok3q4IMvFxBdH3jQX3jVgqlrq7AWBBYVNoalaTuMEnt6vmaTKg25NSuZMp14pU6kcbeivFVmUZmp+M2jkLumXmBKKjZe3Y3cztMQi4PB+9GP5ErCrSs/WxVi8q+PS71lUuDoUeGDuNU4sG0l+EYe5EZZdeS5poHiBl9bj1iYfYia/YWEj72JZvAf+7ygoPhJ4gPFbsH21OywosO/izPkhPNhJ7IDV7RLqA6cN83oHM7vDujo/P0CmvG1FMdGpEBA64rd8Bw1UY/NVEBw7Xtaa0dOtRhmhACHIweMgys1L9Yn6rRnr+SJe3B7TDcC8sPzBAX5WIj/7urhtN0adzF9X5Evc+hAfIJR6Qfd1puifRTUHr6KYcWWuTJxY7U1XBbjbCGCrKiHS1YEJUgA/2DyyRbMAyVNOptkwYz5wzPIlGxSl8J3lgCCB/FCbuVxQv1PZqYUPTM1mu/Fcsj+aofoLF6wwWRytpavslBYMoBiBm6GqYQu1QPD7AYkgY2Gm4L2hGx1PCf46EdVW2FcXC8TDzgwTwHjKUbYgGZyY+t6Wdy8bVLLBVU0ji70jdN4bdcj80X4y3Xf1nRcJug1AQ9dnXxFdMJ2FvLr8TzkCxYhp338Udq/dNK1nU3mw7q4SGLlcEm/PWw+g7BAqvivpWYxxAII0Lmtf3lwIMWbBz8l3msbbogPra6TN7sQsLkcqoNjWwTKEUlNe4ks7TdtXwSIUxqFlbqNX7an3SWfVp0NkyT4JSx/G7xp/hws0jsZDBL6Z+zugxbjR3BJkC/KXxznE/CjgC1xzOu1pmTbqBKF/f55xG2cljyYpFLy0IzsPyUVle1BJqtYIwXnkZtSSvTfzCroFDNMkCvf2aAefzfXypdI/xnmiNUYl49cRGU1oQvcRnC9QW/VDZ3renT4xluLMe2r6YwFt+A6J43oX1A1OXIOqdSX27YXlLRT956amIJJBKNl3DqwZVKTTsCI6/Zv9vrPBiSkEFCRYev520uDkaJCWlv/Mya7SXTGinUwBiNnp0z5eVBbdr9qMHbpgQ8NU10cqQMDEsT1h1MGjk3P74LU4gm1i1YaNmy2S2zahrArNT09GXPtAVM8JXt1mxri/b6Sd+V1wkECe/J8hES9+d5eGgMDL25YNuFm/+lHYePT/m64EkGoAMWvhcqHxSQ0aYRzB++eEFY3xRSlntibQtxzwwQ=","iv_b64":"BaXtHrLiiO4lQwGj","salt_b64":"lwh2KFUbtViTESxF3y0lyA=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
     <!-- 簡化的載入畫面 -->
     <div id="loadingScreen" class="loading">
         <div>載入中...</div>
+    </div>
+
+    <!-- 密碼輸入模態框 -->
+    <div class="password-modal hidden" id="passwordModal">
+        <div class="password-container">
+            <div class="password-icon">🔐</div>
+            <div class="password-title">開發者日誌</div>
+            <div class="password-subtitle">
+                此回憶錄受到加密保護<br>
+                請輸入正確的訪問密碼
+            </div>
+            
+            <div class="password-input-group">
+                <input 
+                    type="password" 
+                    id="memoirPassword" 
+                    class="password-input" 
+                    placeholder="請輸入訪問密碼"
+                    autocomplete="off"
+                    spellcheck="false"
+                    autocorrect="off"
+                />
+            </div>
+            
+            <div class="password-actions">
+                <button id="unlockBtn" class="password-btn unlock-btn">
+                    解鎖查看
+                </button>
+            </div>
+            
+            <div class="password-error hidden" id="passwordError">
+                密碼錯誤，請重新輸入
+            </div>
+        </div>
     </div>
 
     <!-- 主應用 -->
@@ -210,6 +333,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="OW7oODVg7B1Rqj0a+79CVw"></script>
+<script src="assets/js/main.js" nonce="3aL/1LoW50OhqsUbjE4wPQ"></script>
 </body>
 </html>
