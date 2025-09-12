@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-12T21:35:12.866514800+00:00
+// 生成時間: 2025-09-12T21:48:22.527174500+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -243,20 +243,20 @@
                 if (Math.abs(deltaX) > Math.abs(deltaY)) {
                     if (deltaX > 0) {
                         // 向右滑動 - 上一個媒體
-                        elements.prevMediaBtn.click();
+                        if (elements.prevMediaBtn) elements.prevMediaBtn.click();
                     } else {
                         // 向左滑動 - 下一個媒體
-                        elements.nextMediaBtn.click();
+                        if (elements.nextMediaBtn) elements.nextMediaBtn.click();
                     }
                 }
                 // 垂直滑動切換事件
                 else if (Math.abs(deltaY) > 100) {
                     if (deltaY > 0) {
                         // 向下滑動 - 上一個事件
-                        elements.prevEventBtn.click();
+                        if (elements.prevEventBtn) elements.prevEventBtn.click();
                     } else {
                         // 向上滑動 - 下一個事件
-                        elements.nextEventBtn.click();
+                        if (elements.nextEventBtn) elements.nextEventBtn.click();
                     }
                 }
             }, { passive: true });
@@ -296,12 +296,14 @@
         function displayMedia() {
             const currentEvent = getCurrentEvent();
             if (!currentEvent?.media || currentEvent.media.length === 0) {
-                elements.mediaDisplay.innerHTML = '<div>此事件沒有媒體檔案</div>';
+                if (elements.mediaDisplay) {
+                    elements.mediaDisplay.innerHTML = '<div>此事件沒有媒體檔案</div>';
+                }
                 return;
             }
 
             const media = currentEvent.media[currentMediaIndex];
-            if (!media) return;
+            if (!media || !elements.mediaDisplay) return;
 
             // 清空顯示區
             elements.mediaDisplay.innerHTML = '';
@@ -349,6 +351,8 @@
                 }
                 return;
             }
+
+            if (!elements.thumbnails) return; // 防止 null 錯誤
 
             const fragment = document.createDocumentFragment();
             
@@ -405,7 +409,7 @@
 
             // 文字動畫與媒體載入並行執行
             const description = currentEvent.description || '';
-            if (description) {
+            if (description && elements.eventDescription) {
                 // 清除之前的打字機效果
                 if (typewriterTimeout) {
                     clearInterval(typewriterTimeout);
@@ -416,7 +420,7 @@
                 } else {
                     elements.eventDescription.textContent = description;
                 }
-            } else {
+            } else if (elements.eventDescription) {
                 elements.eventDescription.textContent = '';
             }
         }
@@ -425,10 +429,18 @@
         function updateNavigationButtons() {
             const currentEvent = getCurrentEvent();
             
-            elements.prevEventBtn.disabled = currentEventIndex === 0;
-            elements.nextEventBtn.disabled = currentEventIndex === MEMOIR_DATA.timeline_events.length - 1;
-            elements.prevMediaBtn.disabled = currentMediaIndex === 0;
-            elements.nextMediaBtn.disabled = !currentEvent?.media || currentMediaIndex === currentEvent.media.length - 1;
+            if (elements.prevEventBtn) {
+                elements.prevEventBtn.disabled = currentEventIndex === 0;
+            }
+            if (elements.nextEventBtn) {
+                elements.nextEventBtn.disabled = currentEventIndex === MEMOIR_DATA.timeline_events.length - 1;
+            }
+            if (elements.prevMediaBtn) {
+                elements.prevMediaBtn.disabled = currentMediaIndex === 0;
+            }
+            if (elements.nextMediaBtn) {
+                elements.nextMediaBtn.disabled = !currentEvent?.media || currentMediaIndex === currentEvent.media.length - 1;
+            }
             
             // 為按鈕添加觸控回饋
             [elements.prevEventBtn, elements.nextEventBtn, elements.prevMediaBtn, elements.nextMediaBtn].forEach(btn => {
@@ -446,41 +458,49 @@
         }
 
         // 事件處理器（優化性能）
-        elements.prevEventBtn.addEventListener('click', () => {
-            if (currentEventIndex > 0) {
-                jumpToEvent(currentEventIndex - 1);
-            }
-        });
+        if (elements.prevEventBtn) {
+            elements.prevEventBtn.addEventListener('click', () => {
+                if (currentEventIndex > 0) {
+                    jumpToEvent(currentEventIndex - 1);
+                }
+            });
+        }
 
-        elements.nextEventBtn.addEventListener('click', () => {
-            if (currentEventIndex < MEMOIR_DATA.timeline_events.length - 1) {
-                jumpToEvent(currentEventIndex + 1);
-            }
-        });
+        if (elements.nextEventBtn) {
+            elements.nextEventBtn.addEventListener('click', () => {
+                if (currentEventIndex < MEMOIR_DATA.timeline_events.length - 1) {
+                    jumpToEvent(currentEventIndex + 1);
+                }
+            });
+        }
 
-        elements.prevMediaBtn.addEventListener('click', () => {
-            const currentEvent = getCurrentEvent();
-            if (currentEvent?.media && currentMediaIndex > 0) {
-                currentMediaIndex--;
-                slideTransition(elements.mediaDisplay, 'left', () => {
-                    displayMedia();
-                    renderThumbnails();
-                    updateNavigationButtons();
-                });
-            }
-        });
+        if (elements.prevMediaBtn) {
+            elements.prevMediaBtn.addEventListener('click', () => {
+                const currentEvent = getCurrentEvent();
+                if (currentEvent?.media && currentMediaIndex > 0) {
+                    currentMediaIndex--;
+                    slideTransition(elements.mediaDisplay, 'left', () => {
+                        displayMedia();
+                        renderThumbnails();
+                        updateNavigationButtons();
+                    });
+                }
+            });
+        }
 
-        elements.nextMediaBtn.addEventListener('click', () => {
-            const currentEvent = getCurrentEvent();
-            if (currentEvent?.media && currentMediaIndex < currentEvent.media.length - 1) {
-                currentMediaIndex++;
-                slideTransition(elements.mediaDisplay, 'right', () => {
-                    displayMedia();
-                    renderThumbnails();
-                    updateNavigationButtons();
-                });
-            }
-        });
+        if (elements.nextMediaBtn) {
+            elements.nextMediaBtn.addEventListener('click', () => {
+                const currentEvent = getCurrentEvent();
+                if (currentEvent?.media && currentMediaIndex < currentEvent.media.length - 1) {
+                    currentMediaIndex++;
+                    slideTransition(elements.mediaDisplay, 'right', () => {
+                        displayMedia();
+                        renderThumbnails();
+                        updateNavigationButtons();
+                    });
+                }
+            });
+        }
 
         // 選單系統功能
         function toggleMenu() {
@@ -585,23 +605,28 @@
             
             switch(e.key) {
                 case 'ArrowLeft':
-                    elements.prevMediaBtn.click();
+                    if (elements.prevMediaBtn) elements.prevMediaBtn.click();
                     break;
                 case 'ArrowRight':
-                    elements.nextMediaBtn.click();
+                    if (elements.nextMediaBtn) elements.nextMediaBtn.click();
                     break;
                 case 'ArrowUp':
-                    elements.prevEventBtn.click();
+                    if (elements.prevEventBtn) elements.prevEventBtn.click();
                     break;
                 case 'ArrowDown':
-                    elements.nextEventBtn.click();
+                    if (elements.nextEventBtn) elements.nextEventBtn.click();
                     break;
                 case 'Escape':
                     closeTimelinePanel();
+                    closeMenu();
                     break;
                 case 't':
                 case 'T':
                     toggleTimelinePanel();
+                    break;
+                case 'm':
+                case 'M':
+                    toggleMenu();
                     break;
             }
         });
