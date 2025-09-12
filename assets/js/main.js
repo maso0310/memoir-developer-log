@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-12T22:33:22.276730400+00:00
+// 生成時間: 2025-09-12T22:54:24.093237100+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -10,10 +10,12 @@
         let currentMediaIndex = 0;
         let isDecrypting = false;
         let isTypewriterEnabled = true;
+        let typingSpeed = 25;
         let fontSize = 1.1;
         let isMenuOpen = false;
         let isThumbnailsVisible = false;
         let isFontSizeMenuOpen = false;
+        let isLightboxOpen = false;
 
         // DOM 元素緩存
         const elements = {
@@ -35,10 +37,16 @@
             menuBtnIcon: document.getElementById('menuBtnIcon'),
             menuDropdown: document.getElementById('menuDropdown'),
             typewriterBtn: document.getElementById('typewriterBtn'),
+            typingSpeedSlider: document.getElementById('typingSpeedSlider'),
             thumbnailBtn: document.getElementById('thumbnailBtn'),
             fontSizeBtn: document.getElementById('fontSizeBtn'),
             fontSizeDropdown: document.getElementById('fontSizeDropdown'),
-            thumbnailsContainer: document.getElementById('thumbnailsContainer')
+            thumbnailsContainer: document.getElementById('thumbnailsContainer'),
+            lightbox: document.getElementById('lightbox'),
+            lightboxClose: document.getElementById('lightboxClose'),
+            lightboxPrev: document.getElementById('lightboxPrev'),
+            lightboxNext: document.getElementById('lightboxNext'),
+            lightboxMedia: document.getElementById('lightboxMedia')
         };
 
         // 性能優化：事件防抖
@@ -60,8 +68,8 @@
         let touchStartX = 0;
         let touchStartY = 0;
 
-        // 打字機動畫效果
-        function typewriterEffect(element, text, speed = 50) {
+        // 打字機動畫效果 - 支援速度調整
+        function typewriterEffect(element, text, speed = typingSpeed) {
             if (!element || !text) return Promise.resolve();
             
             return new Promise(resolve => {
