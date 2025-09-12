@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-12T17:35:35.972510800+00:00
+// 生成時間: 2025-09-12T17:43:41.227709+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -241,6 +241,31 @@
             }
         });
 
+        // 數據結構轉換函數
+        function normalizeDataStructure(data) {
+            if (!data) return null;
+            
+            // 如果已經有 timeline_events，直接返回
+            if (data.timeline_events) {
+                console.log('✅ 數據已為 timeline_events 格式');
+                return data;
+            }
+            
+            // 如果有 events，轉換為 timeline_events 格式
+            if (data.events && Array.isArray(data.events)) {
+                console.log('🔄 轉換 events 到 timeline_events 格式');
+                const converted = {
+                    ...data,
+                    timeline_events: data.events
+                };
+                console.log('✅ 數據結構轉換完成:', converted);
+                return converted;
+            }
+            
+            console.warn('⚠️ 無法識別的數據結構:', data);
+            return data;
+        }
+
         // 初始化函數
         function initializeApp() {
             console.log('🚀 初始化高性能應用');
@@ -251,8 +276,16 @@
                 return;
             }
             
+            // 正規化數據結構
+            MEMOIR_DATA = normalizeDataStructure(MEMOIR_DATA);
+            if (!MEMOIR_DATA) {
+                console.error('❌ 數據正規化失敗');
+                return;
+            }
+            
             if (!MEMOIR_DATA.timeline_events) {
                 console.error('❌ MEMOIR_DATA.timeline_events 不存在');
+                console.log('📊 可用的數據鍵:', Object.keys(MEMOIR_DATA));
                 return;
             }
             
@@ -296,9 +329,22 @@
         // 監聽 memoir:decrypted 事件（主要的解密成功事件）
         window.addEventListener('memoir:decrypted', function(event) {
             console.log('🎯 收到 memoir:decrypted 事件，數據:', event.detail);
+            
+            let memoirData = null;
             if (event.detail && event.detail.data) {
-                MEMOIR_DATA = event.detail.data;
+                memoirData = event.detail.data;
+            } else if (event.detail) {
+                memoirData = event.detail;
+            }
+            
+            if (memoirData) {
+                // 設置到全域變數
+                window.MEMOIR_DATA = memoirData;
+                MEMOIR_DATA = memoirData;
+                
                 console.log('✅ 從 memoir:decrypted 設置 MEMOIR_DATA:', MEMOIR_DATA);
+                console.log('📊 數據結構檢查 - events:', !!MEMOIR_DATA.events, 'timeline_events:', !!MEMOIR_DATA.timeline_events);
+                
                 const passwordModal = document.getElementById('passwordModal');
                 if (passwordModal) {
                     passwordModal.classList.add('hidden');
@@ -356,21 +402,33 @@
                         }
                         
                         // 設置解密的數據
+                        let finalData = null;
                         if (decryptedData) {
-                            MEMOIR_DATA = decryptedData;
-                            console.log('✅ MEMOIR_DATA 已設置:', MEMOIR_DATA);
+                            finalData = decryptedData;
+                            console.log('✅ 從解密函數取得數據:', finalData);
                         } else if (window.MEMOIR_DATA) {
-                            MEMOIR_DATA = window.MEMOIR_DATA;
-                            console.log('✅ 從 window.MEMOIR_DATA 取得數據:', MEMOIR_DATA);
+                            finalData = window.MEMOIR_DATA;
+                            console.log('✅ 從 window.MEMOIR_DATA 取得數據:', finalData);
                         }
                         
-                        // 調用解密成功回調
-                        if (typeof window.onDecryptionSuccess === 'function' && MEMOIR_DATA) {
-                            console.log('🎯 調用 onDecryptionSuccess 回調');
-                            window.onDecryptionSuccess(MEMOIR_DATA);
+                        if (finalData) {
+                            // 設置到全域和本地變數
+                            window.MEMOIR_DATA = finalData;
+                            MEMOIR_DATA = finalData;
+                            
+                            console.log('🎯 最終數據設置完成:', MEMOIR_DATA);
+                            console.log('📊 數據結構檢查 - events:', !!MEMOIR_DATA.events, 'timeline_events:', !!MEMOIR_DATA.timeline_events);
+                            
+                            // 調用解密成功回調
+                            if (typeof window.onDecryptionSuccess === 'function') {
+                                console.log('🎯 調用 onDecryptionSuccess 回調');
+                                window.onDecryptionSuccess(MEMOIR_DATA);
+                            } else {
+                                // 直接初始化應用
+                                initializeApp();
+                            }
                         } else {
-                            // 直接初始化應用
-                            initializeApp();
+                            console.error('❌ 無法取得解密數據');
                         }
                     } else {
                         // 密碼錯誤
@@ -436,14 +494,22 @@
             // 設置密碼模態框
             setupPasswordModal();
             
+            console.log('🔍 DOM 載入完成，檢查數據狀態');
+            console.log('📊 window.MEMOIR_DATA:', !!window.MEMOIR_DATA);
+            console.log('🔐 REQUIRE_PW:', typeof window.REQUIRE_PW !== 'undefined' ? window.REQUIRE_PW : 'undefined');
+            console.log('🔓 已解鎖:', !!sessionStorage.getItem('mf_pw_unlocked'));
+            
             // 檢查是否需要密碼驗證
             if (typeof window.REQUIRE_PW !== 'undefined' && window.REQUIRE_PW && !sessionStorage.getItem('mf_pw_unlocked')) {
                 console.log('🔒 需要密碼驗證');
                 window.showPasswordPrompt();
             } else if (window.MEMOIR_DATA) {
                 // 如果數據已經載入，直接初始化
+                console.log('✅ 發現現有數據，直接初始化');
                 MEMOIR_DATA = window.MEMOIR_DATA;
                 initializeApp();
+            } else {
+                console.log('⏳ 等待數據載入...');
             }
         });
 
