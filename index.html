@@ -14,10 +14,10 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-a9f30ea2-c7f2-4c46-8319-d9c47e878c2d'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-1d534cb0-7bea-4a86-a985-49d278e79089'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="a9f30ea2-c7f2-4c46-8319-d9c47e878c2d">
+    <style nonce="1d534cb0-7bea-4a86-a985-49d278e79089">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -91,13 +91,7 @@
         }
         .nav-btn:hover { background: #2563eb; }
         .nav-btn:disabled { background: #6b7280; cursor: not-allowed; }
-        .thumbnails { 
-            display: flex; 
-            gap: 0.5rem; 
-            overflow-x: auto; 
-            padding: 1rem;
-            scrollbar-width: thin;
-        }
+        /* 舊縮圖樣式已被新樣式覆蓋，此處保留兼容性 */
         .thumbnail { 
             width: 60px; 
             height: 60px; 
@@ -451,44 +445,98 @@
             opacity: 1;
         }
         
-        /* 左側導航 */
+        /* 左側導航：左右切換 */
         .nav-left {
             left: 20px;
             top: 50%;
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
         }
         
-        /* 右側導航 */
+        /* 右側導航：上下切換 */
         .nav-right {
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
         }
         
-        /* 頂部控制 */
+        /* 頂部控制：選單系統 */
         .nav-top {
             top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 20px;
+            transform: none;
             display: flex;
+            flex-direction: column;
             gap: 10px;
-            align-items: center;
+            align-items: flex-start;
         }
         
-        /* 底部控制 */
+        /* 選單系統 */
+        .menu-system {
+            position: relative;
+        }
+        
+        .menu-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 0.5rem;
+            margin-top: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            transform: translateY(-10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1000;
+        }
+        
+        .menu-dropdown.open {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .menu-item {
+            width: 50px;
+            height: 50px;
+            margin: 5px 0;
+        }
+        
+        /* 底部控制：縮圖列 */
         .nav-bottom {
-            bottom: 20px;
+            bottom: -100px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             gap: 10px;
             align-items: center;
+            transition: bottom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .nav-bottom.visible {
+            bottom: 20px;
+        }
+        
+        .thumbnails {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(26, 26, 46, 0.9);
+            padding: 0.75rem 1rem;
+            border-radius: 25px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            max-width: 400px;
+            overflow-x: auto;
         }
         
         /* 浮動按鈕樣式 */
@@ -584,17 +632,33 @@
         }
         
         .media-display {
-            max-width: 100%;
-            max-height: 70vh;
-            margin-bottom: 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .description-container {
+            position: relative;
+            z-index: 2;
             max-width: 800px;
             width: 100%;
             text-align: center;
             font-size: 1.1rem;
             line-height: 1.8;
+            background: rgba(26, 26, 46, 0.85);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         
         /* 隱藏原有的導航元素 */
@@ -643,7 +707,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"Z+vFob4ReRTU1So2X3YBhOa4lt1qkToSYZ8Pr3dNwgHp6M0gucwj7uhYeh0y6yFVBa/81/hbisfz03op5MnyiIjWsVJca/qh2x40B1iJfdL19zCThT1AGuA+9f+8ZLF0BWct+UBLt32GGhKI6Xqj73XLz6fqLZvy/RrJpXiz+4LCCO++AN8MUBQaaAwWJJKaNW6GnPRXIhx5UBR7sQsg6W8CyPgkgroEw25P0m9xsuxn7LWGPHRLdHDEWJSGVMySpjFGpxjcomRq9JximbRRKZs8bF8q2K2mMdV0VTB1gIiUVb++S3TNskcYcA6IIr+JDJgjU9Njl8926pOJENQUlLEPGmD/Q94auvfVwFX6BhWHBo1M/0C9nQZIMcAnWxA/wj3YJ3LvmYvhvsFPussuPOigDKtHr1wwotYCv6rGp0JXbjTnsLYF+/2epvi/ZN56dlC5pBlLNSonNg+gzOgyJVJVBl9JOpf5fcKXCcLJTI723pi9SMz1CKgUrvJO25HV7wvnv6/jPjDEPMc2SKF5gPykinM6peZojDBoUoJ4fzQwjMb9p8dZ8/OCl9kla79YQM7CeHOhSC+Z/8nSvaSkwQcCdB1lRoajLwIFf0b5HBXvLhMk4iCGEGOU/s5Tz8HiHCQqfmrjf1ixoQqAGCwXdjgcyOyJZLIIk7eX22Nysh49EcbDtTox3dE+ccsNMTv5yDnfvdTaMglUjPho9shMDFPa7xNxmItf3jHHNmFxN/m8O1q9IMWnS5EY1MozwhMHLTz9gXmcld6FiITdiJNmPxJ803HS550qtqiCv2fzrsoTY381zyQB74L+ZKEHvF63yPnBLhz+DDjcfm+O4O/K3C2Fteaq4VL5xlZT02J/QzdKY+sGQPRbPXuKGUYtU+8D304sRUlrFm+H67sIIVs9DEETNImt2qUMqCLZPuQ8e3cVzuUQUMdyXnbU9SeFixibTvyXzkn7EKEK/TOx/2pJFGp3gAGoKvPqf3UiUyTaB/J+362y7vL/TI24E/NxPksUzYsBXkI9wG5VOufgw2tzJgKYd7HWQFqohYyYHAXXKI32CVmOERStzXSaUGMdKtow92ZU7QPE26iuGmysNfzIBoxvimEy4xiJanwbC7Q06K0N0iJxP8XOyoFGOcYLrtcdsVDxMYecG9ZzOT+sxwouIkFyivcG1zHHrecW0QD0TbDjlsTcIHEEUS9IS4bfeAxWMrzzobYQ0I074h+qbZCrwr+/xB5P0eVIkaz9ovO6m1IHFvJbwtj1pnJbYe/25DD9VI2d4dtjTbsyvXflp59XqoefawyMutbAiMTOEmmCQGh0TGjXVRuw2RxUTaZIBcRKhD+M8qEE8Px37ogDoqv7Sdaneuh+nPA+o/YQuH8gm/gpFnpa/TuC/zMFfmPr9WhaXDpDiyNOFTFdP/B6o25HuCpcfmWkrOGM2NX/n3tD4NrnSglhh1FyzixFsvx9i7lMi1UXGgxGJV1DTz+JWOpMjKhMKdX/4ege7xuW+1tBnbnBW0Nt/zYkdxvCUeqNm0X4xX/BbSRs57dHgktwjsAXR6epYxXvRBNpHrHx+NlrYjyWPAb4v+WZBG8IhCvUa6DD5MQVhzPeUavm93OfSw7IhpsAtTALIV6U0Xn495A5k9f7YHSxFgTi9KD6pYodQV1t1CZA7RM=","iv_b64":"MJ22BFYFenEiNT2k","salt_b64":"UYcqxmLWRyQXq+cCmZwl5Q=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"4eOuIR2GOytSn+cAJASHV1Mk6WY5O6E5Rq57skl6/jPPUMYmZQ06Z9J/6CyzYJYmV6a82Wb6ZTlIryfmVKDVawCSGeC5WZpNtLejrBLcmVIlOc4xMTzfduCZHuyseYRh6hRxuS/LTECSdczKUH1W70cvLHhbe8G8AilBToDYyF96ZelkwcC4P8oR9eXS4kg3J6HFtTou+rw/P/hzcuZ0arRn1iR5x7L4LKQOxsiwnXVfazLCk0+GXaY2MMhOtCUrAtQn1unkWIr9UNYzcTT6nFNI44OHJPZtGyQEmwjFttOXlCwPPs7CM14V+ag4aiy5kLGeZ+CLy/LaIlCaOTH4MYMxpYftqpQXOK6hlSi0St1vPy9embi/yKfh6AT8Lmbioy6zmepUTtnc80YiXhDVRUkljb+PdNJuFb9GO/gnPVKB1rrbFubFzBQRzMpnG3hZKFLPaqpRvTKGz7Ia/zWcuExoJidPrw9qE8ozyAohJMjIg71GudSgjD++OBpgawQUgChLAaF+iz1IBuqn8+GueJPdwmpT/cxCtXlLbos7YwGMHpgqSGxxsaif1Gh88ykNBRSENBY/YH52nzQBomfPjp+kL1KNb6frRWqb8oCUUngyYnmcnwcKzT+ztdHh8I1vvvdnvJiLJpUm2qvDzO0UX1YBrBXW9fVIUkpqzO7yQFseLLdPL5kqW9n9hdKbzuqIx9MR2sknC2uu9OfBrikxjb3fUbFYvW8lTZdkW0BDZUAkV6548Iyml7L8k4F3UXgLZPOvwQpaqVPseANseiyyph+yJqu/rRl5GCi4pN2uLSO7IcTP+WmaJpiEGFjpdK6oTb9yFLtbrZEWkNtIE3cGpY+uPGluq3UipnOH6bAfZIYK7qKfdI5SbK5hVIuKvd1k1NcKaclZmePTMgR4+ma716Sk+rpA0IZFQeR0QjhAuAlVN/rmsl6k2Nc3TcBTF2OKzLYqeTPrR1eUiMOFM5om4Ou8iRntAAzzV4ZBJcmuSMQMYPc4jRSzfG3ptq9dLIQBZrfUEuctBfj4a6J6HZwFQ9B6KdwnwIWWLuopQ4yhcsjmPTiVEkyJt1RUHPxn9pL07/t6FEbu4yGpCKePWQfxI/3ZNBLQo/2bEVDyc4YqrGkQWUMaX6aGWu99UY5Kums4gxITOZs6J5C8Td0J3+uKG4GylmIq4T0ByqVFXbR7f4/duSLEHLIHxgv4lviVSUNFnNTcC17zRjprfASAbq5jsIxdwE7wa3dNuEVKX0rCvje7gTSmvO0jhsnWRnXFJBg0mx2humD4JEkMKOakN/3/6+n1bD2+5sTkdS075UZ/9rn5wqbPVIjDwXDkt/RVpmhkjzEoFaTNFT3fOiAJQzfSV4ryzIoG7kCOuRRuHAMEnNUjxpX7+6pDv91UUpQECHhmm+L3tUDh8ahwvkMJn643Fazjo9vql03ckVWzTULAm4v8vXLmqp1oZrer89Bw3suIE+h4KzRo51w5KP2gLJ9EXV1u9JaitYIvJjZp3sORrtcdRhwPSB6Q9bFE1UdVSABMg/Pw3DuwIqRuMCurRBhfFx5bBufSn6zIaZck657SLj4BattStg4URGxjtuhNmtOZ5/9GA7m8HUW2fD50bN85XZK4CSVzhVuFKowZ50riuqcDQReIeci3sJYw/DVXye10hdWRXqw=","iv_b64":"lo0ayPBgQG4KVx4X","salt_b64":"B6A0i8J+aGp/FHoFkLfArA=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -704,30 +768,34 @@
         </div>
 
         <!-- 浮動控制按鈕 -->
-        <!-- 左側導航：上一事件、上一媒體 -->
+        <!-- 左側導航：左右媒體切換 -->
         <div class="floating-controls nav-left">
-            <button id="prevEventBtn" class="floating-btn" title="上一事件">⬆</button>
             <button id="prevMediaBtn" class="floating-btn" title="上一媒體">⬅</button>
-        </div>
-
-        <!-- 右側導航：下一媒體、下一事件 -->
-        <div class="floating-controls nav-right">
-            <button id="nextEventBtn" class="floating-btn" title="下一事件">⬇</button>
             <button id="nextMediaBtn" class="floating-btn" title="下一媒體">➡</button>
         </div>
 
-        <!-- 頂部控制：時間軸、標題信息 -->
+        <!-- 右側導航：上下事件切換 -->
+        <div class="floating-controls nav-right">
+            <button id="prevEventBtn" class="floating-btn" title="上一事件">⬆</button>
+            <button id="nextEventBtn" class="floating-btn" title="下一事件">⬇</button>
+        </div>
+
+        <!-- 頂部控制：功能選單 -->
         <div class="floating-controls nav-top">
-            <button id="timelineBtn" class="floating-btn" title="時間軸導覽">📋</button>
-            <div style="background: rgba(42, 42, 74, 0.9); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(20px); color: #e5e7eb; font-size: 0.9rem;">
-                事件 <span id="currentEventNum">1</span>/<span id="totalEvents">1</span> | 
-                媒體 <span id="currentMediaNum">1</span>/<span id="mediaCount">0</span>
+            <div class="menu-system">
+                <button id="menuBtn" class="floating-btn" title="功能選單">☰</button>
+                <div id="menuDropdown" class="menu-dropdown">
+                    <button id="timelineBtn" class="floating-btn menu-item" title="時間軸導覽">📋</button>
+                    <button id="typewriterBtn" class="floating-btn menu-item" title="打字機效果">⌨</button>
+                    <button id="thumbnailBtn" class="floating-btn menu-item" title="縮圖列">🖼</button>
+                    <button id="fontSizeBtn" class="floating-btn menu-item" title="字體大小">🔤</button>
+                </div>
             </div>
         </div>
 
-        <!-- 底部控制：縮圖 -->
-        <div class="floating-controls nav-bottom">
-            <div id="thumbnails" class="thumbnails" style="background: rgba(42, 42, 74, 0.9); padding: 0.5rem; border-radius: 25px; backdrop-filter: blur(20px);"></div>
+        <!-- 底部控制：縮圖（預設隱藏）-->
+        <div class="floating-controls nav-bottom" id="thumbnailsContainer">
+            <div id="thumbnails" class="thumbnails"></div>
         </div>
 
         <!-- 時間軸面板 -->
@@ -761,6 +829,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="yLukfv2EwmfJxbickQKdOw"></script>
+<script src="assets/js/main.js" nonce="BcOjKepMNuxVo5Q3oCTaFQ"></script>
 </body>
 </html>
