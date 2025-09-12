@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-12T17:19:49.750369600+00:00
+// 生成時間: 2025-09-12T17:25:28.366854400+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -56,7 +56,16 @@
 
         // 獲取當前事件
         function getCurrentEvent() {
-            if (!MEMOIR_DATA?.timeline_events || currentEventIndex >= MEMOIR_DATA.timeline_events.length) {
+            if (!MEMOIR_DATA) {
+                console.warn('⚠️ MEMOIR_DATA 尚未載入');
+                return null;
+            }
+            if (!MEMOIR_DATA.timeline_events) {
+                console.warn('⚠️ MEMOIR_DATA.timeline_events 不存在');
+                return null;
+            }
+            if (currentEventIndex >= MEMOIR_DATA.timeline_events.length) {
+                console.warn('⚠️ currentEventIndex 超出範圍');
                 return null;
             }
             return MEMOIR_DATA.timeline_events[currentEventIndex];
@@ -235,14 +244,30 @@
         // 初始化函數
         function initializeApp() {
             console.log('🚀 初始化高性能應用');
+            console.log('📊 MEMOIR_DATA 狀態:', MEMOIR_DATA);
+            
+            if (!MEMOIR_DATA) {
+                console.error('❌ MEMOIR_DATA 為空，無法初始化應用');
+                return;
+            }
+            
+            if (!MEMOIR_DATA.timeline_events) {
+                console.error('❌ MEMOIR_DATA.timeline_events 不存在');
+                return;
+            }
+            
+            console.log('📅 事件數量:', MEMOIR_DATA.timeline_events.length);
             
             // 隱藏載入畫面
             elements.loadingScreen.classList.add('hidden');
             elements.app.classList.remove('hidden');
 
             // 載入第一個事件
-            if (MEMOIR_DATA?.timeline_events?.length > 0) {
+            if (MEMOIR_DATA.timeline_events.length > 0) {
                 loadEvent();
+            } else {
+                console.warn('⚠️ 沒有回憶錄事件可顯示');
+                elements.mediaDisplay.innerHTML = '<div>此回憶錄沒有事件內容</div>';
             }
 
             console.log('✅ 高性能應用初始化完成');
@@ -250,9 +275,23 @@
 
         // 解密成功回調
         window.onDecryptionSuccess = function(decryptedData) {
+            console.log('🎯 onDecryptionSuccess 被調用，數據:', decryptedData);
             MEMOIR_DATA = decryptedData;
             initializeApp();
         };
+
+        // 監聽解密成功事件
+        document.addEventListener('decryptionSuccess', function(event) {
+            console.log('🎯 收到 decryptionSuccess 事件，數據:', event.detail);
+            if (event.detail) {
+                MEMOIR_DATA = event.detail;
+                const passwordModal = document.getElementById('passwordModal');
+                if (passwordModal) {
+                    passwordModal.classList.add('hidden');
+                }
+                initializeApp();
+            }
+        });
 
         // 密碼驗證函數
         function setupPasswordModal() {
@@ -281,20 +320,34 @@
                 try {
                     // 調用解密函數
                     let success = false;
+                    let decryptedData = null;
                     
                     if (typeof window.attemptDecryption === 'function') {
-                        success = await window.attemptDecryption(password);
+                        const result = await window.attemptDecryption(password);
+                        success = !!result;
+                        decryptedData = result;
                     } else if (typeof window.decryptWithPassword === 'function') {
-                        success = await window.decryptWithPassword(password);
+                        const result = await window.decryptWithPassword(password);
+                        success = !!result;
+                        decryptedData = result;
                     }
 
-                    console.log('🔓 解鎖結果:', success);
+                    console.log('🔓 解鎖結果:', success, '數據:', decryptedData);
 
                     if (success) {
                         // 解鎖成功
                         sessionStorage.setItem('mf_pw_unlocked', '1');
                         if (passwordModal) {
                             passwordModal.classList.add('hidden');
+                        }
+                        
+                        // 設置解密的數據
+                        if (decryptedData) {
+                            MEMOIR_DATA = decryptedData;
+                            console.log('✅ MEMOIR_DATA 已設置:', MEMOIR_DATA);
+                        } else if (window.MEMOIR_DATA) {
+                            MEMOIR_DATA = window.MEMOIR_DATA;
+                            console.log('✅ 從 window.MEMOIR_DATA 取得數據:', MEMOIR_DATA);
                         }
                         
                         // 初始化應用
