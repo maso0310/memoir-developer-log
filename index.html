@@ -14,10 +14,10 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-c8d39827-7258-42a4-82fd-fd615443c79f'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-17e3c5c4-71df-43d1-a367-09812300df0a'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="c8d39827-7258-42a4-82fd-fd615443c79f">
+    <style nonce="17e3c5c4-71df-43d1-a367-09812300df0a">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -380,26 +380,74 @@
             transition: all 0.4s ease;
         }
         
-        /* 時間軸樣式改進 */
+        /* 時間軸樣式改進 - 路線圖設計 */
+        .timeline-container {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+        }
+        
         .timeline-item {
-            padding: 0.5rem;
-            margin: 0.25rem 0;
-            border-radius: 6px;
+            position: relative;
+            padding: 1rem 0.5rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
-            border-left: 3px solid transparent;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -22px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: #4b5563;
+            border: 2px solid #3b82f6;
+            border-radius: 50%;
+            transition: all 0.3s ease;
         }
         
         .timeline-item:hover {
             background: rgba(59, 130, 246, 0.1);
-            border-left-color: #3b82f6;
             transform: translateX(5px);
+        }
+        
+        .timeline-item:hover::before {
+            background: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
         }
         
         .timeline-item.active {
             background: rgba(59, 130, 246, 0.2);
-            border-left-color: #3b82f6;
             transform: translateX(8px);
+        }
+        
+        .timeline-item.active::before {
+            background: #3b82f6;
+            animation: timelinePulse 2s infinite;
+        }
+        
+        @keyframes timelinePulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.3);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
         }
         
         /* 觸控回饋 */
@@ -506,9 +554,111 @@
         }
         
         .menu-item {
+            position: relative;
             width: 50px;
             height: 50px;
             margin: 5px 0;
+        }
+        
+        /* 選單按鈕動畫 - 三條槓變叉叉 */
+        .menu-btn-icon {
+            width: 20px;
+            height: 16px;
+            position: relative;
+            transform: rotate(0deg);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .menu-btn-icon span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: white;
+            border-radius: 1px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .menu-btn-icon span:nth-child(1) {
+            top: 0px;
+        }
+        
+        .menu-btn-icon span:nth-child(2) {
+            top: 7px;
+        }
+        
+        .menu-btn-icon span:nth-child(3) {
+            top: 14px;
+        }
+        
+        .menu-btn-icon.open span:nth-child(1) {
+            top: 7px;
+            transform: rotate(135deg);
+        }
+        
+        .menu-btn-icon.open span:nth-child(2) {
+            opacity: 0;
+            left: -20px;
+        }
+        
+        .menu-btn-icon.open span:nth-child(3) {
+            top: 7px;
+            transform: rotate(-135deg);
+        }
+        
+        /* 字體大小展開選單 */
+        .font-size-dropdown {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 0.5rem;
+            margin-left: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            display: flex;
+            gap: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1001;
+        }
+        
+        .font-size-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .font-size-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background: rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .font-size-btn:hover {
+            background: rgba(59, 130, 246, 0.8);
+            transform: scale(1.1);
+        }
+        
+        .font-size-btn.active {
+            background: rgba(59, 130, 246, 0.9);
+            border-color: rgba(59, 130, 246, 0.9);
         }
         
         /* 底部控制：縮圖列 */
@@ -575,24 +725,24 @@
             transform: none;
         }
         
-        /* 時間軸面板樣式 */
+        /* 時間軸面板樣式 - 從右側進出 */
         .timeline-panel {
             position: fixed;
             top: 0;
-            left: -350px;
+            right: -350px;
             width: 350px;
             height: 100vh;
             background: rgba(26, 26, 46, 0.95);
             backdrop-filter: blur(20px);
             z-index: 1000;
             padding: 2rem 1rem;
-            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             overflow-y: auto;
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .timeline-panel.open {
-            left: 0;
+            right: 80px; /* 不遮擋選單按鈕，留出空間 */
         }
         
         .timeline-panel .close-btn {
@@ -622,13 +772,16 @@
         }
         
         .media-container {
-            flex: 1;
-            padding: 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            position: relative;
+            z-index: 1;
         }
         
         .media-display {
@@ -646,19 +799,19 @@
         }
         
         .description-container {
-            position: relative;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
             z-index: 2;
-            max-width: 800px;
             width: 100%;
-            text-align: center;
+            text-align: left;
             font-size: 1.1rem;
             line-height: 1.8;
-            background: rgba(26, 26, 46, 0.85);
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
             backdrop-filter: blur(20px);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: auto;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            padding: 3rem 80px 2rem 80px; /* 左右留空間給選單按鈕 */
+            min-height: 120px;
         }
         
         /* 隱藏原有的導航元素 */
@@ -707,7 +860,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"Y0il1Qk+S1pKIkDag2NlLPtGepYmd63TZRuriHpV+GHRnQi8CoTkDUEdqCBK46FimmmMuHYv1kwPGJwinCP1STQklSn40Npsy/2YhaEvDR6Ncrz7uYeRQQrjcZoXzbArN0Y1wl1P6pBbF7yQGFln1FK0Gw7YuBk4Mj2yDY/cN4U7ezGUa+uB1hNrBHMSNVaczqHz0OV1pzaMMsU2cuLtyK3HNnWI+Dw3LCPmK4oEkYNoQM+9Ph3y/iBByGSHwiGDKOKX6XQzrTPEssyENnCoMM/7NoV238ZiIM85msKneYQlA6lnD9/oPUgY0GLu2qKYuDbKoe/9OnOWv8AjEkvZ0qPvCjI1NJqGMU/LLVIY299d0EQYRzx5aA0tJEZXucOz6pO9l2iMVyMmH59J3oihdUvDtPV6xAe70dtc2v7EQo2BR0vjD7gBW0sYg3LKhgA5i3SVfkxOudV2eIUzmOPlS4dytUBrzlupeQqNNgH80XiL+rlmWPgZnsc4xfG3o1SyiCnW+woKnNtsgG6dMqsNJYjMDsCKcReuhCylm0cLc0se3M+R4Gx3d2k2sgeMRSNhClIY1g6pzcfkyaFQuhd7qT16VJE5bH8zpEnspEKfkKwrKVllsHmK/Dp1xw3yOUoI8BHyjDsnDHR68sNsN0N1b9NOPs/rP7XzAqnrA4VM2f11bHAn5w8Oj053iC7KKwEexpbqb9AmTC99KlnYmjRvUwcwzWS4q2qnK9EVg5+t38YYn9jhOqY5kjNcoDtj4ARDLVq80XtgMlR4Sre0ADkmBKFjWQVVulT3rs2gUcnkfhVa+Pc8IPY/WW7KDnPKxcHKuIcfbJs/jRHoY7QoS7wDDjs3yw2nIrE7OQhZFOJDN1VmBE6gC+rFIW6psIs3MZBbHai68KivD8q3DMS2ZFc6KR3qB68C+Sm4Kju2hIngpBB+Tkg+iZj2VR2zCj8cjmI5/MdIjgJFfkR1njBwfjWaYK9d8KEwC5ZByxkqhKuPdQ4iXjCguPoJCk8JH4nBDVz77CyIMcw7aM1XU3Geq686nytljHLbO2OTwup1q+9kTHJUeIyo4bF4UJBJa85jemBw/IdFEHdOthDx4cyo7pFO+0t8fLo2zBWzOzxfoFQ7JQsfKzbI0b/1xy1QuWMut25QQ2NQuLyWsm1zSnuL8hgo4BaK61Lb0kHRFDGh3U0Dnvv3sZM4S+zlM0hUql5fwbO7FoLMFOx0LYTCjPYCEm6csgSuLXlXYOdaY013Fz1+VUyjDp8vJs68G2P+9xIZo/tCMtpLVEtKP8c8VJJ9u/aPR7RxvM/u+Uz7ar1NGBejJjw+J9pv8w2zW9cUDad8c/1cs9jBMX6HYi+nGf1OvHlPeZ69JyjJA/1Fwjk4hpD25Da+4016eU22scqRv5yGgJC8W5if/me9cHz9FKMomJw9pHfF58adCupuCnWXTEsSUkxpQyv8Fl1+6W7HGQ5sq5OrJS3fd+ys4WS5fcRnFEF/mVRooHbGT8NrXbJZxv6x9awGUdAqjZ9OgT5S6GCx7ukuLPzQiPABj2ZDRKw4fhx8neX6o9p0kbiu8YQDOxjGzfSwzru/kiXx9QKF/NKEXU1kxlu3hTOx8l+UNtNiL9biNIBQ1pxslu0G9FHgufOPDcfHH7k7nP3D495DhPDZSZ2bE+oZBgo=","iv_b64":"PZzLGXT9/qGYWNNZ","salt_b64":"UiHZb+19WNYMXEvG/+8l+g=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"bWCrS9UF6y7hSNzuPiduobxq9vmiKuPlXzS0/JgSyosQiFdHWD36/YQRhA85BrSv5gUO94xn80bgSzqqEhMPAGGeChISnIYC5zldAaF0mk1kM7wVeEwTuqWEfnfi/DafA/ON1P9lXaPMSN9eZV6xhuHatwNRSSAmvJ3ot1nt00s1FYUNTE3cXagHl+s6I+9MLM5ouPIYiikKzyNvdXgR4X/WumqGGd5WAmwR1M2XX9mPUykICqYF1PgpJoXc4WPuNZuUsH/pwcBXOp67hrUpF2qoz/m1ArsMVp5cIK8ZCSXpQgZvkt5c9xLM3oTL6hrObC3zPFWTx+IlRCCYmgRy6SUQkILb8BkW7uzJyo5ZoKj9+4z4vvEyTqMdw5MdJFYAZqqiAAN8GNKhQmoEw6QdpfUwQLjXmIKTJklgMUe/jFPNia/734H5GiIuIlJRy/ux9LWknyHIJZ/k8QL2dG8UA8jpRdmQbfJBWYaUOws0YrKT5wj5svyl1TjpfHlOIjJvfklOJ5mj7sbJMHMnc0kMOPJTW3fMN0wRR9BTCwy39kaDIc7P1mw3i0RNKAzwkjfMJUil1YuFqtg9uEKA9+9ThXqyfdHaEZ9AXzO1hcIZLEYdp/TuP/4ce1fKuDp0/N9pmNNMmjr/iVh7+cucCjUYKVmswosEPIHBBmn32oyjeEmJo75EEMHzou5aoHWC0BsaRq1XCkS0fe0/giMaQbu4wTjUlFoBbjzz0FR0w5asUVd31W4imaoTjjXnn1UDf1T+OG5RU4/B32ruY9vIvDKu4Aan1vh8GEfaBEaSx07YRROdoQMa6Nxcig5FD/GsgiCgWK71TcBv17qtMCkMO/6AA4F37JQRXHBV/OAKMQcjmOzVZnI7wI639UTtSxv54isuYdMt1swIuo50je7Nif6Mf4HxLr/BTvRYO/UZsjU+a6vaR7hltUn/JFR1NpaMrJTenTyVvaS9vBT4MvlYONlMkJq1zIe9RLK9BHywYc1eVxCF+CXii+gywrXHNZzhDBX3G0uWuqOS58qXmZv/jimyIztq/UMhyNn//RGbqCOJF0YhcAaAAM6Z/f6f8uPq+rwRf4l/9Y9cM0A7lJRjTYHaT1uarpxaKmIqu461smluSrnaQ9f7171Dx8kKbDzBgjRHEXBPE4vK6R8OzS5mVEDkNQIW9lWh+2bh2SUuCrNN++MOsT9940TOyiohNBMx6DB8vd5aAVkAbyWSgPDG6QySiSLd6rF7e1dNtBFlNaFKkL+Wms+7dB8J7gf4lvcMXgO5dCbw1LnTkbKLB3bBKQBA2okppnUsTR1zzAV21ks3dBNsTE4sQNUci8MSV5jjvL3Otwjcdxa5ZoDNzc1o5mBQyTYIwWUWdW2xt55A3CK2OdvQiks9w2e2lJVm+uOMPKATWMpkGiwDBXYtLneoGSMRmEpjybHSSCgiuKCki15exZPZmLEp08HDb9XyFTm+IVQYQXIHPKfg1aBLRvMwnwim29moPSXW7WfUTWEqmsAZC7Qs1/Smsc51xaEsLX5qyBJijMwJD/xPoU1pBdghmBzXRjOG/dkxwd7Iof1pRsY2qJkUbQNT/qaeDY35sQG62S+yO5EFkxzc45IlmJsJLcMe8+eh8AdDcF9TuFWghmJnfhNcnnnE3ukCxDy4JB3H6VL1eHxd3/A=","iv_b64":"Gl17bsYZ8kMqWcMa","salt_b64":"2s/uZx8/pTranWPnvp9MwA=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -783,12 +936,25 @@
         <!-- 頂部控制：功能選單 -->
         <div class="floating-controls nav-top">
             <div class="menu-system">
-                <button id="menuBtn" class="floating-btn" title="功能選單">☰</button>
+                <button id="menuBtn" class="floating-btn" title="功能選單">
+                    <div id="menuBtnIcon" class="menu-btn-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
                 <div id="menuDropdown" class="menu-dropdown">
                     <button id="timelineBtn" class="floating-btn menu-item" title="時間軸導覽">📋</button>
                     <button id="typewriterBtn" class="floating-btn menu-item" title="打字機效果">⌨</button>
                     <button id="thumbnailBtn" class="floating-btn menu-item" title="縮圖列">🖼</button>
-                    <button id="fontSizeBtn" class="floating-btn menu-item" title="字體大小">🔤</button>
+                    <div class="menu-item" style="position: relative;">
+                        <button id="fontSizeBtn" class="floating-btn" title="字體大小">🔤</button>
+                        <div id="fontSizeDropdown" class="font-size-dropdown">
+                            <button class="font-size-btn" data-size="0.9" title="小">小</button>
+                            <button class="font-size-btn active" data-size="1.1" title="中">中</button>
+                            <button class="font-size-btn" data-size="1.3" title="大">大</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -802,7 +968,9 @@
         <div id="timelinePanel" class="timeline-panel">
             <button class="close-btn" id="closeTimelineBtn">×</button>
             <h3 style="color: #e5e7eb; margin-bottom: 2rem; text-align: center;">開發者日誌</h3>
-            <div id="timeline" class="timeline-container"></div>
+            <div id="timeline" class="timeline-container">
+                <div class="timeline-line"></div>
+            </div>
         </div>
     </div>
 
@@ -829,6 +997,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="TUvWp1NNY4C3Nr+c4gJeuw"></script>
+<script src="assets/js/main.js" nonce="YjEn47TpwyluiI4CEfOXbQ"></script>
 </body>
 </html>
