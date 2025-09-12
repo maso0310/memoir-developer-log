@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-12T21:07:10.916990300+00:00
+// 生成時間: 2025-09-12T21:35:12.866514800+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -9,6 +9,10 @@
         let currentEventIndex = 0;
         let currentMediaIndex = 0;
         let isDecrypting = false;
+        let isTypewriterEnabled = true;
+        let fontSize = 1.1;
+        let isMenuOpen = false;
+        let isThumbnailsVisible = false;
 
         // DOM 元素緩存
         const elements = {
@@ -16,10 +20,6 @@
             app: document.getElementById('app'),
             mediaDisplay: document.getElementById('mediaDisplay'),
             eventDescription: document.getElementById('eventDescription'),
-            currentEventNum: document.getElementById('currentEventNum'),
-            totalEvents: document.getElementById('totalEvents'),
-            currentMediaNum: document.getElementById('currentMediaNum'),
-            mediaCount: document.getElementById('mediaCount'),
             timeline: document.getElementById('timeline'),
             thumbnails: document.getElementById('thumbnails'),
             prevEventBtn: document.getElementById('prevEventBtn'),
@@ -29,7 +29,13 @@
             timelineBtn: document.getElementById('timelineBtn'),
             timelinePanel: document.getElementById('timelinePanel'),
             closeTimelineBtn: document.getElementById('closeTimelineBtn'),
-            descriptionContainer: document.getElementById('descriptionContainer')
+            descriptionContainer: document.getElementById('descriptionContainer'),
+            menuBtn: document.getElementById('menuBtn'),
+            menuDropdown: document.getElementById('menuDropdown'),
+            typewriterBtn: document.getElementById('typewriterBtn'),
+            thumbnailBtn: document.getElementById('thumbnailBtn'),
+            fontSizeBtn: document.getElementById('fontSizeBtn'),
+            thumbnailsContainer: document.getElementById('thumbnailsContainer')
         };
 
         // 性能優化：事件防抖
@@ -336,8 +342,11 @@
         // 快速渲染縮圖
         function renderThumbnails() {
             const currentEvent = getCurrentEvent();
-            if (!currentEvent?.media) {
-                elements.thumbnails.innerHTML = '';
+            if (!currentEvent?.media || currentEvent.media.length <= 1) {
+                // 如果沒有媒體或只有一個媒體，隱藏縮圖列
+                if (elements.thumbnailsContainer) {
+                    elements.thumbnailsContainer.classList.remove('visible');
+                }
                 return;
             }
 
@@ -380,12 +389,6 @@
             const currentEvent = getCurrentEvent();
             if (!currentEvent) return;
 
-            // 更新資訊
-            elements.currentEventNum.textContent = currentEventIndex + 1;
-            elements.totalEvents.textContent = MEMOIR_DATA.timeline_events.length;
-            elements.mediaCount.textContent = currentEvent.media ? currentEvent.media.length : 0;
-            elements.currentMediaNum.textContent = currentMediaIndex + 1;
-
             // 更新導航按鈕
             updateNavigationButtons();
 
@@ -407,8 +410,12 @@
                 if (typewriterTimeout) {
                     clearInterval(typewriterTimeout);
                 }
-                // 非阻塞的打字機效果
-                typewriterEffect(elements.eventDescription, description, 25);
+                // 根據設置決定是否使用打字機效果
+                if (isTypewriterEnabled) {
+                    typewriterEffect(elements.eventDescription, description, 25);
+                } else {
+                    elements.eventDescription.textContent = description;
+                }
             } else {
                 elements.eventDescription.textContent = '';
             }
@@ -475,23 +482,100 @@
             }
         });
 
-        // 時間軸面板按鈕
+        // 選單系統功能
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (elements.menuDropdown) {
+                elements.menuDropdown.classList.toggle('open', isMenuOpen);
+            }
+        }
+        
+        function closeMenu() {
+            isMenuOpen = false;
+            if (elements.menuDropdown) {
+                elements.menuDropdown.classList.remove('open');
+            }
+        }
+        
+        function toggleThumbnails() {
+            isThumbnailsVisible = !isThumbnailsVisible;
+            if (elements.thumbnailsContainer) {
+                elements.thumbnailsContainer.classList.toggle('visible', isThumbnailsVisible);
+            }
+            closeMenu();
+        }
+        
+        function toggleTypewriter() {
+            isTypewriterEnabled = !isTypewriterEnabled;
+            // 更新按鈕外觀
+            if (elements.typewriterBtn) {
+                elements.typewriterBtn.style.background = isTypewriterEnabled 
+                    ? 'rgba(59, 130, 246, 0.8)' 
+                    : 'rgba(107, 114, 128, 0.8)';
+            }
+            closeMenu();
+        }
+        
+        function cycleFontSize() {
+            const sizes = [0.9, 1.0, 1.1, 1.2, 1.3];
+            const currentIndex = sizes.indexOf(fontSize);
+            fontSize = sizes[(currentIndex + 1) % sizes.length];
+            
+            if (elements.descriptionContainer) {
+                elements.descriptionContainer.style.fontSize = fontSize + 'rem';
+            }
+            closeMenu();
+        }
+
+        // 選單系統按鈕事件
+        if (elements.menuBtn) {
+            elements.menuBtn.addEventListener('click', toggleMenu);
+            addTouchFeedback(elements.menuBtn);
+        }
+        
         if (elements.timelineBtn) {
-            elements.timelineBtn.addEventListener('click', toggleTimelinePanel);
+            elements.timelineBtn.addEventListener('click', () => {
+                toggleTimelinePanel();
+                closeMenu();
+            });
             addTouchFeedback(elements.timelineBtn);
+        }
+        
+        if (elements.typewriterBtn) {
+            elements.typewriterBtn.addEventListener('click', toggleTypewriter);
+            addTouchFeedback(elements.typewriterBtn);
+        }
+        
+        if (elements.thumbnailBtn) {
+            elements.thumbnailBtn.addEventListener('click', toggleThumbnails);
+            addTouchFeedback(elements.thumbnailBtn);
+        }
+        
+        if (elements.fontSizeBtn) {
+            elements.fontSizeBtn.addEventListener('click', cycleFontSize);
+            addTouchFeedback(elements.fontSizeBtn);
         }
 
         if (elements.closeTimelineBtn) {
             elements.closeTimelineBtn.addEventListener('click', closeTimelinePanel);
         }
 
-        // 點擊面板外部關閉時間軸
+        // 點擊面板外部關閉時間軸和選單
         document.addEventListener('click', (e) => {
+            // 關閉時間軸面板
             if (elements.timelinePanel && 
                 elements.timelinePanel.classList.contains('open') && 
                 !elements.timelinePanel.contains(e.target) && 
                 e.target !== elements.timelineBtn) {
                 closeTimelinePanel();
+            }
+            
+            // 關閉選單
+            if (isMenuOpen && 
+                elements.menuDropdown &&
+                !elements.menuDropdown.contains(e.target) &&
+                e.target !== elements.menuBtn) {
+                closeMenu();
             }
         });
 
