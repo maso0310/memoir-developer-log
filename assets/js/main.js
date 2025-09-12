@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-12T18:25:28.553126500+00:00
+// 生成時間: 2025-09-12T21:07:10.916990300+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -26,7 +26,9 @@
             nextEventBtn: document.getElementById('nextEventBtn'),
             prevMediaBtn: document.getElementById('prevMediaBtn'),
             nextMediaBtn: document.getElementById('nextMediaBtn'),
-            timelineToggle: document.getElementById('timelineToggle'),
+            timelineBtn: document.getElementById('timelineBtn'),
+            timelinePanel: document.getElementById('timelinePanel'),
+            closeTimelineBtn: document.getElementById('closeTimelineBtn'),
             descriptionContainer: document.getElementById('descriptionContainer')
         };
 
@@ -173,8 +175,8 @@
             elements.timeline.appendChild(fragment);
         }
 
-        // 跳轉到特定事件
-        async function jumpToEvent(eventIndex) {
+        // 跳轉到特定事件（非阻塞）
+        function jumpToEvent(eventIndex) {
             if (eventIndex === currentEventIndex) return;
             
             const direction = eventIndex > currentEventIndex ? 'right' : 'left';
@@ -187,17 +189,23 @@
                 item.classList.toggle('active', index === currentEventIndex);
             });
             
-            // 使用滑動轉場效果
-            await slideTransition(elements.descriptionContainer, direction, () => {
+            // 使用滑動轉場效果（非阻塞）
+            slideTransition(elements.descriptionContainer, direction, () => {
                 loadEvent();
             });
         }
 
-        // 時間軸摺疊功能
-        function toggleTimeline() {
-            isTimelineCollapsed = !isTimelineCollapsed;
-            elements.timeline.style.display = isTimelineCollapsed ? 'none' : 'block';
-            elements.timelineToggle.textContent = isTimelineCollapsed ? '展開' : '收合';
+        // 時間軸面板功能
+        function toggleTimelinePanel() {
+            if (elements.timelinePanel) {
+                elements.timelinePanel.classList.toggle('open');
+            }
+        }
+
+        function closeTimelinePanel() {
+            if (elements.timelinePanel) {
+                elements.timelinePanel.classList.remove('open');
+            }
         }
 
         // 觸控手勢處理
@@ -367,8 +375,8 @@
             elements.thumbnails.appendChild(fragment);
         }
 
-        // 快速載入事件（帶沉浸式動畫）
-        async function loadEvent() {
+        // 快速載入事件（優化性能，異步執行）
+        function loadEvent() {
             const currentEvent = getCurrentEvent();
             if (!currentEvent) return;
 
@@ -378,32 +386,32 @@
             elements.mediaCount.textContent = currentEvent.media ? currentEvent.media.length : 0;
             elements.currentMediaNum.textContent = currentMediaIndex + 1;
 
-            // 清除之前的打字機效果
-            if (typewriterTimeout) {
-                clearInterval(typewriterTimeout);
-            }
-
-            // 使用打字機效果更新描述
-            const description = currentEvent.description || '';
-            if (description) {
-                await typewriterEffect(elements.eventDescription, description, 30);
-            } else {
-                elements.eventDescription.textContent = '';
-            }
-
             // 更新導航按鈕
             updateNavigationButtons();
 
-            // 載入媒體與縮圖（帶淡入效果）
-            await fadeTransition(elements.mediaDisplay, () => {
+            // 立即載入媒體（不等待文字動畫）
+            fadeTransition(elements.mediaDisplay, () => {
                 displayMedia();
             });
             
             renderThumbnails();
-            renderTimeline(); // 更新時間軸狀態
+            renderTimeline();
             
-            // 快速解密
-            setTimeout(quickDecryptMedia, 50);
+            // 立即開始解密（與文字動畫並行）
+            setTimeout(quickDecryptMedia, 10);
+
+            // 文字動畫與媒體載入並行執行
+            const description = currentEvent.description || '';
+            if (description) {
+                // 清除之前的打字機效果
+                if (typewriterTimeout) {
+                    clearInterval(typewriterTimeout);
+                }
+                // 非阻塞的打字機效果
+                typewriterEffect(elements.eventDescription, description, 25);
+            } else {
+                elements.eventDescription.textContent = '';
+            }
         }
 
         // 更新導航按鈕狀態
@@ -421,26 +429,33 @@
                     addTouchFeedback(btn);
                 }
             });
+
+            // 為浮動控制按鈕添加觸控回饋
+            document.querySelectorAll('.floating-btn').forEach(btn => {
+                if (!btn.classList.contains('touch-feedback')) {
+                    addTouchFeedback(btn);
+                }
+            });
         }
 
-        // 事件處理器（帶沉浸式動畫）
-        elements.prevEventBtn.addEventListener('click', async () => {
+        // 事件處理器（優化性能）
+        elements.prevEventBtn.addEventListener('click', () => {
             if (currentEventIndex > 0) {
-                await jumpToEvent(currentEventIndex - 1);
+                jumpToEvent(currentEventIndex - 1);
             }
         });
 
-        elements.nextEventBtn.addEventListener('click', async () => {
+        elements.nextEventBtn.addEventListener('click', () => {
             if (currentEventIndex < MEMOIR_DATA.timeline_events.length - 1) {
-                await jumpToEvent(currentEventIndex + 1);
+                jumpToEvent(currentEventIndex + 1);
             }
         });
 
-        elements.prevMediaBtn.addEventListener('click', async () => {
+        elements.prevMediaBtn.addEventListener('click', () => {
             const currentEvent = getCurrentEvent();
             if (currentEvent?.media && currentMediaIndex > 0) {
                 currentMediaIndex--;
-                await slideTransition(elements.mediaDisplay, 'left', () => {
+                slideTransition(elements.mediaDisplay, 'left', () => {
                     displayMedia();
                     renderThumbnails();
                     updateNavigationButtons();
@@ -448,11 +463,11 @@
             }
         });
 
-        elements.nextMediaBtn.addEventListener('click', async () => {
+        elements.nextMediaBtn.addEventListener('click', () => {
             const currentEvent = getCurrentEvent();
             if (currentEvent?.media && currentMediaIndex < currentEvent.media.length - 1) {
                 currentMediaIndex++;
-                await slideTransition(elements.mediaDisplay, 'right', () => {
+                slideTransition(elements.mediaDisplay, 'right', () => {
                     displayMedia();
                     renderThumbnails();
                     updateNavigationButtons();
@@ -460,11 +475,25 @@
             }
         });
 
-        // 時間軸摺疊按鈕
-        if (elements.timelineToggle) {
-            elements.timelineToggle.addEventListener('click', toggleTimeline);
-            addTouchFeedback(elements.timelineToggle);
+        // 時間軸面板按鈕
+        if (elements.timelineBtn) {
+            elements.timelineBtn.addEventListener('click', toggleTimelinePanel);
+            addTouchFeedback(elements.timelineBtn);
         }
+
+        if (elements.closeTimelineBtn) {
+            elements.closeTimelineBtn.addEventListener('click', closeTimelinePanel);
+        }
+
+        // 點擊面板外部關閉時間軸
+        document.addEventListener('click', (e) => {
+            if (elements.timelinePanel && 
+                elements.timelinePanel.classList.contains('open') && 
+                !elements.timelinePanel.contains(e.target) && 
+                e.target !== elements.timelineBtn) {
+                closeTimelinePanel();
+            }
+        });
 
         // 鍵盤導航
         document.addEventListener('keydown', (e) => {
@@ -482,6 +511,13 @@
                     break;
                 case 'ArrowDown':
                     elements.nextEventBtn.click();
+                    break;
+                case 'Escape':
+                    closeTimelinePanel();
+                    break;
+                case 't':
+                case 'T':
+                    toggleTimelinePanel();
                     break;
             }
         });
