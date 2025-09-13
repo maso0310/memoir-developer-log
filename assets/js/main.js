@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-13T15:54:54.284499700+00:00
+// 生成時間: 2025-09-13T16:10:42.351622700+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -40,10 +40,9 @@
             menuBtn: document.getElementById('menuBtn'),
             menuBtnIcon: document.getElementById('menuBtnIcon'),
             menuDropdown: document.getElementById('menuDropdown'),
-            typewriterBtn: document.getElementById('typewriterBtn'),
-            typewriterDropdown: document.getElementById('typewriterDropdown'),
-            typewriterToggle: document.getElementById('typewriterToggle'),
-            typingSpeedSlider: document.getElementById('typingSpeedSlider'),
+            typewriterToggleBtn: document.getElementById('typewriterToggleBtn'),
+            typewriterSpeedBtn: document.getElementById('typewriterSpeedBtn'),
+            typewriterSpeedDropdown: document.getElementById('typewriterSpeedDropdown'),
             thumbnailBtn: document.getElementById('thumbnailBtn'),
             fontSizeBtn: document.getElementById('fontSizeBtn'),
             fontSizeDropdown: document.getElementById('fontSizeDropdown'),
@@ -708,34 +707,47 @@
             // 不關閉選單，讓用戶可以繼續調整
         }
         
-        function toggleTypewriterMenu() {
+        function toggleTypewriterSpeedMenu() {
             isTypewriterMenuOpen = !isTypewriterMenuOpen;
-            if (elements.typewriterDropdown) {
-                elements.typewriterDropdown.classList.toggle('open', isTypewriterMenuOpen);
+            if (elements.typewriterSpeedDropdown) {
+                elements.typewriterSpeedDropdown.classList.toggle('open', isTypewriterMenuOpen);
             }
         }
-        
-        function closeTypewriterMenu() {
+
+        function closeTypewriterSpeedMenu() {
             isTypewriterMenuOpen = false;
-            if (elements.typewriterDropdown) {
-                elements.typewriterDropdown.classList.remove('open');
+            if (elements.typewriterSpeedDropdown) {
+                elements.typewriterSpeedDropdown.classList.remove('open');
             }
         }
-        
+
         function toggleTypewriter() {
             isTypewriterEnabled = !isTypewriterEnabled;
-            
-            // 更新切換按鈕外觀和文字
-            if (elements.typewriterToggle) {
-                elements.typewriterToggle.classList.toggle('active', isTypewriterEnabled);
-                elements.typewriterToggle.textContent = isTypewriterEnabled ? 'ON' : 'OFF';
-            }
-            
+
             // 更新主按鈕外觀
-            if (elements.typewriterBtn) {
-                elements.typewriterBtn.style.background = isTypewriterEnabled 
-                    ? 'rgba(59, 130, 246, 0.8)' 
+            if (elements.typewriterToggleBtn) {
+                elements.typewriterToggleBtn.style.background = isTypewriterEnabled
+                    ? 'rgba(59, 130, 246, 0.8)'
                     : 'rgba(107, 114, 128, 0.8)';
+            }
+        }
+
+        function setTypingSpeed(speed) {
+            typingSpeed = parseInt(speed);
+
+            // 更新速度按鈕活動狀態
+            document.querySelectorAll('.speed-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-speed="${speed}"]`).classList.add('active');
+
+            // 立即應用新速度到當前打字機效果
+            if (isTypewriterEnabled && typewriterTimeout) {
+                const currentEvent = getCurrentEvent();
+                if (currentEvent?.description && elements.eventDescription) {
+                    clearInterval(typewriterTimeout);
+                    typewriterEffect(elements.eventDescription, currentEvent.description, typingSpeed);
+                }
             }
         }
         
@@ -846,42 +858,31 @@
             addTouchFeedback(elements.timelineBtn);
         }
         
-        if (elements.typewriterBtn) {
-            elements.typewriterBtn.addEventListener('click', () => {
-                debounceButtonClick('typewriter', toggleTypewriterMenu, 200);
+        // 打字機開關按鈕事件
+        if (elements.typewriterToggleBtn) {
+            elements.typewriterToggleBtn.addEventListener('click', () => {
+                debounceButtonClick('typewriter-toggle', toggleTypewriter, 200);
+                closeMenu(); // 點擊後關閉選單
             });
-            addTouchFeedback(elements.typewriterBtn);
+            addTouchFeedback(elements.typewriterToggleBtn);
         }
-        
-        // 打字機切換按鈕事件
-        if (elements.typewriterToggle) {
-            elements.typewriterToggle.addEventListener('click', (e) => {
+
+        // 打字機速度設定按鈕事件
+        if (elements.typewriterSpeedBtn) {
+            elements.typewriterSpeedBtn.addEventListener('click', () => {
+                debounceButtonClick('typewriter-speed', toggleTypewriterSpeedMenu, 200);
+            });
+            addTouchFeedback(elements.typewriterSpeedBtn);
+        }
+
+        // 速度按鈕事件監聽器
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('speed-btn')) {
                 e.stopPropagation();
-                toggleTypewriter();
-            });
-        }
-        
-        // 打字機速度滑軒事件
-        if (elements.typingSpeedSlider) {
-            elements.typingSpeedSlider.addEventListener('input', (e) => {
-                typingSpeed = parseInt(e.target.value);
-                updateSpeedLabel(typingSpeed);
-                console.log('打字機速度已調整至:', typingSpeed, 'ms');
-                
-                // 當滑軒改變時，如果當前正在使用打字機效果，立即應用新速度
-                if (isTypewriterEnabled && typewriterTimeout) {
-                    // 重新啟動當前的打字機效果，以新速度播放
-                    const currentEvent = getCurrentEvent();
-                    if (currentEvent?.description && elements.eventDescription) {
-                        clearInterval(typewriterTimeout);
-                        typewriterEffect(elements.eventDescription, currentEvent.description, typingSpeed);
-                    }
-                }
-            });
-            
-            // 初始化速度標籤
-            updateSpeedLabel(typingSpeed);
-        }
+                const speed = e.target.getAttribute('data-speed');
+                setTypingSpeed(speed);
+            }
+        });
         
         if (elements.thumbnailBtn) {
             elements.thumbnailBtn.addEventListener('click', toggleThumbnails);
@@ -939,12 +940,12 @@
                 closeFontSizeMenu();
             }
             
-            // 關閉打字機子選單
-            if (isTypewriterMenuOpen && 
-                elements.typewriterDropdown &&
-                !elements.typewriterDropdown.contains(e.target) &&
-                e.target !== elements.typewriterBtn) {
-                closeTypewriterMenu();
+            // 關閉打字機速度子選單
+            if (isTypewriterMenuOpen &&
+                elements.typewriterSpeedDropdown &&
+                !elements.typewriterSpeedDropdown.contains(e.target) &&
+                e.target !== elements.typewriterSpeedBtn) {
+                closeTypewriterSpeedMenu();
             }
             
             // 關閉主選單（但保留時間軸按鈕例外）
