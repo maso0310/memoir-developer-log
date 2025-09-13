@@ -14,10 +14,10 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-38ede4fd-f06a-4c57-9c17-e168531d4d1c'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-e241e909-9d25-4767-987d-e5e6b35698a8'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="38ede4fd-f06a-4c57-9c17-e168531d4d1c">
+    <style nonce="e241e909-9d25-4767-987d-e5e6b35698a8">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -990,12 +990,39 @@
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         }
         
-        /* 鎖定視窗滾動 */
+        /* 鎖定視窗滾動與手機優化 */
         body {
             overflow: hidden;
             position: fixed;
             width: 100%;
             height: 100%;
+            /* 防止手機瀏覽器的彈跳滾動 */
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: none;
+            /* 防止雙指縮放 */
+            touch-action: pan-x pan-y;
+        }
+        
+        /* 針對主要內容區域的觸控優化 */
+        .app-container {
+            touch-action: none; /* 完全禁用預設觸控行為 */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        /* 允許選單和時間軸正常滾動 */
+        .menu-dropdown,
+        .timeline-panel,
+        .timeline-events {
+            touch-action: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* 允許滑軒正常操作 */
+        input[type="range"] {
+            touch-action: manipulation;
         }
         
         /* 移動端優化 */
@@ -1037,7 +1064,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"mGtS+QUPBxDBsNRpOtPz7ksZux3uwVgVfoJcSYCVMEXWmUTOJhTwmIkZ1L1pfPbVuxSerpTPnLZLnE7XeRIgPdk7tWES0Ej/NwQ3KCJnWyB8YxQsC3OPYBo2GMHcF8Dd6dz9qIvOUlvT8vQVR9kkLoOPKYJfZiUaq3j8bCXkqlBuIpj6xdOTUS3+33ecdHlzJLAts4bJ4IUYWGJwqGoODJj4aV6MsnCLp5rJSDLxPijPZUwdCALTvDYlvqV+dcuFZqyDft1KF9mBFKdIgqiGsV9UWi6MB7wT4Gnoopu04vO5nohvRI3peqUeM4pFh1NHoxealnQfkW6IfZfRjJn5MIOdAKAsb1LQrKY+jgUxRyIvQayROSOuMEE3CVAHIyLrU9MTfn/HDOtGhwKd+ZwKJtzVdVkcS6bcwYEt7n2sxb3hbUzL3fym9NdBZyXSxx+ZwXZL7JJ2ezrQ3oKucTxECuGIvi9yqF/JZX+VitmLL5zgei9a7H1783TmFQ1VwalF78Bj6GaTPUS3d6TIjgG7M7VB9uENXRCKVU0VVxwOt4IJwuMkXMkZIMIYnTPZ+C/hzBQPlluKxzaNG/gNUUyKkTsUoZLfmzzHK+kpjz5Z4CoSkb/U+BN5gS2F0iKOeGP/AdVFMpjyAfOO3ALSdAqd59ehWVpTQ+Ff4V1AqB6BfoCmhTQcDBDMd3o9fvk7ROqqeCHSZSTKMfLDr0j3tsTLL5rBKI+40xwg/qrZ+zX8eEoW6W4kmhSqUoeSNnlBWeo3AcY+ua9GhXS3OAhD2m6yFyIzSTU1+G1EidtMYYCSd163rfm6hmilsmyk2cxrkGN5Z0ErwiK5sN5bc+NjzXD8U2Chmqa8ycwxI4gpaHiq/2ces8/EF+S6bIYrMFJq41TgZsvCEfNovprC3aszHg9lt1fQbgobMD07xINIfF73UjprYuyW+NToWhBYlDCtfJhwQ90vIR8wshS2cyOQdOp9NXDuFf72dMeVrb6pv+yj+53E+n8skKCsgrofdLjXG+Ukj5JsfDxKEgoAjqw6Tt87/GTKICQqc3eIEx93lI9srVjkmEFbRNAfhiwW65/zYoywwn8WpLiYvjH01J4FnCpoXPcMjJPVJJO95G7k6217HWtTZB283G5iy39YCrMI5cu7VQ1L8+ZZoci4/ZCz27IrcswGl9T4JbGwPKF59W08Qz2kYIZxWk9RnikiUYS/jPyWys8TkDl+iOLk9DnepzT/UilMKC9MR0kY7+NatNZBLAXOfXu0XUkJK5DEmtOoxagvk42DNMXB1Hr3aIfw5Bto8z4zGAL+IsjsOWPhU6ajsC8FxgFfdSfbSHx8/jwaYh4r6ExrSfUgHN6TMrt7tyTHe77ZmzRVQipRp6cfCQ8B+mT4ths0UkcYAyk/hF7EaVGrv4BXhDpQv504c7SybfqhWo89STs5gCU9p8MGw1NcgEf/b+PY90p5uMB+I48+QLBUuGK3sCZ001XejTuBvzXSpxcgPkIT1OeJcCwxRFs9s2J4Y4J3SBnzogsFwNhtPG3rKWYKPI21K2byBlBEChDzg9kxIqgbt4mHibloC1PoVXZyH11XIXcmw2fGP6N99i625TPYjF3bKpMxyBqSPeBU6Jq3L1OENFKIG3ludNYYsMJi04HVWlqwezAUhZrBudS5X2cxVSg=","iv_b64":"hL4N7kI9XfRsKC5E","salt_b64":"hlN5/0MU6sVIremon+CgVQ=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"pHj7bJhlkGxLvVRR3D5DBHRf4GHCFneIGt99bTsI/sd8/t/KsGJJ5VjTDug5aBZU+wbEIds2MpZWbJyEn3fmW8Gq6JT4tQRKXaqlcAm3XNGOQVavsL28wAg9JuniDjmpQrV7TMY6ch24I7IabXaTyFeIO1fVJuZQtfr+kRQ5zMSId0TxLtjZuJKrCBl/+5w8dNwvyHT9vAqzPNlq2fiYT33GmmJZBSfYj/29Y8xFK0Q8ot+N0FDrYiNyxQZFKh9zUJIHyDSUSzs08Ibc+R+r/5c+C9rG2VGW6TOWwAswMC4nQdziG7Li0W89XLdUQskZ1ognDNGkFR519g/BAGWuc/+RHQYvYSTak8J2yOuU4YHUYAh938o9pCkcYMx064HjYXYJxgb4XvyXpzR4paNZ7ffVI+/iq28sPjf0Gad1sa5kthVHzOg+NtNSQ3RgamAjKF2EZo4OhcwmZa0J4tGd0woN7fn4XBgy8VMqIpQR3tgfHZMJJs+jNrsdU+aU8WjmSH2Y2q4R6zproZ5X5wJ5N/u0i0HajqIHXsC9MPdiMa5mf1ewrE2jGhO3fQiZFB4u3i8khFpX8TTh++bIDPCh/3KLThpD/H4PIM6PE5c3Ie6S2WkzgpUbMqI2+g0ElVB8lXTLBnjwoRcB18yi5SxLyT9I9ilUUiuFnx7wvrVnTeXyDMbG/aVO/IzLDcc/vd3OrnVYGHC3b2dM+UcrDuDZ6SSONadgCSMA89MOuoHT0wDOC15/cW10hcJUq5J+s2IvzXrV5FXuxAq+35fofuvGwsOHarStaHLQRxh0gbshVXMb780AKYlxOU8x0j9lEpvUMe+QsQF3sUrs0KqyeUlP1pUWpWO0+q6/JL0CqpEhdBeyluWy/mkudkcMHEzfFOGgfBtvOpwFTRNhqmgaF8e2BbubAoluvdrgL5tGtxKmL7zbkoRc+j+3dWqyGjcvrx8NB2S5NKAYzWc2KEHJmFSs0lsmeCrpxloqaaVL1DjYt8rRS5eeLlpTJUEwwOO+ZFzcdKjvlJ/qoC/ax6WNEQLDNmtKRt2LI+cfTIGC92pQoaTJDOqg55zkQqntnKy2OuRMWjWWg8Y92xkxDjpykrcjceFIDdwTd46pRlF4O31F2G0kqE2ZUJzPxL4K8D/QBNSiCQ9GliDLWBuxInNaCcnDpwNyccSorC0W7LE/5nQukQm7DUTIASpcSdNUJYAJOsm4e4EoEPv97lDXJ7s3MA0WRVR5iRFoVa7ml8Kzte+Odjtux6MgZTi8APJWsZ7IBQeHvK4rHud33IS3obzhWYv2FjVBufssJAZ9VaWGr3X42A6Gp3B6PPDzgHkfLaifKWfihsXmWfxBWrlLjldbG2jd6Vimfs/hgB2hosRX4szkHYvy0uaPaBMQBIRkGUOil2sw5sTh1T3aRXE01AgMsPpDGGKiiUPzgQP+nY9iysJoSlpZDHLDNOTttRSmJTkZEKV6UqFUY7/quXzMV1oNJHIWgKGxVLhUOmIJRrEiLmsbZ6pVSp7yrlF5Wta7ftXJN+F/5pbps3bMKDzNfsq0+KsjXd+/jDKMUUpM0E5aJ3n8Blqy7PabM85c+p5egX9qaKiEnRMZx1ytUuwSfZxTyVtQL4qr85KyJgG2O+PziUJ8m25AOomOoc/NRf7VtafMwcs+Z8OYD7I=","iv_b64":"PCa8ZC/mmiFtDhaM","salt_b64":"6GnRc4Fy86zBnuh05IMv5Q=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1193,6 +1220,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="p+pzjdgxBdXD+Y919WYg3A"></script>
+<script src="assets/js/main.js" nonce="DwTiXWI/mvGHjX6hvgRhHg"></script>
 </body>
 </html>
