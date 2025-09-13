@@ -14,13 +14,13 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-a7a6d008-803c-433f-94f0-d7c6f55ee6b9' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-70a06143-7718-4517-ac13-3fd76fd22209' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="a7a6d008-803c-433f-94f0-d7c6f55ee6b9" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="70a06143-7718-4517-ac13-3fd76fd22209" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="a7a6d008-803c-433f-94f0-d7c6f55ee6b9">
+    <style nonce="70a06143-7718-4517-ac13-3fd76fd22209">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -415,7 +415,8 @@
             transition: all 0.3s ease;
             min-height: 80px;
         }
-        
+
+        /* 中心圓點 */
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -424,32 +425,73 @@
             transform: translateY(-50%);
             width: 12px;
             height: 12px;
-            background: #4b5563;
-            border: 2px solid #3b82f6;
+            background: #64748b;
             border-radius: 50%;
             transition: all 0.3s ease;
+            z-index: 3;
         }
-        
+
+        /* 光暈效果 */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 50%;
+            transform: translateY(-50%) scale(0.9);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.6) 0%, rgba(59, 130, 246, 0.22) 46%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.15s ease, transform 0.18s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
         .timeline-item:hover {
             background: rgba(59, 130, 246, 0.1);
-            transform: translateX(5px);
         }
-        
+
         .timeline-item:hover::before {
             background: #3b82f6;
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+            transform: translateY(-50%) scale(1.12);
         }
-        
+
+        .timeline-item:hover::after {
+            opacity: 1;
+            transform: translateY(-50%) scale(1);
+        }
+
         .timeline-item.active {
             background: rgba(59, 130, 246, 0.2);
-            transform: translateX(8px);
         }
-        
+
         .timeline-item.active::before {
             background: #3b82f6;
-            animation: timelinePulse 2s infinite;
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        .timeline-item.active::after {
+            opacity: 1;
+            transform: translateY(-50%) scale(1);
+            animation: timelineRipple 1.6s ease-out infinite;
         }
         
+        @keyframes timelineRipple {
+            0% {
+                transform: translateY(-50%) scale(0.72);
+                opacity: 1;
+            }
+            70% {
+                transform: translateY(-50%) scale(1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-50%) scale(1.2);
+                opacity: 0;
+            }
+        }
+
         @keyframes timelinePulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
@@ -701,15 +743,11 @@
             transform: translateY(-50%);
             background: rgba(26, 26, 46, 0.95);
             backdrop-filter: blur(20px);
-            border-radius: 12px;
-            padding: 1rem;
-            margin-left: 10px;
+            border-radius: 25px;
+            padding: 0.5rem;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            min-width: 180px;
             z-index: 1001;
         }
 
@@ -1029,7 +1067,7 @@
                 rgba(0, 0, 0, 0.8) 100%
             );
             backdrop-filter: blur(20px);
-            padding: 4rem 80px 3rem 80px; /* 左右留空間給選單按鈕，上下留空間 */
+            padding: 1rem 80px 1rem 80px; /* 左右留空間給選單按鈕，上下留空間 */
             min-height: 140px;
             margin-bottom: 20px; /* 避免貼近下緣 */
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1318,7 +1356,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"b1aXgOHmQKLCKCZJvSD31wFjcuE7g/cSUBDHAWWT0431/wRgP8MiUIYC597EmrmURMBBXUreoqOHJz4S8e4PMd9qiHxf3rVOWHrrjilLgbT9zvpDV6hDQKVpBUIFS0edTSBGAgDSQFtMePHDBL3JQPpfNTfw7tXg+4ZTIZ2L4PodIqFpfRuXkvYAy6OjzhoFq+THQ5vA8VDw1Saqt/g7IfvJv6OFXcPQEBuMmB5hd4KHwbjSToQLAyuYBb9i/1r3zOsr1iIwWJQ/RiPH742Dtgp2erupcEvLyfJ3tEkWf1qXstZYoeEFMmOGXyaNT2S3I9fIU3Q4fgcrmTwLlHlzrBqBHDRsy0fMdRoRHhXPl5qKFPc3FrCFS09UbwWrUqA6C025J/7WwQzgZi76EzxGNJ+94VhLo8XmWXY8+thibovoAmevMM3SjQT3PRABuYKejcgjjF3syhwqD7ZELUTbuNxT5pHh7TGUB4B45Is4rw15qWF9nddwBIKklmG/VJX2LqhV6RtmDg+hqbNohfXS8d5D2G95ekqpGKPeUuV1+WSiIUsuglcaSXRuqG46ylWc+cIeGiWCI9e2gA4CWM8xWIir66dTkdM52h6P/iQVofAKcXhDbBahFC7ZHhJrQpXq8pgeiJT9pc89P5LJC7ZnTbGtOyASh+SIVo88wjznphEuoQLgXZkye6Od1ACXFynt3LqoPa4dXTIUBAxL33Tj526HZBjt13Z+p9Ms2HXRDCuW79YmLJ3/UFjUdwFfM0f9kF09fUqCdZIgm0j8VxSoPLcU4C7p+JVaoEyshUMy92z10IX+3Jt+RcqJ50KF1WE++7ajVs5nVJaQ/hhI5+GPQhXocEELknZ0ludKxZn6lC8cVTbKIygY4eIRwE0cuGoqo3LXpRaoBO4N9iPj90WlYEAeCSz2J/1ZOVj9tHr3qcysB1pXXReXLUf1NUmQOAHyqtmEZOZUMR8QFViDqXJp/h2+zR0AubHYNeg0pNSwnfznXWMw6LLZkT5LwUUyOt/yiP3KdcAJ1PwkMVRXPquDJ1gEnJ8m2BaSyIInmJgZKR8WZfV/AsWzjbLIfaEaQaNUO490d7U3jkl8EbXAOdBfJJKakXn/Cr9hoIHlHoQKHaLtiumwzV3krcW+QbXv4QJJZnwL/qhwQB2A+/k9FSB5SBDptdAKY/CkqxzZZl+IuosPgGs3ixKANs2/bnCnjARgMzK/R7VutBaoyrQp/2FEulf+BDGE4WiV6BofPSalNmqqiPP5ErjunQTzDsGRFaf5ol5da4vNnHfJOU9dJ0tWipnmdQrcRDkQo/4ZjrXz91AKZO0Q1RmG3yYwOAkBXxwyMIxh36UKFCaDPVKd8m3lShfAXtB8HmmqhvSA2gCqOWVs8gUaF0jxeAt94JdRm0BE+m3UBrqL73tL+8JuSPobzpBMM+IHX8HGgHPEUfr8ltIevD9rAxynZMQkNWSrqHZ/YDV2o7H11tfvggTDo/whk7FbTUc30NopgVtPuNVHxHSxMvV8460k5dtTU1DipJiONMxiVekevKEZpLZI2P6h2sb/UKf7e1CtmZp21qSx0NJ3DVqAo76F2OeCMYkIFxlywAUvZ4PBc9ZxOJaxlpkBPIqcsDpcuYy1yjZWud3+1m2Wujpx3CE3084AsHwy5hjI+1Tji78=","iv_b64":"4cWb55oxGmlgWtVK","salt_b64":"F2duMqIhjnf7DrgcIkti4A=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"pk5kxLzbdfiVFRRwZfXSjo0pCt2/YqLevZ5DfMM+NCQHDW5qRsJyvqjCR0GiVayvarDjOK+a72YcibUJe6ar/t0M4rt5NKt4sW2EWVQQ5SroohGcvyVJMCF3AQcains6P6IUneVIrM9WDY71AY6WfalbLZP2UAYwAP4a+0NcYgYMuMlBEPJuElsfuKECuXdFssK+ebkX0UpTheaHyV3Ln8oDfeDivbUGD3ihWfXke0EjyerxaM/debZOwnKDmqjjyCttRu2qJSBmaxFOkyBTWaPkgtd8AjTbLZKsTsI3/hPNDx1SxqHIfoZR5U9k910TqOCB5F2UaFZSEtRoHDMW0OCeW5aV4LPmn+3YnqEvbxHj/2BvDpOOj9TEZeDncDFN4eUve9unZxt6l8ncquEU5YTNKXuvzLFqnwcSCUI/xgF5jzxYiLLHmBjGl1Wsf/cVp4gc4uSWOeXWonJ8C14g+i87UxdMD4/unEtlKDx501ORulRpnoGDWrQSoI6kstlvxhMHJfllCKQmBt5YTPLvAi1q55sQ1TlMdV73sOgS78O6SmnsxxXvgkFB4A1ziS0WWzXRHZfk0xLuEDhCVAgaKqIM2x2TXGSvpCME1BHSS/kX/H939eXsq5lY7vU3sNCg0FcJQLWAZXWTd82LMngEA8PM8Lhup7ypQ68E0LeATT3m6tGKBtTFOKtRBWUgYGT6w24A1i+JVj24DuO4zqLj8AjESEY8iHEWXYjzyDZbsDRo5Evl6QZaUChmJFermCVh2j/40tXBxCcMUduQVa5M9UOKh9UcFoCb6+HYiXBOdjmrsmlMgVCNhuLwQ3srvoiYei/hlW67H+voGvIB8zqN26YJz8nR3fFQMKhbDXjwC1HY7oqyf2kS7NLvSo1VOAiDlN+YtUHRom0EaW3DrHzCgitfyMQUCGfJh/OT34DHwSCWWfKRfde3X1BCGdZENWAusaodVE0tQxNsczFg+ftQWj+EMP5gU7i6LmRse55mVq30sQ0T/OHA7DywCiwFsN8RcfD92H9UnLtv187CMHWShp5fL4dYFLecATBl5w9he8hKvyXBFtohwRdaexclShskKkbevDIg5gxfOu+gopVnrhQkSTtC6z7igKj5hWZvshb0LyQ8ERNa6/5z1IbTQ0ukpgwP199yNUeH5im7kadCIkpxHcO7ul8xklqnzii9RUdk5iKxBKED2MpWvcg5LJGPZBdkEC7qO+nLrr9pGVDXpUjVRa5MnBiiwSaE3blrjqmphyBLGU2t/tTT9YlMaKLHHkyh4QTRnxZFNhcK2S2irUJfs01QndfckbZYn1+GbMz7nn+jShGgHe05+o/lH8ly1s/83opRVNXQI/Y6e4J9Rm4orII5YFYLeNgLue2egtGKzVOxI6gBsFHozwV3TmtTbY5Xwjh1pOHI6XH3+1Om2FCMlMDFosaA/IlU9b7CViYOBxAFEEE+21WZ8zjLbdjAhpvJArrZtLJ1rGFcqrX+XowuRSlwvEPrCbJJtKyaa7BewFdnnFV+8Y3LHnDFgmv0tWh2lm09UldQYi1o4Qs3P2EMpOu0eBOuuAFGOCEP8z6JO0Cc5H3RgeawhbGiXbM4KckKyh9OxvPT+GZIfzXtaScdYmgOnvg3/4iP8Vd+97aoEwBtLhg9IXLVSilvOeuxaAAwNGs=","iv_b64":"IPfuVVOWqcjtyAhA","salt_b64":"QCbPrGWeswqxGUm3aBShVg=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1410,7 +1448,11 @@
                     <button id="timelineBtn" class="floating-btn menu-item" title="時間軸導覽">
                         <i data-lucide="clock" style="width: 16px; height: 16px;"></i>
                     </button>
-                    
+
+                    <button id="thumbnailBtn" class="floating-btn menu-item" title="縮圖列">
+                        <i data-lucide="image" style="width: 16px; height: 16px;"></i>
+                    </button>
+
                     <!-- 打字機效果開關 -->
                     <button id="typewriterToggleBtn" class="floating-btn menu-item" title="打字機效果開關">
                         <i data-lucide="keyboard" style="width: 16px; height: 16px;"></i>
@@ -1449,9 +1491,6 @@
                         </div>
                     </div>
 
-                    <button id="thumbnailBtn" class="floating-btn menu-item" title="縮圖列">
-                        <i data-lucide="image" style="width: 16px; height: 16px;"></i>
-                    </button>
                 </div>
             </div>
         </div>
@@ -1504,6 +1543,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="83K91g8W+73AEYAx5qSvCw"></script>
+<script src="assets/js/main.js" nonce="Ekmlr8slF2C+XnERQej6Ng"></script>
 </body>
 </html>
