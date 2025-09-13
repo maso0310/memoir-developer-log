@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-13T16:10:42.351622700+00:00
+// 生成時間: 2025-09-13T16:42:18.531014+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -11,7 +11,8 @@
         let currentLightboxMediaIndex = 0;
         let isDecrypting = false;
         let isTypewriterEnabled = true;
-        let typingSpeed = 25;
+        // 從localStorage載入打字速度設定，預設為25
+        let typingSpeed = parseInt(localStorage.getItem('memoirflow:typing-speed')) || 25;
         let fontSize = 1.1;
         let isMenuOpen = false;
         let isThumbnailsVisible = false;
@@ -566,7 +567,7 @@
                 }
                 // 根據設置決定是否使用打字機效果
                 if (isTypewriterEnabled) {
-                    typewriterEffect(elements.eventDescription, description, 25);
+                    typewriterEffect(elements.eventDescription, description, typingSpeed);
                 } else {
                     elements.eventDescription.textContent = description;
                 }
@@ -735,6 +736,9 @@
         function setTypingSpeed(speed) {
             typingSpeed = parseInt(speed);
 
+            // 儲存到localStorage，實現全域速度設定
+            localStorage.setItem('memoirflow:typing-speed', typingSpeed);
+
             // 更新速度按鈕活動狀態
             document.querySelectorAll('.speed-btn').forEach(btn => {
                 btn.classList.remove('active');
@@ -750,7 +754,18 @@
                 }
             }
         }
-        
+
+        function initializeTypingSpeedButtons() {
+            // 根據當前typingSpeed設定對應的按鈕為活動狀態
+            document.querySelectorAll('.speed-btn').forEach(btn => {
+                btn.classList.remove('active');
+                const btnSpeed = parseInt(btn.getAttribute('data-speed'));
+                if (btnSpeed === typingSpeed) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
         function updateSpeedLabel(speed) {
             const speedLabel = document.querySelector('.speed-label');
             if (!speedLabel) return;
@@ -862,7 +877,7 @@
         if (elements.typewriterToggleBtn) {
             elements.typewriterToggleBtn.addEventListener('click', () => {
                 debounceButtonClick('typewriter-toggle', toggleTypewriter, 200);
-                closeMenu(); // 點擊後關閉選單
+                // 移除 closeMenu()，讓使用者可以繼續在選單中進行其他設定
             });
             addTouchFeedback(elements.typewriterToggleBtn);
         }
@@ -1188,6 +1203,9 @@
                 console.warn('⚠️ 沒有回憶錄事件可顯示');
                 elements.mediaDisplay.innerHTML = '<div>此回憶錄沒有事件內容</div>';
             }
+
+            // 初始化打字速度按鈕狀態
+            initializeTypingSpeedButtons();
 
             console.log('✅ 高性能應用初始化完成');
         }
