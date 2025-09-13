@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-13T16:59:55.695897100+00:00
+// 生成時間: 2025-09-13T21:09:27.883260300+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -20,6 +20,8 @@
         let isTypewriterMenuOpen = false;
         let isLightboxOpen = false;
         let isSubtitleVisible = true;
+        let areControlsHidden = false;
+        let isDateHidden = false;
 
         // DOM 元素緩存
         const elements = {
@@ -28,6 +30,7 @@
             mediaDisplay: document.getElementById('mediaDisplay'),
             eventDescription: document.getElementById('eventDescription'),
             timeline: document.getElementById('timeline'),
+            currentEventDate: document.getElementById('currentEventDate'),
             thumbnails: document.getElementById('thumbnails'),
             prevEventBtn: document.getElementById('prevEventBtn'),
             nextEventBtn: document.getElementById('nextEventBtn'),
@@ -48,6 +51,8 @@
             fontSizeBtn: document.getElementById('fontSizeBtn'),
             fontSizeDropdown: document.getElementById('fontSizeDropdown'),
             thumbnailsContainer: document.getElementById('thumbnailsContainer'),
+            hideControlsBtn: document.getElementById('hideControlsBtn'),
+            hideDateBtn: document.getElementById('hideDateBtn'),
             lightbox: document.getElementById('lightbox'),
             lightboxClose: document.getElementById('lightboxClose'),
             lightboxPrev: document.getElementById('lightboxPrev'),
@@ -546,6 +551,17 @@
             // 更新導航按鈕
             updateNavigationButtons();
 
+            // 更新日期顯示
+            if (elements.currentEventDate && currentEvent.date) {
+                const date = new Date(currentEvent.date);
+                const formattedDate = date.toLocaleDateString('zh-TW', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                elements.currentEventDate.textContent = formattedDate;
+            }
+
             // 立即載入媒體（不等待文字動畫）
             fadeTransition(elements.mediaDisplay, () => {
                 displayMedia();
@@ -837,7 +853,62 @@
                 elements.fontSizeDropdown.classList.remove('open');
             }
         }
-        
+
+        function toggleControls() {
+            areControlsHidden = !areControlsHidden;
+
+            // 隱藏除了選單系統以外的所有浮動控制元素
+            const floatingControls = document.querySelectorAll('.floating-controls:not(.nav-top)');
+            floatingControls.forEach(control => {
+                control.classList.toggle('controls-hidden', areControlsHidden);
+            });
+
+            // 也隱藏字幕開關按鈕
+            if (elements.subtitleToggleBtn) {
+                elements.subtitleToggleBtn.style.opacity = areControlsHidden ? '0' : '';
+                elements.subtitleToggleBtn.style.visibility = areControlsHidden ? 'hidden' : '';
+                elements.subtitleToggleBtn.style.pointerEvents = areControlsHidden ? 'none' : '';
+            }
+
+            // 更新按鈕外觀和圖標
+            if (elements.hideControlsBtn) {
+                elements.hideControlsBtn.style.background = areControlsHidden
+                    ? 'rgba(59, 130, 246, 0.8)'
+                    : 'rgba(107, 114, 128, 0.8)';
+
+                const icon = elements.hideControlsBtn.querySelector('i[data-lucide]');
+                if (icon) {
+                    icon.setAttribute('data-lucide', areControlsHidden ? 'eye' : 'eye-off');
+                    lucide.createIcons();
+                }
+                elements.hideControlsBtn.title = areControlsHidden ? '顯示畫面按鈕' : '隱藏畫面按鈕';
+            }
+        }
+
+        function toggleDateDisplay() {
+            isDateHidden = !isDateHidden;
+
+            // 切換日期顯示
+            const currentDateDisplay = document.getElementById('currentDateDisplay');
+            if (currentDateDisplay) {
+                currentDateDisplay.classList.toggle('date-hidden', isDateHidden);
+            }
+
+            // 更新按鈕外觀和圖標
+            if (elements.hideDateBtn) {
+                elements.hideDateBtn.style.background = isDateHidden
+                    ? 'rgba(59, 130, 246, 0.8)'
+                    : 'rgba(107, 114, 128, 0.8)';
+
+                const icon = elements.hideDateBtn.querySelector('i[data-lucide]');
+                if (icon) {
+                    icon.setAttribute('data-lucide', isDateHidden ? 'calendar-plus' : 'calendar-x');
+                    lucide.createIcons();
+                }
+                elements.hideDateBtn.title = isDateHidden ? '顯示日期標籤' : '隱藏日期標籤';
+            }
+        }
+
         function setFontSize(size) {
             fontSize = parseFloat(size);
             if (elements.descriptionContainer) {
@@ -909,6 +980,22 @@
                 debounceButtonClick('fontsize', toggleFontSizeMenu, 200);
             });
             addTouchFeedback(elements.fontSizeBtn);
+        }
+
+        // 隱藏畫面按鈕事件
+        if (elements.hideControlsBtn) {
+            elements.hideControlsBtn.addEventListener('click', () => {
+                debounceButtonClick('hide-controls', toggleControls, 200);
+            });
+            addTouchFeedback(elements.hideControlsBtn);
+        }
+
+        // 隱藏日期標籤按鈕事件
+        if (elements.hideDateBtn) {
+            elements.hideDateBtn.addEventListener('click', () => {
+                debounceButtonClick('hide-date', toggleDateDisplay, 200);
+            });
+            addTouchFeedback(elements.hideDateBtn);
         }
         
         // 字幕開關按鈕事件
