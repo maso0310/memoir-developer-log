@@ -14,13 +14,13 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-5c39d548-c01c-4c33-beee-8645b8632107' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-bdde12fd-d375-4d25-9ef0-a58f88c0e7d3' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="5c39d548-c01c-4c33-beee-8645b8632107" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="bdde12fd-d375-4d25-9ef0-a58f88c0e7d3" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="5c39d548-c01c-4c33-beee-8645b8632107">
+    <style nonce="bdde12fd-d375-4d25-9ef0-a58f88c0e7d3">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -416,7 +416,7 @@
             min-height: 80px;
         }
 
-        /* 中心圓點 */
+        /* 中心圓點 - 基於MemoirEditor.tsx的設計 */
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -425,27 +425,39 @@
             transform: translateY(-50%);
             width: 12px;
             height: 12px;
-            background: radial-gradient(circle at center, #94a3b8 0%, #64748b 70%, #475569 100%);
+            background: #64748b;
             border-radius: 50%;
-            transition: all 0.3s ease;
+            transition: all 0.14s ease;
             z-index: 3;
         }
 
-        /* 光暈效果 */
+        /* 脈衝光暈 - 第一層 */
         .timeline-item::after {
             content: '';
             position: absolute;
             left: -38px;
             top: 50%;
-            transform: translateY(-50%) scale(0.9);
+            transform: translateY(-50%) scale(0.72);
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.6) 0%, rgba(59, 130, 246, 0.22) 46%, transparent 70%);
+            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.9) 0%, rgba(59, 130, 246, 0.35) 42%, transparent 62%);
             opacity: 0;
+            transform-origin: center;
+            animation: none;
             transition: opacity 0.15s ease, transform 0.18s ease;
             pointer-events: none;
             z-index: 1;
+        }
+
+        /* 同心圓環 */
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-item:before {
+            /* 添加圓環效果 */
+            box-shadow: none;
         }
 
         .timeline-item:hover {
@@ -453,9 +465,8 @@
         }
 
         .timeline-item:hover::before {
-            background: radial-gradient(circle at center, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
+            background: #3b82f6;
             transform: translateY(-50%) scale(1.12);
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
         }
 
         .timeline-item:hover::after {
@@ -468,15 +479,20 @@
         }
 
         .timeline-item.active::before {
-            background: radial-gradient(circle at center, #93c5fd 0%, #3b82f6 30%, #1d4ed8 70%, #1e40af 100%);
+            background: #3b82f6;
             transform: translateY(-50%) scale(1.2);
-            box-shadow: 0 0 30px rgba(59, 130, 246, 1), 0 0 60px rgba(59, 130, 246, 0.6);
         }
 
         .timeline-item.active::after {
             opacity: 1;
-            transform: translateY(-50%) scale(1);
+            transform: translateY(-50%) scale(0.72);
             animation: timelineRipple 1.6s ease-out infinite;
+        }
+
+        /* 添加圓環效果 */
+        .timeline-item:hover::before,
+        .timeline-item.active::before {
+            box-shadow: 0 0 0 0 transparent;
         }
         
         @keyframes timelineRipple {
@@ -747,6 +763,7 @@
             backdrop-filter: blur(20px);
             border-radius: 25px;
             padding: 0.5rem;
+            margin-left: 10px;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1406,7 +1423,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"gW2MXLrV0nGBJaU+Hj2mJWZOlYtxUIvvaFpOD+MT47wt/I+eR3YBNrCPcUiK8/TGv3juDiaALS3b0Ur9IMVD6tIRfy1HubRIRlkPoInvBmXieNsAPo0r47lNJgCy62EXZ0Ix/Y6IXlZCeqIR6VcY5QlKNMdiVIJG1K5VApA+qiCIbXx8oZyK1WMKNdnUHaM4hvVl5wHZiATteUJbzRBLpuYUlsvn9IE216AKN8KRfqIt6Xv1p0Dr/KQ1MK4H+dBQmOhXpIwebUqbjNPeIhOUtGo6wJM90eb6KP0/ENBl+5VcIA8/JrMYpbevBD8b0+29FUDDufTTFgEv1ksUWY87fx6ucuEYru06rKd7yRLx54UjhVmOyJGp5gV11MSzUlflVL0cVVPpf/pWrNr5FBoX7zDLqIRA7ZpSzWFG/KoXCHCBmEnFE0NVMP56cm1uma7ywTR1XgfltDtoPC3fXn4EMWNHyLEzca+y0ya1A5whDfhLTmf+NBy8Z4xKHjLwRIamteK0g7W/2OuKVd95MrQ0E0JsjqPZEj8dD8yHhO4HAvheS2elLHnktnmzuqgo171nltOlgzoSfr29ZlzsMn7lBChiMklXBYFsCwBrv5zYENsumH1l5uUyJzlvglbPoQ+SzsLD10TMCGf1A2cxSDFQRGZMtRc2QJIdyQ4+E+YFXht4XdEMP/LC9pt2RHYkNLA3Hx7xuSyhI0EvC/pvO+eef28xw/M5s7kaRov/oiVzCzm1bGiie+SsbRccsMbiDXnPTB9NSUMvTQmfFUPk7Fc3+u9B1yI6lCl3djq3eEc7zlxYTJP0TxxcxomPGr6ZZjOKTLfFeILDD9NWLc+Hg9g5VzIG2uvpv0GxsVXBEmqvShxdwAg3KxH7QINnar/kjxcwrEZJKNZCOakqewahq2foTj5lZnKWmbG41TypzGY/esLUJJXFP5MosoBXmNS35N0jdZQA2z/Y1Fjat/2UXtOtl/wNhlNdCfg2GrHMI2Ei1nW7Z1jeWAbgJxxR/KexV4duC2s9kmspXnDAtb2r/UKYhjlOh7judr1Gb1jxWDIoTVpt6SpzA8EqVAQOmajwvEFNQPHPWwCR4D1PpZeyLs8++O6bj7P8NO9ovCgWGhNgB8NulR7r9VgtQOCbaC0ainOy61ccXon97lfHyM2+j8fhWlO3ylDkWJjdNGmCyKSJUmmyv4cWRayhS5UClPJKGZHQ95xJvpSViJcGrt0PrZwyhu4ZJk8xj78yQ8pTjk8EswBOKUYHihRAYVmLxyZnr0nu1k7WNbK8j+NDGswkRnvnOvoZ++W7sWV+QLLjsh4kCQ2ohRaX+lVCr5+IZ32jTPCtlo9cBKnEkjR3jvOhCg2Q8G10lNdWRDNF7+kxyrSyYQOMZdsU24FJFhFgKoFQa4feKyw1JAutnGfGtVvHTQmd734vVhP4cHAXVAgVUu+g8FtNyh+yREF5sfW8k0JiceojlR1RurgkswzjQ/HZsxlDegVej+ib2dB6XGVXbXp9BBgsFBcoArnWJz6kLzbWbg1MAz+BSl1uY9ajo6Q4SaSR8dEaqFz6STGUumvaU59MPrJin9iElnkSV+CuGWYPZlMXv2rvHMcKow8b9c/KN0GAPCKfgFEMmpmMPALi3SFSRr97L/TJnA64fYwxbfPcEkDRI5l/c8k=","iv_b64":"y8Nn142rbsgaEox/","salt_b64":"Tj0DQvj9857OdQdMdoji/w=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"Zkn8lMRXZeTHE0o1z9hvybqYt+q62h8kABOafGExZRz8KQTVlOLX1o1mKOvZKwY+7uE9007t0wUDaxdnxzae1kvdy1XRH23GixIlAB12J68OXd2mpsl3FqZiGoscc1ofRK/FqS7WorZPMHPI6IH9obAboryW88gnCVytsdLqhOpp/yjUiie4iKkrECbqSfbZkxhtOQ2lpupuonazTL8WpN8WtAG1dVB7QoV2FJe0zs4Q827dgPwHcOzumVkLs9yLppTmFj9PYEhhR7OUdQtUAqqB5kfkU6PXOBehVHT5leI53eiAoD0mpP2s3LoVGAOLFQ3sbEYO0Kmu1keZ9C2spdeVG6JAtMm643fdHCKW6phyhE6P9z7yL79DGmxsOj13RkAPcNL/k6INAG+6St2ajrS08WeGjZt7wJ4Hovm5klijuEMyLh5xlaJPm5FLzlvJjN2BdZKdQ9nswjhxe6cpdN8gej4kaEDup88AM0CqHnG9THZO4440+vQ4MxH7IfkuihEF7kPHYlGn1+LvqlAWF7H/LrMJIEtTuJVkaNqmNpv8DSAQhZDqk5hSMavVWXPYPKqNjDi8jy+LWsE/CrdjT4iJWdKUxWoogF1Lm7+Y0qWhlizOb3GzwNQylKPx+FcYOzE8N1gH22Kg5ICDlzEjXpKSpxAw/6heYU99+Erlo2/3k4zss07HtnOhytflZeM60I01x768wONy16OswMP8O8EfPVv/UsJBwdInhrzPFzrlq7Uf/Ll2qQ8xXEhcq511jbkQRFYbeH+WcROqQeAdzMYzajsM+t3E63hgUMnglnz4lk0SpJXGjWSn64YUTMTRjcPpU5MI3FKYgEc1HfVflPYDu4O+Mhsot8Dog5B6Zb/90eEO+C2KXR21iRYp5E29yA2Ucieo9SYUfn2ImbymoimnlQ34rQGOQkMGmwjcfEyXKvjHBdWkA9w7dpiNbye7kWoblS8hxV0NEhMZHFO2E/GfpS4EMrhl68GRfYimTde+uoJQhblBVSuGUFx6xsBCIDBePSyrsK0CLU2Qi2H+xb7S+UWj22esvpd2d9wTNSsZVLEmVQwZmRg1cQeexgSN3ejndWFK5g8ZTc4zYYix8mavyk5jve2NKs2OkkKrWmXsjZl7us8qXiu6s7+N+iyoDGxtQcwMeNNpzGBkZJ7Kxc7HOGfAZTyMZ2zQ3xA4w7AdFAAKxpQRwgkzTKDhPfe+80V5ig34UUthObCVcN2c0a8NMrhHI2aQIrsVkVRfwCWYyl10aUe22IwJBZhJPkkdehqzWlhK1nAoUFF3wS23ivnYfctkpKp1AWC3Zib2GU/8fd5ppL/Kurq+vm5YdxAncfyPe7pT3MrbtYc/ci53mQMdRQzkGH9S3LEy/MIHBHz8lYtIWTjFK21Ge5MdFYPhFLaXy+ATiv3OwHguIr1XQtRCUyAhTZup/LUzETAElrvD3AONlo/eE0xxsfkUQ4s2yoS2TIANpojCW/1up2QtR70CPu1T/2XU1wg4wc+gxs+O8sj8CZnF6M0VACVbPgS0YojvhNx166PEvwToIsqnVcYLHUmhBsppej/9EUI9zcuz1Fnmoj5SyF8l5S0kt5QpRXObhHQp6oEJBiSGxDDHlYiOlLN2QcI/T41RdNI3UIU+lGrDH3vtkaLthhl6OoBfsUnNiO8=","iv_b64":"2gkkgCaZuLv52gPK","salt_b64":"HDvQR5254NId2WPq0OS5kQ=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1608,6 +1625,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="zhu2HYPVkQPIiuHyUPNrkQ"></script>
+<script src="assets/js/main.js" nonce="rFQdGeJoXHhov6pNSW1IOw"></script>
 </body>
 </html>
