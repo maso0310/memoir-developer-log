@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-13T21:09:27.883260300+00:00
+// 生成時間: 2025-09-13T21:25:28.034592200+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -552,14 +552,22 @@
             updateNavigationButtons();
 
             // 更新日期顯示
-            if (elements.currentEventDate && currentEvent.date) {
-                const date = new Date(currentEvent.date);
-                const formattedDate = date.toLocaleDateString('zh-TW', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                });
-                elements.currentEventDate.textContent = formattedDate;
+            if (elements.currentEventDate) {
+                if (currentEvent.date) {
+                    console.log('🗓️ 更新日期顯示:', currentEvent.date);
+                    const date = new Date(currentEvent.date);
+                    const formattedDate = date.toLocaleDateString('zh-TW', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                    elements.currentEventDate.textContent = formattedDate;
+                } else {
+                    console.log('⚠️ currentEvent.date 不存在:', currentEvent);
+                    elements.currentEventDate.textContent = '日期未設定';
+                }
+            } else {
+                console.log('⚠️ elements.currentEventDate 元素不存在');
             }
 
             // 立即載入媒體（不等待文字動畫）
@@ -780,6 +788,39 @@
                     btn.classList.add('active');
                 }
             });
+        }
+
+        function initializeHideButtons() {
+            // 初始化隱藏畫面按鈕外觀
+            if (elements.hideControlsBtn) {
+                elements.hideControlsBtn.style.background = areControlsHidden
+                    ? 'rgba(59, 130, 246, 0.8)'
+                    : 'rgba(107, 114, 128, 0.8)';
+
+                const icon = elements.hideControlsBtn.querySelector('i[data-lucide]');
+                if (icon) {
+                    icon.setAttribute('data-lucide', areControlsHidden ? 'eye' : 'eye-off');
+                }
+                elements.hideControlsBtn.title = areControlsHidden ? '顯示畫面按鈕' : '隱藏畫面按鈕';
+            }
+
+            // 初始化隱藏日期按鈕外觀
+            if (elements.hideDateBtn) {
+                elements.hideDateBtn.style.background = isDateHidden
+                    ? 'rgba(59, 130, 246, 0.8)'
+                    : 'rgba(107, 114, 128, 0.8)';
+
+                const icon = elements.hideDateBtn.querySelector('i[data-lucide]');
+                if (icon) {
+                    icon.setAttribute('data-lucide', isDateHidden ? 'calendar-plus' : 'calendar-x');
+                }
+                elements.hideDateBtn.title = isDateHidden ? '顯示日期標籤' : '隱藏日期標籤';
+            }
+
+            // 重新創建圖標
+            if (window.lucide) {
+                lucide.createIcons();
+            }
         }
 
         function updateSpeedLabel(speed) {
@@ -1293,6 +1334,8 @@
 
             // 初始化打字速度按鈕狀態
             initializeTypingSpeedButtons();
+            // 初始化隱藏功能按鈕狀態
+            initializeHideButtons();
 
             console.log('✅ 高性能應用初始化完成');
         }
