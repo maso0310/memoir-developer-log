@@ -14,13 +14,13 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-942d77b7-70fa-4120-9399-2b0327837b40' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-001653f3-860b-4b28-8f93-a623d42601b5' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="942d77b7-70fa-4120-9399-2b0327837b40" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="001653f3-860b-4b28-8f93-a623d42601b5" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="942d77b7-70fa-4120-9399-2b0327837b40">
+    <style nonce="001653f3-860b-4b28-8f93-a623d42601b5">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -940,25 +940,21 @@
         }
         
         .media-display {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 180px; /* 為字幕區域預留空間 */
-            width: 100vw;
-            height: calc(100vh - 180px); /* 相應調整高度 */
-            z-index: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
-        /* 當字幕隱藏時，媒體區域充滿整個視窗 */
-        .subtitle-hidden-mode .media-display {
-            bottom: 0;
-            height: 100vh;
-        }
+        /* 字幕隱藏模式不再需要調整媒體區域大小，因為已使用z-layer覆蓋 */
         
         .media-display img, .media-display video {
             max-width: 100vw;
@@ -974,7 +970,7 @@
         }
         
         .description-container {
-            position: fixed;
+            position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
@@ -1004,7 +1000,7 @@
             color: white;
             font-size: 1.2rem;
             cursor: pointer;
-            z-index: 1000;
+            z-index: 1500;
             backdrop-filter: blur(15px);
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             display: flex;
@@ -1268,7 +1264,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"2XbzXbJnZF9tiQ7sWnbuXlF2frjJx/lQnR9zi3SrVcFV8vDwhmLWQp7Zh9Kaj8AqFldHg0lyDz6KMwlS/GiS2Cu5BJbyOPUhi7an3CZCFzlz6MudYJuhsfUk4wnznpSRu/HqRgicIIWlYO3mGHuLTu2CopeZFyfh+9oki8lzG7XxpIPDYj3ztmuJ0vo898f36kNUx9fCNWu11lj8mWka7hefof25FOMV8HWRPJzDw1SYcZ4ghaXTMmFjTp7LZ3cehPMSdBRqZrEgnVtkPu3F9Rd4UxriCPRbF1bSEe1Qjp6mI0QVpDUh2RhPSZO+yPVpwHQib5e5BhKWf8vYiOGX9uvToHcQgEAEXn+5DXaWIbXONXOuHw3ZBgcdBSg4GpPQCZfgR9qPy3K5kyMTRz4zLFYDyZ5NJppny5kWA/paceMUPKaKHTfIbQeNomOheyazxCgQw/qFD8L/H9Qy8h4uZKWrpm7YE8o/XzaDMPxV6VfZlL11juGgcYgCFMrJ1nNcO8dYgAp8ZZm+rDDYqB2dpgaa4W2qaIQh0usuZpd5kSkP7e0tM9Cn2xWdC4YIoZHOb4GxOh/m4d+uRCImbJDrXpKve3IGbVDZOSihS5EEIP17SqZhPe9+efhK/1/y8YHTs+pf/HY+DkNGUikcQsN4DBqluHe2TzF3OeWhpHOwO/fsm7XuTaJOPE+fDZ8YMLb1QTIzvqF5hDoFlLVTL+ny3rZQv0gMbIgL/rp6wHicr/YbfrtEkhpWa/X4JHjf82BB3TpkUdpTQNDGUj3fCykQk9UmiSI3bJGFo+BOAzWK12BGH11By6eOILLMLYp44zSZ1qfmDl0cAVn3qu2bS0KEHnretl2pf/VCnGpgBzWnDhJYib1fhqm/f5hEnMu66MoHqlJeEi4jtfRCXLrhpqgKxrINrWqvF1lU3j7ZImj5ko6tF9cKalL+XPxTkliQvAyV4mHxOiBe/so3IeWOMbBGpqfBT6OPYiMwcojU/Gtw81xVYOlyBDDrpS255TTKp1Kkp3/5wSTcWeLf4wbYoYmGlmAG19T65NaEiTwdk0Udd1lP3E4gDV9yFx6S+uWubjgs4ZOki2aglvvSy7bUXeibYdRe29JQGX1NZfNBF7XRgXBF3CPsO8byeY5LHlbpvrJcRfRAV4/TRoGfk7sX/Bzz7urnJ5yDMh2hsZztC3HXo2l8yQa+vHiTbVZAmKO09/VBqpiaUkgK4Dr+Hd70DkdcHAKXJZuyS/Rfvvbl0Ngtdz9Gir42IMZhHkk6gLaqSEe8uBqVKFM8w64IPR+mvNVVUrc+lLjmV0KvfTXCvMVnUrxCgpyc383W1TGeLFNl+DqtKgqOd9Nwsn6xdjQHcUUMYjmel7euQifFuxRibSrY1WVLRxCJb0uttxH7GaEeiFeavlGcLvIXoWdt14aCM8K1q6ifn2H4zryRx3SdoOvin2fPzK85At06CDpH7Awy0VRxkzFRp5uG5/zIZjzMiGweW+H4Ytd2obRXa6nFxUVJpuGiR6s2FxciwboRup3BfgYe34Gzw/34odihgwcs6h+Zt67OPBcgAmfSCHOHKrSA9Sdll56+Wz8oa8SYinIRmyjHsz2VQLOXvHd3zq0sfsTKXQeBTWqpNLb3bPk4PxLshKsZrToxBETkcsqenVRuL4pcHWAC3g8=","iv_b64":"eneD/MObsZlPp9do","salt_b64":"+QXPPfcSFn0Sz0hmuheB9g=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"7mcWYH4gY4KlU5tj7w25Vp7UvrXnWGRxvVWdy0d+FnGfbrHxTk4GoZUH5yITcL2m+y1TUJvgKNL7a+mTsndXPEwHK+o0id+beaUp8hZtpLqVl7GmFmSXo9KSoZTgSSklFhcm0zyYXTrVEA5ApJxhgudkgXvn0w5mXFlbMQDkxlNC5Akg9u5RXHQ0XfF3c4ALxkNz5E6bgXu1i87V6mkkwAF/M5O0YKgj9x1yfqMbP0nel38TjEwFxDu+Osx8MTkCuoqHX7xqIP9egvWFi6iK0bvslciJbjl0pMx4Fh55ICRFzykyXa7wktrcAAcCcuT3SPfF2354WpDNpjvlU5Kt5hC0p5OHBj3FyCJ9o20j0teBXez8n2mPWZhCLeo1iWaPT47X+7dHSc7aXcipgUjF4XUARL5ncZRMKpeHCwS1G/Mv5XOWkhkmujPRthxLLcvh5FmV4EQcSnpZJnJuyR6GEhHW5CAyhj+Nky4bgTwT/FeZnA1E2TW/FjqfpynlrAnW33eMSgJRVQ2YaSSsIodB2kN1qda49zPpaIejloABxZ1AZ777gIEHGt3XxRcAX/7mT5WODBfSXH4lxF1O56mzav3Ex0EVh5DwpgKUFPiWQ2FQq7yIW5PcE4rVBKv0Kfo53fMyebg6BhLiD4ViTfUpiujIQBb2nTIc8HrmFsIK3zr9odpf2n0O4aci8nuAhbsrKDjVh4HrcGwvEgb0Au7p0XsNP7zSvnO3mZzK2Rd15SoD2mLxKte2HY3OfxIwMyT78wJ//+d1R1pn342XG2A3ax28NRHubkxSb2mw5Ovl8TLaKc1/C0xV8qydoHLKzSwyteLTYhRxvMkjH51IQBzNlQnq1e4CKYVDq9PAyZddsA/WQG65TjfMno4TYkhrCRSA9gAf8SKhJcqAZFe6Y9QAFY9+KE1vNxW1l9XeHSbO1jZbM1umadGeh4/iCQ+FvXJEkFOv1fM7d8x1jkTYhU7aHxIQxbb9cegDV1BEIvtWjeDiHpf/ic4Y6WdhOCX8btKeQG1aLkJ5IoSKQ5kl8cGIkj1bmET4Q7zHoyHlFlbK1oNQ+NVfAhJFjoA+ibxjP/hV+Q6OH1wn+hm+zoKAM2FVWz0OIyRjheFB19Ow7nXP9BfvR8xin0W+fsP3NgQQM0uWACzli0+EUs55TsGKJIjFwsjqYxU2vbajwNHi84e0IQWEO5EGNygfnufiAwsRUKua6tTw3DnpCt3G4cmaMHF1jdESevBwQ8yn8jijqha3B/yZnk7DbCntCjbontjZG90eV1zxom4su2IIs+D094ukVopeJLqmNeA+KWaepCmpj12Hy4Py7KsXTYeIgv31zsaS6AmLwl3YIN/G1GU0kNF05VwJGprurIuI1aOX0RDcWWyA2e+AJfbuu/NOdSiagEmkLcg3NTONau3tPQZGqpWe5Od9C+BK+eKWs841CG5gPOFb7fWNgcLtcbBuY7pO4sV9sLugY20HtKOAjFxN4EFO0yyGmESOO7twtJwMwr0ilP7u7rGvNJ3P0aKcQRocJxtZhrWASI846qkevk5UTEJrh5u2pnSjv20MgZAKH9znHP/EAxjiVCCxAOMg9B6WvByQfqrStA2WY7PPtXBi8/S5DXYUaRP89Gw+Ic4GA9i3eAHglM/y/cD37uQOH6oKJg6JgOHwPT8=","iv_b64":"t+XMTf/hcHQEkHok","salt_b64":"Ss8exA9A/lp1F0hRHlJwjA=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1444,6 +1440,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="IXGOhK9ITWOuidHEqKU/Tg"></script>
+<script src="assets/js/main.js" nonce="obQTH7WFBG/hEai5VguBNA"></script>
 </body>
 </html>
