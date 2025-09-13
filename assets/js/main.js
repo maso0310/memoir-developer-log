@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-13T07:46:22.775999500+00:00
+// 生成時間: 2025-09-13T08:59:44.240148100+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -740,7 +740,14 @@
             // 更新按鈕外觀和圖標
             if (elements.subtitleToggleBtn) {
                 elements.subtitleToggleBtn.classList.toggle('hidden', !isSubtitleVisible);
-                elements.subtitleToggleBtn.textContent = isSubtitleVisible ? '👁' : '🚫';
+                
+                // 更新Lucide圖示
+                const icon = elements.subtitleToggleBtn.querySelector('i[data-lucide]');
+                if (icon) {
+                    icon.setAttribute('data-lucide', isSubtitleVisible ? 'eye' : 'eye-off');
+                    lucide.createIcons(); // 重新創建圖示
+                }
+                
                 elements.subtitleToggleBtn.title = isSubtitleVisible ? '隱藏字幕' : '顯示字幕';
             }
             
@@ -748,6 +755,9 @@
             if (elements.descriptionContainer) {
                 elements.descriptionContainer.classList.toggle('subtitle-hidden', !isSubtitleVisible);
             }
+            
+            // 更新整體布局模式
+            document.body.classList.toggle('subtitle-hidden-mode', !isSubtitleVisible);
             
             // 如果重新開啟字幕，重新啟動打字機效果
             if (isSubtitleVisible && isTypewriterEnabled) {
@@ -1337,6 +1347,11 @@
 
         // 自動啟動
         document.addEventListener('DOMContentLoaded', () => {
+            // 初始化Lucide圖示
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+            
             // 設置密碼模態框
             setupPasswordModal();
             
