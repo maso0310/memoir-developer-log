@@ -14,13 +14,13 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-ece06779-0fc5-4a0d-8791-ea0ba28e1997' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-a7a6d008-803c-433f-94f0-d7c6f55ee6b9' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="ece06779-0fc5-4a0d-8791-ea0ba28e1997" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="a7a6d008-803c-433f-94f0-d7c6f55ee6b9" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="ece06779-0fc5-4a0d-8791-ea0ba28e1997">
+    <style nonce="a7a6d008-803c-433f-94f0-d7c6f55ee6b9">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -305,10 +305,10 @@
             /* border: 1px solid rgba(255, 255, 255, 0.1); */
             /* 添加漸層透明效果，越往上越透明 */
             background: linear-gradient(to bottom,
-                rgba(0, 0, 0, 0.2) 0%,
-                rgba(0, 0, 0, 0.4) 30%,
-                rgba(0, 0, 0, 0.6) 60%,
-                rgba(0, 0, 0, 0.8) 100%
+                rgba(0, 0, 0, 0.05) 0%,
+                rgba(0, 0, 0, 0.2) 30%,
+                rgba(0, 0, 0, 0.4) 60%,
+                rgba(0, 0, 0, 0.6) 100%
             );
             transition: all 0.4s ease;
         }
@@ -731,7 +731,8 @@
         }
 
         .typewriter-toggle label,
-        .typewriter-speed label {
+        .typewriter-speed label,
+        .font-size-controls label {
             font-size: 0.8rem;
             color: #9ca3af;
             font-weight: 500;
@@ -1317,7 +1318,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"2knMzbKYUvdi2bvUet6CBZphwCAvUSN9KCuiXUvyeyFJ++zxAGRIOE1AlmXicLYu4w6U3uT08+P2LqSF7W38ZVb+41zhfhsbl1FEIvGAGn2PTkH3rXMjSU9NGyA08xOkqGlPAi4ex18xW1w7tSgFHebmzMiNZ5mM+mjZm+AY/NzxMQcy++yxUYl82vkNvgcA1RCn27JvCYFjLjXBtZsqhGqUl1eU97jC4yS23LJk2xIK3Dv+XKBAsa22uJ1aC9rYkVXL59lA2Czo/bJJEwv9Ra6HbcU6r0nfuN7dqegfCO1KjwHrGuz3Csv6/eq1TgmAinNYtjywaawb/ZvXslY+gFeIXLobvmK2+ZJb8sN1FVI2HFWAsEya8pOOaYf+JlRv00ShcxnuF9FvBK6FyYUrNXg8HUMmqR3SKUiojGGhqjM+yL9kd4qnRzItAVpPrCfCHfdr4CE8+WK0zyKoBmcLAgLVS9XlYg8TV+dAT7n/81HvpZoiOmnnXRVo3urTo9S1iqS1G5LYB/0/HgEpdchfPMpjhROa340J+hVku0smR4JPWOIB54K4p0Mrt8hK+QGGmj6z98HPY13y8dhyDmmBcdHoCaqVTYloBZG9py7XQPePWLvbmTSOG80kCKghd3S2v7gySkLH2wYKyAVH1xl04A4EKciN3MzileaZ+fD/SOGf6P4dCPALNrzoCreZDHkOCg4j0FD6GjXUgF38GT4jhWBU9NcA3e7Z+hW6W5MPEwVdYfdeaJf3hS3IN9FWmEdtBhJUVKrPOenWLkN03f+BcdIXCkS3852WPEbCKqJYtbdluxvjF1ayhlTttcGfEloWIUlpHA4bsxpYSRGC2Y3qpLK8VQZgEjIoERjrtGcKP93bF41i2BrTIDRDBGtvdvIlOiZPFGWWhaKfdZTE+eehL7OCijO0OGu0u6QBYwQMVXHsY5FYYlbv4IlaN5+PstmlOKtOvMrRbilrAi4BCRnEO/+b7c0QR4cSgJ8EXUrovoM0YZb/CDpipL4j+iqxd++XXEMg9TnMIlKwS9xdLebpZGWc53EXu8i7yXPL7D9y0OO9c7D+0ll3bMR15p5sD0KTumHWr8tV/+KbWJhGPxam/qsVjxWZK3qS1TBmhrkTnUbh+ZCxfR9Qi0N3xMV0g79gQb6o8FPx7vh5Iax9yp1L0rCA3BHYvo/cUOK7oC921dNAaPNzgTvBxu4SWmhEpCsmob+eHKP8k0EnHuF5wnj9DyPiXOyZEvlLrVsB/05ztWtUxblAsMvfndrO9/71PJm27CqUC2wKaIUZEpVs+EMpaNJXAKnnpr+LOu+mdy5XTLOe8FXjfYNNtWwaIcOayMPxtuP4hpfFQ3/hKVUp8z2/VHGgPuK7fTiIKLJMbYDzkNRciQvbWsFko4ce4or1Dqwtyl+K1sQVxBkOPSmbgCkD7uuP85gJibWKyPCBb5e1lOVBunVpYAPMRKIvnUYmxtEcA9TLRltRhpfnIJMVR1nFy62cCxHv4JUivsO++tbfth8i3oAsbMs7IakV2h7j1O9KaGDrHPH8Ba2hEnQIJLB995hhveyh/4k//j+vZgz51cAKaqeoPFoNLdybd+hQ9vtEIger7TxvP0AC4BixxHzY7+5228s5j2SYq8puKHEofRuHTOW1qBG6thRKiE7r7pJPTILTDAc=","iv_b64":"K21UCe7kDIRVQhv8","salt_b64":"IhK0NpZ8mmpHfucwUhC0cw=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"b1aXgOHmQKLCKCZJvSD31wFjcuE7g/cSUBDHAWWT0431/wRgP8MiUIYC597EmrmURMBBXUreoqOHJz4S8e4PMd9qiHxf3rVOWHrrjilLgbT9zvpDV6hDQKVpBUIFS0edTSBGAgDSQFtMePHDBL3JQPpfNTfw7tXg+4ZTIZ2L4PodIqFpfRuXkvYAy6OjzhoFq+THQ5vA8VDw1Saqt/g7IfvJv6OFXcPQEBuMmB5hd4KHwbjSToQLAyuYBb9i/1r3zOsr1iIwWJQ/RiPH742Dtgp2erupcEvLyfJ3tEkWf1qXstZYoeEFMmOGXyaNT2S3I9fIU3Q4fgcrmTwLlHlzrBqBHDRsy0fMdRoRHhXPl5qKFPc3FrCFS09UbwWrUqA6C025J/7WwQzgZi76EzxGNJ+94VhLo8XmWXY8+thibovoAmevMM3SjQT3PRABuYKejcgjjF3syhwqD7ZELUTbuNxT5pHh7TGUB4B45Is4rw15qWF9nddwBIKklmG/VJX2LqhV6RtmDg+hqbNohfXS8d5D2G95ekqpGKPeUuV1+WSiIUsuglcaSXRuqG46ylWc+cIeGiWCI9e2gA4CWM8xWIir66dTkdM52h6P/iQVofAKcXhDbBahFC7ZHhJrQpXq8pgeiJT9pc89P5LJC7ZnTbGtOyASh+SIVo88wjznphEuoQLgXZkye6Od1ACXFynt3LqoPa4dXTIUBAxL33Tj526HZBjt13Z+p9Ms2HXRDCuW79YmLJ3/UFjUdwFfM0f9kF09fUqCdZIgm0j8VxSoPLcU4C7p+JVaoEyshUMy92z10IX+3Jt+RcqJ50KF1WE++7ajVs5nVJaQ/hhI5+GPQhXocEELknZ0ludKxZn6lC8cVTbKIygY4eIRwE0cuGoqo3LXpRaoBO4N9iPj90WlYEAeCSz2J/1ZOVj9tHr3qcysB1pXXReXLUf1NUmQOAHyqtmEZOZUMR8QFViDqXJp/h2+zR0AubHYNeg0pNSwnfznXWMw6LLZkT5LwUUyOt/yiP3KdcAJ1PwkMVRXPquDJ1gEnJ8m2BaSyIInmJgZKR8WZfV/AsWzjbLIfaEaQaNUO490d7U3jkl8EbXAOdBfJJKakXn/Cr9hoIHlHoQKHaLtiumwzV3krcW+QbXv4QJJZnwL/qhwQB2A+/k9FSB5SBDptdAKY/CkqxzZZl+IuosPgGs3ixKANs2/bnCnjARgMzK/R7VutBaoyrQp/2FEulf+BDGE4WiV6BofPSalNmqqiPP5ErjunQTzDsGRFaf5ol5da4vNnHfJOU9dJ0tWipnmdQrcRDkQo/4ZjrXz91AKZO0Q1RmG3yYwOAkBXxwyMIxh36UKFCaDPVKd8m3lShfAXtB8HmmqhvSA2gCqOWVs8gUaF0jxeAt94JdRm0BE+m3UBrqL73tL+8JuSPobzpBMM+IHX8HGgHPEUfr8ltIevD9rAxynZMQkNWSrqHZ/YDV2o7H11tfvggTDo/whk7FbTUc30NopgVtPuNVHxHSxMvV8460k5dtTU1DipJiONMxiVekevKEZpLZI2P6h2sb/UKf7e1CtmZp21qSx0NJ3DVqAo76F2OeCMYkIFxlywAUvZ4PBc9ZxOJaxlpkBPIqcsDpcuYy1yjZWud3+1m2Wujpx3CE3084AsHwy5hjI+1Tji78=","iv_b64":"4cWb55oxGmlgWtVK","salt_b64":"F2duMqIhjnf7DrgcIkti4A=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1425,26 +1426,32 @@
                                 <label>打字速度</label>
                                 <div class="speed-buttons">
                                     <button class="speed-btn" data-speed="80" title="慢速">慢</button>
-                                    <button class="speed-btn active" data-speed="25" title="中速">中</button>
+                                    <button class="speed-btn" data-speed="25" title="中速">中</button>
                                     <button class="speed-btn" data-speed="10" title="快速">快</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <button id="thumbnailBtn" class="floating-btn menu-item" title="縮圖列">
-                        <i data-lucide="image" style="width: 16px; height: 16px;"></i>
-                    </button>
+
                     <div class="menu-item" style="position: relative;">
                         <button id="fontSizeBtn" class="floating-btn" title="字體大小">
                             <i data-lucide="type" style="width: 16px; height: 16px;"></i>
                         </button>
                         <div id="fontSizeDropdown" class="font-size-dropdown">
-                            <button class="font-size-btn" data-size="0.9" title="小">小</button>
-                            <button class="font-size-btn active" data-size="1.1" title="中">中</button>
-                            <button class="font-size-btn" data-size="1.3" title="大">大</button>
+                            <div class="font-size-controls">
+                                <label>字體大小</label>
+                                <div style="display: flex; gap: 5px;">
+                                    <button class="font-size-btn" data-size="0.9" title="小">小</button>
+                                    <button class="font-size-btn active" data-size="1.1" title="中">中</button>
+                                    <button class="font-size-btn" data-size="1.3" title="大">大</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <button id="thumbnailBtn" class="floating-btn menu-item" title="縮圖列">
+                        <i data-lucide="image" style="width: 16px; height: 16px;"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1497,6 +1504,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="cHE7xVYvwmlVkv3kuDqreg"></script>
+<script src="assets/js/main.js" nonce="83K91g8W+73AEYAx5qSvCw"></script>
 </body>
 </html>
