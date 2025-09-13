@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-13T08:59:44.240148100+00:00
+// 生成時間: 2025-09-13T09:20:52.339178200+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -152,6 +152,24 @@
             });
         }
 
+        // 防抖動機制 - 防止按鈕快速重複點擊
+        let buttonDebounceTimeouts = new Map();
+        
+        function debounceButtonClick(buttonId, callback, delay = 300) {
+            // 清除之前的計時器
+            if (buttonDebounceTimeouts.has(buttonId)) {
+                clearTimeout(buttonDebounceTimeouts.get(buttonId));
+            }
+            
+            // 設置新的計時器
+            const timeout = setTimeout(() => {
+                callback();
+                buttonDebounceTimeouts.delete(buttonId);
+            }, delay);
+            
+            buttonDebounceTimeouts.set(buttonId, timeout);
+        }
+        
         // 觸控回饋效果
         function addTouchFeedback(element) {
             if (!element) return;
@@ -166,8 +184,8 @@
                 }, 800); // 匹配新的動畫時間
             });
             
-            // 添加點擊事件支援（桌面端）
-            element.addEventListener('click', (e) => {
+            // 鼠標點擊事件支援（桌面端） - 使用 mousedown 避免與主要 click 事件衝突
+            element.addEventListener('mousedown', (e) => {
                 element.classList.add('touching');
                 setTimeout(() => {
                     element.classList.remove('touching');
@@ -737,10 +755,8 @@
         function toggleSubtitle() {
             isSubtitleVisible = !isSubtitleVisible;
             
-            // 更新按鈕外觀和圖標
+            // 更新按鈕外觀和圖標（不隱藏按鈕，保持始終可見）
             if (elements.subtitleToggleBtn) {
-                elements.subtitleToggleBtn.classList.toggle('hidden', !isSubtitleVisible);
-                
                 // 更新Lucide圖示
                 const icon = elements.subtitleToggleBtn.querySelector('i[data-lucide]');
                 if (icon) {
@@ -749,6 +765,8 @@
                 }
                 
                 elements.subtitleToggleBtn.title = isSubtitleVisible ? '隱藏字幕' : '顯示字幕';
+                // 根據狀態更新按鈕樣式，但不隱藏
+                elements.subtitleToggleBtn.classList.toggle('hidden', false); // 確保永不隱藏
             }
             
             // 更新字幕容器狀態
@@ -819,15 +837,19 @@
         
         if (elements.timelineBtn) {
             elements.timelineBtn.addEventListener('click', () => {
-                toggleTimelinePanel();
-                // 時間軸點擊後關閉選單
-                closeMenu();
+                debounceButtonClick('timeline', () => {
+                    toggleTimelinePanel();
+                    // 時間軸點擊後關閉選單
+                    closeMenu();
+                }, 200);
             });
             addTouchFeedback(elements.timelineBtn);
         }
         
         if (elements.typewriterBtn) {
-            elements.typewriterBtn.addEventListener('click', toggleTypewriterMenu);
+            elements.typewriterBtn.addEventListener('click', () => {
+                debounceButtonClick('typewriter', toggleTypewriterMenu, 200);
+            });
             addTouchFeedback(elements.typewriterBtn);
         }
         
@@ -867,7 +889,9 @@
         }
         
         if (elements.fontSizeBtn) {
-            elements.fontSizeBtn.addEventListener('click', toggleFontSizeMenu);
+            elements.fontSizeBtn.addEventListener('click', () => {
+                debounceButtonClick('fontsize', toggleFontSizeMenu, 200);
+            });
             addTouchFeedback(elements.fontSizeBtn);
         }
         
@@ -877,16 +901,21 @@
             addTouchFeedback(elements.subtitleToggleBtn);
         }
         
-        // 字體大小按鈕事件
-        document.addEventListener('DOMContentLoaded', () => {
+        // 字體大小按鈕事件初始化函數
+        function initializeFontSizeButtons() {
             const fontSizeBtns = document.querySelectorAll('.font-size-btn');
             fontSizeBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    setFontSize(btn.dataset.size);
-                });
+                // 移除可能存在的舊事件監聽器，避免重複綁定
+                btn.removeEventListener('click', handleFontSizeButtonClick);
+                btn.addEventListener('click', handleFontSizeButtonClick);
             });
-        });
+        }
+        
+        // 字體大小按鈕點擊處理函數
+        function handleFontSizeButtonClick(e) {
+            e.stopPropagation();
+            setFontSize(this.dataset.size);
+        }
 
         if (elements.closeTimelineBtn) {
             elements.closeTimelineBtn.addEventListener('click', closeTimelinePanel);
@@ -1357,6 +1386,9 @@
             
             // 設置觸控手勢
             setupTouchGestures();
+            
+            // 初始化字體大小按鈕事件
+            initializeFontSizeButtons();
             
             console.log('🔍 DOM 載入完成，檢查數據狀態');
             console.log('📊 window.MEMOIR_DATA:', !!window.MEMOIR_DATA);
