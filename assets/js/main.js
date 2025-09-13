@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-12T22:54:24.093237100+00:00
+// 生成時間: 2025-09-13T06:51:55.149814900+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -8,6 +8,7 @@
         let MEMOIR_DATA = null;
         let currentEventIndex = 0;
         let currentMediaIndex = 0;
+        let currentLightboxMediaIndex = 0;
         let isDecrypting = false;
         let isTypewriterEnabled = true;
         let typingSpeed = 25;
@@ -246,20 +247,43 @@
             }
         }
 
-        // 觸控手勢處理
+        // 進階觸控手勢處理（優化版）
         function setupTouchGestures() {
-            const mediaContainer = document.querySelector('.media-container');
-            if (!mediaContainer) return;
-            
+            let touchStartX = 0;
+            let touchStartY = 0;
             let touchStartTime = 0;
+            let isSwiping = false;
             
-            mediaContainer.addEventListener('touchstart', (e) => {
+            // 阻止整個文檔的滾動行為
+            document.addEventListener('touchstart', (e) => {
                 touchStartX = e.touches[0].clientX;
                 touchStartY = e.touches[0].clientY;
                 touchStartTime = Date.now();
-            }, { passive: true });
+                isSwiping = false;
+            }, { passive: false });
             
-            mediaContainer.addEventListener('touchend', (e) => {
+            document.addEventListener('touchmove', (e) => {
+                // 防止預設的滾動行為
+                if (!e.target.closest('.menu-dropdown') && 
+                    !e.target.closest('.timeline-panel') &&
+                    !e.target.closest('input[type="range"]')) {
+                    e.preventDefault();
+                }
+                
+                const touchX = e.touches[0].clientX;
+                const touchY = e.touches[0].clientY;
+                const deltaX = Math.abs(touchX - touchStartX);
+                const deltaY = Math.abs(touchY - touchStartY);
+                
+                // 如果移動距離超過閾值，標記為滑動
+                if (deltaX > 10 || deltaY > 10) {
+                    isSwiping = true;
+                }
+            }, { passive: false });
+            
+            document.addEventListener('touchend', (e) => {
+                if (!isSwiping) return;
+                
                 const touchEndX = e.changedTouches[0].clientX;
                 const touchEndY = e.changedTouches[0].clientY;
                 const touchEndTime = Date.now();
@@ -268,30 +292,52 @@
                 const deltaY = touchEndY - touchStartY;
                 const deltaTime = touchEndTime - touchStartTime;
                 
-                // 確保是滑動手勢而不是點擊
-                if (deltaTime > 500 || Math.abs(deltaX) < 50) return;
+                // 確保是快速滑動手勢
+                if (deltaTime > 800) return;
                 
-                // 水平滑動切換媒體
-                if (Math.abs(deltaX) > Math.abs(deltaY)) {
-                    if (deltaX > 0) {
-                        // 向右滑動 - 上一個媒體
-                        if (elements.prevMediaBtn) elements.prevMediaBtn.click();
-                    } else {
-                        // 向左滑動 - 下一個媒體
-                        if (elements.nextMediaBtn) elements.nextMediaBtn.click();
+                const minSwipeDistance = 50;
+                const absX = Math.abs(deltaX);
+                const absY = Math.abs(deltaY);
+                
+                // 如果不在選單或時間軸區域內
+                if (!e.target.closest('.menu-dropdown') && 
+                    !e.target.closest('.timeline-panel')) {
+                    
+                    // 水平滑動切換媒體
+                    if (absX > minSwipeDistance && absX > absY) {
+                        e.preventDefault();
+                        if (deltaX > 0) {
+                            // 向右滑動 - 上一個媒體
+                            if (elements.prevMediaBtn && !elements.prevMediaBtn.disabled) {
+                                elements.prevMediaBtn.click();
+                            }
+                        } else {
+                            // 向左滑動 - 下一個媒體
+                            if (elements.nextMediaBtn && !elements.nextMediaBtn.disabled) {
+                                elements.nextMediaBtn.click();
+                            }
+                        }
+                    }
+                    // 垂直滑動切換事件
+                    else if (absY > minSwipeDistance && absY > absX) {
+                        e.preventDefault();
+                        if (deltaY > 0) {
+                            // 向下滑動 - 上一個事件
+                            if (elements.prevEventBtn && !elements.prevEventBtn.disabled) {
+                                elements.prevEventBtn.click();
+                            }
+                        } else {
+                            // 向上滑動 - 下一個事件
+                            if (elements.nextEventBtn && !elements.nextEventBtn.disabled) {
+                                elements.nextEventBtn.click();
+                            }
+                        }
                     }
                 }
-                // 垂直滑動切換事件
-                else if (Math.abs(deltaY) > 100) {
-                    if (deltaY > 0) {
-                        // 向下滑動 - 上一個事件
-                        if (elements.prevEventBtn) elements.prevEventBtn.click();
-                    } else {
-                        // 向上滑動 - 下一個事件
-                        if (elements.nextEventBtn) elements.nextEventBtn.click();
-                    }
-                }
-            }, { passive: true });
+                
+                // 重置滑動狀態
+                isSwiping = false;
+            }, { passive: false });
         }
 
         // 快速媒體解密（移除複雜調度）
@@ -369,6 +415,12 @@
             }
 
             if (mediaElement) {
+                // 添加燈箱點擊事件
+                mediaElement.style.cursor = 'pointer';
+                mediaElement.addEventListener('click', () => {
+                    openLightbox(mediaElement);
+                });
+                
                 elements.mediaDisplay.appendChild(mediaElement);
             }
         }
@@ -655,6 +707,23 @@
             addTouchFeedback(elements.typewriterBtn);
         }
         
+        // 打字機速度滑軒事件
+        if (elements.typingSpeedSlider) {
+            elements.typingSpeedSlider.addEventListener('input', (e) => {
+                typingSpeed = parseInt(e.target.value);
+                console.log('打字機速度已調整至:', typingSpeed, 'ms');
+                // 當滑軒改變時，如果當前正在使用打字機效果，立即應用新速度
+                if (isTypewriterEnabled && typewriterTimeout) {
+                    // 重新啟動當前的打字機效果，以新速度播放
+                    const currentEvent = getCurrentEvent();
+                    if (currentEvent?.description && elements.eventDescription) {
+                        clearInterval(typewriterTimeout);
+                        typewriterEffect(elements.eventDescription, currentEvent.description, typingSpeed);
+                    }
+                }
+            });
+        }
+        
         if (elements.thumbnailBtn) {
             elements.thumbnailBtn.addEventListener('click', toggleThumbnails);
             addTouchFeedback(elements.thumbnailBtn);
@@ -736,6 +805,142 @@
                 case 'm':
                 case 'M':
                     toggleMenu();
+                    break;
+            }
+        });
+
+        // 燈箱功能
+        function openLightbox(mediaElement) {
+            if (!elements.lightbox || !elements.lightboxMedia) return;
+            
+            const currentEvent = getCurrentEvent();
+            if (!currentEvent?.media) return;
+            
+            // 設置當前媒體
+            currentLightboxMediaIndex = currentMediaIndex;
+            
+            // 顯示燈箱
+            displayLightboxMedia();
+            elements.lightbox.classList.add('active');
+            
+            // 阻止背景滾動
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            if (!elements.lightbox) return;
+            
+            elements.lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // 清空燈箱內容
+            if (elements.lightboxMedia) {
+                elements.lightboxMedia.innerHTML = '';
+            }
+        }
+        
+        function displayLightboxMedia() {
+            const currentEvent = getCurrentEvent();
+            if (!currentEvent?.media || !elements.lightboxMedia) return;
+            
+            const media = currentEvent.media[currentLightboxMediaIndex];
+            if (!media) return;
+            
+            // 清空燈箱內容
+            elements.lightboxMedia.innerHTML = '';
+            
+            // 創建媒體元素
+            let mediaElement;
+            if (media.type === 'image' || media.media_type === 'image') {
+                mediaElement = document.createElement('img');
+                mediaElement.alt = '回憶錄圖片';
+                
+                const mediaSrc = media.src || media.url || `./media/${media.filename}`;
+                if (mediaSrc.includes('media/')) {
+                    mediaElement.setAttribute('data-needs-mse-decrypt', 'true');
+                    mediaElement.setAttribute('data-original-src', mediaSrc);
+                    mediaElement.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSI4IiBmaWxsPSJub25lIiBzdHJva2U9IiMzYjgyZjYiIHN0cm9rZS13aWR0aD0iMiI+PGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHZhbHVlcz0iMCAyMCAyMDszNjAgMjAgMjAiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+PC9jaXJjbGU+PC9zdmc+';
+                    setTimeout(quickDecryptMedia, 10);
+                } else {
+                    mediaElement.src = mediaSrc;
+                }
+            } else if (media.type === 'video' || media.media_type === 'video') {
+                mediaElement = document.createElement('video');
+                mediaElement.controls = true;
+                mediaElement.src = media.src || media.url || `./media/${media.filename}`;
+            }
+            
+            if (mediaElement) {
+                elements.lightboxMedia.appendChild(mediaElement);
+            }
+            
+            // 更新導航按鈕狀態
+            updateLightboxNavigation();
+        }
+        
+        function updateLightboxNavigation() {
+            const currentEvent = getCurrentEvent();
+            if (!currentEvent?.media) return;
+            
+            if (elements.lightboxPrev) {
+                elements.lightboxPrev.style.display = currentLightboxMediaIndex > 0 ? 'block' : 'none';
+            }
+            if (elements.lightboxNext) {
+                elements.lightboxNext.style.display = currentLightboxMediaIndex < currentEvent.media.length - 1 ? 'block' : 'none';
+            }
+        }
+        
+        function lightboxPrevMedia() {
+            const currentEvent = getCurrentEvent();
+            if (!currentEvent?.media || currentLightboxMediaIndex <= 0) return;
+            
+            currentLightboxMediaIndex--;
+            displayLightboxMedia();
+        }
+        
+        function lightboxNextMedia() {
+            const currentEvent = getCurrentEvent();
+            if (!currentEvent?.media || currentLightboxMediaIndex >= currentEvent.media.length - 1) return;
+            
+            currentLightboxMediaIndex++;
+            displayLightboxMedia();
+        }
+        
+        // 燈箱事件監聽器
+        if (elements.lightboxClose) {
+            elements.lightboxClose.addEventListener('click', closeLightbox);
+        }
+        
+        if (elements.lightboxPrev) {
+            elements.lightboxPrev.addEventListener('click', lightboxPrevMedia);
+        }
+        
+        if (elements.lightboxNext) {
+            elements.lightboxNext.addEventListener('click', lightboxNextMedia);
+        }
+        
+        // 點擊燈箱背景關閉
+        if (elements.lightbox) {
+            elements.lightbox.addEventListener('click', (e) => {
+                if (e.target === elements.lightbox) {
+                    closeLightbox();
+                }
+            });
+        }
+        
+        // 燈箱鍵盤導航
+        document.addEventListener('keydown', (e) => {
+            if (!elements.lightbox?.classList.contains('active')) return;
+            
+            switch(e.key) {
+                case 'Escape':
+                    closeLightbox();
+                    break;
+                case 'ArrowLeft':
+                    lightboxPrevMedia();
+                    break;
+                case 'ArrowRight':
+                    lightboxNextMedia();
                     break;
             }
         });
