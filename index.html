@@ -14,10 +14,13 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-fb74380b-7e59-4d9c-901f-f87aa8449eb2'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-942d77b7-70fa-4120-9399-2b0327837b40' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    
+    <!-- Lucide Icons -->
+    <script nonce="942d77b7-70fa-4120-9399-2b0327837b40" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="fb74380b-7e59-4d9c-901f-f87aa8449eb2">
+    <style nonce="942d77b7-70fa-4120-9399-2b0327837b40">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -941,13 +944,20 @@
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
+            bottom: 180px; /* 為字幕區域預留空間 */
             width: 100vw;
-            height: 100vh;
+            height: calc(100vh - 180px); /* 相應調整高度 */
             z-index: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        /* 當字幕隱藏時，媒體區域充滿整個視窗 */
+        .subtitle-hidden-mode .media-display {
+            bottom: 0;
+            height: 100vh;
         }
         
         .media-display img, .media-display video {
@@ -983,24 +993,24 @@
 
         /* 字幕開關按鈕 */
         .subtitle-toggle-btn {
-            position: absolute;
+            position: fixed;
             bottom: 20px;
             left: 20px;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            background: rgba(59, 130, 246, 0.8);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(59, 130, 246, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             color: white;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             cursor: pointer;
-            z-index: 10;
-            backdrop-filter: blur(10px);
+            z-index: 1000;
+            backdrop-filter: blur(15px);
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
         }
 
         .subtitle-toggle-btn:hover {
@@ -1082,25 +1092,31 @@
         }
         
         .lightbox-close {
-            position: absolute;
+            position: fixed;
             top: 20px;
             right: 20px;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
+            width: 55px;
+            height: 55px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.2s ease;
+            z-index: 1003;
+            backdrop-filter: blur(15px);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
         
         .lightbox-close:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(239, 68, 68, 0.9);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(239, 68, 68, 0.5);
         }
         
         .lightbox-nav {
@@ -1252,7 +1268,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"5nhXYMEzOM+LorXMQa8GdLMU8EYFbWBz9VPHHBwW9zpYXCU130ZHni+6or9w+gZVC9JDHOcy63IlstBQX492qwQIyf/kdXvlR443esgxWUOeevkns06x30NHodm5h7QH8tP+SbMxCMFVqefy/Um+qj0VA3SvvL5m1n48rwaVRxspBFN+o7WqJesQl11aCP+ayYDtl3ZLB6yQFeDpypZuFIAPaEMjTUeO/ZJv2aaRpKtG7GcO0SYJZpoE1+HVO0oHUm0UmJN72ZQT2birTDPNOP2Q94U0pcO0R9KKwToUEqRw4vrRaADNN3K2SkSAEQN3HS26knWbpJyOREA34TmNWW/JP8n5+Mfd7U33vs+HqBm9XuGLifvjZkuUZgFHtn3+g3mBLzy/R6TXpldqsfeHiWZZEPerRcaybeCk2G6etCh6FpxdEO5Qnu/BBtL3vJRDpAH24gi2B3oRzVQoe3vP/1qAveUJgIjYarmDmJcWj2osY6wV4gEb45upMHFWAsPfFUgQE6DXkiMvP/lHx5wbet6LgJ0Rvt5OueVvlycQMzPtgMGyt3uG7j5fdQAjIcKM/vyxXj14jRuyy2PwJds7pftOrAO+Jrjh8aMG6CEtxgQSzZtj9mdN94yChRlmFLgF+uOs1po+dSLNX5RL4ZKgfufb2jUNKjozWD2B91ShRWroMyR1CbQ2ubav36UtmjE70sB+RJAR1RuzDDQNiiz9aA8kaXf4ITGBgn3CrNCPCL5dfAc72P15eUUEojO/L8n8eR28xY+FUDVRs3Is3rbSN8ak+X+K/llzQcLSIHmPvwe0WmD1Qcr5hNWOxANjyoyHG5fLzrBlKH/UklvmA3/cNCDgJ23OkwkiDe4sF1nKw6X5YidadNxBN0opyR+kSFr9bTSifOGz7RJPpJ3NXFzapqiyUNeRxbCjehr/33BrvLyiXqCZVBuPVUZ6S+Z5G7TuZDLCsbfec115Bvhj3wLxpvLPq7y1gyCDNwqXsVL6M7F2sg0uhjrCRwIyDqemLgg2ae7qFdt7cpdVJPcPSy2rA3sYMcV5S3zWNElxKvYYOqAe5mQb2/G2u9REixgPhX+FgJ01nbZIpjQD247vWtDujWSaaA1okxnJ5+cTgyAX/GJ5mtuqlAw0jD2HeObVlDwUhN8K6LQQiOgfNiz9yjukMwqp9r6IOqnoqLEOuu95NzeWKzUvYxDK56GQsGzobSf+ZX8WUusKZSwIqneRdoHa3ue8qOQxL4hA7Pp7IO70DuTZxLX1sQttzfSZWBm+TSEynlTbTPPLy24R8uY0WBQZP45vtZ0g57xSo2XZ3+h/RvShDZwbqdB1TQhrDSWmu+0Z42VfxgbWQVlJfTMYdqXgJjtYtIXTuVG1Ebi5FDJFyR6ad/m2370Kd1U4q9d3AwnJWSwcx+8N4vm4cy7YiIuG8C8h50RPnr5/8uvQBzDUTehZYaLfXE8xfLRwPScD/+TgustoY6Ek/HFlze8UbbtFbpzhnrdVpFFFYIx1XQPgoVa3Pbx+3Bk6mLP71+Elbs/vgstHotPoGhKe4tSEqeInYqDLw+quz1jHMm3UfK9wp+QzEDeFG282SSi39oAIYomvX1mmKZy7dAJrFC28OgrSL9SGfPDailHyz4WfCyYeSZ1T+7Rkvs2gV/SovgjgVNZRjf9Q1gc=","iv_b64":"QTA4QR3BN/xi+U5Q","salt_b64":"OrP0LDWUZkNq7RjKrZ9u7g=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"2XbzXbJnZF9tiQ7sWnbuXlF2frjJx/lQnR9zi3SrVcFV8vDwhmLWQp7Zh9Kaj8AqFldHg0lyDz6KMwlS/GiS2Cu5BJbyOPUhi7an3CZCFzlz6MudYJuhsfUk4wnznpSRu/HqRgicIIWlYO3mGHuLTu2CopeZFyfh+9oki8lzG7XxpIPDYj3ztmuJ0vo898f36kNUx9fCNWu11lj8mWka7hefof25FOMV8HWRPJzDw1SYcZ4ghaXTMmFjTp7LZ3cehPMSdBRqZrEgnVtkPu3F9Rd4UxriCPRbF1bSEe1Qjp6mI0QVpDUh2RhPSZO+yPVpwHQib5e5BhKWf8vYiOGX9uvToHcQgEAEXn+5DXaWIbXONXOuHw3ZBgcdBSg4GpPQCZfgR9qPy3K5kyMTRz4zLFYDyZ5NJppny5kWA/paceMUPKaKHTfIbQeNomOheyazxCgQw/qFD8L/H9Qy8h4uZKWrpm7YE8o/XzaDMPxV6VfZlL11juGgcYgCFMrJ1nNcO8dYgAp8ZZm+rDDYqB2dpgaa4W2qaIQh0usuZpd5kSkP7e0tM9Cn2xWdC4YIoZHOb4GxOh/m4d+uRCImbJDrXpKve3IGbVDZOSihS5EEIP17SqZhPe9+efhK/1/y8YHTs+pf/HY+DkNGUikcQsN4DBqluHe2TzF3OeWhpHOwO/fsm7XuTaJOPE+fDZ8YMLb1QTIzvqF5hDoFlLVTL+ny3rZQv0gMbIgL/rp6wHicr/YbfrtEkhpWa/X4JHjf82BB3TpkUdpTQNDGUj3fCykQk9UmiSI3bJGFo+BOAzWK12BGH11By6eOILLMLYp44zSZ1qfmDl0cAVn3qu2bS0KEHnretl2pf/VCnGpgBzWnDhJYib1fhqm/f5hEnMu66MoHqlJeEi4jtfRCXLrhpqgKxrINrWqvF1lU3j7ZImj5ko6tF9cKalL+XPxTkliQvAyV4mHxOiBe/so3IeWOMbBGpqfBT6OPYiMwcojU/Gtw81xVYOlyBDDrpS255TTKp1Kkp3/5wSTcWeLf4wbYoYmGlmAG19T65NaEiTwdk0Udd1lP3E4gDV9yFx6S+uWubjgs4ZOki2aglvvSy7bUXeibYdRe29JQGX1NZfNBF7XRgXBF3CPsO8byeY5LHlbpvrJcRfRAV4/TRoGfk7sX/Bzz7urnJ5yDMh2hsZztC3HXo2l8yQa+vHiTbVZAmKO09/VBqpiaUkgK4Dr+Hd70DkdcHAKXJZuyS/Rfvvbl0Ngtdz9Gir42IMZhHkk6gLaqSEe8uBqVKFM8w64IPR+mvNVVUrc+lLjmV0KvfTXCvMVnUrxCgpyc383W1TGeLFNl+DqtKgqOd9Nwsn6xdjQHcUUMYjmel7euQifFuxRibSrY1WVLRxCJb0uttxH7GaEeiFeavlGcLvIXoWdt14aCM8K1q6ifn2H4zryRx3SdoOvin2fPzK85At06CDpH7Awy0VRxkzFRp5uG5/zIZjzMiGweW+H4Ytd2obRXa6nFxUVJpuGiR6s2FxciwboRup3BfgYe34Gzw/34odihgwcs6h+Zt67OPBcgAmfSCHOHKrSA9Sdll56+Wz8oa8SYinIRmyjHsz2VQLOXvHd3zq0sfsTKXQeBTWqpNLb3bPk4PxLshKsZrToxBETkcsqenVRuL4pcHWAC3g8=","iv_b64":"eneD/MObsZlPp9do","salt_b64":"+QXPPfcSFn0Sz0hmuheB9g=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1307,9 +1323,13 @@
                 
                 <!-- 描述區 -->
                 <div id="descriptionContainer" class="description-container">
-                    <button id="subtitleToggleBtn" class="subtitle-toggle-btn" title="字幕開關">👁</button>
                     <div id="eventDescription"></div>
                 </div>
+                
+                <!-- 字幕開關按鈕（固定在視窗左下角）-->
+                <button id="subtitleToggleBtn" class="subtitle-toggle-btn" title="字幕開關">
+                    <i data-lucide="eye" style="width: 18px; height: 18px;"></i>
+                </button>
             </div>
         </div>
 
@@ -1337,10 +1357,14 @@
                     </div>
                 </button>
                 <div id="menuDropdown" class="menu-dropdown">
-                    <button id="timelineBtn" class="floating-btn menu-item" title="時間軸導覽">📋</button>
+                    <button id="timelineBtn" class="floating-btn menu-item" title="時間軸導覽">
+                        <i data-lucide="clock" style="width: 16px; height: 16px;"></i>
+                    </button>
                     
                     <div class="menu-item" style="position: relative;">
-                        <button id="typewriterBtn" class="floating-btn" title="打字機效果設定">⌨</button>
+                        <button id="typewriterBtn" class="floating-btn" title="打字機效果設定">
+                            <i data-lucide="keyboard" style="width: 16px; height: 16px;"></i>
+                        </button>
                         <div id="typewriterDropdown" class="typewriter-dropdown">
                             <div class="typewriter-toggle">
                                 <label>打字機效果</label>
@@ -1355,9 +1379,13 @@
                         </div>
                     </div>
                     
-                    <button id="thumbnailBtn" class="floating-btn menu-item" title="縮圖列">🖼</button>
+                    <button id="thumbnailBtn" class="floating-btn menu-item" title="縮圖列">
+                        <i data-lucide="image" style="width: 16px; height: 16px;"></i>
+                    </button>
                     <div class="menu-item" style="position: relative;">
-                        <button id="fontSizeBtn" class="floating-btn" title="字體大小">🔤</button>
+                        <button id="fontSizeBtn" class="floating-btn" title="字體大小">
+                            <i data-lucide="type" style="width: 16px; height: 16px;"></i>
+                        </button>
                         <div id="fontSizeDropdown" class="font-size-dropdown">
                             <button class="font-size-btn" data-size="0.9" title="小">小</button>
                             <button class="font-size-btn active" data-size="1.1" title="中">中</button>
@@ -1416,6 +1444,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="3y396nk9BBiG/rAf1msQIw"></script>
+<script src="assets/js/main.js" nonce="IXGOhK9ITWOuidHEqKU/Tg"></script>
 </body>
 </html>
