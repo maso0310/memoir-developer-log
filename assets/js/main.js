@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-13T06:51:55.149814900+00:00
+// 生成時間: 2025-09-13T07:46:22.775999500+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -16,7 +16,9 @@
         let isMenuOpen = false;
         let isThumbnailsVisible = false;
         let isFontSizeMenuOpen = false;
+        let isTypewriterMenuOpen = false;
         let isLightboxOpen = false;
+        let isSubtitleVisible = true;
 
         // DOM 元素緩存
         const elements = {
@@ -34,10 +36,13 @@
             timelinePanel: document.getElementById('timelinePanel'),
             closeTimelineBtn: document.getElementById('closeTimelineBtn'),
             descriptionContainer: document.getElementById('descriptionContainer'),
+            subtitleToggleBtn: document.getElementById('subtitleToggleBtn'),
             menuBtn: document.getElementById('menuBtn'),
             menuBtnIcon: document.getElementById('menuBtnIcon'),
             menuDropdown: document.getElementById('menuDropdown'),
             typewriterBtn: document.getElementById('typewriterBtn'),
+            typewriterDropdown: document.getElementById('typewriterDropdown'),
+            typewriterToggle: document.getElementById('typewriterToggle'),
             typingSpeedSlider: document.getElementById('typingSpeedSlider'),
             thumbnailBtn: document.getElementById('thumbnailBtn'),
             fontSizeBtn: document.getElementById('fontSizeBtn'),
@@ -153,11 +158,20 @@
             
             element.classList.add('touch-feedback');
             
+            // 觸控開始事件
             element.addEventListener('touchstart', (e) => {
                 element.classList.add('touching');
                 setTimeout(() => {
                     element.classList.remove('touching');
-                }, 600);
+                }, 800); // 匹配新的動畫時間
+            });
+            
+            // 添加點擊事件支援（桌面端）
+            element.addEventListener('click', (e) => {
+                element.classList.add('touching');
+                setTimeout(() => {
+                    element.classList.remove('touching');
+                }, 800); // 匹配新的動畫時間
             });
         }
 
@@ -428,18 +442,34 @@
         // 快速渲染縮圖
         function renderThumbnails() {
             const currentEvent = getCurrentEvent();
-            if (!currentEvent?.media || currentEvent.media.length <= 1) {
-                // 如果沒有媒體或只有一個媒體，隱藏縮圖列
+            
+            // 根據縮圖列開關狀態決定是否顯示
+            if (!isThumbnailsVisible) {
                 if (elements.thumbnailsContainer) {
                     elements.thumbnailsContainer.classList.remove('visible');
                 }
-                if (elements.thumbnails) {
-                    elements.thumbnails.innerHTML = '';
+                return;
+            }
+            
+            if (!elements.thumbnails) return; // 防止 null 錯誤
+
+            // 清空現有內容
+            elements.thumbnails.innerHTML = '';
+            
+            // 如果沒有媒體，顯示提示訊息
+            if (!currentEvent?.media || currentEvent.media.length === 0) {
+                const noMediaDiv = document.createElement('div');
+                noMediaDiv.className = 'no-media-message';
+                noMediaDiv.textContent = '此事件沒有媒體檔案';
+                noMediaDiv.style.cssText = 'color: #9ca3af; font-size: 0.8rem; padding: 1rem; text-align: center;';
+                elements.thumbnails.appendChild(noMediaDiv);
+                
+                // 仍然顯示縮圖列
+                if (elements.thumbnailsContainer) {
+                    elements.thumbnailsContainer.classList.add('visible');
                 }
                 return;
             }
-
-            if (!elements.thumbnails) return; // 防止 null 錯誤
 
             const fragment = document.createDocumentFragment();
             
@@ -479,13 +509,15 @@
                 fragment.appendChild(thumbnail);
             });
             
-            elements.thumbnails.innerHTML = '';
             elements.thumbnails.appendChild(fragment);
             
-            // 如果縮圖列被啟用，觸發重新解密
-            if (isThumbnailsVisible) {
-                setTimeout(quickDecryptMedia, 100);
+            // 顯示縮圖列
+            if (elements.thumbnailsContainer) {
+                elements.thumbnailsContainer.classList.add('visible');
             }
+            
+            // 觸發重新解密
+            setTimeout(quickDecryptMedia, 100);
         }
 
         // 快速載入事件（優化性能，異步執行）
@@ -634,6 +666,7 @@
                 elements.menuBtnIcon.classList.remove('open');
             }
             closeFontSizeMenu();
+            closeTypewriterMenu();
         }
         
         function toggleThumbnails() {
@@ -641,18 +674,99 @@
             if (elements.thumbnailsContainer) {
                 elements.thumbnailsContainer.classList.toggle('visible', isThumbnailsVisible);
             }
+            
+            // 更新按鈕外觀以顯示開關狀態
+            if (elements.thumbnailBtn) {
+                elements.thumbnailBtn.style.background = isThumbnailsVisible 
+                    ? 'rgba(59, 130, 246, 0.8)' 
+                    : 'rgba(107, 114, 128, 0.8)';
+            }
+            
+            // 如果開啟縮圖列，立即重新渲染
+            if (isThumbnailsVisible) {
+                renderThumbnails();
+            }
+            
             // 不關閉選單，讓用戶可以繼續調整
+        }
+        
+        function toggleTypewriterMenu() {
+            isTypewriterMenuOpen = !isTypewriterMenuOpen;
+            if (elements.typewriterDropdown) {
+                elements.typewriterDropdown.classList.toggle('open', isTypewriterMenuOpen);
+            }
+        }
+        
+        function closeTypewriterMenu() {
+            isTypewriterMenuOpen = false;
+            if (elements.typewriterDropdown) {
+                elements.typewriterDropdown.classList.remove('open');
+            }
         }
         
         function toggleTypewriter() {
             isTypewriterEnabled = !isTypewriterEnabled;
-            // 更新按鈕外觀
+            
+            // 更新切換按鈕外觀和文字
+            if (elements.typewriterToggle) {
+                elements.typewriterToggle.classList.toggle('active', isTypewriterEnabled);
+                elements.typewriterToggle.textContent = isTypewriterEnabled ? 'ON' : 'OFF';
+            }
+            
+            // 更新主按鈕外觀
             if (elements.typewriterBtn) {
                 elements.typewriterBtn.style.background = isTypewriterEnabled 
                     ? 'rgba(59, 130, 246, 0.8)' 
                     : 'rgba(107, 114, 128, 0.8)';
             }
-            // 不關閉選單，讓用戶可以繼續調整
+        }
+        
+        function updateSpeedLabel(speed) {
+            const speedLabel = document.querySelector('.speed-label');
+            if (!speedLabel) return;
+            
+            if (speed <= 30) {
+                speedLabel.textContent = '快速';
+            } else if (speed <= 60) {
+                speedLabel.textContent = '中等';
+            } else {
+                speedLabel.textContent = '慢速';
+            }
+        }
+        
+        function toggleSubtitle() {
+            isSubtitleVisible = !isSubtitleVisible;
+            
+            // 更新按鈕外觀和圖標
+            if (elements.subtitleToggleBtn) {
+                elements.subtitleToggleBtn.classList.toggle('hidden', !isSubtitleVisible);
+                elements.subtitleToggleBtn.textContent = isSubtitleVisible ? '👁' : '🚫';
+                elements.subtitleToggleBtn.title = isSubtitleVisible ? '隱藏字幕' : '顯示字幕';
+            }
+            
+            // 更新字幕容器狀態
+            if (elements.descriptionContainer) {
+                elements.descriptionContainer.classList.toggle('subtitle-hidden', !isSubtitleVisible);
+            }
+            
+            // 如果重新開啟字幕，重新啟動打字機效果
+            if (isSubtitleVisible && isTypewriterEnabled) {
+                const currentEvent = getCurrentEvent();
+                if (currentEvent?.description && elements.eventDescription) {
+                    // 清除之前的打字機效果
+                    if (typewriterTimeout) {
+                        clearInterval(typewriterTimeout);
+                    }
+                    // 重新啟動打字機效果
+                    typewriterEffect(elements.eventDescription, currentEvent.description, typingSpeed);
+                }
+            } else if (isSubtitleVisible && !isTypewriterEnabled) {
+                // 如果沒有打字機效果，直接顯示文字
+                const currentEvent = getCurrentEvent();
+                if (currentEvent?.description && elements.eventDescription) {
+                    elements.eventDescription.textContent = currentEvent.description;
+                }
+            }
         }
         
         function toggleFontSizeMenu() {
@@ -703,15 +817,25 @@
         }
         
         if (elements.typewriterBtn) {
-            elements.typewriterBtn.addEventListener('click', toggleTypewriter);
+            elements.typewriterBtn.addEventListener('click', toggleTypewriterMenu);
             addTouchFeedback(elements.typewriterBtn);
+        }
+        
+        // 打字機切換按鈕事件
+        if (elements.typewriterToggle) {
+            elements.typewriterToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleTypewriter();
+            });
         }
         
         // 打字機速度滑軒事件
         if (elements.typingSpeedSlider) {
             elements.typingSpeedSlider.addEventListener('input', (e) => {
                 typingSpeed = parseInt(e.target.value);
+                updateSpeedLabel(typingSpeed);
                 console.log('打字機速度已調整至:', typingSpeed, 'ms');
+                
                 // 當滑軒改變時，如果當前正在使用打字機效果，立即應用新速度
                 if (isTypewriterEnabled && typewriterTimeout) {
                     // 重新啟動當前的打字機效果，以新速度播放
@@ -722,6 +846,9 @@
                     }
                 }
             });
+            
+            // 初始化速度標籤
+            updateSpeedLabel(typingSpeed);
         }
         
         if (elements.thumbnailBtn) {
@@ -732,6 +859,12 @@
         if (elements.fontSizeBtn) {
             elements.fontSizeBtn.addEventListener('click', toggleFontSizeMenu);
             addTouchFeedback(elements.fontSizeBtn);
+        }
+        
+        // 字幕開關按鈕事件
+        if (elements.subtitleToggleBtn) {
+            elements.subtitleToggleBtn.addEventListener('click', toggleSubtitle);
+            addTouchFeedback(elements.subtitleToggleBtn);
         }
         
         // 字體大小按鈕事件
@@ -765,6 +898,14 @@
                 !elements.fontSizeDropdown.contains(e.target) &&
                 e.target !== elements.fontSizeBtn) {
                 closeFontSizeMenu();
+            }
+            
+            // 關閉打字機子選單
+            if (isTypewriterMenuOpen && 
+                elements.typewriterDropdown &&
+                !elements.typewriterDropdown.contains(e.target) &&
+                e.target !== elements.typewriterBtn) {
+                closeTypewriterMenu();
             }
             
             // 關閉主選單（但保留時間軸按鈕例外）
