@@ -14,13 +14,13 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-56a4cc6b-05cb-4bcb-9e95-0911103856a3' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-ece06779-0fc5-4a0d-8791-ea0ba28e1997' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="56a4cc6b-05cb-4bcb-9e95-0911103856a3" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="ece06779-0fc5-4a0d-8791-ea0ba28e1997" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="56a4cc6b-05cb-4bcb-9e95-0911103856a3">
+    <style nonce="ece06779-0fc5-4a0d-8791-ea0ba28e1997">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -806,33 +806,37 @@
             font-weight: 500;
         }
 
-        /* 速度按鈕樣式 */
+        /* 速度按鈕樣式 - 套用字體大小按鈕的圓形樣式 */
         .speed-buttons {
             display: flex;
-            gap: 8px;
+            gap: 5px;
             justify-content: center;
         }
 
         .speed-btn {
-            background: rgba(31, 41, 55, 0.7);
-            color: #e5e7eb;
-            border: 1px solid rgba(107, 114, 128, 0.5);
-            border-radius: 8px;
-            padding: 6px 12px;
-            font-size: 12px;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background: rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
         .speed-btn:hover {
-            background: rgba(59, 130, 246, 0.3);
-            border-color: rgba(59, 130, 246, 0.5);
+            background: rgba(59, 130, 246, 0.8);
+            transform: scale(1.1);
         }
 
         .speed-btn.active {
-            background: rgba(59, 130, 246, 0.8);
-            border-color: rgba(59, 130, 246, 0.8);
-            color: white;
+            background: rgba(59, 130, 246, 0.9);
+            border-color: rgba(59, 130, 246, 0.9);
         }
         
         /* 頂部控制：縮圖列 - 從上往下進入 */
@@ -1035,37 +1039,43 @@
             position: fixed;
             bottom: 20px;
             left: 20px;
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            background: rgba(59, 130, 246, 0.9);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: white;
+            background: rgba(42, 42, 74, 0.9);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            color: #fff;
             font-size: 1.2rem;
             cursor: pointer;
             z-index: 1500;
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            user-select: none;
         }
 
         .subtitle-toggle-btn:hover {
-            background: rgba(59, 130, 246, 0.9);
-            transform: scale(1.15);
-            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
-            border-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+            background: rgba(59, 130, 246, 0.8);
+            border-color: rgba(59, 130, 246, 0.8);
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
+        }
+        .subtitle-toggle-btn:active {
+            transform: scale(0.95);
         }
 
         .subtitle-toggle-btn.hidden {
             background: rgba(239, 68, 68, 0.8);
+            border-color: rgba(239, 68, 68, 0.3);
             box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
         }
 
         .subtitle-toggle-btn.hidden:hover {
             background: rgba(239, 68, 68, 0.9);
+            border-color: rgba(239, 68, 68, 0.8);
             box-shadow: 0 6px 25px rgba(239, 68, 68, 0.6);
         }
 
@@ -1307,7 +1317,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"NSQvd3ZbF6qoVNPn4yda4mZfjXmSZ/JbdaliVvRNHBGFw/vg3Ah49d9jDF+IeH6fh+jDjsRDGGw4Z3JYx+TkxKP9bvzNKZRz1vORY9qXe7lIgJHw3nvmVIQ2qDzc//8CdlRGOjh4nc+t5VvaQaqjRfkz5em10ara163uZujlzn5DGgqa/Kz4zFrdlteThrlK25c9K5uViTEfVANHJlkGNTdeGqLLlcyhmnV0J65FgqwfKMzZWbiQgrGof0gzh3G+O+jFr6+rmrNiI/Tw4taRlOnjgqI5tj7vzafFmyVkqpEY8Dip0Pp8hyU9IuGfCSSf69Tb9uiAVBQQcIoakVAxrcIzD3RyxIfffoe6MVoZkBJY4tJQv4AZZXX/51DLOx1Y5PDtD7gWcY8if+dkzHQfX4CKQr7vEFOGzqgFqwH4cYOkWW1NchtKKKOO1iCOV/9pDoc879Sx1nP3tCGYAM69yEtrdWUmO9qil7OpxSAOVGXcAFT+MW9BLM6Z5gcJMByVMLQVQDCLooSft/nOnyX3i0GSKBNeq0zWKAtqmR8x9dC5bhgxl7oAVDsUMFUiwIyiHWsJ1iubHYmRldnQlypupvtu0DN9JJzpbDrYfgFqEoWnVlXQCEPacBkWx9yCPqXe66djA1X2cenHhmzDM8vAxYnrdc2wh6nvYXmgf1c9kdAauiBnSJu0zNEI6En8bZUIWZeDqmPLAAHPssaqaX50eb+juD9lWqFMn+dpn7TS8RfkwHyVIwIcqVTziZfPmqic/LG0fxQzwDgxTimHsnCz8a9jorb78i8PUJh+D0tFeFrtcLbIaaNkHrcbkRCP3uOXZAajMystPwqX1MzcyMx3aWQWG8PfpzcRG5k0zYALa8mFR5jFLPzPKSffquR2nSrfpJmk1X7oC24c/xQy7TcLA/5hnW05SE0dJ7rNYEcidykDUMcvqn9FCysPpeRB4CaQznQ2o05OVeRTXI4Jd5prKfEx5ctxpIyaavWLkHWZFFbgO7aiU1wUqjw2HSPkHBzk8MT7csSqEZNRIZgC5vKUMgWpRY1bVXBjXx9OFATtb7Q7QkMdD8/3ALBZTgLoZF/K2DAB0jIxel5enUVd1TuANq/tFiVVI2tXRCVclyRbbxWQUVqj8/wvqTeKy+UMGd3GDRpY5YeAdOZFtTzZg5Ex6y/pTutMS00ihuip7eJwCVPnJUCJJgF3Dy/U2AbUNtISj+PDNw8/9es9/FH7T4dUmr5gHOuLL19T8yDl5OhLUP1Z7RZrVXKbtvRcpcTPXeIx6cbOlW35qApH5+zagI8gQD7TiNW2j7OsNxBsnluNkmVxSK1Q9TqqNQJEkMDQajMmzMHqZjUk8q0LNNn/SJJd+fUqSkTSfl36Jed+j8G4JsmykTozuOEvGgVCT1zvqnxatknWbKOe6nBCn3A5wDUtSQcNtBAVpl9I0AtbK+GecSJL4p08lFAeKDfcdZonmawHeXkBs3oyARQlN7YOS2+dvFEyIMW3+odW/CKbr5iPqd5eFQD8vwQ1tcGpenMh/BgSiqJ7FmW9x34LiVvrp+tIDXkdKUqA4r8IcLDQX8fCCfM4lph3/cCL6wXDDxIXi7FDncMfTZnFS/OxKSCozZSfqmzyoz5llFSRoEqZCSFQlH66SYGaEssynjEXkp2rdAVU3Lynn6U=","iv_b64":"/+/goEJhhaTm5nAk","salt_b64":"98gcsBfQEw3FJWLptxcheA=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"2knMzbKYUvdi2bvUet6CBZphwCAvUSN9KCuiXUvyeyFJ++zxAGRIOE1AlmXicLYu4w6U3uT08+P2LqSF7W38ZVb+41zhfhsbl1FEIvGAGn2PTkH3rXMjSU9NGyA08xOkqGlPAi4ex18xW1w7tSgFHebmzMiNZ5mM+mjZm+AY/NzxMQcy++yxUYl82vkNvgcA1RCn27JvCYFjLjXBtZsqhGqUl1eU97jC4yS23LJk2xIK3Dv+XKBAsa22uJ1aC9rYkVXL59lA2Czo/bJJEwv9Ra6HbcU6r0nfuN7dqegfCO1KjwHrGuz3Csv6/eq1TgmAinNYtjywaawb/ZvXslY+gFeIXLobvmK2+ZJb8sN1FVI2HFWAsEya8pOOaYf+JlRv00ShcxnuF9FvBK6FyYUrNXg8HUMmqR3SKUiojGGhqjM+yL9kd4qnRzItAVpPrCfCHfdr4CE8+WK0zyKoBmcLAgLVS9XlYg8TV+dAT7n/81HvpZoiOmnnXRVo3urTo9S1iqS1G5LYB/0/HgEpdchfPMpjhROa340J+hVku0smR4JPWOIB54K4p0Mrt8hK+QGGmj6z98HPY13y8dhyDmmBcdHoCaqVTYloBZG9py7XQPePWLvbmTSOG80kCKghd3S2v7gySkLH2wYKyAVH1xl04A4EKciN3MzileaZ+fD/SOGf6P4dCPALNrzoCreZDHkOCg4j0FD6GjXUgF38GT4jhWBU9NcA3e7Z+hW6W5MPEwVdYfdeaJf3hS3IN9FWmEdtBhJUVKrPOenWLkN03f+BcdIXCkS3852WPEbCKqJYtbdluxvjF1ayhlTttcGfEloWIUlpHA4bsxpYSRGC2Y3qpLK8VQZgEjIoERjrtGcKP93bF41i2BrTIDRDBGtvdvIlOiZPFGWWhaKfdZTE+eehL7OCijO0OGu0u6QBYwQMVXHsY5FYYlbv4IlaN5+PstmlOKtOvMrRbilrAi4BCRnEO/+b7c0QR4cSgJ8EXUrovoM0YZb/CDpipL4j+iqxd++XXEMg9TnMIlKwS9xdLebpZGWc53EXu8i7yXPL7D9y0OO9c7D+0ll3bMR15p5sD0KTumHWr8tV/+KbWJhGPxam/qsVjxWZK3qS1TBmhrkTnUbh+ZCxfR9Qi0N3xMV0g79gQb6o8FPx7vh5Iax9yp1L0rCA3BHYvo/cUOK7oC921dNAaPNzgTvBxu4SWmhEpCsmob+eHKP8k0EnHuF5wnj9DyPiXOyZEvlLrVsB/05ztWtUxblAsMvfndrO9/71PJm27CqUC2wKaIUZEpVs+EMpaNJXAKnnpr+LOu+mdy5XTLOe8FXjfYNNtWwaIcOayMPxtuP4hpfFQ3/hKVUp8z2/VHGgPuK7fTiIKLJMbYDzkNRciQvbWsFko4ce4or1Dqwtyl+K1sQVxBkOPSmbgCkD7uuP85gJibWKyPCBb5e1lOVBunVpYAPMRKIvnUYmxtEcA9TLRltRhpfnIJMVR1nFy62cCxHv4JUivsO++tbfth8i3oAsbMs7IakV2h7j1O9KaGDrHPH8Ba2hEnQIJLB995hhveyh/4k//j+vZgz51cAKaqeoPFoNLdybd+hQ9vtEIger7TxvP0AC4BixxHzY7+5228s5j2SYq8puKHEofRuHTOW1qBG6thRKiE7r7pJPTILTDAc=","iv_b64":"K21UCe7kDIRVQhv8","salt_b64":"IhK0NpZ8mmpHfucwUhC0cw=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1487,6 +1497,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="+7WopzQsbgbnPJpvJQljSQ"></script>
+<script src="assets/js/main.js" nonce="cHE7xVYvwmlVkv3kuDqreg"></script>
 </body>
 </html>
