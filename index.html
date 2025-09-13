@@ -14,10 +14,10 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-e241e909-9d25-4767-987d-e5e6b35698a8'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-fb74380b-7e59-4d9c-901f-f87aa8449eb2'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="e241e909-9d25-4767-987d-e5e6b35698a8">
+    <style nonce="fb74380b-7e59-4d9c-901f-f87aa8449eb2">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -463,22 +463,42 @@
             left: 50%;
             width: 0;
             height: 0;
-            background: rgba(255, 255, 255, 0.3);
+            background: radial-gradient(
+                circle,
+                rgba(255, 255, 255, 0.7) 0%,
+                rgba(255, 255, 255, 0.5) 20%,
+                rgba(255, 255, 255, 0.3) 40%,
+                rgba(255, 255, 255, 0.15) 60%,
+                rgba(255, 255, 255, 0.05) 80%,
+                rgba(255, 255, 255, 0) 100%
+            );
             border-radius: 50%;
             transform: translate(-50%, -50%);
             pointer-events: none;
             opacity: 0;
+            transition: all 0.1s ease;
         }
         
         .touch-feedback.touching::after {
-            animation: touchRipple 0.6s ease-out;
+            animation: touchRippleGradient 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
-        @keyframes touchRipple {
-            to {
-                width: 100px;
-                height: 100px;
+        @keyframes touchRippleGradient {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            15% {
                 opacity: 1;
+                transform: translate(-50%, -50%) scale(0.1);
+            }
+            100% {
+                width: 140px;
+                height: 140px;
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(1.2);
             }
         }
         
@@ -660,6 +680,119 @@
         .font-size-btn.active {
             background: rgba(59, 130, 246, 0.9);
             border-color: rgba(59, 130, 246, 0.9);
+        }
+
+        /* 打字機效果下拉選單樣式 */
+        .typewriter-dropdown {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-left: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            min-width: 180px;
+            z-index: 1001;
+        }
+
+        .typewriter-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .typewriter-toggle,
+        .typewriter-speed {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .typewriter-speed {
+            margin-bottom: 0;
+        }
+
+        .typewriter-toggle label,
+        .typewriter-speed label {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+
+        .toggle-btn {
+            background: rgba(239, 68, 68, 0.3);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            color: #fff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .toggle-btn:hover {
+            background: rgba(239, 68, 68, 0.6);
+            transform: scale(1.05);
+        }
+
+        .toggle-btn.active {
+            background: rgba(34, 197, 94, 0.8);
+            border-color: rgba(34, 197, 94, 0.8);
+            color: white;
+        }
+
+        .speed-slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .speed-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .speed-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.6);
+        }
+
+        .speed-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
+        }
+
+        .speed-label {
+            font-size: 0.7rem;
+            color: #60a5fa;
+            text-align: center;
+            font-weight: 500;
         }
         
         /* 頂部控制：縮圖列 - 從上往下進入 */
@@ -845,6 +978,61 @@
             padding: 4rem 80px 3rem 80px; /* 左右留空間給選單按鈕，上下留空間 */
             min-height: 140px;
             margin-bottom: 20px; /* 避免貼近下緣 */
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* 字幕開關按鈕 */
+        .subtitle-toggle-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .subtitle-toggle-btn:hover {
+            background: rgba(59, 130, 246, 0.9);
+            transform: scale(1.15);
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .subtitle-toggle-btn.hidden {
+            background: rgba(239, 68, 68, 0.8);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+        }
+
+        .subtitle-toggle-btn.hidden:hover {
+            background: rgba(239, 68, 68, 0.9);
+            box-shadow: 0 6px 25px rgba(239, 68, 68, 0.6);
+        }
+
+        /* 字幕區域隱藏狀態 */
+        .description-container.subtitle-hidden #eventDescription {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(30px);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .description-container.subtitle-hidden {
+            background: transparent;
+            backdrop-filter: none;
+            min-height: 80px;
+            padding: 2rem 80px 1rem 80px;
         }
         
         /* 隱藏原有的導航元素 */
@@ -1064,7 +1252,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"pHj7bJhlkGxLvVRR3D5DBHRf4GHCFneIGt99bTsI/sd8/t/KsGJJ5VjTDug5aBZU+wbEIds2MpZWbJyEn3fmW8Gq6JT4tQRKXaqlcAm3XNGOQVavsL28wAg9JuniDjmpQrV7TMY6ch24I7IabXaTyFeIO1fVJuZQtfr+kRQ5zMSId0TxLtjZuJKrCBl/+5w8dNwvyHT9vAqzPNlq2fiYT33GmmJZBSfYj/29Y8xFK0Q8ot+N0FDrYiNyxQZFKh9zUJIHyDSUSzs08Ibc+R+r/5c+C9rG2VGW6TOWwAswMC4nQdziG7Li0W89XLdUQskZ1ognDNGkFR519g/BAGWuc/+RHQYvYSTak8J2yOuU4YHUYAh938o9pCkcYMx064HjYXYJxgb4XvyXpzR4paNZ7ffVI+/iq28sPjf0Gad1sa5kthVHzOg+NtNSQ3RgamAjKF2EZo4OhcwmZa0J4tGd0woN7fn4XBgy8VMqIpQR3tgfHZMJJs+jNrsdU+aU8WjmSH2Y2q4R6zproZ5X5wJ5N/u0i0HajqIHXsC9MPdiMa5mf1ewrE2jGhO3fQiZFB4u3i8khFpX8TTh++bIDPCh/3KLThpD/H4PIM6PE5c3Ie6S2WkzgpUbMqI2+g0ElVB8lXTLBnjwoRcB18yi5SxLyT9I9ilUUiuFnx7wvrVnTeXyDMbG/aVO/IzLDcc/vd3OrnVYGHC3b2dM+UcrDuDZ6SSONadgCSMA89MOuoHT0wDOC15/cW10hcJUq5J+s2IvzXrV5FXuxAq+35fofuvGwsOHarStaHLQRxh0gbshVXMb780AKYlxOU8x0j9lEpvUMe+QsQF3sUrs0KqyeUlP1pUWpWO0+q6/JL0CqpEhdBeyluWy/mkudkcMHEzfFOGgfBtvOpwFTRNhqmgaF8e2BbubAoluvdrgL5tGtxKmL7zbkoRc+j+3dWqyGjcvrx8NB2S5NKAYzWc2KEHJmFSs0lsmeCrpxloqaaVL1DjYt8rRS5eeLlpTJUEwwOO+ZFzcdKjvlJ/qoC/ax6WNEQLDNmtKRt2LI+cfTIGC92pQoaTJDOqg55zkQqntnKy2OuRMWjWWg8Y92xkxDjpykrcjceFIDdwTd46pRlF4O31F2G0kqE2ZUJzPxL4K8D/QBNSiCQ9GliDLWBuxInNaCcnDpwNyccSorC0W7LE/5nQukQm7DUTIASpcSdNUJYAJOsm4e4EoEPv97lDXJ7s3MA0WRVR5iRFoVa7ml8Kzte+Odjtux6MgZTi8APJWsZ7IBQeHvK4rHud33IS3obzhWYv2FjVBufssJAZ9VaWGr3X42A6Gp3B6PPDzgHkfLaifKWfihsXmWfxBWrlLjldbG2jd6Vimfs/hgB2hosRX4szkHYvy0uaPaBMQBIRkGUOil2sw5sTh1T3aRXE01AgMsPpDGGKiiUPzgQP+nY9iysJoSlpZDHLDNOTttRSmJTkZEKV6UqFUY7/quXzMV1oNJHIWgKGxVLhUOmIJRrEiLmsbZ6pVSp7yrlF5Wta7ftXJN+F/5pbps3bMKDzNfsq0+KsjXd+/jDKMUUpM0E5aJ3n8Blqy7PabM85c+p5egX9qaKiEnRMZx1ytUuwSfZxTyVtQL4qr85KyJgG2O+PziUJ8m25AOomOoc/NRf7VtafMwcs+Z8OYD7I=","iv_b64":"PCa8ZC/mmiFtDhaM","salt_b64":"6GnRc4Fy86zBnuh05IMv5Q=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"5nhXYMEzOM+LorXMQa8GdLMU8EYFbWBz9VPHHBwW9zpYXCU130ZHni+6or9w+gZVC9JDHOcy63IlstBQX492qwQIyf/kdXvlR443esgxWUOeevkns06x30NHodm5h7QH8tP+SbMxCMFVqefy/Um+qj0VA3SvvL5m1n48rwaVRxspBFN+o7WqJesQl11aCP+ayYDtl3ZLB6yQFeDpypZuFIAPaEMjTUeO/ZJv2aaRpKtG7GcO0SYJZpoE1+HVO0oHUm0UmJN72ZQT2birTDPNOP2Q94U0pcO0R9KKwToUEqRw4vrRaADNN3K2SkSAEQN3HS26knWbpJyOREA34TmNWW/JP8n5+Mfd7U33vs+HqBm9XuGLifvjZkuUZgFHtn3+g3mBLzy/R6TXpldqsfeHiWZZEPerRcaybeCk2G6etCh6FpxdEO5Qnu/BBtL3vJRDpAH24gi2B3oRzVQoe3vP/1qAveUJgIjYarmDmJcWj2osY6wV4gEb45upMHFWAsPfFUgQE6DXkiMvP/lHx5wbet6LgJ0Rvt5OueVvlycQMzPtgMGyt3uG7j5fdQAjIcKM/vyxXj14jRuyy2PwJds7pftOrAO+Jrjh8aMG6CEtxgQSzZtj9mdN94yChRlmFLgF+uOs1po+dSLNX5RL4ZKgfufb2jUNKjozWD2B91ShRWroMyR1CbQ2ubav36UtmjE70sB+RJAR1RuzDDQNiiz9aA8kaXf4ITGBgn3CrNCPCL5dfAc72P15eUUEojO/L8n8eR28xY+FUDVRs3Is3rbSN8ak+X+K/llzQcLSIHmPvwe0WmD1Qcr5hNWOxANjyoyHG5fLzrBlKH/UklvmA3/cNCDgJ23OkwkiDe4sF1nKw6X5YidadNxBN0opyR+kSFr9bTSifOGz7RJPpJ3NXFzapqiyUNeRxbCjehr/33BrvLyiXqCZVBuPVUZ6S+Z5G7TuZDLCsbfec115Bvhj3wLxpvLPq7y1gyCDNwqXsVL6M7F2sg0uhjrCRwIyDqemLgg2ae7qFdt7cpdVJPcPSy2rA3sYMcV5S3zWNElxKvYYOqAe5mQb2/G2u9REixgPhX+FgJ01nbZIpjQD247vWtDujWSaaA1okxnJ5+cTgyAX/GJ5mtuqlAw0jD2HeObVlDwUhN8K6LQQiOgfNiz9yjukMwqp9r6IOqnoqLEOuu95NzeWKzUvYxDK56GQsGzobSf+ZX8WUusKZSwIqneRdoHa3ue8qOQxL4hA7Pp7IO70DuTZxLX1sQttzfSZWBm+TSEynlTbTPPLy24R8uY0WBQZP45vtZ0g57xSo2XZ3+h/RvShDZwbqdB1TQhrDSWmu+0Z42VfxgbWQVlJfTMYdqXgJjtYtIXTuVG1Ebi5FDJFyR6ad/m2370Kd1U4q9d3AwnJWSwcx+8N4vm4cy7YiIuG8C8h50RPnr5/8uvQBzDUTehZYaLfXE8xfLRwPScD/+TgustoY6Ek/HFlze8UbbtFbpzhnrdVpFFFYIx1XQPgoVa3Pbx+3Bk6mLP71+Elbs/vgstHotPoGhKe4tSEqeInYqDLw+quz1jHMm3UfK9wp+QzEDeFG282SSi39oAIYomvX1mmKZy7dAJrFC28OgrSL9SGfPDailHyz4WfCyYeSZ1T+7Rkvs2gV/SovgjgVNZRjf9Q1gc=","iv_b64":"QTA4QR3BN/xi+U5Q","salt_b64":"OrP0LDWUZkNq7RjKrZ9u7g=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1119,6 +1307,7 @@
                 
                 <!-- 描述區 -->
                 <div id="descriptionContainer" class="description-container">
+                    <button id="subtitleToggleBtn" class="subtitle-toggle-btn" title="字幕開關">👁</button>
                     <div id="eventDescription"></div>
                 </div>
             </div>
@@ -1150,13 +1339,20 @@
                 <div id="menuDropdown" class="menu-dropdown">
                     <button id="timelineBtn" class="floating-btn menu-item" title="時間軸導覽">📋</button>
                     
-                    <!-- 打字機效果與速度控制 -->
-                    <div class="typing-speed-container">
-                        <div class="typing-speed-label">打字機效果</div>
-                        <button id="typewriterBtn" class="floating-btn" style="width: 30px; height: 30px; font-size: 0.8rem; margin-bottom: 0.5rem;" title="打字機效果開關">⌨</button>
-                        <input type="range" id="typingSpeedSlider" class="typing-speed-slider" 
-                               min="10" max="100" value="25" title="打字速度">
-                        <div style="font-size: 0.7rem; color: #9ca3af; text-align: center; margin-top: 0.25rem;">打字速度</div>
+                    <div class="menu-item" style="position: relative;">
+                        <button id="typewriterBtn" class="floating-btn" title="打字機效果設定">⌨</button>
+                        <div id="typewriterDropdown" class="typewriter-dropdown">
+                            <div class="typewriter-toggle">
+                                <label>打字機效果</label>
+                                <button id="typewriterToggle" class="toggle-btn active" title="開關打字機效果">ON</button>
+                            </div>
+                            <div class="typewriter-speed">
+                                <label>打字速度</label>
+                                <input type="range" id="typingSpeedSlider" class="speed-slider" 
+                                       min="10" max="100" value="25" title="調整打字速度">
+                                <div class="speed-label">中等</div>
+                            </div>
+                        </div>
                     </div>
                     
                     <button id="thumbnailBtn" class="floating-btn menu-item" title="縮圖列">🖼</button>
@@ -1220,6 +1416,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="DwTiXWI/mvGHjX6hvgRhHg"></script>
+<script src="assets/js/main.js" nonce="3y396nk9BBiG/rAf1msQIw"></script>
 </body>
 </html>
