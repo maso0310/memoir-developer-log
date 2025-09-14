@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-13T21:25:28.034592200+00:00
+// 生成時間: 2025-09-14T06:55:47.796892900+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -716,19 +716,22 @@
             if (elements.thumbnailsContainer) {
                 elements.thumbnailsContainer.classList.toggle('visible', isThumbnailsVisible);
             }
-            
+
             // 更新按鈕外觀以顯示開關狀態
             if (elements.thumbnailBtn) {
-                elements.thumbnailBtn.style.background = isThumbnailsVisible 
-                    ? 'rgba(59, 130, 246, 0.8)' 
+                elements.thumbnailBtn.style.background = isThumbnailsVisible
+                    ? 'rgba(59, 130, 246, 0.8)'
                     : 'rgba(107, 114, 128, 0.8)';
             }
-            
+
+            // 根據縮圖列狀態更新日期顯示位置
+            updateDatePosition();
+
             // 如果開啟縮圖列，立即重新渲染
             if (isThumbnailsVisible) {
                 renderThumbnails();
             }
-            
+
             // 不關閉選單，讓用戶可以繼續調整
         }
         
@@ -793,26 +796,28 @@
         function initializeHideButtons() {
             // 初始化隱藏畫面按鈕外觀
             if (elements.hideControlsBtn) {
-                elements.hideControlsBtn.style.background = areControlsHidden
+                // 當控件可見時，按鈕應該顯示激活狀態（藍色）
+                elements.hideControlsBtn.style.background = !areControlsHidden
                     ? 'rgba(59, 130, 246, 0.8)'
                     : 'rgba(107, 114, 128, 0.8)';
 
                 const icon = elements.hideControlsBtn.querySelector('i[data-lucide]');
                 if (icon) {
-                    icon.setAttribute('data-lucide', areControlsHidden ? 'eye' : 'eye-off');
+                    icon.setAttribute('data-lucide', areControlsHidden ? 'move-diagonal' : 'move');
                 }
                 elements.hideControlsBtn.title = areControlsHidden ? '顯示畫面按鈕' : '隱藏畫面按鈕';
             }
 
             // 初始化隱藏日期按鈕外觀
             if (elements.hideDateBtn) {
-                elements.hideDateBtn.style.background = isDateHidden
+                // 當日期可見時，按鈕應該顯示激活狀態（藍色）
+                elements.hideDateBtn.style.background = !isDateHidden
                     ? 'rgba(59, 130, 246, 0.8)'
                     : 'rgba(107, 114, 128, 0.8)';
 
                 const icon = elements.hideDateBtn.querySelector('i[data-lucide]');
                 if (icon) {
-                    icon.setAttribute('data-lucide', isDateHidden ? 'calendar-plus' : 'calendar-x');
+                    icon.setAttribute('data-lucide', isDateHidden ? 'calendar-x' : 'calendar-plus');
                 }
                 elements.hideDateBtn.title = isDateHidden ? '顯示日期標籤' : '隱藏日期標籤';
             }
@@ -913,13 +918,14 @@
 
             // 更新按鈕外觀和圖標
             if (elements.hideControlsBtn) {
-                elements.hideControlsBtn.style.background = areControlsHidden
+                // 當控件可見時，按鈕應該顯示激活狀態（藍色）
+                elements.hideControlsBtn.style.background = !areControlsHidden
                     ? 'rgba(59, 130, 246, 0.8)'
                     : 'rgba(107, 114, 128, 0.8)';
 
                 const icon = elements.hideControlsBtn.querySelector('i[data-lucide]');
                 if (icon) {
-                    icon.setAttribute('data-lucide', areControlsHidden ? 'eye' : 'eye-off');
+                    icon.setAttribute('data-lucide', areControlsHidden ? 'move-diagonal' : 'move');
                     lucide.createIcons();
                 }
                 elements.hideControlsBtn.title = areControlsHidden ? '顯示畫面按鈕' : '隱藏畫面按鈕';
@@ -937,16 +943,25 @@
 
             // 更新按鈕外觀和圖標
             if (elements.hideDateBtn) {
-                elements.hideDateBtn.style.background = isDateHidden
+                // 當日期可見時，按鈕應該顯示激活狀態（藍色）
+                elements.hideDateBtn.style.background = !isDateHidden
                     ? 'rgba(59, 130, 246, 0.8)'
                     : 'rgba(107, 114, 128, 0.8)';
 
                 const icon = elements.hideDateBtn.querySelector('i[data-lucide]');
                 if (icon) {
-                    icon.setAttribute('data-lucide', isDateHidden ? 'calendar-plus' : 'calendar-x');
+                    icon.setAttribute('data-lucide', isDateHidden ? 'calendar-x' : 'calendar-plus');
                     lucide.createIcons();
                 }
                 elements.hideDateBtn.title = isDateHidden ? '顯示日期標籤' : '隱藏日期標籤';
+            }
+        }
+
+        function updateDatePosition() {
+            // 根據縮圖列狀態調整日期顯示位置
+            const currentDateDisplay = document.getElementById('currentDateDisplay');
+            if (currentDateDisplay) {
+                currentDateDisplay.classList.toggle('below-thumbnails', isThumbnailsVisible);
             }
         }
 
@@ -1336,6 +1351,8 @@
             initializeTypingSpeedButtons();
             // 初始化隱藏功能按鈕狀態
             initializeHideButtons();
+            // 初始化日期顯示位置
+            updateDatePosition();
 
             console.log('✅ 高性能應用初始化完成');
         }
