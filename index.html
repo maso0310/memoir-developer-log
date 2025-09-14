@@ -14,13 +14,13 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-96b1bf2a-f208-409e-a33c-cee9f1df8a84' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-b5049ae4-ec56-4cf2-9ee6-39898d94150d' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="96b1bf2a-f208-409e-a33c-cee9f1df8a84" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="b5049ae4-ec56-4cf2-9ee6-39898d94150d" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="96b1bf2a-f208-409e-a33c-cee9f1df8a84">
+    <style nonce="b5049ae4-ec56-4cf2-9ee6-39898d94150d">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -480,13 +480,8 @@
 
         .timeline-item.active::before {
             background: radial-gradient(circle at center, #93c5fd 0%, #60a5fa 30%, #3b82f6 60%, #1e40af 100%);
-            transform: translateY(-50%) scale(1.3);
-            box-shadow:
-                0 0 20px rgba(59, 130, 246, 0.8),
-                0 0 40px rgba(59, 130, 246, 0.6),
-                0 0 60px rgba(59, 130, 246, 0.4),
-                inset 0 0 10px rgba(255, 255, 255, 0.3);
-            animation: timelineGlow 2.5s ease-in-out infinite;
+            transform: translateY(-50%);
+            animation: timelineGlowHalo 2.5s ease-in-out infinite;
         }
 
         .timeline-item.active::after {
@@ -526,36 +521,27 @@
             }
         }
 
-        @keyframes timelineGlow {
+        @keyframes timelineGlowHalo {
             0%, 100% {
-                opacity: 1;
                 box-shadow:
-                    0 0 20px rgba(59, 130, 246, 0.8),
-                    0 0 40px rgba(59, 130, 246, 0.6),
-                    0 0 60px rgba(59, 130, 246, 0.4),
-                    0 0 80px rgba(59, 130, 246, 0.2),
-                    inset 0 0 15px rgba(255, 255, 255, 0.3);
-                transform: translateY(-50%) scale(1.2);
+                    0 0 10px rgba(59, 130, 246, 0.8),
+                    0 0 20px rgba(59, 130, 246, 0.6),
+                    0 0 30px rgba(59, 130, 246, 0.4),
+                    inset 0 0 6px rgba(255, 255, 255, 0.3);
             }
             33% {
-                opacity: 1;
                 box-shadow:
-                    0 0 35px rgba(59, 130, 246, 1.0),
-                    0 0 70px rgba(59, 130, 246, 0.8),
-                    0 0 105px rgba(59, 130, 246, 0.6),
-                    0 0 140px rgba(59, 130, 246, 0.4),
-                    inset 0 0 25px rgba(255, 255, 255, 0.5);
-                transform: translateY(-50%) scale(1.5);
+                    0 0 16px rgba(59, 130, 246, 1.0),
+                    0 0 32px rgba(59, 130, 246, 0.8),
+                    0 0 48px rgba(59, 130, 246, 0.6),
+                    inset 0 0 10px rgba(255, 255, 255, 0.5);
             }
             66% {
-                opacity: 1;
                 box-shadow:
-                    0 0 45px rgba(59, 130, 246, 1.0),
-                    0 0 90px rgba(59, 130, 246, 0.8),
-                    0 0 135px rgba(59, 130, 246, 0.6),
-                    0 0 180px rgba(59, 130, 246, 0.4),
-                    inset 0 0 30px rgba(255, 255, 255, 0.6);
-                transform: translateY(-50%) scale(1.6);
+                    0 0 20px rgba(59, 130, 246, 1.0),
+                    0 0 40px rgba(59, 130, 246, 0.8),
+                    0 0 55px rgba(59, 130, 246, 0.6),
+                    inset 0 0 12px rgba(255, 255, 255, 0.6);
             }
         }
 
@@ -1465,7 +1451,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"1p8RBDE/jEWVNQrRlpfzyZPyCOLURcUVC5E/X91SfwCOYplviKmUpZgGOwg4lBN7f8dXMAkb3T8DDSMchGKUQkWjqJ2PdYEtmNfSwR8C0PpvRQrkpG1NGMUn1tEKBRqJvvlP4sCenmAohiL6UuPnrOFCsLpLv6C3Eer+LbRLhEUbiQbqAl4Kzynhs5ZjCZ3GwbMpauIVJK9j1fsQXqRl/58BLVVrjWTM5LTCfeXKmP55ZB7cV/8oQ9nJ4DA88Xll6sS5TykPjz/yxVgHRepOtyS+/OChTHMeC4yBGEKoLWgGj3xKvm2+k1xddk3vKiB02X3NDgvKqTmg1GAoHMOlx4hIM1vn3UU5T/jftdCIpDvnr6fn4wW03Wq9cFyWinIdQaAfv9E+D7BPsScANEipbFeYN75xTlmVTvEmGLfAJJECszNb0ihSK6lZRKn3wruRCs4jkN27aiVfiElRhjZGZ6gITwW0Jejo6TmcI7HirljXUwnGzA6e+Kfbb2ueRbYRtbcmM14ELlfwrPRII3PlXdNIqhONVgfb4BtomlZYLwI5rEVj0i30JzhDQjnoto5IAnMCR+NLR0Vyfwkz9sEtIu2MArj9Ww+mbLUGOnu25KwO6EED/5NcJ7eJykjE0gAEhhUF1nYQKoCbbZ9Lq2e4R9acT1yEVncg44fm/GvEkLX/u6D25xRvSC4MonXzZrstOLbd9+v9Fbqg7EX4F+K/J9n9oC7UhEVzGzrQuCWBrM6z83mnbN0xyZ5KrHevCHFv6fcR0Dxdo9E+tp9FIpMVSmkothmztQHAf4CaXNSP5yBvlXFhjFZDGQAln9HcaygNS95F4yJchbvIl8OStUGHWb2P35B2CXJpx6lDDut0toUpbjaCmNPWnGDch/kpOkzj5SfOgtkZMjoShJM4OppIVsbZ6vGA4zP/vNqzGx3A9zwhu+bLJPScnv+c6aTIpLLRQsN3zzuXTF3zmdg+B3U/m9pek1m7mZfTJKhY1Ya13rFCnRKFfNxt008egznNhn+OW0Ag+tjXkIRJV10wNh0E3JntuX4yx0gSRq8Gvhzwyp9f5f5pw3TfpxIViGJgFjFN4IYH+RP0f7QpT+CBtKOhkfUSEdiQSFroR1WCW4IENPUX1KcMsGEx/bevUpm2U54kT+r5ctluG9b7p4qf2e+UENwvEHwsXNg1+vCgH00ntFR5CrlJ1DSM4Pcyc3qSJzq8kaypDIl141kiyslUTv7MRAolX/lxbmKptIMiUvC/02zWxMgCjRtHX+Cn7f9WLWlC4yhzWFJdZHNu/kl0qrpDgrTm8XftAmAVXoVoVVvspJ7VkQLjjKa2lF9WjYkgDPZmJvU/Xa9DLKAvWYxLWn0PN9phnGsfmvO5XlDRcaAQiDFzFw6E6ZGV2w0xbWcwqt0A8OyrBbbOlWt9Kt9W2dWoxJmSuDRPYdwLx+/Xkd99fWnGMcbfWCNgxSIj6KVgGcu7i7WTYOG/TNICWyn/WOQBWo1np48UYZmEykqWzR0FopLN3cmKydtnkU2zkns1GQ17ueNebGXn5d7GK2HDTb1CPe78u5W9z8alVsDWg2ye2jnJzkLN8tS3l9moYbXUzc4WIjHzyocWDTXWUDk3QY5guL0kAUUxO1J6GSgkNieyXF9dofexKiFdoPKA/i8+CL004esfPJM=","iv_b64":"EH0zZJ/uBfOaKCX3","salt_b64":"Dz4HxTbDqPsAyW+TI9vmZw=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"H4JteirDnddFDtIw23YAHdHsxbzrsAMiJ4ev2m4Mg+KlA6rKCNnihFDd451QqZB52lfy/tZrWzqXuRpQao3z2tF16takd+HAA+QsYLu7FUDYFg/3PE/o3XilQDH2glgDHv7rRk7hHX/5f1Dk/xdbpXbUMo4YGOMu9bWn1l5xmA8+w6RqjP1Re8BamwpbeaTJ9kQ+XSDrvwspV/o06T0Cljlfpvwy0LOEe0FF5jUd4smYwIBs2P5Vf3wbl1kjiIqfYotuBY25HGDupQFiWthly0roLXT9io1NymJqYev8ZxwSm/Wa1EMgBZ+ScNKZRq3MbczjjheeP0rXeJEvVUh//rIkUDyFHuTYJ8RTuTa+Cqom0Gtesw6PAsbEWn7jjuIVXxheFFVm5IddmzBclJvE7WgxKQ71Xz6zVOh6t2MgXKKWXOjYBYTG3gLmKG8ReFbl27XjiC0Jvv70JxNrqu7YWlDa+jaJB8ZjBCKo068ipwFOYMEei0/VB/CQqFmWf+skp05wg8OkErIh89ly4agKOeEMU/GlenbIU0jrGcxiDa478pWvwATF7fpp+512Amc/F9aw02TeDoX7fVNx0GXOqPbdDNGFsQqFM/oIRi2fRbp3lvYGar/DzZ6MucuvzOGxWWKeXMONxxpU+C94h3hbgB704GgkylkwBuHG1ZReCPvJEizkusQYN0yWO3z8sVWo6ITXlGFeo+PwrBUcLsK/xg6NUSknXtIb6McKxdHihygJj9cI3Jave5UpMTvsFeQd41FDyFIzT9yUI+TNv2EES53H9CkqmGitTjiiWYJ0O/G21NspqrTbr9Lj5UoxNJUpqFEpz8VixxIMCUcpfXaT8b9TvxOmhQP3/0LApGUmH3ks3yj1eyv2j9xC2KClm3PUm1VkRdaKWSZS1tUXw1tCW3QpF0P8fyzoMdkzAIOTZFv9p0riyat7BnoluvSTRCvW3AT6/lHM3IxUerX8hIyY5Ejgk5YgdMbUOsqSrM6IX4qZ4c3LGD8TEKjUiPI1gdyFGMduH5AiEDZPzkPOIrR3bqdK18HEOWK16cgYnwg3tg5QjLZb7EziuEqdqOX996oYQQMKTwC8O63GkH9NmhvJcqfqYkH2fFZscL9+SVEiYG8vekZUNLkFr+rFI86z3KlnlXhCGq7qBXPFrvgpJU2aizu4B7B+LTF3Q7N+89/Q2GKSDmbtdX7pVMFIorxHwT44e3FRJ+QMCvP5U4NVMC27IWrLd0Cyzvr3LqAZ1nlalYNpTrWXyiZdL+5fc/4b4guKhnoCrAqb5h5jLRU7O2qgFIlngrR9v+5HKzscrS3TvTBlRml5vBkJQPI8orqBx1bFSd4YoIp6ZCeBXoxC0KEhXo4Qmk1lwb+DJpjWD4aGEvrUPZfJMHmGpC1aYvHGxkIJZ8/j9sOFaixitMTKlL5zeaJtHlHuCswBl4vDeNPdKVStU2kVtA6vcfZnah2kQy55XEWZ1vZ2vGkKOcyZ3UQNrLMHf7ymCloJnJJtVr3WAeNiSKNmwaLjapE5XlffK1tRGU4B5+7Qs/5UwxDnAGJmqv5sEddM6zq3WUAErenZLptvvt6b5aJQB6s+aJx4amo/XWWGvnemc6xpAbaSjXEJyKxkuGY0VuttgKi+qGQbPN/GKPWAqCEAJ0h0+qINKnonWTDMSoI=","iv_b64":"ONY0Gg4qDyfT4PwQ","salt_b64":"N/CveWKxle34dxvruLBNPg=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1667,6 +1653,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="o6FfeHWfob9MRsAsyi/E0Q"></script>
+<script src="assets/js/main.js" nonce="+ppmZZ0DEXHkoUWHrB664w"></script>
 </body>
 </html>
