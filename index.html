@@ -14,20 +14,21 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-1d4f0279-1c20-4f7f-ae89-3b74049b3f01' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-29292629-3d0c-4760-8850-bd325d568072' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="1d4f0279-1c20-4f7f-ae89-3b74049b3f01" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="29292629-3d0c-4760-8850-bd325d568072" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="1d4f0279-1c20-4f7f-ae89-3b74049b3f01">
+    <style nonce="29292629-3d0c-4760-8850-bd325d568072">
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: system-ui, -apple-system, sans-serif; 
-            background: #1a1a2e; 
-            color: #fff; 
+        body {
+            font-family: var(--font-family, system-ui, -apple-system, sans-serif);
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: all 0.3s ease;
         }
         .app { min-height: 100vh; display: flex; flex-direction: column; }
         .header { 
@@ -953,6 +954,383 @@
             border-radius: 4px;
         }
 
+        /* 主題切換系統 - 使用 CSS 變數 */
+        :root {
+            /* 預設暗色主題 (石墨灰暗版) */
+            --bg: #1e2429;
+            --bg-elevated: #252b30;
+            --text: #e9ecef;
+            --text-muted: #9ca3af;
+
+            --primary: #94a8b8;
+            --primary-contrast: #1e2429;
+            --primary-hover: #8396a6;
+
+            --accent: #a8b6c8;
+            --accent-contrast: #1e2429;
+
+            --success: #96c596;
+            --success-contrast: #1e2429;
+
+            --warning: #d4c392;
+            --warning-contrast: #1e2429;
+
+            --danger: #c8a3a8;
+            --danger-contrast: #1e2429;
+
+            --surface: #2d343a;
+            --surface-hover: #3a424a;
+            --surface-pressed: #4a545c;
+
+            --border: #3a424a;
+            --border-light: #2d343a;
+            --border-strong: #4a545c;
+
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        /* 森林綠主題 */
+        [data-theme="forest"] {
+            --bg: #1a2520;
+            --bg-elevated: #242c28;
+            --text: #e8f0ed;
+            --text-muted: #9fb5ab;
+
+            --primary: #7ba894;
+            --primary-contrast: #1a2520;
+            --primary-hover: #6a967e;
+
+            --accent: #8db3d4;
+            --accent-contrast: #1a2520;
+
+            --success: #9bc580;
+            --success-contrast: #1a2520;
+
+            --warning: #e8c392;
+            --warning-contrast: #1a2520;
+
+            --danger: #d4a3a3;
+            --danger-contrast: #1a2520;
+
+            --surface: #2d3631;
+            --surface-hover: #3a453e;
+            --surface-pressed: #4a5651;
+
+            --border: #3a453e;
+            --border-light: #2d3631;
+            --border-strong: #4a5651;
+        }
+
+        /* 海洋藍主題 */
+        [data-theme="ocean"] {
+            --bg: #0c1426;
+            --bg-elevated: #1e293b;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+
+            --primary: #38bdf8;
+            --primary-contrast: #0c1426;
+            --primary-hover: #0ea5e9;
+
+            --accent: #22d3ee;
+            --accent-contrast: #0c1426;
+
+            --success: #34d399;
+            --success-contrast: #0c1426;
+
+            --warning: #fbbf24;
+            --warning-contrast: #0c1426;
+
+            --danger: #f87171;
+            --danger-contrast: #0c1426;
+
+            --surface: #334155;
+            --surface-hover: #475569;
+            --surface-pressed: #64748b;
+
+            --border: #475569;
+            --border-light: #334155;
+            --border-strong: #64748b;
+        }
+
+        /* 薰衣草紫主題 */
+        [data-theme="lavender"] {
+            --bg: #241a30;
+            --bg-elevated: #2b2138;
+            --text: #ede8f5;
+            --text-muted: #a394b8;
+
+            --primary: #a394d4;
+            --primary-contrast: #241a30;
+            --primary-hover: #9284c3;
+
+            --accent: #b3c5e0;
+            --accent-contrast: #241a30;
+
+            --success: #96c596;
+            --success-contrast: #241a30;
+
+            --warning: #e8c392;
+            --warning-contrast: #241a30;
+
+            --danger: #d4a3d4;
+            --danger-contrast: #241a30;
+
+            --surface: #322540;
+            --surface-hover: #403350;
+            --surface-pressed: #524266;
+
+            --border: #403350;
+            --border-light: #322540;
+            --border-strong: #524266;
+        }
+
+        /* 沙漠日落主題 */
+        [data-theme="sunset"] {
+            --bg: #2a1f1a;
+            --bg-elevated: #332621;
+            --text: #f0e8e0;
+            --text-muted: #b8a394;
+
+            --primary: #d4b48a;
+            --primary-contrast: #2a1f1a;
+            --primary-hover: #c3a379;
+
+            --accent: #d4a3a3;
+            --accent-contrast: #2a1f1a;
+
+            --success: #a8c596;
+            --success-contrast: #2a1f1a;
+
+            --warning: #e8c392;
+            --warning-contrast: #2a1f1a;
+
+            --danger: #d4a394;
+            --danger-contrast: #2a1f1a;
+
+            --surface: #3d302a;
+            --surface-hover: #4a3e36;
+            --surface-pressed: #5a4e45;
+
+            --border: #4a3e36;
+            --border-light: #3d302a;
+            --border-strong: #5a4e45;
+        }
+
+        /* 酒紅色主題 */
+        [data-theme="crimson"] {
+            --bg: #1a0f0f;
+            --bg-elevated: #2d1414;
+            --text: #fef1f1;
+            --text-muted: #b91c1c;
+
+            --primary: #dc2626;
+            --primary-contrast: #1a0f0f;
+            --primary-hover: #b91c1c;
+
+            --accent: #f87171;
+            --accent-contrast: #1a0f0f;
+
+            --success: #4ade80;
+            --success-contrast: #1a0f0f;
+
+            --warning: #fbbf24;
+            --warning-contrast: #1a0f0f;
+
+            --danger: #f87171;
+            --danger-contrast: #1a0f0f;
+
+            --surface: #3d2020;
+            --surface-hover: #4d2626;
+            --surface-pressed: #5d2f2f;
+
+            --border: #4d2626;
+            --border-light: #3d2020;
+            --border-strong: #5d2f2f;
+        }
+
+        /* 寶石綠主題 */
+        [data-theme="emerald"] {
+            --bg: #0c1f14;
+            --bg-elevated: #163326;
+            --text: #dcfce7;
+            --text-muted: #15803d;
+
+            --primary: #22c55e;
+            --primary-contrast: #0c1f14;
+            --primary-hover: #16a34a;
+
+            --accent: #22d3ee;
+            --accent-contrast: #0c1f14;
+
+            --success: #4ade80;
+            --success-contrast: #0c1f14;
+
+            --warning: #fbbf24;
+            --warning-contrast: #0c1f14;
+
+            --danger: #f87171;
+            --danger-contrast: #0c1f14;
+
+            --surface: #1f4d2a;
+            --surface-hover: #2a6135;
+            --surface-pressed: #357843;
+
+            --border: #2a6135;
+            --border-light: #1f4d2a;
+            --border-strong: #357843;
+        }
+
+        /* 字體系統定義 */
+        [data-font="system"] {
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        [data-font="noto"] {
+            --font-family: 'Noto Sans TC', 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+        }
+        [data-font="poppins"] {
+            --font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+        }
+        [data-font="serif"] {
+            --font-family: 'Noto Serif TC', 'Times New Roman', serif;
+        }
+        [data-font="mono"] {
+            --font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+        }
+
+        /* 主題選擇下拉選單樣式 */
+        .theme-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            min-width: 280px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 1000;
+            box-shadow: 0 8px 32px var(--shadow);
+            backdrop-filter: blur(12px);
+        }
+
+        .theme-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .theme-dropdown label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .theme-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        .theme-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        .theme-option:hover {
+            background: var(--surface-pressed);
+            transform: translateY(-1px);
+        }
+
+        .theme-option.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--primary-contrast);
+        }
+
+        .theme-preview {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* 字體選擇下拉選單樣式 */
+        .font-family-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 1000;
+            box-shadow: 0 8px 32px var(--shadow);
+            backdrop-filter: blur(12px);
+        }
+
+        .font-family-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .font-family-dropdown label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .font-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .font-option {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            color: var(--text);
+            text-align: left;
+        }
+
+        .font-option:hover {
+            background: var(--surface-pressed);
+            transform: translateY(-1px);
+        }
+
+        .font-option.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--primary-contrast);
+        }
+
         /* 速度按鈕樣式 - 套用字體大小按鈕的圓形樣式 */
         .speed-buttons {
             display: flex;
@@ -1517,7 +1895,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"oipnpB6LVFJc0wDkX3XZz4x9dV55F1IDP2EppGUvo/glkLGFY4AF87WmWWsy8o2IAAqrWUOOLiW4IhnY3cYPDETz5Emwe7ee8OndTcXc0kpELxdctZLj024Gygu7DT/4Sqz8oJnnfvOMfj87rHMw/zMQCSUuE/uPSmNLmNpz3ITt7P4nZhupn3kIgK5K8+YnoFiXcMPfNbLOhnfMoEyGTfGSpQxNlrj1iY4es1OJaCILlX7LN9TmybjsHRfJdF37WMK5NTq+hQMs0D4LaL+vOpfM4VEP7XVh4hBSmTTSkcjRyJq2CyiH/vs1nEm6yW2lYyelMZUdqGe6KDPSgInZDG952B4BY3YBktqKmCi/T9pDXUbHO1MbKJR+A/R/Okc6eXexfHSdDFza4I+s/5EvROqVuPdseue13x2mjuUT3YRNj+cEBZ0sW+Q2fgoFgWEJTYlzny5IlOi7eY96VP1794DuWI3q/aFVxqPHm4BvgO+DSN6iqM93umAymPuOcTn5H8tUg3jUIthSTZi0GvKS3ahy31uGSQ9WuI63fBEKO1EzUTblAQUz0/FDx/0E/HLIu1xcz4r8tkrcwfqK90ayplCU7/tDful0TqaHlH5+9E0KvlvRAUMrbSwtLKfbBblWf17xbz3lCdj8+cL6G8yEEv7IsHLzk9tz6QnPaKTSDtKE4Oo5h2fN+HKyg5JiSx0Nwf9fHpW0ep8IO2Vxe3E6CkjS4KYUTncSkY2bzmPEP6LBl4SqzhPYHSVDvblK2RSiscOWudOtgxhI+oiH3TmnnyOirCf0XJtBYgJYoljuzw1ioYxD0NBT8fHlaFRbaoSnBa1tconYIeQ7m/EF3UWm3t9hfrlzY48kNIc+PkfFkkN515RQMzQ9D3bVrwpzENTQT+2DFExp3gEuqkfjcbnAS4TnHHxXeNolJWp5NQdlp/mrzxUGhi8zh/ctmpciDGQUuV0az+ISXJm/36VYieuNi7XWXbGVgmidYIJcyO9S/FY6NVGiMelCibpC3TuOa3PBi71Ccv3SGVpRcf2/985btShVrVOWlqoB0YMyB04ag+xnk9yFuFhVjo1tkOVZdI21Zsbzt5CNkydEdaNtJTxwYpUWvO3Pma2f5b7Ve5IRfoQmIm0N7cARl8U8uAarG2QMYOJY6cfMU3rVbGk6xsd4f5H/VHBCWCpCSpWtXJJt5vrMyohaWSS6BDFPcV88MWs4D2D8pAxQG0oQZiuaF+RXBQvpWum+Vx09qqHdEBOGCC367K+EnwakRpKXdt6rR6HtceFARjrGUBSQdVTsD7flHNataXL3duKhwuZ20Tg8GVqvndZlaLAKvFqRuiIAD3TID8blk+amIQld0Oei/2L+IIQeYtuNsKoMIrrUyoB4s0RIRopGek97CnnKGA41rT30dfkWJZdhU6pTYfgfCYR5xUIhfE0Z6mNj8+tWIYQ67GY07knkJc2ClnMDYJWFtQGsis3EZkPfY4QBrHNkxbXEmsnog1ai+JAuEdB9bxitfqfLVIMwDF1Z1d/hHlwBbSEVGMrGdDm6/+3DVBajpEmKwWoAP9dP4jG+eAav1LFigM5F9+K6Zz1g91YAyAcvHUUCQOEzF+knOdS+jD9/EJ7MCjgIY6QCGFs/4rS+PRNJXSj3XBtVwUjXY0u3+aj3aTqj1Q0jdsI=","iv_b64":"f3ksCg8Zons8f/w1","salt_b64":"4sx8eWTYojLx6R6rtQNNOA=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"qEIK/mxl65aa2q4FGccVmvfc0snXQ7hN/6hdlWwpTQ4QqZ8KNqBN9XmWSuLodCkSbpsk4myb3wh6XjZO5fL9VX/ubEvwqcs+krEVgzqFx/ZHwXU4HMws2LQ3YUUzBAPxMc3TjUOgLNN4fgEtyTIxDpfwreyvI8r9RJ4juO8V1BBcx13gOjwXlPnjZky/7u5uhbJenX/qMsgmPwSb9VQ7qBT1p4G+N0AFhonT6Io0jxhlB31b2RwtxXnF5XbvSsmX87pgZbwpyeqg+2tsuSWh6zQ36mFW/kDGE7Oqxav9OVnZJ44gbW0sbWOGiTigiI9/i5q0+9TSAqcTwcPFgs4VjFYVl3VG7LA+18p0jGMfHY71R4GlCQPnZg8S/6AecoeJxtRRtNIZWcLe0A+oOFTp2IbyEEAcV+aoQHgPQfUkQ1UL9z7UAbX7FrWrdODLtk7BKZhsrQcDcAh3b8ljincjZnIF5WXeyBTImKo+/KGnJCkdEzsF+bH9oySM8RzBB1qYnqMEl+ATzt4OekXBnFDNYjXK/GdeR6zrfaWE978ZM1fYtF7n1cPhI/svo7RRzmUxye65Oy218+t4lrLDzjDIW4zncoVvbjERwGfgcaw78dqwGNhK/D6dVaijdQXbWLRndJJbhOXtlcd8oYTN+I2pTOGzMuV9R3jPWJ0P2EaBcd1kpAKKvGNdht0ORDgBXszCvhA0dRwCcdahCiGkCEYpg4zNNqN9GyZdRolQsQjdCmIOg4i+FS59lnqScRqDZsCI2ziBYVz5jdbQIQ0K4L6WFb6gNvsRx9yWOLoVKxkkA/+uwCan7bdSWbqBhvEk4Bdh6B4kCCamYY0aiUZ7vK3vKomSkPqgiuPKztvsk2gbnBPjeP/3LOJwu61lOrVEIdM7DM2iZ7mNhXnNfvplLvCqg2Kb/Nl0SoyDdIpwcMJJVyQ3VyIHbTid9ggmuVEuQVeLlzNJ43k0d+lKtUHf30CVxLEgZQufCkSrmxPZyxoXYXr3BHaltb5uZDnDY9E3Kx5hrbpbkpREQ9OqMwtF4TV/fi6e1wi9BRYp5nP0t0mzpMyHumHyXHAoGI+DdnpE8ZZrEzINJFxl8OeWnh6JMTHr7zpJC9EgkdAEa4vyBexpNl4rJ70JOvRk88ocof7Y4fKyROMwSUZjUnTG5yjqYG7XWrpKd8gDVvfaMMdg9HYoSBvi39VV1xnRuW1SblzVZWiQnshVOO67prIkvu1/aboOQej4tZdGqVHvHnP2kKcbsic6LXowuvADwZdOc7aiiqRXkute0VTw7kC0kWOOVFqpgqEk/cR02RB5GuYc5LJLUm6x/ZqLnM40+bUn8Th4za17S3LsjY9kDPzxfXtWprluIZzzTOfrc/DH2vSqTaSuEanHm063hD+yuV425UDXy5LpymLQoe5b1XQL47210iWxGJ36GnFIkg+L3XFzxPb4iH7hQEW9JuGqqVvFjU92wA919uOMve76MMP2tC5GW5Dj39479b4I8ClUpV9EqtiblmLp90uq/y2xLmJWEl73stXz5Xo6D3J7CyGuASi9DKQNlaPRtyk3924zLx5jCTwLQ+CvLDkxPJQcX4qBIfKZRByepdTCrqtj6hDrayO0tIZ9Rk0p+JAj4EDZdXay7Mrgfx1lU2ZYfJsgzWgoEja2C98Zc1kZOsI=","iv_b64":"nFZEVXXgb+DpukFT","salt_b64":"aB14DBFvDS71xInYLQze/A=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1679,6 +2057,77 @@
                         </div>
                     </div>
 
+                    <!-- 主題選擇功能 -->
+                    <div class="menu-item" style="position: relative;">
+                        <button id="themeBtn" class="floating-btn" title="主題配色">
+                            <i data-lucide="palette" style="width: 16px; height: 16px;"></i>
+                        </button>
+                        <div id="themeDropdown" class="theme-dropdown">
+                            <div class="theme-controls">
+                                <label>主題配色</label>
+                                <div class="theme-options">
+                                    <button class="theme-option active" data-theme="default" title="預設灰">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #1e2429, #94a8b8);"></div>
+                                        <span>預設</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="forest" title="森林綠">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #1a2520, #7ba894);"></div>
+                                        <span>森林</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="ocean" title="海洋藍">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #0c1426, #38bdf8);"></div>
+                                        <span>海洋</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="lavender" title="薰衣草紫">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #241a30, #a394d4);"></div>
+                                        <span>薰衣草</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="sunset" title="沙漠日落">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #2a1f1a, #d4b48a);"></div>
+                                        <span>日落</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="crimson" title="酒紅色">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #1a0f0f, #dc2626);"></div>
+                                        <span>酒紅</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="emerald" title="寶石綠">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #0c1f14, #22c55e);"></div>
+                                        <span>寶石</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 字體選擇功能 -->
+                    <div class="menu-item" style="position: relative;">
+                        <button id="fontFamilyBtn" class="floating-btn" title="字體選擇">
+                            <i data-lucide="text" style="width: 16px; height: 16px;"></i>
+                        </button>
+                        <div id="fontFamilyDropdown" class="font-family-dropdown">
+                            <div class="font-family-controls">
+                                <label>字體選擇</label>
+                                <div class="font-options">
+                                    <button class="font-option active" data-font="system" title="系統預設字體">
+                                        <span style="font-family: system-ui, -apple-system, sans-serif;">系統預設</span>
+                                    </button>
+                                    <button class="font-option" data-font="noto" title="思源黑體">
+                                        <span style="font-family: 'Noto Sans TC', sans-serif;">思源黑體</span>
+                                    </button>
+                                    <button class="font-option" data-font="poppins" title="Poppins">
+                                        <span style="font-family: 'Poppins', sans-serif;">Poppins</span>
+                                    </button>
+                                    <button class="font-option" data-font="serif" title="襯線字體">
+                                        <span style="font-family: 'Noto Serif TC', serif;">襯線字體</span>
+                                    </button>
+                                    <button class="font-option" data-font="mono" title="等寬字體">
+                                        <span style="font-family: 'JetBrains Mono', monospace;">等寬字體</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- 隱藏畫面按鈕開關 -->
                     <button id="hideControlsBtn" class="floating-btn menu-item" title="隱藏畫面按鈕">
                         <i data-lucide="move" style="width: 16px; height: 16px;"></i>
@@ -1741,6 +2190,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="PKILA/CSu3mNbsZWZ2znvg"></script>
+<script src="assets/js/main.js" nonce="iHmACMvKiN7KTdFQXqDldA"></script>
 </body>
 </html>
