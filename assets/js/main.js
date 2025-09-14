@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-14T06:55:47.796892900+00:00
+// 生成時間: 2025-09-14T07:11:30.726501100+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -793,6 +793,22 @@
             });
         }
 
+        function initializeToggleButtons() {
+            // 初始化打字機按鈕外觀
+            if (elements.typewriterToggleBtn) {
+                elements.typewriterToggleBtn.style.background = isTypewriterEnabled
+                    ? 'rgba(59, 130, 246, 0.8)'
+                    : 'rgba(107, 114, 128, 0.8)';
+            }
+
+            // 初始化縮圖列按鈕外觀
+            if (elements.thumbnailBtn) {
+                elements.thumbnailBtn.style.background = isThumbnailsVisible
+                    ? 'rgba(59, 130, 246, 0.8)'
+                    : 'rgba(107, 114, 128, 0.8)';
+            }
+        }
+
         function initializeHideButtons() {
             // 初始化隱藏畫面按鈕外觀
             if (elements.hideControlsBtn) {
@@ -1151,17 +1167,22 @@
         // 燈箱功能
         function openLightbox(mediaElement) {
             if (!elements.lightbox || !elements.lightboxMedia) return;
-            
+
             const currentEvent = getCurrentEvent();
             if (!currentEvent?.media) return;
-            
+
             // 設置當前媒體
             currentLightboxMediaIndex = currentMediaIndex;
-            
+
+            // 自動開啟縮圖列以便切換
+            if (!isThumbnailsVisible) {
+                toggleThumbnails();
+            }
+
             // 顯示燈箱
             displayLightboxMedia();
             elements.lightbox.classList.add('active');
-            
+
             // 阻止背景滾動
             document.body.style.overflow = 'hidden';
         }
@@ -1555,7 +1576,10 @@
             
             // 初始化字體大小按鈕事件
             initializeFontSizeButtons();
-            
+
+            // 初始化按鈕狀態顯示
+            initializeToggleButtons();
+
             console.log('🔍 DOM 載入完成，檢查數據狀態');
             console.log('📊 window.MEMOIR_DATA:', !!window.MEMOIR_DATA);
             console.log('🔐 REQUIRE_PW:', typeof window.REQUIRE_PW !== 'undefined' ? window.REQUIRE_PW : 'undefined');
