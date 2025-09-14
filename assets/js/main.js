@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-14T13:00:02.261596800+00:00
+// 生成時間: 2025-09-14T13:45:07.288580400+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -10,10 +10,10 @@
         let currentMediaIndex = 0;
         let currentLightboxMediaIndex = 0;
         let isDecrypting = false;
-        let isTypewriterEnabled = true;
+        let isTypewriterEnabled = false;
         // 從localStorage載入打字速度設定，預設為部署時設定的值
         let typingSpeed = parseInt(localStorage.getItem('memoirflow:typing-speed')) || 1;
-        let fontSize = 2;
+        let fontSize = 0.8;
         let isMenuOpen = false;
         let isThumbnailsVisible = false;
         let isFontSizeMenuOpen = false;
@@ -21,8 +21,8 @@
         let isLightboxOpen = false;
         let thumbnailsStateBeforeLightbox = false; // 記錄燈箱開啟前的縮圖列狀態
         let isSubtitleVisible = true;
-        let areControlsHidden = !true;
-        let isDateHidden = !true;
+        let areControlsHidden = !false;
+        let isDateHidden = !false;
 
         // DOM 元素緩存
         const elements = {
