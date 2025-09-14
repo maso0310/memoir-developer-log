@@ -14,16 +14,145 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-86ffe12f-4769-45bb-9ed9-ce3925a4be86' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-9761ff5e-77b5-45eb-93db-73b83569ff89' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="86ffe12f-4769-45bb-9ed9-ce3925a4be86" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="9761ff5e-77b5-45eb-93db-73b83569ff89" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="86ffe12f-4769-45bb-9ed9-ce3925a4be86">
+    <style nonce="9761ff5e-77b5-45eb-93db-73b83569ff89">
         * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        /* CSS 變量定義 */
+        :root {
+            /* 預設主題 */
+            --primary: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary: #6b7280;
+            --bg: #0f172a;
+            --surface: rgba(30, 41, 59, 0.8);
+            --surface-hover: rgba(51, 65, 85, 0.8);
+            --text: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --border: rgba(148, 163, 184, 0.3);
+            --shadow: rgba(0, 0, 0, 0.5);
+            --accent: #38bdf8;
+            --font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* 森林主題 */
+        .theme-forest {
+            --primary: #22c55e;
+            --primary-dark: #16a34a;
+            --secondary: #84cc16;
+            --bg: #1a2520;
+            --surface: rgba(34, 197, 94, 0.1);
+            --surface-hover: rgba(34, 197, 94, 0.2);
+            --text: #dcfce7;
+            --text-secondary: #bbf7d0;
+            --border: rgba(34, 197, 94, 0.3);
+            --shadow: rgba(0, 50, 25, 0.5);
+            --accent: #7ba894;
+        }
+
+        /* 海洋主題 */
+        .theme-ocean {
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --secondary: #06b6d4;
+            --bg: #0c1426;
+            --surface: rgba(14, 165, 233, 0.1);
+            --surface-hover: rgba(14, 165, 233, 0.2);
+            --text: #e0f2fe;
+            --text-secondary: #b3e5fc;
+            --border: rgba(14, 165, 233, 0.3);
+            --shadow: rgba(0, 25, 50, 0.5);
+            --accent: #38bdf8;
+        }
+
+        /* 薰衣草主題 */
+        .theme-lavender {
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --secondary: #a78bfa;
+            --bg: #241a30;
+            --surface: rgba(139, 92, 246, 0.1);
+            --surface-hover: rgba(139, 92, 246, 0.2);
+            --text: #f3e8ff;
+            --text-secondary: #e9d5ff;
+            --border: rgba(139, 92, 246, 0.3);
+            --shadow: rgba(25, 0, 50, 0.5);
+            --accent: #a394d4;
+        }
+
+        /* 日落主題 */
+        .theme-sunset {
+            --primary: #f59e0b;
+            --primary-dark: #d97706;
+            --secondary: #fbbf24;
+            --bg: #2a1f1a;
+            --surface: rgba(245, 158, 11, 0.1);
+            --surface-hover: rgba(245, 158, 11, 0.2);
+            --text: #fef3c7;
+            --text-secondary: #fde68a;
+            --border: rgba(245, 158, 11, 0.3);
+            --shadow: rgba(50, 25, 0, 0.5);
+            --accent: #d4b48a;
+        }
+
+        /* 酒紅主題 */
+        .theme-crimson {
+            --primary: #dc2626;
+            --primary-dark: #b91c1c;
+            --secondary: #ef4444;
+            --bg: #1a0f0f;
+            --surface: rgba(220, 38, 38, 0.1);
+            --surface-hover: rgba(220, 38, 38, 0.2);
+            --text: #fef2f2;
+            --text-secondary: #fecaca;
+            --border: rgba(220, 38, 38, 0.3);
+            --shadow: rgba(50, 0, 0, 0.5);
+            --accent: #f87171;
+        }
+
+        /* 寶石綠主題 */
+        .theme-emerald {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #34d399;
+            --bg: #0c1f14;
+            --surface: rgba(16, 185, 129, 0.1);
+            --surface-hover: rgba(16, 185, 129, 0.2);
+            --text: #ecfdf5;
+            --text-secondary: #d1fae5;
+            --border: rgba(16, 185, 129, 0.3);
+            --shadow: rgba(0, 50, 25, 0.5);
+            --accent: #22c55e;
+        }
+
+        /* 字體類別 */
+        .font-system {
+            --font-family: system-ui, -apple-system, 'Microsoft JhengHei', sans-serif;
+        }
+
+        .font-noto {
+            --font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+        }
+
+        .font-poppins {
+            --font-family: 'Poppins', 'Microsoft JhengHei', sans-serif;
+        }
+
+        .font-serif {
+            --font-family: 'Noto Serif TC', 'Times New Roman', serif;
+        }
+
+        .font-mono {
+            --font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+        }
+
         body {
-            font-family: var(--font-family, system-ui, -apple-system, sans-serif);
+            font-family: var(--font-family);
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -31,8 +160,8 @@
             transition: all 0.3s ease;
         }
         .app { min-height: 100vh; display: flex; flex-direction: column; }
-        .header { 
-            background: rgba(42, 42, 74, 0.95); 
+        .header {
+            background: var(--surface);
             padding: 1rem; 
             position: sticky; 
             top: 0; 
@@ -1420,9 +1549,9 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: rgba(42, 42, 74, 0.9);
-            border: 2px solid rgba(59, 130, 246, 0.3);
-            color: #fff;
+            background: var(--surface);
+            border: 2px solid var(--primary);
+            color: var(--text);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1916,7 +2045,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"jxgFraQZWpwqdUSNcuCTBGhA8O/5JqQSpKbz10BKFXdYROterqN9a1eYV5Ag7OMz8GtcA+VFAOp9QdIiz0WXbr1waxbQK0jJwHnp6P/3tI3Nfd4knZrtikBlVceJXbDbJwGbYkVtChdkfvGfkmmsL1uOvneULJaE9U0OijDShJs+Ir1NFRAk7DElwcxryza1nwUxKoeU6+XoEJGEbsPJ6KvidE52dGL3ZQOYGKpOnxS8OjLh1y8D2+qmhd4QkiYVe7FDNtQIm5FImMTvRkQVL5FB93IDUB8mhFRoFVdLpm25Y1o1HBlIX69r+vpad3z8n0E3chin/GeQocSRv+e/CCiZY6hU8paAUI/BBJ0RP302P3vs4K1kdSETg7JDsXEawYgcA9G3WUtoewpEu0u3UQZEBmGGmhd9dS6Y19jGAF1cJR7c9kSxzK8We9qoQS2/VkmYsx41IlqiXlJoPzx1g/bKwj8M29tLVUGlJRjKN02CyJITnJUM2yQYWTtRzI5SFpqLSRyOc03DE7GKSOnQWvOg6vrkSkLixb16gPzKj4Hj0dYbvsG4sRDqAS7giUd5c8ielt0ki4Ub4hLvtyVPweUgYqQZ/5PwGqaOV8wcXiZB8Rjc/37LR/AyejhY+pNhEg8BBXJ8xPgCthL+mnB0jKnAAQKDKNBeV5+hh84prHbkMl2vhYJiQFTGZs0A/3dCkYIBIZaneb8UTUVOw02oWGIwMt3Th67ysjbdmXMTJ1Afp3ju3tuGl0vWh/tzGT3FAgocZ4x7/kkkSTMz4p0XX4MvK2caeK9aZa15QO+kkpW/nKTW+Xx5z7gNCdkc7SDue23PcQzDp7svlJfNbghix0JKtfBbx8UlxcEuwWOhcwDvMPaqC0d+FHDbMWzSc+4IwQEOeOmVySEA3YC95gbiHbBlhWCWiKAuO9ewxrhnSdYrFpYR4wyNBBNjjqO866EeXRzdWW+bRJJM8AyVzjMga3k51x0dKzYLvHA+Ivh8s52up0Tsse5A+GvXDv3DMwm7UDX8WDJCdC6sRR6igRw0MvtvKsKGrLAHmMm/XSGrrRPmi9ohfY3zpi5BWOeFgO6RfG7O9A690HEFUFZxVH5U4EB4nMSPmajxbepS69WPK9qTFz7UthR3Pk0QPetOrBb/N8jrpBj34X/LNTEAGjS9wg02ehPsiKuPSw2Cmgnf1wben6Fo+7YI+HkDlTIfJ3G1uJGbafSYLtCZrplFVOTha7kiMxSuZHj+Y23WdF5fylopdtulJxCYLcNnnw6A8FrwRKE2HE+BPgEK3eqiwjdk2j1vUmTjyQltiM5XgGg6U82VVyRPiKaZLYF+GcZDZPf/uUv9DegZQWJhwV/D8ai8JRK7lozgHOFRqCrQ1CUCk9RfPhovWyJH80ezTWCKwpYRrCbL3m1d9InRc3WkL8wgKxijV3PYQx7OtCysqM1l+DUY5kI8U/GZDFpBXiU5a/ug6sLWc98+FrcwpQ7jy/7ZRGNZb3GZM6PwOmn9GoyMrQZjeDudvASzf1TcxZeyQQQI8YYhDitdiUneZ1JOV6Fv3SOYtToO40XenrI5Yets8Pu2plNqDj6jjdlzFZRFG4akMR4vWIe4P5i9pY3oXPyBZYU2qK2KleH72JrJiN9VbOnVGaXL0Kt6i0GxGwjrV6rkiDh+eEw=","iv_b64":"foIDfGOcibI4Oa6N","salt_b64":"bU0h2CZjxvyIxbbf9TcqCg=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"2Sfl3862f/qAD1YM3kxtqbYss/yy/60AUfueSKrXGmKxynasLnDTK0Alli0VODON5xRqDDtMqSGlhLplwqgIid1b4BqK79oE8mp+vfhpeKLH8ULmQnDA+GLvDdb7CG8zlUTL/w3C8k8LJ3yNfsCvDF8gKaO+ugNtwEIgT033xAvguNdSbqL0eJFTls1vTp0p1+sGpJdNaKKDdlXlYHWnQTIIOC1oc+MbBHcfHMbwUgx8TRqS5v1Cj52FKCvuoeZoNt2+8oVEHHrwd2yqjGH9E0WKiqsUtyZ0hMCMipzlu7Uo5FrNmZawqA4X8gq5lbBSkmjMJAuou1vcJR3Rxx8UXQsuxhnWUjnhw3cWWsrBwXTOghWo+WcR42aH2LIEEUbHk+rpK8b9QCbj8oN4kS7CYFAyH5R4hXOak4vcTd/C4Gl8f4Ct0OpXAV5aEjsPUPSrZccaYS2gNd3ITP8aleAOu4A5L+WqPsYsCskt943XubZw65I/M9iqZPspwrQ1Ay6G/FqcPynmV5knlFMcCPRoywLhltIqinGKTDu6/L22x4RmqvKqpuCGcOVs8KazhQ9wY93czH7L1yv0qZOjPrypHm+L3QBHVe8L+fsrYpsFJFuqPh0/HqlXGbzbiEcywCYTGtuGnMDRJOavcnMPOgr1qiId9/X5ZNiV/saLzifN/tl5dsOVJZS3U7cUVW5biwH+OB0plz1yMSsGU5aSL/o/qQUW6fMtwbjcUXD7BPvDgCOUeMuEwI8fo5Vpxh414MYt6PBeMi+TI3n6pr4v06e6by8axqGw/CEWIj6DD6xuMXx/kh9LFktep0ilT26i7WjtgBYchh0Gtn7WwCtw1w0hcDePzYrSKWj3RpGHGGgBlWVX3OmP90yxdbNKApYdmEy3W/zAwjVkRMeqqSWiL/gpc3vAhkOPqoZnwhID55y8BPQWhdTKu0FD895UaJ+ouVYs6xNadrA2t5QYDrVpKdYIWeESIdWFDV8GdanPFPmUQeajx7ZP7Qfry6kaSSkWSspiYCI5dWm8ZAlO4EcdPhjh84H6shlxKu5RrfZnQZpDCiYAzxSO4E1emozvCKstRH7x1dYRz4c+zPwsW8DwHL/v+Vh8jHG0qoJ5F27XZQAdmPKoGnE5D8UWxRdo7PCvUMIDqSQegdjTEdgRcCvYq77E8SbZ+0CuJ5kfzFHvDb8iSbkqYEqsSjHsj5J/yd9frxqUfbC8TxsqvqfUeK2URPjHrJ+kkAvx/deo7XWM9eYOr0Vp292Cm+TFsnt9DsYLPnkgogD8d95SM4ZYKoMJZUFo/oVPPoUDDkTZ2dObHSl8tlfMDx1p7XYLPkq3a4W9CGcpR5V2hv9vFC6T+SBVSdFvpqb1o4c0r2cpo7JvAOUL+W5NpCvqJPm41VRTsOTTmKX+b+l+oYscPrCcuw6cyZ1ybtG9MNyfeG9zFrtx1XZqRU7ekNwM9vHqPrUXOAj5J/rE+MDYSPrLFflZ2vfp1VaWEJ8CM49qpG6Ut1Xg9ojpdbmO62iUjsckIcSKfKRG8tWqJy8kGCIPw0Qmg2W5vwS/0P4txS/09e7WBPWOhaj3iiR5snDREHVtZsDK2bwYGs7TylzsyamYWYjOI8ZR/Jdi86XgAl8w5iF9y96YsEviYfvy+3Qy4cA3y41Hduo//tUE49UqcSs=","iv_b64":"Kw4Bxd78X3UZbAsZ","salt_b64":"4MyHnDd3uLBbSNMxDXZ91Q=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1987,17 +2116,6 @@
         </div>
 
         <!-- 浮動控制按鈕 -->
-        <!-- 左側導航：左右媒體切換 -->
-        <div class="floating-controls nav-left">
-            <button id="prevMediaBtn" class="floating-btn" title="上一媒體">⬅</button>
-            <button id="nextMediaBtn" class="floating-btn" title="下一媒體">➡</button>
-        </div>
-
-        <!-- 右側導航：上下事件切換 -->
-        <div class="floating-controls nav-right">
-            <button id="prevEventBtn" class="floating-btn" title="上一事件">⬆</button>
-            <button id="nextEventBtn" class="floating-btn" title="下一事件">⬇</button>
-        </div>
 
         <!-- 頂部控制：功能選單 -->
         <div class="floating-controls nav-top">
@@ -2163,6 +2281,23 @@
                         <i data-lucide="move" style="width: 16px; height: 16px;"></i>
                     </button>
 
+                    <!-- 導航控制 -->
+                    <button id="prevEventBtn" class="floating-btn menu-item" title="上一事件">
+                        <i data-lucide="chevron-up" style="width: 16px; height: 16px;"></i>
+                    </button>
+
+                    <button id="nextEventBtn" class="floating-btn menu-item" title="下一事件">
+                        <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+                    </button>
+
+                    <button id="prevMediaBtn" class="floating-btn menu-item" title="上一媒體">
+                        <i data-lucide="chevron-left" style="width: 16px; height: 16px;"></i>
+                    </button>
+
+                    <button id="nextMediaBtn" class="floating-btn menu-item" title="下一媒體">
+                        <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i>
+                    </button>
+
                     <!-- 隱藏日期標籤開關 -->
                     <button id="hideDateBtn" class="floating-btn menu-item" title="隱藏日期標籤">
                         <i data-lucide="calendar-x" style="width: 16px; height: 16px;"></i>
@@ -2220,6 +2355,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="lRbf3z09+tfOPciVtftbiw"></script>
+<script src="assets/js/main.js" nonce="1/uPZW4gVRfX6mbbqnSkKQ"></script>
 </body>
 </html>
