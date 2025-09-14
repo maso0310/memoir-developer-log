@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-14T15:06:52.289022300+00:00
+// 生成時間: 2025-09-14T20:30:55.062927700+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -1775,6 +1775,73 @@
 
         // 在載入完成後預載入
         setTimeout(preloadNextMedia, 1000);
+
+        // 主題切換功能
+        function initializeThemeSystem() {
+            const themeSelect = document.getElementById('themeSelect');
+            const fontSelect = document.getElementById('fontSelect');
+
+            // 從 localStorage 載入保存的設定
+            const savedTheme = localStorage.getItem('memoir-theme') || 'default';
+            const savedFont = localStorage.getItem('memoir-font') || 'system';
+
+            // 設定預設值
+            if (themeSelect) themeSelect.value = savedTheme;
+            if (fontSelect) fontSelect.value = savedFont;
+
+            // 應用保存的設定
+            applyTheme(savedTheme);
+            applyFont(savedFont);
+
+            // 綁定事件監聽器
+            if (themeSelect) {
+                themeSelect.addEventListener('change', (e) => {
+                    const theme = e.target.value;
+                    applyTheme(theme);
+                    localStorage.setItem('memoir-theme', theme);
+                });
+            }
+
+            if (fontSelect) {
+                fontSelect.addEventListener('change', (e) => {
+                    const font = e.target.value;
+                    applyFont(font);
+                    localStorage.setItem('memoir-font', font);
+                });
+            }
+        }
+
+        function applyTheme(theme) {
+            const root = document.documentElement;
+
+            // 移除之前的主題類別
+            root.classList.remove('theme-forest', 'theme-ocean', 'theme-lavender',
+                                'theme-sunset', 'theme-crimson', 'theme-emerald', 'theme-default');
+
+            // 應用新主題
+            if (theme !== 'default') {
+                root.classList.add(`theme-${theme}`);
+            }
+
+            console.log(`主題已切換至: ${theme}`);
+        }
+
+        function applyFont(font) {
+            const root = document.documentElement;
+
+            // 移除之前的字體類別
+            root.classList.remove('font-system', 'font-noto', 'font-poppins', 'font-serif', 'font-mono');
+
+            // 應用新字體
+            root.classList.add(`font-${font}`);
+
+            console.log(`字體已切換至: ${font}`);
+        }
+
+        // 在 DOM 載入完成後初始化主題系統
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeThemeSystem();
+        });
     
 
 // ========== 提取的腳本區塊 ==========
