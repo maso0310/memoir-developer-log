@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-14T20:30:55.062927700+00:00
+// 生成時間: 2025-09-14T20:53:22.780413600+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -1778,37 +1778,111 @@
 
         // 主題切換功能
         function initializeThemeSystem() {
-            const themeSelect = document.getElementById('themeSelect');
-            const fontSelect = document.getElementById('fontSelect');
+            const themeBtn = document.getElementById('themeBtn');
+            const themeDropdown = document.getElementById('themeDropdown');
+            const fontFamilyBtn = document.getElementById('fontFamilyBtn');
+            const fontFamilyDropdown = document.getElementById('fontFamilyDropdown');
 
             // 從 localStorage 載入保存的設定
             const savedTheme = localStorage.getItem('memoir-theme') || 'default';
             const savedFont = localStorage.getItem('memoir-font') || 'system';
 
-            // 設定預設值
-            if (themeSelect) themeSelect.value = savedTheme;
-            if (fontSelect) fontSelect.value = savedFont;
-
             // 應用保存的設定
             applyTheme(savedTheme);
             applyFont(savedFont);
 
-            // 綁定事件監聽器
-            if (themeSelect) {
-                themeSelect.addEventListener('change', (e) => {
-                    const theme = e.target.value;
-                    applyTheme(theme);
-                    localStorage.setItem('memoir-theme', theme);
+            // 設定主題按鈕的活動狀態
+            updateThemeButtonState(savedTheme);
+            updateFontButtonState(savedFont);
+
+            // 主題按鈕點擊事件
+            if (themeBtn && themeDropdown) {
+                themeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isVisible = themeDropdown.classList.contains('open');
+
+                    // 隱藏所有其他下拉選單
+                    hideAllDropdowns();
+
+                    // 切換當前下拉選單
+                    if (!isVisible) {
+                        themeDropdown.classList.add('open');
+                    }
+                });
+
+                // 主題選項點擊事件
+                const themeOptions = themeDropdown.querySelectorAll('.theme-option');
+                themeOptions.forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const theme = option.dataset.theme;
+                        applyTheme(theme);
+                        updateThemeButtonState(theme);
+                        localStorage.setItem('memoir-theme', theme);
+                        themeDropdown.classList.remove('open');
+                    });
                 });
             }
 
-            if (fontSelect) {
-                fontSelect.addEventListener('change', (e) => {
-                    const font = e.target.value;
-                    applyFont(font);
-                    localStorage.setItem('memoir-font', font);
+            // 字體按鈕點擊事件
+            if (fontFamilyBtn && fontFamilyDropdown) {
+                fontFamilyBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isVisible = fontFamilyDropdown.classList.contains('open');
+
+                    // 隱藏所有其他下拉選單
+                    hideAllDropdowns();
+
+                    // 切換當前下拉選單
+                    if (!isVisible) {
+                        fontFamilyDropdown.classList.add('open');
+                    }
+                });
+
+                // 字體選項點擊事件
+                const fontOptions = fontFamilyDropdown.querySelectorAll('.font-option');
+                fontOptions.forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const font = option.dataset.font;
+                        applyFont(font);
+                        updateFontButtonState(font);
+                        localStorage.setItem('memoir-font', font);
+                        fontFamilyDropdown.classList.remove('open');
+                    });
                 });
             }
+
+            // 點擊其他地方時隱藏下拉選單
+            document.addEventListener('click', () => {
+                hideAllDropdowns();
+            });
+        }
+
+        function hideAllDropdowns() {
+            const dropdowns = [
+                document.getElementById('themeDropdown'),
+                document.getElementById('fontFamilyDropdown')
+            ];
+            dropdowns.forEach(dropdown => {
+                if (dropdown) {
+                    dropdown.classList.remove('open');
+                }
+            });
+        }
+
+        function updateThemeButtonState(activeTheme) {
+            const themeOptions = document.querySelectorAll('.theme-option');
+            themeOptions.forEach(option => {
+                option.classList.toggle('active', option.dataset.theme === activeTheme);
+            });
+        }
+
+        function updateFontButtonState(activeFont) {
+            const fontOptions = document.querySelectorAll('.font-option');
+            fontOptions.forEach(option => {
+                option.classList.toggle('active', option.dataset.font === activeFont);
+            });
         }
 
         function applyTheme(theme) {
