@@ -14,24 +14,122 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-faa37ef9-5df4-4037-afdf-fa433c660458' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-c38cfe88-751a-413b-9019-88d1a553d06f' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="faa37ef9-5df4-4037-afdf-fa433c660458" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="c38cfe88-751a-413b-9019-88d1a553d06f" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="faa37ef9-5df4-4037-afdf-fa433c660458">
+    <style nonce="c38cfe88-751a-413b-9019-88d1a553d06f">
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: system-ui, -apple-system, sans-serif; 
-            background: #1a1a2e; 
-            color: #fff; 
+
+        /* CSS 變數定義 - 預設主題 */
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary: #6b7280;
+            --bg-primary: #1a1a2e;
+            --bg-secondary: rgba(42, 42, 74, 0.95);
+            --surface: rgba(42, 42, 74, 0.9);
+            --surface-hover: rgba(59, 130, 246, 0.2);
+            --text-primary: #ffffff;
+            --text-secondary: #cbd5e1;
+            --border: rgba(59, 130, 246, 0.3);
+            --shadow: rgba(0, 0, 0, 0.3);
+            --accent: #38bdf8;
+        }
+
+        /* 森林主題 */
+        .theme-forest {
+            --primary: #22c55e;
+            --primary-dark: #16a34a;
+            --secondary: #84cc16;
+            --bg-primary: #1a2520;
+            --bg-secondary: rgba(34, 197, 94, 0.15);
+            --surface: rgba(34, 197, 94, 0.2);
+            --surface-hover: rgba(34, 197, 94, 0.3);
+            --text-primary: #dcfce7;
+            --text-secondary: #bbf7d0;
+            --border: rgba(34, 197, 94, 0.4);
+            --shadow: rgba(0, 50, 25, 0.4);
+            --accent: #7ba894;
+        }
+
+        /* 海洋主題 */
+        .theme-ocean {
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --secondary: #06b6d4;
+            --bg-primary: #0c1426;
+            --bg-secondary: rgba(14, 165, 233, 0.15);
+            --surface: rgba(14, 165, 233, 0.2);
+            --surface-hover: rgba(14, 165, 233, 0.3);
+            --text-primary: #e0f2fe;
+            --text-secondary: #b3e5fc;
+            --border: rgba(14, 165, 233, 0.4);
+            --shadow: rgba(0, 25, 50, 0.4);
+            --accent: #38bdf8;
+        }
+
+        /* 日落主題 */
+        .theme-sunset {
+            --primary: #f59e0b;
+            --primary-dark: #d97706;
+            --secondary: #fbbf24;
+            --bg-primary: #2a1f1a;
+            --bg-secondary: rgba(245, 158, 11, 0.15);
+            --surface: rgba(245, 158, 11, 0.2);
+            --surface-hover: rgba(245, 158, 11, 0.3);
+            --text-primary: #fef3c7;
+            --text-secondary: #fde68a;
+            --border: rgba(245, 158, 11, 0.4);
+            --shadow: rgba(50, 25, 0, 0.4);
+            --accent: #d4b48a;
+        }
+
+        /* 薰衣草主題 */
+        .theme-lavender {
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --secondary: #a78bfa;
+            --bg-primary: #241a30;
+            --bg-secondary: rgba(139, 92, 246, 0.15);
+            --surface: rgba(139, 92, 246, 0.2);
+            --surface-hover: rgba(139, 92, 246, 0.3);
+            --text-primary: #f3e8ff;
+            --text-secondary: #e9d5ff;
+            --border: rgba(139, 92, 246, 0.4);
+            --shadow: rgba(25, 0, 50, 0.4);
+            --accent: #a394d4;
+        }
+
+        /* 酒紅主題 */
+        .theme-crimson {
+            --primary: #dc2626;
+            --primary-dark: #b91c1c;
+            --secondary: #ef4444;
+            --bg-primary: #1a0f0f;
+            --bg-secondary: rgba(220, 38, 38, 0.15);
+            --surface: rgba(220, 38, 38, 0.2);
+            --surface-hover: rgba(220, 38, 38, 0.3);
+            --text-primary: #fef2f2;
+            --text-secondary: #fecaca;
+            --border: rgba(220, 38, 38, 0.4);
+            --shadow: rgba(50, 0, 0, 0.4);
+            --accent: #f87171;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .app { min-height: 100vh; display: flex; flex-direction: column; }
-        .header { 
-            background: rgba(42, 42, 74, 0.95); 
+        .header {
+            background: var(--bg-secondary);
             padding: 1rem; 
             position: sticky; 
             top: 0; 
@@ -724,6 +822,78 @@
             transform: rotate(-135deg);
         }
         
+        /* 主題選擇下拉選單樣式 */
+        .theme-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            min-width: 280px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 1000;
+            box-shadow: 0 8px 32px var(--shadow);
+            backdrop-filter: blur(12px);
+        }
+
+        .theme-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .theme-dropdown label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .theme-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        .theme-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+
+        .theme-option:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: scale(1.02);
+        }
+
+        .theme-option.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .theme-preview {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
         /* 字體大小展開選單 */
         .font-size-dropdown {
             position: absolute;
@@ -1021,9 +1191,9 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: rgba(42, 42, 74, 0.9);
-            border: 2px solid rgba(59, 130, 246, 0.3);
-            color: #fff;
+            background: var(--surface);
+            border: 2px solid var(--border);
+            color: var(--text-primary);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1037,9 +1207,9 @@
         
         .floating-btn:hover {
             transform: scale(1.1);
-            background: rgba(59, 130, 246, 0.8);
-            border-color: rgba(59, 130, 246, 0.8);
-            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
+            background: var(--primary);
+            border-color: var(--primary);
+            box-shadow: 0 6px 25px var(--shadow);
         }
         
         .floating-btn:active {
@@ -1517,7 +1687,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"y7eUvFsyn+ABxAwFpFFrcWbJWreQzT1AX9jBj96DR+Iq41RxHUeWmhsUOm/57pEfS75ygXRwiygpPQ0/62bp985XvBNwtMRqg6wdBTg4M5o4hFXDVaWVpfdTU+9TCtytykfGwGtXTRAkHnSanjWUl/SavuRWndXdW6Y0j6BFFJyd70BinuQARjDv9MVFalg40qoetGrQCdGj8nXWUAnzXG67ml23Yz5t3xpiTita+sP907L408py84m2hUgf94Q7fYcGAwVLu4g3bBHL3UsALFbpawhW7lY7WQmpSs1U+pRuSz1Jk8YAr15arHUKur6FGbYpVjKzp/POhbeIOwN3s8/HqUilVNNjPHKAoJHC+QHyUavS15U74oNCngCy+0nboFxr51GMokuOSubNFuO69q50inuVkViWaKRmBz1NJUTZRC3pHlKkDPbt9dQV8wPnUA63Ojb979bQu8I5bES4HVXv9XCQyETCKeyt/jNlQeJO/0L6MFdhzOm8FhWimNmmJ7C4PG7/MPrn87mlg1uYtRKzRjWyMqhmIn2azVdEMxJZdpyqwHuKSSjVUj0UhKd9TmXZIgZgHo0DWmYJSbOPvx7QdaN1nmRYJjTUghyt27PQEdgr8A1uvxPTLwbez3uVm3w4LuNtluVhX1b8WBLv8Bb4z82Jebbjpx17i0b1zVPuZ7F2wyk30j/N8Beme2dhTufalq60RENo/Kr0p8TsOufKha41ZI6CL8/iqZsMTzZOzUZoiEeHpdXAebvNp0xVWmFykUuoTjWtFAbvJXK5LTG2JeZMK7bju7eBtRFXYFrdOFouBZz6ZwecHl/j4Wbgkmx9byK2c87QtrJDRvfMhWDgt0YbiV+hhUoZ9/nS2vw0a4KyPQQdYgnn0us57ccexq61IJfSkc8Fh4AVETgo2Q/uVRaHYcw6HmmRb1mUojY+qYCL3iejCyqTkTf73sdtpV6Qzj8IdNdkKQ1ZavaVkejb4KuYnpXVjWemxnYs1W2RlhUQ+lQQbj4gXEBu/4NYI5LYAIYAthUulz5dBFQCu5MLNgRIhXev+wlEt+7dUeu61buCCpb/HUYmkrdYoTqElvLsJMBFwof03LfRkg8DBxf3XGVPW733rksBaRoIa35dSEyWWs6T+2U47i31Qs0K9PqColC9QoXdYnOvc0+zfLiL/8v66vneQMqtoveq+Y8E8u7ICjHYDF89n1eKrguqQfAJ/f56wyS6iFRij3XAR2PkRNPQUrRXZa7VMoxnEkW8if0pyW9vwApWZTSxBg+k5ICO/R5s8f8rkeS51PT5f/m3SJAi75khcmesl+8yDguITGyicj1RlIFc7qeKs7pPrvc6ndpb45WSeQM+4LNYOCufdCZWtZWJRjWRLp2V26TcrwDWxMF8aJ5C01GJXfNMUSagLqdJXYz+r/RFCGYx6q+IucrgaQPu/NcQ6f+y9ZOOLeyaaditT9O92e8QWyqAG4gIWivESZyDJpHjv3asXDmEaVBawmaATazbw2j1oNPZ5Ux0uNMA4+oeVHgGsMur/G3qVXdTvTnIC/uM7t93qqGlvIV9H9nW6gHl8cQSUh+sCdisPJFepgm5nIfw1q+ovlL+/NsYeA/gYOqNLwq9KAJVhg8bjtMbuxkb6xwkEqUKjUl7aKbRdXyEecMhSsYBs0Xlm+Y=","iv_b64":"/S+vGKJ0J1YxHG+8","salt_b64":"cl+zFK030UpsQFYyUcMtwg=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"wAfTJy9oo9a1uQpJUG9dXKGj8jdmAfH/QFBOuITm5RabCyf6VjH9Yx8K4YXIE0dFmUUkXv+bDrVoeniVJAfMBxgLfxF57A8JfKizSxqIEpmn2njw0Y2U/uIVl5BVwSqZWGR4XeZGakR4o9NJ2+gwMyiE65/R4Xag+IKMmPA++nWVDXn9XWZebUZ/9j4tbJoyB63OYA9YxcizOMYeoqWpE/AKBINu9GJAali1UR6a0NXMeWA8UrDKrFvy3vZ33biEbq5r8OBRoK7rPQd+eAyfEyjL4cc7sR6TjYDorMoqruz2wmRpIIWf7Re4LjezWaLnBgTp4Tem8lakaWOdEIEO7jLR6csf24uKpLlHd90n7B4em5JKgn38aCVxd8DvQbJs9sekfon/I9KEMHFuF83W8kd5QmDt7cDNkhz6HHfXG6zf10WFCkoAe7OqIwL7pQDJUo6LeenbUIVMPvFkqqX8YS2qWU6iUmx9YwOYdL1vlXXG860zSIlTsGCkBLGL7sX4qBYyK6+AHY0dnhjuGgp+RF0VIWIG/t28YLw83DD4gRGGBRiOe99+kD0piNcBGrdVvS//j34GtQvuliA3HXnuuNrMcvFIvlzRh/telh7rOg3ssCMtzXEZoDEztfA2GcYqmniiGGQG8o14ynnqUCNbYmS/QvtAzg2zh1cMuoO+eJEaG6+tmPDjnNreN1CLh7TJBaXeF4Tw90c5zIK/N3kNbb+627fgtamGECaK5wDQozneD/puHt6ArZVAhX8vAoB8YmN8HPzEKG4fcG1C5Pd7DlDxwk5J4RZslxNJUhJBm0OvnGniS43+pLGG4kKKMSNg4L/FFsAmak/Ks4hhVWJQ289SoX551fIog2tZqOSOZGT+/v1khLDy2JQaTkVNma8PtoStL3a/fSSHa8Jd0OBdCNIMQbDZqoPK0nopRp1+CxFUeRvoB+T1E2X/Z/bwpxbGOaVVA8OMGLsv4rEoz3XxES8XOEYKZmsyWInbyh/P8u86qD0cCRWZk/ft3UGjG8438TlkSZ8tZkdSxD1sBHnPuXao2kcNZ5A1xvyF+K/NaBKEnvasySX8Xc6xpeM27Z3DdU3HRnzeJ7WF6xkwXAnukkuc35ckfq1Op9FNjDeqqqk7rFFgCIYoEal5aBIj1PqH9D03HzxYf2sgB1pWsplEwC1DR2KspwOc+Opu37HQzJ4j6ot1ZjBGhgiwtOhtpgzhwfJGJ52G/LDTfM7hejIYZUr+D7qcYxWxqFEOmZkx+CpQDsmZAmOcRlJIr9t27p5EbAYY0T+D6/9AbJjMoUCDAsm8Fazt5gIb/iRKwaS0d36aaQQVz76DR6stjMmlXqyBijlSo0fhL+7boO2hpPy8aA8LJ/obgTGbWLwutuw3ImZYapcYe9ILq3pSf30MjfS0+KQNiY08+ijhGOMwpVgiAntygv/yCwpuBJi/T9hldd4yWGy3IjzVKtIpvhyy4GUk0co9TI36+gD0ei/1MreEnUEDoln8g5zYZJ7NnW/jnnZdkiLR+R7T90i94ibmvintCBpLGIODoIwE/0/4M7htmAYdG8t6mrOKBOh49SknPAqvFfM0TyFvQprazItyA0AnCA39662NN3vO+b2EWkyKKHkhdiIKDNYfJVeB1Euh3Fhzl6fug2NMltxUfG4o/De1BnwpJQ0=","iv_b64":"ZJ8mJqHIL5vAdKvb","salt_b64":"mRdThdgrB+mO5DF6wgE9jg=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1689,6 +1859,44 @@
                         <i data-lucide="calendar-x" style="width: 16px; height: 16px;"></i>
                     </button>
 
+                    <!-- 色彩主題選擇 -->
+                    <div class="menu-item" style="position: relative;">
+                        <button id="themeBtn" class="floating-btn" title="色彩主題">
+                            <i data-lucide="palette" style="width: 16px; height: 16px;"></i>
+                        </button>
+                        <div id="themeDropdown" class="theme-dropdown">
+                            <div class="theme-controls">
+                                <label>色彩主題</label>
+                                <div class="theme-options">
+                                    <button class="theme-option active" data-theme="default" title="預設深藍">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #1a1a2e, #3b82f6);"></div>
+                                        <span>預設</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="forest" title="森林綠">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #1a2520, #22c55e);"></div>
+                                        <span>森林</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="ocean" title="海洋藍">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #0c1426, #0ea5e9);"></div>
+                                        <span>海洋</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="sunset" title="日落橙">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #2a1f1a, #f59e0b);"></div>
+                                        <span>日落</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="lavender" title="薰衣草紫">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #241a30, #8b5cf6);"></div>
+                                        <span>薰衣草</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="crimson" title="酒紅色">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #1a0f0f, #dc2626);"></div>
+                                        <span>酒紅</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -1741,6 +1949,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="VbL1Nf8SYqW6hks9OuxCxg"></script>
+<script src="assets/js/main.js" nonce="yVpRM4xkfSdkwKL+MZYo5A"></script>
 </body>
 </html>
