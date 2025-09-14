@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-14T07:32:32.270302900+00:00
+// 生成時間: 2025-09-14T07:45:07.196786+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -532,7 +532,7 @@
                     updateNavigationButtons();
 
                     // 如果燈箱開啟，也更新燈箱
-                    if (isLightboxOpen && elements.lightbox?.classList.contains('active')) {
+                    if (elements.lightbox?.classList.contains('active')) {
                         displayLightboxMedia();
                         updateLightboxNavigation();
                     }
@@ -678,7 +678,7 @@
                         renderThumbnails();
                         updateNavigationButtons();
                         // 如果燈箱開啟，也更新燈箱
-                        if (isLightboxOpen && elements.lightbox?.classList.contains('active')) {
+                        if (elements.lightbox?.classList.contains('active')) {
                             displayLightboxMedia();
                             updateLightboxNavigation();
                         }
@@ -700,7 +700,7 @@
                         renderThumbnails();
                         updateNavigationButtons();
                         // 如果燈箱開啟，也更新燈箱
-                        if (isLightboxOpen && elements.lightbox?.classList.contains('active')) {
+                        if (elements.lightbox?.classList.contains('active')) {
                             displayLightboxMedia();
                             updateLightboxNavigation();
                         }
