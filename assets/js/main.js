@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-14T13:56:07.901691500+00:00
+// 生成時間: 2025-09-14T14:07:39.098937+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -870,6 +870,104 @@
             }
         }
 
+        function applyDefaultSettings() {
+            console.log('🎯 應用預設設定');
+            console.log('📊 目前設定狀態:', {
+                isThumbnailsVisible,
+                isTypewriterEnabled,
+                fontSize,
+                areControlsHidden,
+                isDateHidden
+            });
+
+            // 應用縮圖列設定
+            if (isThumbnailsVisible) {
+                showThumbnails();
+            } else {
+                hideThumbnails();
+            }
+
+            // 應用打字機效果設定
+            if (isTypewriterEnabled) {
+                // 打字機效果會在 renderDescription 時自動應用
+                console.log('✅ 打字機效果已啟用');
+            }
+
+            // 應用字體大小設定
+            setFontSize(fontSize);
+
+            // 應用控制按鈕顯示設定
+            if (areControlsHidden) {
+                hideControlsTemporarily();
+            } else {
+                showControlsTemporarily();
+            }
+
+            // 應用日期顯示設定
+            if (isDateHidden) {
+                hideDateDisplay();
+            } else {
+                showDateDisplay();
+            }
+
+            console.log('✅ 預設設定應用完成');
+        }
+
+        function showThumbnails() {
+            if (elements.thumbnailContainer) {
+                elements.thumbnailContainer.classList.remove('hidden');
+                isThumbnailsVisible = true;
+                renderThumbnails();
+
+                // 更新按鈕外觀
+                if (elements.thumbnailBtn) {
+                    elements.thumbnailBtn.style.background = 'rgba(59, 130, 246, 0.8)';
+                }
+            }
+        }
+
+        function hideThumbnails() {
+            if (elements.thumbnailContainer) {
+                elements.thumbnailContainer.classList.add('hidden');
+                isThumbnailsVisible = false;
+
+                // 更新按鈕外觀
+                if (elements.thumbnailBtn) {
+                    elements.thumbnailBtn.style.background = 'rgba(107, 114, 128, 0.8)';
+                }
+            }
+        }
+
+        function showControlsTemporarily() {
+            if (elements.controlsContainer) {
+                elements.controlsContainer.classList.remove('hidden');
+                areControlsHidden = false;
+            }
+        }
+
+        function hideControlsTemporarily() {
+            if (elements.controlsContainer) {
+                elements.controlsContainer.classList.add('hidden');
+                areControlsHidden = true;
+            }
+        }
+
+        function showDateDisplay() {
+            const dateDisplay = document.getElementById('currentDateDisplay');
+            if (dateDisplay) {
+                dateDisplay.classList.remove('hidden');
+                isDateHidden = false;
+            }
+        }
+
+        function hideDateDisplay() {
+            const dateDisplay = document.getElementById('currentDateDisplay');
+            if (dateDisplay) {
+                dateDisplay.classList.add('hidden');
+                isDateHidden = true;
+            }
+        }
+
         function updateSpeedLabel(speed) {
             const speedLabel = document.querySelector('.speed-label');
             if (!speedLabel) return;
@@ -1422,10 +1520,14 @@
                 elements.mediaDisplay.innerHTML = '<div>此回憶錄沒有事件內容</div>';
             }
 
+            // 初始化按鈕狀態
+            initializeToggleButtons();
             // 初始化打字速度按鈕狀態
             initializeTypingSpeedButtons();
             // 初始化隱藏功能按鈕狀態
             initializeHideButtons();
+            // 應用預設參數到實際顯示
+            applyDefaultSettings();
             // 初始化日期顯示位置
             updateDatePosition();
 
