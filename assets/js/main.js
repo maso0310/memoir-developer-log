@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-14T21:55:44.940800600+00:00
+// 生成時間: 2025-09-14T22:14:31.197181300+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -58,6 +58,7 @@
             hideDateBtn: document.getElementById('hideDateBtn'),
             themeBtn: document.getElementById('themeBtn'),
             themeDropdown: document.getElementById('themeDropdown'),
+            themeOverlay: document.getElementById('themeOverlay'),
             lightbox: document.getElementById('lightbox'),
             lightboxClose: document.getElementById('lightboxClose'),
             lightboxPrev: document.getElementById('lightboxPrev'),
@@ -750,8 +751,8 @@
             // 更新按鈕外觀以顯示開關狀態
             if (elements.thumbnailBtn) {
                 elements.thumbnailBtn.style.background = isThumbnailsVisible
-                    ? 'rgba(59, 130, 246, 0.8)'
-                    : 'rgba(107, 114, 128, 0.8)';
+                    ? 'var(--primary)'
+                    : 'var(--text-secondary)';
             }
 
             // 根據縮圖列狀態更新日期顯示位置
@@ -805,6 +806,9 @@
                 if (elements.themeDropdown) {
                     elements.themeDropdown.classList.remove('open');
                 }
+                if (elements.themeOverlay) {
+                    elements.themeOverlay.classList.remove('show');
+                }
             }
         }
 
@@ -814,8 +818,8 @@
             // 更新主按鈕外觀
             if (elements.typewriterToggleBtn) {
                 elements.typewriterToggleBtn.style.background = isTypewriterEnabled
-                    ? 'rgba(59, 130, 246, 0.8)'
-                    : 'rgba(107, 114, 128, 0.8)';
+                    ? 'var(--primary)'
+                    : 'var(--text-secondary)';
             }
         }
 
@@ -825,6 +829,10 @@
 
             if (elements.themeDropdown) {
                 elements.themeDropdown.classList.toggle('open', isThemeMenuOpen);
+            }
+
+            if (elements.themeOverlay) {
+                elements.themeOverlay.classList.toggle('show', isThemeMenuOpen);
             }
 
             // 如果打開主題選單，關閉其他選單
@@ -877,6 +885,13 @@
                     toggleThemeMenu(); // 關閉選單
                 });
             });
+
+            // 背景遮罩點擊事件
+            if (elements.themeOverlay) {
+                elements.themeOverlay.addEventListener('click', () => {
+                    toggleThemeMenu();
+                });
+            }
         }
 
         function setTypingSpeed(speed) {
@@ -923,15 +938,15 @@
             // 初始化打字機按鈕外觀
             if (elements.typewriterToggleBtn) {
                 elements.typewriterToggleBtn.style.background = isTypewriterEnabled
-                    ? 'rgba(59, 130, 246, 0.8)'
-                    : 'rgba(107, 114, 128, 0.8)';
+                    ? 'var(--primary)'
+                    : 'var(--text-secondary)';
             }
 
             // 初始化縮圖列按鈕外觀
             if (elements.thumbnailBtn) {
                 elements.thumbnailBtn.style.background = isThumbnailsVisible
-                    ? 'rgba(59, 130, 246, 0.8)'
-                    : 'rgba(107, 114, 128, 0.8)';
+                    ? 'var(--primary)'
+                    : 'var(--text-secondary)';
             }
         }
 
@@ -940,8 +955,8 @@
             if (elements.hideControlsBtn) {
                 // 當控件可見時，按鈕應該顯示激活狀態（藍色）
                 elements.hideControlsBtn.style.background = !areControlsHidden
-                    ? 'rgba(59, 130, 246, 0.8)'
-                    : 'rgba(107, 114, 128, 0.8)';
+                    ? 'var(--primary)'
+                    : 'var(--text-secondary)';
 
                 const icon = elements.hideControlsBtn.querySelector('i[data-lucide]');
                 if (icon) {
@@ -954,8 +969,8 @@
             if (elements.hideDateBtn) {
                 // 當日期可見時，按鈕應該顯示激活狀態（藍色）
                 elements.hideDateBtn.style.background = !isDateHidden
-                    ? 'rgba(59, 130, 246, 0.8)'
-                    : 'rgba(107, 114, 128, 0.8)';
+                    ? 'var(--primary)'
+                    : 'var(--text-secondary)';
 
                 const icon = elements.hideDateBtn.querySelector('i[data-lucide]');
                 if (icon) {
@@ -1021,7 +1036,7 @@
 
                 // 更新按鈕外觀
                 if (elements.thumbnailBtn) {
-                    elements.thumbnailBtn.style.background = 'rgba(59, 130, 246, 0.8)';
+                    elements.thumbnailBtn.style.background = 'var(--primary)';
                 }
             }
         }
@@ -1165,8 +1180,8 @@
             if (elements.hideControlsBtn) {
                 // 當控件可見時，按鈕應該顯示激活狀態（藍色）
                 elements.hideControlsBtn.style.background = !areControlsHidden
-                    ? 'rgba(59, 130, 246, 0.8)'
-                    : 'rgba(107, 114, 128, 0.8)';
+                    ? 'var(--primary)'
+                    : 'var(--text-secondary)';
 
                 const icon = elements.hideControlsBtn.querySelector('i[data-lucide]');
                 if (icon) {
@@ -1190,8 +1205,8 @@
             if (elements.hideDateBtn) {
                 // 當日期可見時，按鈕應該顯示激活狀態（藍色）
                 elements.hideDateBtn.style.background = !isDateHidden
-                    ? 'rgba(59, 130, 246, 0.8)'
-                    : 'rgba(107, 114, 128, 0.8)';
+                    ? 'var(--primary)'
+                    : 'var(--text-secondary)';
 
                 const icon = elements.hideDateBtn.querySelector('i[data-lucide]');
                 if (icon) {
