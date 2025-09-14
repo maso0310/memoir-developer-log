@@ -14,13 +14,13 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-bdde12fd-d375-4d25-9ef0-a58f88c0e7d3' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-d19308e1-0ff3-43df-bef4-000bc030ca1d' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="bdde12fd-d375-4d25-9ef0-a58f88c0e7d3" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="d19308e1-0ff3-43df-bef4-000bc030ca1d" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="bdde12fd-d375-4d25-9ef0-a58f88c0e7d3">
+    <style nonce="d19308e1-0ff3-43df-bef4-000bc030ca1d">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -479,33 +479,40 @@
         }
 
         .timeline-item.active::before {
-            background: #3b82f6;
-            transform: translateY(-50%) scale(1.2);
+            background: radial-gradient(circle at center, #93c5fd 0%, #60a5fa 30%, #3b82f6 60%, #1e40af 100%);
+            transform: translateY(-50%) scale(1.3);
+            box-shadow:
+                0 0 20px rgba(59, 130, 246, 0.8),
+                0 0 40px rgba(59, 130, 246, 0.6),
+                0 0 60px rgba(59, 130, 246, 0.4),
+                inset 0 0 10px rgba(255, 255, 255, 0.3);
         }
 
         .timeline-item.active::after {
             opacity: 1;
             transform: translateY(-50%) scale(0.72);
             animation: timelineRipple 1.6s ease-out infinite;
+            background: radial-gradient(circle at center, rgba(59, 130, 246, 1) 0%, rgba(59, 130, 246, 0.7) 25%, rgba(59, 130, 246, 0.4) 50%, transparent 70%);
         }
 
-        /* 添加圓環效果 */
-        .timeline-item:hover::before,
-        .timeline-item.active::before {
-            box-shadow: 0 0 0 0 transparent;
+        /* 添加圓環效果 - 增強hover狀態 */
+        .timeline-item:hover::before {
+            box-shadow:
+                0 0 15px rgba(59, 130, 246, 0.6),
+                0 0 25px rgba(59, 130, 246, 0.4);
         }
         
         @keyframes timelineRipple {
             0% {
-                transform: translateY(-50%) scale(0.72);
-                opacity: 1;
+                transform: translateY(-50%) scale(0.5);
+                opacity: 0.9;
             }
-            70% {
+            50% {
                 transform: translateY(-50%) scale(1);
-                opacity: 0.3;
+                opacity: 0.6;
             }
             100% {
-                transform: translateY(-50%) scale(1.2);
+                transform: translateY(-50%) scale(1.5);
                 opacity: 0;
             }
         }
@@ -1166,7 +1173,7 @@
         /* 當前事件日期顯示 */
         .current-date-display {
             position: fixed;
-            bottom: 20px;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 400;
@@ -1177,6 +1184,11 @@
             border: 1px solid rgba(59, 130, 246, 0.3);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        /* 當縮圖列顯示時，日期顯示下移 */
+        .current-date-display.below-thumbnails {
+            top: 70px;
         }
 
         .current-date-display.date-hidden {
@@ -1423,7 +1435,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"Zkn8lMRXZeTHE0o1z9hvybqYt+q62h8kABOafGExZRz8KQTVlOLX1o1mKOvZKwY+7uE9007t0wUDaxdnxzae1kvdy1XRH23GixIlAB12J68OXd2mpsl3FqZiGoscc1ofRK/FqS7WorZPMHPI6IH9obAboryW88gnCVytsdLqhOpp/yjUiie4iKkrECbqSfbZkxhtOQ2lpupuonazTL8WpN8WtAG1dVB7QoV2FJe0zs4Q827dgPwHcOzumVkLs9yLppTmFj9PYEhhR7OUdQtUAqqB5kfkU6PXOBehVHT5leI53eiAoD0mpP2s3LoVGAOLFQ3sbEYO0Kmu1keZ9C2spdeVG6JAtMm643fdHCKW6phyhE6P9z7yL79DGmxsOj13RkAPcNL/k6INAG+6St2ajrS08WeGjZt7wJ4Hovm5klijuEMyLh5xlaJPm5FLzlvJjN2BdZKdQ9nswjhxe6cpdN8gej4kaEDup88AM0CqHnG9THZO4440+vQ4MxH7IfkuihEF7kPHYlGn1+LvqlAWF7H/LrMJIEtTuJVkaNqmNpv8DSAQhZDqk5hSMavVWXPYPKqNjDi8jy+LWsE/CrdjT4iJWdKUxWoogF1Lm7+Y0qWhlizOb3GzwNQylKPx+FcYOzE8N1gH22Kg5ICDlzEjXpKSpxAw/6heYU99+Erlo2/3k4zss07HtnOhytflZeM60I01x768wONy16OswMP8O8EfPVv/UsJBwdInhrzPFzrlq7Uf/Ll2qQ8xXEhcq511jbkQRFYbeH+WcROqQeAdzMYzajsM+t3E63hgUMnglnz4lk0SpJXGjWSn64YUTMTRjcPpU5MI3FKYgEc1HfVflPYDu4O+Mhsot8Dog5B6Zb/90eEO+C2KXR21iRYp5E29yA2Ucieo9SYUfn2ImbymoimnlQ34rQGOQkMGmwjcfEyXKvjHBdWkA9w7dpiNbye7kWoblS8hxV0NEhMZHFO2E/GfpS4EMrhl68GRfYimTde+uoJQhblBVSuGUFx6xsBCIDBePSyrsK0CLU2Qi2H+xb7S+UWj22esvpd2d9wTNSsZVLEmVQwZmRg1cQeexgSN3ejndWFK5g8ZTc4zYYix8mavyk5jve2NKs2OkkKrWmXsjZl7us8qXiu6s7+N+iyoDGxtQcwMeNNpzGBkZJ7Kxc7HOGfAZTyMZ2zQ3xA4w7AdFAAKxpQRwgkzTKDhPfe+80V5ig34UUthObCVcN2c0a8NMrhHI2aQIrsVkVRfwCWYyl10aUe22IwJBZhJPkkdehqzWlhK1nAoUFF3wS23ivnYfctkpKp1AWC3Zib2GU/8fd5ppL/Kurq+vm5YdxAncfyPe7pT3MrbtYc/ci53mQMdRQzkGH9S3LEy/MIHBHz8lYtIWTjFK21Ge5MdFYPhFLaXy+ATiv3OwHguIr1XQtRCUyAhTZup/LUzETAElrvD3AONlo/eE0xxsfkUQ4s2yoS2TIANpojCW/1up2QtR70CPu1T/2XU1wg4wc+gxs+O8sj8CZnF6M0VACVbPgS0YojvhNx166PEvwToIsqnVcYLHUmhBsppej/9EUI9zcuz1Fnmoj5SyF8l5S0kt5QpRXObhHQp6oEJBiSGxDDHlYiOlLN2QcI/T41RdNI3UIU+lGrDH3vtkaLthhl6OoBfsUnNiO8=","iv_b64":"2gkkgCaZuLv52gPK","salt_b64":"HDvQR5254NId2WPq0OS5kQ=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"+HFAjHx2nWZzRvipEeoSjVXLRBspgl0psHwm/ZyBmtdoAd2WiiX8S4qrYY5P6kFMJTPk5vNFvOyjzZj+irpca9PhDXHdgsxJ0r0nKxoEVsyez65uJmhOfl7Ap93CpAxl18xU7kVcdD+BwTX+ayKbUUDojLKea20HXMxDEmFfVMm/4jaxvlfH8xJZd/LixYfI0N+sfFdNFpyy8e7shvimMcEGpqDMgEBZYqCRoa7cFqazPMIbVdGVwDZpblS2jh1n0KQmxG9aILuKi+YxINPVtDDpYa2LFBtt1l6Xxk7AxD1P5ZvbvtPi3ECp/8bUbpb3w9MTILWMJF9wkf6ARJH3qikLI5F1lRgZyCQie3UbsG+G/xbwbEbF4aPducGx91upXpZhBSFSfxFy9ESzQKt0swwXs2aYwZMeOSb2rftcWUxOhoCwx0rFp4iMWs+ALQstSZ0jSVF8mmVcEXzaY110KURVnhHY45GtwGovZs5VhEOg9ZRrqk7rHq57+v3mTuG3F1DSJr9wP5vFe43jSfs5GmEbZGZFtYHn8RVK5XzFNSJ8hDOkz9QizYn1XC8HgKH/eH2rU+oTIxzc/v00pBRam8rsTNL+OfGz03BCypqIAZmKkGYA5Pa/gZfSZWIaLwoIJVgofRauAiye26mIGoGua1Ph/WY5V6KCANvxawTEo5pakEf+1e+9q7EKhnKURctMPGotN7dn2mj0gJNwGOHcK/vF9WSZn1yn6dQ7Coxgt02xzGfhLEoMu+gFmaGUcWZHnuTXWp0axSMMMlyMXtnjnQz9zwMVl02G6Bz413ysH0JmDS9YWl9PFFTFbpmEUX2vzUkBzGckm+YVB/eJsd+c7Uh5kPcBHuSCxPwUR1kpzhhhcylr/4NZD3AJReQZvCMa23uv2WHSDPR+hcGz41TgL45gvi/iY2q3NNlo8rdl+FhDw9ffNNvmOlgMpXZfsfc5QyYrzEWkGV4EUNNzvX9q9ZVEWOhcNxVw7MxRfhnRkPfwWdLrFlyjGxNwSe0aK82RLCf59mGhjZH2oG2xebvZ92psLChQTG7LndvJ00tLesNT/ziYxpxXnoPpMQpi97/xiUYjyGLNg5quzazUBGaxgjdUKzfPtMqmr1u9iqIaD7Dz+T4X0ejYjOJXyHJUn60s40mOtD+QGfioSQ/IhtQe4RlWd0HCeHZ6mXi01cpDl5/FKY+LEZetg0EuTQP+7/cq+Sb6NgZ5M6LDVVvWXlph6ePmgVv5WELs0yHm0bJAxYs86JN5qGC9Z45eIG+cbnpdLq6p1hnOrOLhIgvXzXOl4+MDTFnPTZm3AX+Bt/De4ApAtW2mbiackpi0hN7XbCkyJD17wrxTuCthxYHQPMQH1A13csi5G6t6ps5iZ7pzl/yGUG82ZPxhim3t55WMHRmj0rDVkDvaioBgCstVRyIHdLGprs7aFgE/O5NqTl9V5E1d91QeSf/f1MQloLmY8u/4RmET+aCcHei8Fn7Dwpcp34+mY8O8SfEpJISmFECQRwgPLhE5BQI0DTUQp3L37CkUiPuMKMZnN31eSifHOnxQAoCAe1aNzeIVZOdcn2RBEWtP7dKWp5n0GH4xVDyw//+aWzlTWDD+DJIOR+XMCuF+a9Nwc5lY1qkZZRYDxP9aJosC3c+kd9cwS52Ie+XzZelGzTICUsI=","iv_b64":"CdArT0soQdnowht+","salt_b64":"Q6JU6nPXaaK/tKKO2IXWlw=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1565,7 +1577,7 @@
 
                     <!-- 隱藏畫面按鈕開關 -->
                     <button id="hideControlsBtn" class="floating-btn menu-item" title="隱藏畫面按鈕">
-                        <i data-lucide="eye-off" style="width: 16px; height: 16px;"></i>
+                        <i data-lucide="move" style="width: 16px; height: 16px;"></i>
                     </button>
 
                     <!-- 隱藏日期標籤開關 -->
@@ -1625,6 +1637,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="rFQdGeJoXHhov6pNSW1IOw"></script>
+<script src="assets/js/main.js" nonce="LAfOVjLbPwDXdS1FVCFMFg"></script>
 </body>
 </html>
