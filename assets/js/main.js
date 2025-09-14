@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-14T07:20:03.696211800+00:00
+// 生成時間: 2025-09-14T07:32:32.270302900+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -524,9 +524,18 @@
                 // 點擊事件
                 thumbnail.addEventListener('click', () => {
                     currentMediaIndex = index;
+                    // 同步燈箱索引
+                    currentLightboxMediaIndex = currentMediaIndex;
+
                     displayMedia(); // 直接更新媒體顯示
                     renderThumbnails(); // 重新渲染縮圖以更新活動狀態
                     updateNavigationButtons();
+
+                    // 如果燈箱開啟，也更新燈箱
+                    if (isLightboxOpen && elements.lightbox?.classList.contains('active')) {
+                        displayLightboxMedia();
+                        updateLightboxNavigation();
+                    }
                 });
                 
                 fragment.appendChild(thumbnail);
@@ -661,10 +670,18 @@
                 const currentEvent = getCurrentEvent();
                 if (currentEvent?.media && currentMediaIndex > 0) {
                     currentMediaIndex--;
+                    // 同步燈箱索引
+                    currentLightboxMediaIndex = currentMediaIndex;
+
                     slideTransition(elements.mediaDisplay, 'left', () => {
                         displayMedia();
                         renderThumbnails();
                         updateNavigationButtons();
+                        // 如果燈箱開啟，也更新燈箱
+                        if (isLightboxOpen && elements.lightbox?.classList.contains('active')) {
+                            displayLightboxMedia();
+                            updateLightboxNavigation();
+                        }
                     });
                 }
             });
@@ -675,10 +692,18 @@
                 const currentEvent = getCurrentEvent();
                 if (currentEvent?.media && currentMediaIndex < currentEvent.media.length - 1) {
                     currentMediaIndex++;
+                    // 同步燈箱索引
+                    currentLightboxMediaIndex = currentMediaIndex;
+
                     slideTransition(elements.mediaDisplay, 'right', () => {
                         displayMedia();
                         renderThumbnails();
                         updateNavigationButtons();
+                        // 如果燈箱開啟，也更新燈箱
+                        if (isLightboxOpen && elements.lightbox?.classList.contains('active')) {
+                            displayLightboxMedia();
+                            updateLightboxNavigation();
+                        }
                     });
                 }
             });
@@ -1171,6 +1196,9 @@
             const currentEvent = getCurrentEvent();
             if (!currentEvent?.media) return;
 
+            // 設置燈箱開啟狀態
+            isLightboxOpen = true;
+
             // 設置當前媒體
             currentLightboxMediaIndex = currentMediaIndex;
 
@@ -1181,6 +1209,7 @@
 
             // 顯示燈箱
             displayLightboxMedia();
+            updateLightboxNavigation();
             elements.lightbox.classList.add('active');
 
             // 阻止背景滾動
@@ -1189,10 +1218,13 @@
         
         function closeLightbox() {
             if (!elements.lightbox) return;
-            
+
+            // 設置燈箱關閉狀態
+            isLightboxOpen = false;
+
             elements.lightbox.classList.remove('active');
             document.body.style.overflow = '';
-            
+
             // 清空燈箱內容
             if (elements.lightboxMedia) {
                 elements.lightboxMedia.innerHTML = '';
@@ -1253,17 +1285,29 @@
         function lightboxPrevMedia() {
             const currentEvent = getCurrentEvent();
             if (!currentEvent?.media || currentLightboxMediaIndex <= 0) return;
-            
+
             currentLightboxMediaIndex--;
+            // 同步主媒體索引
+            currentMediaIndex = currentLightboxMediaIndex;
+
+            // 更新所有相關顯示
             displayLightboxMedia();
+            displayMedia();
+            renderThumbnails();
         }
         
         function lightboxNextMedia() {
             const currentEvent = getCurrentEvent();
             if (!currentEvent?.media || currentLightboxMediaIndex >= currentEvent.media.length - 1) return;
-            
+
             currentLightboxMediaIndex++;
+            // 同步主媒體索引
+            currentMediaIndex = currentLightboxMediaIndex;
+
+            // 更新所有相關顯示
             displayLightboxMedia();
+            displayMedia();
+            renderThumbnails();
         }
         
         // 燈箱事件監聽器
