@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-14T07:51:58.600253500+00:00
+// 生成時間: 2025-09-14T07:58:20.879542900+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -19,6 +19,7 @@
         let isFontSizeMenuOpen = false;
         let isTypewriterMenuOpen = false;
         let isLightboxOpen = false;
+        let thumbnailsStateBeforeLightbox = false; // 記錄燈箱開啟前的縮圖列狀態
         let isSubtitleVisible = true;
         let areControlsHidden = false;
         let isDateHidden = false;
@@ -1199,10 +1200,13 @@
             // 設置燈箱開啟狀態
             isLightboxOpen = true;
 
+            // 記錄燈箱開啟前的縮圖列狀態
+            thumbnailsStateBeforeLightbox = isThumbnailsVisible;
+
             // 設置當前媒體
             currentLightboxMediaIndex = currentMediaIndex;
 
-            // 自動開啟縮圖列以便切換
+            // 暫時開啟縮圖列以便切換（如果原本是關閉的）
             if (!isThumbnailsVisible) {
                 toggleThumbnails();
             }
@@ -1221,6 +1225,12 @@
 
             // 設置燈箱關閉狀態
             isLightboxOpen = false;
+
+            // 恢復縮圖列原始狀態
+            if (!thumbnailsStateBeforeLightbox && isThumbnailsVisible) {
+                // 如果燈箱開啟前縮圖列是關閉的，現在恢復關閉狀態
+                toggleThumbnails();
+            }
 
             elements.lightbox.classList.remove('active');
             document.body.style.overflow = '';
