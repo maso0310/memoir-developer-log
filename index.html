@@ -14,154 +14,24 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-9761ff5e-77b5-45eb-93db-73b83569ff89' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-faa37ef9-5df4-4037-afdf-fa433c660458' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="9761ff5e-77b5-45eb-93db-73b83569ff89" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="faa37ef9-5df4-4037-afdf-fa433c660458" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="9761ff5e-77b5-45eb-93db-73b83569ff89">
+    <style nonce="faa37ef9-5df4-4037-afdf-fa433c660458">
         * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        /* CSS 變量定義 */
-        :root {
-            /* 預設主題 */
-            --primary: #3b82f6;
-            --primary-dark: #1d4ed8;
-            --secondary: #6b7280;
-            --bg: #0f172a;
-            --surface: rgba(30, 41, 59, 0.8);
-            --surface-hover: rgba(51, 65, 85, 0.8);
-            --text: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --border: rgba(148, 163, 184, 0.3);
-            --shadow: rgba(0, 0, 0, 0.5);
-            --accent: #38bdf8;
-            --font-family: system-ui, -apple-system, sans-serif;
-        }
-
-        /* 森林主題 */
-        .theme-forest {
-            --primary: #22c55e;
-            --primary-dark: #16a34a;
-            --secondary: #84cc16;
-            --bg: #1a2520;
-            --surface: rgba(34, 197, 94, 0.1);
-            --surface-hover: rgba(34, 197, 94, 0.2);
-            --text: #dcfce7;
-            --text-secondary: #bbf7d0;
-            --border: rgba(34, 197, 94, 0.3);
-            --shadow: rgba(0, 50, 25, 0.5);
-            --accent: #7ba894;
-        }
-
-        /* 海洋主題 */
-        .theme-ocean {
-            --primary: #0ea5e9;
-            --primary-dark: #0284c7;
-            --secondary: #06b6d4;
-            --bg: #0c1426;
-            --surface: rgba(14, 165, 233, 0.1);
-            --surface-hover: rgba(14, 165, 233, 0.2);
-            --text: #e0f2fe;
-            --text-secondary: #b3e5fc;
-            --border: rgba(14, 165, 233, 0.3);
-            --shadow: rgba(0, 25, 50, 0.5);
-            --accent: #38bdf8;
-        }
-
-        /* 薰衣草主題 */
-        .theme-lavender {
-            --primary: #8b5cf6;
-            --primary-dark: #7c3aed;
-            --secondary: #a78bfa;
-            --bg: #241a30;
-            --surface: rgba(139, 92, 246, 0.1);
-            --surface-hover: rgba(139, 92, 246, 0.2);
-            --text: #f3e8ff;
-            --text-secondary: #e9d5ff;
-            --border: rgba(139, 92, 246, 0.3);
-            --shadow: rgba(25, 0, 50, 0.5);
-            --accent: #a394d4;
-        }
-
-        /* 日落主題 */
-        .theme-sunset {
-            --primary: #f59e0b;
-            --primary-dark: #d97706;
-            --secondary: #fbbf24;
-            --bg: #2a1f1a;
-            --surface: rgba(245, 158, 11, 0.1);
-            --surface-hover: rgba(245, 158, 11, 0.2);
-            --text: #fef3c7;
-            --text-secondary: #fde68a;
-            --border: rgba(245, 158, 11, 0.3);
-            --shadow: rgba(50, 25, 0, 0.5);
-            --accent: #d4b48a;
-        }
-
-        /* 酒紅主題 */
-        .theme-crimson {
-            --primary: #dc2626;
-            --primary-dark: #b91c1c;
-            --secondary: #ef4444;
-            --bg: #1a0f0f;
-            --surface: rgba(220, 38, 38, 0.1);
-            --surface-hover: rgba(220, 38, 38, 0.2);
-            --text: #fef2f2;
-            --text-secondary: #fecaca;
-            --border: rgba(220, 38, 38, 0.3);
-            --shadow: rgba(50, 0, 0, 0.5);
-            --accent: #f87171;
-        }
-
-        /* 寶石綠主題 */
-        .theme-emerald {
-            --primary: #10b981;
-            --primary-dark: #059669;
-            --secondary: #34d399;
-            --bg: #0c1f14;
-            --surface: rgba(16, 185, 129, 0.1);
-            --surface-hover: rgba(16, 185, 129, 0.2);
-            --text: #ecfdf5;
-            --text-secondary: #d1fae5;
-            --border: rgba(16, 185, 129, 0.3);
-            --shadow: rgba(0, 50, 25, 0.5);
-            --accent: #22c55e;
-        }
-
-        /* 字體類別 */
-        .font-system {
-            --font-family: system-ui, -apple-system, 'Microsoft JhengHei', sans-serif;
-        }
-
-        .font-noto {
-            --font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
-        }
-
-        .font-poppins {
-            --font-family: 'Poppins', 'Microsoft JhengHei', sans-serif;
-        }
-
-        .font-serif {
-            --font-family: 'Noto Serif TC', 'Times New Roman', serif;
-        }
-
-        .font-mono {
-            --font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
-        }
-
-        body {
-            font-family: var(--font-family);
-            background: var(--bg);
-            color: var(--text);
+        body { 
+            font-family: system-ui, -apple-system, sans-serif; 
+            background: #1a1a2e; 
+            color: #fff; 
             line-height: 1.6;
             overflow-x: hidden;
-            transition: all 0.3s ease;
         }
         .app { min-height: 100vh; display: flex; flex-direction: column; }
-        .header {
-            background: var(--surface);
+        .header { 
+            background: rgba(42, 42, 74, 0.95); 
             padding: 1rem; 
             position: sticky; 
             top: 0; 
@@ -1083,404 +953,6 @@
             border-radius: 4px;
         }
 
-        /* 主題切換系統 - 使用 CSS 變數 */
-        :root {
-            /* 預設暗色主題 (石墨灰暗版) */
-            --bg: #1e2429;
-            --bg-elevated: #252b30;
-            --text: #e9ecef;
-            --text-muted: #9ca3af;
-
-            --primary: #94a8b8;
-            --primary-contrast: #1e2429;
-            --primary-hover: #8396a6;
-
-            --accent: #a8b6c8;
-            --accent-contrast: #1e2429;
-
-            --success: #96c596;
-            --success-contrast: #1e2429;
-
-            --warning: #d4c392;
-            --warning-contrast: #1e2429;
-
-            --danger: #c8a3a8;
-            --danger-contrast: #1e2429;
-
-            --surface: #2d343a;
-            --surface-hover: #3a424a;
-            --surface-pressed: #4a545c;
-
-            --border: #3a424a;
-            --border-light: #2d343a;
-            --border-strong: #4a545c;
-
-            --shadow: rgba(0, 0, 0, 0.3);
-        }
-
-        /* 森林綠主題 */
-        [data-theme="forest"] {
-            --bg: #1a2520;
-            --bg-elevated: #242c28;
-            --text: #e8f0ed;
-            --text-muted: #9fb5ab;
-
-            --primary: #7ba894;
-            --primary-contrast: #1a2520;
-            --primary-hover: #6a967e;
-
-            --accent: #8db3d4;
-            --accent-contrast: #1a2520;
-
-            --success: #9bc580;
-            --success-contrast: #1a2520;
-
-            --warning: #e8c392;
-            --warning-contrast: #1a2520;
-
-            --danger: #d4a3a3;
-            --danger-contrast: #1a2520;
-
-            --surface: #2d3631;
-            --surface-hover: #3a453e;
-            --surface-pressed: #4a5651;
-
-            --border: #3a453e;
-            --border-light: #2d3631;
-            --border-strong: #4a5651;
-        }
-
-        /* 海洋藍主題 */
-        [data-theme="ocean"] {
-            --bg: #0c1426;
-            --bg-elevated: #1e293b;
-            --text: #e2e8f0;
-            --text-muted: #94a3b8;
-
-            --primary: #38bdf8;
-            --primary-contrast: #0c1426;
-            --primary-hover: #0ea5e9;
-
-            --accent: #22d3ee;
-            --accent-contrast: #0c1426;
-
-            --success: #34d399;
-            --success-contrast: #0c1426;
-
-            --warning: #fbbf24;
-            --warning-contrast: #0c1426;
-
-            --danger: #f87171;
-            --danger-contrast: #0c1426;
-
-            --surface: #334155;
-            --surface-hover: #475569;
-            --surface-pressed: #64748b;
-
-            --border: #475569;
-            --border-light: #334155;
-            --border-strong: #64748b;
-        }
-
-        /* 薰衣草紫主題 */
-        [data-theme="lavender"] {
-            --bg: #241a30;
-            --bg-elevated: #2b2138;
-            --text: #ede8f5;
-            --text-muted: #a394b8;
-
-            --primary: #a394d4;
-            --primary-contrast: #241a30;
-            --primary-hover: #9284c3;
-
-            --accent: #b3c5e0;
-            --accent-contrast: #241a30;
-
-            --success: #96c596;
-            --success-contrast: #241a30;
-
-            --warning: #e8c392;
-            --warning-contrast: #241a30;
-
-            --danger: #d4a3d4;
-            --danger-contrast: #241a30;
-
-            --surface: #322540;
-            --surface-hover: #403350;
-            --surface-pressed: #524266;
-
-            --border: #403350;
-            --border-light: #322540;
-            --border-strong: #524266;
-        }
-
-        /* 沙漠日落主題 */
-        [data-theme="sunset"] {
-            --bg: #2a1f1a;
-            --bg-elevated: #332621;
-            --text: #f0e8e0;
-            --text-muted: #b8a394;
-
-            --primary: #d4b48a;
-            --primary-contrast: #2a1f1a;
-            --primary-hover: #c3a379;
-
-            --accent: #d4a3a3;
-            --accent-contrast: #2a1f1a;
-
-            --success: #a8c596;
-            --success-contrast: #2a1f1a;
-
-            --warning: #e8c392;
-            --warning-contrast: #2a1f1a;
-
-            --danger: #d4a394;
-            --danger-contrast: #2a1f1a;
-
-            --surface: #3d302a;
-            --surface-hover: #4a3e36;
-            --surface-pressed: #5a4e45;
-
-            --border: #4a3e36;
-            --border-light: #3d302a;
-            --border-strong: #5a4e45;
-        }
-
-        /* 酒紅色主題 */
-        [data-theme="crimson"] {
-            --bg: #1a0f0f;
-            --bg-elevated: #2d1414;
-            --text: #fef1f1;
-            --text-muted: #b91c1c;
-
-            --primary: #dc2626;
-            --primary-contrast: #1a0f0f;
-            --primary-hover: #b91c1c;
-
-            --accent: #f87171;
-            --accent-contrast: #1a0f0f;
-
-            --success: #4ade80;
-            --success-contrast: #1a0f0f;
-
-            --warning: #fbbf24;
-            --warning-contrast: #1a0f0f;
-
-            --danger: #f87171;
-            --danger-contrast: #1a0f0f;
-
-            --surface: #3d2020;
-            --surface-hover: #4d2626;
-            --surface-pressed: #5d2f2f;
-
-            --border: #4d2626;
-            --border-light: #3d2020;
-            --border-strong: #5d2f2f;
-        }
-
-        /* 寶石綠主題 */
-        [data-theme="emerald"] {
-            --bg: #0c1f14;
-            --bg-elevated: #163326;
-            --text: #dcfce7;
-            --text-muted: #15803d;
-
-            --primary: #22c55e;
-            --primary-contrast: #0c1f14;
-            --primary-hover: #16a34a;
-
-            --accent: #22d3ee;
-            --accent-contrast: #0c1f14;
-
-            --success: #4ade80;
-            --success-contrast: #0c1f14;
-
-            --warning: #fbbf24;
-            --warning-contrast: #0c1f14;
-
-            --danger: #f87171;
-            --danger-contrast: #0c1f14;
-
-            --surface: #1f4d2a;
-            --surface-hover: #2a6135;
-            --surface-pressed: #357843;
-
-            --border: #2a6135;
-            --border-light: #1f4d2a;
-            --border-strong: #357843;
-        }
-
-        /* 字體系統定義 */
-        [data-font="system"] {
-            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-        [data-font="noto"] {
-            --font-family: 'Noto Sans TC', 'Microsoft JhengHei', '微軟正黑體', sans-serif;
-        }
-        [data-font="poppins"] {
-            --font-family: 'Poppins', 'Noto Sans TC', sans-serif;
-        }
-        [data-font="serif"] {
-            --font-family: 'Noto Serif TC', 'Times New Roman', serif;
-        }
-        [data-font="mono"] {
-            --font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
-        }
-
-        /* 主題選擇下拉選單樣式 */
-        .theme-dropdown {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.95);
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem;
-            min-width: 280px;
-            max-width: 90vw;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            z-index: 2000;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(20px);
-        }
-
-        .theme-dropdown.open {
-            opacity: 1;
-            visibility: visible;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .theme-dropdown label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--text);
-        }
-
-        .theme-options {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-        }
-
-        .theme-option {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
-            background: var(--surface-hover);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 0.85rem;
-            color: var(--text);
-        }
-
-        .theme-option:hover {
-            background: var(--surface-pressed);
-            transform: translateY(-1px);
-        }
-
-        .theme-option.active {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: var(--primary-contrast);
-        }
-
-        .theme-preview {
-            width: 16px;
-            height: 16px;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* 下拉選單背景遮罩 */
-        .dropdown-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1500;
-        }
-
-        .dropdown-overlay.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* 字體選擇下拉選單樣式 */
-        .font-family-dropdown {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.95);
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem;
-            min-width: 250px;
-            max-width: 90vw;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            z-index: 2000;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(20px);
-        }
-
-        .font-family-dropdown.open {
-            opacity: 1;
-            visibility: visible;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .font-family-dropdown label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--text);
-        }
-
-        .font-options {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .font-option {
-            display: flex;
-            align-items: center;
-            padding: 10px 12px;
-            background: var(--surface-hover);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 0.9rem;
-            color: var(--text);
-            text-align: left;
-        }
-
-        .font-option:hover {
-            background: var(--surface-pressed);
-            transform: translateY(-1px);
-        }
-
-        .font-option.active {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: var(--primary-contrast);
-        }
-
         /* 速度按鈕樣式 - 套用字體大小按鈕的圓形樣式 */
         .speed-buttons {
             display: flex;
@@ -1549,9 +1021,9 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: var(--surface);
-            border: 2px solid var(--primary);
-            color: var(--text);
+            background: rgba(42, 42, 74, 0.9);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2045,7 +1517,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"2Sfl3862f/qAD1YM3kxtqbYss/yy/60AUfueSKrXGmKxynasLnDTK0Alli0VODON5xRqDDtMqSGlhLplwqgIid1b4BqK79oE8mp+vfhpeKLH8ULmQnDA+GLvDdb7CG8zlUTL/w3C8k8LJ3yNfsCvDF8gKaO+ugNtwEIgT033xAvguNdSbqL0eJFTls1vTp0p1+sGpJdNaKKDdlXlYHWnQTIIOC1oc+MbBHcfHMbwUgx8TRqS5v1Cj52FKCvuoeZoNt2+8oVEHHrwd2yqjGH9E0WKiqsUtyZ0hMCMipzlu7Uo5FrNmZawqA4X8gq5lbBSkmjMJAuou1vcJR3Rxx8UXQsuxhnWUjnhw3cWWsrBwXTOghWo+WcR42aH2LIEEUbHk+rpK8b9QCbj8oN4kS7CYFAyH5R4hXOak4vcTd/C4Gl8f4Ct0OpXAV5aEjsPUPSrZccaYS2gNd3ITP8aleAOu4A5L+WqPsYsCskt943XubZw65I/M9iqZPspwrQ1Ay6G/FqcPynmV5knlFMcCPRoywLhltIqinGKTDu6/L22x4RmqvKqpuCGcOVs8KazhQ9wY93czH7L1yv0qZOjPrypHm+L3QBHVe8L+fsrYpsFJFuqPh0/HqlXGbzbiEcywCYTGtuGnMDRJOavcnMPOgr1qiId9/X5ZNiV/saLzifN/tl5dsOVJZS3U7cUVW5biwH+OB0plz1yMSsGU5aSL/o/qQUW6fMtwbjcUXD7BPvDgCOUeMuEwI8fo5Vpxh414MYt6PBeMi+TI3n6pr4v06e6by8axqGw/CEWIj6DD6xuMXx/kh9LFktep0ilT26i7WjtgBYchh0Gtn7WwCtw1w0hcDePzYrSKWj3RpGHGGgBlWVX3OmP90yxdbNKApYdmEy3W/zAwjVkRMeqqSWiL/gpc3vAhkOPqoZnwhID55y8BPQWhdTKu0FD895UaJ+ouVYs6xNadrA2t5QYDrVpKdYIWeESIdWFDV8GdanPFPmUQeajx7ZP7Qfry6kaSSkWSspiYCI5dWm8ZAlO4EcdPhjh84H6shlxKu5RrfZnQZpDCiYAzxSO4E1emozvCKstRH7x1dYRz4c+zPwsW8DwHL/v+Vh8jHG0qoJ5F27XZQAdmPKoGnE5D8UWxRdo7PCvUMIDqSQegdjTEdgRcCvYq77E8SbZ+0CuJ5kfzFHvDb8iSbkqYEqsSjHsj5J/yd9frxqUfbC8TxsqvqfUeK2URPjHrJ+kkAvx/deo7XWM9eYOr0Vp292Cm+TFsnt9DsYLPnkgogD8d95SM4ZYKoMJZUFo/oVPPoUDDkTZ2dObHSl8tlfMDx1p7XYLPkq3a4W9CGcpR5V2hv9vFC6T+SBVSdFvpqb1o4c0r2cpo7JvAOUL+W5NpCvqJPm41VRTsOTTmKX+b+l+oYscPrCcuw6cyZ1ybtG9MNyfeG9zFrtx1XZqRU7ekNwM9vHqPrUXOAj5J/rE+MDYSPrLFflZ2vfp1VaWEJ8CM49qpG6Ut1Xg9ojpdbmO62iUjsckIcSKfKRG8tWqJy8kGCIPw0Qmg2W5vwS/0P4txS/09e7WBPWOhaj3iiR5snDREHVtZsDK2bwYGs7TylzsyamYWYjOI8ZR/Jdi86XgAl8w5iF9y96YsEviYfvy+3Qy4cA3y41Hduo//tUE49UqcSs=","iv_b64":"Kw4Bxd78X3UZbAsZ","salt_b64":"4MyHnDd3uLBbSNMxDXZ91Q=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"y7eUvFsyn+ABxAwFpFFrcWbJWreQzT1AX9jBj96DR+Iq41RxHUeWmhsUOm/57pEfS75ygXRwiygpPQ0/62bp985XvBNwtMRqg6wdBTg4M5o4hFXDVaWVpfdTU+9TCtytykfGwGtXTRAkHnSanjWUl/SavuRWndXdW6Y0j6BFFJyd70BinuQARjDv9MVFalg40qoetGrQCdGj8nXWUAnzXG67ml23Yz5t3xpiTita+sP907L408py84m2hUgf94Q7fYcGAwVLu4g3bBHL3UsALFbpawhW7lY7WQmpSs1U+pRuSz1Jk8YAr15arHUKur6FGbYpVjKzp/POhbeIOwN3s8/HqUilVNNjPHKAoJHC+QHyUavS15U74oNCngCy+0nboFxr51GMokuOSubNFuO69q50inuVkViWaKRmBz1NJUTZRC3pHlKkDPbt9dQV8wPnUA63Ojb979bQu8I5bES4HVXv9XCQyETCKeyt/jNlQeJO/0L6MFdhzOm8FhWimNmmJ7C4PG7/MPrn87mlg1uYtRKzRjWyMqhmIn2azVdEMxJZdpyqwHuKSSjVUj0UhKd9TmXZIgZgHo0DWmYJSbOPvx7QdaN1nmRYJjTUghyt27PQEdgr8A1uvxPTLwbez3uVm3w4LuNtluVhX1b8WBLv8Bb4z82Jebbjpx17i0b1zVPuZ7F2wyk30j/N8Beme2dhTufalq60RENo/Kr0p8TsOufKha41ZI6CL8/iqZsMTzZOzUZoiEeHpdXAebvNp0xVWmFykUuoTjWtFAbvJXK5LTG2JeZMK7bju7eBtRFXYFrdOFouBZz6ZwecHl/j4Wbgkmx9byK2c87QtrJDRvfMhWDgt0YbiV+hhUoZ9/nS2vw0a4KyPQQdYgnn0us57ccexq61IJfSkc8Fh4AVETgo2Q/uVRaHYcw6HmmRb1mUojY+qYCL3iejCyqTkTf73sdtpV6Qzj8IdNdkKQ1ZavaVkejb4KuYnpXVjWemxnYs1W2RlhUQ+lQQbj4gXEBu/4NYI5LYAIYAthUulz5dBFQCu5MLNgRIhXev+wlEt+7dUeu61buCCpb/HUYmkrdYoTqElvLsJMBFwof03LfRkg8DBxf3XGVPW733rksBaRoIa35dSEyWWs6T+2U47i31Qs0K9PqColC9QoXdYnOvc0+zfLiL/8v66vneQMqtoveq+Y8E8u7ICjHYDF89n1eKrguqQfAJ/f56wyS6iFRij3XAR2PkRNPQUrRXZa7VMoxnEkW8if0pyW9vwApWZTSxBg+k5ICO/R5s8f8rkeS51PT5f/m3SJAi75khcmesl+8yDguITGyicj1RlIFc7qeKs7pPrvc6ndpb45WSeQM+4LNYOCufdCZWtZWJRjWRLp2V26TcrwDWxMF8aJ5C01GJXfNMUSagLqdJXYz+r/RFCGYx6q+IucrgaQPu/NcQ6f+y9ZOOLeyaaditT9O92e8QWyqAG4gIWivESZyDJpHjv3asXDmEaVBawmaATazbw2j1oNPZ5Ux0uNMA4+oeVHgGsMur/G3qVXdTvTnIC/uM7t93qqGlvIV9H9nW6gHl8cQSUh+sCdisPJFepgm5nIfw1q+ovlL+/NsYeA/gYOqNLwq9KAJVhg8bjtMbuxkb6xwkEqUKjUl7aKbRdXyEecMhSsYBs0Xlm+Y=","iv_b64":"/S+vGKJ0J1YxHG+8","salt_b64":"cl+zFK030UpsQFYyUcMtwg=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -2116,6 +1588,17 @@
         </div>
 
         <!-- 浮動控制按鈕 -->
+        <!-- 左側導航：左右媒體切換 -->
+        <div class="floating-controls nav-left">
+            <button id="prevMediaBtn" class="floating-btn" title="上一媒體">⬅</button>
+            <button id="nextMediaBtn" class="floating-btn" title="下一媒體">➡</button>
+        </div>
+
+        <!-- 右側導航：上下事件切換 -->
+        <div class="floating-controls nav-right">
+            <button id="prevEventBtn" class="floating-btn" title="上一事件">⬆</button>
+            <button id="nextEventBtn" class="floating-btn" title="下一事件">⬇</button>
+        </div>
 
         <!-- 頂部控制：功能選單 -->
         <div class="floating-controls nav-top">
@@ -2196,106 +1679,9 @@
                         </div>
                     </div>
 
-                    <!-- 主題選擇功能 -->
-                    <div class="menu-item" style="position: relative;">
-                        <button id="themeBtn" class="floating-btn" title="主題配色">
-                            <i data-lucide="palette" style="width: 16px; height: 16px;"></i>
-                        </button>
-                    </div>
-
-                    <!-- 字體選擇功能 -->
-                    <div class="menu-item" style="position: relative;">
-                        <button id="fontFamilyBtn" class="floating-btn" title="字體選擇">
-                            <i data-lucide="text" style="width: 16px; height: 16px;"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 下拉選單背景遮罩 -->
-            <div id="dropdownOverlay" class="dropdown-overlay"></div>
-
-            <!-- 主題選擇下拉選單 -->
-            <div id="themeDropdown" class="theme-dropdown">
-                            <div class="theme-controls">
-                                <label>主題配色</label>
-                                <div class="theme-options">
-                                    <button class="theme-option active" data-theme="default" title="預設灰">
-                                        <div class="theme-preview" style="background: linear-gradient(45deg, #1e2429, #94a8b8);"></div>
-                                        <span>預設</span>
-                                    </button>
-                                    <button class="theme-option" data-theme="forest" title="森林綠">
-                                        <div class="theme-preview" style="background: linear-gradient(45deg, #1a2520, #7ba894);"></div>
-                                        <span>森林</span>
-                                    </button>
-                                    <button class="theme-option" data-theme="ocean" title="海洋藍">
-                                        <div class="theme-preview" style="background: linear-gradient(45deg, #0c1426, #38bdf8);"></div>
-                                        <span>海洋</span>
-                                    </button>
-                                    <button class="theme-option" data-theme="lavender" title="薰衣草紫">
-                                        <div class="theme-preview" style="background: linear-gradient(45deg, #241a30, #a394d4);"></div>
-                                        <span>薰衣草</span>
-                                    </button>
-                                    <button class="theme-option" data-theme="sunset" title="沙漠日落">
-                                        <div class="theme-preview" style="background: linear-gradient(45deg, #2a1f1a, #d4b48a);"></div>
-                                        <span>日落</span>
-                                    </button>
-                                    <button class="theme-option" data-theme="crimson" title="酒紅色">
-                                        <div class="theme-preview" style="background: linear-gradient(45deg, #1a0f0f, #dc2626);"></div>
-                                        <span>酒紅</span>
-                                    </button>
-                                    <button class="theme-option" data-theme="emerald" title="寶石綠">
-                                        <div class="theme-preview" style="background: linear-gradient(45deg, #0c1f14, #22c55e);"></div>
-                                        <span>寶石</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-            <!-- 字體選擇下拉選單 -->
-            <div id="fontFamilyDropdown" class="font-family-dropdown">
-                <div class="font-family-controls">
-                    <label>字體選擇</label>
-                    <div class="font-options">
-                        <button class="font-option active" data-font="system" title="系統預設字體">
-                            <span style="font-family: system-ui, -apple-system, sans-serif;">系統預設</span>
-                        </button>
-                        <button class="font-option" data-font="noto" title="思源黑體">
-                            <span style="font-family: 'Noto Sans TC', sans-serif;">思源黑體</span>
-                        </button>
-                        <button class="font-option" data-font="poppins" title="Poppins">
-                            <span style="font-family: 'Poppins', sans-serif;">Poppins</span>
-                        </button>
-                        <button class="font-option" data-font="serif" title="襯線字體">
-                            <span style="font-family: 'Noto Serif TC', serif;">襯線字體</span>
-                        </button>
-                        <button class="font-option" data-font="mono" title="等寬字體">
-                            <span style="font-family: 'JetBrains Mono', monospace;">等寬字體</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
                     <!-- 隱藏畫面按鈕開關 -->
                     <button id="hideControlsBtn" class="floating-btn menu-item" title="隱藏畫面按鈕">
                         <i data-lucide="move" style="width: 16px; height: 16px;"></i>
-                    </button>
-
-                    <!-- 導航控制 -->
-                    <button id="prevEventBtn" class="floating-btn menu-item" title="上一事件">
-                        <i data-lucide="chevron-up" style="width: 16px; height: 16px;"></i>
-                    </button>
-
-                    <button id="nextEventBtn" class="floating-btn menu-item" title="下一事件">
-                        <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
-                    </button>
-
-                    <button id="prevMediaBtn" class="floating-btn menu-item" title="上一媒體">
-                        <i data-lucide="chevron-left" style="width: 16px; height: 16px;"></i>
-                    </button>
-
-                    <button id="nextMediaBtn" class="floating-btn menu-item" title="下一媒體">
-                        <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i>
                     </button>
 
                     <!-- 隱藏日期標籤開關 -->
@@ -2355,6 +1741,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="1/uPZW4gVRfX6mbbqnSkKQ"></script>
+<script src="assets/js/main.js" nonce="VbL1Nf8SYqW6hks9OuxCxg"></script>
 </body>
 </html>
