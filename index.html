@@ -14,13 +14,13 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-cd24c491-793d-46a6-95b4-e620dbd7c0a8' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-427f66c3-3c02-4268-bdf9-c6204df5e4d4' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="cd24c491-793d-46a6-95b4-e620dbd7c0a8" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="427f66c3-3c02-4268-bdf9-c6204df5e4d4" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="cd24c491-793d-46a6-95b4-e620dbd7c0a8">
+    <style nonce="427f66c3-3c02-4268-bdf9-c6204df5e4d4">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -887,6 +887,71 @@
             font-weight: 500;
         }
 
+        /* 滑桿容器樣式 */
+        .speed-slider-container,
+        .font-size-slider-container {
+            padding: 0.75rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            margin: 0.5rem 0;
+        }
+
+        /* 字體大小滑桿樣式 */
+        .font-size-slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .font-size-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #8b5cf6, #7c3aed);
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(139, 92, 246, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .font-size-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.6);
+        }
+
+        .font-size-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #8b5cf6, #7c3aed);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 6px rgba(139, 92, 246, 0.4);
+        }
+
+        /* 滑桿標籤樣式 */
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: #9ca3af;
+        }
+
+        .slider-labels span:nth-child(2) {
+            color: #60a5fa;
+            font-weight: 600;
+            background: rgba(59, 130, 246, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
         /* 速度按鈕樣式 - 套用字體大小按鈕的圓形樣式 */
         .speed-buttons {
             display: flex;
@@ -1451,7 +1516,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"65yu4YmKZgW7uxKOXVHC4ZiMIz9CpYeSiC9qAi5+V5MhVLTCTgH+W30qcT7klregU5YmeHLAWNZLOX92LcvPwMlOtu+bbfHHbIhPqyS8vm6ITi8TKx6IYLsPwh982J/Su1NeIquFcZGSkxyBCYgTcb+b9MQIgOT8jQjqS80SfOhGlwSxikx0J38pddmCyRI3LIGpJyGf6VH/UfiRfqnqanguZ76xCz2+IkoDahDYIpFtaitWoertiFzzdQLR9ogyew3E0tcNzllpFZcn2o4qS/2bVyJfBnT/lBASaPvevXhYz4HnIU0WAFjGYz7Mq+j927BRb5NZ/AC61SARQzTYIqcppU6dX5ReXy/WoAb0VjHkELyI63V8DZGA2KMgGp9c86PjNDk1jz0qI7KUOXSqOKNCaNnW8RXvYm1LYkZ9dTQ96CFABJ5QJeuws4Y9gojVhQdQSRpFzy6aIwKoZPeEEO4huft3YfNxckfMxWITgEUl3PsPoRacQrski539m+diyyxSaWEP5aqgjJ6IUG0B+27R53pZ6NIKjTButRnLKYG9U583TOfjKDdPalZ8+BtXOm4abYGB3APi6/nQNC22d/R+cg+N+cqHNaEym41DK7Q5wfECJjgy3kRsRGkucfJib2NxoHfFsp8U6u6OpVOQDBo0YfCy7+vyWVyJKika4c8A9hHDibsJELDmJEYC1sL2AM3r/lF2dwOZGqB5MUEqXidyT+JNfefI8V8j0Md4zwycL3e6cGpyWaD5z3iKyf7PRxpalbtuW2vaSsY23eNHMWrGlJVk8Lp3dsXHACqfJn7YCd6l1RQNbU0jNQgAxMcr7j+ko2z6GLMj+xhx3NrX5XJgg9PgltTUx1MgG/MXJRB8F+r/ecpq/PxqoUFJcQOv59NQd3eSNu/4+jyMBBiIpFyjaQDrEdWLeBLrcV6+nX7Ou5Z8FVJKLOZd6DIOe8DOwSIi9DkkjOos5NIZlaWqmN4e2BXp9gp7dJFuYj/dUIvmludHYi/TwfwK2ty/gy7KpYtv1wUlS6YRvwWxCkE20OVLKxmX3TfH877vjvonoEh0iKCPDZ0tAj1t2vsSUASMcv/LbZWj8aGLztlWaNKhGc/4bjHSEB9EZOabqAi+6UXfs2H+fc3FnwUrO5KUhQdaqaRAy54C3XNr60Ooq670gMz8CrYVDXKh/pVsmHJsH9sB0hgNEgi3fvrwxFyLB//dvp70NQSBe57JNbMKQ7Hkop3pIXobwGzzZQGFh9YarH0++yep208rw8o6sX+6MZV0Q+CE5+phjDOwtDs0asviWjACl1Sfr1WbXlZBTjdffPVeA0YeAt95/n6LsHxUG2A9dZcUiZim8jEZQhiw7duAusILEbG184L84wNIMCXmx7ERBwKnUjYmEhbSFMawxnCGkxxpLi3BOINecLvicFgNuJCcvork5bRL76fjrsZyHqoLENDwFS3nqQagRExEQwK2hBVWIBXCXLdyTA4EGSRhdhWMj6Ni938xovAJDHVRTy9ihvIflXyCzzz0k4lHXaUKuqtgs2wRS58nae8xANfh+u0o0hNA+ar+RaIyKMutV2P/+gt+XvKdRB7BB5jmREVQh0IKfrp7AARbUwKMVTGYKU+A+eb1jlLSPXvmvFxJqcvOEIU0/PRyn+XBaM3Eir6hE4OA5Xc=","iv_b64":"gK5HBnJLAdIblZ1D","salt_b64":"QuKZCx8dMN2Y90d+581J2A=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"FnRscuN2t7kYFrOli/WYIjw+sMf6K7JwutRx+ArfZ9lxBFb5KPaDGFmW6V49azNweH6zwkj49Cro8xp/Lb1BbxqknVrpnZ9FE5PYsgNiqUjwl9ShX4K6n/163C/TQI5pJeMmYD5efkqP5feqnj3EHyk1BNXhpD0JDjfdKuR9XzePJK9t9mFavqjy6DyFl96I5wY3xxdFlQrWjWb531FkxWL1Gqa0jB4+obBKfyFJbQSCpySgKyz8tZXkuhrBpWRQQyJ4a28Mwv6CbkNN/lvCjHA7Y/eEBJR7WbDU2SABbGoFNYvBP95ByGmJfpGxu5aFzjUunza6Vf5paD5fpiqGDT4WeCcm/wLyEq8PaNt/TDdb1IM7rX829EPXWAP5najFv30DzmHLc1mqaqZx4qqmxA2vKt5Kdy1uGdct3h7GgpKygTvUKEO/Mc+O4vvt99PsFrOneReiypM0kDLCMYhHoKTYo4UJuLDaat4dSJvRlJgPCsduiymALFOYv+Fsj8MQcWVrSZ/eU1fBMUGlQgt7R9jYYYC8MRVS0zk8wBMcaQtOZIvD3T/tjx03gpshn34CltvC/X1DzdkOx6SuHHRAPFSBv0H593ghpx0Kxm5IFj5qGyWFCO7V2AgXAUilouSNKUl/I0QxV/qZbmKvvqRQS9cV3Yqh5Fhu2B2DQU4sAE4f4zUAus2Zxom339zn4vnlF06xje/e9C4tHs3HEKegQHw8yKADj+FV87T9tzwY5li6wBCMNyvZzKdUBTwmT3WaKm9VF7tslFEuA/IBTv/6C8b6TnDSyny4VZS4sg9zFQ2noACnOJ8W5/Wvjtd19XxHCnkNgqbCQd1aSM3UoLv93sv2F3k9nNHlQGpFHUghnf4jeNdr9ZcvABtJzhr6teBJlDNvJL/nTmPelECanNO/YQxgVzjKalW/nlmM7U3TJPA+I7oruYhZKBNMW415Tql6PhLCQ/GXn7eQWOIPMQCk7Hs3gZYG4uqnd0wG4ZBc2g8VaSbpcVgVTXbYZLlWLH3ZXYC5IsiDaIk3KGg4tCpoEwrOafWbcBM3S4s8Q/IFAZDNu85UDFeyBOyDKgjATuH9qG6a1kufdAx1Gamnm0nTkuJabVxFF5bhegRNNLzzNE2z0oPsKljFJxaC6Tz4xrFwWaoiIxuZZXmfmYGB7S8AH9nPf/6ddTmac3ePfrvrOUV7xJ1O01rPNoKh9Eew4ENavFKHYN2Bo7Vy3/X3FLLIYwml3lQ884bqPvCTJi25EFh/HMazKTCXNa3S5A6zbjkH66pfh4n1M1MKRtLgS+YSNycS7+JS/Gfdy8F0vn2poU6BU8BAmk8Stt3rjDvhrDJSFzzRfX5YJiBRO6PcWjgpjgrid3oCU3Py9pKwTNo6Abst7mp/hEcjHCBsw2DDfEspCx92cZF+9NpefLMp1KFo6NeeTM5WCyeoYsw0lHjAAdOrdMfQ9HqDO/dWFwRUdEw+RKBsUgWQOacN96SBaIw/7BJSQPOAXsksC4cuZD1E9RDDptDohm1ZUwx6g24KWW40EeaAs+w7g2QONLv72eaMyrNM4egjRuwaBAajmEks1vMJ8ZTuOQdbC/9qx9tKHQ7Lu98kmq2hK0Ws+QbnCUFr7yF/lhpVHEET6dvz/lrR/tL8VCun3wHaw9pwHITzPiw0lRc4jmE=","iv_b64":"bJSE0849JDszqOIC","salt_b64":"EvWtCFDcNALgXbjelzcGmg=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1566,10 +1631,21 @@
                         <div id="typewriterSpeedDropdown" class="typewriter-dropdown">
                             <div class="typewriter-speed">
                                 <label>打字速度</label>
-                                <div class="speed-buttons">
-                                    <button class="speed-btn" data-speed="80" title="慢速">慢</button>
-                                    <button class="speed-btn" data-speed="25" title="中速">中</button>
-                                    <button class="speed-btn" data-speed="10" title="快速">快</button>
+                                <div class="speed-slider-container">
+                                    <input
+                                        type="range"
+                                        id="typingSpeedSlider"
+                                        class="speed-slider"
+                                        min="1"
+                                        max="50"
+                                        value="50"
+                                        step="1"
+                                    />
+                                    <div class="slider-labels">
+                                        <span>快 (1)</span>
+                                        <span id="currentSpeedValue">50</span>
+                                        <span>慢 (50)</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1582,10 +1658,21 @@
                         <div id="fontSizeDropdown" class="font-size-dropdown">
                             <div class="font-size-controls">
                                 <label>字體大小</label>
-                                <div style="display: flex; gap: 5px;">
-                                    <button class="font-size-btn" data-size="0.9" title="小">小</button>
-                                    <button class="font-size-btn active" data-size="1.1" title="中">中</button>
-                                    <button class="font-size-btn" data-size="1.3" title="大">大</button>
+                                <div class="font-size-slider-container">
+                                    <input
+                                        type="range"
+                                        id="fontSizeSlider"
+                                        class="font-size-slider"
+                                        min="0.8"
+                                        max="2.0"
+                                        value="0.8"
+                                        step="0.1"
+                                    />
+                                    <div class="slider-labels">
+                                        <span>小 (0.8)</span>
+                                        <span id="currentFontValue">0.8x</span>
+                                        <span>大 (2.0)</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1653,6 +1740,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="ukABhkmRRHWnPcg/bJnsjQ"></script>
+<script src="assets/js/main.js" nonce="5P6xRxML9LW7ADkrci+29Q"></script>
 </body>
 </html>
