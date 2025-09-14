@@ -14,13 +14,13 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-45e2028e-02ce-44c9-8a48-61a4a06e57b9' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-86ffe12f-4769-45bb-9ed9-ce3925a4be86' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="45e2028e-02ce-44c9-8a48-61a4a06e57b9" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="86ffe12f-4769-45bb-9ed9-ce3925a4be86" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="45e2028e-02ce-44c9-8a48-61a4a06e57b9">
+    <style nonce="86ffe12f-4769-45bb-9ed9-ce3925a4be86">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: var(--font-family, system-ui, -apple-system, sans-serif);
@@ -1200,27 +1200,28 @@
 
         /* 主題選擇下拉選單樣式 */
         .theme-dropdown {
-            position: absolute;
-            top: calc(100% + 8px);
-            right: 0;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 1rem;
             min-width: 280px;
+            max-width: 90vw;
             opacity: 0;
             visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.2s ease;
-            z-index: 1000;
-            box-shadow: 0 8px 32px var(--shadow);
-            backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 2000;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
         }
 
         .theme-dropdown.open {
             opacity: 1;
             visibility: visible;
-            transform: translateY(0);
+            transform: translate(-50%, -50%) scale(1);
         }
 
         .theme-dropdown label {
@@ -1268,29 +1269,49 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
+        /* 下拉選單背景遮罩 */
+        .dropdown-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1500;
+        }
+
+        .dropdown-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
         /* 字體選擇下拉選單樣式 */
         .font-family-dropdown {
-            position: absolute;
-            top: calc(100% + 8px);
-            right: 0;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 1rem;
-            min-width: 220px;
+            min-width: 250px;
+            max-width: 90vw;
             opacity: 0;
             visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.2s ease;
-            z-index: 1000;
-            box-shadow: 0 8px 32px var(--shadow);
-            backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 2000;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
         }
 
         .font-family-dropdown.open {
             opacity: 1;
             visibility: visible;
-            transform: translateY(0);
+            transform: translate(-50%, -50%) scale(1);
         }
 
         .font-family-dropdown label {
@@ -1895,7 +1916,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"iwMJOUHarBqVSyyxJZcYCDT7znkgnH3WJwuimRKx+mSmkv4WB4/crhRU78vPLZnS4WnUG3i9xRYrGdb/EyF+rvLNV4uTe4dRjD8dnvPwOINGfzjZ2rbuL3W2wncYxwEtXX/gFtx10W3myachr3gmHaCI6jkcFnehtE3yKBCCxOeG5Bi+XYaEKZGDBPaBqlBGK0NzyyHy6AZ2VeTCxTIybowN75FphtnmaLTjoFrJZLHRH4J8U+1ZAHcehzwPC06roN++bImaIc7lkJev06LMAxdU4XzBSTE42pfHsZQAfrg5hnbdtrLrrp1iD6nDzI2QZa1dF1XA4L8Fl3K6ER21BVaFE05e4y0ua6KMUuiBXWs9T5cmtydw4ieDxPW6NwTXpYtO6sGBHkItduEgq43w6z5yOfndMyy4Ly26P1S2CrQ0JhtWNEjAWa7W3RiFMY6cGUqNHsMBOBnnGglcf6d7TSVaJS9drJ3W515t3sMtElYgMKcHsY1gFjylH6tNMkQMr8mwFlpNsWLDSJHMiGmj6Od56Ut2VO5VkjH7v3dbYFlVS3MKSpg/B8FukcSq/aQGjEOsXd6M6wOU0Y1yAbYXycmACFU9TVIWeR/P05cnJH4YGBjON4QiQLY5x8NmDV161Oe6rjGLJXUwXhzEG9ZeFhRvjH7lbOPAb8FnN9oCbYOgTrY6oYHaAx9Wou+lsHkqI7ogQrXgdEYG51gCsj676s0EfDRdf3i7ohySjbKe+bHgAfUVwGFivRo3o7xaBoMYrBvLUtPJTEhNA4Z7F72bUWDlY++SOMG6/qN/46dh3FaK3xPOEnVVozik1bY569veoroJnJo0dMN+IOYiI/FUyACj5KPa/Pvy1WmHcOkCPUWCb9zaJ5qxZGX3EF+3zhqSMPhldP2w7YmALqv7ViILVx8Tffgp0FBh6Df0mo1ymKMxlzTkiCQNIGgLbWx6Z3DKREAxUtikjwvCx3wGHjJNySBcX3T/GWWT+fA+mJCeWcfT8Q18PJOykYNlYEuceP4IhkBJoWpPRtEFccDMtqGhQryU1M1Hm/t8dzzzmCWxjnz2QxYhLL3lM1lsbauk1pWFMaiBfNs51G7O7H+Pn4W5NZjO3vQ4gD4c9FT7Sg+cQt/rst7M0nz3vMvqBInNLVkeh+repLvZ+qVTc5H/Vvk8Kyur7hPUfLp+CeldYUlwmBN1+CwwUQFas2ag1SBRE3d6ghazz4x98iMSmB8P41pisaERhekw5sfEEVXVvgLeCyS4q5G2wQ2BFrDUr6Tyj70oSBDC4lnFULnP6xbl8h2EgV3WYdkfXP3RiMG2CpdVKSWHL4kNR27xDAvmxYPtz5Zgp8WbJ/f1qy+tOA9EHZxWQVzTBxTfq87NMfe0H79rzLZztdz8fNl2cA6BQ05N867naD18Jn70hmtTJc2u4V7MGLjxzB4vaoa/VRg13eFjgZUzYLkIqk02mpkBduyMtoDHzEyMJOY6YK7GlwqfJqr2mnzAaZtzy2IXPgJoSyPd0pK3X/kzJJ9qxeiuhgBsndCQPTo2gGQknaHX9ZeBB690sdtWHMmC9zsgKci8xg0Wdfy63xtJ1EU0ICyu31wGwEKW7t0I2BUa9xevpPTFMfAWMXm6/u2qM00Z5hUOOdXyPHdLUG2M/leGXHTbKxLrT/aXqjwF6zQ=","iv_b64":"n0dmVcPCt9IX7+7l","salt_b64":"AnYRr27rH7hw0YZHxLOrvA=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"jxgFraQZWpwqdUSNcuCTBGhA8O/5JqQSpKbz10BKFXdYROterqN9a1eYV5Ag7OMz8GtcA+VFAOp9QdIiz0WXbr1waxbQK0jJwHnp6P/3tI3Nfd4knZrtikBlVceJXbDbJwGbYkVtChdkfvGfkmmsL1uOvneULJaE9U0OijDShJs+Ir1NFRAk7DElwcxryza1nwUxKoeU6+XoEJGEbsPJ6KvidE52dGL3ZQOYGKpOnxS8OjLh1y8D2+qmhd4QkiYVe7FDNtQIm5FImMTvRkQVL5FB93IDUB8mhFRoFVdLpm25Y1o1HBlIX69r+vpad3z8n0E3chin/GeQocSRv+e/CCiZY6hU8paAUI/BBJ0RP302P3vs4K1kdSETg7JDsXEawYgcA9G3WUtoewpEu0u3UQZEBmGGmhd9dS6Y19jGAF1cJR7c9kSxzK8We9qoQS2/VkmYsx41IlqiXlJoPzx1g/bKwj8M29tLVUGlJRjKN02CyJITnJUM2yQYWTtRzI5SFpqLSRyOc03DE7GKSOnQWvOg6vrkSkLixb16gPzKj4Hj0dYbvsG4sRDqAS7giUd5c8ielt0ki4Ub4hLvtyVPweUgYqQZ/5PwGqaOV8wcXiZB8Rjc/37LR/AyejhY+pNhEg8BBXJ8xPgCthL+mnB0jKnAAQKDKNBeV5+hh84prHbkMl2vhYJiQFTGZs0A/3dCkYIBIZaneb8UTUVOw02oWGIwMt3Th67ysjbdmXMTJ1Afp3ju3tuGl0vWh/tzGT3FAgocZ4x7/kkkSTMz4p0XX4MvK2caeK9aZa15QO+kkpW/nKTW+Xx5z7gNCdkc7SDue23PcQzDp7svlJfNbghix0JKtfBbx8UlxcEuwWOhcwDvMPaqC0d+FHDbMWzSc+4IwQEOeOmVySEA3YC95gbiHbBlhWCWiKAuO9ewxrhnSdYrFpYR4wyNBBNjjqO866EeXRzdWW+bRJJM8AyVzjMga3k51x0dKzYLvHA+Ivh8s52up0Tsse5A+GvXDv3DMwm7UDX8WDJCdC6sRR6igRw0MvtvKsKGrLAHmMm/XSGrrRPmi9ohfY3zpi5BWOeFgO6RfG7O9A690HEFUFZxVH5U4EB4nMSPmajxbepS69WPK9qTFz7UthR3Pk0QPetOrBb/N8jrpBj34X/LNTEAGjS9wg02ehPsiKuPSw2Cmgnf1wben6Fo+7YI+HkDlTIfJ3G1uJGbafSYLtCZrplFVOTha7kiMxSuZHj+Y23WdF5fylopdtulJxCYLcNnnw6A8FrwRKE2HE+BPgEK3eqiwjdk2j1vUmTjyQltiM5XgGg6U82VVyRPiKaZLYF+GcZDZPf/uUv9DegZQWJhwV/D8ai8JRK7lozgHOFRqCrQ1CUCk9RfPhovWyJH80ezTWCKwpYRrCbL3m1d9InRc3WkL8wgKxijV3PYQx7OtCysqM1l+DUY5kI8U/GZDFpBXiU5a/ug6sLWc98+FrcwpQ7jy/7ZRGNZb3GZM6PwOmn9GoyMrQZjeDudvASzf1TcxZeyQQQI8YYhDitdiUneZ1JOV6Fv3SOYtToO40XenrI5Yets8Pu2plNqDj6jjdlzFZRFG4akMR4vWIe4P5i9pY3oXPyBZYU2qK2KleH72JrJiN9VbOnVGaXL0Kt6i0GxGwjrV6rkiDh+eEw=","iv_b64":"foIDfGOcibI4Oa6N","salt_b64":"bU0h2CZjxvyIxbbf9TcqCg=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -2062,7 +2083,22 @@
                         <button id="themeBtn" class="floating-btn" title="主題配色">
                             <i data-lucide="palette" style="width: 16px; height: 16px;"></i>
                         </button>
-                        <div id="themeDropdown" class="theme-dropdown">
+                    </div>
+
+                    <!-- 字體選擇功能 -->
+                    <div class="menu-item" style="position: relative;">
+                        <button id="fontFamilyBtn" class="floating-btn" title="字體選擇">
+                            <i data-lucide="text" style="width: 16px; height: 16px;"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 下拉選單背景遮罩 -->
+            <div id="dropdownOverlay" class="dropdown-overlay"></div>
+
+            <!-- 主題選擇下拉選單 -->
+            <div id="themeDropdown" class="theme-dropdown">
                             <div class="theme-controls">
                                 <label>主題配色</label>
                                 <div class="theme-options">
@@ -2097,36 +2133,30 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- 字體選擇功能 -->
-                    <div class="menu-item" style="position: relative;">
-                        <button id="fontFamilyBtn" class="floating-btn" title="字體選擇">
-                            <i data-lucide="text" style="width: 16px; height: 16px;"></i>
+            <!-- 字體選擇下拉選單 -->
+            <div id="fontFamilyDropdown" class="font-family-dropdown">
+                <div class="font-family-controls">
+                    <label>字體選擇</label>
+                    <div class="font-options">
+                        <button class="font-option active" data-font="system" title="系統預設字體">
+                            <span style="font-family: system-ui, -apple-system, sans-serif;">系統預設</span>
                         </button>
-                        <div id="fontFamilyDropdown" class="font-family-dropdown">
-                            <div class="font-family-controls">
-                                <label>字體選擇</label>
-                                <div class="font-options">
-                                    <button class="font-option active" data-font="system" title="系統預設字體">
-                                        <span style="font-family: system-ui, -apple-system, sans-serif;">系統預設</span>
-                                    </button>
-                                    <button class="font-option" data-font="noto" title="思源黑體">
-                                        <span style="font-family: 'Noto Sans TC', sans-serif;">思源黑體</span>
-                                    </button>
-                                    <button class="font-option" data-font="poppins" title="Poppins">
-                                        <span style="font-family: 'Poppins', sans-serif;">Poppins</span>
-                                    </button>
-                                    <button class="font-option" data-font="serif" title="襯線字體">
-                                        <span style="font-family: 'Noto Serif TC', serif;">襯線字體</span>
-                                    </button>
-                                    <button class="font-option" data-font="mono" title="等寬字體">
-                                        <span style="font-family: 'JetBrains Mono', monospace;">等寬字體</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        <button class="font-option" data-font="noto" title="思源黑體">
+                            <span style="font-family: 'Noto Sans TC', sans-serif;">思源黑體</span>
+                        </button>
+                        <button class="font-option" data-font="poppins" title="Poppins">
+                            <span style="font-family: 'Poppins', sans-serif;">Poppins</span>
+                        </button>
+                        <button class="font-option" data-font="serif" title="襯線字體">
+                            <span style="font-family: 'Noto Serif TC', serif;">襯線字體</span>
+                        </button>
+                        <button class="font-option" data-font="mono" title="等寬字體">
+                            <span style="font-family: 'JetBrains Mono', monospace;">等寬字體</span>
+                        </button>
                     </div>
+                </div>
+            </div>
 
                     <!-- 隱藏畫面按鈕開關 -->
                     <button id="hideControlsBtn" class="floating-btn menu-item" title="隱藏畫面按鈕">
@@ -2190,6 +2220,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="LBwWvFGr3/QQnq2chLrJuA"></script>
+<script src="assets/js/main.js" nonce="lRbf3z09+tfOPciVtftbiw"></script>
 </body>
 </html>
