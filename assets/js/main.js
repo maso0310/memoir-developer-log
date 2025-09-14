@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-14T21:38:16.381061+00:00
+// 生成時間: 2025-09-14T21:55:44.940800600+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -23,6 +23,8 @@
         let isSubtitleVisible = true;
         let areControlsHidden = !true;
         let isDateHidden = !true;
+        let isThemeMenuOpen = false;
+        let currentTheme = localStorage.getItem('memoir-theme') || 'default';
 
         // DOM 元素緩存
         const elements = {
@@ -54,6 +56,8 @@
             thumbnailsContainer: document.getElementById('thumbnailsContainer'),
             hideControlsBtn: document.getElementById('hideControlsBtn'),
             hideDateBtn: document.getElementById('hideDateBtn'),
+            themeBtn: document.getElementById('themeBtn'),
+            themeDropdown: document.getElementById('themeDropdown'),
             lightbox: document.getElementById('lightbox'),
             lightboxClose: document.getElementById('lightboxClose'),
             lightboxPrev: document.getElementById('lightboxPrev'),
@@ -766,12 +770,41 @@
             if (elements.typewriterSpeedDropdown) {
                 elements.typewriterSpeedDropdown.classList.toggle('open', isTypewriterMenuOpen);
             }
+
+            // 如果打開打字速度選單，關閉其他選單
+            if (isTypewriterMenuOpen) {
+                closeOtherMenus('typewriter');
+            }
         }
 
         function closeTypewriterSpeedMenu() {
             isTypewriterMenuOpen = false;
             if (elements.typewriterSpeedDropdown) {
                 elements.typewriterSpeedDropdown.classList.remove('open');
+            }
+        }
+
+        function closeOtherMenus(exceptMenu = '') {
+            // 關閉其他所有選單
+            if (exceptMenu !== 'typewriter') {
+                isTypewriterMenuOpen = false;
+                if (elements.typewriterSpeedDropdown) {
+                    elements.typewriterSpeedDropdown.classList.remove('open');
+                }
+            }
+
+            if (exceptMenu !== 'fontsize') {
+                isFontSizeMenuOpen = false;
+                if (elements.fontSizeDropdown) {
+                    elements.fontSizeDropdown.classList.remove('open');
+                }
+            }
+
+            if (exceptMenu !== 'theme') {
+                isThemeMenuOpen = false;
+                if (elements.themeDropdown) {
+                    elements.themeDropdown.classList.remove('open');
+                }
             }
         }
 
@@ -784,6 +817,66 @@
                     ? 'rgba(59, 130, 246, 0.8)'
                     : 'rgba(107, 114, 128, 0.8)';
             }
+        }
+
+        // 主題選擇功能
+        function toggleThemeMenu() {
+            isThemeMenuOpen = !isThemeMenuOpen;
+
+            if (elements.themeDropdown) {
+                elements.themeDropdown.classList.toggle('open', isThemeMenuOpen);
+            }
+
+            // 如果打開主題選單，關閉其他選單
+            if (isThemeMenuOpen) {
+                closeOtherMenus('theme');
+            }
+        }
+
+        function applyTheme(themeName) {
+            // 移除所有主題類別
+            document.body.classList.remove('theme-default', 'theme-forest', 'theme-ocean',
+                'theme-sunset', 'theme-lavender', 'theme-crimson');
+
+            // 應用新主題
+            if (themeName !== 'default') {
+                document.body.classList.add(`theme-${themeName}`);
+            }
+
+            // 更新當前主題變數
+            currentTheme = themeName;
+
+            // 保存到 localStorage
+            localStorage.setItem('memoir-theme', themeName);
+
+            // 更新主題選項的活動狀態
+            updateThemeOptions(themeName);
+
+            console.log(`主題已切換至: ${themeName}`);
+        }
+
+        function updateThemeOptions(activeTheme) {
+            const themeOptions = document.querySelectorAll('.theme-option');
+            themeOptions.forEach(option => {
+                const isActive = option.dataset.theme === activeTheme;
+                option.classList.toggle('active', isActive);
+            });
+        }
+
+        function initializeThemeSystem() {
+            // 應用保存的主題
+            applyTheme(currentTheme);
+
+            // 為主題選項添加點擊事件
+            const themeOptions = document.querySelectorAll('.theme-option');
+            themeOptions.forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const themeName = option.dataset.theme;
+                    applyTheme(themeName);
+                    toggleThemeMenu(); // 關閉選單
+                });
+            });
         }
 
         function setTypingSpeed(speed) {
@@ -1038,6 +1131,11 @@
             if (elements.fontSizeDropdown) {
                 elements.fontSizeDropdown.classList.toggle('open', isFontSizeMenuOpen);
             }
+
+            // 如果打開字體大小選單，關閉其他選單
+            if (isFontSizeMenuOpen) {
+                closeOtherMenus('fontsize');
+            }
         }
         
         function closeFontSizeMenu() {
@@ -1187,7 +1285,15 @@
             });
             addTouchFeedback(elements.hideDateBtn);
         }
-        
+
+        // 主題選擇按鈕事件
+        if (elements.themeBtn) {
+            elements.themeBtn.addEventListener('click', () => {
+                debounceButtonClick('theme', toggleThemeMenu, 200);
+            });
+            addTouchFeedback(elements.themeBtn);
+        }
+
         // 字幕開關按鈕事件
         if (elements.subtitleToggleBtn) {
             elements.subtitleToggleBtn.addEventListener('click', toggleSubtitle);
@@ -1524,6 +1630,8 @@
             initializeTypingSpeedSlider();
             // 初始化隱藏功能按鈕狀態
             initializeHideButtons();
+            // 初始化主題系統
+            initializeThemeSystem();
             // 應用預設參數到實際顯示
             applyDefaultSettings();
             // 初始化日期顯示位置
