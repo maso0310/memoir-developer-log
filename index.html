@@ -14,13 +14,13 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-427f66c3-3c02-4268-bdf9-c6204df5e4d4' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-1d4f0279-1c20-4f7f-ae89-3b74049b3f01' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="427f66c3-3c02-4268-bdf9-c6204df5e4d4" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="1d4f0279-1c20-4f7f-ae89-3b74049b3f01" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="427f66c3-3c02-4268-bdf9-c6204df5e4d4">
+    <style nonce="1d4f0279-1c20-4f7f-ae89-3b74049b3f01">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -844,8 +844,8 @@
 
         .speed-slider {
             width: 100%;
-            height: 6px;
-            border-radius: 3px;
+            height: 8px; /* 增加滑桿軌道高度 */
+            border-radius: 4px;
             background: rgba(255, 255, 255, 0.2);
             outline: none;
             cursor: pointer;
@@ -856,12 +856,12 @@
         .speed-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 18px;
-            height: 18px;
+            width: 22px; /* 增加滑塊大小 */
+            height: 22px;
             border-radius: 50%;
             background: linear-gradient(45deg, #3b82f6, #1d4ed8);
             cursor: pointer;
-            box-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
             transition: all 0.2s ease;
         }
 
@@ -871,13 +871,13 @@
         }
 
         .speed-slider::-moz-range-thumb {
-            width: 18px;
-            height: 18px;
+            width: 22px; /* 增加滑塊大小 */
+            height: 22px;
             border-radius: 50%;
             background: linear-gradient(45deg, #3b82f6, #1d4ed8);
             cursor: pointer;
             border: none;
-            box-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
         }
 
         .speed-label {
@@ -890,17 +890,18 @@
         /* 滑桿容器樣式 */
         .speed-slider-container,
         .font-size-slider-container {
-            padding: 0.75rem;
+            padding: 1rem;
             background: rgba(59, 130, 246, 0.1);
             border-radius: 12px;
             margin: 0.5rem 0;
+            min-width: 200px; /* 最小寬度確保操作舒適 */
         }
 
         /* 字體大小滑桿樣式 */
         .font-size-slider {
             width: 100%;
-            height: 6px;
-            border-radius: 3px;
+            height: 8px; /* 增加滑桿軌道高度 */
+            border-radius: 4px;
             background: rgba(255, 255, 255, 0.2);
             outline: none;
             cursor: pointer;
@@ -911,12 +912,12 @@
         .font-size-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 18px;
-            height: 18px;
+            width: 22px; /* 增加滑塊大小 */
+            height: 22px;
             border-radius: 50%;
             background: linear-gradient(45deg, #8b5cf6, #7c3aed);
             cursor: pointer;
-            box-shadow: 0 2px 6px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.5);
             transition: all 0.2s ease;
         }
 
@@ -926,13 +927,13 @@
         }
 
         .font-size-slider::-moz-range-thumb {
-            width: 18px;
-            height: 18px;
+            width: 22px; /* 增加滑塊大小 */
+            height: 22px;
             border-radius: 50%;
             background: linear-gradient(45deg, #8b5cf6, #7c3aed);
             cursor: pointer;
             border: none;
-            box-shadow: 0 2px 6px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.5);
         }
 
         /* 滑桿標籤樣式 */
@@ -1516,7 +1517,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"FnRscuN2t7kYFrOli/WYIjw+sMf6K7JwutRx+ArfZ9lxBFb5KPaDGFmW6V49azNweH6zwkj49Cro8xp/Lb1BbxqknVrpnZ9FE5PYsgNiqUjwl9ShX4K6n/163C/TQI5pJeMmYD5efkqP5feqnj3EHyk1BNXhpD0JDjfdKuR9XzePJK9t9mFavqjy6DyFl96I5wY3xxdFlQrWjWb531FkxWL1Gqa0jB4+obBKfyFJbQSCpySgKyz8tZXkuhrBpWRQQyJ4a28Mwv6CbkNN/lvCjHA7Y/eEBJR7WbDU2SABbGoFNYvBP95ByGmJfpGxu5aFzjUunza6Vf5paD5fpiqGDT4WeCcm/wLyEq8PaNt/TDdb1IM7rX829EPXWAP5najFv30DzmHLc1mqaqZx4qqmxA2vKt5Kdy1uGdct3h7GgpKygTvUKEO/Mc+O4vvt99PsFrOneReiypM0kDLCMYhHoKTYo4UJuLDaat4dSJvRlJgPCsduiymALFOYv+Fsj8MQcWVrSZ/eU1fBMUGlQgt7R9jYYYC8MRVS0zk8wBMcaQtOZIvD3T/tjx03gpshn34CltvC/X1DzdkOx6SuHHRAPFSBv0H593ghpx0Kxm5IFj5qGyWFCO7V2AgXAUilouSNKUl/I0QxV/qZbmKvvqRQS9cV3Yqh5Fhu2B2DQU4sAE4f4zUAus2Zxom339zn4vnlF06xje/e9C4tHs3HEKegQHw8yKADj+FV87T9tzwY5li6wBCMNyvZzKdUBTwmT3WaKm9VF7tslFEuA/IBTv/6C8b6TnDSyny4VZS4sg9zFQ2noACnOJ8W5/Wvjtd19XxHCnkNgqbCQd1aSM3UoLv93sv2F3k9nNHlQGpFHUghnf4jeNdr9ZcvABtJzhr6teBJlDNvJL/nTmPelECanNO/YQxgVzjKalW/nlmM7U3TJPA+I7oruYhZKBNMW415Tql6PhLCQ/GXn7eQWOIPMQCk7Hs3gZYG4uqnd0wG4ZBc2g8VaSbpcVgVTXbYZLlWLH3ZXYC5IsiDaIk3KGg4tCpoEwrOafWbcBM3S4s8Q/IFAZDNu85UDFeyBOyDKgjATuH9qG6a1kufdAx1Gamnm0nTkuJabVxFF5bhegRNNLzzNE2z0oPsKljFJxaC6Tz4xrFwWaoiIxuZZXmfmYGB7S8AH9nPf/6ddTmac3ePfrvrOUV7xJ1O01rPNoKh9Eew4ENavFKHYN2Bo7Vy3/X3FLLIYwml3lQ884bqPvCTJi25EFh/HMazKTCXNa3S5A6zbjkH66pfh4n1M1MKRtLgS+YSNycS7+JS/Gfdy8F0vn2poU6BU8BAmk8Stt3rjDvhrDJSFzzRfX5YJiBRO6PcWjgpjgrid3oCU3Py9pKwTNo6Abst7mp/hEcjHCBsw2DDfEspCx92cZF+9NpefLMp1KFo6NeeTM5WCyeoYsw0lHjAAdOrdMfQ9HqDO/dWFwRUdEw+RKBsUgWQOacN96SBaIw/7BJSQPOAXsksC4cuZD1E9RDDptDohm1ZUwx6g24KWW40EeaAs+w7g2QONLv72eaMyrNM4egjRuwaBAajmEks1vMJ8ZTuOQdbC/9qx9tKHQ7Lu98kmq2hK0Ws+QbnCUFr7yF/lhpVHEET6dvz/lrR/tL8VCun3wHaw9pwHITzPiw0lRc4jmE=","iv_b64":"bJSE0849JDszqOIC","salt_b64":"EvWtCFDcNALgXbjelzcGmg=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"oipnpB6LVFJc0wDkX3XZz4x9dV55F1IDP2EppGUvo/glkLGFY4AF87WmWWsy8o2IAAqrWUOOLiW4IhnY3cYPDETz5Emwe7ee8OndTcXc0kpELxdctZLj024Gygu7DT/4Sqz8oJnnfvOMfj87rHMw/zMQCSUuE/uPSmNLmNpz3ITt7P4nZhupn3kIgK5K8+YnoFiXcMPfNbLOhnfMoEyGTfGSpQxNlrj1iY4es1OJaCILlX7LN9TmybjsHRfJdF37WMK5NTq+hQMs0D4LaL+vOpfM4VEP7XVh4hBSmTTSkcjRyJq2CyiH/vs1nEm6yW2lYyelMZUdqGe6KDPSgInZDG952B4BY3YBktqKmCi/T9pDXUbHO1MbKJR+A/R/Okc6eXexfHSdDFza4I+s/5EvROqVuPdseue13x2mjuUT3YRNj+cEBZ0sW+Q2fgoFgWEJTYlzny5IlOi7eY96VP1794DuWI3q/aFVxqPHm4BvgO+DSN6iqM93umAymPuOcTn5H8tUg3jUIthSTZi0GvKS3ahy31uGSQ9WuI63fBEKO1EzUTblAQUz0/FDx/0E/HLIu1xcz4r8tkrcwfqK90ayplCU7/tDful0TqaHlH5+9E0KvlvRAUMrbSwtLKfbBblWf17xbz3lCdj8+cL6G8yEEv7IsHLzk9tz6QnPaKTSDtKE4Oo5h2fN+HKyg5JiSx0Nwf9fHpW0ep8IO2Vxe3E6CkjS4KYUTncSkY2bzmPEP6LBl4SqzhPYHSVDvblK2RSiscOWudOtgxhI+oiH3TmnnyOirCf0XJtBYgJYoljuzw1ioYxD0NBT8fHlaFRbaoSnBa1tconYIeQ7m/EF3UWm3t9hfrlzY48kNIc+PkfFkkN515RQMzQ9D3bVrwpzENTQT+2DFExp3gEuqkfjcbnAS4TnHHxXeNolJWp5NQdlp/mrzxUGhi8zh/ctmpciDGQUuV0az+ISXJm/36VYieuNi7XWXbGVgmidYIJcyO9S/FY6NVGiMelCibpC3TuOa3PBi71Ccv3SGVpRcf2/985btShVrVOWlqoB0YMyB04ag+xnk9yFuFhVjo1tkOVZdI21Zsbzt5CNkydEdaNtJTxwYpUWvO3Pma2f5b7Ve5IRfoQmIm0N7cARl8U8uAarG2QMYOJY6cfMU3rVbGk6xsd4f5H/VHBCWCpCSpWtXJJt5vrMyohaWSS6BDFPcV88MWs4D2D8pAxQG0oQZiuaF+RXBQvpWum+Vx09qqHdEBOGCC367K+EnwakRpKXdt6rR6HtceFARjrGUBSQdVTsD7flHNataXL3duKhwuZ20Tg8GVqvndZlaLAKvFqRuiIAD3TID8blk+amIQld0Oei/2L+IIQeYtuNsKoMIrrUyoB4s0RIRopGek97CnnKGA41rT30dfkWJZdhU6pTYfgfCYR5xUIhfE0Z6mNj8+tWIYQ67GY07knkJc2ClnMDYJWFtQGsis3EZkPfY4QBrHNkxbXEmsnog1ai+JAuEdB9bxitfqfLVIMwDF1Z1d/hHlwBbSEVGMrGdDm6/+3DVBajpEmKwWoAP9dP4jG+eAav1LFigM5F9+K6Zz1g91YAyAcvHUUCQOEzF+knOdS+jD9/EJ7MCjgIY6QCGFs/4rS+PRNJXSj3XBtVwUjXY0u3+aj3aTqj1Q0jdsI=","iv_b64":"f3ksCg8Zons8f/w1","salt_b64":"4sx8eWTYojLx6R6rtQNNOA=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1740,6 +1741,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="5P6xRxML9LW7ADkrci+29Q"></script>
+<script src="assets/js/main.js" nonce="PKILA/CSu3mNbsZWZ2znvg"></script>
 </body>
 </html>
