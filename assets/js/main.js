@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-14T20:53:22.780413600+00:00
+// 生成時間: 2025-09-14T21:02:09.378447300+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -1782,6 +1782,7 @@
             const themeDropdown = document.getElementById('themeDropdown');
             const fontFamilyBtn = document.getElementById('fontFamilyBtn');
             const fontFamilyDropdown = document.getElementById('fontFamilyDropdown');
+            const dropdownOverlay = document.getElementById('dropdownOverlay');
 
             // 從 localStorage 載入保存的設定
             const savedTheme = localStorage.getItem('memoir-theme') || 'default';
@@ -1807,6 +1808,7 @@
                     // 切換當前下拉選單
                     if (!isVisible) {
                         themeDropdown.classList.add('open');
+                        dropdownOverlay.classList.add('show');
                     }
                 });
 
@@ -1836,6 +1838,7 @@
                     // 切換當前下拉選單
                     if (!isVisible) {
                         fontFamilyDropdown.classList.add('open');
+                        dropdownOverlay.classList.add('show');
                     }
                 });
 
@@ -1853,6 +1856,13 @@
                 });
             }
 
+            // 背景遮罩點擊事件
+            if (dropdownOverlay) {
+                dropdownOverlay.addEventListener('click', () => {
+                    hideAllDropdowns();
+                });
+            }
+
             // 點擊其他地方時隱藏下拉選單
             document.addEventListener('click', () => {
                 hideAllDropdowns();
@@ -1864,11 +1874,17 @@
                 document.getElementById('themeDropdown'),
                 document.getElementById('fontFamilyDropdown')
             ];
+            const overlay = document.getElementById('dropdownOverlay');
+
             dropdowns.forEach(dropdown => {
                 if (dropdown) {
                     dropdown.classList.remove('open');
                 }
             });
+
+            if (overlay) {
+                overlay.classList.remove('show');
+            }
         }
 
         function updateThemeButtonState(activeTheme) {
