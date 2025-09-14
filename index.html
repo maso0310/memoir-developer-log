@@ -14,13 +14,13 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-d19308e1-0ff3-43df-bef4-000bc030ca1d' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-80f79a45-7a1e-4fe3-ad3f-1c88d3c0d802' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="d19308e1-0ff3-43df-bef4-000bc030ca1d" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="80f79a45-7a1e-4fe3-ad3f-1c88d3c0d802" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="d19308e1-0ff3-43df-bef4-000bc030ca1d">
+    <style nonce="80f79a45-7a1e-4fe3-ad3f-1c88d3c0d802">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -486,6 +486,7 @@
                 0 0 40px rgba(59, 130, 246, 0.6),
                 0 0 60px rgba(59, 130, 246, 0.4),
                 inset 0 0 10px rgba(255, 255, 255, 0.3);
+            animation: timelineGlow 2s ease-in-out infinite;
         }
 
         .timeline-item.active::after {
@@ -528,7 +529,37 @@
                 box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
             }
         }
-        
+
+        @keyframes timelineGlow {
+            0% {
+                opacity: 1;
+                box-shadow:
+                    0 0 15px rgba(59, 130, 246, 0.6),
+                    0 0 30px rgba(59, 130, 246, 0.4),
+                    0 0 45px rgba(59, 130, 246, 0.2),
+                    inset 0 0 10px rgba(255, 255, 255, 0.2);
+                transform: translateY(-50%) scale(1.25);
+            }
+            50% {
+                opacity: 1;
+                box-shadow:
+                    0 0 25px rgba(59, 130, 246, 0.8),
+                    0 0 50px rgba(59, 130, 246, 0.6),
+                    0 0 75px rgba(59, 130, 246, 0.4),
+                    inset 0 0 15px rgba(255, 255, 255, 0.3);
+                transform: translateY(-50%) scale(1.35);
+            }
+            100% {
+                opacity: 1;
+                box-shadow:
+                    0 0 15px rgba(59, 130, 246, 0.6),
+                    0 0 30px rgba(59, 130, 246, 0.4),
+                    0 0 45px rgba(59, 130, 246, 0.2),
+                    inset 0 0 10px rgba(255, 255, 255, 0.2);
+                transform: translateY(-50%) scale(1.25);
+            }
+        }
+
         /* 觸控回饋 */
         .touch-feedback {
             position: relative;
@@ -1188,7 +1219,7 @@
 
         /* 當縮圖列顯示時，日期顯示下移 */
         .current-date-display.below-thumbnails {
-            top: 70px;
+            top: 110px;
         }
 
         .current-date-display.date-hidden {
@@ -1435,7 +1466,7 @@
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"+HFAjHx2nWZzRvipEeoSjVXLRBspgl0psHwm/ZyBmtdoAd2WiiX8S4qrYY5P6kFMJTPk5vNFvOyjzZj+irpca9PhDXHdgsxJ0r0nKxoEVsyez65uJmhOfl7Ap93CpAxl18xU7kVcdD+BwTX+ayKbUUDojLKea20HXMxDEmFfVMm/4jaxvlfH8xJZd/LixYfI0N+sfFdNFpyy8e7shvimMcEGpqDMgEBZYqCRoa7cFqazPMIbVdGVwDZpblS2jh1n0KQmxG9aILuKi+YxINPVtDDpYa2LFBtt1l6Xxk7AxD1P5ZvbvtPi3ECp/8bUbpb3w9MTILWMJF9wkf6ARJH3qikLI5F1lRgZyCQie3UbsG+G/xbwbEbF4aPducGx91upXpZhBSFSfxFy9ESzQKt0swwXs2aYwZMeOSb2rftcWUxOhoCwx0rFp4iMWs+ALQstSZ0jSVF8mmVcEXzaY110KURVnhHY45GtwGovZs5VhEOg9ZRrqk7rHq57+v3mTuG3F1DSJr9wP5vFe43jSfs5GmEbZGZFtYHn8RVK5XzFNSJ8hDOkz9QizYn1XC8HgKH/eH2rU+oTIxzc/v00pBRam8rsTNL+OfGz03BCypqIAZmKkGYA5Pa/gZfSZWIaLwoIJVgofRauAiye26mIGoGua1Ph/WY5V6KCANvxawTEo5pakEf+1e+9q7EKhnKURctMPGotN7dn2mj0gJNwGOHcK/vF9WSZn1yn6dQ7Coxgt02xzGfhLEoMu+gFmaGUcWZHnuTXWp0axSMMMlyMXtnjnQz9zwMVl02G6Bz413ysH0JmDS9YWl9PFFTFbpmEUX2vzUkBzGckm+YVB/eJsd+c7Uh5kPcBHuSCxPwUR1kpzhhhcylr/4NZD3AJReQZvCMa23uv2WHSDPR+hcGz41TgL45gvi/iY2q3NNlo8rdl+FhDw9ffNNvmOlgMpXZfsfc5QyYrzEWkGV4EUNNzvX9q9ZVEWOhcNxVw7MxRfhnRkPfwWdLrFlyjGxNwSe0aK82RLCf59mGhjZH2oG2xebvZ92psLChQTG7LndvJ00tLesNT/ziYxpxXnoPpMQpi97/xiUYjyGLNg5quzazUBGaxgjdUKzfPtMqmr1u9iqIaD7Dz+T4X0ejYjOJXyHJUn60s40mOtD+QGfioSQ/IhtQe4RlWd0HCeHZ6mXi01cpDl5/FKY+LEZetg0EuTQP+7/cq+Sb6NgZ5M6LDVVvWXlph6ePmgVv5WELs0yHm0bJAxYs86JN5qGC9Z45eIG+cbnpdLq6p1hnOrOLhIgvXzXOl4+MDTFnPTZm3AX+Bt/De4ApAtW2mbiackpi0hN7XbCkyJD17wrxTuCthxYHQPMQH1A13csi5G6t6ps5iZ7pzl/yGUG82ZPxhim3t55WMHRmj0rDVkDvaioBgCstVRyIHdLGprs7aFgE/O5NqTl9V5E1d91QeSf/f1MQloLmY8u/4RmET+aCcHei8Fn7Dwpcp34+mY8O8SfEpJISmFECQRwgPLhE5BQI0DTUQp3L37CkUiPuMKMZnN31eSifHOnxQAoCAe1aNzeIVZOdcn2RBEWtP7dKWp5n0GH4xVDyw//+aWzlTWDD+DJIOR+XMCuF+a9Nwc5lY1qkZZRYDxP9aJosC3c+kd9cwS52Ie+XzZelGzTICUsI=","iv_b64":"CdArT0soQdnowht+","salt_b64":"Q6JU6nPXaaK/tKKO2IXWlw=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"QoiqR879PYG8YdromgkgzpBDIdRFDoQXA2xmamdBjQ3XX69shktiHd+JtQDUvTHsccQanO/WcyV+aygoxEe/cN7OAmQnMSMs+1al1XGxFuujzP3+znef1Iu68wJIj+AtFEvxyN7axtwiNeCMzgARzx/g5ZQMtoGRtGJZvqn4X6+28Val0uiukH1FJVX+XgLfxVGLhn1NdtHc7yKOTC5wFsXlrOJfzLY+5hlGDD5GRaRnFm4tscQ+5dgKyehEHYK2Fq1GBPCDdN/2tvcP5OvPlYE6IeVbmWY2wFVTWzTCC2vvxo7qe5u3qCwCCKLsPWaqu6XleiMLSf3980o8tB7X9+ufMW7VX5ZlmADBvTeiE+sTRvTZrEavRwLZm0tfRF4Gx5hTmVtHZ99TQU/tAEaQ/WzazxZxavVzxjw6zLC8oKzhBhgXSIWONR1xdm8maqsRQt2m5KzKJe+Lbsazc2RD9Ihv8/oFVkBsVKnIiOrvxQXqJ4u6DP2TFnnicFmAhp4f49U8LpsFzRQKCvV38VvAYUmnPy1KSMpUKDUyNtsWy9Ct3hd4MQo4+B//XcrKJKol+JtOcTkyT6eUAT8slLmwCNWX8q5JVEppEKngBcWDDMUodzbTktFnAqAaJEAS48HKfG6Fc67l1bW+0ADOcUPYiGWeBow+LA2IOILqkdjVcnswu2xw3znZp/7ar6wcP176hakGfZB0SJN08b3qS+3AIpVBrfJZQYHIiCaGD3MnHg7B3HEahYn4zBmVh1+XuLDO1Hog1IxL0wtCoPQEyjOgw/w+deC53602VbZ3ERnkI6lioaV8lwTsUGAmMU4ARKhPQaLT9gMZhuEDV5Ubzp6bT3BvqSX+Ah5WQF5gfLy0YiNhY/NVRvi9za4lVbhJVS2ex95o6rOCZTLQwV70gH0mCZ3R/yrZfBn7kQi88gvRHUbsPxFtnb9u7FpccxtksZBJdhK7Bky4a/2Xu/8YSBb5loe+ZdqaCa8IJSwn+F0qBVw4UrhtFfa7zUrhJwhGNfb07LY/LGoo6eiLc2eFH9kdgRuwbIp2UrhJG1JRhtXpPMx8AFrIsmGxYp4k2l/+KnYbJQCSHBP/I33i9dYB2ak/IU23VPv1L2RK9OJeG7xIsIlpmV2dsSxk24eQQ9T31GkHbsMU3mUKpVIIH7l76MdaVWPMb7mCB/HBzvR+Jjxvl8PA2numiHZdKtSbBOJoS3yLlPOTEOSj1jwrYwovAdrXh/sU1HQ0QgNST7zSU1WUMJwNpjpsc7n5OHd+jp92y0vOahA068W51o9L8dOcZU0YNBEqccQeL92gQCHVKvldul6pwciIsOH8DhwDKjTTCu8vyCTZP3rPeZiMMZibTAk87pXGa1p+4i6blYFrfRxANoznPnxisztrkjsPP+Rrf5prgZlAdQVvzZZOYHdlaYSeRyMCnH3ZADmKvrteh8PJqU26f1QEskN+uVZ/Mnvys2FVsE73LI4p+WhHzIa9bi+Tx5PUbBHywyrebGEGP9tnr0x1q0eKQuF4wzh5MAEyfuGU1dTaWORdhed+Cxgva3LvOR1ghTjVC8D/qamvMcie3wzEBmhHm1I1yZBsu9nmesn4KoT3NkiFxPnahST57hEzqccGqiVVNOppnfjIEzn7OY8gPYIydPA1zWaaTzpd3eHpGwztxp8=","iv_b64":"vl5+pU2NLcWdEd1D","salt_b64":"7661ZjQdnW7hQC2bAzWo3A=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -1637,6 +1668,6 @@
 
         
         
-<script src="assets/js/main.js" nonce="LAfOVjLbPwDXdS1FVCFMFg"></script>
+<script src="assets/js/main.js" nonce="BHDjE747OUI6AY8/MRzlgA"></script>
 </body>
 </html>
