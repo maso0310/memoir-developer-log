@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-15T02:42:44.495093400+00:00
+// 生成時間: 2025-09-15T02:53:59.711266100+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -24,7 +24,7 @@
         let areControlsHidden = !true;
         let isDateHidden = !true;
         let isThemeMenuOpen = false;
-        let currentTheme = localStorage.getItem('memoir-theme') || 'default';
+        let currentTheme = localStorage.getItem('memoir-theme') || 'forest';
 
         // DOM 元素緩存
         const elements = {
@@ -231,11 +231,11 @@
                 const date = event.date || '';
                 
                 item.innerHTML = `
-                    <div style="font-size: 0.9rem; font-weight: 600; color: #e5e7eb; margin-bottom: 0.25rem;">
+                    <div style="font-size: 0.9rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">
                         ${title}
                     </div>
-                    ${date ? `<div style="font-size: 0.75rem; color: #60a5fa; margin-bottom: 0.25rem;">${date}</div>` : ''}
-                    <div style="font-size: 0.7rem; color: #9ca3af; line-height: 1.2;">
+                    ${date ? `<div style="font-size: 0.75rem; color: var(--primary); margin-bottom: 0.25rem;">${date}</div>` : ''}
+                    <div style="font-size: 0.7rem; color: var(--text-secondary); line-height: 1.2;">
                         ${event.description ? event.description.substring(0, 50) + '...' : ''}
                     </div>
                 `;
