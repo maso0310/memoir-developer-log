@@ -4,7 +4,7 @@
     --primary-dark: #1d4ed8;
     --secondary: #6b7280;
     --bg-primary: #1a1a2e;
-    --bg-secondary: rgba(42, 42, 74, 1.0);
+    --bg-secondary: #1e1e2d;
     --surface: rgba(42, 42, 74, 0.9);
     --surface-hover: rgba(59, 130, 246, 0.2);
     --text-primary: #ffffff;
@@ -19,6 +19,11 @@
     --overlay-strong: rgba(255, 255, 255, 0.3);
     --panel-bg: rgba(26, 26, 46, 0.3);
     --accent: #38bdf8;
+    /* 專業時間軸面板樣式 */
+    --timeline-panel-bg: #1a1a1a;
+    --timeline-panel-border: #2a2a2a;
+    --timeline-panel-text: #e5e5e5;
+    --timeline-panel-accent: #3b82f6;
 }
 
 /* 森林主題 */
@@ -27,7 +32,12 @@
     --primary-dark: #16a34a;
     --secondary: #84cc16;
     --bg-primary: #1a2520;
-    --bg-secondary: rgba(34, 197, 94, 1.0);
+    --bg-secondary: #1a251a;
+    /* 森林主題時間軸面板 */
+    --timeline-panel-bg: #1a1a1a;
+    --timeline-panel-border: #2a352a;
+    --timeline-panel-text: #e8f5e8;
+    --timeline-panel-accent: #22c55e;
     --surface: rgba(34, 197, 94, 0.2);
     --surface-hover: rgba(34, 197, 94, 0.3);
     --text-primary: #dcfce7;
@@ -50,7 +60,12 @@
     --primary-dark: #0284c7;
     --secondary: #06b6d4;
     --bg-primary: #0c1426;
-    --bg-secondary: rgba(14, 165, 233, 1.0);
+    --bg-secondary: #1a1e25;
+    /* 海洋主題時間軸面板 */
+    --timeline-panel-bg: #1a1a1a;
+    --timeline-panel-border: #2a2e35;
+    --timeline-panel-text: #e8f4fd;
+    --timeline-panel-accent: #0ea5e9;
     --surface: rgba(14, 165, 233, 0.2);
     --surface-hover: rgba(14, 165, 233, 0.3);
     --text-primary: #e0f2fe;
@@ -73,7 +88,12 @@
     --primary-dark: #d97706;
     --secondary: #fbbf24;
     --bg-primary: #2a1f1a;
-    --bg-secondary: rgba(245, 158, 11, 1.0);
+    --bg-secondary: #25211a;
+    /* 日落主題時間軸面板 */
+    --timeline-panel-bg: #1a1a1a;
+    --timeline-panel-border: #35312a;
+    --timeline-panel-text: #fdf4e8;
+    --timeline-panel-accent: #f59e0b;
     --surface: rgba(245, 158, 11, 0.2);
     --surface-hover: rgba(245, 158, 11, 0.3);
     --text-primary: #fef3c7;
@@ -96,7 +116,12 @@
     --primary-dark: #7c3aed;
     --secondary: #a78bfa;
     --bg-primary: #241a30;
-    --bg-secondary: rgba(139, 92, 246, 1.0);
+    --bg-secondary: #221a25;
+    /* 薰衣草主題時間軸面板 */
+    --timeline-panel-bg: #1a1a1a;
+    --timeline-panel-border: #322a35;
+    --timeline-panel-text: #f3e8ff;
+    --timeline-panel-accent: #8b5cf6;
     --surface: rgba(139, 92, 246, 0.2);
     --surface-hover: rgba(139, 92, 246, 0.3);
     --text-primary: #f3e8ff;
@@ -118,7 +143,12 @@
     --primary-dark: #b91c1c;
     --secondary: #ef4444;
     --bg-primary: #1a0f0f;
-    --bg-secondary: rgba(220, 38, 38, 1.0);
+    --bg-secondary: #251a1a;
+    /* 酒紅主題時間軸面板 */
+    --timeline-panel-bg: #1a1a1a;
+    --timeline-panel-border: #352a2a;
+    --timeline-panel-text: #fdf2f2;
+    --timeline-panel-accent: #dc2626;
     --surface: rgba(220, 38, 38, 0.2);
     --surface-hover: rgba(220, 38, 38, 0.3);
     --text-primary: #fef2f2;
@@ -513,20 +543,27 @@ body {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, var(--primary), var(--accent));
+    background: linear-gradient(to bottom,
+        var(--timeline-panel-accent),
+        rgba(255, 255, 255, 0.2),
+        var(--timeline-panel-accent)
+    );
+    opacity: 0.6;
 }
 
 .timeline-item {
     position: relative;
-    padding: 1rem 0.5rem;
-    margin: 0.5rem 0;
-    border-radius: 8px;
+    padding: 1.25rem 1rem;
+    margin: 0.75rem 0;
+    border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     min-height: 80px;
-    background: var(--surface);
-    color: var(--text-primary);
-    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--timeline-panel-text);
+    border: 1px solid var(--timeline-panel-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 /* 中心圓點 - 基於MemoirEditor.tsx的設計 */
@@ -538,11 +575,12 @@ body {
     transform: translateY(-50%);
     width: 18px;
     height: 18px;
-    background: var(--secondary);
+    background: var(--timeline-panel-accent);
     border-radius: 50%;
-    transition: all 0.14s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 3px solid var(--timeline-panel-bg);
+    box-shadow: 0 0 0 1px var(--timeline-panel-border);
     z-index: 3;
-    border: 2px solid var(--bg-secondary);
 }
 
 /* 脈衝光暈 - 第一層 */
@@ -575,13 +613,16 @@ body {
 }
 
 .timeline-item:hover {
-    background: var(--surface-hover);
-    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--timeline-panel-accent);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: translateX(4px);
 }
 
 .timeline-item:hover::before {
-    background: var(--primary);
+    background: var(--timeline-panel-accent);
     transform: translateY(-50%) scale(1.12);
+    box-shadow: 0 0 0 1px var(--timeline-panel-border), 0 0 15px var(--timeline-panel-accent);
 }
 
 .timeline-item:hover::after {
@@ -590,9 +631,10 @@ body {
 }
 
 .timeline-item.active {
-    background: var(--surface-hover);
-    border-color: var(--primary);
-    box-shadow: 0 0 15px var(--shadow);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--timeline-panel-accent);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3), 0 0 10px var(--timeline-panel-accent);
+    transform: translateX(6px);
 }
 
 .timeline-item.active::before {
@@ -1260,20 +1302,22 @@ body {
     transform: none;
 }
 
-/* 時間軸面板樣式 - 從右側進出 */
+/* 時間軸面板樣式 - 專業質感設計 */
 .timeline-panel {
     position: fixed;
     top: 0;
     right: -400px;
     width: 350px;
     height: 100vh;
-    background: var(--bg-secondary);
+    background: var(--timeline-panel-bg);
     z-index: 9999;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
     transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     overflow-y: auto;
-    border-left: 1px solid var(--border);
-    box-shadow: -5px 0 20px var(--shadow);
+    border-left: 2px solid var(--timeline-panel-border);
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.4);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 
 .timeline-panel.open {
@@ -1300,27 +1344,30 @@ body {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: var(--surface);
-    border: 2px solid var(--border);
-    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--timeline-panel-border);
+    color: var(--timeline-panel-text);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px var(--shadow);
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .timeline-panel .close-btn:hover {
-    background: var(--danger);
-    border-color: var(--danger);
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px var(--danger-hover);
+    background: rgba(239, 68, 68, 0.9);
+    border-color: rgba(239, 68, 68, 0.8);
+    color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);
 }
 
 /* 極簡界面調整 */
