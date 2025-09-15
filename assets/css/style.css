@@ -634,7 +634,6 @@ body {
     background: rgba(255, 255, 255, 0.12);
     border-color: var(--timeline-panel-accent);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.3), 0 0 10px var(--timeline-panel-accent);
-    transform: translateX(6px);
 }
 
 .timeline-item.active::before {
