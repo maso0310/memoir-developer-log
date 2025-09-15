@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-15T07:52:10.038988500+00:00
+// 生成時間: 2025-09-15T14:31:07.777132700+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -21,10 +21,10 @@
         let isLightboxOpen = false;
         let thumbnailsStateBeforeLightbox = false; // 記錄燈箱開啟前的縮圖列狀態
         let isSubtitleVisible = true;
-        let areControlsHidden = !true;
+        let areControlsHidden = !false;
         let isDateHidden = !true;
         let isThemeMenuOpen = false;
-        let currentTheme = localStorage.getItem('memoir-theme') || 'forest';
+        let currentTheme = localStorage.getItem('memoir-theme') || 'ocean';
 
         // DOM 元素緩存
         const elements = {
