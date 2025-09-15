@@ -4,7 +4,7 @@
     --primary-dark: #1d4ed8;
     --secondary: #6b7280;
     --bg-primary: #1a1a2e;
-    --bg-secondary: rgba(42, 42, 74, 0.95);
+    --bg-secondary: rgba(42, 42, 74, 1.0);
     --surface: rgba(42, 42, 74, 0.9);
     --surface-hover: rgba(59, 130, 246, 0.2);
     --text-primary: #ffffff;
@@ -27,7 +27,7 @@
     --primary-dark: #16a34a;
     --secondary: #84cc16;
     --bg-primary: #1a2520;
-    --bg-secondary: rgba(34, 197, 94, 0.15);
+    --bg-secondary: rgba(34, 197, 94, 1.0);
     --surface: rgba(34, 197, 94, 0.2);
     --surface-hover: rgba(34, 197, 94, 0.3);
     --text-primary: #dcfce7;
@@ -50,7 +50,7 @@
     --primary-dark: #0284c7;
     --secondary: #06b6d4;
     --bg-primary: #0c1426;
-    --bg-secondary: rgba(14, 165, 233, 0.15);
+    --bg-secondary: rgba(14, 165, 233, 1.0);
     --surface: rgba(14, 165, 233, 0.2);
     --surface-hover: rgba(14, 165, 233, 0.3);
     --text-primary: #e0f2fe;
@@ -73,7 +73,7 @@
     --primary-dark: #d97706;
     --secondary: #fbbf24;
     --bg-primary: #2a1f1a;
-    --bg-secondary: rgba(245, 158, 11, 0.15);
+    --bg-secondary: rgba(245, 158, 11, 1.0);
     --surface: rgba(245, 158, 11, 0.2);
     --surface-hover: rgba(245, 158, 11, 0.3);
     --text-primary: #fef3c7;
@@ -96,7 +96,7 @@
     --primary-dark: #7c3aed;
     --secondary: #a78bfa;
     --bg-primary: #241a30;
-    --bg-secondary: rgba(139, 92, 246, 0.15);
+    --bg-secondary: rgba(139, 92, 246, 1.0);
     --surface: rgba(139, 92, 246, 0.2);
     --surface-hover: rgba(139, 92, 246, 0.3);
     --text-primary: #f3e8ff;
@@ -118,7 +118,7 @@
     --primary-dark: #b91c1c;
     --secondary: #ef4444;
     --bg-primary: #1a0f0f;
-    --bg-secondary: rgba(220, 38, 38, 0.15);
+    --bg-secondary: rgba(220, 38, 38, 1.0);
     --surface: rgba(220, 38, 38, 0.2);
     --surface-hover: rgba(220, 38, 38, 0.3);
     --text-primary: #fef2f2;
@@ -1268,7 +1268,6 @@ body {
     width: 350px;
     height: 100vh;
     background: var(--bg-secondary);
-    backdrop-filter: blur(20px);
     z-index: 9999;
     padding: 2rem 1rem;
     transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
