@@ -14,13 +14,13 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-825a914d-c7bc-43c7-8af2-0a7c6b0e0689' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-c5601fef-2cf5-4d1f-af4d-79ca22509e4a' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="825a914d-c7bc-43c7-8af2-0a7c6b0e0689" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="c5601fef-2cf5-4d1f-af4d-79ca22509e4a" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內聯CSS樣式 -->
-    <style nonce="825a914d-c7bc-43c7-8af2-0a7c6b0e0689">
+    <style nonce="c5601fef-2cf5-4d1f-af4d-79ca22509e4a">
         /* CSS 變數定義 - 預設主題 */
 :root {
     --primary: #3b82f6;
@@ -183,7 +183,7 @@ body {
     max-width: 100%;
     max-height: 70vh;
     border-radius: 8px;
-    background: #2a2a4a;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -197,7 +197,7 @@ body {
 }
 .sidebar {
     width: 300px;
-    background: #2a2a4a;
+    background: var(--surface);
     padding: 1rem;
     overflow-y: auto;
 }
@@ -230,7 +230,7 @@ body {
 .thumbnail {
     width: 60px;
     height: 60px;
-    background: #2a2a4a;
+    background: var(--surface);
     border-radius: 4px;
     cursor: pointer;
     border: 2px solid transparent;
@@ -266,7 +266,7 @@ body {
     box-sizing: border-box;
 }
 .password-container {
-    background: #2a2a4a;
+    background: var(--surface);
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 20px 40px var(--shadow);
@@ -1751,10 +1751,10 @@ input[type="range"] {
     </style>
 
     <!-- 基礎樣式重置 -->
-    <style nonce="825a914d-c7bc-43c7-8af2-0a7c6b0e0689">
+    <style nonce="c5601fef-2cf5-4d1f-af4d-79ca22509e4a">
         * { box-sizing: border-box; margin: 0; padding: 0; }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"L44nWo4NMjp+SHmSjG6yNOsBuztspaHmTMNaH2n9EeD1M5+WkuS9A3RGh4rKDPH89uwFyoU/QJlzHBpgLTrPpKoAU7seq83XJXaAkIXpETJjiYj9rlcvfQ392XUkrSwI4UlQ9WCK2TeWF8wcCTugN6VPFikWZij6R7Gj8EKSKMPOSMXQxIM8SpflmVL2HXsaz9Ru4tcuPfsIuHcRQWPe/txe+7nGNGND9395QtGR6QWIcP4t3qIm0R7uHmnRHI7cfK/+EjwPXFQJyU4vEHv9qYtvDwLJuNx4TF9rEeFkg3OEOY6Zq2OVrA3n6SZs7Agar6cslTcrAGhsKD4R6ZgLBB9Z68Qa5L9PeWsXT1ORicbhT/8k5L0HVIB9Bw9kbBYnh2RI4LrPz9kLvhF21zUv4UUzpSESY+0F6uKhVhML4As8RhpbN4Vj5QP7XEU7Pxmo7j7FwWwOT2ijneQP3Y/PwBe9M8YX1wInJ/FiYJfwbbxs88xXlH1LaNrHZqa8Ek+9g+qZb6kKeXOc0YtIeT5MKtRVxcUzDUrtZTWdX8K/BkDE4gWnP4rfqYTHqnEVoC33xVr13vhla5d/FNLJoRzoPdNvK8F8QWEd3zw2py7hSrM24nw8ZiqU9EA/Aga3ztwYXW+2+VuUdKkVFYzcamdTn3z7q7dcKdWs8eJm6dCQvbW0JzmxqzqB/LpMfuf/rUIzfdVtqEN8/Ijqi0n+TswcA2PSuXpMmjqIoFzJoOikbnVtVVvFS7Ka0EFu8ZJagfC7RAs2JeeY0ZNrT5303BB9w/QuwmysQ5rC50hR2b//p4y85j5Kx0bs5ClJEmOPvcrtgqN2iLbDcZKfyfMY6AnnWc908QiM9p6vZri0zMzgMyF+9T+hoOnNVy+vcCE/t96HRet0PIYQCwQkb7x2WfZoXQ+2iFH0n954TqFwnoleYe+9rh6wqqk0qVNimRCOdQiOw4/Y3sb2NYr0L/GdI9Pls1BIfu75kqgonBaEcgb9801qVFYHQgLD4dyRKrXjOqdptDA/x1iT/BTRyg/FEvbewexK9IzXByxlZ5GmyD0vMTffuz/9e/nTe5TdVx3mP0SgExip7sVt9fBnMdRLeHHQHRrhu0bmEeRWwPZkLMQzOYyl51Y2feGZnsjhtbeOXoa5Vh394Tsj6BZ20IYqVgB1LW86mObwo7k/oHzaFgYWlmzNdslBZz0S3KW2JBW4POmD1JVRjyGNST218TP+ZQ9yg63rvkSikGPGT51qbXJMEhhGFTwRXQ+RJ5phxeVZbSSOgxPlKlnV7q0xy5ZkqWmi4Jb7auq+YfyT3z8gcJb0WQZI/4hkn+0FL+yzDXhrKKtMgw69rGO+QZ2L1gqEM1Fbu1FREyxaBlDmzk4HowPo4KevdQ2zCH8NlgYEyVyg71Mt4zrNHQTX1Fl24oCUxo0+V6ebKbcss4rAmuJlLNrMrBJHyH+sDgtFn3tc7jFLA9GIvueyv7Bqf9KUmin8XXKThQw0Da8K/jA0f4mtNpXfR/9Zavf+nyQp3x8L95Wut3lBdxtNGM5wjhNGU++LZNzjcM5wYsGFvotFt6vU85J4tSS/jEGpCv6+kGUfCFynaXV+3uzrz9zeErJSLmC8gdQ1rX2M60YrzNi0TA9uw4TzpAIaRlEa3rnrS26p6TRAHiIRM+kqmFo=","iv_b64":"RxMyux7fWv7HwKux","salt_b64":"qdGPE0F9mT52vmIlnZ51HA=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"lciBTgQOhtXsHGL1tt7L1Ch4qVEp0jGkuXV642rSYdHh4z0hItQKB9qJlXMr1pvmyESEyX6DnsarEJDFVQoUuFQWkNygNQ7cHZ3luby+CYE985ANwLpXBzSCvEpXEDQRUBe8g1imDw+92iZt7wnm1Cay2N8/hgFh4I+cio0fK6TzSt7GL0SrZxWx15N2nJK/yKp+xZkHeWvYJWzqZVdRrCPxCRodMIDQuWM3V5X/ewAXr1WfOVFAEWn8a/hf9/p2M1bsfDxbewa3ufx84bo9X8rU4mo0zMpuBYi/uLCyx31bMTXkdiiO1OWc9NK+C3gqiJmzz5oDWhM4Tso8iW207ZPR/iqEYebzaYxWZC1pfh28CjAYY7ZML01krRp/zxLfupsmRjv44PP8lczL+GO/rQXQmDjjhWPNQG9IDYZt6+Xni6CCxu9QEHcxuH7Amteyf8vIBLDkK1ohWs6q6zaJrexxizJwK8IDSpQqCFu+GzAuKBs0pduOyU0b2rliv/jiO/xS8kr6TcADiPRbGt0xDBiyBL7H2ClP85zy+qh+4ov8+hxH2nJzBW9Yaec7nccRp0TRhNha1xqKt7oHx2l4jC3Z4m7TwfRoI+8eeS6G74kuk9Vqy/d81xUoXZ33+RquFk/sbM9kvKVU96c2zKouV/Yw/FXM9EBw66vb+bmEBBWoIQoIFoFtZiOGB7hHa8qXI1Bn/ARHr/0IonWl+6+k8xtWMrZjjzXfKgPcuNgOUQ+8r7e003fUxp4qH/WPp3jqcaEmHpN01M4waVCVCziXAf6YP0/MsCeKF11Xmphy8biDEORrOiaJqJc/VSY5h8LTMj3pU9mhQVIXQRaONGIMs7kiRXeuuvm6D4u3NJhHjEaWhjW6IM01QxNCx/ciBkzHvcecwgQucXA6FAykb5m/rF9uz1AOB6+MfAmaSMSJ4uWub9nity0he4jbZXTVMmUC5pJi7gL3m08kV+2XpIvUwHjdNz+B36hzwFifTg2w7/Hkxke9TKGLL4Xgw2goSW7Rc1R7yiUMIPonqO/HYu86VPGKpqWtOBT9pYjIdGtyMHkOcZ+k5bsPjQplM07bJNGiML/WFdz9eVa5+i/Xla9KWs03wI3OrDK7UpErTVM3zr93uNaetMFR+/J9Z4J01Yj5JCL/HvHp8aK3UnUiir4nmikJsguTZU9S3oxEKs6BNW5W91UbbN1BLS1njlqe03qcg8r31crU1y48QNVIZH4JsxWt6xRMryMw2DWMLEWmfTy+HyCqTlH8BiSHROudkPxIZMORHDOZN315HFpbDA3WLCFsckx8d4hrkqW782aUwnnahN0NdUkdOYmg3ortxdxQKqWI8NcbUS5D0Ldkrov7nnGeyFvha0Nvg5tRoVpzZVQsLHOw2i2iJc3TrDjeWJTpTKzY8uoKg4Yqh26A/lW9pkzItSJjF4nhgxu1mkQVHcTYijwSUSSIF/fI71w+yasnbOfTLMPNLpSAW4qBWas7jfmTYMPQPiq5El40BBHLgqlLTaTKc+qB/Mn7yLjO8YYhxAWBcRSbaD5zonYaxvNtxWQ1CS6TIJLUPVllxAHgahr6IlLvVoo+KVmhaBtshyV3rW4BghBWxNhtWgglXrcNj++im0yN5qqa9WEaLF9MYPcuwPK90eCqwVapdWFuULXWDhNaDWA=","iv_b64":"lAyxxhQY95cSyRVR","salt_b64":"Y1AUuXd3hcxg8kinU5tBbA=="}</script>
 <meta name="require-password" content="true">
 </head>
 <body>
@@ -2015,6 +2015,6 @@ input[type="range"] {
 
         
         
-<script src="assets/js/main.js" nonce="Pq8fucWTC3YlKvLmY4POgw"></script>
+<script src="assets/js/main.js" nonce="ENCbI6s9eGJ9uC85le7Yiw"></script>
 </body>
 </html>
