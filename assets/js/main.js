@@ -1,701 +1,8 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-16T03:44:32.452672400+00:00
+// 生成時間: 2025-09-16T13:49:10.357147200+00:00
 
 // ========== 提取的腳本區塊 ==========
-
-        // 🔒 安全全域變數初始化
-        window.secureGlobals = {
-            MEMOIR_DATA: null,
-            decryptionMode: null,
-            decryptionAttempts: 0,
-            MAX_ATTEMPTS: 5,
-            lastAccessTime: null,
-            sessionExpiry: null
-        };
-        
-        window.secureUtils = {
-            showDecryptionError: function(message) {
-                console.error('🔒 解密錯誤:', message);
-                if (typeof window.showError === 'function') {
-                    window.showError(message);
-                } else {
-                    alert('錯誤: ' + message);
-                }
-            },
-            
-            initializeApp: function() {
-                console.log('🚀 初始化應用程式');
-                if (typeof window.onMemoirDecrypted === 'function') {
-                    window.onMemoirDecrypted(secureGlobals.MEMOIR_DATA);
-                } else {
-                    console.log('✅ 回憶錄解密完成，資料可用');
-                }
-            }
-        };
-        
-        console.log('🔒 安全框架初始化完成');
-    
-
-// ========== 提取的腳本區塊 ==========
-
-            (function() {
-                'use strict';
-                
-                console.log('🔑 伺服器端金鑰模式載入');
-                
-                window.autoDecrypt = async function() {
-                    try {
-                        // 獲取加密數據
-                        const encEl = document.getElementById('enc-payload');
-                        if (!encEl) throw new Error('找不到加密數據容器');
-                        
-                        const encData = JSON.parse(encEl.textContent || '{}');
-                        const { ciphertext_b64, iv_b64, salt_b64, aad } = encData;
-                        
-                        if (!ciphertext_b64 || !iv_b64 || !salt_b64) {
-                            throw new Error('加密數據不完整');
-                        }
-                        
-                        console.log('✅ 加密數據驗證通過');
-                        console.log('🔍 調試信息:', {
-                            ciphertext_length: ciphertext_b64.length,
-                            iv_length: iv_b64.length,
-                            salt_length: salt_b64.length,
-                            aad: aad
-                        });
-                        
-                        // 從伺服器獲取解密金鑰
-                        const response = await fetch('https://mastermaso.com/memoirflow/api/keys/retrieve', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Accept': 'application/json'
-                            },
-                            body: JSON.stringify({
-                                memoir_id: '4548b929-5c16-4ee7-a189-60679e2165be',
-                                session_id: 'direct',
-                                timestamp: new Date().toISOString()
-                            })
-                        });
-                        
-                        if (!response.ok) {
-                            const errorText = await response.text();
-                            throw new Error('無法獲取解密金鑰: HTTP ' + response.status + ' - ' + errorText);
-                        }
-                        
-                        const result = await response.json();
-                        console.log(`result=${JSON.stringify(result)}`)
-                        if (!result.decryption_key) {
-                            throw new Error('伺服器回應中缺少解密金鑰');
-                        }
-                        
-                        console.log('✅ 金鑰獲取成功');
-                        
-                        // 解碼金鑰
-                        const keyB64 = result.decryption_key;
-                        console.log('🔍 原始金鑰長度:', keyB64.length);
-                        
-                        const b64 = keyB64.replace(/-/g, '+').replace(/_/g, '/');
-                        const padLength = (4 - (b64.length % 4)) % 4;
-                        const paddedB64 = b64 + '='.repeat(padLength);
-                        console.log('🔍 處理後的 base64:', paddedB64.length);
-                        
-                        const raw = atob(paddedB64);
-                        const secretBytes = new Uint8Array([...raw].map(c => c.charCodeAt(0)));
-                        console.log('✅ 解密金鑰處理完成，長度:', secretBytes.length);
-                        
-                        // PBKDF2 金鑰推導
-                        const salt = Uint8Array.from(atob(salt_b64), c => c.charCodeAt(0));
-                        console.log('🔍 Salt 長度:', salt.length);
-                        
-                        const keyMat = await crypto.subtle.importKey('raw', secretBytes, 'PBKDF2', false, ['deriveKey']);
-                        const aesKey = await crypto.subtle.deriveKey(
-                            { name: 'PBKDF2', salt, iterations: 200000, hash: 'SHA-256' },
-                            keyMat, 
-                            { name: 'AES-GCM', length: 256 }, 
-                            false, 
-                            ['decrypt']
-                        );
-                        
-                        console.log('✅ AES 密鑰推導完成');
-                        
-                        // AES-GCM 解密
-                        const iv = Uint8Array.from(atob(iv_b64), c => c.charCodeAt(0));
-                        const ct = Uint8Array.from(atob(ciphertext_b64), c => c.charCodeAt(0));
-                        
-                        console.log('🔍 解密參數:', {
-                            iv_length: iv.length,
-                            ciphertext_length: ct.length,
-                            has_aad: !!aad
-                        });
-                        
-                        const decryptAlgo = aad ? 
-                            { name: 'AES-GCM', iv, additionalData: new TextEncoder().encode(aad) } : 
-                            { name: 'AES-GCM', iv };
-                        
-                        let decryptedBuffer;
-                        try {
-                            decryptedBuffer = await crypto.subtle.decrypt(decryptAlgo, aesKey, ct);
-                            console.log('✅ AES-GCM 解密完成');
-                        } catch (decryptError) {
-                            console.error('❌ AES-GCM 解密失敗:', decryptError);
-                            
-                            // 嘗試不使用 AAD 解密
-                            if (aad) {
-                                console.log('🔄 嘗試不使用 AAD 解密...');
-                                try {
-                                    decryptedBuffer = await crypto.subtle.decrypt(
-                                        { name: 'AES-GCM', iv }, 
-                                        aesKey, 
-                                        ct
-                                    );
-                                    console.log('✅ 無 AAD 解密成功');
-                                } catch (noAadError) {
-                                    throw new Error('解密失敗：金鑰不匹配或數據已損壞');
-                                }
-                            } else {
-                                throw new Error('解密失敗：金鑰不匹配或數據已損壞');
-                            }
-                        }
-                        
-                        const decryptedText = new TextDecoder().decode(new Uint8Array(decryptedBuffer));
-                        let memoirData;
-                        
-                        try {
-                            memoirData = JSON.parse(decryptedText);
-                        } catch (parseError) {
-                            throw new Error('解密後的數據格式無效');
-                        }
-                        
-                        if (!memoirData || typeof memoirData !== 'object') {
-                            throw new Error('解密後的回憶錄數據無效');
-                        }
-                        
-                        console.log('✅ 回憶錄數據解析成功:', {
-                            id: memoirData.id,
-                            name: memoirData.chinese_name,
-                            eventsCount: memoirData.events?.length || 0
-                        });
-                        
-                        // 設置全域數據並觸發事件
-                        window.MEMOIR_DATA = memoirData;
-                        window.dispatchEvent(new CustomEvent('memoir:decrypted', {
-                            detail: memoirData
-                        }));
-                        
-                        console.log('🎉 伺服器端金鑰解密完成');
-                        return true;
-                        
-                    } catch (error) {
-                        console.error('❌ 解密失敗:', error);
-                        
-                        // 修正錯誤處理：確保 error.message 是字符串
-                        let errorMessage = 'unknown error';
-                        if (error && typeof error === 'object') {
-                            if (typeof error.message === 'string') {
-                                errorMessage = error.message;
-                            } else if (typeof error.toString === 'function') {
-                                errorMessage = error.toString();
-                            }
-                        } else if (typeof error === 'string') {
-                            errorMessage = error;
-                        }
-                        
-                        // 根據錯誤類型提供具體指導
-                        if (errorMessage.includes('金鑰') || errorMessage.includes('key')) {
-                            errorMessage = '解密金鑰獲取失敗，請檢查網路連接或聯繫管理員';
-                        } else if (errorMessage.includes('decrypt') || errorMessage.includes('解密')) {
-                            errorMessage = '內容解密失敗，可能是金鑰不匹配或數據已損壞';
-                        } else if (errorMessage.includes('network') || errorMessage.includes('fetch')) {
-                            errorMessage = '網路連接失敗，請檢查網路狀態後重試';
-                        }
-                        
-                        if (typeof window.showError === 'function') {
-                            window.showError('解密失敗: ' + errorMessage);
-                        } else {
-                            alert('解密失敗: ' + errorMessage);
-                        }
-                        return false;
-                    }
-                };
-                
-                console.log('✅ 伺服器端金鑰解密腳本準備完成');
-                
-            })();
-        
-
-// ========== 提取的腳本區塊 ==========
-
-            // MSE 媒體檔案自動解密程式碼 - 性能優化版
-            (function() {
-                'use strict';
-                
-                console.log('🔓 MSE媒體解密模組已載入 (性能優化版)');
-                
-                const MSE_OFFSET = 37;
-                const GITHUB_BASE_URL = 'https://maso0310.github.io/memoir-developer-log/media/';
-                
-                // *** 新增：Blob URL 管理器 ***
-                class BlobURLManager {
-                    constructor() {
-                        this.urls = new Map();
-                        this.maxCacheSize = 20; // 最多快取20個解密的媒體
-                        this.cacheHits = new Map(); // 追蹤使用頻率
-                    }
-                    
-                    // 獲取快取的 URL 或創建新的
-                    getOrCreate(key, blob) {
-                        if (this.urls.has(key)) {
-                            this.cacheHits.set(key, (this.cacheHits.get(key) || 0) + 1);
-                            console.log(`♻️ 重用 Blob URL: ${key}`);
-                            return this.urls.get(key);
-                        }
-                        
-                        // 檢查快取大小，清理舊的 URL
-                        if (this.urls.size >= this.maxCacheSize) {
-                            this.cleanupOldest();
-                        }
-                        
-                        const url = URL.createObjectURL(blob);
-                        this.urls.set(key, url);
-                        this.cacheHits.set(key, 1);
-                        console.log(`🆕 創建 Blob URL: ${key}`);
-                        return url;
-                    }
-                    
-                    // 清理最少使用的 URL
-                    cleanupOldest() {
-                        const entries = Array.from(this.cacheHits.entries())
-                            .sort((a, b) => a[1] - b[1]); // 按使用次數排序
-                        
-                        const toRemove = entries.slice(0, 5); // 移除5個最少使用的
-                        for (const [key] of toRemove) {
-                            const url = this.urls.get(key);
-                            if (url) {
-                                URL.revokeObjectURL(url);
-                                this.urls.delete(key);
-                                this.cacheHits.delete(key);
-                                console.log(`🗑️ 清理舊 Blob URL: ${key}`);
-                            }
-                        }
-                    }
-                    
-                    // 清理所有 URL
-                    cleanup() {
-                        for (const [key, url] of this.urls) {
-                            URL.revokeObjectURL(url);
-                            console.log(`🗑️ 清理 Blob URL: ${key}`);
-                        }
-                        this.urls.clear();
-                        this.cacheHits.clear();
-                    }
-                }
-                
-                // 全域 Blob URL 管理器實例
-                const blobManager = new BlobURLManager();
-                
-                // 頁面卸載時清理所有 URL
-                window.addEventListener('beforeunload', () => {
-                    blobManager.cleanup();
-                });
-                
-                // *** 新增：解密結果快取 ***
-                const decryptCache = new Map();
-                
-                // 創建載入動畫的CSS樣式
-                const loadingStyles = `
-                    .mse-loading-container {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 100%;
-                        height: 100%;
-                        min-height: 200px;
-                        background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-                        border-radius: 8px;
-                        backdrop-filter: blur(10px);
-                    }
-                    
-                    .mse-loading-spinner {
-                        width: 40px;
-                        height: 40px;
-                        border: 3px solid rgba(255,255,255,0.3);
-                        border-top: 3px solid #3b82f6;
-                        border-radius: 50%;
-                        animation: mse-spin 1s linear infinite;
-                    }
-                    
-                    .mse-loading-text {
-                        margin-left: 12px;
-                        color: rgba(255,255,255,0.8);
-                        font-size: 14px;
-                        font-weight: 500;
-                    }
-                    
-                    .mse-thumbnail-loading {
-                        width: 100%;
-                        height: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
-                                    linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
-                                    linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
-                                    linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
-                        background-size: 20px 20px;
-                        background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-                        animation: mse-loading-bg 1s linear infinite;
-                    }
-                    
-                    .mse-thumbnail-spinner {
-                        width: 24px;
-                        height: 24px;
-                        border: 2px solid rgba(0,0,0,0.1);
-                        border-top: 2px solid #3b82f6;
-                        border-radius: 50%;
-                        animation: mse-spin 0.8s linear infinite;
-                    }
-                    
-                    @keyframes mse-spin {
-                        0% { transform: rotate(0deg); }
-                        100% { transform: rotate(360deg); }
-                    }
-                    
-                    @keyframes mse-loading-bg {
-                        0% { background-position: 0 0, 0 10px, 10px -10px, -10px 0px; }
-                        100% { background-position: 20px 20px, 20px 30px, 30px 10px, 10px 20px; }
-                    }
-                    
-                    /* 隱藏成功解密後的邊框 */
-                    .mse-decrypted {
-                        border: none !important;
-                    }
-                    
-                    /* 縮圖容器樣式 */
-                    .mse-thumbnail-container {
-                        position: relative;
-                        overflow: hidden;
-                        border-radius: 4px;
-                    }
-                `;
-                
-                // 注入樣式
-                if (!document.getElementById('mse-styles')) {
-                    const styleSheet = document.createElement('style');
-                    styleSheet.id = 'mse-styles';
-                    styleSheet.textContent = loadingStyles;
-                    document.head.appendChild(styleSheet);
-                }
-                
-                // MSE位元組偏移解密函數
-                function mseByteDecode(encryptedData) {
-                    const decrypted = new Uint8Array(encryptedData.length);
-                    for (let i = 0; i < encryptedData.length; i++) {
-                        decrypted[i] = (encryptedData[i] + 256 - MSE_OFFSET) % 256;
-                    }
-                    return decrypted;
-                }
-                
-                // 創建載入中的佔位元素
-                function createLoadingPlaceholder(isLarge = true) {
-                    const container = document.createElement('div');
-                    if (isLarge) {
-                        container.className = 'mse-loading-container';
-                        const spinner = document.createElement('div');
-                        spinner.className = 'mse-loading-spinner';
-                        const text = document.createElement('div');
-                        text.className = 'mse-loading-text';
-                        text.textContent = '正在解密圖片...';
-                        container.appendChild(spinner);
-                        container.appendChild(text);
-                    } else {
-                        container.className = 'mse-thumbnail-loading';
-                        const spinner = document.createElement('div');
-                        spinner.className = 'mse-thumbnail-spinner';
-                        container.appendChild(spinner);
-                    }
-                    return container;
-                }
-                
-                // 載入並解密媒體檔案 - 優化版本，使用緩存和 Blob URL 管理
-                async function loadAndDecryptMedia(mediaUrl) {
-                    try {
-                        // 檢查解密結果緩存
-                        if (decryptCache.has(mediaUrl)) {
-                            console.log(`♻️ 使用快取解密結果: ${mediaUrl}`);
-                            const cachedData = decryptCache.get(mediaUrl);
-                            return blobManager.getOrCreate(mediaUrl, cachedData.blob);
-                        }
-                        
-                        console.log(`📥 載入加密檔案: ${mediaUrl}`);
-                        
-                        const response = await fetch(mediaUrl);
-                        if (!response.ok) {
-                            throw new Error(`載入失敗: ${response.status}`);
-                        }
-                        
-                        const encryptedBuffer = await response.arrayBuffer();
-                        const encryptedData = new Uint8Array(encryptedBuffer);
-                        
-                        // 執行MSE解密
-                        const decryptedData = mseByteDecode(encryptedData);
-                        
-                        // 判斷檔案類型並設定MIME
-                        let mimeType = 'application/octet-stream';
-                        if (decryptedData[0] === 0xFF && decryptedData[1] === 0xD8) {
-                            mimeType = 'image/jpeg';
-                        } else if (decryptedData[0] === 0x89 && decryptedData[1] === 0x50) {
-                            mimeType = 'image/png';
-                        } else if (decryptedData.slice(8, 12).every((b, i) => b === [0x57, 0x45, 0x42, 0x50][i])) {
-                            mimeType = 'image/webp';
-                        }
-                        
-                        const blob = new Blob([decryptedData], { type: mimeType });
-                        
-                        // 快取解密結果（只快取 blob 對象，不快取 URL）
-                        decryptCache.set(mediaUrl, { blob, mimeType });
-                        
-                        // 使用 Blob URL 管理器創建和管理 URL
-                        const decryptedUrl = blobManager.getOrCreate(mediaUrl, blob);
-                        
-                        console.log(`✅ 解密完成: ${mediaUrl}`);
-                        return decryptedUrl;
-                        
-                    } catch (error) {
-                        console.error(`❌ 解密失敗 ${mediaUrl}:`, error);
-                        return null;
-                    }
-                }
-                
-                // 處理單個媒體元素的解密
-                async function decryptSingleMediaElement(element, isThumbnail = false) {
-                    const originalSrc = element.getAttribute('data-original-src');
-                    if (!originalSrc) return false;
-                    
-                    // 構建完整URL
-                    let fullUrl;
-                    if (originalSrc.startsWith('media/')) {
-                        const filename = originalSrc.replace('media/', '');
-                        fullUrl = GITHUB_BASE_URL + filename;
-                    } else if (originalSrc.includes('/media/')) {
-                        fullUrl = originalSrc;
-                    } else {
-                        return false;
-                    }
-                    
-                    console.log(`🔄 處理${isThumbnail ? '縮圖' : '媒體'}元素: ${fullUrl}`);
-                    
-                    // 顯示載入動畫
-                    if (isThumbnail) {
-                        // 為縮圖創建載入狀態
-                        const parent = element.parentElement;
-                        if (parent) {
-                            const loadingElement = createLoadingPlaceholder(false);
-                            loadingElement.style.position = 'absolute';
-                            loadingElement.style.top = '0';
-                            loadingElement.style.left = '0';
-                            loadingElement.style.width = '100%';
-                            loadingElement.style.height = '100%';
-                            loadingElement.style.zIndex = '1';
-                            parent.style.position = 'relative';
-                            parent.appendChild(loadingElement);
-                            
-                            const decryptedUrl = await loadAndDecryptMedia(fullUrl);
-                            if (decryptedUrl) {
-                                element.src = decryptedUrl;
-                                element.classList.add('mse-decrypted');
-                                element.removeAttribute('data-needs-mse-decrypt');
-                                parent.removeChild(loadingElement);
-                                console.log(`✅ 縮圖解密成功`);
-                                return true;
-                            } else {
-                                parent.removeChild(loadingElement);
-                                console.log(`❌ 縮圖解密失敗`);
-                                return false;
-                            }
-                        }
-                    } else {
-                        const decryptedUrl = await loadAndDecryptMedia(fullUrl);
-                        if (decryptedUrl) {
-                            element.src = decryptedUrl;
-                            element.classList.add('mse-decrypted'); // 移除邊框的class
-                            element.removeAttribute('data-needs-mse-decrypt');
-                            console.log(`✅ 媒體元素解密成功`);
-                            return true;
-                        } else {
-                            console.log(`❌ 媒體元素解密失敗`);
-                            return false;
-                        }
-                    }
-                }
-                
-                // 處理縮圖和網格模式的圖片
-                async function decryptThumbnailsAndGrid() {
-                    // 處理carousel縮圖
-                    const thumbnails = document.querySelectorAll('.media-thumbnail img[data-needs-mse-decrypt], .carousel-thumbnail img[data-needs-mse-decrypt], .thumbnail img[data-needs-mse-decrypt]');
-                    console.log(`🖼️ 找到 ${thumbnails.length} 個縮圖需要解密`);
-                    
-                    for (const thumb of thumbnails) {
-                        await decryptSingleMediaElement(thumb, true);
-                        await new Promise(resolve => setTimeout(resolve, 50)); // 短暫延遲
-                    }
-                    
-                    // 處理網格模式的圖片
-                    const gridImages = document.querySelectorAll('.grid-item img[data-needs-mse-decrypt], .media-grid img[data-needs-mse-decrypt]');
-                    console.log(`🔲 找到 ${gridImages.length} 個網格圖片需要解密`);
-                    
-                    for (const img of gridImages) {
-                        await decryptSingleMediaElement(img, true);
-                        await new Promise(resolve => setTimeout(resolve, 50));
-                    }
-                }
-                
-                // 自動解密所有媒體檔案
-                async function autoDecryptAllMedia() {
-                    console.log('🔍 搜尋需要解密的媒體檔案...');
-                    
-                    // 尋找標記為需要MSE解密的主要媒體元素
-                    const markedElements = document.querySelectorAll('[data-needs-mse-decrypt="true"]:not(.media-thumbnail img):not(.carousel-thumbnail img):not(.thumbnail img):not(.grid-item img):not(.media-grid img)');
-                    console.log(`🏷️ 找到 ${markedElements.length} 個主要媒體元素`);
-                    
-                    // 尋找傳統的media路徑圖片（向後相容）
-                    const traditionalImages = document.querySelectorAll('img[src*="media/"]:not([data-needs-mse-decrypt]):not(.media-thumbnail img):not(.carousel-thumbnail img):not(.thumbnail img)');
-                    console.log(`📷 找到 ${traditionalImages.length} 個傳統media路徑圖片`);
-                    
-                    let successCount = 0;
-                    let totalCount = 0;
-                    
-                    // 處理主要媒體元素
-                    for (let i = 0; i < markedElements.length; i++) {
-                        const element = markedElements[i];
-                        totalCount++;
-                        console.log(`🎯 處理主要元素 ${i + 1}/${markedElements.length}`);
-                        
-                        const success = await decryptSingleMediaElement(element, false);
-                        if (success) successCount++;
-                        
-                        await new Promise(resolve => setTimeout(resolve, 100));
-                    }
-                    
-                    // 處理傳統圖片
-                    for (let i = 0; i < traditionalImages.length; i++) {
-                        const img = traditionalImages[i];
-                        const originalSrc = img.getAttribute('src');
-                        totalCount++;
-                        
-                        let fullUrl;
-                        if (originalSrc.startsWith('media/')) {
-                            const filename = originalSrc.replace('media/', '');
-                            fullUrl = GITHUB_BASE_URL + filename;
-                        } else if (originalSrc.includes('/media/')) {
-                            fullUrl = originalSrc;
-                        } else {
-                            continue;
-                        }
-                        
-                        console.log(`🖼️ 處理傳統圖片 ${i + 1}/${traditionalImages.length}: ${fullUrl}`);
-                        
-                        const decryptedUrl = await loadAndDecryptMedia(fullUrl);
-                        if (decryptedUrl) {
-                            img.src = decryptedUrl;
-                            img.classList.add('mse-decrypted');
-                            successCount++;
-                            console.log(`✅ 圖片解密成功`);
-                        } else {
-                            console.log(`❌ 圖片解密失敗`);
-                        }
-                        
-                        await new Promise(resolve => setTimeout(resolve, 100));
-                    }
-                    
-                    // 處理縮圖和網格
-                    await decryptThumbnailsAndGrid();
-                    
-                    console.log(`🎉 媒體解密程序完成！成功: ${successCount}/${totalCount}`);
-                    return { success: successCount, total: totalCount };
-                }
-                
-                // DOM載入完成後自動執行解密
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', () => {
-                        setTimeout(autoDecryptAllMedia, 500); // 延遲執行確保DOM完全載入
-                    });
-                } else {
-                    setTimeout(autoDecryptAllMedia, 500);
-                }
-                
-                // 監聽動態內容變化
-                if (typeof MutationObserver !== 'undefined') {
-                    const observer = new MutationObserver((mutations) => {
-                        mutations.forEach((mutation) => {
-                            if (mutation.type === 'childList') {
-                                // 檢查新增的標記元素
-                                const addedMarkedElements = Array.from(mutation.addedNodes)
-                                    .filter(node => node.nodeType === Node.ELEMENT_NODE)
-                                    .flatMap(node => [
-                                        ...(node.hasAttribute && node.hasAttribute('data-needs-mse-decrypt') ? [node] : []),
-                                        ...node.querySelectorAll ? node.querySelectorAll('[data-needs-mse-decrypt="true"]') : []
-                                    ]);
-                                
-                                if (addedMarkedElements.length > 0) {
-                                    console.log(`🔄 檢測到 ${addedMarkedElements.length} 個新的標記媒體元素，開始解密...`);
-                                    setTimeout(() => {
-                                        addedMarkedElements.forEach(async (element) => {
-                                            const isThumbnail = element.closest('.media-thumbnail, .carousel-thumbnail, .thumbnail, .grid-item, .media-grid') !== null;
-                                            await decryptSingleMediaElement(element, isThumbnail);
-                                        });
-                                    }, 100);
-                                }
-                            }
-                        });
-                    });
-                    
-                    observer.observe(document.body, {
-                        childList: true,
-                        subtree: true
-                    });
-                }
-                
-                // 提供全域函數供手動呼叫
-                window.forceDecryptMedia = autoDecryptAllMedia;
-                window.decryptSingleMedia = decryptSingleMediaElement;
-                window.decryptThumbnails = decryptThumbnailsAndGrid;
-                
-            })();
-        
-
-// ========== 提取的腳本區塊 ==========
-
-        // 版本識別系統 - 檢查是否需要重設使用者設定
-        const CURRENT_VERSION = '1757994272';
-        const STORED_VERSION = localStorage.getItem('memoirflow:version');
-
-        // 如果版本不同，清除快取的使用者設定
-        if (STORED_VERSION !== CURRENT_VERSION) {
-            console.log('🔄 檢測到新版本 (' + CURRENT_VERSION + ')，清除快取設定');
-
-            // 清除使用者自訂的設定
-            const keysToRemove = [
-                'memoirflow:typing-speed',
-                'memoir-theme',
-                'memoirflow:font-size',
-                'memoirflow:thumbnails-visible',
-                'memoirflow:typewriter-enabled',
-                'memoirflow:controls-hidden',
-                'memoirflow:date-hidden'
-            ];
-
-            keysToRemove.forEach(key => {
-                localStorage.removeItem(key);
-            });
-
-            // 儲存新版本號
-            localStorage.setItem('memoirflow:version', CURRENT_VERSION);
-            console.log('✅ 設定重設完成，將使用預設值');
-        } else {
-            console.log('📦 版本相同 (' + CURRENT_VERSION + ')，保留現有設定');
-        }
 
         // 全局變數
         let MEMOIR_DATA = null;
@@ -2565,24 +1872,7 @@
                 MEMOIR_DATA = window.MEMOIR_DATA;
                 initializeApp();
             } else {
-                // 嘗試從 preloaded-memoir-data 元素載入數據
-                console.log('🔍 嘗試從 JSON 元素載入數據...');
-                const dataElement = document.getElementById('preloaded-memoir-data');
-                if (dataElement) {
-                    try {
-                        const jsonText = dataElement.textContent || dataElement.innerText;
-                        const parsedData = JSON.parse(jsonText);
-                        window.MEMOIR_DATA = parsedData;
-                        MEMOIR_DATA = parsedData;
-                        console.log('✅ 從 JSON 元素成功載入數據');
-                        initializeApp();
-                    } catch (e) {
-                        console.error('❌ 解析 JSON 數據失敗:', e);
-                        console.log('⏳ 等待數據載入...');
-                    }
-                } else {
-                    console.log('⏳ 等待數據載入...');
-                }
+                console.log('⏳ 等待數據載入...');
             }
             
             // 添加頁面載入動畫
@@ -2609,6 +1899,669 @@
         // 在載入完成後預載入
         setTimeout(preloadNextMedia, 1000);
     
+
+// ========== 提取的腳本區塊 ==========
+
+        // 🔒 安全全域變數初始化
+        window.secureGlobals = {
+            MEMOIR_DATA: null,
+            decryptionMode: null,
+            decryptionAttempts: 0,
+            MAX_ATTEMPTS: 5,
+            lastAccessTime: null,
+            sessionExpiry: null
+        };
+        
+        window.secureUtils = {
+            showDecryptionError: function(message) {
+                console.error('🔒 解密錯誤:', message);
+                if (typeof window.showError === 'function') {
+                    window.showError(message);
+                } else {
+                    alert('錯誤: ' + message);
+                }
+            },
+            
+            initializeApp: function() {
+                console.log('🚀 初始化應用程式');
+                if (typeof window.onMemoirDecrypted === 'function') {
+                    window.onMemoirDecrypted(secureGlobals.MEMOIR_DATA);
+                } else {
+                    console.log('✅ 回憶錄解密完成，資料可用');
+                }
+            }
+        };
+        
+        console.log('🔒 安全框架初始化完成');
+    
+
+// ========== 提取的腳本區塊 ==========
+
+            (function() {
+                'use strict';
+                
+                console.log('🔑 伺服器端金鑰模式載入');
+                
+                window.autoDecrypt = async function() {
+                    try {
+                        // 獲取加密數據
+                        const encEl = document.getElementById('enc-payload');
+                        if (!encEl) throw new Error('找不到加密數據容器');
+                        
+                        const encData = JSON.parse(encEl.textContent || '{}');
+                        const { ciphertext_b64, iv_b64, salt_b64, aad } = encData;
+                        
+                        if (!ciphertext_b64 || !iv_b64 || !salt_b64) {
+                            throw new Error('加密數據不完整');
+                        }
+                        
+                        console.log('✅ 加密數據驗證通過');
+                        console.log('🔍 調試信息:', {
+                            ciphertext_length: ciphertext_b64.length,
+                            iv_length: iv_b64.length,
+                            salt_length: salt_b64.length,
+                            aad: aad
+                        });
+                        
+                        // 從伺服器獲取解密金鑰
+                        const response = await fetch('https://mastermaso.com/memoirflow/api/keys/retrieve', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                memoir_id: '4548b929-5c16-4ee7-a189-60679e2165be',
+                                session_id: 'direct',
+                                timestamp: new Date().toISOString()
+                            })
+                        });
+                        
+                        if (!response.ok) {
+                            const errorText = await response.text();
+                            throw new Error('無法獲取解密金鑰: HTTP ' + response.status + ' - ' + errorText);
+                        }
+                        
+                        const result = await response.json();
+                        console.log(`result=${JSON.stringify(result)}`)
+                        if (!result.decryption_key) {
+                            throw new Error('伺服器回應中缺少解密金鑰');
+                        }
+                        
+                        console.log('✅ 金鑰獲取成功');
+                        
+                        // 解碼金鑰
+                        const keyB64 = result.decryption_key;
+                        console.log('🔍 原始金鑰長度:', keyB64.length);
+                        
+                        const b64 = keyB64.replace(/-/g, '+').replace(/_/g, '/');
+                        const padLength = (4 - (b64.length % 4)) % 4;
+                        const paddedB64 = b64 + '='.repeat(padLength);
+                        console.log('🔍 處理後的 base64:', paddedB64.length);
+                        
+                        const raw = atob(paddedB64);
+                        const secretBytes = new Uint8Array([...raw].map(c => c.charCodeAt(0)));
+                        console.log('✅ 解密金鑰處理完成，長度:', secretBytes.length);
+                        
+                        // PBKDF2 金鑰推導
+                        const salt = Uint8Array.from(atob(salt_b64), c => c.charCodeAt(0));
+                        console.log('🔍 Salt 長度:', salt.length);
+                        
+                        const keyMat = await crypto.subtle.importKey('raw', secretBytes, 'PBKDF2', false, ['deriveKey']);
+                        const aesKey = await crypto.subtle.deriveKey(
+                            { name: 'PBKDF2', salt, iterations: 200000, hash: 'SHA-256' },
+                            keyMat, 
+                            { name: 'AES-GCM', length: 256 }, 
+                            false, 
+                            ['decrypt']
+                        );
+                        
+                        console.log('✅ AES 密鑰推導完成');
+                        
+                        // AES-GCM 解密
+                        const iv = Uint8Array.from(atob(iv_b64), c => c.charCodeAt(0));
+                        const ct = Uint8Array.from(atob(ciphertext_b64), c => c.charCodeAt(0));
+                        
+                        console.log('🔍 解密參數:', {
+                            iv_length: iv.length,
+                            ciphertext_length: ct.length,
+                            has_aad: !!aad
+                        });
+                        
+                        const decryptAlgo = aad ? 
+                            { name: 'AES-GCM', iv, additionalData: new TextEncoder().encode(aad) } : 
+                            { name: 'AES-GCM', iv };
+                        
+                        let decryptedBuffer;
+                        try {
+                            decryptedBuffer = await crypto.subtle.decrypt(decryptAlgo, aesKey, ct);
+                            console.log('✅ AES-GCM 解密完成');
+                        } catch (decryptError) {
+                            console.error('❌ AES-GCM 解密失敗:', decryptError);
+                            
+                            // 嘗試不使用 AAD 解密
+                            if (aad) {
+                                console.log('🔄 嘗試不使用 AAD 解密...');
+                                try {
+                                    decryptedBuffer = await crypto.subtle.decrypt(
+                                        { name: 'AES-GCM', iv }, 
+                                        aesKey, 
+                                        ct
+                                    );
+                                    console.log('✅ 無 AAD 解密成功');
+                                } catch (noAadError) {
+                                    throw new Error('解密失敗：金鑰不匹配或數據已損壞');
+                                }
+                            } else {
+                                throw new Error('解密失敗：金鑰不匹配或數據已損壞');
+                            }
+                        }
+                        
+                        const decryptedText = new TextDecoder().decode(new Uint8Array(decryptedBuffer));
+                        let memoirData;
+                        
+                        try {
+                            memoirData = JSON.parse(decryptedText);
+                        } catch (parseError) {
+                            throw new Error('解密後的數據格式無效');
+                        }
+                        
+                        if (!memoirData || typeof memoirData !== 'object') {
+                            throw new Error('解密後的回憶錄數據無效');
+                        }
+                        
+                        console.log('✅ 回憶錄數據解析成功:', {
+                            id: memoirData.id,
+                            name: memoirData.chinese_name,
+                            eventsCount: memoirData.events?.length || 0
+                        });
+                        
+                        // 設置全域數據並觸發事件
+                        window.MEMOIR_DATA = memoirData;
+                        window.dispatchEvent(new CustomEvent('memoir:decrypted', {
+                            detail: memoirData
+                        }));
+                        
+                        console.log('🎉 伺服器端金鑰解密完成');
+                        return true;
+                        
+                    } catch (error) {
+                        console.error('❌ 解密失敗:', error);
+                        
+                        // 修正錯誤處理：確保 error.message 是字符串
+                        let errorMessage = 'unknown error';
+                        if (error && typeof error === 'object') {
+                            if (typeof error.message === 'string') {
+                                errorMessage = error.message;
+                            } else if (typeof error.toString === 'function') {
+                                errorMessage = error.toString();
+                            }
+                        } else if (typeof error === 'string') {
+                            errorMessage = error;
+                        }
+                        
+                        // 根據錯誤類型提供具體指導
+                        if (errorMessage.includes('金鑰') || errorMessage.includes('key')) {
+                            errorMessage = '解密金鑰獲取失敗，請檢查網路連接或聯繫管理員';
+                        } else if (errorMessage.includes('decrypt') || errorMessage.includes('解密')) {
+                            errorMessage = '內容解密失敗，可能是金鑰不匹配或數據已損壞';
+                        } else if (errorMessage.includes('network') || errorMessage.includes('fetch')) {
+                            errorMessage = '網路連接失敗，請檢查網路狀態後重試';
+                        }
+                        
+                        if (typeof window.showError === 'function') {
+                            window.showError('解密失敗: ' + errorMessage);
+                        } else {
+                            alert('解密失敗: ' + errorMessage);
+                        }
+                        return false;
+                    }
+                };
+                
+                console.log('✅ 伺服器端金鑰解密腳本準備完成');
+                
+            })();
+        
+
+// ========== 提取的腳本區塊 ==========
+
+            // MSE 媒體檔案自動解密程式碼 - 性能優化版
+            (function() {
+                'use strict';
+                
+                console.log('🔓 MSE媒體解密模組已載入 (性能優化版)');
+                
+                const MSE_OFFSET = 37;
+                const GITHUB_BASE_URL = 'https://maso0310.github.io/memoir-developer-log/media/';
+                
+                // *** 新增：Blob URL 管理器 ***
+                class BlobURLManager {
+                    constructor() {
+                        this.urls = new Map();
+                        this.maxCacheSize = 20; // 最多快取20個解密的媒體
+                        this.cacheHits = new Map(); // 追蹤使用頻率
+                    }
+                    
+                    // 獲取快取的 URL 或創建新的
+                    getOrCreate(key, blob) {
+                        if (this.urls.has(key)) {
+                            this.cacheHits.set(key, (this.cacheHits.get(key) || 0) + 1);
+                            console.log(`♻️ 重用 Blob URL: ${key}`);
+                            return this.urls.get(key);
+                        }
+                        
+                        // 檢查快取大小，清理舊的 URL
+                        if (this.urls.size >= this.maxCacheSize) {
+                            this.cleanupOldest();
+                        }
+                        
+                        const url = URL.createObjectURL(blob);
+                        this.urls.set(key, url);
+                        this.cacheHits.set(key, 1);
+                        console.log(`🆕 創建 Blob URL: ${key}`);
+                        return url;
+                    }
+                    
+                    // 清理最少使用的 URL
+                    cleanupOldest() {
+                        const entries = Array.from(this.cacheHits.entries())
+                            .sort((a, b) => a[1] - b[1]); // 按使用次數排序
+                        
+                        const toRemove = entries.slice(0, 5); // 移除5個最少使用的
+                        for (const [key] of toRemove) {
+                            const url = this.urls.get(key);
+                            if (url) {
+                                URL.revokeObjectURL(url);
+                                this.urls.delete(key);
+                                this.cacheHits.delete(key);
+                                console.log(`🗑️ 清理舊 Blob URL: ${key}`);
+                            }
+                        }
+                    }
+                    
+                    // 清理所有 URL
+                    cleanup() {
+                        for (const [key, url] of this.urls) {
+                            URL.revokeObjectURL(url);
+                            console.log(`🗑️ 清理 Blob URL: ${key}`);
+                        }
+                        this.urls.clear();
+                        this.cacheHits.clear();
+                    }
+                }
+                
+                // 全域 Blob URL 管理器實例
+                const blobManager = new BlobURLManager();
+                
+                // 頁面卸載時清理所有 URL
+                window.addEventListener('beforeunload', () => {
+                    blobManager.cleanup();
+                });
+                
+                // *** 新增：解密結果快取 ***
+                const decryptCache = new Map();
+                
+                // 創建載入動畫的CSS樣式
+                const loadingStyles = `
+                    .mse-loading-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
+                        min-height: 200px;
+                        background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+                        border-radius: 8px;
+                        backdrop-filter: blur(10px);
+                    }
+                    
+                    .mse-loading-spinner {
+                        width: 40px;
+                        height: 40px;
+                        border: 3px solid rgba(255,255,255,0.3);
+                        border-top: 3px solid #3b82f6;
+                        border-radius: 50%;
+                        animation: mse-spin 1s linear infinite;
+                    }
+                    
+                    .mse-loading-text {
+                        margin-left: 12px;
+                        color: rgba(255,255,255,0.8);
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                    
+                    .mse-thumbnail-loading {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                                    linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                                    linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                                    linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+                        background-size: 20px 20px;
+                        background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+                        animation: mse-loading-bg 1s linear infinite;
+                    }
+                    
+                    .mse-thumbnail-spinner {
+                        width: 24px;
+                        height: 24px;
+                        border: 2px solid rgba(0,0,0,0.1);
+                        border-top: 2px solid #3b82f6;
+                        border-radius: 50%;
+                        animation: mse-spin 0.8s linear infinite;
+                    }
+                    
+                    @keyframes mse-spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                    
+                    @keyframes mse-loading-bg {
+                        0% { background-position: 0 0, 0 10px, 10px -10px, -10px 0px; }
+                        100% { background-position: 20px 20px, 20px 30px, 30px 10px, 10px 20px; }
+                    }
+                    
+                    /* 隱藏成功解密後的邊框 */
+                    .mse-decrypted {
+                        border: none !important;
+                    }
+                    
+                    /* 縮圖容器樣式 */
+                    .mse-thumbnail-container {
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 4px;
+                    }
+                `;
+                
+                // 注入樣式
+                if (!document.getElementById('mse-styles')) {
+                    const styleSheet = document.createElement('style');
+                    styleSheet.id = 'mse-styles';
+                    styleSheet.textContent = loadingStyles;
+                    document.head.appendChild(styleSheet);
+                }
+                
+                // MSE位元組偏移解密函數
+                function mseByteDecode(encryptedData) {
+                    const decrypted = new Uint8Array(encryptedData.length);
+                    for (let i = 0; i < encryptedData.length; i++) {
+                        decrypted[i] = (encryptedData[i] + 256 - MSE_OFFSET) % 256;
+                    }
+                    return decrypted;
+                }
+                
+                // 創建載入中的佔位元素
+                function createLoadingPlaceholder(isLarge = true) {
+                    const container = document.createElement('div');
+                    if (isLarge) {
+                        container.className = 'mse-loading-container';
+                        const spinner = document.createElement('div');
+                        spinner.className = 'mse-loading-spinner';
+                        const text = document.createElement('div');
+                        text.className = 'mse-loading-text';
+                        text.textContent = '正在解密圖片...';
+                        container.appendChild(spinner);
+                        container.appendChild(text);
+                    } else {
+                        container.className = 'mse-thumbnail-loading';
+                        const spinner = document.createElement('div');
+                        spinner.className = 'mse-thumbnail-spinner';
+                        container.appendChild(spinner);
+                    }
+                    return container;
+                }
+                
+                // 載入並解密媒體檔案 - 優化版本，使用緩存和 Blob URL 管理
+                async function loadAndDecryptMedia(mediaUrl) {
+                    try {
+                        // 檢查解密結果緩存
+                        if (decryptCache.has(mediaUrl)) {
+                            console.log(`♻️ 使用快取解密結果: ${mediaUrl}`);
+                            const cachedData = decryptCache.get(mediaUrl);
+                            return blobManager.getOrCreate(mediaUrl, cachedData.blob);
+                        }
+                        
+                        console.log(`📥 載入加密檔案: ${mediaUrl}`);
+                        
+                        const response = await fetch(mediaUrl);
+                        if (!response.ok) {
+                            throw new Error(`載入失敗: ${response.status}`);
+                        }
+                        
+                        const encryptedBuffer = await response.arrayBuffer();
+                        const encryptedData = new Uint8Array(encryptedBuffer);
+                        
+                        // 執行MSE解密
+                        const decryptedData = mseByteDecode(encryptedData);
+                        
+                        // 判斷檔案類型並設定MIME
+                        let mimeType = 'application/octet-stream';
+                        if (decryptedData[0] === 0xFF && decryptedData[1] === 0xD8) {
+                            mimeType = 'image/jpeg';
+                        } else if (decryptedData[0] === 0x89 && decryptedData[1] === 0x50) {
+                            mimeType = 'image/png';
+                        } else if (decryptedData.slice(8, 12).every((b, i) => b === [0x57, 0x45, 0x42, 0x50][i])) {
+                            mimeType = 'image/webp';
+                        }
+                        
+                        const blob = new Blob([decryptedData], { type: mimeType });
+                        
+                        // 快取解密結果（只快取 blob 對象，不快取 URL）
+                        decryptCache.set(mediaUrl, { blob, mimeType });
+                        
+                        // 使用 Blob URL 管理器創建和管理 URL
+                        const decryptedUrl = blobManager.getOrCreate(mediaUrl, blob);
+                        
+                        console.log(`✅ 解密完成: ${mediaUrl}`);
+                        return decryptedUrl;
+                        
+                    } catch (error) {
+                        console.error(`❌ 解密失敗 ${mediaUrl}:`, error);
+                        return null;
+                    }
+                }
+                
+                // 處理單個媒體元素的解密
+                async function decryptSingleMediaElement(element, isThumbnail = false) {
+                    const originalSrc = element.getAttribute('data-original-src');
+                    if (!originalSrc) return false;
+                    
+                    // 構建完整URL
+                    let fullUrl;
+                    if (originalSrc.startsWith('media/')) {
+                        const filename = originalSrc.replace('media/', '');
+                        fullUrl = GITHUB_BASE_URL + filename;
+                    } else if (originalSrc.includes('/media/')) {
+                        fullUrl = originalSrc;
+                    } else {
+                        return false;
+                    }
+                    
+                    console.log(`🔄 處理${isThumbnail ? '縮圖' : '媒體'}元素: ${fullUrl}`);
+                    
+                    // 顯示載入動畫
+                    if (isThumbnail) {
+                        // 為縮圖創建載入狀態
+                        const parent = element.parentElement;
+                        if (parent) {
+                            const loadingElement = createLoadingPlaceholder(false);
+                            loadingElement.style.position = 'absolute';
+                            loadingElement.style.top = '0';
+                            loadingElement.style.left = '0';
+                            loadingElement.style.width = '100%';
+                            loadingElement.style.height = '100%';
+                            loadingElement.style.zIndex = '1';
+                            parent.style.position = 'relative';
+                            parent.appendChild(loadingElement);
+                            
+                            const decryptedUrl = await loadAndDecryptMedia(fullUrl);
+                            if (decryptedUrl) {
+                                element.src = decryptedUrl;
+                                element.classList.add('mse-decrypted');
+                                element.removeAttribute('data-needs-mse-decrypt');
+                                parent.removeChild(loadingElement);
+                                console.log(`✅ 縮圖解密成功`);
+                                return true;
+                            } else {
+                                parent.removeChild(loadingElement);
+                                console.log(`❌ 縮圖解密失敗`);
+                                return false;
+                            }
+                        }
+                    } else {
+                        const decryptedUrl = await loadAndDecryptMedia(fullUrl);
+                        if (decryptedUrl) {
+                            element.src = decryptedUrl;
+                            element.classList.add('mse-decrypted'); // 移除邊框的class
+                            element.removeAttribute('data-needs-mse-decrypt');
+                            console.log(`✅ 媒體元素解密成功`);
+                            return true;
+                        } else {
+                            console.log(`❌ 媒體元素解密失敗`);
+                            return false;
+                        }
+                    }
+                }
+                
+                // 處理縮圖和網格模式的圖片
+                async function decryptThumbnailsAndGrid() {
+                    // 處理carousel縮圖
+                    const thumbnails = document.querySelectorAll('.media-thumbnail img[data-needs-mse-decrypt], .carousel-thumbnail img[data-needs-mse-decrypt], .thumbnail img[data-needs-mse-decrypt]');
+                    console.log(`🖼️ 找到 ${thumbnails.length} 個縮圖需要解密`);
+                    
+                    for (const thumb of thumbnails) {
+                        await decryptSingleMediaElement(thumb, true);
+                        await new Promise(resolve => setTimeout(resolve, 50)); // 短暫延遲
+                    }
+                    
+                    // 處理網格模式的圖片
+                    const gridImages = document.querySelectorAll('.grid-item img[data-needs-mse-decrypt], .media-grid img[data-needs-mse-decrypt]');
+                    console.log(`🔲 找到 ${gridImages.length} 個網格圖片需要解密`);
+                    
+                    for (const img of gridImages) {
+                        await decryptSingleMediaElement(img, true);
+                        await new Promise(resolve => setTimeout(resolve, 50));
+                    }
+                }
+                
+                // 自動解密所有媒體檔案
+                async function autoDecryptAllMedia() {
+                    console.log('🔍 搜尋需要解密的媒體檔案...');
+                    
+                    // 尋找標記為需要MSE解密的主要媒體元素
+                    const markedElements = document.querySelectorAll('[data-needs-mse-decrypt="true"]:not(.media-thumbnail img):not(.carousel-thumbnail img):not(.thumbnail img):not(.grid-item img):not(.media-grid img)');
+                    console.log(`🏷️ 找到 ${markedElements.length} 個主要媒體元素`);
+                    
+                    // 尋找傳統的media路徑圖片（向後相容）
+                    const traditionalImages = document.querySelectorAll('img[src*="media/"]:not([data-needs-mse-decrypt]):not(.media-thumbnail img):not(.carousel-thumbnail img):not(.thumbnail img)');
+                    console.log(`📷 找到 ${traditionalImages.length} 個傳統media路徑圖片`);
+                    
+                    let successCount = 0;
+                    let totalCount = 0;
+                    
+                    // 處理主要媒體元素
+                    for (let i = 0; i < markedElements.length; i++) {
+                        const element = markedElements[i];
+                        totalCount++;
+                        console.log(`🎯 處理主要元素 ${i + 1}/${markedElements.length}`);
+                        
+                        const success = await decryptSingleMediaElement(element, false);
+                        if (success) successCount++;
+                        
+                        await new Promise(resolve => setTimeout(resolve, 100));
+                    }
+                    
+                    // 處理傳統圖片
+                    for (let i = 0; i < traditionalImages.length; i++) {
+                        const img = traditionalImages[i];
+                        const originalSrc = img.getAttribute('src');
+                        totalCount++;
+                        
+                        let fullUrl;
+                        if (originalSrc.startsWith('media/')) {
+                            const filename = originalSrc.replace('media/', '');
+                            fullUrl = GITHUB_BASE_URL + filename;
+                        } else if (originalSrc.includes('/media/')) {
+                            fullUrl = originalSrc;
+                        } else {
+                            continue;
+                        }
+                        
+                        console.log(`🖼️ 處理傳統圖片 ${i + 1}/${traditionalImages.length}: ${fullUrl}`);
+                        
+                        const decryptedUrl = await loadAndDecryptMedia(fullUrl);
+                        if (decryptedUrl) {
+                            img.src = decryptedUrl;
+                            img.classList.add('mse-decrypted');
+                            successCount++;
+                            console.log(`✅ 圖片解密成功`);
+                        } else {
+                            console.log(`❌ 圖片解密失敗`);
+                        }
+                        
+                        await new Promise(resolve => setTimeout(resolve, 100));
+                    }
+                    
+                    // 處理縮圖和網格
+                    await decryptThumbnailsAndGrid();
+                    
+                    console.log(`🎉 媒體解密程序完成！成功: ${successCount}/${totalCount}`);
+                    return { success: successCount, total: totalCount };
+                }
+                
+                // DOM載入完成後自動執行解密
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', () => {
+                        setTimeout(autoDecryptAllMedia, 500); // 延遲執行確保DOM完全載入
+                    });
+                } else {
+                    setTimeout(autoDecryptAllMedia, 500);
+                }
+                
+                // 監聽動態內容變化
+                if (typeof MutationObserver !== 'undefined') {
+                    const observer = new MutationObserver((mutations) => {
+                        mutations.forEach((mutation) => {
+                            if (mutation.type === 'childList') {
+                                // 檢查新增的標記元素
+                                const addedMarkedElements = Array.from(mutation.addedNodes)
+                                    .filter(node => node.nodeType === Node.ELEMENT_NODE)
+                                    .flatMap(node => [
+                                        ...(node.hasAttribute && node.hasAttribute('data-needs-mse-decrypt') ? [node] : []),
+                                        ...node.querySelectorAll ? node.querySelectorAll('[data-needs-mse-decrypt="true"]') : []
+                                    ]);
+                                
+                                if (addedMarkedElements.length > 0) {
+                                    console.log(`🔄 檢測到 ${addedMarkedElements.length} 個新的標記媒體元素，開始解密...`);
+                                    setTimeout(() => {
+                                        addedMarkedElements.forEach(async (element) => {
+                                            const isThumbnail = element.closest('.media-thumbnail, .carousel-thumbnail, .thumbnail, .grid-item, .media-grid') !== null;
+                                            await decryptSingleMediaElement(element, isThumbnail);
+                                        });
+                                    }, 100);
+                                }
+                            }
+                        });
+                    });
+                    
+                    observer.observe(document.body, {
+                        childList: true,
+                        subtree: true
+                    });
+                }
+                
+                // 提供全域函數供手動呼叫
+                window.forceDecryptMedia = autoDecryptAllMedia;
+                window.decryptSingleMedia = decryptSingleMediaElement;
+                window.decryptThumbnails = decryptThumbnailsAndGrid;
+                
+            })();
+        
 
 // ========== 提取的腳本區塊 ==========
 
