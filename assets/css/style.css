@@ -920,15 +920,7 @@ body {
     backdrop-filter: blur(4px);
     border-radius: 12px;
     margin: 12px 16px 12px 16px;
-    /* 移除邊框 */
-    /* border: 1px solid rgba(107, 114, 128, 0.2); */
-    /* 添加漸層透明效果，越往上越透明 */
-    background: linear-gradient(to bottom,
-        rgba(0, 0, 0, 0.2) 0%,
-        rgba(0, 0, 0, 0.4) 30%,
-        rgba(0, 0, 0, 0.6) 60%,
-        rgba(0, 0, 0, 0.8) 100%
-    );
+    border: 1px solid rgba(107, 114, 128, 0.2);
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
     opacity: 1;
@@ -1050,7 +1042,7 @@ body {
 }
 
 .media-display {
-    position: relative;
+    position: absolute;
     inset: 16px;
     display: flex;
     align-items: center;
@@ -1150,7 +1142,6 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    margin-top: 10px;
 }
 
 .thumbnails-container {
@@ -1818,7 +1809,7 @@ body {
 
     /* Subtitle Area */
     .subtitle-area {
-        margin: 8px 8px 8px 20px; /* 增加左邊距離，避免與左下角按鈕重疊 */
+        margin: 8px 8px 8px 8px;
         padding: 10px 12px;
     }
     
@@ -2443,7 +2434,7 @@ body {
     /* 手機版字幕區域調整 */
     .subtitle-area.description-hidden {
         padding: 8px 12px;
-        margin: 4px 8px 4px 20px; /* 保持左邊距，避免與左下角按鈕重疊 */
+        margin: 4px 8px;
     }
     
     /* 手機版媒體區域空間優化 */
