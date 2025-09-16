@@ -14,13 +14,10 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-e31db801-15ec-4580-833e-bfe24813508d' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
-    
-    <!-- Lucide Icons -->
-    <script nonce="e31db801-15ec-4580-833e-bfe24813508d" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-66459331-c25d-46ec-bcfc-0db64c90fbba'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="e31db801-15ec-4580-833e-bfe24813508d">
+    <style nonce="66459331-c25d-46ec-bcfc-0db64c90fbba">
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
@@ -94,7 +91,13 @@
         }
         .nav-btn:hover { background: #2563eb; }
         .nav-btn:disabled { background: #6b7280; cursor: not-allowed; }
-        /* 舊縮圖樣式已被新樣式覆蓋，此處保留兼容性 */
+        .thumbnails { 
+            display: flex; 
+            gap: 0.5rem; 
+            overflow-x: auto; 
+            padding: 1rem;
+            scrollbar-width: thin;
+        }
         .thumbnail { 
             width: 60px; 
             height: 60px; 
@@ -117,21 +120,19 @@
         .error { color: #ef4444; }
         .info { color: #10b981; }
         
-        /* 密碼模態框樣式 - 修正定位問題 */
+        /* 密碼模態框樣式 */
         .password-modal {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             background: rgba(26, 26, 46, 0.95);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 1000;
             backdrop-filter: blur(10px);
-            padding: 1rem;
-            box-sizing: border-box;
         }
         .password-container {
             background: #2a2a4a;
@@ -140,10 +141,7 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             text-align: center;
             max-width: 400px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            margin: auto;
+            width: 90%;
         }
         .password-icon {
             font-size: 3rem;
@@ -301,15 +299,7 @@
         .description-container {
             position: relative;
             backdrop-filter: blur(20px);
-            /* 移除邊框 */
-            /* border: 1px solid rgba(255, 255, 255, 0.1); */
-            /* 添加漸層透明效果，越往上越透明 */
-            background: linear-gradient(to bottom,
-                rgba(0, 0, 0, 0.05) 0%,
-                rgba(0, 0, 0, 0.2) 30%,
-                rgba(0, 0, 0, 0.4) 60%,
-                rgba(0, 0, 0, 0.6) 100%
-            );
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.4s ease;
         }
         
@@ -391,160 +381,28 @@
             transition: all 0.4s ease;
         }
         
-        /* 時間軸樣式改進 - 路線圖設計 */
-        .timeline-container {
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .timeline-line {
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
-        }
-        
+        /* 時間軸樣式改進 */
         .timeline-item {
-            position: relative;
-            padding: 1rem 0.5rem;
-            margin: 0.5rem 0;
-            border-radius: 8px;
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s ease;
-            min-height: 80px;
-        }
-
-        /* 中心圓點 - 基於MemoirEditor.tsx的設計 */
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -25px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 18px;
-            height: 18px;
-            background: #64748b;
-            border-radius: 50%;
-            transition: all 0.14s ease;
-            z-index: 3;
-        }
-
-        /* 脈衝光暈 - 第一層 */
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: -44px;
-            top: 50%;
-            transform: translateY(-50%) scale(0.72);
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.9) 0%, rgba(59, 130, 246, 0.35) 42%, transparent 62%);
-            opacity: 0;
-            transform-origin: center;
-            animation: none;
-            transition: opacity 0.15s ease, transform 0.18s ease;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        /* 同心圓環 */
-        .timeline-item {
-            position: relative;
-        }
-
-        .timeline-item:before {
-            /* 添加圓環效果 */
-            box-shadow: none;
-        }
-
-        .timeline-item:hover {
-            background: rgba(59, 130, 246, 0.1);
-        }
-
-        .timeline-item:hover::before {
-            background: #3b82f6;
-            transform: translateY(-50%) scale(1.12);
-        }
-
-        .timeline-item:hover::after {
-            opacity: 1;
-            transform: translateY(-50%) scale(1);
-        }
-
-        .timeline-item.active {
-            background: rgba(59, 130, 246, 0.2);
-        }
-
-        .timeline-item.active::before {
-            background: radial-gradient(circle at center, #93c5fd 0%, #60a5fa 30%, #3b82f6 60%, #1e40af 100%);
-            transform: translateY(-50%);
-            animation: timelineGlowHalo 2.5s ease-in-out infinite;
-        }
-
-        .timeline-item.active::after {
-            opacity: 1;
-            transform: translateY(-50%) scale(0.72);
-            animation: timelineRipple 2s ease-in-out infinite;
-            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.9) 0%, rgba(59, 130, 246, 0.6) 25%, rgba(59, 130, 246, 0.3) 50%, transparent 70%);
-        }
-
-        /* 添加圓環效果 - 增強hover狀態 */
-        .timeline-item:hover::before {
-            box-shadow:
-                0 0 15px rgba(59, 130, 246, 0.6),
-                0 0 25px rgba(59, 130, 246, 0.4);
+            border-left: 3px solid transparent;
         }
         
-        @keyframes timelineRipple {
-            0%, 100% {
-                transform: translateY(-50%) scale(0.6);
-                opacity: 0.8;
-            }
-            50% {
-                transform: translateY(-50%) scale(1.2);
-                opacity: 0.3;
-            }
+        .timeline-item:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-left-color: #3b82f6;
+            transform: translateX(5px);
         }
-
-        @keyframes timelinePulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
-            }
-            50% {
-                box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.3);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
-            }
+        
+        .timeline-item.active {
+            background: rgba(59, 130, 246, 0.2);
+            border-left-color: #3b82f6;
+            transform: translateX(8px);
         }
-
-        @keyframes timelineGlowHalo {
-            0%, 100% {
-                box-shadow:
-                    0 0 10px rgba(59, 130, 246, 0.8),
-                    0 0 20px rgba(59, 130, 246, 0.6),
-                    0 0 30px rgba(59, 130, 246, 0.4),
-                    inset 0 0 6px rgba(255, 255, 255, 0.3);
-            }
-            33% {
-                box-shadow:
-                    0 0 16px rgba(59, 130, 246, 1.0),
-                    0 0 32px rgba(59, 130, 246, 0.8),
-                    0 0 48px rgba(59, 130, 246, 0.6),
-                    inset 0 0 10px rgba(255, 255, 255, 0.5);
-            }
-            66% {
-                box-shadow:
-                    0 0 20px rgba(59, 130, 246, 1.0),
-                    0 0 40px rgba(59, 130, 246, 0.8),
-                    0 0 55px rgba(59, 130, 246, 0.6),
-                    inset 0 0 12px rgba(255, 255, 255, 0.6);
-            }
-        }
-
+        
         /* 觸控回饋 */
         .touch-feedback {
             position: relative;
@@ -557,901 +415,55 @@
             left: 50%;
             width: 0;
             height: 0;
-            background: radial-gradient(
-                circle,
-                rgba(255, 255, 255, 0.7) 0%,
-                rgba(255, 255, 255, 0.5) 20%,
-                rgba(255, 255, 255, 0.3) 40%,
-                rgba(255, 255, 255, 0.15) 60%,
-                rgba(255, 255, 255, 0.05) 80%,
-                rgba(255, 255, 255, 0) 100%
-            );
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             pointer-events: none;
             opacity: 0;
-            transition: all 0.1s ease;
         }
         
         .touch-feedback.touching::after {
-            animation: touchRippleGradient 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            animation: touchRipple 0.6s ease-out;
         }
         
-        @keyframes touchRippleGradient {
-            0% {
-                width: 0;
-                height: 0;
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0);
-            }
-            15% {
+        @keyframes touchRipple {
+            to {
+                width: 100px;
+                height: 100px;
                 opacity: 1;
-                transform: translate(-50%, -50%) scale(0.1);
             }
-            100% {
-                width: 140px;
-                height: 140px;
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(1.2);
-            }
-        }
-        
-        /* 浮動控制樣式 */
-        .floating-controls {
-            position: fixed;
-            z-index: 500;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-        
-        .floating-controls:hover {
-            opacity: 1;
-        }
-        
-        /* 左側導航：左右切換 */
-        .nav-left {
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        /* 右側導航：上下切換 */
-        .nav-right {
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        /* 頂部控制：選單系統 */
-        .nav-top {
-            top: 20px;
-            left: 20px;
-            transform: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            align-items: flex-start;
-        }
-        
-        /* 選單系統 */
-        .menu-system {
-            position: relative;
-        }
-        
-        .menu-dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 16px;
-            padding: 0.5rem;
-            margin-top: 10px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            transform: translateY(-10px);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            z-index: 1000;
-        }
-        
-        .menu-dropdown.open {
-            transform: translateY(0);
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .menu-item {
-            position: relative;
-            width: 50px;
-            height: 50px;
-            margin: 5px 0;
-        }
-        
-        /* 選單按鈕動畫 - 三條槓變叉叉 */
-        .menu-btn-icon {
-            width: 20px;
-            height: 16px;
-            position: relative;
-            transform: rotate(0deg);
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        .menu-btn-icon span {
-            display: block;
-            position: absolute;
-            height: 2px;
-            width: 100%;
-            background: white;
-            border-radius: 1px;
-            opacity: 1;
-            left: 0;
-            transform: rotate(0deg);
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        .menu-btn-icon span:nth-child(1) {
-            top: 0px;
-        }
-        
-        .menu-btn-icon span:nth-child(2) {
-            top: 7px;
-        }
-        
-        .menu-btn-icon span:nth-child(3) {
-            top: 14px;
-        }
-        
-        .menu-btn-icon.open span:nth-child(1) {
-            top: 7px;
-            transform: rotate(135deg);
-        }
-        
-        .menu-btn-icon.open span:nth-child(2) {
-            opacity: 0;
-            left: -20px;
-        }
-        
-        .menu-btn-icon.open span:nth-child(3) {
-            top: 7px;
-            transform: rotate(-135deg);
-        }
-        
-        /* 字體大小展開選單 */
-        .font-size-dropdown {
-            position: absolute;
-            top: 50%;
-            left: 100%;
-            transform: translateY(-50%);
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 25px;
-            padding: 0.5rem;
-            margin-left: 10px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            display: flex;
-            gap: 5px;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            z-index: 1001;
-        }
-        
-        .font-size-dropdown.open {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .font-size-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 20px;
-            background: rgba(59, 130, 246, 0.3);
-            border: 1px solid rgba(59, 130, 246, 0.5);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        .font-size-btn:hover {
-            background: rgba(59, 130, 246, 0.8);
-            transform: scale(1.1);
-        }
-        
-        .font-size-btn.active {
-            background: rgba(59, 130, 246, 0.9);
-            border-color: rgba(59, 130, 246, 0.9);
-        }
-
-        /* 打字機效果下拉選單樣式 */
-        .typewriter-dropdown {
-            position: absolute;
-            top: 50%;
-            left: 100%;
-            transform: translateY(-50%);
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 25px;
-            padding: 0.5rem;
-            margin-left: 10px;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            z-index: 1001;
-        }
-
-        .typewriter-dropdown.open {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .typewriter-toggle,
-        .typewriter-speed {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .typewriter-speed {
-            margin-bottom: 0;
-        }
-
-        .typewriter-toggle label,
-        .typewriter-speed label,
-        .font-size-controls label {
-            font-size: 0.8rem;
-            color: #9ca3af;
-            font-weight: 500;
-        }
-
-        .toggle-btn {
-            background: rgba(239, 68, 68, 0.3);
-            border: 1px solid rgba(239, 68, 68, 0.5);
-            color: #fff;
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.8rem;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .toggle-btn:hover {
-            background: rgba(239, 68, 68, 0.6);
-            transform: scale(1.05);
-        }
-
-        .toggle-btn.active {
-            background: rgba(34, 197, 94, 0.8);
-            border-color: rgba(34, 197, 94, 0.8);
-            color: white;
-        }
-
-        .speed-slider {
-            width: 100%;
-            height: 6px;
-            border-radius: 3px;
-            background: rgba(255, 255, 255, 0.2);
-            outline: none;
-            cursor: pointer;
-            -webkit-appearance: none;
-            appearance: none;
-        }
-
-        .speed-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
-            transition: all 0.2s ease;
-        }
-
-        .speed-slider::-webkit-slider-thumb:hover {
-            transform: scale(1.2);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.6);
-        }
-
-        .speed-slider::-moz-range-thumb {
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
-            cursor: pointer;
-            border: none;
-            box-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
-        }
-
-        .speed-label {
-            font-size: 0.7rem;
-            color: #60a5fa;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        /* 速度按鈕樣式 - 套用字體大小按鈕的圓形樣式 */
-        .speed-buttons {
-            display: flex;
-            gap: 5px;
-            justify-content: center;
-        }
-
-        .speed-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 20px;
-            background: rgba(59, 130, 246, 0.3);
-            border: 1px solid rgba(59, 130, 246, 0.5);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .speed-btn:hover {
-            background: rgba(59, 130, 246, 0.8);
-            transform: scale(1.1);
-        }
-
-        .speed-btn.active {
-            background: rgba(59, 130, 246, 0.9);
-            border-color: rgba(59, 130, 246, 0.9);
-        }
-        
-        /* 頂部控制：縮圖列 - 從上往下進入 */
-        .nav-thumbnails {
-            position: fixed;
-            top: -120px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            transition: top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            z-index: 2100;
-        }
-        
-        .nav-thumbnails.visible {
-            top: 10px;
-        }
-        
-        .thumbnails {
-            display: flex;
-            gap: 0.5rem;
-            background: rgba(26, 26, 46, 0.9);
-            padding: 0.75rem 1rem;
-            border-radius: 25px;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            max-width: 400px;
-            overflow-x: auto;
-        }
-        
-        /* 浮動按鈕樣式 */
-        .floating-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(42, 42, 74, 0.9);
-            border: 2px solid rgba(59, 130, 246, 0.3);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            font-size: 1.2rem;
-            user-select: none;
-        }
-        
-        .floating-btn:hover {
-            transform: scale(1.1);
-            background: rgba(59, 130, 246, 0.8);
-            border-color: rgba(59, 130, 246, 0.8);
-            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
-        }
-        
-        .floating-btn:active {
-            transform: scale(0.95);
-        }
-        
-        .floating-btn:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        /* 時間軸面板樣式 - 從右側進出 */
-        .timeline-panel {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 350px;
-            height: 100vh;
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 2rem 1rem;
-            transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            overflow-y: auto;
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .timeline-panel.open {
-            right: 0px; /* 允許遮蓋上下按鈕，功能重疊 */
-        }
-        
-        /* 手機端時間軸面板調整 */
-        @media (max-width: 768px) {
-            .timeline-panel {
-                right: -100vw;
-                width: 100vw;
-            }
-            
-            .timeline-panel.open {
-                right: 0px;
-            }
-            
-            .nav-thumbnails.visible {
-                top: 10px;
-            }
-        }
-        
-        .timeline-panel .close-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.15);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: #fff;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .timeline-panel .close-btn:hover {
-            background: rgba(239, 68, 68, 0.8);
-            border-color: rgba(239, 68, 68, 0.9);
-            transform: scale(1.1);
-            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
-        }
-        
-        /* 極簡界面調整 */
-        .app {
-            position: relative;
-        }
-        
-        .main-content {
-            height: 100vh;
-            padding: 0;
-        }
-        
-        .media-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-        }
-        
-        .media-display {
-            position: relative;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        /* 字幕隱藏模式不再需要調整媒體區域大小，因為已使用z-layer覆蓋 */
-        
-        .media-display img, .media-display video {
-            max-width: 100vw;
-            max-height: 100vh;
-            object-fit: contain;
-            object-position: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .media-display img:hover {
-            transform: scale(1.02);
-        }
-        
-        .description-container {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 2;
-            width: 100%;
-            text-align: left;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            /* 修改為漸層透明效果，越往上越透明 */
-            background: linear-gradient(to bottom,
-                rgba(0, 0, 0, 0.2) 0%,
-                rgba(0, 0, 0, 0.4) 30%,
-                rgba(0, 0, 0, 0.6) 60%,
-                rgba(0, 0, 0, 0.8) 100%
-            );
-            backdrop-filter: blur(20px);
-            padding: 1rem 80px 1rem 80px; /* 左右留空間給選單按鈕，上下留空間 */
-            min-height: 140px;
-            margin-bottom: 20px; /* 避免貼近下緣 */
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        /* 字幕開關按鈕 */
-        .subtitle-toggle-btn {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(42, 42, 74, 0.9);
-            border: 2px solid rgba(59, 130, 246, 0.3);
-            color: #fff;
-            font-size: 1.2rem;
-            cursor: pointer;
-            z-index: 1500;
-            backdrop-filter: blur(20px);
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            user-select: none;
-        }
-
-        .subtitle-toggle-btn:hover {
-            transform: scale(1.1);
-            background: rgba(59, 130, 246, 0.8);
-            border-color: rgba(59, 130, 246, 0.8);
-            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
-        }
-        .subtitle-toggle-btn:active {
-            transform: scale(0.95);
-        }
-
-        .subtitle-toggle-btn.hidden {
-            background: rgba(239, 68, 68, 0.8);
-            border-color: rgba(239, 68, 68, 0.3);
-            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
-        }
-
-        .subtitle-toggle-btn.hidden:hover {
-            background: rgba(239, 68, 68, 0.9);
-            border-color: rgba(239, 68, 68, 0.8);
-            box-shadow: 0 6px 25px rgba(239, 68, 68, 0.6);
-        }
-
-        /* 字幕區域隱藏狀態 */
-        .description-container.subtitle-hidden #eventDescription {
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(30px);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .description-container.subtitle-hidden {
-            background: transparent;
-            backdrop-filter: none;
-            min-height: 80px;
-            padding: 2rem 80px 1rem 80px;
-        }
-        
-        /* 當前事件日期顯示 */
-        .current-date-display {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2050;
-            background: rgba(26, 26, 46, 0.9);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 8px 16px;
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        /* 當縮圖列顯示時，日期顯示下移 */
-        .current-date-display.below-thumbnails {
-            top: 110px;
-        }
-
-        .current-date-display.date-hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        /* 隱藏畫面按鈕時的樣式 */
-        .floating-controls.controls-hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .current-date-display #currentEventDate {
-            color: #e2e8f0;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-align: center;
-            white-space: nowrap;
-            min-width: 120px;
-        }
-
-        /* 隱藏原有的導航元素 */
-        .header,
-        .navigation,
-        .sidebar {
-            display: none;
-        }
-        
-        /* 燈箱效果樣式 */
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .lightbox.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .lightbox-content {
-            position: relative;
-            max-width: 90vw;
-            max-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .lightbox img, .lightbox video {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-        
-        .lightbox-close {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 55px;
-            height: 55px;
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            color: white;
-            font-size: 1.8rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1003;
-            backdrop-filter: blur(15px);
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-        
-        .lightbox-close:hover {
-            background: rgba(239, 68, 68, 0.9);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(239, 68, 68, 0.5);
-        }
-        
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s ease;
-        }
-        
-        .lightbox-nav:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-        
-        .lightbox-prev {
-            left: 20px;
-        }
-        
-        .lightbox-next {
-            right: 20px;
-        }
-        
-        /* 打字機速度滑軌樣式 */
-        .typing-speed-container {
-            padding: 1rem;
-            background: rgba(59, 130, 246, 0.1);
-            border-radius: 12px;
-            margin: 0.5rem 0;
-        }
-        
-        .typing-speed-label {
-            font-size: 0.8rem;
-            color: #e5e7eb;
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
-        
-        .typing-speed-slider {
-            width: 100%;
-            height: 6px;
-            border-radius: 3px;
-            background: rgba(255, 255, 255, 0.2);
-            outline: none;
-            appearance: none;
-        }
-        
-        .typing-speed-slider::-webkit-slider-thumb {
-            appearance: none;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: #3b82f6;
-            cursor: pointer;
-            border: 2px solid white;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        }
-        
-        .typing-speed-slider::-moz-range-thumb {
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: #3b82f6;
-            cursor: pointer;
-            border: 2px solid white;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* 鎖定視窗滾動與手機優化 */
-        body {
-            overflow: hidden;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            /* 防止手機瀏覽器的彈跳滾動 */
-            -webkit-overflow-scrolling: touch;
-            overscroll-behavior: none;
-            /* 防止雙指縮放 */
-            touch-action: pan-x pan-y;
-        }
-        
-        /* 針對主要內容區域的觸控優化 */
-        .app-container {
-            touch-action: none; /* 完全禁用預設觸控行為 */
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        
-        /* 允許選單和時間軸正常滾動 */
-        .menu-dropdown,
-        .timeline-panel,
-        .timeline-events {
-            touch-action: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        /* 允許滑軒正常操作 */
-        input[type="range"] {
-            touch-action: manipulation;
         }
         
         /* 移動端優化 */
         @media (max-width: 768px) {
-            .floating-btn {
-                width: 45px;
-                height: 45px;
-                font-size: 1rem;
+            .main-content { 
+                flex-direction: column;
+                touch-action: pan-y;
             }
-            
-            .nav-left {
-                left: 15px;
+            .sidebar { 
+                width: 100%; 
+                max-height: 200px;
+                order: 1;
             }
-            
-            .nav-right {
-                right: 15px;
-            }
-            
-            .nav-top {
-                top: 15px;
-            }
-            
             .media-container {
-                padding: 1rem;
+                order: 0;
+                touch-action: pan-x;
             }
-            
-            .description-container {
-                font-size: 1rem;
-                line-height: 1.6;
-                padding: 3rem 80px 2rem 80px; /* 手機端增加左邊間距，避免與左下角按鈕重疊 */
-                margin-bottom: 15px;
+            .thumbnails { 
+                justify-content: center;
+                padding: 0.5rem;
             }
-            
-            .lightbox-close,
-            .lightbox-nav {
-                width: 45px;
-                height: 45px;
-                font-size: 1rem;
+            .thumbnail {
+                width: 50px;
+                height: 50px;
+            }
+            .nav-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"JLf4Py5RcbPKCvLYy57Zf6gE8FHQ1SBvMnHo5upclPjN3V67y1ehFpZrmawPqEV5MPhVDXObxJATBS9Ih/0thFhtesNnM/yKijKjiOkQlECXVKTWe43GywdvEIgt8P6D76zc7AFO1mbWJgeAgm6uenYJyxi3Z5tWADP/ibJeAoNjMFnNv0lsmmpgYiafoBXwwJiApw+IkrZFNOL275SCbqQWFubze1Bko7mcNIWCN/Yy9kLQEp9mvClD++2onfFtSsYOoUoxrmD/8zjJd6/n3mFfoUeQ31xu4rm+DBGq9JK6wYG6Sb88g7U+IDtUsRoUJ8F2XtVBiiO0+A5MvLEq7vfQRWUSrC7G3lzdkI4xCAYl9lL6jOAIyKDFguYPS5MkDCH2S9RdXKzzzO52oKqQy+Kd3W0HwBxvRgHOlh2FpOFPk5fvrkgh1M+H9T2hjHaAWS0LrGozLSh2v8jBwFe67F2QudmL/hJvaYiD9nGOOT07sasJfsgZVbwjqBJR4fsWYbK9BsoTofdcJbWRoUBdIGYrLq7yJCdDiX7kz4ujAfOERCV/b5DkQH9z5u2RtANels+6uZfM9aRHdO1gPw7AQKB3KwumToTMCWzTEBWJm5eLAN3eEXZArc6/+WS7+G78ctsWlq4iOwCq5BHpsd+dP6msTgn1469R16fSu3M4GVEMhKwg8aVwvDplh0urfeyg5QLdPpWnh2HKmVI86wPEMGHdDOKLNi98stkIq6z2C1C4oGjQLnvWkixT9c2/HEr1TC/Pa5egDnGrrxKOuvrC0YLBjXWarbeMz2GYxwvH/zHrkchOT+CO3c9nfrADopphdLkKB+3zGnB27gXvVcm/zTGkeu5YTaQ834VdsjVtjCflL0lQovb7CzIFt5IKCnEYH7jVNfcc26Ot4oJGGwBj5jbyleNNtidR9WPNugNuN+XBsvJeTsjBY9yaY7keyVtmpE8w1famVVTaex+q/C6QmQJOSYzFvSft/sV2aGN2AhDPYH7982RxoEYE30eNDSiXcfzT33Gjb6aj0pzfVW3ICpyYLAR6KOaKmDQtKGxzicztu1Xu1A1wgHZv3uK/kHKpHmrX9ugLSHr+xaUS0Sb3JvdCn09ka7CHKruxrs/PD0/dRfxdTd9esBxM6OmAZzZ/6ZfLks80ETBVmYS1w0358KHUQL7q42n85ZyVGWmeRq1WRS6jMmwjUxVbL6i971WSifmt/4EuW4dEVCgmNACWOeehMb1shj+Hvc+8GdmBp2wG9C8ML2v0Vann00j8OSLZykHLnukKXzk2hYou4bGfpZf36zQlvOZyv5qi5sJ619lgMGOxCQnHx0BTs6GGi+CeMLVVbn9HGT5wF1KdpoDHjj4oZLaxO7ZvgECNmhIKHHhwn/z+CTzHJtkZ4KdauEszQRlRP5w7EPehQ60P27SoYm7MdmhtNHKKVFYGuQBz/Ko8lf6Qf2vy3QNgrtlGGd/90dIwdvCnXWw6A1WivCnW9b2DIn08c7XSg26hTMyqt021hzTd9KU3a9w8CVjM+yH9zS/tIGMfZUojHwWNr95ZfYX2mP6jQmSa4dLjvSqo2+rEmmF31bnVs+lx7jHu4fK1dxdF8onLQCkJACV1kM/6a2cCBi4zN0/RbOaIPgTvypVQLFxm7AYas6BqB3FhrcmjLRspfUc=","iv_b64":"vBdf8faSNbEw2H4E","salt_b64":"LSW7V6CJ+yBpbM5+glBe+A=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"dAzYtWfi8U7wdk6BMUhhq6ST8AI4NJEEWVCE2eOo7Yc3ChcTHrw29LlbCwCBrA3v61HjoxkajwjtKrSpbTkQRMfqSOVqZ2lGaUhZOkw3DiTBPz8UQvF1zaQ8Bjgrgxc6u9s4Q9LgwU0pFh1CE51afZOshjZD25mgmfi0an4XN2UgD62Lkiz8VgEh76DWotSkpqvTshYYwgJxTbf623m06pCygzwu+PcTxvKuHbhVbNAloiPVLoPdsnip9f456Ng30EsxFIWLycWftmPYHwaBHVDbNfpmN82yR7pOIOBVrUfx8eEfB6XUXXLj99sR248WmxP7dR+i0lHhbVaRc6wmP5Fp7U6v+8pvTO1mdhLYNRneetP8YYdDy09yVk3fX11jSaIUBs7TksFES+WVYjNpUXUraqFbRtMi6hftQHc/Ldd9vIk2ogaJWvS6b77o96M1MRITvrfl1oqG+vInFuRJAYEIGbKEdX/VVh3OGHcQaZyjLUpFAiFky4Ac65RCoC+DSTLiN7tzH6io5ZxC9PUOTAu047Ww56p3TFX9DG3a2I98Jb43SmVLk9R2PLabyWnq7EXc2vrOOzwFXTnugF61SSoL9lpKazy34Gz6WN/xituNQtDv6bqIQH7dSKZmEC6vW85WOly2ycmMSQ5louPqoL3ud4vMFeScnsOm5E/U3CQH4sLo1oFSp2SKej0d1+Xqk4/sGiMiNoKf1mNQhRCd3pCIZPtHzF8oDJORVvFu9d1EXuQGoDW7dCYP+iibRndb91DUBPuINARunQoxg72kNCN3F1Y9oV43B0MG8Ktoa4xEaPI6tR6vWDsoBHudQdm3Ov+/xjH2jUadL+HafEik2cOuXpF0uNSqpfW8AmiS5qgOxOeeihHbKjwHjAYoxrw4QLKl08E3KB2gvc9fNPew55TRGTBsx8N+evsKEgDoi1zm2m0qpq3gYNazepgLwzXUnhlqApKr9I139FSmuOpSdSaqJTAcrNQlKNvuyCFyrciwftHC/a8Wh2IalC3+Yoc/CZT+vGVZFKxftnd2yUwfqhX4VbcqfOWmeQk8wEOVdamLj112g2OmRa88USlbcdHPM10jMunuErZAwpTCiPGirLS2kIZV8UccQkPaqB4uLZg1KRKYnQm4slEOQHk7AbM+LmgjJ77cOnyIi4+DyJZrKPQYBZ0B03g2oKZ5ydafFxNvDIVMwodlixyq4KLDP16Rh3BM6mhI5rUhbNidnLjloB3vBPBTNQXVG6tr3KrJWOVE36mfB67k7JpBNfJXp4brkSCt/yxSnkepW/C71Yy6U4fw43ejjQqstIeU86JA02DIH0AsOnJh4hcVQumtf0Ghq9fMcEf7h87UZoxMoJ6AZRjA1A01GkQCFsv406RAWIkB4lHHgumOZV4TMtD1SMnBEbzMEwQQgG2WczH7Uqwovk+uj44gXVHJSUShYTNdc4DIF6Hy30eYifWZdU9yMA49t8frqTz9E6dbVqU1vYqJenQAFbPoBC27D0t93icbAKDL1FOkq/BBVjLd77Eyhfj5c+UB7Vopx/6DVk1gPlTyQ3RCtlIzOkU135du7LhDg91eyBrT+XIysoG7Qu5nAAimO0RpQjzkaVWCmOmHuytFx4MGoq6fhz5cUZD8qn8s2uJPii4CGLn/jWCaN1rTxyV5CGz7ZYU=","iv_b64":"xiidx9qf6+MfMTkm","salt_b64":"BjxiOLQCPZUfMLDalPUlLw=="}</script>
 <meta name="require-password" content="false">
 </head>
 <body>
@@ -1494,8 +506,19 @@
         </div>
     </div>
 
-    <!-- 主應用 - 極簡設計 -->
+    <!-- 主應用 -->
     <div id="app" class="app hidden">
+        <!-- 簡化的 Header -->
+        <header class="header">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h1 style="font-size: 1.2rem;">開發者日誌</h1>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <span id="eventInfo">事件 <span id="currentEventNum">1</span>/<span id="totalEvents">1</span></span>
+                    <span id="mediaInfo">媒體 <span id="currentMediaNum">1</span>/<span id="mediaCount">0</span></span>
+                </div>
+            </div>
+        </header>
+
         <!-- 主要內容區 -->
         <div class="main-content">
             <!-- 媒體顯示區 -->
@@ -1509,123 +532,30 @@
                     <div id="eventDescription"></div>
                 </div>
 
-                <!-- 當前事件日期顯示 -->
-                <div id="currentDateDisplay" class="current-date-display">
-                    <div id="currentEventDate"></div>
-                </div>
-
-                <!-- 字幕開關按鈕（固定在視窗左下角）-->
-                <button id="subtitleToggleBtn" class="subtitle-toggle-btn" title="字幕開關">
-                    <i data-lucide="eye" style="width: 18px; height: 18px;"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- 浮動控制按鈕 -->
-        <!-- 左側導航：左右媒體切換 -->
-        <div class="floating-controls nav-left">
-            <button id="prevMediaBtn" class="floating-btn" title="上一媒體">⬅</button>
-            <button id="nextMediaBtn" class="floating-btn" title="下一媒體">➡</button>
-        </div>
-
-        <!-- 右側導航：上下事件切換 -->
-        <div class="floating-controls nav-right">
-            <button id="prevEventBtn" class="floating-btn" title="上一事件">⬆</button>
-            <button id="nextEventBtn" class="floating-btn" title="下一事件">⬇</button>
-        </div>
-
-        <!-- 頂部控制：功能選單 -->
-        <div class="floating-controls nav-top">
-            <div class="menu-system">
-                <button id="menuBtn" class="floating-btn" title="功能選單">
-                    <div id="menuBtnIcon" class="menu-btn-icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </button>
-                <div id="menuDropdown" class="menu-dropdown">
-                    <button id="timelineBtn" class="floating-btn menu-item" title="時間軸導覽">
-                        <i data-lucide="clock" style="width: 16px; height: 16px;"></i>
-                    </button>
-
-                    <button id="thumbnailBtn" class="floating-btn menu-item" title="縮圖列">
-                        <i data-lucide="image" style="width: 16px; height: 16px;"></i>
-                    </button>
-
-                    <!-- 打字機效果開關 -->
-                    <button id="typewriterToggleBtn" class="floating-btn menu-item" title="打字機效果開關">
-                        <i data-lucide="keyboard" style="width: 16px; height: 16px;"></i>
-                    </button>
-
-                    <!-- 打字速度設定 -->
-                    <div class="menu-item" style="position: relative;">
-                        <button id="typewriterSpeedBtn" class="floating-btn" title="打字速度設定">
-                            <i data-lucide="gauge" style="width: 16px; height: 16px;"></i>
-                        </button>
-                        <div id="typewriterSpeedDropdown" class="typewriter-dropdown">
-                            <div class="typewriter-speed">
-                                <label>打字速度</label>
-                                <div class="speed-buttons">
-                                    <button class="speed-btn" data-speed="80" title="慢速">慢</button>
-                                    <button class="speed-btn" data-speed="25" title="中速">中</button>
-                                    <button class="speed-btn" data-speed="10" title="快速">快</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="menu-item" style="position: relative;">
-                        <button id="fontSizeBtn" class="floating-btn" title="字體大小">
-                            <i data-lucide="type" style="width: 16px; height: 16px;"></i>
-                        </button>
-                        <div id="fontSizeDropdown" class="font-size-dropdown">
-                            <div class="font-size-controls">
-                                <label>字體大小</label>
-                                <div style="display: flex; gap: 5px;">
-                                    <button class="font-size-btn" data-size="0.9" title="小">小</button>
-                                    <button class="font-size-btn active" data-size="1.1" title="中">中</button>
-                                    <button class="font-size-btn" data-size="1.3" title="大">大</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 隱藏畫面按鈕開關 -->
-                    <button id="hideControlsBtn" class="floating-btn menu-item" title="隱藏畫面按鈕">
-                        <i data-lucide="move" style="width: 16px; height: 16px;"></i>
-                    </button>
-
-                    <!-- 隱藏日期標籤開關 -->
-                    <button id="hideDateBtn" class="floating-btn menu-item" title="隱藏日期標籤">
-                        <i data-lucide="calendar-x" style="width: 16px; height: 16px;"></i>
-                    </button>
-
+                <!-- 導航按鈕 -->
+                <div class="navigation">
+                    <button id="prevEventBtn" class="nav-btn">上一事件</button>
+                    <button id="prevMediaBtn" class="nav-btn">上一媒體</button>
+                    <button id="nextMediaBtn" class="nav-btn">下一媒體</button>
+                    <button id="nextEventBtn" class="nav-btn">下一事件</button>
                 </div>
             </div>
-        </div>
 
-        <!-- 頂部控制：縮圖（預設隱藏）-->
-        <div class="nav-thumbnails" id="thumbnailsContainer">
-            <div id="thumbnails" class="thumbnails"></div>
-        </div>
-        
-        <!-- 燈箱 -->
-        <div id="lightbox" class="lightbox">
-            <div class="lightbox-content">
-                <button class="lightbox-close" id="lightboxClose">×</button>
-                <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
-                <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
-                <div id="lightboxMedia"></div>
-            </div>
-        </div>
-
-        <!-- 時間軸面板 -->
-        <div id="timelinePanel" class="timeline-panel">
-            <button class="close-btn" id="closeTimelineBtn">×</button>
-            <h3 style="color: #e5e7eb; margin-bottom: 2rem; text-align: center;">開發者日誌</h3>
-            <div id="timeline" class="timeline-container">
-                <div class="timeline-line"></div>
+            <!-- 側邊欄 -->
+            <div class="sidebar">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #e5e7eb;">時間軸</h3>
+                    <button id="timelineToggle" class="nav-btn" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">
+                        收合
+                    </button>
+                </div>
+                <div id="timeline" class="timeline-container"></div>
+                
+                <div style="margin-top: 1.5rem;">
+                    <h4 style="font-size: 0.9rem; color: #9ca3af; margin-bottom: 0.5rem;">當前事件媒體</h4>
+                    <!-- 縮圖區 -->
+                    <div id="thumbnails" class="thumbnails"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -1647,6 +577,6 @@
     
         
         
-<script src="assets/js/main.js" nonce="xnR0Xr/KynXxt2zC4ICJ7A"></script>
+<script src="assets/js/main.js" nonce="54zk/ONNzYFhCcjHOghD7Q"></script>
 </body>
 </html>
