@@ -14,21 +14,154 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-66459331-c25d-46ec-bcfc-0db64c90fbba'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-5d287ab9-cf9e-4a06-875f-3ef5ac646bd3' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    
+    <!-- Lucide Icons -->
+    <script nonce="5d287ab9-cf9e-4a06-875f-3ef5ac646bd3" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內嵌關鍵 CSS 避免額外請求 -->
-    <style nonce="66459331-c25d-46ec-bcfc-0db64c90fbba">
+    <style nonce="5d287ab9-cf9e-4a06-875f-3ef5ac646bd3">
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: system-ui, -apple-system, sans-serif; 
-            background: #1a1a2e; 
-            color: #fff; 
+
+        /* CSS 變量定義 */
+        :root {
+            /* 預設主題 */
+            --primary: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary: #6b7280;
+            --bg: #0f172a;
+            --surface: rgba(30, 41, 59, 0.8);
+            --surface-hover: rgba(51, 65, 85, 0.8);
+            --text: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --border: rgba(148, 163, 184, 0.3);
+            --shadow: rgba(0, 0, 0, 0.5);
+            --accent: #38bdf8;
+            --font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* 森林主題 */
+        .theme-forest {
+            --primary: #22c55e;
+            --primary-dark: #16a34a;
+            --secondary: #84cc16;
+            --bg: #1a2520;
+            --surface: rgba(34, 197, 94, 0.1);
+            --surface-hover: rgba(34, 197, 94, 0.2);
+            --text: #dcfce7;
+            --text-secondary: #bbf7d0;
+            --border: rgba(34, 197, 94, 0.3);
+            --shadow: rgba(0, 50, 25, 0.5);
+            --accent: #7ba894;
+        }
+
+        /* 海洋主題 */
+        .theme-ocean {
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --secondary: #06b6d4;
+            --bg: #0c1426;
+            --surface: rgba(14, 165, 233, 0.1);
+            --surface-hover: rgba(14, 165, 233, 0.2);
+            --text: #e0f2fe;
+            --text-secondary: #b3e5fc;
+            --border: rgba(14, 165, 233, 0.3);
+            --shadow: rgba(0, 25, 50, 0.5);
+            --accent: #38bdf8;
+        }
+
+        /* 薰衣草主題 */
+        .theme-lavender {
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --secondary: #a78bfa;
+            --bg: #241a30;
+            --surface: rgba(139, 92, 246, 0.1);
+            --surface-hover: rgba(139, 92, 246, 0.2);
+            --text: #f3e8ff;
+            --text-secondary: #e9d5ff;
+            --border: rgba(139, 92, 246, 0.3);
+            --shadow: rgba(25, 0, 50, 0.5);
+            --accent: #a394d4;
+        }
+
+        /* 日落主題 */
+        .theme-sunset {
+            --primary: #f59e0b;
+            --primary-dark: #d97706;
+            --secondary: #fbbf24;
+            --bg: #2a1f1a;
+            --surface: rgba(245, 158, 11, 0.1);
+            --surface-hover: rgba(245, 158, 11, 0.2);
+            --text: #fef3c7;
+            --text-secondary: #fde68a;
+            --border: rgba(245, 158, 11, 0.3);
+            --shadow: rgba(50, 25, 0, 0.5);
+            --accent: #d4b48a;
+        }
+
+        /* 酒紅主題 */
+        .theme-crimson {
+            --primary: #dc2626;
+            --primary-dark: #b91c1c;
+            --secondary: #ef4444;
+            --bg: #1a0f0f;
+            --surface: rgba(220, 38, 38, 0.1);
+            --surface-hover: rgba(220, 38, 38, 0.2);
+            --text: #fef2f2;
+            --text-secondary: #fecaca;
+            --border: rgba(220, 38, 38, 0.3);
+            --shadow: rgba(50, 0, 0, 0.5);
+            --accent: #f87171;
+        }
+
+        /* 寶石綠主題 */
+        .theme-emerald {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #34d399;
+            --bg: #0c1f14;
+            --surface: rgba(16, 185, 129, 0.1);
+            --surface-hover: rgba(16, 185, 129, 0.2);
+            --text: #ecfdf5;
+            --text-secondary: #d1fae5;
+            --border: rgba(16, 185, 129, 0.3);
+            --shadow: rgba(0, 50, 25, 0.5);
+            --accent: #22c55e;
+        }
+
+        /* 字體類別 */
+        .font-system {
+            --font-family: system-ui, -apple-system, 'Microsoft JhengHei', sans-serif;
+        }
+
+        .font-noto {
+            --font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+        }
+
+        .font-poppins {
+            --font-family: 'Poppins', 'Microsoft JhengHei', sans-serif;
+        }
+
+        .font-serif {
+            --font-family: 'Noto Serif TC', 'Times New Roman', serif;
+        }
+
+        .font-mono {
+            --font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: all 0.3s ease;
         }
         .app { min-height: 100vh; display: flex; flex-direction: column; }
-        .header { 
-            background: rgba(42, 42, 74, 0.95); 
+        .header {
+            background: var(--surface);
             padding: 1rem; 
             position: sticky; 
             top: 0; 
@@ -91,13 +224,7 @@
         }
         .nav-btn:hover { background: #2563eb; }
         .nav-btn:disabled { background: #6b7280; cursor: not-allowed; }
-        .thumbnails { 
-            display: flex; 
-            gap: 0.5rem; 
-            overflow-x: auto; 
-            padding: 1rem;
-            scrollbar-width: thin;
-        }
+        /* 舊縮圖樣式已被新樣式覆蓋，此處保留兼容性 */
         .thumbnail { 
             width: 60px; 
             height: 60px; 
@@ -120,19 +247,21 @@
         .error { color: #ef4444; }
         .info { color: #10b981; }
         
-        /* 密碼模態框樣式 */
+        /* 密碼模態框樣式 - 修正定位問題 */
         .password-modal {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             background: rgba(26, 26, 46, 0.95);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 1000;
             backdrop-filter: blur(10px);
+            padding: 1rem;
+            box-sizing: border-box;
         }
         .password-container {
             background: #2a2a4a;
@@ -141,7 +270,10 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             text-align: center;
             max-width: 400px;
-            width: 90%;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            margin: auto;
         }
         .password-icon {
             font-size: 3rem;
@@ -299,7 +431,15 @@
         .description-container {
             position: relative;
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            /* 移除邊框 */
+            /* border: 1px solid rgba(255, 255, 255, 0.1); */
+            /* 添加漸層透明效果，越往上越透明 */
+            background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.05) 0%,
+                rgba(0, 0, 0, 0.2) 30%,
+                rgba(0, 0, 0, 0.4) 60%,
+                rgba(0, 0, 0, 0.6) 100%
+            );
             transition: all 0.4s ease;
         }
         
@@ -381,28 +521,160 @@
             transition: all 0.4s ease;
         }
         
-        /* 時間軸樣式改進 */
+        /* 時間軸樣式改進 - 路線圖設計 */
+        .timeline-container {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+        }
+        
         .timeline-item {
-            padding: 0.5rem;
-            margin: 0.25rem 0;
-            border-radius: 6px;
+            position: relative;
+            padding: 1rem 0.5rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
-            border-left: 3px solid transparent;
+            min-height: 80px;
         }
-        
+
+        /* 中心圓點 - 基於MemoirEditor.tsx的設計 */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            background: #64748b;
+            border-radius: 50%;
+            transition: all 0.14s ease;
+            z-index: 3;
+        }
+
+        /* 脈衝光暈 - 第一層 */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -44px;
+            top: 50%;
+            transform: translateY(-50%) scale(0.72);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.9) 0%, rgba(59, 130, 246, 0.35) 42%, transparent 62%);
+            opacity: 0;
+            transform-origin: center;
+            animation: none;
+            transition: opacity 0.15s ease, transform 0.18s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* 同心圓環 */
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-item:before {
+            /* 添加圓環效果 */
+            box-shadow: none;
+        }
+
         .timeline-item:hover {
             background: rgba(59, 130, 246, 0.1);
-            border-left-color: #3b82f6;
-            transform: translateX(5px);
         }
-        
+
+        .timeline-item:hover::before {
+            background: #3b82f6;
+            transform: translateY(-50%) scale(1.12);
+        }
+
+        .timeline-item:hover::after {
+            opacity: 1;
+            transform: translateY(-50%) scale(1);
+        }
+
         .timeline-item.active {
             background: rgba(59, 130, 246, 0.2);
-            border-left-color: #3b82f6;
-            transform: translateX(8px);
+        }
+
+        .timeline-item.active::before {
+            background: radial-gradient(circle at center, #93c5fd 0%, #60a5fa 30%, #3b82f6 60%, #1e40af 100%);
+            transform: translateY(-50%);
+            animation: timelineGlowHalo 2.5s ease-in-out infinite;
+        }
+
+        .timeline-item.active::after {
+            opacity: 1;
+            transform: translateY(-50%) scale(0.72);
+            animation: timelineRipple 2s ease-in-out infinite;
+            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.9) 0%, rgba(59, 130, 246, 0.6) 25%, rgba(59, 130, 246, 0.3) 50%, transparent 70%);
+        }
+
+        /* 添加圓環效果 - 增強hover狀態 */
+        .timeline-item:hover::before {
+            box-shadow:
+                0 0 15px rgba(59, 130, 246, 0.6),
+                0 0 25px rgba(59, 130, 246, 0.4);
         }
         
+        @keyframes timelineRipple {
+            0%, 100% {
+                transform: translateY(-50%) scale(0.6);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-50%) scale(1.2);
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes timelinePulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.3);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
+        }
+
+        @keyframes timelineGlowHalo {
+            0%, 100% {
+                box-shadow:
+                    0 0 10px rgba(59, 130, 246, 0.8),
+                    0 0 20px rgba(59, 130, 246, 0.6),
+                    0 0 30px rgba(59, 130, 246, 0.4),
+                    inset 0 0 6px rgba(255, 255, 255, 0.3);
+            }
+            33% {
+                box-shadow:
+                    0 0 16px rgba(59, 130, 246, 1.0),
+                    0 0 32px rgba(59, 130, 246, 0.8),
+                    0 0 48px rgba(59, 130, 246, 0.6),
+                    inset 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+            66% {
+                box-shadow:
+                    0 0 20px rgba(59, 130, 246, 1.0),
+                    0 0 40px rgba(59, 130, 246, 0.8),
+                    0 0 55px rgba(59, 130, 246, 0.6),
+                    inset 0 0 12px rgba(255, 255, 255, 0.6);
+            }
+        }
+
         /* 觸控回饋 */
         .touch-feedback {
             position: relative;
@@ -415,55 +687,1365 @@
             left: 50%;
             width: 0;
             height: 0;
-            background: rgba(255, 255, 255, 0.3);
+            background: radial-gradient(
+                circle,
+                rgba(255, 255, 255, 0.7) 0%,
+                rgba(255, 255, 255, 0.5) 20%,
+                rgba(255, 255, 255, 0.3) 40%,
+                rgba(255, 255, 255, 0.15) 60%,
+                rgba(255, 255, 255, 0.05) 80%,
+                rgba(255, 255, 255, 0) 100%
+            );
             border-radius: 50%;
             transform: translate(-50%, -50%);
             pointer-events: none;
             opacity: 0;
+            transition: all 0.1s ease;
         }
         
         .touch-feedback.touching::after {
-            animation: touchRipple 0.6s ease-out;
+            animation: touchRippleGradient 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
-        @keyframes touchRipple {
-            to {
-                width: 100px;
-                height: 100px;
-                opacity: 1;
+        @keyframes touchRippleGradient {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
             }
+            15% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(0.1);
+            }
+            100% {
+                width: 140px;
+                height: 140px;
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+        }
+        
+        /* 浮動控制樣式 */
+        .floating-controls {
+            position: fixed;
+            z-index: 500;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .floating-controls:hover {
+            opacity: 1;
+        }
+        
+        /* 左側導航：左右切換 */
+        .nav-left {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        /* 右側導航：上下切換 */
+        .nav-right {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        /* 頂部控制：選單系統 */
+        .nav-top {
+            top: 20px;
+            left: 20px;
+            transform: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        
+        /* 選單系統 */
+        .menu-system {
+            position: relative;
+        }
+        
+        .menu-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 0.5rem;
+            margin-top: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            transform: translateY(-10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1000;
+        }
+        
+        .menu-dropdown.open {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .menu-item {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin: 5px 0;
+        }
+        
+        /* 選單按鈕動畫 - 三條槓變叉叉 */
+        .menu-btn-icon {
+            width: 20px;
+            height: 16px;
+            position: relative;
+            transform: rotate(0deg);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .menu-btn-icon span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: white;
+            border-radius: 1px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .menu-btn-icon span:nth-child(1) {
+            top: 0px;
+        }
+        
+        .menu-btn-icon span:nth-child(2) {
+            top: 7px;
+        }
+        
+        .menu-btn-icon span:nth-child(3) {
+            top: 14px;
+        }
+        
+        .menu-btn-icon.open span:nth-child(1) {
+            top: 7px;
+            transform: rotate(135deg);
+        }
+        
+        .menu-btn-icon.open span:nth-child(2) {
+            opacity: 0;
+            left: -20px;
+        }
+        
+        .menu-btn-icon.open span:nth-child(3) {
+            top: 7px;
+            transform: rotate(-135deg);
+        }
+        
+        /* 字體大小展開選單 */
+        .font-size-dropdown {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 0.5rem;
+            margin-left: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            display: flex;
+            gap: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1001;
+        }
+        
+        .font-size-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .font-size-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background: rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .font-size-btn:hover {
+            background: rgba(59, 130, 246, 0.8);
+            transform: scale(1.1);
+        }
+        
+        .font-size-btn.active {
+            background: rgba(59, 130, 246, 0.9);
+            border-color: rgba(59, 130, 246, 0.9);
+        }
+
+        /* 打字機效果下拉選單樣式 */
+        .typewriter-dropdown {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 0.5rem;
+            margin-left: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1001;
+        }
+
+        .typewriter-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .typewriter-toggle,
+        .typewriter-speed {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .typewriter-speed {
+            margin-bottom: 0;
+        }
+
+        .typewriter-toggle label,
+        .typewriter-speed label,
+        .font-size-controls label {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+
+        .toggle-btn {
+            background: rgba(239, 68, 68, 0.3);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            color: #fff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .toggle-btn:hover {
+            background: rgba(239, 68, 68, 0.6);
+            transform: scale(1.05);
+        }
+
+        .toggle-btn.active {
+            background: rgba(34, 197, 94, 0.8);
+            border-color: rgba(34, 197, 94, 0.8);
+            color: white;
+        }
+
+        .speed-slider {
+            width: 100%;
+            height: 8px; /* 增加滑桿軌道高度 */
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .speed-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 22px; /* 增加滑塊大小 */
+            height: 22px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
+            transition: all 0.2s ease;
+        }
+
+        .speed-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.6);
+        }
+
+        .speed-slider::-moz-range-thumb {
+            width: 22px; /* 增加滑塊大小 */
+            height: 22px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
+        }
+
+        .speed-label {
+            font-size: 0.7rem;
+            color: #60a5fa;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* 滑桿容器樣式 */
+        .speed-slider-container,
+        .font-size-slider-container {
+            padding: 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            margin: 0.5rem 0;
+            min-width: 200px; /* 最小寬度確保操作舒適 */
+        }
+
+        /* 字體大小滑桿樣式 */
+        .font-size-slider {
+            width: 100%;
+            height: 8px; /* 增加滑桿軌道高度 */
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .font-size-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 22px; /* 增加滑塊大小 */
+            height: 22px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #8b5cf6, #7c3aed);
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.5);
+            transition: all 0.2s ease;
+        }
+
+        .font-size-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.6);
+        }
+
+        .font-size-slider::-moz-range-thumb {
+            width: 22px; /* 增加滑塊大小 */
+            height: 22px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #8b5cf6, #7c3aed);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.5);
+        }
+
+        /* 滑桿標籤樣式 */
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: #9ca3af;
+        }
+
+        .slider-labels span:nth-child(2) {
+            color: #60a5fa;
+            font-weight: 600;
+            background: rgba(59, 130, 246, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* 主題切換系統 - 使用 CSS 變數 */
+        :root {
+            /* 預設暗色主題 (石墨灰暗版) */
+            --bg: #1e2429;
+            --bg-elevated: #252b30;
+            --text: #e9ecef;
+            --text-muted: #9ca3af;
+
+            --primary: #94a8b8;
+            --primary-contrast: #1e2429;
+            --primary-hover: #8396a6;
+
+            --accent: #a8b6c8;
+            --accent-contrast: #1e2429;
+
+            --success: #96c596;
+            --success-contrast: #1e2429;
+
+            --warning: #d4c392;
+            --warning-contrast: #1e2429;
+
+            --danger: #c8a3a8;
+            --danger-contrast: #1e2429;
+
+            --surface: #2d343a;
+            --surface-hover: #3a424a;
+            --surface-pressed: #4a545c;
+
+            --border: #3a424a;
+            --border-light: #2d343a;
+            --border-strong: #4a545c;
+
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        /* 森林綠主題 */
+        [data-theme="forest"] {
+            --bg: #1a2520;
+            --bg-elevated: #242c28;
+            --text: #e8f0ed;
+            --text-muted: #9fb5ab;
+
+            --primary: #7ba894;
+            --primary-contrast: #1a2520;
+            --primary-hover: #6a967e;
+
+            --accent: #8db3d4;
+            --accent-contrast: #1a2520;
+
+            --success: #9bc580;
+            --success-contrast: #1a2520;
+
+            --warning: #e8c392;
+            --warning-contrast: #1a2520;
+
+            --danger: #d4a3a3;
+            --danger-contrast: #1a2520;
+
+            --surface: #2d3631;
+            --surface-hover: #3a453e;
+            --surface-pressed: #4a5651;
+
+            --border: #3a453e;
+            --border-light: #2d3631;
+            --border-strong: #4a5651;
+        }
+
+        /* 海洋藍主題 */
+        [data-theme="ocean"] {
+            --bg: #0c1426;
+            --bg-elevated: #1e293b;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+
+            --primary: #38bdf8;
+            --primary-contrast: #0c1426;
+            --primary-hover: #0ea5e9;
+
+            --accent: #22d3ee;
+            --accent-contrast: #0c1426;
+
+            --success: #34d399;
+            --success-contrast: #0c1426;
+
+            --warning: #fbbf24;
+            --warning-contrast: #0c1426;
+
+            --danger: #f87171;
+            --danger-contrast: #0c1426;
+
+            --surface: #334155;
+            --surface-hover: #475569;
+            --surface-pressed: #64748b;
+
+            --border: #475569;
+            --border-light: #334155;
+            --border-strong: #64748b;
+        }
+
+        /* 薰衣草紫主題 */
+        [data-theme="lavender"] {
+            --bg: #241a30;
+            --bg-elevated: #2b2138;
+            --text: #ede8f5;
+            --text-muted: #a394b8;
+
+            --primary: #a394d4;
+            --primary-contrast: #241a30;
+            --primary-hover: #9284c3;
+
+            --accent: #b3c5e0;
+            --accent-contrast: #241a30;
+
+            --success: #96c596;
+            --success-contrast: #241a30;
+
+            --warning: #e8c392;
+            --warning-contrast: #241a30;
+
+            --danger: #d4a3d4;
+            --danger-contrast: #241a30;
+
+            --surface: #322540;
+            --surface-hover: #403350;
+            --surface-pressed: #524266;
+
+            --border: #403350;
+            --border-light: #322540;
+            --border-strong: #524266;
+        }
+
+        /* 沙漠日落主題 */
+        [data-theme="sunset"] {
+            --bg: #2a1f1a;
+            --bg-elevated: #332621;
+            --text: #f0e8e0;
+            --text-muted: #b8a394;
+
+            --primary: #d4b48a;
+            --primary-contrast: #2a1f1a;
+            --primary-hover: #c3a379;
+
+            --accent: #d4a3a3;
+            --accent-contrast: #2a1f1a;
+
+            --success: #a8c596;
+            --success-contrast: #2a1f1a;
+
+            --warning: #e8c392;
+            --warning-contrast: #2a1f1a;
+
+            --danger: #d4a394;
+            --danger-contrast: #2a1f1a;
+
+            --surface: #3d302a;
+            --surface-hover: #4a3e36;
+            --surface-pressed: #5a4e45;
+
+            --border: #4a3e36;
+            --border-light: #3d302a;
+            --border-strong: #5a4e45;
+        }
+
+        /* 酒紅色主題 */
+        [data-theme="crimson"] {
+            --bg: #1a0f0f;
+            --bg-elevated: #2d1414;
+            --text: #fef1f1;
+            --text-muted: #b91c1c;
+
+            --primary: #dc2626;
+            --primary-contrast: #1a0f0f;
+            --primary-hover: #b91c1c;
+
+            --accent: #f87171;
+            --accent-contrast: #1a0f0f;
+
+            --success: #4ade80;
+            --success-contrast: #1a0f0f;
+
+            --warning: #fbbf24;
+            --warning-contrast: #1a0f0f;
+
+            --danger: #f87171;
+            --danger-contrast: #1a0f0f;
+
+            --surface: #3d2020;
+            --surface-hover: #4d2626;
+            --surface-pressed: #5d2f2f;
+
+            --border: #4d2626;
+            --border-light: #3d2020;
+            --border-strong: #5d2f2f;
+        }
+
+        /* 寶石綠主題 */
+        [data-theme="emerald"] {
+            --bg: #0c1f14;
+            --bg-elevated: #163326;
+            --text: #dcfce7;
+            --text-muted: #15803d;
+
+            --primary: #22c55e;
+            --primary-contrast: #0c1f14;
+            --primary-hover: #16a34a;
+
+            --accent: #22d3ee;
+            --accent-contrast: #0c1f14;
+
+            --success: #4ade80;
+            --success-contrast: #0c1f14;
+
+            --warning: #fbbf24;
+            --warning-contrast: #0c1f14;
+
+            --danger: #f87171;
+            --danger-contrast: #0c1f14;
+
+            --surface: #1f4d2a;
+            --surface-hover: #2a6135;
+            --surface-pressed: #357843;
+
+            --border: #2a6135;
+            --border-light: #1f4d2a;
+            --border-strong: #357843;
+        }
+
+        /* 字體系統定義 */
+        [data-font="system"] {
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        [data-font="noto"] {
+            --font-family: 'Noto Sans TC', 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+        }
+        [data-font="poppins"] {
+            --font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+        }
+        [data-font="serif"] {
+            --font-family: 'Noto Serif TC', 'Times New Roman', serif;
+        }
+        [data-font="mono"] {
+            --font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+        }
+
+        /* 主題選擇下拉選單樣式 */
+        .theme-dropdown {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            min-width: 280px;
+            max-width: 90vw;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 2000;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+        }
+
+        .theme-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .theme-dropdown label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .theme-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        .theme-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        .theme-option:hover {
+            background: var(--surface-pressed);
+            transform: translateY(-1px);
+        }
+
+        .theme-option.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--primary-contrast);
+        }
+
+        .theme-preview {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* 下拉選單背景遮罩 */
+        .dropdown-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1500;
+        }
+
+        .dropdown-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* 字體選擇下拉選單樣式 */
+        .font-family-dropdown {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            min-width: 250px;
+            max-width: 90vw;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 2000;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+        }
+
+        .font-family-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .font-family-dropdown label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .font-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .font-option {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            color: var(--text);
+            text-align: left;
+        }
+
+        .font-option:hover {
+            background: var(--surface-pressed);
+            transform: translateY(-1px);
+        }
+
+        .font-option.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--primary-contrast);
+        }
+
+        /* 速度按鈕樣式 - 套用字體大小按鈕的圓形樣式 */
+        .speed-buttons {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+        }
+
+        .speed-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background: rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .speed-btn:hover {
+            background: rgba(59, 130, 246, 0.8);
+            transform: scale(1.1);
+        }
+
+        .speed-btn.active {
+            background: rgba(59, 130, 246, 0.9);
+            border-color: rgba(59, 130, 246, 0.9);
+        }
+        
+        /* 頂部控制：縮圖列 - 從上往下進入 */
+        .nav-thumbnails {
+            position: fixed;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            transition: top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 2100;
+        }
+        
+        .nav-thumbnails.visible {
+            top: 10px;
+        }
+        
+        .thumbnails {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(26, 26, 46, 0.9);
+            padding: 0.75rem 1rem;
+            border-radius: 25px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            max-width: 400px;
+            overflow-x: auto;
+        }
+        
+        /* 浮動按鈕樣式 */
+        .floating-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 2px solid var(--primary);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            font-size: 1.2rem;
+            user-select: none;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+            background: rgba(59, 130, 246, 0.8);
+            border-color: rgba(59, 130, 246, 0.8);
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
+        }
+        
+        .floating-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .floating-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* 時間軸面板樣式 - 從右側進出 */
+        .timeline-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 350px;
+            height: 100vh;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 2rem 1rem;
+            transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            overflow-y: auto;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .timeline-panel.open {
+            right: 0px; /* 允許遮蓋上下按鈕，功能重疊 */
+        }
+        
+        /* 手機端時間軸面板調整 */
+        @media (max-width: 768px) {
+            .timeline-panel {
+                right: -100vw;
+                width: 100vw;
+            }
+            
+            .timeline-panel.open {
+                right: 0px;
+            }
+            
+            .nav-thumbnails.visible {
+                top: 10px;
+            }
+        }
+        
+        .timeline-panel .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-panel .close-btn:hover {
+            background: rgba(239, 68, 68, 0.8);
+            border-color: rgba(239, 68, 68, 0.9);
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+        }
+        
+        /* 極簡界面調整 */
+        .app {
+            position: relative;
+        }
+        
+        .main-content {
+            height: 100vh;
+            padding: 0;
+        }
+        
+        .media-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+        
+        .media-display {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        /* 字幕隱藏模式不再需要調整媒體區域大小，因為已使用z-layer覆蓋 */
+        
+        .media-display img, .media-display video {
+            max-width: 100vw;
+            max-height: 100vh;
+            object-fit: contain;
+            object-position: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .media-display img:hover {
+            transform: scale(1.02);
+        }
+        
+        .description-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            /* 修改為漸層透明效果，越往上越透明 */
+            background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.2) 0%,
+                rgba(0, 0, 0, 0.4) 30%,
+                rgba(0, 0, 0, 0.6) 60%,
+                rgba(0, 0, 0, 0.8) 100%
+            );
+            backdrop-filter: blur(20px);
+            padding: 1rem 80px 1rem 80px; /* 左右留空間給選單按鈕，上下留空間 */
+            min-height: 140px;
+            margin-bottom: 20px; /* 避免貼近下緣 */
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* 字幕開關按鈕 */
+        .subtitle-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(42, 42, 74, 0.9);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 1500;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            user-select: none;
+        }
+
+        .subtitle-toggle-btn:hover {
+            transform: scale(1.1);
+            background: rgba(59, 130, 246, 0.8);
+            border-color: rgba(59, 130, 246, 0.8);
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
+        }
+        .subtitle-toggle-btn:active {
+            transform: scale(0.95);
+        }
+
+        .subtitle-toggle-btn.hidden {
+            background: rgba(239, 68, 68, 0.8);
+            border-color: rgba(239, 68, 68, 0.3);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+        }
+
+        .subtitle-toggle-btn.hidden:hover {
+            background: rgba(239, 68, 68, 0.9);
+            border-color: rgba(239, 68, 68, 0.8);
+            box-shadow: 0 6px 25px rgba(239, 68, 68, 0.6);
+        }
+
+        /* 字幕區域隱藏狀態 */
+        .description-container.subtitle-hidden #eventDescription {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(30px);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .description-container.subtitle-hidden {
+            background: transparent;
+            backdrop-filter: none;
+            min-height: 80px;
+            padding: 2rem 80px 1rem 80px;
+        }
+        
+        /* 當前事件日期顯示 */
+        .current-date-display {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2050;
+            background: rgba(26, 26, 46, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 8px 16px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        /* 當縮圖列顯示時，日期顯示下移 */
+        .current-date-display.below-thumbnails {
+            top: 110px;
+        }
+
+        .current-date-display.date-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* 隱藏畫面按鈕時的樣式 */
+        .floating-controls.controls-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .current-date-display #currentEventDate {
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+            white-space: nowrap;
+            min-width: 120px;
+        }
+
+        /* 隱藏原有的導航元素 */
+        .header,
+        .navigation,
+        .sidebar {
+            display: none;
+        }
+        
+        /* 燈箱效果樣式 */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lightbox img, .lightbox video {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .lightbox-close {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1003;
+            backdrop-filter: blur(15px);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .lightbox-close:hover {
+            background: rgba(239, 68, 68, 0.9);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(239, 68, 68, 0.5);
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+        
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .lightbox-prev {
+            left: 20px;
+        }
+        
+        .lightbox-next {
+            right: 20px;
+        }
+        
+        /* 打字機速度滑軌樣式 */
+        .typing-speed-container {
+            padding: 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            margin: 0.5rem 0;
+        }
+        
+        .typing-speed-label {
+            font-size: 0.8rem;
+            color: #e5e7eb;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .typing-speed-slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            appearance: none;
+        }
+        
+        .typing-speed-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .typing-speed-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* 鎖定視窗滾動與手機優化 */
+        body {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            /* 防止手機瀏覽器的彈跳滾動 */
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: none;
+            /* 防止雙指縮放 */
+            touch-action: pan-x pan-y;
+        }
+        
+        /* 針對主要內容區域的觸控優化 */
+        .app-container {
+            touch-action: none; /* 完全禁用預設觸控行為 */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        /* 允許選單和時間軸正常滾動 */
+        .menu-dropdown,
+        .timeline-panel,
+        .timeline-events {
+            touch-action: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* 允許滑軒正常操作 */
+        input[type="range"] {
+            touch-action: manipulation;
         }
         
         /* 移動端優化 */
         @media (max-width: 768px) {
-            .main-content { 
-                flex-direction: column;
-                touch-action: pan-y;
+            .floating-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
             }
-            .sidebar { 
-                width: 100%; 
-                max-height: 200px;
-                order: 1;
+            
+            .nav-left {
+                left: 15px;
             }
+            
+            .nav-right {
+                right: 15px;
+            }
+            
+            .nav-top {
+                top: 15px;
+            }
+            
             .media-container {
-                order: 0;
-                touch-action: pan-x;
+                padding: 1rem;
             }
-            .thumbnails { 
-                justify-content: center;
-                padding: 0.5rem;
+            
+            .description-container {
+                font-size: 1rem;
+                line-height: 1.6;
+                padding: 3rem 80px 2rem 80px; /* 手機端增加左邊間距，避免與左下角按鈕重疊 */
+                margin-bottom: 15px;
             }
-            .thumbnail {
-                width: 50px;
-                height: 50px;
-            }
-            .nav-btn {
-                padding: 0.6rem 1.2rem;
-                font-size: 0.8rem;
+            
+            .lightbox-close,
+            .lightbox-nav {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
             }
         }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"dAzYtWfi8U7wdk6BMUhhq6ST8AI4NJEEWVCE2eOo7Yc3ChcTHrw29LlbCwCBrA3v61HjoxkajwjtKrSpbTkQRMfqSOVqZ2lGaUhZOkw3DiTBPz8UQvF1zaQ8Bjgrgxc6u9s4Q9LgwU0pFh1CE51afZOshjZD25mgmfi0an4XN2UgD62Lkiz8VgEh76DWotSkpqvTshYYwgJxTbf623m06pCygzwu+PcTxvKuHbhVbNAloiPVLoPdsnip9f456Ng30EsxFIWLycWftmPYHwaBHVDbNfpmN82yR7pOIOBVrUfx8eEfB6XUXXLj99sR248WmxP7dR+i0lHhbVaRc6wmP5Fp7U6v+8pvTO1mdhLYNRneetP8YYdDy09yVk3fX11jSaIUBs7TksFES+WVYjNpUXUraqFbRtMi6hftQHc/Ldd9vIk2ogaJWvS6b77o96M1MRITvrfl1oqG+vInFuRJAYEIGbKEdX/VVh3OGHcQaZyjLUpFAiFky4Ac65RCoC+DSTLiN7tzH6io5ZxC9PUOTAu047Ww56p3TFX9DG3a2I98Jb43SmVLk9R2PLabyWnq7EXc2vrOOzwFXTnugF61SSoL9lpKazy34Gz6WN/xituNQtDv6bqIQH7dSKZmEC6vW85WOly2ycmMSQ5louPqoL3ud4vMFeScnsOm5E/U3CQH4sLo1oFSp2SKej0d1+Xqk4/sGiMiNoKf1mNQhRCd3pCIZPtHzF8oDJORVvFu9d1EXuQGoDW7dCYP+iibRndb91DUBPuINARunQoxg72kNCN3F1Y9oV43B0MG8Ktoa4xEaPI6tR6vWDsoBHudQdm3Ov+/xjH2jUadL+HafEik2cOuXpF0uNSqpfW8AmiS5qgOxOeeihHbKjwHjAYoxrw4QLKl08E3KB2gvc9fNPew55TRGTBsx8N+evsKEgDoi1zm2m0qpq3gYNazepgLwzXUnhlqApKr9I139FSmuOpSdSaqJTAcrNQlKNvuyCFyrciwftHC/a8Wh2IalC3+Yoc/CZT+vGVZFKxftnd2yUwfqhX4VbcqfOWmeQk8wEOVdamLj112g2OmRa88USlbcdHPM10jMunuErZAwpTCiPGirLS2kIZV8UccQkPaqB4uLZg1KRKYnQm4slEOQHk7AbM+LmgjJ77cOnyIi4+DyJZrKPQYBZ0B03g2oKZ5ydafFxNvDIVMwodlixyq4KLDP16Rh3BM6mhI5rUhbNidnLjloB3vBPBTNQXVG6tr3KrJWOVE36mfB67k7JpBNfJXp4brkSCt/yxSnkepW/C71Yy6U4fw43ejjQqstIeU86JA02DIH0AsOnJh4hcVQumtf0Ghq9fMcEf7h87UZoxMoJ6AZRjA1A01GkQCFsv406RAWIkB4lHHgumOZV4TMtD1SMnBEbzMEwQQgG2WczH7Uqwovk+uj44gXVHJSUShYTNdc4DIF6Hy30eYifWZdU9yMA49t8frqTz9E6dbVqU1vYqJenQAFbPoBC27D0t93icbAKDL1FOkq/BBVjLd77Eyhfj5c+UB7Vopx/6DVk1gPlTyQ3RCtlIzOkU135du7LhDg91eyBrT+XIysoG7Qu5nAAimO0RpQjzkaVWCmOmHuytFx4MGoq6fhz5cUZD8qn8s2uJPii4CGLn/jWCaN1rTxyV5CGz7ZYU=","iv_b64":"xiidx9qf6+MfMTkm","salt_b64":"BjxiOLQCPZUfMLDalPUlLw=="}</script>
+<script id="enc-payload" type="application/json">{"aad":"030957855cd9","ciphertext_b64":"bVJegSKwD0ILqSKbTlCRMuZHNxmV7C4knblDF6nezLazqvxbGDES8Hp2kO3vQgsZVQVSi5YAO4E3JENjNM84npRQZ2lAURwBurBeHTjWopH7cUXrccFdjWM99Bewik/g/Hg8EChjaMtACuLQw40LYnvuVjf9w4UCYBhUdxchWR2anNqSTmmdVHjB6RvNooukylpHCFd4FXqaIdPBCP5FptH8b4QT6q9AZtbwjSOXL0oczPcfOJ/KGyeFmBIqp45KIm7D3uZSBhIDCyxnw8CTmZ6Y3kSzTMR7FbUmlJiptpM2uz5qmdkeBXwwQ4/q7FNJyHgQNuc9II3VCj6P3u94Impz7gVST4V5EgXQPABMTtq8jSfzY6WJuZEHsG5oPgWJDY5gvL2/sLZZsAeDUGUpIwyfa3IhFs3SOYmgAOe1mVOR+VsBIpMnKWWBvRPTUC+wsrHH7B2K0A9ZhL9intMWuZCTjXvOzycGO6kA0Z/RFVncHPdKUFXqvB74KVktVZhCGBze9BlLjDFiLLWQ4CbFokry4BstjJNvSEjyVyUdjfhC4fUQ3JBg9jzFaYNN7Bigqh8jKg+BkYRZ9rZZXNWGLZZhzPv0Y0I9IcTA9hFNJBNlYh9sKGRJdTJ0z07biBDDR9OOGos6NqTH3C4r4ih9+fD1wwgk5k7nhTPMnznHC3HHsKSVKAIFuWGLdbPAqQf4q3M+qy4rYUBN7cgMSUpusx3UDBQnnSSeC7uPj0UdLlsXQgswk4J0gCYENHDy5hnRckSTBxOA31nVHk5rwqnfurCtzkxZrk7lb7HyJ8sNoLg7vapIhg0WlO5CpfB4pJWgZnedMOI/5kgV7UjrvRuqRorR3NqQ1nI+6HTr9VGmO9cV0Id1J18C4fN38dQ2QbwZX8haY+2RVCj2o16OJ6qMEE1PKrZLCPU/rCB/xyAjDf2Vikpxa719EVD9ktqo1aoGF1tUfdlAi6VC3zMsCwGCEru6Lrazep3lHCaz/Uivp08mObwfq+Jj5B8ypAz1IgWZtHxoshj01dfY7QGe41Ugct7gq+AphfwWVmsiYPHQaFfiwgbevEVmbipEbnzv2s5MVzjZFgwXugOFhYCq8EDvRok1mhKg238qIjPlChJcUt5mS+GQJvleG1BHKRFaj2P6+cbNmGAiQGzHekvg1vmkHEq1Oz44FX+zFDxktjwYKm7y29CCfHEsMapmTC8gDN2WDpVnX8ox41uwEqEawl8pIIJIcn1vAdrHmWEklhnPShJPcuIkJrT0cVxA3vR/sHbtAJtFpHECcD6bC4l9iXCevVw7kPZ3E3k+ynO1HV3mtMO56l7nqAyFam/YIxzKRPMplKhS7TQ46N7yr+nZwxXzhDWzv1IEw0QpIK7wqYrZwNALB6dhAy/fYh6BAGcwDbVZ2tvlLp1ZCQrVxxhVTKwQC7EFmR3aaLICPW46z4UPODJ3ZzmfWhQlkLBUStUwHU7FrkMKgxYeIOhIEVbc2kVFd7PLVK9evvXqFp0Xezu6PqIo+b8PCMG6rlz7MqrdwF9RRPqVa7wMZN8oR2iROU0sXF07SLul1C1JQDF4mevvEfFo552s6wG7Hoipdz1OGQhqNAOiJxvhEF5fhCnS+LuVKln8Fr0aem0iwWqnzo5+MAf8LNbbQ18gqZpXSLU5iIL58yddNj0=","iv_b64":"52VUSU8z57A8Kg5v","salt_b64":"tEQc3WVQL2zsSEBQl1n5ag=="}</script>
 <meta name="require-password" content="false">
 </head>
 <body>
@@ -506,19 +2088,8 @@
         </div>
     </div>
 
-    <!-- 主應用 -->
+    <!-- 主應用 - 極簡設計 -->
     <div id="app" class="app hidden">
-        <!-- 簡化的 Header -->
-        <header class="header">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <h1 style="font-size: 1.2rem;">開發者日誌</h1>
-                <div style="display: flex; gap: 1rem; align-items: center;">
-                    <span id="eventInfo">事件 <span id="currentEventNum">1</span>/<span id="totalEvents">1</span></span>
-                    <span id="mediaInfo">媒體 <span id="currentMediaNum">1</span>/<span id="mediaCount">0</span></span>
-                </div>
-            </div>
-        </header>
-
         <!-- 主要內容區 -->
         <div class="main-content">
             <!-- 媒體顯示區 -->
@@ -532,30 +2103,231 @@
                     <div id="eventDescription"></div>
                 </div>
 
-                <!-- 導航按鈕 -->
-                <div class="navigation">
-                    <button id="prevEventBtn" class="nav-btn">上一事件</button>
-                    <button id="prevMediaBtn" class="nav-btn">上一媒體</button>
-                    <button id="nextMediaBtn" class="nav-btn">下一媒體</button>
-                    <button id="nextEventBtn" class="nav-btn">下一事件</button>
+                <!-- 當前事件日期顯示 -->
+                <div id="currentDateDisplay" class="current-date-display">
+                    <div id="currentEventDate"></div>
+                </div>
+
+                <!-- 字幕開關按鈕（固定在視窗左下角）-->
+                <button id="subtitleToggleBtn" class="subtitle-toggle-btn" title="字幕開關">
+                    <i data-lucide="eye" style="width: 18px; height: 18px;"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 浮動控制按鈕 -->
+
+        <!-- 頂部控制：功能選單 -->
+        <div class="floating-controls nav-top">
+            <div class="menu-system">
+                <button id="menuBtn" class="floating-btn" title="功能選單">
+                    <div id="menuBtnIcon" class="menu-btn-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div id="menuDropdown" class="menu-dropdown">
+                    <button id="timelineBtn" class="floating-btn menu-item" title="時間軸導覽">
+                        <i data-lucide="clock" style="width: 16px; height: 16px;"></i>
+                    </button>
+
+                    <button id="thumbnailBtn" class="floating-btn menu-item" title="縮圖列">
+                        <i data-lucide="image" style="width: 16px; height: 16px;"></i>
+                    </button>
+
+                    <!-- 打字機效果開關 -->
+                    <button id="typewriterToggleBtn" class="floating-btn menu-item" title="打字機效果開關">
+                        <i data-lucide="keyboard" style="width: 16px; height: 16px;"></i>
+                    </button>
+
+                    <!-- 打字速度設定 -->
+                    <div class="menu-item" style="position: relative;">
+                        <button id="typewriterSpeedBtn" class="floating-btn" title="打字速度設定">
+                            <i data-lucide="gauge" style="width: 16px; height: 16px;"></i>
+                        </button>
+                        <div id="typewriterSpeedDropdown" class="typewriter-dropdown">
+                            <div class="typewriter-speed">
+                                <label>打字速度</label>
+                                <div class="speed-slider-container">
+                                    <input
+                                        type="range"
+                                        id="typingSpeedSlider"
+                                        class="speed-slider"
+                                        min="1"
+                                        max="50"
+                                        value="25"
+                                        step="1"
+                                    />
+                                    <div class="slider-labels">
+                                        <span>快 (1)</span>
+                                        <span id="currentSpeedValue">25</span>
+                                        <span>慢 (50)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" style="position: relative;">
+                        <button id="fontSizeBtn" class="floating-btn" title="字體大小">
+                            <i data-lucide="type" style="width: 16px; height: 16px;"></i>
+                        </button>
+                        <div id="fontSizeDropdown" class="font-size-dropdown">
+                            <div class="font-size-controls">
+                                <label>字體大小</label>
+                                <div class="font-size-slider-container">
+                                    <input
+                                        type="range"
+                                        id="fontSizeSlider"
+                                        class="font-size-slider"
+                                        min="0.8"
+                                        max="2.0"
+                                        value="1.1"
+                                        step="0.1"
+                                    />
+                                    <div class="slider-labels">
+                                        <span>小 (0.8)</span>
+                                        <span id="currentFontValue">1.1x</span>
+                                        <span>大 (2.0)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 主題選擇功能 -->
+                    <div class="menu-item" style="position: relative;">
+                        <button id="themeBtn" class="floating-btn" title="主題配色">
+                            <i data-lucide="palette" style="width: 16px; height: 16px;"></i>
+                        </button>
+                    </div>
+
+                    <!-- 字體選擇功能 -->
+                    <div class="menu-item" style="position: relative;">
+                        <button id="fontFamilyBtn" class="floating-btn" title="字體選擇">
+                            <i data-lucide="text" style="width: 16px; height: 16px;"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- 側邊欄 -->
-            <div class="sidebar">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                    <h3 style="font-size: 1.1rem; color: #e5e7eb;">時間軸</h3>
-                    <button id="timelineToggle" class="nav-btn" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">
-                        收合
+            <!-- 下拉選單背景遮罩 -->
+            <div id="dropdownOverlay" class="dropdown-overlay"></div>
+
+            <!-- 主題選擇下拉選單 -->
+            <div id="themeDropdown" class="theme-dropdown">
+                            <div class="theme-controls">
+                                <label>主題配色</label>
+                                <div class="theme-options">
+                                    <button class="theme-option active" data-theme="default" title="預設灰">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #1e2429, #94a8b8);"></div>
+                                        <span>預設</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="forest" title="森林綠">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #1a2520, #7ba894);"></div>
+                                        <span>森林</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="ocean" title="海洋藍">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #0c1426, #38bdf8);"></div>
+                                        <span>海洋</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="lavender" title="薰衣草紫">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #241a30, #a394d4);"></div>
+                                        <span>薰衣草</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="sunset" title="沙漠日落">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #2a1f1a, #d4b48a);"></div>
+                                        <span>日落</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="crimson" title="酒紅色">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #1a0f0f, #dc2626);"></div>
+                                        <span>酒紅</span>
+                                    </button>
+                                    <button class="theme-option" data-theme="emerald" title="寶石綠">
+                                        <div class="theme-preview" style="background: linear-gradient(45deg, #0c1f14, #22c55e);"></div>
+                                        <span>寶石</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+            <!-- 字體選擇下拉選單 -->
+            <div id="fontFamilyDropdown" class="font-family-dropdown">
+                <div class="font-family-controls">
+                    <label>字體選擇</label>
+                    <div class="font-options">
+                        <button class="font-option active" data-font="system" title="系統預設字體">
+                            <span style="font-family: system-ui, -apple-system, sans-serif;">系統預設</span>
+                        </button>
+                        <button class="font-option" data-font="noto" title="思源黑體">
+                            <span style="font-family: 'Noto Sans TC', sans-serif;">思源黑體</span>
+                        </button>
+                        <button class="font-option" data-font="poppins" title="Poppins">
+                            <span style="font-family: 'Poppins', sans-serif;">Poppins</span>
+                        </button>
+                        <button class="font-option" data-font="serif" title="襯線字體">
+                            <span style="font-family: 'Noto Serif TC', serif;">襯線字體</span>
+                        </button>
+                        <button class="font-option" data-font="mono" title="等寬字體">
+                            <span style="font-family: 'JetBrains Mono', monospace;">等寬字體</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- 隱藏畫面按鈕開關 -->
+                    <button id="hideControlsBtn" class="floating-btn menu-item" title="隱藏畫面按鈕">
+                        <i data-lucide="move" style="width: 16px; height: 16px;"></i>
                     </button>
+
+                    <!-- 導航控制 -->
+                    <button id="prevEventBtn" class="floating-btn menu-item" title="上一事件">
+                        <i data-lucide="chevron-up" style="width: 16px; height: 16px;"></i>
+                    </button>
+
+                    <button id="nextEventBtn" class="floating-btn menu-item" title="下一事件">
+                        <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+                    </button>
+
+                    <button id="prevMediaBtn" class="floating-btn menu-item" title="上一媒體">
+                        <i data-lucide="chevron-left" style="width: 16px; height: 16px;"></i>
+                    </button>
+
+                    <button id="nextMediaBtn" class="floating-btn menu-item" title="下一媒體">
+                        <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i>
+                    </button>
+
+                    <!-- 隱藏日期標籤開關 -->
+                    <button id="hideDateBtn" class="floating-btn menu-item" title="隱藏日期標籤">
+                        <i data-lucide="calendar-x" style="width: 16px; height: 16px;"></i>
+                    </button>
+
                 </div>
-                <div id="timeline" class="timeline-container"></div>
-                
-                <div style="margin-top: 1.5rem;">
-                    <h4 style="font-size: 0.9rem; color: #9ca3af; margin-bottom: 0.5rem;">當前事件媒體</h4>
-                    <!-- 縮圖區 -->
-                    <div id="thumbnails" class="thumbnails"></div>
-                </div>
+            </div>
+        </div>
+
+        <!-- 頂部控制：縮圖（預設隱藏）-->
+        <div class="nav-thumbnails" id="thumbnailsContainer">
+            <div id="thumbnails" class="thumbnails"></div>
+        </div>
+        
+        <!-- 燈箱 -->
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content">
+                <button class="lightbox-close" id="lightboxClose">×</button>
+                <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+                <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+                <div id="lightboxMedia"></div>
+            </div>
+        </div>
+
+        <!-- 時間軸面板 -->
+        <div id="timelinePanel" class="timeline-panel">
+            <button class="close-btn" id="closeTimelineBtn">×</button>
+            <h3 style="color: #e5e7eb; margin-bottom: 2rem; text-align: center;">開發者日誌</h3>
+            <div id="timeline" class="timeline-container">
+                <div class="timeline-line"></div>
             </div>
         </div>
     </div>
@@ -577,6 +2349,6 @@
     
         
         
-<script src="assets/js/main.js" nonce="54zk/ONNzYFhCcjHOghD7Q"></script>
+<script src="assets/js/main.js" nonce="aU7bI0JmNHqJ+nqzu+EYZw"></script>
 </body>
 </html>
