@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-16T14:00:17.690777+00:00
+// 生成時間: 2025-09-16T14:03:15.083413600+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -12,16 +12,16 @@
         let isDecrypting = false;
         let isTypewriterEnabled = true;
         // 從localStorage載入打字速度設定，預設為部署時設定的值
-        let typingSpeed = parseInt(localStorage.getItem('memoirflow:typing-speed')) || 50;
-        let fontSize = 1.4;
+        let typingSpeed = parseInt(localStorage.getItem('memoirflow:typing-speed')) || 25;
+        let fontSize = 1.1;
         let isMenuOpen = false;
-        let isThumbnailsVisible = true;
+        let isThumbnailsVisible = false;
         let isFontSizeMenuOpen = false;
         let isTypewriterMenuOpen = false;
         let isLightboxOpen = false;
         let thumbnailsStateBeforeLightbox = false; // 記錄燈箱開啟前的縮圖列狀態
         let isSubtitleVisible = true;
-        let areControlsHidden = !false;
+        let areControlsHidden = !true;
         let isDateHidden = !true;
 
         // DOM 元素緩存
@@ -792,11 +792,11 @@
             // 儲存到localStorage，實現全域速度設定
             localStorage.setItem('memoirflow:typing-speed', typingSpeed);
 
-            // 更新速度按鈕活動狀態
-            document.querySelectorAll('.speed-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector(`[data-speed="${speed}"]`).classList.add('active');
+            // 更新滑桿與顯示值
+            const speedSlider = document.getElementById('typingSpeedSlider');
+            const currentSpeedValue = document.getElementById('currentSpeedValue');
+            if (speedSlider) speedSlider.value = speed;
+            if (currentSpeedValue) currentSpeedValue.textContent = speed;
 
             // 立即應用新速度到當前打字機效果
             if (isTypewriterEnabled && typewriterTimeout) {
@@ -808,15 +808,22 @@
             }
         }
 
-        function initializeTypingSpeedButtons() {
-            // 根據當前typingSpeed設定對應的按鈕為活動狀態
-            document.querySelectorAll('.speed-btn').forEach(btn => {
-                btn.classList.remove('active');
-                const btnSpeed = parseInt(btn.getAttribute('data-speed'));
-                if (btnSpeed === typingSpeed) {
-                    btn.classList.add('active');
-                }
-            });
+        function initializeTypingSpeedSlider() {
+            // 初始化打字速度滑桿
+            const speedSlider = document.getElementById('typingSpeedSlider');
+            const currentSpeedValue = document.getElementById('currentSpeedValue');
+
+            if (speedSlider) {
+                speedSlider.value = typingSpeed;
+
+                speedSlider.addEventListener('input', (e) => {
+                    setTypingSpeed(e.target.value);
+                });
+            }
+
+            if (currentSpeedValue) {
+                currentSpeedValue.textContent = typingSpeed;
+            }
         }
 
         function initializeToggleButtons() {
@@ -1111,16 +1118,11 @@
                 elements.descriptionContainer.style.fontSize = fontSize + 'rem';
             }
             
-            // 更新活動按鈕
-            const fontSizeBtns = document.querySelectorAll('.font-size-btn');
-            fontSizeBtns.forEach(btn => {
-                btn.classList.remove('active');
-                if (parseFloat(btn.dataset.size) === fontSize) {
-                    btn.classList.add('active');
-                }
-            });
-            
-            closeFontSizeMenu();
+            // 更新滑桿與顯示值
+            const fontSlider = document.getElementById('fontSizeSlider');
+            const currentFontValue = document.getElementById('currentFontValue');
+            if (fontSlider) fontSlider.value = size;
+            if (currentFontValue) currentFontValue.textContent = size + 'x';
         }
 
         // 選單系統按鈕事件
@@ -1157,14 +1159,6 @@
             addTouchFeedback(elements.typewriterSpeedBtn);
         }
 
-        // 速度按鈕事件監聽器
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('speed-btn')) {
-                e.stopPropagation();
-                const speed = e.target.getAttribute('data-speed');
-                setTypingSpeed(speed);
-            }
-        });
         
         if (elements.thumbnailBtn) {
             elements.thumbnailBtn.addEventListener('click', toggleThumbnails);
@@ -1201,20 +1195,24 @@
         }
         
         // 字體大小按鈕事件初始化函數
-        function initializeFontSizeButtons() {
-            const fontSizeBtns = document.querySelectorAll('.font-size-btn');
-            fontSizeBtns.forEach(btn => {
-                // 移除可能存在的舊事件監聽器，避免重複綁定
-                btn.removeEventListener('click', handleFontSizeButtonClick);
-                btn.addEventListener('click', handleFontSizeButtonClick);
-            });
+        function initializeFontSizeSlider() {
+            // 初始化字體大小滑桿
+            const fontSlider = document.getElementById('fontSizeSlider');
+            const currentFontValue = document.getElementById('currentFontValue');
+
+            if (fontSlider) {
+                fontSlider.value = fontSize;
+
+                fontSlider.addEventListener('input', (e) => {
+                    setFontSize(e.target.value);
+                });
+            }
+
+            if (currentFontValue) {
+                currentFontValue.textContent = fontSize + 'x';
+            }
         }
         
-        // 字體大小按鈕點擊處理函數
-        function handleFontSizeButtonClick(e) {
-            e.stopPropagation();
-            setFontSize(this.dataset.size);
-        }
 
         if (elements.closeTimelineBtn) {
             elements.closeTimelineBtn.addEventListener('click', closeTimelinePanel);
@@ -1522,8 +1520,8 @@
 
             // 初始化按鈕狀態
             initializeToggleButtons();
-            // 初始化打字速度按鈕狀態
-            initializeTypingSpeedButtons();
+            // 初始化打字速度滑桿
+            initializeTypingSpeedSlider();
             // 初始化隱藏功能按鈕狀態
             initializeHideButtons();
             // 應用預設參數到實際顯示
@@ -1730,8 +1728,8 @@
             // 設置觸控手勢
             setupTouchGestures();
             
-            // 初始化字體大小按鈕事件
-            initializeFontSizeButtons();
+            // 初始化字體大小滑桿
+            initializeFontSizeSlider();
 
             // 初始化按鈕狀態顯示
             initializeToggleButtons();
@@ -1777,6 +1775,163 @@
 
         // 在載入完成後預載入
         setTimeout(preloadNextMedia, 1000);
+
+        // 主題切換功能
+        function initializeThemeSystem() {
+            const themeBtn = document.getElementById('themeBtn');
+            const themeDropdown = document.getElementById('themeDropdown');
+            const fontFamilyBtn = document.getElementById('fontFamilyBtn');
+            const fontFamilyDropdown = document.getElementById('fontFamilyDropdown');
+            const dropdownOverlay = document.getElementById('dropdownOverlay');
+
+            // 從 localStorage 載入保存的設定
+            const savedTheme = localStorage.getItem('memoir-theme') || 'default';
+            const savedFont = localStorage.getItem('memoir-font') || 'system';
+
+            // 應用保存的設定
+            applyTheme(savedTheme);
+            applyFont(savedFont);
+
+            // 設定主題按鈕的活動狀態
+            updateThemeButtonState(savedTheme);
+            updateFontButtonState(savedFont);
+
+            // 主題按鈕點擊事件
+            if (themeBtn && themeDropdown) {
+                themeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isVisible = themeDropdown.classList.contains('open');
+
+                    // 隱藏所有其他下拉選單
+                    hideAllDropdowns();
+
+                    // 切換當前下拉選單
+                    if (!isVisible) {
+                        themeDropdown.classList.add('open');
+                        dropdownOverlay.classList.add('show');
+                    }
+                });
+
+                // 主題選項點擊事件
+                const themeOptions = themeDropdown.querySelectorAll('.theme-option');
+                themeOptions.forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const theme = option.dataset.theme;
+                        applyTheme(theme);
+                        updateThemeButtonState(theme);
+                        localStorage.setItem('memoir-theme', theme);
+                        hideAllDropdowns();
+                    });
+                });
+            }
+
+            // 字體按鈕點擊事件
+            if (fontFamilyBtn && fontFamilyDropdown) {
+                fontFamilyBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isVisible = fontFamilyDropdown.classList.contains('open');
+
+                    // 隱藏所有其他下拉選單
+                    hideAllDropdowns();
+
+                    // 切換當前下拉選單
+                    if (!isVisible) {
+                        fontFamilyDropdown.classList.add('open');
+                        dropdownOverlay.classList.add('show');
+                    }
+                });
+
+                // 字體選項點擊事件
+                const fontOptions = fontFamilyDropdown.querySelectorAll('.font-option');
+                fontOptions.forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const font = option.dataset.font;
+                        applyFont(font);
+                        updateFontButtonState(font);
+                        localStorage.setItem('memoir-font', font);
+                        hideAllDropdowns();
+                    });
+                });
+            }
+
+            // 背景遮罩點擊事件
+            if (dropdownOverlay) {
+                dropdownOverlay.addEventListener('click', () => {
+                    hideAllDropdowns();
+                });
+            }
+
+            // 點擊其他地方時隱藏下拉選單
+            document.addEventListener('click', () => {
+                hideAllDropdowns();
+            });
+        }
+
+        function hideAllDropdowns() {
+            const dropdowns = [
+                document.getElementById('themeDropdown'),
+                document.getElementById('fontFamilyDropdown')
+            ];
+            const overlay = document.getElementById('dropdownOverlay');
+
+            dropdowns.forEach(dropdown => {
+                if (dropdown) {
+                    dropdown.classList.remove('open');
+                }
+            });
+
+            if (overlay) {
+                overlay.classList.remove('show');
+            }
+        }
+
+        function updateThemeButtonState(activeTheme) {
+            const themeOptions = document.querySelectorAll('.theme-option');
+            themeOptions.forEach(option => {
+                option.classList.toggle('active', option.dataset.theme === activeTheme);
+            });
+        }
+
+        function updateFontButtonState(activeFont) {
+            const fontOptions = document.querySelectorAll('.font-option');
+            fontOptions.forEach(option => {
+                option.classList.toggle('active', option.dataset.font === activeFont);
+            });
+        }
+
+        function applyTheme(theme) {
+            const root = document.documentElement;
+
+            // 移除之前的主題類別
+            root.classList.remove('theme-forest', 'theme-ocean', 'theme-lavender',
+                                'theme-sunset', 'theme-crimson', 'theme-emerald', 'theme-default');
+
+            // 應用新主題
+            if (theme !== 'default') {
+                root.classList.add(`theme-${theme}`);
+            }
+
+            console.log(`主題已切換至: ${theme}`);
+        }
+
+        function applyFont(font) {
+            const root = document.documentElement;
+
+            // 移除之前的字體類別
+            root.classList.remove('font-system', 'font-noto', 'font-poppins', 'font-serif', 'font-mono');
+
+            // 應用新字體
+            root.classList.add(`font-${font}`);
+
+            console.log(`字體已切換至: ${font}`);
+        }
+
+        // 在 DOM 載入完成後初始化主題系統
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeThemeSystem();
+        });
     
 
 // ========== 提取的腳本區塊 ==========
