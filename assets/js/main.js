@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-16T18:04:28.427943100+00:00
+// 生成時間: 2025-09-16T19:06:29.671125400+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -2119,7 +2119,26 @@
                 };
                 
                 console.log('✅ 伺服器端金鑰解密腳本準備完成');
-                
+
+                // 🚨 新增：自動調用解密函數
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        console.log('🚀 DOM 載入完成，自動開始解密');
+                        setTimeout(() => {
+                            if (typeof window.autoDecrypt === 'function') {
+                                window.autoDecrypt().catch(console.error);
+                            }
+                        }, 100);
+                    });
+                } else {
+                    console.log('🚀 DOM 已載入，立即開始解密');
+                    setTimeout(() => {
+                        if (typeof window.autoDecrypt === 'function') {
+                            window.autoDecrypt().catch(console.error);
+                        }
+                    }, 100);
+                }
+
             })();
         
 
