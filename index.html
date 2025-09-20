@@ -14,13 +14,13 @@
     <meta name="backend-url" content="https://mastermaso.com/memoirflow">
     
     <!-- 簡化 CSP，允許必要的資源 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-b830ee07-6780-4d00-95ef-e9d026e0cc0d' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'nonce-4db7f3b3-990a-45b3-98a9-347693a99035' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://mastermaso.com;">
     
     <!-- Lucide Icons -->
-    <script nonce="b830ee07-6780-4d00-95ef-e9d026e0cc0d" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script nonce="4db7f3b3-990a-45b3-98a9-347693a99035" src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- 內聯CSS樣式 -->
-    <style nonce="b830ee07-6780-4d00-95ef-e9d026e0cc0d">
+    <style nonce="4db7f3b3-990a-45b3-98a9-347693a99035">
         /* CSS 變數定義 - 預設主題 */
 :root {
     --primary: #3b82f6;
@@ -455,9 +455,10 @@ body {
     z-index: 1;
 }
 
-.media-display:hover::before {
+/* 移除媒體懸停遮罩效果 */
+/* .media-display:hover::before {
     opacity: 1;
-}
+} */
 
 /* 改進的描述區域 */
 .description-container {
@@ -832,10 +833,8 @@ body {
     background: var(--bg-primary);
     backdrop-filter: blur(20px);
     border-radius: 16px;
-    padding: 0.5rem;
     margin-top: 10px;
     box-shadow: 0 8px 32px var(--shadow);
-    border: 1px solid var(--border);
     transform: translateY(-10px);
     opacity: 0;
     visibility: hidden;
@@ -1265,7 +1264,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    gap: 0px;
     align-items: center;
     transition: top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 2100;
@@ -1273,6 +1273,97 @@ body {
 
 .nav-thumbnails.visible {
     top: 10px;
+}
+
+/* 縮圖列收合狀態 - 整體向上移動 */
+.nav-thumbnails.collapsed {
+    transform: translateX(-50%) translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-thumbnails:not(.collapsed) {
+    transform: translateX(-50%) translateY(0);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 收合/展開按鈕樣式 - 扁平透明設計 */
+.thumbnail-toggle-arrow {
+    width: 60px; /* 更寬 */
+    height: 16px; /* 稍微增加高度以配合更大的箭頭 */
+    background: transparent; /* 透明背景 */
+    border: none; /* 移除邊框 */
+    border-radius: 0;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: none; /* 預設隱藏 */
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    margin-top: 2px; /* 稍微增加間距 */
+    z-index: 2099;
+    position: relative;
+    /* 移除背景效果 */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+}
+
+/* 燈箱模式下確保縮圖列可見，並且收合按鈕可用 */
+.lightbox.active .nav-thumbnails {
+    top: 10px !important;
+}
+
+/* 燈箱模式下的收合狀態 - 確保收合功能正常 */
+.lightbox.active .nav-thumbnails.collapsed {
+    top: 10px !important;
+    transform: translateX(-50%) translateY(-100%);
+}
+
+/* 燈箱模式下強制顯示收合按鈕 - 使用最高特異性覆蓋所有隱藏規則 */
+.lightbox.active .nav-thumbnails .thumbnail-toggle-arrow,
+.lightbox.active .nav-thumbnails #thumbnailToggleArrow,
+body .lightbox.active .nav-thumbnails .thumbnail-toggle-arrow,
+body .lightbox.active .nav-thumbnails #thumbnailToggleArrow {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 2099 !important;
+}
+
+.thumbnail-toggle-arrow:hover {
+    opacity: 0.7; /* 透明度變化代替背景變化 */
+    transform: scale(1.1); /* 稍微放大 */
+}
+
+.thumbnail-toggle-arrow i {
+    transition: transform 0.3s ease;
+    color: var(--text-primary); /* 確保箭頭有顏色 */
+    opacity: 0.8; /* 稍微透明 */
+}
+
+/* 按鈕狀態視覺回饋 - 使用CSS類別區分收合/展開狀態 */
+.thumbnail-toggle-arrow.collapsed {
+    opacity: 0.9; /* 收合狀態稍微透明 */
+}
+
+.thumbnail-toggle-arrow:not(.collapsed) {
+    opacity: 1; /* 展開狀態完全不透明 */
+}
+
+/* 燈箱模式下的狀態視覺回饋 */
+.lightbox.active .thumbnail-toggle-arrow.collapsed,
+.lightbox.active .thumbnail-toggle-arrow:not(.collapsed) {
+    opacity: 1 !important; /* 燈箱模式下保持完全可見 */
+}
+
+/* 燈箱模式專用類別 - JavaScript控制的強制顯示 */
+.thumbnail-toggle-arrow.lightbox-mode {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 2099 !important;
 }
 
 .thumbnails {
@@ -1286,6 +1377,15 @@ body {
     border: 1px solid var(--border);
     max-width: 400px;
     overflow-x: auto;
+    position: relative;
+    z-index: 2100;
+    transition: border-radius 0.3s ease, border 0.3s ease;
+}
+
+/* 燈箱模式下的縮圖列樣式（與按鈕連接） */
+.lightbox.active .thumbnails {
+    border-radius: 25px 25px 0 0;
+    border-bottom: none;
 }
 
 /* 浮動按鈕樣式 */
@@ -1441,9 +1541,10 @@ body {
     transition: transform 0.3s ease;
 }
 
-.media-display img:hover {
+/* 移除圖片懸停放大效果 */
+/* .media-display img:hover {
     transform: scale(1.02);
-}
+} */
 
 .description-container {
     position: absolute;
@@ -1454,7 +1555,8 @@ body {
     width: 100%;
     text-align: left;
     font-size: 1.1rem;
-    line-height: 1.8;
+    word-wrap: break-word; /* 長單詞自動換行 */
+    overflow-wrap: break-word; /* 現代瀏覽器的換行支援 */
     /* 修改為漸層透明效果，越往上越透明 */
     background: linear-gradient(to bottom,
         rgba(0, 0, 0, 0.2) 0%,
@@ -1462,11 +1564,17 @@ body {
         rgba(0, 0, 0, 0.6) 60%,
         rgba(0, 0, 0, 0.8) 100%
     );
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(2px);
     padding: 1rem 80px 1rem 80px; /* 左右留空間給選單按鈕，上下留空間 */
-    min-height: 140px;
     margin-bottom: 20px; /* 避免貼近下緣 */
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 確保事件描述文字支援換行 */
+#eventDescription {
+    white-space: pre-wrap; /* 保留換行符號和空格，並支援自動換行 */
+    word-wrap: break-word; /* 長單詞自動換行 */
+    overflow-wrap: break-word; /* 現代瀏覽器的換行支援 */
 }
 
 /* 字幕開關按鈕 */
@@ -1514,19 +1622,17 @@ body {
     box-shadow: 0 6px 25px var(--danger-hover);
 }
 
-/* 字幕區域隱藏狀態 */
-.description-container.subtitle-hidden #eventDescription {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(30px);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
+/* 字幕區域隱藏狀態 - 完全移除容器的存在感 */
 .description-container.subtitle-hidden {
-    background: transparent;
-    backdrop-filter: none;
-    min-height: 80px;
-    padding: 2rem 80px 1rem 80px;
+    display: none !important; /* 完全隱藏容器，不佔據任何空間 */
+    pointer-events: none !important; /* 禁用所有滑鼠事件 */
+    visibility: hidden !important; /* 確保不可見 */
+    opacity: 0 !important; /* 確保透明 */
+    z-index: -1 !important; /* 確保在所有元素之下 */
+    position: absolute !important; /* 確保不影響布局 */
+    width: 0 !important; /* 寬度歸零 */
+    height: 0 !important; /* 高度歸零 */
+    overflow: hidden !important; /* 隱藏任何溢出內容 */
 }
 
 /* 當前事件日期顯示 */
@@ -1796,11 +1902,18 @@ input[type="range"] {
     </style>
 
     <!-- 基礎樣式重置 -->
-    <style nonce="b830ee07-6780-4d00-95ef-e9d026e0cc0d">
+    <style nonce="4db7f3b3-990a-45b3-98a9-347693a99035">
         * { box-sizing: border-box; margin: 0; padding: 0; }
     </style>
-<script id="enc-payload" type="application/json">{"aad":"80e04e03abf3","ciphertext_b64":"hhrW3eGIZo99eLjLGQZS6MazelD5OC6YRYI3y7+xHi7FFvxgS9H+rfXtAZ9ecUsLYh/Fzmu0t9MjpCbU28I6BMSC/KSP+g4da1j3Zw6EXsvD1bQsgPSziUkEZUd0cKx3rH3hr/ywSHYED6DV/SzdImLi0O3ses7WTwSUSzSLZjpm1jMqU9P91I/qDuYvXx73srhZeVmLVoIYfCUUgwNYmOMRnW+53raLIAeGf79e8ceXKlitVBmTis+2hyJ8u8yRIVOzP0V8DNHqXULouoSf/DafyMMmbFDfLpz/lGpDYGPsakiErzgNDwFOSVSgH/B2e5wyAbgl4lBZ43U4UiTAAOiBq5ejQV7p/jocgePF8EBdjw6vtY4fguik4J0H96oQVAC3tFYFDELh8CO24IINCsXkLdrjJBnFfE63/wFFopwR9ng5tkZxOBuP29Pn8rAuEg2XIe4KPWfFq3U9WqnLp9q7DfzO/6hOnunog6yUDSmx77dbyLnIlW6Q6xTftt3iClvu+4v1ATYBIB+WyVWbmakwCwFDEtbDvuPfr9jnHBoX3ohMRK9iFcvxbFLpuofcGwiDFQF/oayQ0YFb4s/S+Hs8+XgqWGqcasgxArjgGz7blWs64SSlPLUOBQF6NJgyZ7oBiAJjbEKOuxf91t3f/RYHyHrQp/CWLkzitBPv1r9urJ5LmWtrVw58z3HyNJMiK9ffTMFe725IMXbxIG4AaNc3kLzZVVbgFcvsz0aTkRK145w+96HcBBwLPthOAsGN2mL7Y1ElVUXLOsNBmyduIP5f1KaPWxj/mOO74uONmRCI2zOX5wQlSo4KO406t1dIbDHH5xGTkAC5FEQI5CrMfzNVVnA2dUcFBpiGLv+E6tOLaY+etEYHSCN+nn3pPMCA9zQlkFuxgov7txtPBVC6u3cy0rdJvEdHYl1eOsZSAf8PtoD7qyLuRIemPfLCXgm4hnQu43lxFWQxkqt+nSUuMXiBtGI+OEV8uPvoChAURRio3FcgT5uFnlNyHf2A/0UYxmiSWdWK3rJufPDu+MUMOPE/YF/hkO+0IUEGsh/MJ+y+Nu3V/LMpneZO6JGFZ5Y2ZsfgggJVW6KnHoJMSy5DXiVymdaSMFvQc6AEUpGwriEmnh4eEud1idVxWqh6CkpjzGjc5Ae1AGFKf0pco6RfkTOHItV47SltIDy5gOZTI+9wR5FLvaewGx5AMctoflp1wlhdM6vcAnlXV0rrHAunIUrhIpukbxhAHkddQFH+PgLoOowaZusfyuylqvqq7mTIZQM2L68Uv4LwDRegKI2YMbJKnhwsGJRDuXUo5fG5c/GgJNYaQRpVYQDm23sBDElDlNnJtwSeYtj0ymiGZKYRMCeSvv5XL9B6kVB7aiiwwJ3Z1WK903oFcvFR3Os55Ow3tTFCspqQXy7hIzZd2FgGaDNrdy7TX+UGGDCl1L3o6OhI+GDnT626xxUhG3MhSMmM0a8JXW1e0fU4qMJHCSK5XlZdzW7eNMxGHLKnkYwIfALOmqJ8w0oG3/bFP6i1AQxuNx86D6m4EiCOfz514R7a/JR6V7NxGeStBJbp01TSzMfZZGs4MPvsZ9AwDmzvsexY3hpu2Xa9CdzWPW6pWVaC8V7QXyd0CREZTrfMjxgD7lk3sRIjXLQAJqnWFO+6St1uAHHzBI+EBauGW5VNqvkeYOfrepircYnY4x1+FpLOSMct4vrFnwBqjtNd+2PshBFHCzjIkTrd9HszuTSaaggEIxP910mBu3DwtnSFPaiQxHmRHRXJmquZggHZ3T54H/ufiQ++5Nfpxg8oAG7cQn4pA3y3mSYby5KaB7NKgxuXDxRynwzjE1P15PsSM6zo+SJhW5UgVjhCGV1zjI+hv/JwCiNapNmxJoHKO7b2+CrrxQ==","iv_b64":"dWC2jOahBcPnY8N4","salt_b64":"YOgX9vHZZzgaV4qjUrmWXw=="}</script>
-<meta name="require-password" content="true">
+<script id="enc-payload" type="application/json">{"aad":"80e04e03abf3","ciphertext_b64":"ZtGegwB8zqbswVe5ZSSsd90LN/Fmob3MLF4+5vjjaG8Twb5xscizAgBBlnx0bdH7pTXW3vgGS1uOPhGM2uUjWNffDsBe30IV5mm6Vc6qQ2NbQDaxhPR5QUcyTClqFf9AxyDTPIcz8V5PdZ0WrOjmHYq8rib00TMjKq8GdrjDanVVJh9tkz9rX1rdQ5rZnvkSwzMpeWDUqA+rFiJBcr+FpX5kzat1ZpZs2bultQQZbKGInQ3SyYCwPo9zBEvG/9jhbUiJAHtqLw/l3Hyqdw3ZnYLtS2WyJupgP4MTHbtF9wGP4BLFZomsa+D2ZseZKqKI5sNkGk6Xm8f/TUniXcF9VLvM8EKI9cGgcRaEtohVZfS3RS4mCtL+49+2YWIwaPuGxgRsrCkIvmEc5iF1900a0Eu4Yf9Nwv4jTjdeqfBRi5xU0lBGsYO+9fFrS/NnaIkswoUywRyIsVlHgmVoMobTF21rWvWc7MuoOZWYMLIPYBHA4Y5axJmzjruPMJZO+ZfyEQFXnYmyNl14N5ozXX4FjovjpUxIDH4JVB/aa4BRwjKrLrIQdWlE1et+8ltNXNIHAl0ae8hWc2yQA1va+JzOWW5yCZrr8+ZdziCdOeoK6VKaPEJsjHa+XDW6TV5ky4j30kYa+e2xg9hPUdl2UIlny4UFZwjzO5DaI5nn0qPs3qPqwGnCgicuZBde5qTkDnuVIAMXJQi0iEQ7jAdCfvIn+0ZaoyZ1JKCC6Y+5HU+RSAse5COoylV7wiEfIfbJVgotgAKCL1XoeG1RXm0U0TxMuAhsklIyCnipu1oCKi/KSlYkXp8BolHnQQ1o+d/IAOPH282mgzUZrT1N+QFYGcxAex+i/Icv9hSdtg/UsQmvMxKoAJBKuuoi80OUS6z/rK074us4zRzM8J6DszUOUIDAaKjwZ8Cci5S59xdudjBOosta+9K7SNiAyc/0hEHiC4bfrYzJAxt8ht3lv4ZbICLmDTmDVSX0zzuU5bIGDPMv4Nhi1nAJQj/GV974ZubsMn2gtF92qJyBSwJZAc4zSl/jXcYsZPHWViI+O8JHfEkhusHzkkEHjrOYs9lYNR1Jjyc14VeXk0+ZBOdtrvscVCLx1kakD52HPd/rbX/BmRtkXys8Za0X69Qpcqj8VPkNdhEKmBNeGK7d7mKqVt2PMQpP37vzG832eM+I7P+1oMHOKp8nXzrM5v7ynerSDPLlVy8MnoJU03UcLStCaBy7DeyOOjuzrmrh/TYmXMMckT8MMqNhOBZZrb7NHZDzuSPIF6ShIMGImckhAxyHUIaQpnMV3u893cDFlFy6xxN0ohEbd4fEAgBT/t5D6ffpm3iOf4d5KT0Ylq998ePiVlUKIp7m8vWIV3WMeTTSSmKvOUZoXCPcRNp6K7AxbB2+TKRSZcrrcdFFS5mp50n5QpS+aE1i0I0BOEcLU65oudC7Le5qZJi/4F1X2ows8mEQaR3b9Wo2of9XQCbENxz2M97f27GEewoTEkuD5XfIZdkQCHWv4+ofJxI7/cyti74zaL+gAV3Z8otOddlURWjBLl2Y+N7mEYrEflCGSQ+e32Kxod8iRP1YG1REVoZdMZrjRYLtGXtIoeo1wRMJa3CpgcmhSBV4qqiTIji5CujMDzU1GWpi+3cfI/A9IUNvWxm7iDWxLWXyHqKgLgz+kvHZ+vtGOY2f1zQ3kmErDw87Ep4aiPFzvdhSkQwts+XSPS6EIsY8upFoRcwEz/BLPy+b40/f1AT3UejG3HdBKPsgbhP33SlMqoDOtst8nrTtkUoCtde6eD6a3wCSzEJtUoBP+vlwx0h578zQgYXO31gcrvsiAldoL4s/07KxLnaFgSQmH36NPAL8HkQcTDci2mUiv4ghk0RuQwY0ALkric9nrH8lFOPwTA==","iv_b64":"cNVQcRhbaIYzrXZU","salt_b64":"RHykkPH1xgcsg/p/3k0XUA=="}</script>
+<meta name="require-password" content="false">
+
+<script>
+// 版本號和配置信息
+window.MEMOIR_VERSION_ID = 'v1758379963741';
+window.MEMOIR_DISPLAY_CONFIG = {"controlsVisible":false,"dateVisible":false,"fontSize":1.4,"theme":"ocean","thumbnailsVisible":false,"typewriterEnabled":true,"typingSpeed":100};
+console.log('🔧 [Backend] 注入版本信息:', { versionId: 'v1758379963741', displayConfig: {"controlsVisible":false,"dateVisible":false,"fontSize":1.4,"theme":"ocean","thumbnailsVisible":false,"typewriterEnabled":true,"typingSpeed":100} });
+</script>
 </head>
 <body>
     <!-- 簡化的載入畫面 -->
@@ -1921,12 +2034,12 @@ input[type="range"] {
                                         class="speed-slider"
                                         min="1"
                                         max="100"
-                                        value="25"
+                                        value="100"
                                         step="1"
                                     />
                                     <div class="slider-labels">
                                         <span>快 (1)</span>
-                                        <span id="currentSpeedValue">25</span>
+                                        <span id="currentSpeedValue">100</span>
                                         <span>慢 (100)</span>
                                     </div>
                                 </div>
@@ -1948,12 +2061,12 @@ input[type="range"] {
                                         class="font-size-slider"
                                         min="0.8"
                                         max="2.0"
-                                        value="2"
+                                        value="1.4"
                                         step="0.1"
                                     />
                                     <div class="slider-labels">
                                         <span>小 (0.8)</span>
-                                        <span id="currentFontValue">2x</span>
+                                        <span id="currentFontValue">1.4x</span>
                                         <span>大 (2.0)</span>
                                     </div>
                                 </div>
@@ -1961,8 +2074,8 @@ input[type="range"] {
                         </div>
                     </div>
 
-                    <!-- 隱藏畫面按鈕開關 -->
-                    <button id="hideControlsBtn" class="floating-btn menu-item" title="隱藏畫面按鈕">
+                    <!-- 隱藏導航箭頭開關 -->
+                    <button id="hideControlsBtn" class="floating-btn menu-item" title="隱藏導航箭頭">
                         <i data-lucide="move" style="width: 16px; height: 16px;"></i>
                     </button>
 
@@ -2015,6 +2128,10 @@ input[type="range"] {
         <!-- 頂部控制：縮圖（預設隱藏）-->
         <div class="nav-thumbnails" id="thumbnailsContainer">
             <div id="thumbnails" class="thumbnails"></div>
+            <!-- 收合/展開按鈕 -->
+            <button id="thumbnailToggleArrow" class="thumbnail-toggle-arrow" title="收合縮圖列">
+                <i data-lucide="chevron-up" style="width: 32px; height: 20px;"></i>
+            </button>
         </div>
         
         <!-- 燈箱 -->
@@ -2054,12 +2171,6 @@ input[type="range"] {
     
         
         
-
-        
-        
-
-        
-        
-<script src="assets/js/main.js" nonce="2ZEsrCa2KCUr4xcNvvUsQA"></script>
+<script src="assets/js/main.js" nonce="TYapo4h+squwoVoDMIN/hQ"></script>
 </body>
 </html>
