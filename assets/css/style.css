@@ -432,9 +432,10 @@ body {
     z-index: 1;
 }
 
-.media-display:hover::before {
+/* 移除媒體懸停遮罩效果 */
+/* .media-display:hover::before {
     opacity: 1;
-}
+} */
 
 /* 改進的描述區域 */
 .description-container {
@@ -809,10 +810,8 @@ body {
     background: var(--bg-primary);
     backdrop-filter: blur(20px);
     border-radius: 16px;
-    padding: 0.5rem;
     margin-top: 10px;
     box-shadow: 0 8px 32px var(--shadow);
-    border: 1px solid var(--border);
     transform: translateY(-10px);
     opacity: 0;
     visibility: hidden;
@@ -1242,7 +1241,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    gap: 0px;
     align-items: center;
     transition: top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 2100;
@@ -1250,6 +1250,97 @@ body {
 
 .nav-thumbnails.visible {
     top: 10px;
+}
+
+/* 縮圖列收合狀態 - 整體向上移動 */
+.nav-thumbnails.collapsed {
+    transform: translateX(-50%) translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-thumbnails:not(.collapsed) {
+    transform: translateX(-50%) translateY(0);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 收合/展開按鈕樣式 - 扁平透明設計 */
+.thumbnail-toggle-arrow {
+    width: 60px; /* 更寬 */
+    height: 16px; /* 稍微增加高度以配合更大的箭頭 */
+    background: transparent; /* 透明背景 */
+    border: none; /* 移除邊框 */
+    border-radius: 0;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: none; /* 預設隱藏 */
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    margin-top: 2px; /* 稍微增加間距 */
+    z-index: 2099;
+    position: relative;
+    /* 移除背景效果 */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+}
+
+/* 燈箱模式下確保縮圖列可見，並且收合按鈕可用 */
+.lightbox.active .nav-thumbnails {
+    top: 10px !important;
+}
+
+/* 燈箱模式下的收合狀態 - 確保收合功能正常 */
+.lightbox.active .nav-thumbnails.collapsed {
+    top: 10px !important;
+    transform: translateX(-50%) translateY(-100%);
+}
+
+/* 燈箱模式下強制顯示收合按鈕 - 使用最高特異性覆蓋所有隱藏規則 */
+.lightbox.active .nav-thumbnails .thumbnail-toggle-arrow,
+.lightbox.active .nav-thumbnails #thumbnailToggleArrow,
+body .lightbox.active .nav-thumbnails .thumbnail-toggle-arrow,
+body .lightbox.active .nav-thumbnails #thumbnailToggleArrow {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 2099 !important;
+}
+
+.thumbnail-toggle-arrow:hover {
+    opacity: 0.7; /* 透明度變化代替背景變化 */
+    transform: scale(1.1); /* 稍微放大 */
+}
+
+.thumbnail-toggle-arrow i {
+    transition: transform 0.3s ease;
+    color: var(--text-primary); /* 確保箭頭有顏色 */
+    opacity: 0.8; /* 稍微透明 */
+}
+
+/* 按鈕狀態視覺回饋 - 使用CSS類別區分收合/展開狀態 */
+.thumbnail-toggle-arrow.collapsed {
+    opacity: 0.9; /* 收合狀態稍微透明 */
+}
+
+.thumbnail-toggle-arrow:not(.collapsed) {
+    opacity: 1; /* 展開狀態完全不透明 */
+}
+
+/* 燈箱模式下的狀態視覺回饋 */
+.lightbox.active .thumbnail-toggle-arrow.collapsed,
+.lightbox.active .thumbnail-toggle-arrow:not(.collapsed) {
+    opacity: 1 !important; /* 燈箱模式下保持完全可見 */
+}
+
+/* 燈箱模式專用類別 - JavaScript控制的強制顯示 */
+.thumbnail-toggle-arrow.lightbox-mode {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 2099 !important;
 }
 
 .thumbnails {
@@ -1263,6 +1354,15 @@ body {
     border: 1px solid var(--border);
     max-width: 400px;
     overflow-x: auto;
+    position: relative;
+    z-index: 2100;
+    transition: border-radius 0.3s ease, border 0.3s ease;
+}
+
+/* 燈箱模式下的縮圖列樣式（與按鈕連接） */
+.lightbox.active .thumbnails {
+    border-radius: 25px 25px 0 0;
+    border-bottom: none;
 }
 
 /* 浮動按鈕樣式 */
@@ -1418,9 +1518,10 @@ body {
     transition: transform 0.3s ease;
 }
 
-.media-display img:hover {
+/* 移除圖片懸停放大效果 */
+/* .media-display img:hover {
     transform: scale(1.02);
-}
+} */
 
 .description-container {
     position: absolute;
@@ -1431,7 +1532,8 @@ body {
     width: 100%;
     text-align: left;
     font-size: 1.1rem;
-    line-height: 1.8;
+    word-wrap: break-word; /* 長單詞自動換行 */
+    overflow-wrap: break-word; /* 現代瀏覽器的換行支援 */
     /* 修改為漸層透明效果，越往上越透明 */
     background: linear-gradient(to bottom,
         rgba(0, 0, 0, 0.2) 0%,
@@ -1439,11 +1541,17 @@ body {
         rgba(0, 0, 0, 0.6) 60%,
         rgba(0, 0, 0, 0.8) 100%
     );
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(2px);
     padding: 1rem 80px 1rem 80px; /* 左右留空間給選單按鈕，上下留空間 */
-    min-height: 140px;
     margin-bottom: 20px; /* 避免貼近下緣 */
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 確保事件描述文字支援換行 */
+#eventDescription {
+    white-space: pre-wrap; /* 保留換行符號和空格，並支援自動換行 */
+    word-wrap: break-word; /* 長單詞自動換行 */
+    overflow-wrap: break-word; /* 現代瀏覽器的換行支援 */
 }
 
 /* 字幕開關按鈕 */
@@ -1491,19 +1599,17 @@ body {
     box-shadow: 0 6px 25px var(--danger-hover);
 }
 
-/* 字幕區域隱藏狀態 */
-.description-container.subtitle-hidden #eventDescription {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(30px);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
+/* 字幕區域隱藏狀態 - 完全移除容器的存在感 */
 .description-container.subtitle-hidden {
-    background: transparent;
-    backdrop-filter: none;
-    min-height: 80px;
-    padding: 2rem 80px 1rem 80px;
+    display: none !important; /* 完全隱藏容器，不佔據任何空間 */
+    pointer-events: none !important; /* 禁用所有滑鼠事件 */
+    visibility: hidden !important; /* 確保不可見 */
+    opacity: 0 !important; /* 確保透明 */
+    z-index: -1 !important; /* 確保在所有元素之下 */
+    position: absolute !important; /* 確保不影響布局 */
+    width: 0 !important; /* 寬度歸零 */
+    height: 0 !important; /* 高度歸零 */
+    overflow: hidden !important; /* 隱藏任何溢出內容 */
 }
 
 /* 當前事件日期顯示 */
