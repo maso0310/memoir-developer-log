@@ -1352,11 +1352,40 @@ body .lightbox.active .nav-thumbnails #thumbnailToggleArrow {
     backdrop-filter: blur(20px);
     box-shadow: 0 4px 20px var(--shadow);
     border: 1px solid var(--border);
-    max-width: 400px;
+    /* 動態寬度：根據內容和螢幕寬度自動調整，移除固定min-width讓JavaScript完全控制 */
+    min-width: auto;
+    max-width: calc(100vw - 160px); /* 預留選單按鈕空間 */
+    width: auto;
     overflow-x: auto;
     position: relative;
     z-index: 2100;
-    transition: border-radius 0.3s ease, border 0.3s ease;
+    transition: border-radius 0.3s ease, border 0.3s ease, width 0.3s ease;
+    /* 確保滾動的平滑性 */
+    scroll-behavior: smooth;
+    /* 隱藏滾動條但保持功能 */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* 隱藏WebKit瀏覽器的滾動條 */
+.thumbnails::-webkit-scrollbar {
+    display: none;
+}
+
+/* 響應式調整：統一使用 160px 間距，調整其他屬性 */
+@media (max-width: 768px) {
+    .thumbnails {
+        max-width: calc(100vw - 160px); /* 統一使用 160px */
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .thumbnails {
+        max-width: calc(100vw - 160px); /* 統一使用 160px */
+        padding: 0.5rem;
+        gap: 0.25rem;
+    }
 }
 
 /* 燈箱模式下的縮圖列樣式（與按鈕連接） */
@@ -1612,8 +1641,8 @@ body .lightbox.active .nav-thumbnails #thumbnailToggleArrow {
     overflow: hidden !important; /* 隱藏任何溢出內容 */
 }
 
-/* 當前事件日期顯示 */
-.current-date-display {
+/* 當前事件資訊顯示（名稱和日期） */
+.current-info-display {
     position: fixed;
     top: 20px;
     left: 50%;
@@ -1626,16 +1655,16 @@ body .lightbox.active .nav-thumbnails #thumbnailToggleArrow {
     border: 1px solid var(--border);
     box-shadow: 0 4px 20px var(--shadow);
     transition: all 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* 當縮圖列顯示時，日期顯示下移 */
-.current-date-display.below-thumbnails {
+/* 當縮圖列顯示時，資訊顯示下移 */
+.current-info-display.below-thumbnails {
     top: 110px;
-}
-
-.current-date-display.date-hidden {
-    opacity: 0;
-    visibility: hidden;
 }
 
 /* 隱藏畫面按鈕時的樣式 */
@@ -1645,13 +1674,47 @@ body .lightbox.active .nav-thumbnails #thumbnailToggleArrow {
     pointer-events: none;
 }
 
-.current-date-display #currentEventDate {
+.controls-hidden .current-info-display {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* 回憶錄名稱樣式 */
+.memoir-title {
+    color: #fbbf24;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* 事件日期樣式 */
+.event-date {
     color: #e2e8f0;
     font-size: 0.9rem;
     font-weight: 500;
     text-align: center;
     white-space: nowrap;
     min-width: 120px;
+}
+
+/* 響應式設計：小螢幕時調整 */
+@media (max-width: 480px) {
+    .current-info-display {
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 6px 12px;
+    }
+
+    .memoir-title,
+    .event-date {
+        font-size: 0.8rem;
+    }
+
+    .event-date {
+        min-width: auto;
+    }
 }
 
 /* 隱藏原有的導航元素 */
