@@ -41,7 +41,7 @@ function isImageCached(src){
 return globalImageCache.has(src);
 }
 let _0xb17c=parseInt(localStorage.getItem('memoirflow:typing-speed'))||100;
-let _0xc3b0=1.4;
+let _0xc3b0=2;
 let _0xd5e4=false;
 let _0xe818=true;
 let _0xfa4c=false;
@@ -50,11 +50,11 @@ let _0x11eb4=false;
 let _0x130e8=false;
 let _0x1431c=false;
 let _0x15550=true;
-let _0x16784=!false;
+let _0x16784=!true;
 let _0x179b8=!false;
 let isTitleHidden=!true;
 let _0x18bec=false;
-let _0x19e20='crimson';
+let _0x19e20='sunset';
 let _0x1b054=_0x19e20&&_0x19e20!=='undefined'&&_0x19e20!==''
 ? _0x19e20
 :(localStorage.getItem('memoir-theme')||'default');
