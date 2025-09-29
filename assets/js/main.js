@@ -41,7 +41,7 @@ function isImageCached(src){
 return globalImageCache.has(src);
 }
 let _0xb17c=parseInt(localStorage.getItem('memoirflow:typing-speed'))||100;
-let _0xc3b0=2;
+let fontSize=2;
 let _0xd5e4=false;
 let _0xe818=true;
 let _0xfa4c=false;
@@ -77,7 +77,7 @@ const decryptedCount=thumbnailDecryptedState.get(key)?.size||0;
 console.log(` 📁 ${key}:${content.length}字符,${decryptedCount}個已解密縮圖`);
 });
 };
-let actualFontSize=parseFloat(localStorage.getItem('memoir-font-size'))||_0xc3b0;
+let actualFontSize=parseFloat(localStorage.getItem('memoir-font-size'))||fontSize;
 let actualTypingSpeed=parseInt(localStorage.getItem('memoirflow:typing-speed'))||_0xb17c;
 let actualThumbnailsVisible=localStorage.getItem('memoir-thumbnails-visible')!==null
 ? localStorage.getItem('memoir-thumbnails-visible')==='true'
@@ -1128,6 +1128,13 @@ typewriterEffect(elements.eventDescription,description,_0xb17c,currentEventId);
 }
 }
 function initializeTypingSpeedSlider(){
+const savedSpeed=parseInt(localStorage.getItem('memoirflow:typing-speed'));
+if(savedSpeed){
+_0xb17c=savedSpeed;
+console.log(`🔧 使用localStorage中的打字速度:${_0xb17c}`);
+}else{
+console.log(`🔧 使用部署配置的打字速度:${_0xb17c}`);
+}
 const speedSlider=document.getElementById('typingSpeedSlider');
 const currentSpeedValue=document.getElementById('currentSpeedValue');
 if(speedSlider){
@@ -1196,7 +1203,7 @@ hideThumbnails();
 }
 if(_0x9f48){
 }
-setFontSize(_0xc3b0);
+setFontSize(fontSize);
 const floatingControls=document.querySelectorAll('.floating-controls:not(.nav-top)');
 floatingControls.forEach(control=>{
 if(_0x16784){
@@ -1394,10 +1401,11 @@ currentInfoDisplay.classList.toggle('below-thumbnails',_0xe818);
 }
 }
 function setFontSize(size){
-_0xc3b0=parseFloat(size);
+fontSize=parseFloat(size);
 if(elements.descriptionContainer){
-elements.descriptionContainer.style._0xc3b0=_0xc3b0+'rem';
+elements.descriptionContainer.style.fontSize=fontSize+'rem';
 }
+localStorage.setItem('memoir-font-size',String(fontSize));
 const fontSlider=document.getElementById('fontSizeSlider');
 const currentFontValue=document.getElementById('currentFontValue');
 if(fontSlider)fontSlider.value=size;
@@ -1471,16 +1479,21 @@ elements.subtitleToggleBtn.addEventListener('click',toggleSubtitle);
 addTouchFeedback(elements.subtitleToggleBtn);
 }
 function initializeFontSizeSlider(){
+const savedFontSize=parseFloat(localStorage.getItem('memoir-font-size'))||fontSize;
+fontSize=savedFontSize;
 const fontSlider=document.getElementById('fontSizeSlider');
 const currentFontValue=document.getElementById('currentFontValue');
 if(fontSlider){
-fontSlider.value=_0xc3b0;
+fontSlider.value=fontSize;
 fontSlider.addEventListener('input',(e)=>{
 setFontSize(e.target.value);
 });
 }
 if(currentFontValue){
-currentFontValue.textContent=_0xc3b0+'x';
+currentFontValue.textContent=fontSize+'x';
+}
+if(elements.descriptionContainer){
+elements.descriptionContainer.style.fontSize=fontSize+'rem';
 }
 }
 if(elements.closeTimelineBtn){
@@ -1736,7 +1749,9 @@ return;
 }
 const VERSION_KEY='memoirflow:last-version';
 const savedVersionId=localStorage.getItem(VERSION_KEY);
-if(currentVersionId!==savedVersionId){
+const isFirstVisit=!savedVersionId;
+if(isFirstVisit&&defaultDisplayConfig){
+console.log('🔧 首次訪問，應用作者的預設配置');
 if(defaultDisplayConfig){
 if(typeof defaultDisplayConfig.theme==='string'){
 if(_0x1b054!==defaultDisplayConfig.theme){
@@ -1745,11 +1760,11 @@ _0x1b054=defaultDisplayConfig.theme;
 applyTheme(_0x1b054);
 }
 }
-if(typeof defaultDisplayConfig._0xc3b0==='number'){
-const fontValue=defaultDisplayConfig._0xc3b0;
+if(typeof defaultDisplayConfig.fontSize==='number'){
+const fontValue=defaultDisplayConfig.fontSize;
 const oldFontSize=actualFontSize;
 actualFontSize=fontValue;
-_0xc3b0=fontValue;
+fontSize=fontValue;
 localStorage.setItem('memoir-font-size',String(actualFontSize));
 setFontSize(actualFontSize);
 }
