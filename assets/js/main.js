@@ -1,6 +1,6 @@
 // MemoirFlow 加密回憶錄主腳本
 // 回憶錄ID: 4548b929-5c16-4ee7-a189-60679e2165be
-// 生成時間: 2025-09-29T01:26:57.862825200+00:00
+// 生成時間: 2025-09-30T10:50:40.261892900+00:00
 
 // ========== 提取的腳本區塊 ==========
 
@@ -70,15 +70,14 @@
         let isFontSizeMenuOpen = false;
         let isTypewriterMenuOpen = false;
         let isLightboxOpen = false;
-        let thumbnailsStateBeforeLightbox = false; // 記錄燈箱開啟前的縮圖列狀態
         let isThumbnailsCollapsed = false; // 記錄縮圖列是否被收合
         let isSubtitleVisible = true;
         let areControlsHidden = !true;
-        let isDateHidden = !false;
+        let isDateHidden = !true;
         let isTitleHidden = !true;
         let isThemeMenuOpen = false;
         // 優先使用部署時的主題設定，不被 localStorage 覆蓋
-        let deploymentTheme = 'sunset';
+        let deploymentTheme = 'forest';
         let currentTheme = deploymentTheme && deploymentTheme !== 'undefined' && deploymentTheme !== ''
             ? deploymentTheme
             : (localStorage.getItem('memoir-theme') || 'default');
@@ -143,7 +142,6 @@
             typewriterToggleBtn: document.getElementById('typewriterToggleBtn'),
             typewriterSpeedBtn: document.getElementById('typewriterSpeedBtn'),
             typewriterSpeedDropdown: document.getElementById('typewriterSpeedDropdown'),
-            thumbnailBtn: document.getElementById('thumbnailBtn'),
             fontSizeBtn: document.getElementById('fontSizeBtn'),
             fontSizeDropdown: document.getElementById('fontSizeDropdown'),
             thumbnailsContainer: document.getElementById('thumbnailsContainer'),
@@ -899,13 +897,11 @@
                 return; // 防止 null 錯誤
             }
 
-            // 生成更精確的快取鍵（包含媒體檔案名和類型，強化唯一性）
-            const mediaSignature = currentEvent?.media?.map(m =>
-                `${m.filename || 'unknown'}-${m.type || m.media_type || 'unknown'}`
-            ).join('|') || 'empty';
-            const eventDatePart = currentEvent?.date ? `-date-${currentEvent.date.replace(/[-:]/g, '')}` : '';
-            const eventDescPart = currentEvent?.description ? `-desc-${currentEvent.description.substring(0, 10).replace(/\s/g, '')}` : '';
-            const cacheKey = `event-${currentEventIndex}-media-${currentEvent?.media?.length || 0}${eventDatePart}${eventDescPart}-sig-${mediaSignature.substring(0, 30)}`;
+            // *** 簡化快取鍵生成，避免因格式問題導致快取失效 ***
+            // 只使用穩定的識別碼：事件索引 + 媒體數量
+            const cacheKey = `event-${currentEventIndex}-media-${currentEvent?.media?.length || 0}`;
+
+            console.log(`📋 事件 ${currentEventIndex} 快取鍵: ${cacheKey}`);
 
             // 如果快取中有相同的縮圖，直接使用
             if (thumbnailCache.has(cacheKey)) {
@@ -1157,9 +1153,13 @@
                 displayMedia();
             });
             
-            // 確保縮圖列總是根據當前事件更新
-            renderThumbnails();
+            // 時間軸更新
             renderTimeline();
+
+            // 如果縮圖列尚未渲染（例如初始化時），則渲染縮圖列
+            if (!elements.thumbnails || elements.thumbnails.children.length === 0) {
+                renderThumbnails();
+            }
 
             // 預載入當前事件的所有圖片（與其他操作並行）
             setTimeout(() => {
@@ -1337,15 +1337,12 @@
                 elements.thumbnailsContainer.classList.toggle('visible', isThumbnailsVisible);
             }
 
-            // 更新按鈕外觀以顯示開關狀態
-            if (elements.thumbnailBtn) {
-                elements.thumbnailBtn.style.background = isThumbnailsVisible
-                    ? 'var(--primary)'
-                    : 'var(--surface)';
-            }
 
             // 根據縮圖列狀態更新日期顯示位置
             updateInfoPosition();
+
+            // 更新按鈕狀態
+            updateThumbnailToggleButton();
 
             // 如果開啟縮圖列，立即重新渲染
             if (isThumbnailsVisible) {
@@ -1355,60 +1352,84 @@
             // 不關閉選單，讓用戶可以繼續調整
         }
 
-        // 新增：縮圖列收合/展開功能
+        // 新增：縮圖列顯示/隱藏功能
         function toggleThumbnailsCollapse() {
-            isThumbnailsCollapsed = !isThumbnailsCollapsed;
-
-            if (elements.thumbnailsContainer) {
-                elements.thumbnailsContainer.classList.toggle('collapsed', isThumbnailsCollapsed);
+            if (!isThumbnailsVisible) {
+                // 如果縮圖列隱藏，顯示它
+                isThumbnailsVisible = true;
+                isThumbnailsCollapsed = false;
+                if (elements.thumbnailsContainer) {
+                    elements.thumbnailsContainer.classList.remove('hidden');
+                    renderThumbnails();
+                }
+            } else {
+                // 如果縮圖列可見，隱藏它
+                isThumbnailsVisible = false;
+                isThumbnailsCollapsed = false;
+                if (elements.thumbnailsContainer) {
+                    elements.thumbnailsContainer.classList.add('hidden');
+                }
             }
 
-            // 更新箭頭工具提示和圖標方向
+            // *** 新增：用戶與按鈕互動時移除所有提示動畫 ***
             if (elements.thumbnailToggleArrow) {
-                elements.thumbnailToggleArrow.title = isThumbnailsCollapsed ? '展開縮圖列' : '收合縮圖列';
+                elements.thumbnailToggleArrow.classList.remove('hint-pulse', 'subtle-hint');
+                // 記錄用戶已知道此功能
+                localStorage.setItem('thumbnail-hint-seen', 'true');
+            }
 
-                // 強制更新圖標類型：收合時向下，展開時向上
-                const icon = elements.thumbnailToggleArrow.querySelector('i[data-lucide], svg[data-lucide]');
-                if (icon) {
-                    // 移除舊圖標
-                    icon.remove();
-
-                    // 創建新圖標
-                    const newIcon = document.createElement('i');
-                    if (isThumbnailsCollapsed) {
-                        // 收合狀態：箭頭向下
-                        newIcon.setAttribute('data-lucide', 'chevron-down');
-                    } else {
-                        // 展開狀態：箭頭向上
-                        newIcon.setAttribute('data-lucide', 'chevron-up');
-                    }
-                    newIcon.style.width = '32px';
-                    newIcon.style.height = '20px';
-
-                    // 添加新圖標到按鈕
-                    elements.thumbnailToggleArrow.appendChild(newIcon);
-
-                    // 重新創建圖標
-                    if (window.lucide) {
-                        window.lucide.createIcons();
-                    }
-                }
-
-                // 添加CSS類來標示狀態
-                if (isThumbnailsCollapsed) {
-                    elements.thumbnailToggleArrow.classList.add('collapsed');
+            // 更新縮圖列容器的顯示狀態
+            if (elements.thumbnailsContainer) {
+                elements.thumbnailsContainer.classList.remove('collapsed');
+                if (!isThumbnailsVisible) {
+                    elements.thumbnailsContainer.classList.add('hidden');
                 } else {
-                    elements.thumbnailToggleArrow.classList.remove('collapsed');
-                }
-
-                // 如果在燈箱模式下，確保按鈕保持顯示
-                if (isLightboxOpen) {
-                    elements.thumbnailToggleArrow.style.display = 'flex';
-                    elements.thumbnailToggleArrow.style.visibility = 'visible';
-                    elements.thumbnailToggleArrow.style.opacity = '1';
+                    elements.thumbnailsContainer.classList.remove('hidden');
                 }
             }
 
+            // 更新按鈕狀態
+            updateThumbnailToggleButton();
+
+            // 根據縮圖列狀態更新日期顯示位置
+            updateInfoPosition();
+
+        }
+
+        // 更新縮圖列切換按鈕的狀態
+        function updateThumbnailToggleButton() {
+            if (!elements.thumbnailToggleArrow) return;
+
+            let title, iconClass;
+
+            if (!isThumbnailsVisible) {
+                title = '顯示縮圖列';
+                iconClass = 'down';
+            } else {
+                title = '隱藏縮圖列';
+                iconClass = 'up';
+            }
+
+            elements.thumbnailToggleArrow.title = title;
+
+            // 更新線條動畫CSS類別
+            const iconElement = elements.thumbnailToggleArrow.querySelector('.thumbnail-btn-icon');
+            if (iconElement) {
+                iconElement.classList.remove('up', 'down');
+                iconElement.classList.add(iconClass);
+            }
+
+            // 添加CSS類來標示狀態（按鈕應該始終可見）
+            elements.thumbnailToggleArrow.classList.remove('collapsed', 'hidden');
+
+            // 如果在燈箱模式下，確保按鈕保持顯示
+            if (isLightboxOpen) {
+                elements.thumbnailToggleArrow.style.display = 'flex';
+                elements.thumbnailToggleArrow.style.visibility = 'visible';
+                elements.thumbnailToggleArrow.style.opacity = '1';
+            }
+
+            console.log('🔧 [DEBUG] 縮圖列按鈕已更新:', { isThumbnailsVisible, iconClass, title });
         }
 
         function toggleTypewriterSpeedMenu() {
@@ -1621,12 +1642,9 @@
                     : 'var(--surface)';
             }
 
-            // 初始化縮圖列按鈕外觀
-            if (elements.thumbnailBtn) {
-                elements.thumbnailBtn.style.background = isThumbnailsVisible
-                    ? 'var(--primary)'
-                    : 'var(--surface)';
-            }
+            // 初始化縮圖列切換按鈕狀態
+            updateThumbnailToggleButton();
+
         }
 
         function initializeHideButtons() {
@@ -1729,10 +1747,6 @@
                 isThumbnailsVisible = true;
                 renderThumbnails();
 
-                // 更新按鈕外觀
-                if (elements.thumbnailBtn) {
-                    elements.thumbnailBtn.style.background = 'var(--primary)';
-                }
             }
         }
 
@@ -1741,10 +1755,6 @@
                 elements.thumbnailContainer.classList.add('hidden');
                 isThumbnailsVisible = false;
 
-                // 更新按鈕外觀
-                if (elements.thumbnailBtn) {
-                    elements.thumbnailBtn.style.background = 'rgba(107, 114, 128, 0.8)';
-                }
 
                 // *** 重要：保持縮圖DOM結構，確保已解密的圖片仍可被使用 ***
                 // 縮圖即使隱藏也要保持渲染狀態，作為快取來源
@@ -1962,7 +1972,9 @@
             // 根據縮圖列狀態調整資訊顯示位置
             const currentInfoDisplay = document.getElementById('currentInfoDisplay');
             if (currentInfoDisplay) {
-                currentInfoDisplay.classList.toggle('below-thumbnails', isThumbnailsVisible);
+                // 只有當縮圖列可見且未收合時，才將文字區域置於縮圖列下方
+                const shouldBelowThumbnails = isThumbnailsVisible && !isThumbnailsCollapsed;
+                currentInfoDisplay.classList.toggle('below-thumbnails', shouldBelowThumbnails);
             }
         }
 
@@ -2017,10 +2029,6 @@
         }
 
         
-        if (elements.thumbnailBtn) {
-            elements.thumbnailBtn.addEventListener('click', toggleThumbnails);
-            addTouchFeedback(elements.thumbnailBtn);
-        }
 
         // 縮圖列收合/展開按鈕事件監聽器
         if (elements.thumbnailToggleArrow) {
@@ -2145,7 +2153,7 @@
         // 鍵盤導航
         document.addEventListener('keydown', (e) => {
             if (e.target.tagName === 'INPUT') return;
-            
+
             switch(e.key) {
                 case 'ArrowLeft':
                     if (elements.prevMediaBtn) elements.prevMediaBtn.click();
@@ -2154,10 +2162,12 @@
                     if (elements.nextMediaBtn) elements.nextMediaBtn.click();
                     break;
                 case 'ArrowUp':
-                    if (elements.prevEventBtn) elements.prevEventBtn.click();
+                    // 燈箱模式下禁用事件切換
+                    if (!isLightboxOpen && elements.prevEventBtn) elements.prevEventBtn.click();
                     break;
                 case 'ArrowDown':
-                    if (elements.nextEventBtn) elements.nextEventBtn.click();
+                    // 燈箱模式下禁用事件切換
+                    if (!isLightboxOpen && elements.nextEventBtn) elements.nextEventBtn.click();
                     break;
                 case 'Escape':
                     closeTimelinePanel();
@@ -2184,20 +2194,11 @@
             // 設置燈箱開啟狀態
             isLightboxOpen = true;
 
-            // 記錄燈箱開啟前的縮圖列狀態
-            thumbnailsStateBeforeLightbox = isThumbnailsVisible;
-
             // 設置當前媒體
             currentLightboxMediaIndex = currentMediaIndex;
 
-            // 確保縮圖列在燈箱模式下可見
-            if (!isThumbnailsVisible) {
-                toggleThumbnails();
-            } else {
-                // 如果縮圖列已經可見，確保容器有visible類別並重新渲染
-                if (elements.thumbnailsContainer) {
-                    elements.thumbnailsContainer.classList.add('visible');
-                }
+            // 如果縮圖列可見，確保重新渲染以同步選中狀態
+            if (isThumbnailsVisible) {
                 renderThumbnails();
             }
 
@@ -2208,35 +2209,63 @@
 
             // 確保收合按鈕在燈箱模式下的初始狀態正確
             if (elements.thumbnailToggleArrow) {
-                // 強制顯示按鈕 - 直接修改style屬性覆蓋CSS
-                elements.thumbnailToggleArrow.style.display = 'flex';
-                elements.thumbnailToggleArrow.style.visibility = 'visible';
-                elements.thumbnailToggleArrow.style.opacity = '1';
+                // 按鈕已經在body級別，無需移動
+
+                // 強制顯示按鈕並設定固定位置到右上角 - 正圓形設計
+                elements.thumbnailToggleArrow.style.cssText = `
+                    display: flex !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    position: fixed !important;
+                    top: 20px !important;
+                    right: 20px !important;
+                    z-index: 9999 !important;
+                    width: 40px !important;
+                    height: 40px !important;
+                    background: rgba(0, 0, 0, 0.75) !important;
+                    border: 2px solid rgba(255, 255, 255, 0.4) !important;
+                    border-radius: 50% !important;
+                    color: #ffffff !important;
+                    cursor: pointer !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    backdrop-filter: blur(10px) !important;
+                    transform: none !important;
+                    margin: 0 !important;
+                `;
 
                 // 添加燈箱模式的CSS類別
                 elements.thumbnailToggleArrow.classList.add('lightbox-mode');
 
-                // 強制更新按鈕狀態和圖標
-                const icon = elements.thumbnailToggleArrow.querySelector('i[data-lucide], svg[data-lucide]');
-                if (icon) {
-                    icon.remove();
-                    const newIcon = document.createElement('i');
-                    newIcon.setAttribute('data-lucide', isThumbnailsCollapsed ? 'chevron-down' : 'chevron-up');
-                    newIcon.style.width = '32px';
-                    newIcon.style.height = '20px';
-                    elements.thumbnailToggleArrow.appendChild(newIcon);
+                console.log('🔧 [DEBUG] 燈箱模式按鈕已移動到body並強制顯示:', elements.thumbnailToggleArrow);
 
-                    if (window.lucide) {
-                        window.lucide.createIcons();
-                    }
-                }
+                // 確保按鈕狀態正確（不改變圖標，只調整樣式以適應燈箱）
+                updateThumbnailToggleButton();
 
-                // 更新CSS類和標題
-                elements.thumbnailToggleArrow.title = isThumbnailsCollapsed ? '展開縮圖列' : '收合縮圖列';
-                if (isThumbnailsCollapsed) {
-                    elements.thumbnailToggleArrow.classList.add('collapsed');
-                } else {
-                    elements.thumbnailToggleArrow.classList.remove('collapsed');
+                // *** 新增：脈衝提示動畫，幫助用戶發現縮圖控制功能 ***
+                // 檢查是否為首次進入燈箱（使用 localStorage 記錄）
+                const hasSeenThumbnailHint = localStorage.getItem('thumbnail-hint-seen');
+                if (!hasSeenThumbnailHint) {
+                    // 延遲1秒後開始脈衝提示
+                    setTimeout(() => {
+                        if (elements.thumbnailToggleArrow && isLightboxOpen) {
+                            elements.thumbnailToggleArrow.classList.add('hint-pulse');
+
+                            // 6秒後移除脈衝效果，改為微妙的呼吸動畫
+                            setTimeout(() => {
+                                elements.thumbnailToggleArrow.classList.remove('hint-pulse');
+                                elements.thumbnailToggleArrow.classList.add('subtle-hint');
+
+                                // 記錄用戶已看過提示
+                                localStorage.setItem('thumbnail-hint-seen', 'true');
+
+                                // 30秒後移除呼吸動畫
+                                setTimeout(() => {
+                                    elements.thumbnailToggleArrow.classList.remove('subtle-hint');
+                                }, 30000);
+                            }, 6000);
+                        }
+                    }, 1000);
                 }
 }
 
@@ -2250,42 +2279,24 @@
             // 設置燈箱關閉狀態
             isLightboxOpen = false;
 
-            // 恢復縮圖列原始狀態
-            if (!thumbnailsStateBeforeLightbox && isThumbnailsVisible) {
-                // 如果燈箱開啟前縮圖列是關閉的，現在恢復關閉狀態
-                toggleThumbnails();
-            }
-
-            // 檢查並恢復縮圖列的收合狀態
-            // 如果縮圖列開關為開啟狀態，且目前是收合狀態，則自動展開
-            if (isThumbnailsVisible && isThumbnailsCollapsed) {
-// 重置收合狀態
-                isThumbnailsCollapsed = false;
-
-                // 更新縮圖列容器的CSS類別
-                if (elements.thumbnailsContainer) {
-                    elements.thumbnailsContainer.classList.remove('collapsed');
-                }
-
-                // 清除可能的收合動畫狀態
-                setTimeout(() => {
-                    if (elements.thumbnailsContainer) {
-                        elements.thumbnailsContainer.style.transform = '';
-                    }
-                }, 100);
-}
 
             elements.lightbox.classList.remove('active');
             document.body.style.overflow = '';
 
-            // 隱藏收合按鈕 - 恢復為只在燈箱模式下顯示
+            // 恢復收合按鈕到正常狀態 - 保持顯示但移除燈箱專用樣式
             if (elements.thumbnailToggleArrow) {
-                elements.thumbnailToggleArrow.style.display = 'none';
-                elements.thumbnailToggleArrow.style.visibility = 'hidden';
-                elements.thumbnailToggleArrow.style.opacity = '0';
+                // 按鈕保持在body級別，只清除燈箱專用樣式
+
+                // 清除燈箱專用的自定義樣式，但保持按鈕顯示
+                elements.thumbnailToggleArrow.style.cssText = '';
 
                 // 移除燈箱模式的CSS類別
                 elements.thumbnailToggleArrow.classList.remove('lightbox-mode');
+
+                // 重新更新按鈕狀態，確保圖標正確顯示
+                updateThumbnailToggleButton();
+
+                console.log('🔧 [DEBUG] 燈箱模式按鈕已恢復正常狀態');
 }
 
             // 清空燈箱內容
@@ -2297,19 +2308,19 @@
         function displayLightboxMedia() {
             const currentEvent = getCurrentEvent();
             if (!currentEvent?.media || !elements.lightboxMedia) return;
-            
+
             const media = currentEvent.media[currentLightboxMediaIndex];
             if (!media) return;
-            
+
             // 清空燈箱內容
             elements.lightboxMedia.innerHTML = '';
-            
+
             // 創建媒體元素
             let mediaElement;
             if (media.type === 'image' || media.media_type === 'image') {
                 mediaElement = document.createElement('img');
                 mediaElement.alt = '回憶錄圖片';
-                
+
                 const mediaSrc = media.src || media.url || (media.filename ? `./media/${media.filename}` : null);
 
                 // 如果無法構建有效路徑，跳過
@@ -2320,16 +2331,64 @@
                 }
 
                 if (mediaSrc.includes('media/')) {
-                    mediaElement.setAttribute('data-needs-mse-decrypt', 'true');
-                    // 額外驗證：確保不設置無效路徑
-                    if (mediaSrc && !mediaSrc.includes('null') && mediaSrc !== 'null') {
-                        mediaElement.setAttribute('data-original-src', mediaSrc);
-                    } else {
-                        console.error('🚫 阻止設置燈箱無效的 data-original-src:', mediaSrc);
-                        return; // 阻止進一步處理
+                    // *** 優化：燈箱模式下使用多層快取檢查，避免重複解密 ***
+                    let fastLoadSuccess = false;
+
+                    // 最高優先：檢查事件級別快取
+                    const eventCachedUrl = getEventMediaCache(currentEventIndex, currentLightboxMediaIndex);
+                    if (eventCachedUrl) {
+                        console.log(`🚀 燈箱使用事件快取: 事件${currentEventIndex} 媒體${currentLightboxMediaIndex}`);
+                        mediaElement.src = eventCachedUrl;
+                        mediaElement.classList.add('fast-loaded');
+                        fastLoadSuccess = true;
                     }
-                    mediaElement.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSI4IiBmaWxsPSJub25lIiBzdHJva2U9IiMzYjgyZjYiIHN0cm9rZS13aWR0aD0iMiI+PGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHZhbHVlcz0iMCAyMCAyMDszNjAgMjAgMjAiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+PC9jaXJjbGU+PC9zdmc+';
-                    setTimeout(quickDecryptMedia, 10);
+                    // 第一優先：檢查全域快取
+                    else {
+                        const cachedBlobUrl = getCachedImage(mediaSrc);
+                        if (cachedBlobUrl) {
+                            console.log(`⚡ 燈箱使用全域快取圖片: ${currentLightboxMediaIndex + 1}`);
+                            mediaElement.src = cachedBlobUrl;
+                            mediaElement.classList.add('fast-loaded');
+                            fastLoadSuccess = true;
+                        }
+                    }
+
+                    // 第二優先：檢查縮圖快取（已解密的縮圖）
+                    if (!fastLoadSuccess && elements.thumbnails) {
+                        const thumbnails = elements.thumbnails.querySelectorAll('.thumbnail img');
+                        for (let i = 0; i < thumbnails.length; i++) {
+                            const thumbnailImg = thumbnails[i];
+                            if (i === currentLightboxMediaIndex &&
+                                thumbnailImg.src &&
+                                thumbnailImg.src.startsWith('blob:') &&
+                                thumbnailImg.getAttribute('data-original-src') === mediaSrc) {
+
+                                console.log(`📸 燈箱使用縮圖快取圖片: ${currentLightboxMediaIndex + 1}`);
+                                mediaElement.src = thumbnailImg.src;
+                                mediaElement.classList.add('fast-loaded');
+                                // 同時加入快取以供後續使用
+                                cacheImage(mediaSrc, thumbnailImg.src);
+                                cacheEventMedia(currentEventIndex, currentLightboxMediaIndex, thumbnailImg.src);
+                                fastLoadSuccess = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    // 如果沒有找到快取，才進行解密
+                    if (!fastLoadSuccess) {
+                        console.log(`🔓 燈箱需要解密圖片: ${currentLightboxMediaIndex + 1}`);
+                        mediaElement.setAttribute('data-needs-mse-decrypt', 'true');
+                        // 額外驗證：確保不設置無效路徑
+                        if (mediaSrc && !mediaSrc.includes('null') && mediaSrc !== 'null') {
+                            mediaElement.setAttribute('data-original-src', mediaSrc);
+                        } else {
+                            console.error('🚫 阻止設置燈箱無效的 data-original-src:', mediaSrc);
+                            return; // 阻止進一步處理
+                        }
+                        mediaElement.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSI4IiBmaWxsPSJub25lIiBzdHJva2U9IiMzYjgyZjYiIHN0cm9rZS13aWR0aD0iMiI+PGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHZhbHVlcz0iMCAyMCAyMDszNjAgMjAgMjAiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+PC9jaXJjbGU+PC9zdmc+';
+                        setTimeout(quickDecryptMedia, 10);
+                    }
                 } else {
                     mediaElement.src = mediaSrc;
                 }
