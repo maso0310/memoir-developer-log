@@ -1263,26 +1263,96 @@ body {
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* 收合/展開按鈕樣式 - 扁平透明設計 */
+/* 收合/展開按鈕樣式 - 扁平透明設計，固定在右上角 */
 .thumbnail-toggle-arrow {
-    width: 60px; /* 更寬 */
-    height: 16px; /* 稍微增加高度以配合更大的箭頭 */
-    background: transparent; /* 透明背景 */
-    border: none; /* 移除邊框 */
-    border-radius: 0;
+    /* 基本樣式 - 完全比照 floating-btn */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--border);
     color: var(--text-primary);
     cursor: pointer;
-    display: none; /* 預設隱藏 */
+    display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
-    margin-top: 2px; /* 稍微增加間距 */
+    user-select: none;
+
+    /* 位置和層級 */
+    position: fixed;
+    top: 20px;
+    right: 20px;
     z-index: 2099;
+
+    /* 視覺效果 - 比照 floating-btn */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 20px var(--shadow);
+    font-size: 1.2rem;
+
+    /* 動畫過渡 - 比照 floating-btn */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 懸停效果 - 完全比照 floating-btn:hover */
+.thumbnail-toggle-arrow:hover {
+    transform: scale(1.1);
+    background: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 6px 25px var(--shadow);
+}
+
+/* 點擊效果 - 完全比照 floating-btn:active */
+.thumbnail-toggle-arrow:active {
+    transform: scale(0.95);
+}
+
+/* 圖示動畫效果 */
+.thumbnail-toggle-arrow i {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 縮圖切換按鈕箭頭動畫 - 使用CSS border正三角形 */
+.thumbnail-btn-icon {
+    width: 16px;
+    height: 16px;
     position: relative;
-    /* 移除背景效果 */
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    box-shadow: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 隱藏所有span，我們改用偽元素 */
+.thumbnail-btn-icon span {
+    display: none;
+}
+
+/* 向上箭頭狀態 - 正三角形，幾何中心對齊圖標中心 */
+.thumbnail-btn-icon.up::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 0px));
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 12.12px solid currentColor;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 向下箭頭狀態 - 正三角形，幾何中心對齊圖標中心 */
+.thumbnail-btn-icon.down::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 0px));
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 12.12px solid currentColor;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* 燈箱模式下確保縮圖列可見，並且收合按鈕可用 */
@@ -1290,10 +1360,11 @@ body {
     top: 10px !important;
 }
 
-/* 燈箱模式下的收合狀態 - 確保收合功能正常 */
+/* 燈箱模式下的收合狀態 - 向左收合 */
 .lightbox.active .nav-thumbnails.collapsed {
     top: 10px !important;
-    transform: translateX(-50%) translateY(-100%);
+    transform: translateX(-100%) translateY(0);
+    left: 0 !important;
 }
 
 /* 燈箱模式下強制顯示收合按鈕 - 使用最高特異性覆蓋所有隱藏規則 */
@@ -1304,20 +1375,13 @@ body .lightbox.active .nav-thumbnails #thumbnailToggleArrow {
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
-    position: relative !important;
+    position: fixed !important; /* 改為固定定位 */
+    top: 20px !important; /* 右上角位置 */
+    right: 20px !important; /* 右上角位置 */
     z-index: 2099 !important;
+    margin-top: 0 !important; /* 清除原有邊距 */
 }
 
-.thumbnail-toggle-arrow:hover {
-    opacity: 0.7; /* 透明度變化代替背景變化 */
-    transform: scale(1.1); /* 稍微放大 */
-}
-
-.thumbnail-toggle-arrow i {
-    transition: transform 0.3s ease;
-    color: var(--text-primary); /* 確保箭頭有顏色 */
-    opacity: 0.8; /* 稍微透明 */
-}
 
 /* 按鈕狀態視覺回饋 - 使用CSS類別區分收合/展開狀態 */
 .thumbnail-toggle-arrow.collapsed {
@@ -1339,8 +1403,94 @@ body .lightbox.active .nav-thumbnails #thumbnailToggleArrow {
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
-    position: relative !important;
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
     z-index: 2099 !important;
+}
+
+/* 最高優先級：燈箱模式下強制按鈕位置到右上角 */
+body .lightbox.active .nav-thumbnails .thumbnail-toggle-arrow.lightbox-mode,
+body .lightbox.active .nav-thumbnails #thumbnailToggleArrow.lightbox-mode {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    transform: none !important;
+    margin: 0 !important;
+    z-index: 2099 !important;
+}
+
+/* 終極解決方案：強制顯示燈箱模式下的按鈕 - 正圓形設計 */
+.lightbox.active #thumbnailToggleArrow {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 9999 !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: rgba(0, 0, 0, 0.75) !important;
+    border: 2px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 50% !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+    align-items: center !important;
+    justify-content: center !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* 備用規則 */
+.lightbox.active .thumbnail-toggle-arrow {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 9999 !important;
+}
+
+/* 脈衝動畫提示效果 - 首次進入燈箱時的引導 */
+@keyframes thumbnailArrowPulse {
+    0% {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(255, 255, 255, 0.1) inset;
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 2px 12px rgba(255, 255, 255, 0.2) inset, 0 0 0 4px rgba(255, 255, 255, 0.3);
+        border-color: rgba(255, 255, 255, 0.8);
+        transform: scale(1.02);
+    }
+    100% {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(255, 255, 255, 0.1) inset;
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+/* 脈衝提示狀態 */
+.thumbnail-toggle-arrow.hint-pulse {
+    animation: thumbnailArrowPulse 2s ease-in-out 3; /* 脈衝3次 */
+}
+
+/* 呼吸動畫 - 持續的微妙提示 */
+@keyframes thumbnailArrowBreathe {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(0.98);
+    }
+}
+
+.thumbnail-toggle-arrow.subtle-hint {
+    animation: thumbnailArrowBreathe 3s ease-in-out infinite; /* 持續呼吸動畫 */
 }
 
 .thumbnails {
@@ -1766,14 +1916,14 @@ body .lightbox.active .nav-thumbnails #thumbnailToggleArrow {
 .lightbox-close {
     position: fixed;
     top: 20px;
-    right: 20px;
-    width: 55px;
-    height: 55px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
     background: rgba(0, 0, 0, 0.8);
     border: 2px solid var(--overlay-strong);
     border-radius: 50%;
     color: white;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1933,9 +2083,10 @@ input[type="range"] {
     }
 
     .lightbox-close,
-    .lightbox-nav {
-        width: 45px;
-        height: 45px;
+    .lightbox-nav,
+    .thumbnail-toggle-arrow {
+        width: 40px;
+        height: 40px;
         font-size: 1rem;
     }
 }
